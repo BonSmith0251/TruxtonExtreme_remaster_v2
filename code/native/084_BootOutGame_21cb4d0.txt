@@ -1,0 +1,17 @@
+{"assembly": "OutGame", "file": "BootOutGame.cs", "originalType": "OutGame.BootOutGame/<Start>d__1", "rva": 35435728, "length": 62, "signature": "System.Void OutGame.BootOutGame/<Start>d__1::System.Collections.IEnumerator.Reset()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+021cb4d0 4053                           push       rbx
+021cb4d2 4883ec20                       sub        rsp, 0x20
+021cb4d6 488d0df3191b02                 lea        rcx, [rip + 0x21b19f3]
+021cb4dd e88e5531fe                     call       0x4e0a70 ; 
+021cb4e2 488bc8                         mov        rcx, rax
+021cb4e5 e8c65731fe                     call       0x4e0cb0 ; 
+021cb4ea 33d2                           xor        edx, edx
+021cb4ec 488bc8                         mov        rcx, rax
+021cb4ef 488bd8                         mov        rbx, rax
+021cb4f2 e87919e6ff                     call       0x202ce70 ; mscorlib:NotSupportedException:System.Void System.NotSupportedException::.ctor()
+021cb4f7 488d0d9af51902                 lea        rcx, [rip + 0x219f59a]
+021cb4fe e86d5531fe                     call       0x4e0a70 ; 
+021cb503 488bd0                         mov        rdx, rax
+021cb506 488bcb                         mov        rcx, rbx
+021cb509 e8b25731fe                     call       0x4e0cc0 ; 

@@ -1,0 +1,77 @@
+{"assembly": "KANAI.Kernel", "file": "ApplicationUtility.cs", "originalType": "KANAI.Kernel.ApplicationUtility", "rva": 31336464, "length": 349, "signature": "UnityEngine.Rect KANAI.Kernel.ApplicationUtility::GetAspectRect()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01de2810 4053                           push       rbx
+01de2812 4883ec50                       sub        rsp, 0x50
+01de2816 803d8911880200                 cmp        byte ptr [rip + 0x2881189], 0
+01de281d 488bd9                         mov        rbx, rcx
+01de2820 0f29742440                     movaps     xmmword ptr [rsp + 0x40], xmm6
+01de2825 0f297c2430                     movaps     xmmword ptr [rsp + 0x30], xmm7
+01de282a 7513                           jne        0x1de283f
+01de282c 488d0d25cd5a02                 lea        rcx, [rip + 0x25acd25]
+01de2833 e818e26ffe                     call       0x4e0a50 ; 
+01de2838 c6056711880201                 mov        byte ptr [rip + 0x2881167], 1
+01de283f 0f57c0                         xorps      xmm0, xmm0
+01de2842 33c9                           xor        ecx, ecx
+01de2844 0f1103                         movups     xmmword ptr [rbx], xmm0
+01de2847 e8c4132301                     call       0x3013c10 ; UnityEngine.CoreModule:Screen:System.Int32 UnityEngine.Screen::get_width()
+01de284c 33c9                           xor        ecx, ecx
+01de284e 660f6ef8                       movd       xmm7, eax
+01de2852 0f5bff                         cvtdq2ps   xmm7, xmm7
+01de2855 e806132301                     call       0x3013b60 ; UnityEngine.CoreModule:Screen:System.Int32 UnityEngine.Screen::get_height()
+01de285a 488b0df7cc5a02                 mov        rcx, qword ptr [rip + 0x25accf7]
+01de2861 660f6ec0                       movd       xmm0, eax
+01de2865 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de286c 0f5bc0                         cvtdq2ps   xmm0, xmm0
+01de286f f30f5ef8                       divss      xmm7, xmm0
+01de2873 f30f5e3d55068101               divss      xmm7, dword ptr [rip + 0x1810655]
+01de287b 750c                           jne        0x1de2889
+01de287d e80ee56ffe                     call       0x4e0d90 ; 
+01de2882 488b0dcfcc5a02                 mov        rcx, qword ptr [rip + 0x25acccf]
+01de2889 803dd29b870200                 cmp        byte ptr [rip + 0x2879bd2], 0
+01de2890 751a                           jne        0x1de28ac
+01de2892 488d0dbfcc5a02                 lea        rcx, [rip + 0x25accbf]
+01de2899 e8b2e16ffe                     call       0x4e0a50 ; 
+01de289e 488b0db3cc5a02                 mov        rcx, qword ptr [rip + 0x25accb3]
+01de28a5 c605b69b870201                 mov        byte ptr [rip + 0x2879bb6], 1
+01de28ac 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de28b3 750c                           jne        0x1de28c1
+01de28b5 e8d6e46ffe                     call       0x4e0d90 ; 
+01de28ba 488b0d97cc5a02                 mov        rcx, qword ptr [rip + 0x25acc97]
+01de28c1 488b81b8000000                 mov        rax, qword ptr [rcx + 0xb8]
+01de28c8 f30f1035fce26f01               movss      xmm6, dword ptr [rip + 0x16fe2fc]
+01de28d0 0f2ff7                         comiss     xmm6, xmm7
+01de28d3 0f1000                         movups     xmm0, xmmword ptr [rax]
+01de28d6 0f1103                         movups     xmmword ptr [rbx], xmm0
+01de28d9 7754                           ja         0x1de292f
+01de28db 440f29442420                   movaps     xmmword ptr [rsp + 0x20], xmm8
+01de28e1 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de28e8 440f28c6                       movaps     xmm8, xmm6
+01de28ec f3440f5ec7                     divss      xmm8, xmm7
+01de28f1 7505                           jne        0x1de28f8
+01de28f3 e898e46ffe                     call       0x4e0d90 ; 
+01de28f8 f3410f5cf0                     subss      xmm6, xmm8
+01de28fd f3440f114308                   movss      dword ptr [rbx + 8], xmm8
+01de2903 440f28442420                   movaps     xmm8, xmmword ptr [rsp + 0x20]
+01de2909 488bc3                         mov        rax, rbx
+01de290c c7430c0000803f                 mov        dword ptr [rbx + 0xc], 0x3f800000
+01de2913 f30f5935ade26f01               mulss      xmm6, dword ptr [rip + 0x16fe2ad]
+01de291b f30f1133                       movss      dword ptr [rbx], xmm6
+01de291f 0f28742440                     movaps     xmm6, xmmword ptr [rsp + 0x40]
+01de2924 0f287c2430                     movaps     xmm7, xmmword ptr [rsp + 0x30]
+01de2929 4883c450                       add        rsp, 0x50
+01de292d 5b                             pop        rbx
+01de292e c3                             ret        
+01de292f 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2936 7505                           jne        0x1de293d
+01de2938 e853e46ffe                     call       0x4e0d90 ; 
+01de293d f30f5cf7                       subss      xmm6, xmm7
+01de2941 f30f117b0c                     movss      dword ptr [rbx + 0xc], xmm7
+01de2946 c743080000803f                 mov        dword ptr [rbx + 8], 0x3f800000
+01de294d 488bc3                         mov        rax, rbx
+01de2950 f30f593570e26f01               mulss      xmm6, dword ptr [rip + 0x16fe270]
+01de2958 f30f117304                     movss      dword ptr [rbx + 4], xmm6
+01de295d 0f28742440                     movaps     xmm6, xmmword ptr [rsp + 0x40]
+01de2962 0f287c2430                     movaps     xmm7, xmmword ptr [rsp + 0x30]
+01de2967 4883c450                       add        rsp, 0x50
+01de296b 5b                             pop        rbx
+01de296c c3                             ret        

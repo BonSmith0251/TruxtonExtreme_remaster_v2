@@ -1,0 +1,45 @@
+{"assembly": "TXEKernel", "file": "BootTXE.cs", "originalType": "TXEKernel.BootTXE/<_loadScene>d__2", "rva": 40804912, "length": 167, "signature": "System.Boolean TXEKernel.BootTXE/<_loadScene>d__2::MoveNext()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+026ea230 4053                           push       rbx
+026ea232 4883ec20                       sub        rsp, 0x20
+026ea236 803deadff70100                 cmp        byte ptr [rip + 0x1f7dfea], 0
+026ea23d 488bd9                         mov        rbx, rcx
+026ea240 7513                           jne        0x26ea255
+026ea242 488d0d1f02cb01                 lea        rcx, [rip + 0x1cb021f]
+026ea249 e80268dffd                     call       0x4e0a50 ; 
+026ea24e c605d2dff70101                 mov        byte ptr [rip + 0x1f7dfd2], 1
+026ea255 8b4310                         mov        eax, dword ptr [rbx + 0x10]
+026ea258 85c0                           test       eax, eax
+026ea25a 7562                           jne        0x26ea2be
+026ea25c 488b4320                       mov        rax, qword ptr [rbx + 0x20]
+026ea260 c74310ffffffff                 mov        dword ptr [rbx + 0x10], 0xffffffff
+026ea267 4885c0                         test       rax, rax
+026ea26a 7466                           je         0x26ea2d2
+026ea26c 488b0df501cb01                 mov        rcx, qword ptr [rip + 0x1cb01f5]
+026ea273 48897c2430                     mov        qword ptr [rsp + 0x30], rdi
+026ea278 488b7820                       mov        rdi, qword ptr [rax + 0x20]
+026ea27c 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+026ea283 7505                           jne        0x26ea28a
+026ea285 e8066bdffd                     call       0x4e0d90 ; 
+026ea28a 4533c0                         xor        r8d, r8d
+026ea28d ba01000000                     mov        edx, 1
+026ea292 488bcf                         mov        rcx, rdi
+026ea295 e876d09900                     call       0x3087310 ; UnityEngine.CoreModule:SceneManager:UnityEngine.AsyncOperation UnityEngine.SceneManagement.SceneManager::LoadSceneAsync(System.String,UnityEngine.SceneManagement.LoadSceneMode)
+026ea29a 488d4b18                       lea        rcx, [rbx + 0x18]
+026ea29e 48894318                       mov        qword ptr [rbx + 0x18], rax
+026ea2a2 488bd0                         mov        rdx, rax
+026ea2a5 e8d65adffd                     call       0x4dfd80 ; 
+026ea2aa 488b7c2430                     mov        rdi, qword ptr [rsp + 0x30]
+026ea2af b001                           mov        al, 1
+026ea2b1 c7431001000000                 mov        dword ptr [rbx + 0x10], 1
+026ea2b8 4883c420                       add        rsp, 0x20
+026ea2bc 5b                             pop        rbx
+026ea2bd c3                             ret        
+026ea2be 83f801                         cmp        eax, 1
+026ea2c1 7507                           jne        0x26ea2ca
+026ea2c3 c74310ffffffff                 mov        dword ptr [rbx + 0x10], 0xffffffff
+026ea2ca 32c0                           xor        al, al
+026ea2cc 4883c420                       add        rsp, 0x20
+026ea2d0 5b                             pop        rbx
+026ea2d1 c3                             ret        
+026ea2d2 e8296adffd                     call       0x4e0d00 ; 

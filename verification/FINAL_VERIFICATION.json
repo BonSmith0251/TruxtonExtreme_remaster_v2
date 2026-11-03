@@ -1,0 +1,128 @@
+{
+  "utc": "2026-10-31T14:01:36.922339+00:00",
+  "overall": "Editable reconstruction and supplemental Round1 smoke tests verified. Complete original-game behavior/fidelity is not achieved.",
+  "source": "D:/games/Truxton Extreme; original Unity6000.3.7f1 IL2CPP",
+  "target": "D:/Games/TruxtonExRecon/Reconstructed; exact Unity2023.2.22f1; Windows x64 Mono",
+  "revisions": {
+    "gameplay_tests": "reconstruction-2023.2.22f1-native-assets-v3",
+    "final": "reconstruction-2023.2.22f1-native-assets-v4",
+    "v3_to_v4_changed_files": [
+      "Assets/Editor/ReconstructionStagePreviewVerification.cs"
+    ],
+    "final_manifest_sha256": "a4addaf382b3296745a1da8c15d8aa8d5fd230af1d50d080508df91b36730c7a",
+    "final_files_checked": 27737,
+    "final_snapshot_unchanged_after_exact_restoration": true
+  },
+  "scope_verdicts": [
+    {
+      "scope": "Original preservation / source inventory",
+      "status": "complete",
+      "result": "Coordinator hash check:275 original files unchanged, no additions. Independent check:54 preserved serialized gzip files match recorded hashes and all indexed object ranges fit;270371 distinct source objects;2968 valid stream ranges.81Comic containers excluded by user.",
+      "evidence": [
+        "evidence/source-preservation.json",
+        "verification/independent-extraction-review.json"
+      ]
+    },
+    {
+      "scope": "Complete strict source schema decoding",
+      "status": "failed",
+      "result": "270368 of270371 objects decoded after726 managed-layout recoveries. Three raw-preserved objects still fail strict decoding:PlayerSettings, source URP global settings and one built-in managed object.945368 non-null source references resolve; source graph resolution does not prove target equivalence.",
+      "evidence": [
+        "verification/managed-layout-review.json",
+        "extraction/coverage.json"
+      ]
+    },
+    {
+      "scope": "Target import and tested attachment counts",
+      "status": "complete",
+      "result": "14 project scenes:zero reported missing scripts/references.2150 original prefabs:77535 GameObjects,168720 components,zero missing scripts/unloadable prefabs.11578 original native asset files:zero missing main types. Prefab field/reference fidelity was not exhaustively compared.",
+      "evidence": [
+        "evidence/scene-integration/editor-scene-audit.json",
+        "evidence/scene-integration/original-prefab-audit.json",
+        "evidence/scene-integration/original-deep-audit.json"
+      ]
+    },
+    {
+      "scope": "Original Boot hierarchy correspondence",
+      "status": "complete",
+      "result": "All24 source Boot/BootTXE GameObjects match unique paths,parenting,child sibling order,active state,layers,transform types and ordered component types. Loaded RectTransform differences are separately qualified below.",
+      "evidence": [
+        "verification/source-boot-hierarchies.json",
+        "verification/boot-hierarchy-comparison.json"
+      ]
+    },
+    {
+      "scope": "Full original Boot field/reference fidelity",
+      "status": "inconclusive",
+      "result": "1169 primitive/local/null-reference checks performed, including116 matching scene-local and29 original-null references.11 loaded RectTransform scalar differences preserve original serialized YAML values but recompute after editor load. One source InputSystem property m_ScrollDeltaPerTick=6 is absent in target schema.13 external references lack independently verified identity mapping.",
+      "evidence": [
+        "verification/boot-field-comparison.json"
+      ]
+    },
+    {
+      "scope": "Ordinary editor Round1 Play twice",
+      "status": "complete",
+      "result": "Fresh graphics editor directly opened Round1; Play/Stop/Play/Stop completed with zero test errors. Captures after intro inactive at stage8.500712s and9.881244s show ship,HUD,enemies and shots. Both cycles have one camera/11 roots. This tests the supplemental implementation only.",
+      "evidence": [
+        "verification/editor-play-twice/completion.json",
+        "verification/editor-play-twice/events.jsonl",
+        "verification/editor-play-twice.log",
+        "verification/editor-play-twice/play-1.png",
+        "verification/editor-play-twice/play-2.png"
+      ]
+    },
+    {
+      "scope": "Standalone build and ordinary entry smoke test",
+      "status": "complete",
+      "result": "Windows Mono build succeeded with0 errors/8 warnings. Independently reviewed normal Hub screenshot,actual GUI-button transition and waited gameplay screenshot; final normal-player log has no matched error/exception/missing-warning patterns. Tests do not cover the entire Round1 progression,all controls or original game.",
+      "evidence": [
+        "evidence/scene-integration/build-result.json",
+        "evidence/scene-integration/normal-entry-final.json",
+        "evidence/scene-integration/normal-player-final.log",
+        "evidence/scene-integration/normal-hub-final.png",
+        "evidence/scene-integration/normal-round1-gameplay.png"
+      ]
+    },
+    {
+      "scope": "Native BG01/BG03 complete visual presentation",
+      "status": "inconclusive",
+      "result": "Actual Direct3D11/RTX PRO5000 captures show textured rock geometry, but static BG01 is largely cropped rocks and BG03 largely empty background with a small rock. Default Round1 pipeline fell back from source renderer index1. A separate recovered TXE_PipelineAsset probe accepted the original index and completed with zero captured errors; views remained limited. No source camera animation/stage runtime or matched original capture was exercised.",
+      "evidence": [
+        "verification/stage-preview/BG01-source-camera.png",
+        "verification/stage-preview/BG03-source-camera.png",
+        "verification/stage-preview.log",
+        "verification/stage-preview-native-pipeline/BG01-source-camera.png",
+        "verification/stage-preview-native-pipeline/BG03-source-camera.png",
+        "verification/stage-preview-native-pipeline/probe-result.json",
+        "verification/stage-preview-native-pipeline.log"
+      ]
+    },
+    {
+      "scope": "Complete original runtime / original-game fidelity",
+      "status": "failed",
+      "result": "Most original native method behavior remains unrecovered/stubbed.91 simple methods are native-backed (50 getters,39 scalar setters,2 constants); independent PE checks matched all91 native byte fragments and five installed DLL hashes. Separately recovered Boot coroutine bodies do not complete original startup/services/stage/enemy/UI/addressable dependency chains. No original end-to-end run or fidelity pass is claimed.",
+      "evidence": [
+        "verification/simple-native-method-review.json",
+        "code/simple-native-recovery/summary.json",
+        "ENGINE_SYSTEMS.md"
+      ]
+    }
+  ],
+  "material_limits": [
+    "258 exported shader files are dummy implementations;182 native TXE_Lit materials use approximate URP Lit mappings. Original custom shader/pass/effect fidelity remains unverified.",
+    "OutGame exposes526 types, but six fields across five generated coroutine types use UnityEngine.AsyncInstantiateOperation<T>/Awaiter absent from Unity2023.2.22f1. The build warning is not an all-types runtime pass; see code/outgame-load-diagnostic/field-compatibility-evidence.json and mono-probe.json.",
+    "Recovered TMP dummy shaders emit missing fallback-shader warnings during editor graphics checks. The native-pipeline probe has no renderer-index fallback but still has these dummy-shader warnings.",
+    "Comic visuals/audio are intentionally excluded and represented by one blank image. No excluded-Comic recovery failure is counted.",
+    "V1 editor attempts were interrupted by backend-restart configuration; standalone v1 had non-legacy animation sampling errors. These were repaired before passing v3 tests. A12-second black intro capture was explicitly rejected as gameplay evidence."
+  ],
+  "diagnostic_state_restoration": {
+    "result": "The native pipeline probe restored live references but Unity persisted two settings changes. Changed bytes/diffs were retained; exact manifest-matching seed bytes restored GraphicsSettings/QualitySettings after editor exit. Final full27737-file v4 hash check passes.",
+    "evidence": [
+      "verification/native-pipeline-settings-side-effect/restoration.json",
+      "verification/post-probe-before-restoration.json",
+      "verification/post-test-freeze-check-v3.json",
+      "verification/post-test-freeze-check.json"
+    ]
+  },
+  "ownership": "All verifier editor processes exited; unrelated editor PID27152 untouched. No further probes needed."
+}

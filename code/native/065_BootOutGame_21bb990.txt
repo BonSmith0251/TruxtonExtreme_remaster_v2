@@ -1,0 +1,58 @@
+{"assembly": "OutGame", "file": "BootOutGame.cs", "originalType": "OutGame.BootOutGame", "rva": 35371408, "length": 219, "signature": "System.Void OutGame.BootOutGame::AdjustScreenSize()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+021bb990 48895c2408                     mov        qword ptr [rsp + 8], rbx
+021bb995 57                             push       rdi
+021bb996 4883ec30                       sub        rsp, 0x30
+021bb99a 803df09f4a0200                 cmp        byte ptr [rip + 0x24a9ff0], 0
+021bb9a1 488bf9                         mov        rdi, rcx
+021bb9a4 751f                           jne        0x21bb9c5
+021bb9a6 488d0dabe11f02                 lea        rcx, [rip + 0x21fe1ab]
+021bb9ad e89e5032fe                     call       0x4e0a50 ; 
+021bb9b2 488d0d57e21f02                 lea        rcx, [rip + 0x21fe257]
+021bb9b9 e8925032fe                     call       0x4e0a50 ; 
+021bb9be c605cc9f4a0201                 mov        byte ptr [rip + 0x24a9fcc], 1
+021bb9c5 8b5f2c                         mov        ebx, dword ptr [rdi + 0x2c]
+021bb9c8 33c9                           xor        ecx, ecx
+021bb9ca e89181e500                     call       0x3013b60 ; UnityEngine.CoreModule:Screen:System.Int32 UnityEngine.Screen::get_height()
+021bb9cf 3bd8                           cmp        ebx, eax
+021bb9d1 750e                           jne        0x21bb9e1
+021bb9d3 8b5f30                         mov        ebx, dword ptr [rdi + 0x30]
+021bb9d6 33c9                           xor        ecx, ecx
+021bb9d8 e83382e500                     call       0x3013c10 ; UnityEngine.CoreModule:Screen:System.Int32 UnityEngine.Screen::get_width()
+021bb9dd 3bd8                           cmp        ebx, eax
+021bb9df 747a                           je         0x21bba5b
+021bb9e1 33c9                           xor        ecx, ecx
+021bb9e3 0f29742420                     movaps     xmmword ptr [rsp + 0x20], xmm6
+021bb9e8 e82382e500                     call       0x3013c10 ; UnityEngine.CoreModule:Screen:System.Int32 UnityEngine.Screen::get_width()
+021bb9ed 33c9                           xor        ecx, ecx
+021bb9ef 894730                         mov        dword ptr [rdi + 0x30], eax
+021bb9f2 e86981e500                     call       0x3013b60 ; UnityEngine.CoreModule:Screen:System.Int32 UnityEngine.Screen::get_height()
+021bb9f7 89472c                         mov        dword ptr [rdi + 0x2c], eax
+021bb9fa 8b4730                         mov        eax, dword ptr [rdi + 0x30]
+021bb9fd 3d00050000                     cmp        eax, 0x500
+021bba02 750a                           jne        0x21bba0e
+021bba04 f30f1035e00f3301               movss      xmm6, dword ptr [rip + 0x1330fe0]
+021bba0c eb19                           jmp        0x21bba27 ; 
+021bba0e 3da0050000                     cmp        eax, 0x5a0
+021bba13 750a                           jne        0x21bba1f
+021bba15 f30f1035cf0f3301               movss      xmm6, dword ptr [rip + 0x1330fcf]
+021bba1d eb08                           jmp        0x21bba27 ; 
+021bba1f f30f1035a5513201               movss      xmm6, dword ptr [rip + 0x13251a5]
+021bba27 488b0d2ae11f02                 mov        rcx, qword ptr [rip + 0x21fe12a]
+021bba2e e8bd48b5fe                     call       0xd102f0 ; KANAI.Kernel:MonoBehaviourSingleton`1:System.Boolean KANAI.Kernel.MonoBehaviourSingleton`1::IsInstanceNull() || KANAI.Kernel:SimpleSingleton`1:System.Boolean KANAI.Kernel.SimpleSingleton`1::IsInstanceNull()
+021bba33 84c0                           test       al, al
+021bba35 751f                           jne        0x21bba56
+021bba37 488b0dd2e11f02                 mov        rcx, qword ptr [rip + 0x21fe1d2]
+021bba3e e8fdbae6fd                     call       0x27540 ; 
+021bba43 4885c0                         test       rax, rax
+021bba46 741e                           je         0x21bba66
+021bba48 4533c0                         xor        r8d, r8d
+021bba4b 0f28ce                         movaps     xmm1, xmm6
+021bba4e 488bc8                         mov        rcx, rax
+021bba51 e85a1340fe                     call       0x5bcdb0 ; AEAsAnimation:AEAsAnimationRoot:System.Void AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation:AEComposition:System.Void AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpAsync>d__16::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpChildAsync>d__25::System.IDisposable.Dispose()
+021bba56 0f28742420                     movaps     xmm6, xmmword ptr [rsp + 0x20]
+021bba5b 488b5c2440                     mov        rbx, qword ptr [rsp + 0x40]
+021bba60 4883c430                       add        rsp, 0x30
+021bba64 5f                             pop        rdi
+021bba65 c3                             ret        
+021bba66 e8955232fe                     call       0x4e0d00 ; 

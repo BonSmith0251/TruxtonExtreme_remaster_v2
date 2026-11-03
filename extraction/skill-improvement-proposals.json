@@ -1,0 +1,164 @@
+{
+  "findings": [
+    {
+      "scope": "General export orchestration",
+      "evidence": "assetripper.log finishes all11730collections before Copying streaming assets. AuxiliaryFiles/path_id_map.json was absent when copyphase stopped.",
+      "proposal": "Treat native asset completion and exporter-tail completion separately. Arrange streaming duplication policy before load; preserve full output tail when auxiliary path map is required. Do not assume all native exports finished means all auxiliary evidence written."
+    },
+    {
+      "scope": "Truxton full extraction",
+      "evidence": "coverage.json and stream-coverage.json:270371objects54included sources,all2968stream ranges valid,728MonoBehaviour missing trees in UnityPy while AssetRipper Cpp2IL exports layout-bearing custom DLL.",
+      "proposal": "Count missing UnityPy trees separately from raw preservation and exporter success. Cpp2IL metadata39 succeeds with tested AssetRipper2.0.0; avoid reporting all MonoBehaviour payloads decoded solely from UnityPy."
+    },
+    {
+      "scope": "Disk-limited extraction",
+      "evidence": "native-export-summary.json:4.608GBnative data, TGA2.862GB. SourceStreamingAssets~12GB with Comic8.095GB.",
+      "proposal": "Hash/reference immutable raw sources rather than wholesale copying, and establish exclusions before whole-game export. Coordinate read-only payload hardlinks with integrator to avoid copying multiGB textures."
+    }
+  ],
+  "type_tree_failure_counts": {
+    "Expected to read 844 bytes, but only read 840 bytes": 1,
+    "Expected to read 112 bytes, but only read 48 bytes": 1,
+    "Expected to read 96 bytes, but only read 44 bytes": 4,
+    "Expected to read 100 bytes, but only read 40 bytes": 1,
+    "Expected to read 104 bytes, but only read 48 bytes": 1,
+    "Expected to read 96 bytes, but only read 48 bytes": 1,
+    "Expected to read 112 bytes, but only read 60 bytes": 7,
+    "Expected to read 80 bytes, but only read 44 bytes": 1,
+    "Expected to read 104 bytes, but only read 64 bytes": 2,
+    "Expected to read 68 bytes, but only read 48 bytes": 1,
+    "Expected to read 76 bytes, but only read 44 bytes": 1,
+    "Expected to read 152 bytes, but only read 52 bytes": 1,
+    "Expected to read 156 bytes, but only read 60 bytes": 1,
+    "Expected to read 284 bytes, but only read 52 bytes": 1,
+    "Expected to read 140 bytes, but only read 60 bytes": 1,
+    "Expected to read 508 bytes, but only read 56 bytes": 1,
+    "Expected to read 516 bytes, but only read 52 bytes": 1,
+    "Expected to read 324 bytes, but only read 68 bytes": 1,
+    "Expected to read 308 bytes, but only read 72 bytes": 2,
+    "Expected to read 332 bytes, but only read 76 bytes": 2,
+    "Expected to read 304 bytes, but only read 68 bytes": 1,
+    "Expected to read 312 bytes, but only read 76 bytes": 1,
+    "Expected to read 288 bytes, but only read 52 bytes": 1,
+    "Expected to read 2904 bytes, but only read 72 bytes": 1,
+    "Expected to read 784 bytes, but only read 48 bytes": 1,
+    "Expected to read 84 bytes, but only read 48 bytes": 1,
+    "Expected to read 120 bytes, but only read 44 bytes": 2,
+    "Expected to read 100 bytes, but only read 60 bytes": 3,
+    "Expected to read 136 bytes, but only read 44 bytes": 1,
+    "Expected to read 216 bytes, but only read 52 bytes": 1,
+    "Expected to read 164 bytes, but only read 40 bytes": 2,
+    "Expected to read 64 bytes, but only read 52 bytes": 1,
+    "Expected to read 560 bytes, but only read 44 bytes": 1,
+    "Expected to read 64 bytes, but only read 44 bytes": 1,
+    "Expected to read 88 bytes, but only read 44 bytes": 1,
+    "Expected to read 44 bytes, but only read 32 bytes": 18,
+    "Expected to read 52 bytes, but only read 32 bytes": 1,
+    "Expected to read 516 bytes, but only read 32 bytes": 1,
+    "Expected to read 80 bytes, but only read 32 bytes": 5,
+    "Expected to read 136 bytes, but only read 32 bytes": 189,
+    "Expected to read 180 bytes, but only read 32 bytes": 3,
+    "Expected to read 204 bytes, but only read 32 bytes": 2,
+    "Expected to read 36 bytes, but only read 32 bytes": 2,
+    "Expected to read 192 bytes, but only read 32 bytes": 1,
+    "Expected to read 48 bytes, but only read 32 bytes": 1,
+    "Expected to read 124 bytes, but only read 32 bytes": 2,
+    "Expected to read 68 bytes, but only read 32 bytes": 2,
+    "Expected to read 60 bytes, but only read 32 bytes": 1,
+    "Expected to read 112 bytes, but only read 32 bytes": 8,
+    "Expected to read 836 bytes, but only read 56 bytes": 1,
+    "Expected to read 196 bytes, but only read 48 bytes": 1,
+    "Expected to read 48 bytes, but only read 44 bytes": 1,
+    "Expected to read 9108 bytes, but only read 44 bytes": 1,
+    "Expected to read 2392 bytes, but only read 52 bytes": 1,
+    "Expected to read 300 bytes, but only read 44 bytes": 1,
+    "Expected to read 152 bytes, but only read 32 bytes": 57,
+    "Expected to read 156 bytes, but only read 32 bytes": 88,
+    "Expected to read 84 bytes, but only read 32 bytes": 28,
+    "Expected to read 88 bytes, but only read 32 bytes": 23,
+    "Expected to read 64 bytes, but only read 32 bytes": 11,
+    "Expected to read 384 bytes, but only read 32 bytes": 8,
+    "Expected to read 344 bytes, but only read 32 bytes": 2,
+    "Expected to read 40 bytes, but only read 32 bytes": 25,
+    "Expected to read 100 bytes, but only read 32 bytes": 67,
+    "Expected to read 76 bytes, but only read 32 bytes": 2,
+    "Expected to read 164 bytes, but only read 32 bytes": 4,
+    "Expected to read 500 bytes, but only read 32 bytes": 9,
+    "Expected to read 4244 bytes, but only read 32 bytes": 1,
+    "Expected to read 128 bytes, but only read 32 bytes": 2,
+    "Expected to read 56 bytes, but only read 32 bytes": 2,
+    "Expected to read 148 bytes, but only read 32 bytes": 1,
+    "Expected to read 348 bytes, but only read 32 bytes": 66,
+    "Expected to read 340 bytes, but only read 32 bytes": 1,
+    "Expected to read 416 bytes, but only read 32 bytes": 8,
+    "Expected to read 424 bytes, but only read 32 bytes": 1,
+    "Expected to read 420 bytes, but only read 32 bytes": 1,
+    "Expected to read 508 bytes, but only read 32 bytes": 6,
+    "Expected to read 536 bytes, but only read 32 bytes": 4,
+    "Expected to read 172 bytes, but only read 32 bytes": 1,
+    "Expected to read 236 bytes, but only read 32 bytes": 2,
+    "Expected to read 476 bytes, but only read 32 bytes": 2,
+    "Expected to read 160 bytes, but only read 32 bytes": 3,
+    "Expected to read 432 bytes, but only read 32 bytes": 1,
+    "Expected to read 352 bytes, but only read 32 bytes": 1,
+    "Expected to read 100 bytes, but only read 48 bytes": 3,
+    "Expected to read 92 bytes, but only read 40 bytes": 2,
+    "Expected to read 7984 bytes, but only read 52 bytes": 1,
+    "Expected to read 72 bytes, but only read 56 bytes": 1,
+    "Expected to read 108 bytes, but only read 56 bytes": 1,
+    "Expected to read 8488 bytes, but only read 40 bytes": 1
+  },
+  "examples": [
+    {
+      "id": "TATSUJIN EXTREME_Data/globalgamemanagers::globalgamemanagers::1",
+      "type": "PlayerSettings",
+      "error": "Expected to read 844 bytes, but only read 840 bytes"
+    },
+    {
+      "id": "TATSUJIN EXTREME_Data/globalgamemanagers.assets::globalgamemanagers.assets::3810",
+      "type": "MonoBehaviour",
+      "error": "Expected to read 112 bytes, but only read 48 bytes"
+    },
+    {
+      "id": "TATSUJIN EXTREME_Data/globalgamemanagers.assets::globalgamemanagers.assets::3811",
+      "type": "MonoBehaviour",
+      "error": "Expected to read 96 bytes, but only read 44 bytes"
+    },
+    {
+      "id": "TATSUJIN EXTREME_Data/globalgamemanagers.assets::globalgamemanagers.assets::3812",
+      "type": "MonoBehaviour",
+      "error": "Expected to read 100 bytes, but only read 40 bytes"
+    },
+    {
+      "id": "TATSUJIN EXTREME_Data/globalgamemanagers.assets::globalgamemanagers.assets::3813",
+      "type": "MonoBehaviour",
+      "error": "Expected to read 104 bytes, but only read 48 bytes"
+    },
+    {
+      "id": "TATSUJIN EXTREME_Data/globalgamemanagers.assets::globalgamemanagers.assets::3814",
+      "type": "MonoBehaviour",
+      "error": "Expected to read 96 bytes, but only read 48 bytes"
+    },
+    {
+      "id": "TATSUJIN EXTREME_Data/globalgamemanagers.assets::globalgamemanagers.assets::3815",
+      "type": "MonoBehaviour",
+      "error": "Expected to read 112 bytes, but only read 60 bytes"
+    },
+    {
+      "id": "TATSUJIN EXTREME_Data/globalgamemanagers.assets::globalgamemanagers.assets::3816",
+      "type": "MonoBehaviour",
+      "error": "Expected to read 112 bytes, but only read 60 bytes"
+    },
+    {
+      "id": "TATSUJIN EXTREME_Data/globalgamemanagers.assets::globalgamemanagers.assets::3817",
+      "type": "MonoBehaviour",
+      "error": "Expected to read 112 bytes, but only read 60 bytes"
+    },
+    {
+      "id": "TATSUJIN EXTREME_Data/globalgamemanagers.assets::globalgamemanagers.assets::3818",
+      "type": "MonoBehaviour",
+      "error": "Expected to read 112 bytes, but only read 60 bytes"
+    }
+  ],
+  "shared_skills_edited": false
+}

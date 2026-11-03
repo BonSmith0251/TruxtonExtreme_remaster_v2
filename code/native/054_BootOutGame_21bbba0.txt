@@ -1,0 +1,48 @@
+{"assembly": "OutGame", "file": "BootOutGame.cs", "originalType": "OutGame.BootOutGame", "rva": 35371936, "length": 196, "signature": "System.Void OutGame.BootOutGame::OnInputDeviceChange(UnityEngine.InputSystem.InputDevice,UnityEngine.InputSystem.InputDeviceChange)"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+021bbba0 48895c2408                     mov        qword ptr [rsp + 8], rbx
+021bbba5 57                             push       rdi
+021bbba6 4883ec20                       sub        rsp, 0x20
+021bbbaa 803dd89d4a0200                 cmp        byte ptr [rip + 0x24a9dd8], 0
+021bbbb1 488bda                         mov        rbx, rdx
+021bbbb4 488bf9                         mov        rdi, rcx
+021bbbb7 752b                           jne        0x21bbbe4
+021bbbb9 488d0d58212002                 lea        rcx, [rip + 0x2202158]
+021bbbc0 e88b4e32fe                     call       0x4e0a50 ; 
+021bbbc5 488d0dc4e31f02                 lea        rcx, [rip + 0x21fe3c4]
+021bbbcc e87f4e32fe                     call       0x4e0a50 ; 
+021bbbd1 488d0d28481c02                 lea        rcx, [rip + 0x21c4828]
+021bbbd8 e8734e32fe                     call       0x4e0a50 ; 
+021bbbdd c605a59d4a0201                 mov        byte ptr [rip + 0x24a9da5], 1
+021bbbe4 4885db                         test       rbx, rbx
+021bbbe7 7470                           je         0x21bbc59
+021bbbe9 488b1528212002                 mov        rdx, qword ptr [rip + 0x2202128]
+021bbbf0 4c8b03                         mov        r8, qword ptr [rbx]
+021bbbf3 0fb68230010000                 movzx      eax, byte ptr [rdx + 0x130]
+021bbbfa 41388030010000                 cmp        byte ptr [r8 + 0x130], al
+021bbc01 7256                           jb         0x21bbc59
+021bbc03 0fb6c8                         movzx      ecx, al
+021bbc06 498b80c8000000                 mov        rax, qword ptr [r8 + 0xc8]
+021bbc0d 483954c8f8                     cmp        qword ptr [rax + rcx*8 - 8], rdx
+021bbc12 7545                           jne        0x21bbc59
+021bbc14 488b0d75e31f02                 mov        rcx, qword ptr [rip + 0x21fe375]
+021bbc1b e8c048b5fe                     call       0xd104e0 ; KANAI.Kernel:MonoBehaviourSingleton`1:ClassType KANAI.Kernel.MonoBehaviourSingleton`1::get_Instance()
+021bbc20 4885c0                         test       rax, rax
+021bbc23 740a                           je         0x21bbc2f
+021bbc25 33d2                           xor        edx, edx
+021bbc27 488bc8                         mov        rcx, rax
+021bbc2a e8f112c6ff                     call       0x1e1cf20 ; KANAI.UI:UIGamePad:System.Void KANAI.UI.UIGamePad::OnInputDeviceChange()
+021bbc2f 488b0dca471c02                 mov        rcx, qword ptr [rip + 0x21c47ca]
+021bbc36 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021bbc3d 7505                           jne        0x21bbc44
+021bbc3f e84c5132fe                     call       0x4e0d90 ; 
+021bbc44 33c9                           xor        ecx, ecx
+021bbc46 e825150300                     call       0x21ed170 ; OutGame:OutGameHelper:System.Collections.IEnumerator OutGame.UI.OutGameHelper::SetupGuideIcon()
+021bbc4b 4533c0                         xor        r8d, r8d
+021bbc4e 488bd0                         mov        rdx, rax
+021bbc51 488bcf                         mov        rcx, rdi
+021bbc54 e8e7b2ea00                     call       0x3066f40 ; UnityEngine.CoreModule:MonoBehaviour:UnityEngine.Coroutine UnityEngine.MonoBehaviour::StartCoroutine(System.Collections.IEnumerator) || UnityEngine.CoreModule:MonoBehaviour:UnityEngine.Coroutine UnityEngine.MonoBehaviour::StartCoroutine_Auto(System.Collections.IEnumerator)
+021bbc59 488b5c2430                     mov        rbx, qword ptr [rsp + 0x30]
+021bbc5e 4883c420                       add        rsp, 0x20
+021bbc62 5f                             pop        rdi
+021bbc63 c3                             ret        

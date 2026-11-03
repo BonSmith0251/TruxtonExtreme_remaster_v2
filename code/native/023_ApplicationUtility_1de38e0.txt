@@ -1,0 +1,20 @@
+{"assembly": "KANAI.Kernel", "file": "ApplicationUtility.cs", "originalType": "KANAI.Kernel.ApplicationUtility", "rva": 31340768, "length": 75, "signature": "System.Collections.IEnumerator KANAI.Kernel.ApplicationUtility::_ResetCoroutine()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01de38e0 4053                           push       rbx
+01de38e2 4883ec20                       sub        rsp, 0x20
+01de38e6 803dae00880200                 cmp        byte ptr [rip + 0x28800ae], 0
+01de38ed 7513                           jne        0x1de3902
+01de38ef 488d0d6ac95802                 lea        rcx, [rip + 0x258c96a]
+01de38f6 e855d16ffe                     call       0x4e0a50 ; 
+01de38fb c6059900880201                 mov        byte ptr [rip + 0x2880099], 1
+01de3902 488b0d57c95802                 mov        rcx, qword ptr [rip + 0x258c957]
+01de3909 e8a2d36ffe                     call       0x4e0cb0 ; 
+01de390e 33d2                           xor        edx, edx
+01de3910 488bc8                         mov        rcx, rax
+01de3913 488bd8                         mov        rbx, rax
+01de3916 e895947dfe                     call       0x5bcdb0 ; AEAsAnimation:AEAsAnimationRoot:System.Void AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation:AEComposition:System.Void AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpAsync>d__16::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpChildAsync>d__25::System.IDisposable.Dispose()
+01de391b 488bc3                         mov        rax, rbx
+01de391e c7431000000000                 mov        dword ptr [rbx + 0x10], 0
+01de3925 4883c420                       add        rsp, 0x20
+01de3929 5b                             pop        rbx
+01de392a c3                             ret        

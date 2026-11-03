@@ -1,0 +1,642 @@
+{
+  "tool": "ctypes Win64 ABI; execute only the exact reviewed one-instruction+ret fragments on synthetic memory, never load original DLL",
+  "methods": 91,
+  "cases": 310,
+  "results": [
+    {
+      "signature": "System.Boolean InGame.Kernel.InGameBullet::IsSimpleCalc()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 181,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.InGameBulletBow::Setup(System.Single)",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 244,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "InGame.Kernel.BulletColorType InGame.Kernel.InGameBulletItem::ColorType()",
+      "status": "pass",
+      "nativeCases": 1,
+      "constant": 110
+    },
+    {
+      "signature": "System.Void InGame.Kernel.InGameCollisionBase::SetInvincibleTime(System.Single)",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 152,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.InGameCollisionBase::SetNodamagedTime(System.Single)",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 156,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.InGameEnemyMoveBase::SetSpeed(System.Single)",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 356,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.InGameEnemyMoveBase::SetLaserCanselFlag(System.Boolean)",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 468,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Boolean InGame.Kernel.InGameEnemyMoveBase::IsLaserCancel()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 468,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.InGameEnemyMoveBase::SetLookAtType(InGame.Kernel.Timeline.LookAtType)",
+      "status": "pass",
+      "nativeCases": 6,
+      "offset": 428,
+      "managedType": "InGame.Kernel.Timeline.LookAtType"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.InGameEnemyMoveBase::SetWakeAfterSecond(System.Single)",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 344,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.InGameEnemyMoveBase::SetSmoothRotateParam(System.Single)",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 472,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Single InGame.Kernel.InGameEnemyMoveBase::get_LocalDuration()",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 336,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Single InGame.Kernel.InGameEnemyMoveBase::get_WakeAfterSecond()",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 344,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Single InGame.Kernel.InGameEnemyMoveBase::get_CurrentSpeed()",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 356,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Boolean InGame.Kernel.InGameEnemyMoveBase::get_IsDirtyTransform()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 401,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Single InGame.Kernel.InGameEnemyMoveBase::get_SplineRate()",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 476,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.InGameManager::SetRushMode(System.Boolean)",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 83,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.InGameManager::SetNextStage(System.Boolean)",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 87,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Boolean InGame.Kernel.InGameManager::get_IsNextStage()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 87,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Int32 InGame.Kernel.InGameManager::get_StrongestCount()",
+      "status": "pass",
+      "nativeCases": 6,
+      "offset": 520,
+      "managedType": "System.Int32"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.InGameManager::SetPlayPhase(InGame.Kernel.InGameManager/Phase)",
+      "status": "pass",
+      "nativeCases": 6,
+      "offset": 604,
+      "managedType": "InGame.Kernel.InGameManager/Phase"
+    },
+    {
+      "signature": "InGame.Kernel.InGameManager/Phase InGame.Kernel.InGameManager::get_PlayPhase()",
+      "status": "pass",
+      "nativeCases": 6,
+      "offset": 604,
+      "managedType": "InGame.Kernel.InGameManager/Phase"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.InGameManager::SetNoDeadCount(System.Boolean)",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 616,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Single InGame.Kernel.InGameManager::get_GetDiPoint()",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 664,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.LinkedCamera::set_LinkRotate(System.Boolean)",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 440,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.LinkedCamera::set_LinkTranslate(System.Boolean)",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 441,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Boolean InGame.Kernel.LinkedCamera::get_LinkTranslate()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 441,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.LinkedCamera::set_LinkShift(System.Boolean)",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 442,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Boolean InGame.Kernel.LinkedCamera::get_LinkShift()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 442,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Single InGame.Kernel.SimpleMoveRocket::GetFirstSpeed()",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 232,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.SplineMover::SetEndRouteKeep(System.Boolean)",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 504,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Boolean InGame.Kernel.Timeline.EnemyEntryClip::IsClone()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 51,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Double InGame.Kernel.RouteEditor.RouteDataEdit::get_Distance()",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 120,
+      "managedType": "System.Double"
+    },
+    {
+      "signature": "System.Single InGame.Kernel.Player.PlayerControll::get_RemainRescueTime()",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 540,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Int32 InGame.Kernel.Player.PlayerControll::get_PlayerShotCount()",
+      "status": "pass",
+      "nativeCases": 6,
+      "offset": 556,
+      "managedType": "System.Int32"
+    },
+    {
+      "signature": "System.Int32 InGame.Kernel.Player.PlayerControll::get_PlayerExShotCount()",
+      "status": "pass",
+      "nativeCases": 6,
+      "offset": 560,
+      "managedType": "System.Int32"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.Player.superFighterCollision::SetRescueFlag(System.Boolean)",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 179,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Single InGame.Kernel.Player.WeaponCollisionBase::FirstDamage()",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 164,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Single InGame.Kernel.Player.WeaponCollisionBase::ContiniousDamage()",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 168,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Single InGame.Kernel.Player.WeaponLaserCollision::get_LDistance()",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 300,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.Enemy.EnemyLaserCollision::SetIrradiationTime(System.Single)",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 448,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.Enemy.EnemyLaserCollision::_setLaserState(InGame.Kernel.Enemy.EnemyLaserCollision/LaserState)",
+      "status": "pass",
+      "nativeCases": 6,
+      "offset": 476,
+      "managedType": "InGame.Kernel.Enemy.EnemyLaserCollision/LaserState"
+    },
+    {
+      "signature": "InGame.Kernel.Enemy.EnemyLaserCollision/LaserState InGame.Kernel.Enemy.EnemyLaserCollision::get_LState()",
+      "status": "pass",
+      "nativeCases": 6,
+      "offset": 476,
+      "managedType": "InGame.Kernel.Enemy.EnemyLaserCollision/LaserState"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.Enemy.EnemyLaserCollision2::_setLaserState(InGame.Kernel.Enemy.EnemyLaserCollision2/LaserState)",
+      "status": "pass",
+      "nativeCases": 6,
+      "offset": 420,
+      "managedType": "InGame.Kernel.Enemy.EnemyLaserCollision2/LaserState"
+    },
+    {
+      "signature": "InGame.Kernel.Enemy.EnemyLaserCollision2/LaserState InGame.Kernel.Enemy.EnemyLaserCollision2::get_LState()",
+      "status": "pass",
+      "nativeCases": 6,
+      "offset": 420,
+      "managedType": "InGame.Kernel.Enemy.EnemyLaserCollision2/LaserState"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.Enemy.EnemyMover::SetRangeFireLimit(System.Boolean)",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 656,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.Enemy.EnemyMover::SetInGamePlayArea(System.Boolean)",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 657,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.Enemy.EnemyMover::SetForceFire(System.Boolean)",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 658,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.Enemy.EnemyMover::SetAreaStart(System.Boolean)",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 659,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Boolean InGame.Kernel.Enemy.EnemyMover::get_IsRangeFireLimit()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 656,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Boolean InGame.Kernel.Enemy.EnemyMover::get_IsStayPlayArea()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 657,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Boolean InGame.Kernel.Enemy.EnemyMover::get__isEventStackPlay()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 660,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.Enemy.EnemyTurret::SetLocked(System.Boolean)",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 75,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Boolean InGame.Kernel.Enemy.EnemyTurret::get_IsLocked()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 75,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.Enemy.EnePartsGroup::SetDamageBlinkRate(System.Single)",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 164,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.Enemy.Ene_BosBase::SetDirectionScale(System.Single)",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 460,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.Enemy.Ene_BosBase::SetDirectionPause(System.Boolean)",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 436,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Boolean InGame.Kernel.Enemy.Ene_BosBase::get_IsDamageTurned()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 433,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Boolean InGame.Kernel.Enemy.Ene_BosBase::get_IsDeadEffectCalled()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 435,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Boolean InGame.Kernel.Enemy.Ene_BosBase::get_IsPlayerSideLeft()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 437,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Boolean InGame.Kernel.Enemy.Ene_BosBase::get_IsPlayerSideDown()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 438,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Boolean InGame.Kernel.Enemy.Ene_BosBase::get_IsPlayerSideCenter()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 439,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Single InGame.Kernel.Enemy.Ene_BosBase::get_BossAliveTime()",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 444,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Boolean InGame.Kernel.Enemy.Ene_BosBase::get_IsRepeatLaped()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 476,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Int32 InGame.Kernel.Enemy.Ene_BosBase::get__enemyDataCount()",
+      "status": "pass",
+      "nativeCases": 6,
+      "offset": 508,
+      "managedType": "System.Int32"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.Enemy.Ene_Ss01::SetOffsetAngle(System.Single)",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 528,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.Enemy.Ene_Ss01::SetTargetPlayer(System.Int32)",
+      "status": "pass",
+      "nativeCases": 6,
+      "offset": 544,
+      "managedType": "System.Int32"
+    },
+    {
+      "signature": "System.Boolean InGame.Kernel.Enemy.PawnEnemy::IsSimpleCalc()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 396,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.Enemy.PawnEnemy::SkipDestroyRate(System.Boolean)",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 318,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Boolean InGame.Kernel.Enemy.PawnEnemy::get_IsFirstFrame()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 316,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Boolean InGame.Kernel.Enemy.PawnEnemy::get_IsEventDone()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 321,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Single InGame.Kernel.Enemy.PawnEnemy::get_TargetY()",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 368,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Void InGame.Kernel.Enemy.PawnEnemy::SetTargetY(System.Single)",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 368,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Int32 InGame.Kernel.Enemy.PhysicsEnemy::ProgressPriority()",
+      "status": "pass",
+      "nativeCases": 1,
+      "constant": 301
+    },
+    {
+      "signature": "System.Boolean InGame.Kernel.Effect.InGameEffect::get_IsDone()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 171,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Void KANAI.HybridCollision.HybridCollisionManager::UpdateCameraTall(System.Single)",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 140,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Single KANAI.HybridCollision.HybridCollisionManager::ScreenZ()",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 140,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Boolean KANAI.HybridCollision.HybridCollisions::IsGround()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 54,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Boolean KANAI.HybridCollision.HybridCollisions::get_IsUseLocal()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 55,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Void KANAI.Popup.MessagePopupContent::SetTimer(System.Single)",
+      "status": "pass",
+      "nativeCases": 5,
+      "offset": 148,
+      "managedType": "System.Single"
+    },
+    {
+      "signature": "System.Boolean KANAI.UI.ButtonBase::get_IsValidShortClick()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 264,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Void KANAI.UI.ButtonBase::set_IsValidShortClick(System.Boolean)",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 264,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Boolean KANAI.UI.ButtonBase::get_IsValidLongClick()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 265,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Void KANAI.UI.ButtonBase::set_IsValidLongClick(System.Boolean)",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 265,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Boolean KANAI.UI.ButtonBase::get_IsInvalidButton()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 266,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Void KANAI.UI.ButtonBase::set_IsInvalidButton(System.Boolean)",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 266,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Boolean KANAI.UI.SimpleButtonBase::get_IsInvalidButton()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 276,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Void KANAI.UI.SimpleButtonBase::set_IsInvalidButton(System.Boolean)",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 276,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.String KANAI.UI.UITextMeshPro::get_localizeKey()",
+      "status": "pass",
+      "nativeCases": 3,
+      "offset": 2016,
+      "managedType": "System.String"
+    },
+    {
+      "signature": "System.Boolean OutGame.Starter.TutorialPlayModel::get_IsComplete()",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 209,
+      "managedType": "System.Boolean"
+    },
+    {
+      "signature": "System.Void OutGame.UI.StageResultPopupContent::SetWaitEnd(System.Boolean)",
+      "status": "pass",
+      "nativeCases": 2,
+      "offset": 297,
+      "managedType": "System.Boolean"
+    }
+  ]
+}

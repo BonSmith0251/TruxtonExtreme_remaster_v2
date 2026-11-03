@@ -1,0 +1,83 @@
+{"assembly": "KANAI.Kernel", "file": "ApplicationUtility.cs", "originalType": "KANAI.Kernel.ApplicationUtility", "rva": 31340848, "length": 463, "signature": "System.Void KANAI.Kernel.ApplicationUtility::.cctor()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01de3930 4883ec28                       sub        rsp, 0x28
+01de3934 803d6f00880200                 cmp        byte ptr [rip + 0x288006f], 0
+01de393b 751f                           jne        0x1de395c
+01de393d 488d0db41b5a02                 lea        rcx, [rip + 0x25a1bb4]
+01de3944 e807d16ffe                     call       0x4e0a50 ; 
+01de3949 488d0d80195a02                 lea        rcx, [rip + 0x25a1980]
+01de3950 e8fbd06ffe                     call       0x4e0a50 ; 
+01de3955 c6054e00880201                 mov        byte ptr [rip + 0x288004e], 1
+01de395c 488b059d458902                 mov        rax, qword ptr [rip + 0x289459d]
+01de3963 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+01de396a 488b05871b5a02                 mov        rax, qword ptr [rip + 0x25a1b87]
+01de3971 488b11                         mov        rdx, qword ptr [rcx]
+01de3974 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+01de397b 488911                         mov        qword ptr [rcx], rdx
+01de397e 488b0d731b5a02                 mov        rcx, qword ptr [rip + 0x25a1b73]
+01de3985 488b89b8000000                 mov        rcx, qword ptr [rcx + 0xb8]
+01de398c e8efc36ffe                     call       0x4dfd80 ; 
+01de3991 488b05601b5a02                 mov        rax, qword ptr [rip + 0x25a1b60]
+01de3998 33d2                           xor        edx, edx
+01de399a 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+01de39a1 48c7410800000000               mov        qword ptr [rcx + 8], 0
+01de39a9 488b05481b5a02                 mov        rax, qword ptr [rip + 0x25a1b48]
+01de39b0 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+01de39b7 4883c108                       add        rcx, 8
+01de39bb e8c0c36ffe                     call       0x4dfd80 ; 
+01de39c0 488b05311b5a02                 mov        rax, qword ptr [rip + 0x25a1b31]
+01de39c7 33d2                           xor        edx, edx
+01de39c9 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+01de39d0 48c7411000000000               mov        qword ptr [rcx + 0x10], 0
+01de39d8 488b05191b5a02                 mov        rax, qword ptr [rip + 0x25a1b19]
+01de39df 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+01de39e6 4883c110                       add        rcx, 0x10
+01de39ea e891c36ffe                     call       0x4dfd80 ; 
+01de39ef 488b05021b5a02                 mov        rax, qword ptr [rip + 0x25a1b02]
+01de39f6 33d2                           xor        edx, edx
+01de39f8 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+01de39ff 48c7411800000000               mov        qword ptr [rcx + 0x18], 0
+01de3a07 488b05ea1a5a02                 mov        rax, qword ptr [rip + 0x25a1aea]
+01de3a0e 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+01de3a15 4883c118                       add        rcx, 0x18
+01de3a19 e862c36ffe                     call       0x4dfd80 ; 
+01de3a1e 488b05d31a5a02                 mov        rax, qword ptr [rip + 0x25a1ad3]
+01de3a25 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+01de3a2c c6412000                       mov        byte ptr [rcx + 0x20], 0
+01de3a30 488b05c11a5a02                 mov        rax, qword ptr [rip + 0x25a1ac1]
+01de3a37 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+01de3a3e c6412100                       mov        byte ptr [rcx + 0x21], 0
+01de3a42 803d168a870200                 cmp        byte ptr [rip + 0x2878a16], 0
+01de3a49 7513                           jne        0x1de3a5e
+01de3a4b 488d0d0ed65d02                 lea        rcx, [rip + 0x25dd60e]
+01de3a52 e8f9cf6ffe                     call       0x4e0a50 ; 
+01de3a57 c605018a870201                 mov        byte ptr [rip + 0x2878a01], 1
+01de3a5e 488b05fbd55d02                 mov        rax, qword ptr [rip + 0x25dd5fb]
+01de3a65 488b90b8000000                 mov        rdx, qword ptr [rax + 0xb8]
+01de3a6c 488b05851a5a02                 mov        rax, qword ptr [rip + 0x25a1a85]
+01de3a73 f30f104204                     movss      xmm0, dword ptr [rdx + 4]
+01de3a78 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+01de3a7f 8b02                           mov        eax, dword ptr [rdx]
+01de3a81 894124                         mov        dword ptr [rcx + 0x24], eax
+01de3a84 f30f114128                     movss      dword ptr [rcx + 0x28], xmm0
+01de3a89 488b05681a5a02                 mov        rax, qword ptr [rip + 0x25a1a68]
+01de3a90 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+01de3a97 c7412c8988883c                 mov        dword ptr [rcx + 0x2c], 0x3c888889
+01de3a9e 488b05531a5a02                 mov        rax, qword ptr [rip + 0x25a1a53]
+01de3aa5 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+01de3aac c741308988083d                 mov        dword ptr [rcx + 0x30], 0x3d088889
+01de3ab3 488b0d16185a02                 mov        rcx, qword ptr [rip + 0x25a1816]
+01de3aba 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de3ac1 7505                           jne        0x1de3ac8
+01de3ac3 e8c8d26ffe                     call       0x4e0d90 ; 
+01de3ac8 33c9                           xor        ecx, ecx
+01de3aca e831a11e01                     call       0x2fcdc00 ; UnityEngine.CoreModule:Application:System.String UnityEngine.Application::get_persistentDataPath()
+01de3acf 488b0d221a5a02                 mov        rcx, qword ptr [rip + 0x25a1a22]
+01de3ad6 488b91b8000000                 mov        rdx, qword ptr [rcx + 0xb8]
+01de3add 48894238                       mov        qword ptr [rdx + 0x38], rax
+01de3ae1 488bd0                         mov        rdx, rax
+01de3ae4 488b0d0d1a5a02                 mov        rcx, qword ptr [rip + 0x25a1a0d]
+01de3aeb 488b89b8000000                 mov        rcx, qword ptr [rcx + 0xb8]
+01de3af2 4883c138                       add        rcx, 0x38
+01de3af6 4883c428                       add        rsp, 0x28
+01de3afa e981c26ffe                     jmp        0x4dfd80 ; 

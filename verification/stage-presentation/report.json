@@ -1,0 +1,1156 @@
+{
+    "utc": "2026-11-01T17:29:37.5950065Z",
+    "unity": "2023.2.22f1",
+    "graphics": "NVIDIA RTX PRO 5000 Blackwell",
+    "pipeline": "Round1 URP",
+    "scope": "Edit-mode evaluation of each original BGxxStage timeline through StagePresentation (same Seek/Evaluate path as Play). Background timelines only; InGame.Kernel enemy/event/BGM tracks are not run. Default project pipeline; custom TXE shaders remain approximated.",
+    "passed": true,
+    "stages": [
+        {
+            "scene": "Assets/Reconstruction/StageInspection/StageInspection_BG01.unity",
+            "stage": "BG01Stage",
+            "duration": 541.0,
+            "exceptions": 0,
+            "errors": 0,
+            "warnings": 0,
+            "cameraTravel": 16004.9990234375,
+            "driven": [
+                "BG01 (BG01_bg)",
+                "BG01ge (BG01_ge)"
+            ],
+            "skipped": [
+                "enemys (BG01Main): AreaEntryTrack, BGSlideRangeTrack, BGMEntryTrack, TLEntryTrack, EventEntryTrack"
+            ],
+            "rootTracksOmitted": [],
+            "rendererFallbacks": [
+                "Camera: renderer 1 -> default (Round1 URP)"
+            ],
+            "messages": [],
+            "frames": [
+                {
+                    "time": 0.0,
+                    "camera": "BG01Stage/BG01/camera_bg01/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 400.0,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.6293203234672546,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.77714604139328
+                    },
+                    "activeRenderers": 56,
+                    "image": "BG01.png#0"
+                },
+                {
+                    "time": 5.0,
+                    "camera": "BG01Stage/BG01/camera_bg01/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 286.88983154296877,
+                        "z": 194.2295684814453
+                    },
+                    "rotation": {
+                        "x": 0.6388609409332275,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7693221569061279
+                    },
+                    "activeRenderers": 56,
+                    "image": "BG01.png#1"
+                },
+                {
+                    "time": 30.0,
+                    "camera": "BG01Stage/BG01/camera_bg01/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 1165.91552734375
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 56,
+                    "image": "BG01.png#2"
+                },
+                {
+                    "time": 135.25,
+                    "camera": "BG01Stage/BG01/camera_bg01/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 5258.970703125
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 19,
+                    "image": "BG01.png#3"
+                },
+                {
+                    "time": 270.5,
+                    "camera": "BG01Stage/BG01/camera_bg01/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 10518.0205078125
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 64,
+                    "image": "BG01.png#4"
+                },
+                {
+                    "time": 405.75,
+                    "camera": "BG01Stage/BG01/camera_bg01/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 15807.734375
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 50,
+                    "image": "BG01.png#5"
+                },
+                {
+                    "time": 539.0,
+                    "camera": "BG01Stage/BG01/camera_bg01/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 16000.0
+                    },
+                    "rotation": {
+                        "x": 0.6284578442573547,
+                        "y": 0.03635556995868683,
+                        "z": 0.037647299468517306,
+                        "w": 0.7760810256004334
+                    },
+                    "activeRenderers": 50,
+                    "image": "BG01.png#6"
+                }
+            ],
+            "passed": true
+        },
+        {
+            "scene": "Assets/Reconstruction/StageInspection/StageInspection_BG02.unity",
+            "stage": "BG02Stage",
+            "duration": 599.999999999999,
+            "exceptions": 0,
+            "errors": 0,
+            "warnings": 0,
+            "cameraTravel": 11303.0966796875,
+            "driven": [
+                "BG02 (BG02_bg)"
+            ],
+            "skipped": [
+                "mainTL (BG02Main): AreaEntryTrack, BGMEntryTrack, TLEntryTrack, EventEntryTrack",
+                "BG02geTL (BG02_ge): EnemyEntryTrack"
+            ],
+            "rootTracksOmitted": [],
+            "rendererFallbacks": [
+                "Camera: renderer 1 -> default (Round1 URP)"
+            ],
+            "messages": [],
+            "frames": [
+                {
+                    "time": 0.0,
+                    "camera": "BG02Stage/BG02/camera_bg02/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 210.0,
+                        "z": 1000.0
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 379,
+                    "image": "BG02.png#0"
+                },
+                {
+                    "time": 5.0,
+                    "camera": "BG02Stage/BG02/camera_bg02/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 210.0,
+                        "z": 1166.6666259765625
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 379,
+                    "image": "BG02.png#1"
+                },
+                {
+                    "time": 30.0,
+                    "camera": "BG02Stage/BG02/camera_bg02/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 210.0,
+                        "z": 2000.0
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 379,
+                    "image": "BG02.png#2"
+                },
+                {
+                    "time": 149.99999999999975,
+                    "camera": "BG02Stage/BG02/camera_bg02/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": -813.9837646484375,
+                        "z": 6057.908203125
+                    },
+                    "rotation": {
+                        "x": 0.6461238861083984,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.763232409954071
+                    },
+                    "activeRenderers": 1097,
+                    "image": "BG02.png#3"
+                },
+                {
+                    "time": 299.9999999999995,
+                    "camera": "BG02Stage/BG02/camera_bg02/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": -1400.0,
+                        "z": 9000.0
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 1833,
+                    "image": "BG02.png#4"
+                },
+                {
+                    "time": 449.9999999999992,
+                    "camera": "BG02Stage/BG02/camera_bg02/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": -2390.0,
+                        "z": 11625.0
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 100,
+                    "image": "BG02.png#5"
+                },
+                {
+                    "time": 597.999999999999,
+                    "camera": "BG02Stage/BG02/camera_bg02/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": -2390.0,
+                        "z": 12000.0
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 100,
+                    "image": "BG02.png#6"
+                }
+            ],
+            "passed": true
+        },
+        {
+            "scene": "Assets/Reconstruction/StageInspection/StageInspection_BG03.unity",
+            "stage": "BG03Stage",
+            "duration": 539.999999999999,
+            "exceptions": 0,
+            "errors": 0,
+            "warnings": 0,
+            "cameraTravel": 9103.1220703125,
+            "driven": [
+                "BG03 (BG03_bg)"
+            ],
+            "skipped": [
+                "mainTL (BG03Main): AreaEntryTrack, BGSlideRangeTrack, BGMEntryTrack, TLEntryTrack, EventEntryTrack",
+                "BG03geTL (BG03_ge): EnemyEntryTrack"
+            ],
+            "rootTracksOmitted": [],
+            "rendererFallbacks": [
+                "Camera: renderer 1 -> default (Round1 URP)"
+            ],
+            "messages": [],
+            "frames": [
+                {
+                    "time": 0.0,
+                    "camera": "BG03Stage/BG03/camera_bg03/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 315.0,
+                        "z": 80.0
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 233,
+                    "image": "BG03.png#0"
+                },
+                {
+                    "time": 5.0,
+                    "camera": "BG03Stage/BG03/camera_bg03/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 315.0,
+                        "z": 242.15280151367188
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 233,
+                    "image": "BG03.png#1"
+                },
+                {
+                    "time": 30.0,
+                    "camera": "BG03Stage/BG03/camera_bg03/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 315.0,
+                        "z": 1105.0
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 233,
+                    "image": "BG03.png#2"
+                },
+                {
+                    "time": 134.99999999999975,
+                    "camera": "BG03Stage/BG03/camera_bg03/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 315.0,
+                        "z": 3331.72705078125
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 233,
+                    "image": "BG03.png#3"
+                },
+                {
+                    "time": 269.9999999999995,
+                    "camera": "BG03Stage/BG03/camera_bg03/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 415.0,
+                        "z": 5980.0
+                    },
+                    "rotation": {
+                        "x": -0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": -0.7489557862281799
+                    },
+                    "activeRenderers": 421,
+                    "image": "BG03.png#4"
+                },
+                {
+                    "time": 404.9999999999992,
+                    "camera": "BG03Stage/BG03/camera_bg03/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 516.4180297851563,
+                        "z": 8437.7021484375
+                    },
+                    "rotation": {
+                        "x": -0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": -0.7489557862281799
+                    },
+                    "activeRenderers": 77,
+                    "image": "BG03.png#5"
+                },
+                {
+                    "time": 537.999999999999,
+                    "camera": "BG03Stage/BG03/camera_bg03/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 553.379638671875,
+                        "z": 9180.0
+                    },
+                    "rotation": {
+                        "x": -0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": -0.7489557862281799
+                    },
+                    "activeRenderers": 77,
+                    "image": "BG03.png#6"
+                }
+            ],
+            "passed": true
+        },
+        {
+            "scene": "Assets/Reconstruction/StageInspection/StageInspection_BG04.unity",
+            "stage": "BG04Stage",
+            "duration": 1799.9999999999989,
+            "exceptions": 0,
+            "errors": 0,
+            "warnings": 0,
+            "cameraTravel": 10190.603515625,
+            "driven": [
+                "BG04 (BG04_bg)"
+            ],
+            "skipped": [
+                "BG04geTL (BG04_ge): EnemyEntryTrack",
+                "mainTL (BG04Main): AreaEntryTrack, BGMEntryTrack, TLEntryTrack, EventEntryTrack"
+            ],
+            "rootTracksOmitted": [],
+            "rendererFallbacks": [
+                "Camera: renderer 1 -> default (Round1 URP)"
+            ],
+            "messages": [],
+            "frames": [
+                {
+                    "time": 0.0,
+                    "camera": "BG04Stage/BG04/camera_bg04/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 380.0,
+                        "z": 970.0
+                    },
+                    "rotation": {
+                        "x": -0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": -0.7489557862281799
+                    },
+                    "activeRenderers": 123,
+                    "image": "BG04.png#0"
+                },
+                {
+                    "time": 5.0,
+                    "camera": "BG04Stage/BG04/camera_bg04/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 382.0738830566406,
+                        "z": 1127.196044921875
+                    },
+                    "rotation": {
+                        "x": -0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": -0.7489557862281799
+                    },
+                    "activeRenderers": 123,
+                    "image": "BG04.png#1"
+                },
+                {
+                    "time": 30.0,
+                    "camera": "BG04Stage/BG04/camera_bg04/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 386.63250732421877,
+                        "z": 2034.0301513671875
+                    },
+                    "rotation": {
+                        "x": -0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": -0.7489557862281799
+                    },
+                    "activeRenderers": 123,
+                    "image": "BG04.png#2"
+                },
+                {
+                    "time": 449.9999999999997,
+                    "camera": "BG04Stage/BG04/camera_bg04/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": -4400.0,
+                        "z": 7470.0
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 450,
+                    "image": "BG04.png#3"
+                },
+                {
+                    "time": 899.9999999999994,
+                    "camera": "BG04Stage/BG04/camera_bg04/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": -4400.0,
+                        "z": 9970.0
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 450,
+                    "image": "BG04.png#4"
+                },
+                {
+                    "time": 1349.999999999999,
+                    "camera": "BG04Stage/BG04/camera_bg04/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": -4400.0,
+                        "z": 9970.0
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 450,
+                    "image": "BG04.png#5"
+                },
+                {
+                    "time": 1797.9999999999989,
+                    "camera": "BG04Stage/BG04/camera_bg04/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": -4400.0,
+                        "z": 9970.0
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 450,
+                    "image": "BG04.png#6"
+                }
+            ],
+            "passed": true
+        },
+        {
+            "scene": "Assets/Reconstruction/StageInspection/StageInspection_BG05.unity",
+            "stage": "BG05Stage",
+            "duration": 1799.9999999999989,
+            "exceptions": 0,
+            "errors": 0,
+            "warnings": 0,
+            "cameraTravel": 8900.005859375,
+            "driven": [
+                "BG05 (BG05_bg)"
+            ],
+            "skipped": [
+                "BG05geTL (BG05_ge): EnemyEntryTrack",
+                "mainTL (BG05Main): AreaEntryTrack, BGMEntryTrack, TLEntryTrack, EventEntryTrack"
+            ],
+            "rootTracksOmitted": [
+                "BGSlideRangeTrack"
+            ],
+            "rendererFallbacks": [
+                "Camera: renderer 1 -> default (Round1 URP)"
+            ],
+            "messages": [],
+            "frames": [
+                {
+                    "time": 0.0,
+                    "camera": "BG05Stage/BG05/camera_bg05/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 475.0,
+                        "z": 1100.0
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 825,
+                    "image": "BG05.png#0"
+                },
+                {
+                    "time": 5.0,
+                    "camera": "BG05Stage/BG05/camera_bg05/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 475.0,
+                        "z": 1261.197998046875
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 825,
+                    "image": "BG05.png#1"
+                },
+                {
+                    "time": 30.0,
+                    "camera": "BG05Stage/BG05/camera_bg05/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 475.0,
+                        "z": 2106.25
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 825,
+                    "image": "BG05.png#2"
+                },
+                {
+                    "time": 449.9999999999997,
+                    "camera": "BG05Stage/BG05/camera_bg05/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 465.0,
+                        "z": 9625.0
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 148,
+                    "image": "BG05.png#3"
+                },
+                {
+                    "time": 899.9999999999994,
+                    "camera": "BG05Stage/BG05/camera_bg05/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 465.0,
+                        "z": 10000.0
+                    },
+                    "rotation": {
+                        "x": 0.6284578442573547,
+                        "y": 0.03635556995868683,
+                        "z": 0.037647299468517306,
+                        "w": 0.7760810256004334
+                    },
+                    "activeRenderers": 148,
+                    "image": "BG05.png#4"
+                },
+                {
+                    "time": 1349.999999999999,
+                    "camera": "BG05Stage/BG05/camera_bg05/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 465.0,
+                        "z": 10000.0
+                    },
+                    "rotation": {
+                        "x": 0.6284578442573547,
+                        "y": 0.03635556995868683,
+                        "z": 0.037647299468517306,
+                        "w": 0.7760810256004334
+                    },
+                    "activeRenderers": 148,
+                    "image": "BG05.png#5"
+                },
+                {
+                    "time": 1797.9999999999989,
+                    "camera": "BG05Stage/BG05/camera_bg05/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 465.0,
+                        "z": 10000.0
+                    },
+                    "rotation": {
+                        "x": 0.6284578442573547,
+                        "y": 0.03635556995868683,
+                        "z": 0.037647299468517306,
+                        "w": 0.7760810256004334
+                    },
+                    "activeRenderers": 148,
+                    "image": "BG05.png#6"
+                }
+            ],
+            "passed": true
+        },
+        {
+            "scene": "Assets/Reconstruction/StageInspection/StageInspection_BG06.unity",
+            "stage": "BG06Stage",
+            "duration": 1799.9999999999989,
+            "exceptions": 0,
+            "errors": 0,
+            "warnings": 0,
+            "cameraTravel": 7999.0,
+            "driven": [
+                "BG06 (BG06_bg)"
+            ],
+            "skipped": [
+                "mainTL (BG06Main): AreaEntryTrack, BGSlideRangeTrack, BGMEntryTrack, TLEntryTrack, EventEntryTrack",
+                "BG06geTL (BG06_ge): EnemyEntryTrack"
+            ],
+            "rootTracksOmitted": [],
+            "rendererFallbacks": [
+                "Camera: renderer 1 -> default (Round1 URP)"
+            ],
+            "messages": [],
+            "frames": [
+                {
+                    "time": 0.0,
+                    "camera": "BG06Stage/BG06/camera_bg06/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 475.0,
+                        "z": 1.0
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 449,
+                    "image": "BG06.png#0"
+                },
+                {
+                    "time": 5.0,
+                    "camera": "BG06Stage/BG06/camera_bg06/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 475.0,
+                        "z": 84.24681854248047
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 449,
+                    "image": "BG06.png#1"
+                },
+                {
+                    "time": 30.0,
+                    "camera": "BG06Stage/BG06/camera_bg06/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 475.0,
+                        "z": 500.4375
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 449,
+                    "image": "BG06.png#2"
+                },
+                {
+                    "time": 449.9999999999997,
+                    "camera": "BG06Stage/BG06/camera_bg06/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 475.0,
+                        "z": 7625.0
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 638,
+                    "image": "BG06.png#3"
+                },
+                {
+                    "time": 899.9999999999994,
+                    "camera": "BG06Stage/BG06/camera_bg06/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 475.0,
+                        "z": 8000.0
+                    },
+                    "rotation": {
+                        "x": 0.6284578442573547,
+                        "y": 0.03635556995868683,
+                        "z": 0.037647299468517306,
+                        "w": 0.7760810256004334
+                    },
+                    "activeRenderers": 251,
+                    "image": "BG06.png#4"
+                },
+                {
+                    "time": 1349.999999999999,
+                    "camera": "BG06Stage/BG06/camera_bg06/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 475.0,
+                        "z": 8000.0
+                    },
+                    "rotation": {
+                        "x": 0.6284578442573547,
+                        "y": 0.03635556995868683,
+                        "z": 0.037647299468517306,
+                        "w": 0.7760810256004334
+                    },
+                    "activeRenderers": 251,
+                    "image": "BG06.png#5"
+                },
+                {
+                    "time": 1797.9999999999989,
+                    "camera": "BG06Stage/BG06/camera_bg06/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 475.0,
+                        "z": 8000.0
+                    },
+                    "rotation": {
+                        "x": 0.6284578442573547,
+                        "y": 0.03635556995868683,
+                        "z": 0.037647299468517306,
+                        "w": 0.7760810256004334
+                    },
+                    "activeRenderers": 251,
+                    "image": "BG06.png#6"
+                }
+            ],
+            "passed": true
+        },
+        {
+            "scene": "Assets/Reconstruction/StageInspection/StageInspection_BG07.unity",
+            "stage": "BG07Stage",
+            "duration": 1799.9999999999989,
+            "exceptions": 0,
+            "errors": 0,
+            "warnings": 0,
+            "cameraTravel": 9904.5439453125,
+            "driven": [
+                "BG07 (BG07_bg)"
+            ],
+            "skipped": [
+                "mainTL (BG07Main): AreaEntryTrack, BGSlideRangeTrack, BGMEntryTrack, TLEntryTrack, EventEntryTrack",
+                "BG07geTL (BG07_ge): EnemyEntryTrack"
+            ],
+            "rootTracksOmitted": [],
+            "rendererFallbacks": [
+                "Camera: renderer 1 -> default (Round1 URP)"
+            ],
+            "messages": [],
+            "frames": [
+                {
+                    "time": 0.0,
+                    "camera": "BG07Stage/BG07/camera_bg07/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 315.0,
+                        "z": 80.0
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 324,
+                    "image": "BG07.png#0"
+                },
+                {
+                    "time": 5.0,
+                    "camera": "BG07Stage/BG07/camera_bg07/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 315.0,
+                        "z": 239.0909423828125
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 324,
+                    "image": "BG07.png#1"
+                },
+                {
+                    "time": 30.0,
+                    "camera": "BG07Stage/BG07/camera_bg07/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 315.0,
+                        "z": 1034.54541015625
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 324,
+                    "image": "BG07.png#2"
+                },
+                {
+                    "time": 449.9999999999997,
+                    "camera": "BG07Stage/BG07/camera_bg07/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 615.0,
+                        "z": 9980.0
+                    },
+                    "rotation": {
+                        "x": 0.6087613701820374,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7933534383773804
+                    },
+                    "activeRenderers": 187,
+                    "image": "BG07.png#3"
+                },
+                {
+                    "time": 899.9999999999994,
+                    "camera": "BG07Stage/BG07/camera_bg07/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 615.0,
+                        "z": 9980.0
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 187,
+                    "image": "BG07.png#4"
+                },
+                {
+                    "time": 1349.999999999999,
+                    "camera": "BG07Stage/BG07/camera_bg07/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 615.0,
+                        "z": 9980.0
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 187,
+                    "image": "BG07.png#5"
+                },
+                {
+                    "time": 1797.9999999999989,
+                    "camera": "BG07Stage/BG07/camera_bg07/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 615.0,
+                        "z": 9980.0
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 187,
+                    "image": "BG07.png#6"
+                }
+            ],
+            "passed": true
+        },
+        {
+            "scene": "Assets/Reconstruction/StageInspection/StageInspection_BG08.unity",
+            "stage": "BG08Stage",
+            "duration": 1799.9999999999989,
+            "exceptions": 0,
+            "errors": 0,
+            "warnings": 0,
+            "cameraTravel": 29913.63671875,
+            "driven": [
+                "BG08 (BG08_bg)"
+            ],
+            "skipped": [
+                "mainTL (BG08Main): AreaEntryTrack, BGSlideRangeTrack, BGMEntryTrack, TLEntryTrack, EventEntryTrack",
+                "BG08geTL (BG08_ge): EnemyEntryTrack"
+            ],
+            "rootTracksOmitted": [],
+            "rendererFallbacks": [
+                "Camera: renderer 1 -> default (Round1 URP)"
+            ],
+            "messages": [],
+            "frames": [
+                {
+                    "time": 0.0,
+                    "camera": "BG08Stage/BG08/camera_bg08/Rail/Camera",
+                    "position": {
+                        "x": -4100.0,
+                        "y": 3400.0,
+                        "z": -5400.0
+                    },
+                    "rotation": {
+                        "x": -0.6617118120193481,
+                        "y": -0.039197273552417758,
+                        "z": 0.034678809344768527,
+                        "w": -0.7479293346405029
+                    },
+                    "activeRenderers": 359,
+                    "image": "BG08.png#0"
+                },
+                {
+                    "time": 5.0,
+                    "camera": "BG08Stage/BG08/camera_bg08/Rail/Camera",
+                    "position": {
+                        "x": -361.640625,
+                        "y": 3831.470458984375,
+                        "z": 1056.3310546875
+                    },
+                    "rotation": {
+                        "x": -0.6201978921890259,
+                        "y": 0.07682332396507263,
+                        "z": 0.07234504073858261,
+                        "w": -0.7773153185844421
+                    },
+                    "activeRenderers": 359,
+                    "image": "BG08.png#1"
+                },
+                {
+                    "time": 30.0,
+                    "camera": "BG08Stage/BG08/camera_bg08/Rail/Camera",
+                    "position": {
+                        "x": -202.2308349609375,
+                        "y": -18182.787109375,
+                        "z": 14942.4755859375
+                    },
+                    "rotation": {
+                        "x": -0.030765516683459283,
+                        "y": 0.6873990893363953,
+                        "z": 0.7200954556465149,
+                        "w": 0.08943496644496918
+                    },
+                    "activeRenderers": 359,
+                    "image": "BG08.png#2"
+                },
+                {
+                    "time": 449.9999999999997,
+                    "camera": "BG08Stage/BG08/camera_bg08/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 11500.0
+                    },
+                    "rotation": {
+                        "x": 0.662619948387146,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.7489557862281799
+                    },
+                    "activeRenderers": 77,
+                    "image": "BG08.png#3"
+                },
+                {
+                    "time": 899.9999999999994,
+                    "camera": "BG08Stage/BG08/camera_bg08/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": -1050.0008544921875,
+                        "z": 12299.9990234375
+                    },
+                    "rotation": {
+                        "x": 0.5672925114631653,
+                        "y": 0.21812422573566438,
+                        "z": 0.20699217915534974,
+                        "w": 0.7666520476341248
+                    },
+                    "activeRenderers": 3,
+                    "image": "BG08.png#4"
+                },
+                {
+                    "time": 1349.999999999999,
+                    "camera": "BG08Stage/BG08/camera_bg08/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": -1050.0008544921875,
+                        "z": 12299.9990234375
+                    },
+                    "rotation": {
+                        "x": 0.5672925114631653,
+                        "y": 0.21812422573566438,
+                        "z": 0.20699217915534974,
+                        "w": 0.7666520476341248
+                    },
+                    "activeRenderers": 3,
+                    "image": "BG08.png#5"
+                },
+                {
+                    "time": 1797.9999999999989,
+                    "camera": "BG08Stage/BG08/camera_bg08/Rail/Camera",
+                    "position": {
+                        "x": 0.0,
+                        "y": -1050.0008544921875,
+                        "z": 12299.9990234375
+                    },
+                    "rotation": {
+                        "x": 0.5672925114631653,
+                        "y": 0.21812422573566438,
+                        "z": 0.20699217915534974,
+                        "w": 0.7666520476341248
+                    },
+                    "activeRenderers": 3,
+                    "image": "BG08.png#6"
+                }
+            ],
+            "passed": true
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{"assembly": "KANAI.Kernel", "file": "ApplicationUtility.cs", "originalType": "KANAI.Kernel.ApplicationUtility", "rva": 31339376, "length": 64, "signature": "System.Void KANAI.Kernel.ApplicationUtility::Quit()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01de3370 4883ec28                       sub        rsp, 0x28
+01de3374 803d1c06880200                 cmp        byte ptr [rip + 0x288061c], 0
+01de337b 7513                           jne        0x1de3390
+01de337d 488d0d4c1f5a02                 lea        rcx, [rip + 0x25a1f4c]
+01de3384 e8c7d66ffe                     call       0x4e0a50 ; 
+01de3389 c6050706880201                 mov        byte ptr [rip + 0x2880607], 1
+01de3390 488b0d391f5a02                 mov        rcx, qword ptr [rip + 0x25a1f39]
+01de3397 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de339e 7505                           jne        0x1de33a5
+01de33a0 e8ebd96ffe                     call       0x4e0d90 ; 
+01de33a5 33c9                           xor        ecx, ecx
+01de33a7 4883c428                       add        rsp, 0x28
+01de33ab e9d0a21e01                     jmp        0x2fcd680 ; UnityEngine.CoreModule:Application:System.Void UnityEngine.Application::Quit()

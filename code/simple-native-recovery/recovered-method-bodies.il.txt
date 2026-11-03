@@ -1,0 +1,676 @@
+Native-backed managed method bodies. Review fragments; not a standalone assembly.
+All method/type/field identities are retained in patched DLLs. Source transformation is patch_simple_native.ps1.
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1cce420; bytes 0fb681b5000000c3
+// System.Boolean InGame.Kernel.InGameBullet::IsSimpleCalc()
+  ldarg.0 
+  ldfld System.Boolean InGame.Kernel.InGameBullet::_isSimpleCalc
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1cc9d20; bytes f30f1189f4000000c3
+// System.Void InGame.Kernel.InGameBulletBow::Setup(System.Single)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Single InGame.Kernel.InGameBulletBow::_fadeInTime
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1cc9ee0; bytes b86e000000c3
+// InGame.Kernel.BulletColorType InGame.Kernel.InGameBulletItem::ColorType()
+  ldc.i4 110
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1ccf560; bytes f30f118998000000c3
+// System.Void InGame.Kernel.InGameCollisionBase::SetInvincibleTime(System.Single)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Single InGame.Kernel.InGameCollisionBase::_invincibleTime
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1ccf570; bytes f30f11899c000000c3
+// System.Void InGame.Kernel.InGameCollisionBase::SetNodamagedTime(System.Single)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Single InGame.Kernel.InGameCollisionBase::_nodamagedTime
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1cdb5b0; bytes f30f118964010000c3
+// System.Void InGame.Kernel.InGameEnemyMoveBase::SetSpeed(System.Single)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Single InGame.Kernel.InGameEnemyMoveBase::_currentSpeed
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1cdaf00; bytes 8891d4010000c3
+// System.Void InGame.Kernel.InGameEnemyMoveBase::SetLaserCanselFlag(System.Boolean)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Boolean InGame.Kernel.InGameEnemyMoveBase::_laserCancelFlag
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1cdaa00; bytes 0fb681d4010000c3
+// System.Boolean InGame.Kernel.InGameEnemyMoveBase::IsLaserCancel()
+  ldarg.0 
+  ldfld System.Boolean InGame.Kernel.InGameEnemyMoveBase::_laserCancelFlag
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1cdaf10; bytes 8991ac010000c3
+// System.Void InGame.Kernel.InGameEnemyMoveBase::SetLookAtType(InGame.Kernel.Timeline.LookAtType)
+  ldarg.0 
+  ldarg.1 
+  stfld InGame.Kernel.Timeline.LookAtType InGame.Kernel.InGameEnemyMoveBase::_lookAtType
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1cdb780; bytes f30f118958010000c3
+// System.Void InGame.Kernel.InGameEnemyMoveBase::SetWakeAfterSecond(System.Single)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Single InGame.Kernel.InGameEnemyMoveBase::_wakeAfterSecond
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1cdb590; bytes f30f1189d8010000c3
+// System.Void InGame.Kernel.InGameEnemyMoveBase::SetSmoothRotateParam(System.Single)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Single InGame.Kernel.InGameEnemyMoveBase::_smoothRotateValue
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1cdd530; bytes f30f108150010000c3
+// System.Single InGame.Kernel.InGameEnemyMoveBase::get_LocalDuration()
+  ldarg.0 
+  ldfld System.Single InGame.Kernel.InGameEnemyMoveBase::_localDuration
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1cdd5f0; bytes f30f108158010000c3
+// System.Single InGame.Kernel.InGameEnemyMoveBase::get_WakeAfterSecond()
+  ldarg.0 
+  ldfld System.Single InGame.Kernel.InGameEnemyMoveBase::_wakeAfterSecond
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1cdd4b0; bytes f30f108164010000c3
+// System.Single InGame.Kernel.InGameEnemyMoveBase::get_CurrentSpeed()
+  ldarg.0 
+  ldfld System.Single InGame.Kernel.InGameEnemyMoveBase::_currentSpeed
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1cdd4f0; bytes 0fb68191010000c3
+// System.Boolean InGame.Kernel.InGameEnemyMoveBase::get_IsDirtyTransform()
+  ldarg.0 
+  ldfld System.Boolean InGame.Kernel.InGameEnemyMoveBase::_isDirtyTransform
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1cdd5c0; bytes f30f1081dc010000c3
+// System.Single InGame.Kernel.InGameEnemyMoveBase::get_SplineRate()
+  ldarg.0 
+  ldfld System.Single InGame.Kernel.InGameEnemyMoveBase::_spRate
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1ceb120; bytes 885153c3
+// System.Void InGame.Kernel.InGameManager::SetRushMode(System.Boolean)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Boolean InGame.Kernel.InGameManager::_isRushMode
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1ceae00; bytes 885157c3
+// System.Void InGame.Kernel.InGameManager::SetNextStage(System.Boolean)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Boolean InGame.Kernel.InGameManager::_isNextStage
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1cf2c40; bytes 0fb64157c3
+// System.Boolean InGame.Kernel.InGameManager::get_IsNextStage()
+  ldarg.0 
+  ldfld System.Boolean InGame.Kernel.InGameManager::_isNextStage
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1cf2eb0; bytes 8b8108020000c3
+// System.Int32 InGame.Kernel.InGameManager::get_StrongestCount()
+  ldarg.0 
+  ldfld System.Int32 InGame.Kernel.InGameManager::_strongestCount
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1ceaf30; bytes 89915c020000c3
+// System.Void InGame.Kernel.InGameManager::SetPlayPhase(InGame.Kernel.InGameManager/Phase)
+  ldarg.0 
+  ldarg.1 
+  stfld InGame.Kernel.InGameManager/Phase InGame.Kernel.InGameManager::_playPhase
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1cf2e30; bytes 8b815c020000c3
+// InGame.Kernel.InGameManager/Phase InGame.Kernel.InGameManager::get_PlayPhase()
+  ldarg.0 
+  ldfld InGame.Kernel.InGameManager/Phase InGame.Kernel.InGameManager::_playPhase
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1ceae10; bytes 889168020000c3
+// System.Void InGame.Kernel.InGameManager::SetNoDeadCount(System.Boolean)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Boolean InGame.Kernel.InGameManager::_isNoDeadCount
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1cf29f0; bytes f30f108198020000c3
+// System.Single InGame.Kernel.InGameManager::get_GetDiPoint()
+  ldarg.0 
+  ldfld System.Single InGame.Kernel.InGameManager::_DiPoint
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d39ae0; bytes 8891b8010000c3
+// System.Void InGame.Kernel.LinkedCamera::set_LinkRotate(System.Boolean)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Boolean InGame.Kernel.LinkedCamera::_linkRotate
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d39b00; bytes 8891b9010000c3
+// System.Void InGame.Kernel.LinkedCamera::set_LinkTranslate(System.Boolean)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Boolean InGame.Kernel.LinkedCamera::_linkTranslate
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d39ad0; bytes 0fb681b9010000c3
+// System.Boolean InGame.Kernel.LinkedCamera::get_LinkTranslate()
+  ldarg.0 
+  ldfld System.Boolean InGame.Kernel.LinkedCamera::_linkTranslate
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d39af0; bytes 8891ba010000c3
+// System.Void InGame.Kernel.LinkedCamera::set_LinkShift(System.Boolean)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Boolean InGame.Kernel.LinkedCamera::_linkShift
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d39ac0; bytes 0fb681ba010000c3
+// System.Boolean InGame.Kernel.LinkedCamera::get_LinkShift()
+  ldarg.0 
+  ldfld System.Boolean InGame.Kernel.LinkedCamera::_linkShift
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d42770; bytes f30f1081e8000000c3
+// System.Single InGame.Kernel.SimpleMoveRocket::GetFirstSpeed()
+  ldarg.0 
+  ldfld System.Single InGame.Kernel.SimpleMoveRocket::FirstTimeSpeed
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d44230; bytes 8891f8010000c3
+// System.Void InGame.Kernel.SplineMover::SetEndRouteKeep(System.Boolean)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Boolean InGame.Kernel.SplineMover::_isEndRouteKeep
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d34dc0; bytes 0fb64133c3
+// System.Boolean InGame.Kernel.Timeline.EnemyEntryClip::IsClone()
+  ldarg.0 
+  ldfld System.Boolean InGame.Kernel.Timeline.EnemyEntryClip::_isClone
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d509c0; bytes f20f104178c3
+// System.Double InGame.Kernel.RouteEditor.RouteDataEdit::get_Distance()
+  ldarg.0 
+  ldfld System.Double InGame.Kernel.RouteEditor.RouteDataEdit::_dummyDistance
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d4e650; bytes f30f10811c020000c3
+// System.Single InGame.Kernel.Player.PlayerControll::get_RemainRescueTime()
+  ldarg.0 
+  ldfld System.Single InGame.Kernel.Player.PlayerControll::_rescueTime
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d4e640; bytes 8b812c020000c3
+// System.Int32 InGame.Kernel.Player.PlayerControll::get_PlayerShotCount()
+  ldarg.0 
+  ldfld System.Int32 InGame.Kernel.Player.PlayerControll::_playerShotCount
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d4e630; bytes 8b8130020000c3
+// System.Int32 InGame.Kernel.Player.PlayerControll::get_PlayerExShotCount()
+  ldarg.0 
+  ldfld System.Int32 InGame.Kernel.Player.PlayerControll::_playerExShotCount
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d60590; bytes 8891b3000000c3
+// System.Void InGame.Kernel.Player.superFighterCollision::SetRescueFlag(System.Boolean)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Boolean InGame.Kernel.Player.superFighterCollision::_isRescued
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d589b0; bytes f30f1081a4000000c3
+// System.Single InGame.Kernel.Player.WeaponCollisionBase::FirstDamage()
+  ldarg.0 
+  ldfld System.Single InGame.Kernel.Player.WeaponCollisionBase::_FirstDamage
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d589a0; bytes f30f1081a8000000c3
+// System.Single InGame.Kernel.Player.WeaponCollisionBase::ContiniousDamage()
+  ldarg.0 
+  ldfld System.Single InGame.Kernel.Player.WeaponCollisionBase::_ContiniousDamage
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d5fda0; bytes f30f10812c010000c3
+// System.Single InGame.Kernel.Player.WeaponLaserCollision::get_LDistance()
+  ldarg.0 
+  ldfld System.Single InGame.Kernel.Player.WeaponLaserCollision::_distance
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d68790; bytes f30f1189c0010000c3
+// System.Void InGame.Kernel.Enemy.EnemyLaserCollision::SetIrradiationTime(System.Single)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Single InGame.Kernel.Enemy.EnemyLaserCollision::_irradiationTime
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d6a390; bytes 8991dc010000c3
+// System.Void InGame.Kernel.Enemy.EnemyLaserCollision::_setLaserState(InGame.Kernel.Enemy.EnemyLaserCollision/LaserState)
+  ldarg.0 
+  ldarg.1 
+  stfld InGame.Kernel.Enemy.EnemyLaserCollision/LaserState InGame.Kernel.Enemy.EnemyLaserCollision::_laserState
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d6ad00; bytes 8b81dc010000c3
+// InGame.Kernel.Enemy.EnemyLaserCollision/LaserState InGame.Kernel.Enemy.EnemyLaserCollision::get_LState()
+  ldarg.0 
+  ldfld InGame.Kernel.Enemy.EnemyLaserCollision/LaserState InGame.Kernel.Enemy.EnemyLaserCollision::_laserState
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d66b80; bytes 8991a4010000c3
+// System.Void InGame.Kernel.Enemy.EnemyLaserCollision2::_setLaserState(InGame.Kernel.Enemy.EnemyLaserCollision2/LaserState)
+  ldarg.0 
+  ldarg.1 
+  stfld InGame.Kernel.Enemy.EnemyLaserCollision2/LaserState InGame.Kernel.Enemy.EnemyLaserCollision2::_laserState
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d67c10; bytes 8b81a4010000c3
+// InGame.Kernel.Enemy.EnemyLaserCollision2/LaserState InGame.Kernel.Enemy.EnemyLaserCollision2::get_LState()
+  ldarg.0 
+  ldfld InGame.Kernel.Enemy.EnemyLaserCollision2/LaserState InGame.Kernel.Enemy.EnemyLaserCollision2::_laserState
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d6cc30; bytes 889190020000c3
+// System.Void InGame.Kernel.Enemy.EnemyMover::SetRangeFireLimit(System.Boolean)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Boolean InGame.Kernel.Enemy.EnemyMover::_isRangeFireLimit
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d6cc00; bytes 889191020000c3
+// System.Void InGame.Kernel.Enemy.EnemyMover::SetInGamePlayArea(System.Boolean)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Boolean InGame.Kernel.Enemy.EnemyMover::_isInGamePlayArea
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d6cbf0; bytes 889192020000c3
+// System.Void InGame.Kernel.Enemy.EnemyMover::SetForceFire(System.Boolean)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Boolean InGame.Kernel.Enemy.EnemyMover::_isForceFire
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d6cbd0; bytes 889193020000c3
+// System.Void InGame.Kernel.Enemy.EnemyMover::SetAreaStart(System.Boolean)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Boolean InGame.Kernel.Enemy.EnemyMover::_inAreaStart
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d6d630; bytes 0fb68190020000c3
+// System.Boolean InGame.Kernel.Enemy.EnemyMover::get_IsRangeFireLimit()
+  ldarg.0 
+  ldfld System.Boolean InGame.Kernel.Enemy.EnemyMover::_isRangeFireLimit
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d6d640; bytes 0fb68191020000c3
+// System.Boolean InGame.Kernel.Enemy.EnemyMover::get_IsStayPlayArea()
+  ldarg.0 
+  ldfld System.Boolean InGame.Kernel.Enemy.EnemyMover::_isInGamePlayArea
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d6d650; bytes 0fb68194020000c3
+// System.Boolean InGame.Kernel.Enemy.EnemyMover::get__isEventStackPlay()
+  ldarg.0 
+  ldfld System.Boolean InGame.Kernel.Enemy.EnemyMover::<_isEventStackPlay>k__BackingField
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d6e980; bytes 88514bc3
+// System.Void InGame.Kernel.Enemy.EnemyTurret::SetLocked(System.Boolean)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Boolean InGame.Kernel.Enemy.EnemyTurret::_isLocked
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d6f040; bytes 0fb6414bc3
+// System.Boolean InGame.Kernel.Enemy.EnemyTurret::get_IsLocked()
+  ldarg.0 
+  ldfld System.Boolean InGame.Kernel.Enemy.EnemyTurret::_isLocked
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d62f90; bytes f30f1189a4000000c3
+// System.Void InGame.Kernel.Enemy.EnePartsGroup::SetDamageBlinkRate(System.Single)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Single InGame.Kernel.Enemy.EnePartsGroup::_damageBlinkRate
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1dba4c0; bytes f30f1189cc010000c3
+// System.Void InGame.Kernel.Enemy.Ene_BosBase::SetDirectionScale(System.Single)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Single InGame.Kernel.Enemy.Ene_BosBase::_directionTimeScale
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1dba4b0; bytes 8891b4010000c3
+// System.Void InGame.Kernel.Enemy.Ene_BosBase::SetDirectionPause(System.Boolean)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Boolean InGame.Kernel.Enemy.Ene_BosBase::_isDirectionPause
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1dbb170; bytes 0fb681b1010000c3
+// System.Boolean InGame.Kernel.Enemy.Ene_BosBase::get_IsDamageTurned()
+  ldarg.0 
+  ldfld System.Boolean InGame.Kernel.Enemy.Ene_BosBase::_isDamageTurned
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1dbb180; bytes 0fb681b3010000c3
+// System.Boolean InGame.Kernel.Enemy.Ene_BosBase::get_IsDeadEffectCalled()
+  ldarg.0 
+  ldfld System.Boolean InGame.Kernel.Enemy.Ene_BosBase::_isDeadEffectCalled
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1dbb1d0; bytes 0fb681b5010000c3
+// System.Boolean InGame.Kernel.Enemy.Ene_BosBase::get_IsPlayerSideLeft()
+  ldarg.0 
+  ldfld System.Boolean InGame.Kernel.Enemy.Ene_BosBase::_isPlayerSideLeft
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1dbb1c0; bytes 0fb681b6010000c3
+// System.Boolean InGame.Kernel.Enemy.Ene_BosBase::get_IsPlayerSideDown()
+  ldarg.0 
+  ldfld System.Boolean InGame.Kernel.Enemy.Ene_BosBase::_isPlayerSideDown
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1dbb1b0; bytes 0fb681b7010000c3
+// System.Boolean InGame.Kernel.Enemy.Ene_BosBase::get_IsPlayerSideCenter()
+  ldarg.0 
+  ldfld System.Boolean InGame.Kernel.Enemy.Ene_BosBase::_isPlayerSideCenter
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1dbb130; bytes f30f1081bc010000c3
+// System.Single InGame.Kernel.Enemy.Ene_BosBase::get_BossAliveTime()
+  ldarg.0 
+  ldfld System.Single InGame.Kernel.Enemy.Ene_BosBase::_bossAliveTime
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1dbb1f0; bytes 0fb681dc010000c3
+// System.Boolean InGame.Kernel.Enemy.Ene_BosBase::get_IsRepeatLaped()
+  ldarg.0 
+  ldfld System.Boolean InGame.Kernel.Enemy.Ene_BosBase::_repeatLaped
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1dbb2e0; bytes 8b81fc010000c3
+// System.Int32 InGame.Kernel.Enemy.Ene_BosBase::get__enemyDataCount()
+  ldarg.0 
+  ldfld System.Int32 InGame.Kernel.Enemy.Ene_BosBase::<_enemyDataCount>k__BackingField
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d06550; bytes f30f118910020000c3
+// System.Void InGame.Kernel.Enemy.Ene_Ss01::SetOffsetAngle(System.Single)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Single InGame.Kernel.Enemy.Ene_Ss01::_offsetAngle
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d06560; bytes 899120020000c3
+// System.Void InGame.Kernel.Enemy.Ene_Ss01::SetTargetPlayer(System.Int32)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Int32 InGame.Kernel.Enemy.Ene_Ss01::_targetPlayer
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d0e780; bytes 0fb6818c010000c3
+// System.Boolean InGame.Kernel.Enemy.PawnEnemy::IsSimpleCalc()
+  ldarg.0 
+  ldfld System.Boolean InGame.Kernel.Enemy.PawnEnemy::_isSimpleCalc
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d10220; bytes 88913e010000c3
+// System.Void InGame.Kernel.Enemy.PawnEnemy::SkipDestroyRate(System.Boolean)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Boolean InGame.Kernel.Enemy.PawnEnemy::_isSkipDestroyCount
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d11cb0; bytes 0fb6813c010000c3
+// System.Boolean InGame.Kernel.Enemy.PawnEnemy::get_IsFirstFrame()
+  ldarg.0 
+  ldfld System.Boolean InGame.Kernel.Enemy.PawnEnemy::_isFirstFrame
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d11c60; bytes 0fb68141010000c3
+// System.Boolean InGame.Kernel.Enemy.PawnEnemy::get_IsEventDone()
+  ldarg.0 
+  ldfld System.Boolean InGame.Kernel.Enemy.PawnEnemy::_isEventDone
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d11d10; bytes f30f108170010000c3
+// System.Single InGame.Kernel.Enemy.PawnEnemy::get_TargetY()
+  ldarg.0 
+  ldfld System.Single InGame.Kernel.Enemy.PawnEnemy::_targetY
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d0fe40; bytes f30f118970010000c3
+// System.Void InGame.Kernel.Enemy.PawnEnemy::SetTargetY(System.Single)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Single InGame.Kernel.Enemy.PawnEnemy::_targetY
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d18ad0; bytes b82d010000c3
+// System.Int32 InGame.Kernel.Enemy.PhysicsEnemy::ProgressPriority()
+  ldc.i4 301
+  ret 
+
+// Assembly: InGame.Kernel
+// Native RVA 0x1d16d30; bytes 0fb681ab000000c3
+// System.Boolean InGame.Kernel.Effect.InGameEffect::get_IsDone()
+  ldarg.0 
+  ldfld System.Boolean InGame.Kernel.Effect.InGameEffect::_isDone
+  ret 
+
+// Assembly: KANAI.HybridCollision
+// Native RVA 0x119fc20; bytes f30f11898c000000c3
+// System.Void KANAI.HybridCollision.HybridCollisionManager::UpdateCameraTall(System.Single)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Single KANAI.HybridCollision.HybridCollisionManager::_cameraTall
+  ret 
+
+// Assembly: KANAI.HybridCollision
+// Native RVA 0x119fa90; bytes f30f10818c000000c3
+// System.Single KANAI.HybridCollision.HybridCollisionManager::ScreenZ()
+  ldarg.0 
+  ldfld System.Single KANAI.HybridCollision.HybridCollisionManager::_cameraTall
+  ret 
+
+// Assembly: KANAI.HybridCollision
+// Native RVA 0x1ddf7c0; bytes 0fb64136c3
+// System.Boolean KANAI.HybridCollision.HybridCollisions::IsGround()
+  ldarg.0 
+  ldfld System.Boolean KANAI.HybridCollision.HybridCollisions::_isGround
+  ret 
+
+// Assembly: KANAI.HybridCollision
+// Native RVA 0x1de1510; bytes 0fb64137c3
+// System.Boolean KANAI.HybridCollision.HybridCollisions::get_IsUseLocal()
+  ldarg.0 
+  ldfld System.Boolean KANAI.HybridCollision.HybridCollisions::_isUseLocal
+  ret 
+
+// Assembly: KANAI.Popup
+// Native RVA 0x1e064d0; bytes f30f118994000000c3
+// System.Void KANAI.Popup.MessagePopupContent::SetTimer(System.Single)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Single KANAI.Popup.MessagePopupContent::_remainTime
+  ret 
+
+// Assembly: KANAI.UI
+// Native RVA 0x1e16800; bytes 0fb68108010000c3
+// System.Boolean KANAI.UI.ButtonBase::get_IsValidShortClick()
+  ldarg.0 
+  ldfld System.Boolean KANAI.UI.ButtonBase::<IsValidShortClick>k__BackingField
+  ret 
+
+// Assembly: KANAI.UI
+// Native RVA 0x1e16840; bytes 889108010000c3
+// System.Void KANAI.UI.ButtonBase::set_IsValidShortClick(System.Boolean)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Boolean KANAI.UI.ButtonBase::<IsValidShortClick>k__BackingField
+  ret 
+
+// Assembly: KANAI.UI
+// Native RVA 0x1e167f0; bytes 0fb68109010000c3
+// System.Boolean KANAI.UI.ButtonBase::get_IsValidLongClick()
+  ldarg.0 
+  ldfld System.Boolean KANAI.UI.ButtonBase::<IsValidLongClick>k__BackingField
+  ret 
+
+// Assembly: KANAI.UI
+// Native RVA 0x1e16830; bytes 889109010000c3
+// System.Void KANAI.UI.ButtonBase::set_IsValidLongClick(System.Boolean)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Boolean KANAI.UI.ButtonBase::<IsValidLongClick>k__BackingField
+  ret 
+
+// Assembly: KANAI.UI
+// Native RVA 0x1e167d0; bytes 0fb6810a010000c3
+// System.Boolean KANAI.UI.ButtonBase::get_IsInvalidButton()
+  ldarg.0 
+  ldfld System.Boolean KANAI.UI.ButtonBase::<IsInvalidButton>k__BackingField
+  ret 
+
+// Assembly: KANAI.UI
+// Native RVA 0x1e16820; bytes 88910a010000c3
+// System.Void KANAI.UI.ButtonBase::set_IsInvalidButton(System.Boolean)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Boolean KANAI.UI.ButtonBase::<IsInvalidButton>k__BackingField
+  ret 
+
+// Assembly: KANAI.UI
+// Native RVA 0x1e17310; bytes 0fb68114010000c3
+// System.Boolean KANAI.UI.SimpleButtonBase::get_IsInvalidButton()
+  ldarg.0 
+  ldfld System.Boolean KANAI.UI.SimpleButtonBase::<IsInvalidButton>k__BackingField
+  ret 
+
+// Assembly: KANAI.UI
+// Native RVA 0x1e17340; bytes 889114010000c3
+// System.Void KANAI.UI.SimpleButtonBase::set_IsInvalidButton(System.Boolean)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Boolean KANAI.UI.SimpleButtonBase::<IsInvalidButton>k__BackingField
+  ret 
+
+// Assembly: KANAI.UI
+// Native RVA 0x1e28ad0; bytes 488b81e0070000c3
+// System.String KANAI.UI.UITextMeshPro::get_localizeKey()
+  ldarg.0 
+  ldfld System.String KANAI.UI.UITextMeshPro::_localizeKey
+  ret 
+
+// Assembly: OutGame
+// Native RVA 0x21dcce0; bytes 0fb681d1000000c3
+// System.Boolean OutGame.Starter.TutorialPlayModel::get_IsComplete()
+  ldarg.0 
+  ldfld System.Boolean OutGame.Starter.TutorialPlayModel::_isComplete
+  ret 
+
+// Assembly: OutGame
+// Native RVA 0x22027a0; bytes 889129010000c3
+// System.Void OutGame.UI.StageResultPopupContent::SetWaitEnd(System.Boolean)
+  ldarg.0 
+  ldarg.1 
+  stfld System.Boolean OutGame.UI.StageResultPopupContent::_isDisplayWait
+  ret 

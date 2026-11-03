@@ -1,0 +1,415 @@
+{"assembly": "OutGame", "file": "BootOutGame.cs", "originalType": "OutGame.BootOutGame/<_setup>d__5", "rva": 35455792, "length": 1896, "signature": "System.Boolean OutGame.BootOutGame/<_setup>d__5::MoveNext()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+021d0330 4889742420                     mov        qword ptr [rsp + 0x20], rsi
+021d0335 57                             push       rdi
+021d0336 4883ec20                       sub        rsp, 0x20
+021d033a 803d5b56490200                 cmp        byte ptr [rip + 0x249565b], 0
+021d0341 488bf9                         mov        rdi, rcx
+021d0344 0f85df000000                   jne        0x21d0429
+021d034a 488d0d07971f02                 lea        rcx, [rip + 0x21f9707]
+021d0351 e8fa0631fe                     call       0x4e0a50 ; 
+021d0356 488d0d236a1e02                 lea        rcx, [rip + 0x21e6a23]
+021d035d e8ee0631fe                     call       0x4e0a50 ; 
+021d0362 488d0d87231d02                 lea        rcx, [rip + 0x21d2387]
+021d0369 e8e20631fe                     call       0x4e0a50 ; 
+021d036e 488d0dbb951e02                 lea        rcx, [rip + 0x21e95bb]
+021d0375 e8d60631fe                     call       0x4e0a50 ; 
+021d037a 488d0db7bd1e02                 lea        rcx, [rip + 0x21ebdb7]
+021d0381 e8ca0631fe                     call       0x4e0a50 ; 
+021d0386 488d0d33ef1e02                 lea        rcx, [rip + 0x21eef33]
+021d038d e8be0631fe                     call       0x4e0a50 ; 
+021d0392 488d0d0f1a1902                 lea        rcx, [rip + 0x2191a0f]
+021d0399 e8b20631fe                     call       0x4e0a50 ; 
+021d039e 488d0d0b9e1e02                 lea        rcx, [rip + 0x21e9e0b]
+021d03a5 e8a60631fe                     call       0x4e0a50 ; 
+021d03aa 488d0defda1a02                 lea        rcx, [rip + 0x21adaef]
+021d03b1 e89a0631fe                     call       0x4e0a50 ; 
+021d03b6 488d0d43001b02                 lea        rcx, [rip + 0x21b0043]
+021d03bd e88e0631fe                     call       0x4e0a50 ; 
+021d03c2 488d0d4f0a1c02                 lea        rcx, [rip + 0x21c0a4f]
+021d03c9 e8820631fe                     call       0x4e0a50 ; 
+021d03ce 488d0d931f1d02                 lea        rcx, [rip + 0x21d1f93]
+021d03d5 e8760631fe                     call       0x4e0a50 ; 
+021d03da 488d0d07c71d02                 lea        rcx, [rip + 0x21dc707]
+021d03e1 e86a0631fe                     call       0x4e0a50 ; 
+021d03e6 488d0d13a31902                 lea        rcx, [rip + 0x219a313]
+021d03ed e85e0631fe                     call       0x4e0a50 ; 
+021d03f2 488d0dbfa31902                 lea        rcx, [rip + 0x219a3bf]
+021d03f9 e8520631fe                     call       0x4e0a50 ; 
+021d03fe 488d0d6ba41902                 lea        rcx, [rip + 0x219a46b]
+021d0405 e8460631fe                     call       0x4e0a50 ; 
+021d040a 488d0d8f511a02                 lea        rcx, [rip + 0x21a518f]
+021d0411 e83a0631fe                     call       0x4e0a50 ; 
+021d0416 488d0d9bc61e02                 lea        rcx, [rip + 0x21ec69b]
+021d041d e82e0631fe                     call       0x4e0a50 ; 
+021d0422 c6057355490201                 mov        byte ptr [rip + 0x2495573], 1
+021d0429 48634710                       movsxd     rax, dword ptr [rdi + 0x10]
+021d042d 488b7720                       mov        rsi, qword ptr [rdi + 0x20]
+021d0431 48895c2430                     mov        qword ptr [rsp + 0x30], rbx
+021d0436 48896c2438                     mov        qword ptr [rsp + 0x38], rbp
+021d043b 4c89742440                     mov        qword ptr [rsp + 0x40], r14
+021d0440 83f805                         cmp        eax, 5
+021d0443 0f872c060000                   ja         0x21d0a75
+021d0449 488d15b0fbe2fd                 lea        rdx, [rip - 0x21d0450]
+021d0450 8b8c82980a1d02                 mov        ecx, dword ptr [rdx + rax*4 + 0x21d0a98]
+021d0457 4803ca                         add        rcx, rdx
+021d045a ffe1                           jmp        rcx
+021d045c c74710ffffffff                 mov        dword ptr [rdi + 0x10], 0xffffffff
+021d0463 4885f6                         test       rsi, rsi
+021d0466 0f8425060000                   je         0x21d0a91
+021d046c 488b0d8dff1a02                 mov        rcx, qword ptr [rip + 0x21aff8d]
+021d0473 488b5e20                       mov        rbx, qword ptr [rsi + 0x20]
+021d0477 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021d047e 7505                           jne        0x21d0485
+021d0480 e80b0931fe                     call       0x4e0d90 ; 
+021d0485 33d2                           xor        edx, edx
+021d0487 488bcb                         mov        rcx, rbx
+021d048a e821cf0100                     call       0x21ed3b0 ; OutGame:OutGameHelper:System.Collections.IEnumerator OutGame.UI.OutGameHelper::Setup(UnityEngine.ShaderVariantCollection)
+021d048f 488d4f18                       lea        rcx, [rdi + 0x18]
+021d0493 48894718                       mov        qword ptr [rdi + 0x18], rax
+021d0497 488bd0                         mov        rdx, rax
+021d049a e8e1f830fe                     call       0x4dfd80 ; 
+021d049f b001                           mov        al, 1
+021d04a1 c7471001000000                 mov        dword ptr [rdi + 0x10], 1
+021d04a8 e9ca050000                     jmp        0x21d0a77 ; 
+021d04ad c74710ffffffff                 mov        dword ptr [rdi + 0x10], 0xffffffff
+021d04b4 488b0d9d951f02                 mov        rcx, qword ptr [rip + 0x21f959d]
+021d04bb e8f00731fe                     call       0x4e0cb0 ; 
+021d04c0 4c8b05b9681e02                 mov        r8, qword ptr [rip + 0x21e68b9]
+021d04c7 4533c9                         xor        r9d, r9d
+021d04ca 488bd6                         mov        rdx, rsi
+021d04cd 488bc8                         mov        rcx, rax
+021d04d0 488bd8                         mov        rbx, rax
+021d04d3 e818aca7ff                     call       0x1c4b0f0 ; 
+021d04d8 488b0dc9181902                 mov        rcx, qword ptr [rip + 0x21918c9]
+021d04df 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021d04e6 7505                           jne        0x21d04ed
+021d04e8 e8a30831fe                     call       0x4e0d90 ; 
+021d04ed 33d2                           xor        edx, edx
+021d04ef 488bcb                         mov        rcx, rbx
+021d04f2 e8b9037700                     call       0x29408b0 ; Unity.InputSystem:InputSystem:System.Void UnityEngine.InputSystem.InputSystem::remove_onDeviceChange(System.Action`2<UnityEngine.InputSystem.InputDevice,UnityEngine.InputSystem.InputDeviceChange>)
+021d04f7 488b0d5a951f02                 mov        rcx, qword ptr [rip + 0x21f955a]
+021d04fe e8ad0731fe                     call       0x4e0cb0 ; 
+021d0503 4c8b0576681e02                 mov        r8, qword ptr [rip + 0x21e6876]
+021d050a 4533c9                         xor        r9d, r9d
+021d050d 488bd6                         mov        rdx, rsi
+021d0510 488bc8                         mov        rcx, rax
+021d0513 488bd8                         mov        rbx, rax
+021d0516 e8d5aba7ff                     call       0x1c4b0f0 ; 
+021d051b 33d2                           xor        edx, edx
+021d051d 488bcb                         mov        rcx, rbx
+021d0520 e8fbf27600                     call       0x293f820 ; Unity.InputSystem:InputSystem:System.Void UnityEngine.InputSystem.InputSystem::add_onDeviceChange(System.Action`2<UnityEngine.InputSystem.InputDevice,UnityEngine.InputSystem.InputDeviceChange>)
+021d0525 488b0dc4211d02                 mov        rcx, qword ptr [rip + 0x21d21c4]
+021d052c e86f671efe                     call       0x3b6ca0 ; 
+021d0531 4885c0                         test       rax, rax
+021d0534 0f8457050000                   je         0x21d0a91
+021d053a 488b0d271e1d02                 mov        rcx, qword ptr [rip + 0x21d1e27]
+021d0541 488b9880000000                 mov        rbx, qword ptr [rax + 0x80]
+021d0548 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021d054f 7505                           jne        0x21d0556
+021d0551 e83a0831fe                     call       0x4e0d90 ; 
+021d0556 33d2                           xor        edx, edx
+021d0558 488bcb                         mov        rcx, rbx
+021d055b e8904f5500                     call       0x27254f0 ; TXEKernel:SoundUtility:System.Collections.IEnumerator TXEKernel.Sound.SoundUtility::Setup(TXEKernel.Sound.SoundDataBaseRecords)
+021d0560 488d4f18                       lea        rcx, [rdi + 0x18]
+021d0564 48894718                       mov        qword ptr [rdi + 0x18], rax
+021d0568 488bd0                         mov        rdx, rax
+021d056b e810f830fe                     call       0x4dfd80 ; 
+021d0570 b001                           mov        al, 1
+021d0572 c7471002000000                 mov        dword ptr [rdi + 0x10], 2
+021d0579 e9f9040000                     jmp        0x21d0a77 ; 
+021d057e c74710ffffffff                 mov        dword ptr [rdi + 0x10], 0xffffffff
+021d0585 488b0d249c1e02                 mov        rcx, qword ptr [rip + 0x21e9c24]
+021d058c e8af6fe5fd                     call       0x27540 ; 
+021d0591 488bf0                         mov        rsi, rax
+021d0594 4885c0                         test       rax, rax
+021d0597 0f84f4040000                   je         0x21d0a91
+021d059d 488b0dfc4f1a02                 mov        rcx, qword ptr [rip + 0x21a4ffc]
+021d05a4 4c8b7078                       mov        r14, qword ptr [rax + 0x78]
+021d05a8 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021d05af 750c                           jne        0x21d05bd
+021d05b1 e8da0731fe                     call       0x4e0d90 ; 
+021d05b6 488b0de34f1a02                 mov        rcx, qword ptr [rip + 0x21a4fe3]
+021d05bd 488b81b8000000                 mov        rax, qword ptr [rcx + 0xb8]
+021d05c4 488b6818                       mov        rbp, qword ptr [rax + 0x18]
+021d05c8 4885ed                         test       rbp, rbp
+021d05cb 756e                           jne        0x21d063b
+021d05cd 39a9e4000000                   cmp        dword ptr [rcx + 0xe4], ebp
+021d05d3 750c                           jne        0x21d05e1
+021d05d5 e8b60731fe                     call       0x4e0d90 ; 
+021d05da 488b0dbf4f1a02                 mov        rcx, qword ptr [rip + 0x21a4fbf]
+021d05e1 488b81b8000000                 mov        rax, qword ptr [rcx + 0xb8]
+021d05e8 488b0dc9c41e02                 mov        rcx, qword ptr [rip + 0x21ec4c9]
+021d05ef 488b18                         mov        rbx, qword ptr [rax]
+021d05f2 e8b90631fe                     call       0x4e0cb0 ; 
+021d05f7 4c8b0502a11902                 mov        r8, qword ptr [rip + 0x219a102]
+021d05fe 4533c9                         xor        r9d, r9d
+021d0601 488bd3                         mov        rdx, rbx
+021d0604 488bc8                         mov        rcx, rax
+021d0607 488be8                         mov        rbp, rax
+021d060a e8718c46fe                     call       0x639280 ; com.rlabrecque.steamworks.net:ISteamMatchmakingPingResponse:System.Void Steamworks.ISteamMatchmakingPingResponse/ServerFailedToRespond::.ctor(System.Object,System.IntPtr) || com.rlabrecque.steamworks.net:ISteamMatchmakingPlayersResponse:System.Void Steamworks.ISteamMatchmakingPlayersResponse/PlayersFailedToRespond::.ctor(System.Object,System.IntPtr) || com.rlabrecque.steamworks.net:ISteamMatchmakingPlayersResponse:System.Void Steamworks.ISteamMatchmakingPlayersResponse/PlayersRefreshComplete::.ctor(System.Object,System.IntPtr) || com.rlabrecque.steamworks.net:ISteamMatchmakingRulesResponse:System.Void Steamworks.ISteamMatchmakingRulesResponse/RulesFailedToRespond::.ctor(System.Object,System.IntPtr) || com.rlabrecque.steamworks.net:ISteamMatchmakingRulesResponse:System.Void Steamworks.ISteamMatchmakingRulesResponse/RulesRefreshComplete::.ctor(System.Object,System.IntPtr)
+021d060f 488b058a4f1a02                 mov        rax, qword ptr [rip + 0x21a4f8a]
+021d0616 488bd5                         mov        rdx, rbp
+021d0619 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+021d0620 48896918                       mov        qword ptr [rcx + 0x18], rbp
+021d0624 488b05754f1a02                 mov        rax, qword ptr [rip + 0x21a4f75]
+021d062b 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+021d0632 4883c118                       add        rcx, 0x18
+021d0636 e845f730fe                     call       0x4dfd80 ; 
+021d063b 4d85f6                         test       r14, r14
+021d063e 0f844d040000                   je         0x21d0a91
+021d0644 4533c0                         xor        r8d, r8d
+021d0647 488bd5                         mov        rdx, rbp
+021d064a 498bce                         mov        rcx, r14
+021d064d e8be67ec00                     call       0x3096e10 ; UnityEngine.CoreModule:UnityEvent:System.Void UnityEngine.Events.UnityEvent::AddListener(UnityEngine.Events.UnityAction)
+021d0652 488b0d474f1a02                 mov        rcx, qword ptr [rip + 0x21a4f47]
+021d0659 4c8bb680000000                 mov        r14, qword ptr [rsi + 0x80]
+021d0660 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021d0667 750c                           jne        0x21d0675
+021d0669 e8220731fe                     call       0x4e0d90 ; 
+021d066e 488b0d2b4f1a02                 mov        rcx, qword ptr [rip + 0x21a4f2b]
+021d0675 488b81b8000000                 mov        rax, qword ptr [rcx + 0xb8]
+021d067c 488b6820                       mov        rbp, qword ptr [rax + 0x20]
+021d0680 4885ed                         test       rbp, rbp
+021d0683 756e                           jne        0x21d06f3
+021d0685 39a9e4000000                   cmp        dword ptr [rcx + 0xe4], ebp
+021d068b 750c                           jne        0x21d0699
+021d068d e8fe0631fe                     call       0x4e0d90 ; 
+021d0692 488b0d074f1a02                 mov        rcx, qword ptr [rip + 0x21a4f07]
+021d0699 488b81b8000000                 mov        rax, qword ptr [rcx + 0xb8]
+021d06a0 488b0d11c41e02                 mov        rcx, qword ptr [rip + 0x21ec411]
+021d06a7 488b18                         mov        rbx, qword ptr [rax]
+021d06aa e8010631fe                     call       0x4e0cb0 ; 
+021d06af 4c8b0502a11902                 mov        r8, qword ptr [rip + 0x219a102]
+021d06b6 4533c9                         xor        r9d, r9d
+021d06b9 488bd3                         mov        rdx, rbx
+021d06bc 488bc8                         mov        rcx, rax
+021d06bf 488be8                         mov        rbp, rax
+021d06c2 e8b98b46fe                     call       0x639280 ; com.rlabrecque.steamworks.net:ISteamMatchmakingPingResponse:System.Void Steamworks.ISteamMatchmakingPingResponse/ServerFailedToRespond::.ctor(System.Object,System.IntPtr) || com.rlabrecque.steamworks.net:ISteamMatchmakingPlayersResponse:System.Void Steamworks.ISteamMatchmakingPlayersResponse/PlayersFailedToRespond::.ctor(System.Object,System.IntPtr) || com.rlabrecque.steamworks.net:ISteamMatchmakingPlayersResponse:System.Void Steamworks.ISteamMatchmakingPlayersResponse/PlayersRefreshComplete::.ctor(System.Object,System.IntPtr) || com.rlabrecque.steamworks.net:ISteamMatchmakingRulesResponse:System.Void Steamworks.ISteamMatchmakingRulesResponse/RulesFailedToRespond::.ctor(System.Object,System.IntPtr) || com.rlabrecque.steamworks.net:ISteamMatchmakingRulesResponse:System.Void Steamworks.ISteamMatchmakingRulesResponse/RulesRefreshComplete::.ctor(System.Object,System.IntPtr)
+021d06c7 488b05d24e1a02                 mov        rax, qword ptr [rip + 0x21a4ed2]
+021d06ce 488bd5                         mov        rdx, rbp
+021d06d1 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+021d06d8 48896920                       mov        qword ptr [rcx + 0x20], rbp
+021d06dc 488b05bd4e1a02                 mov        rax, qword ptr [rip + 0x21a4ebd]
+021d06e3 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+021d06ea 4883c120                       add        rcx, 0x20
+021d06ee e88df630fe                     call       0x4dfd80 ; 
+021d06f3 4d85f6                         test       r14, r14
+021d06f6 0f8495030000                   je         0x21d0a91
+021d06fc 4533c0                         xor        r8d, r8d
+021d06ff 488bd5                         mov        rdx, rbp
+021d0702 498bce                         mov        rcx, r14
+021d0705 e80667ec00                     call       0x3096e10 ; UnityEngine.CoreModule:UnityEvent:System.Void UnityEngine.Events.UnityEvent::AddListener(UnityEngine.Events.UnityAction)
+021d070a 488b0d8f4e1a02                 mov        rcx, qword ptr [rip + 0x21a4e8f]
+021d0711 488bae88000000                 mov        rbp, qword ptr [rsi + 0x88]
+021d0718 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021d071f 750c                           jne        0x21d072d
+021d0721 e86a0631fe                     call       0x4e0d90 ; 
+021d0726 488b0d734e1a02                 mov        rcx, qword ptr [rip + 0x21a4e73]
+021d072d 488b81b8000000                 mov        rax, qword ptr [rcx + 0xb8]
+021d0734 488b7028                       mov        rsi, qword ptr [rax + 0x28]
+021d0738 4885f6                         test       rsi, rsi
+021d073b 756e                           jne        0x21d07ab
+021d073d 39b1e4000000                   cmp        dword ptr [rcx + 0xe4], esi
+021d0743 750c                           jne        0x21d0751
+021d0745 e8460631fe                     call       0x4e0d90 ; 
+021d074a 488b0d4f4e1a02                 mov        rcx, qword ptr [rip + 0x21a4e4f]
+021d0751 488b81b8000000                 mov        rax, qword ptr [rcx + 0xb8]
+021d0758 488b0d59c31e02                 mov        rcx, qword ptr [rip + 0x21ec359]
+021d075f 488b18                         mov        rbx, qword ptr [rax]
+021d0762 e8490531fe                     call       0x4e0cb0 ; 
+021d0767 4c8b0502a11902                 mov        r8, qword ptr [rip + 0x219a102]
+021d076e 4533c9                         xor        r9d, r9d
+021d0771 488bd3                         mov        rdx, rbx
+021d0774 488bc8                         mov        rcx, rax
+021d0777 488bf0                         mov        rsi, rax
+021d077a e8018b46fe                     call       0x639280 ; com.rlabrecque.steamworks.net:ISteamMatchmakingPingResponse:System.Void Steamworks.ISteamMatchmakingPingResponse/ServerFailedToRespond::.ctor(System.Object,System.IntPtr) || com.rlabrecque.steamworks.net:ISteamMatchmakingPlayersResponse:System.Void Steamworks.ISteamMatchmakingPlayersResponse/PlayersFailedToRespond::.ctor(System.Object,System.IntPtr) || com.rlabrecque.steamworks.net:ISteamMatchmakingPlayersResponse:System.Void Steamworks.ISteamMatchmakingPlayersResponse/PlayersRefreshComplete::.ctor(System.Object,System.IntPtr) || com.rlabrecque.steamworks.net:ISteamMatchmakingRulesResponse:System.Void Steamworks.ISteamMatchmakingRulesResponse/RulesFailedToRespond::.ctor(System.Object,System.IntPtr) || com.rlabrecque.steamworks.net:ISteamMatchmakingRulesResponse:System.Void Steamworks.ISteamMatchmakingRulesResponse/RulesRefreshComplete::.ctor(System.Object,System.IntPtr)
+021d077f 488b051a4e1a02                 mov        rax, qword ptr [rip + 0x21a4e1a]
+021d0786 488bd6                         mov        rdx, rsi
+021d0789 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+021d0790 48897128                       mov        qword ptr [rcx + 0x28], rsi
+021d0794 488b05054e1a02                 mov        rax, qword ptr [rip + 0x21a4e05]
+021d079b 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+021d07a2 4883c128                       add        rcx, 0x28
+021d07a6 e8d5f530fe                     call       0x4dfd80 ; 
+021d07ab 4885ed                         test       rbp, rbp
+021d07ae 0f84dd020000                   je         0x21d0a91
+021d07b4 4533c0                         xor        r8d, r8d
+021d07b7 488bd6                         mov        rdx, rsi
+021d07ba 488bcd                         mov        rcx, rbp
+021d07bd e84e66ec00                     call       0x3096e10 ; UnityEngine.CoreModule:UnityEvent:System.Void UnityEngine.Events.UnityEvent::AddListener(UnityEngine.Events.UnityAction)
+021d07c2 33c9                           xor        ecx, ecx
+021d07c4 e8d79ceb00                     call       0x308a4a0 ; UnityEngine.CoreModule:SystemInfo:System.Int32 UnityEngine.SystemInfo::get_graphicsDeviceVendorID() || UnityEngine.CoreModule:SystemInfo:System.Int32 UnityEngine.SystemInfo::GetGraphicsDeviceVendorID()
+021d07c9 3dde100000                     cmp        eax, 0x10de
+021d07ce 0f8541010000                   jne        0x21d0915
+021d07d4 33c9                           xor        ecx, ecx
+021d07d6 e8957ae000                     call       0x2fd8270 ; UnityEngine.CoreModule:Camera:UnityEngine.Camera UnityEngine.Camera::get_main()
+021d07db 488bd8                         mov        rbx, rax
+021d07de 4885c0                         test       rax, rax
+021d07e1 0f84aa020000                   je         0x21d0a91
+021d07e7 33d2                           xor        edx, edx
+021d07e9 488bc8                         mov        rcx, rax
+021d07ec e8af88e800                     call       0x30590a0 ; UnityEngine.CoreModule:Component:UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+021d07f1 4885c0                         test       rax, rax
+021d07f4 0f8497020000                   je         0x21d0a91
+021d07fa 488b15bfea1e02                 mov        rdx, qword ptr [rip + 0x21eeabf]
+021d0801 488bc8                         mov        rcx, rax
+021d0804 e8272964fe                     call       0x813130 ; UnityEngine.CoreModule:GameObject:T UnityEngine.GameObject::GetComponent()
+021d0809 488d4f28                       lea        rcx, [rdi + 0x28]
+021d080d 48894728                       mov        qword ptr [rdi + 0x28], rax
+021d0811 488bd0                         mov        rdx, rax
+021d0814 e867f530fe                     call       0x4dfd80 ; 
+021d0819 488b0d80d61a02                 mov        rcx, qword ptr [rip + 0x21ad680]
+021d0820 488b7728                       mov        rsi, qword ptr [rdi + 0x28]
+021d0824 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021d082b 7505                           jne        0x21d0832
+021d082d e85e0531fe                     call       0x4e0d90 ; 
+021d0832 4533c0                         xor        r8d, r8d
+021d0835 33d2                           xor        edx, edx
+021d0837 488bce                         mov        rcx, rsi
+021d083a e831cae900                     call       0x306d270 ; UnityEngine.CoreModule:Object:System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+021d083f 84c0                           test       al, al
+021d0841 7454                           je         0x21d0897
+021d0843 33d2                           xor        edx, edx
+021d0845 488bcb                         mov        rcx, rbx
+021d0848 e85388e800                     call       0x30590a0 ; UnityEngine.CoreModule:Component:UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+021d084d 4885c0                         test       rax, rax
+021d0850 0f843b020000                   je         0x21d0a91
+021d0856 488b15dbb81e02                 mov        rdx, qword ptr [rip + 0x21eb8db]
+021d085d 488bc8                         mov        rcx, rax
+021d0860 e89b1e64fe                     call       0x812700 ; UnityEngine.CoreModule:GameObject:T UnityEngine.GameObject::AddComponent()
+021d0865 488d4f28                       lea        rcx, [rdi + 0x28]
+021d0869 48894728                       mov        qword ptr [rdi + 0x28], rax
+021d086d 488bd0                         mov        rdx, rax
+021d0870 e80bf530fe                     call       0x4dfd80 ; 
+021d0875 488b4728                       mov        rax, qword ptr [rdi + 0x28]
+021d0879 4885c0                         test       rax, rax
+021d087c 0f840f020000                   je         0x21d0a91
+021d0882 c6402001                       mov        byte ptr [rax + 0x20], 1
+021d0886 488b4728                       mov        rax, qword ptr [rdi + 0x28]
+021d088a 4885c0                         test       rax, rax
+021d088d 0f84fe010000                   je         0x21d0a91
+021d0893 c6402201                       mov        byte ptr [rax + 0x22], 1
+021d0897 488d4f18                       lea        rcx, [rdi + 0x18]
+021d089b 48c7471800000000               mov        qword ptr [rdi + 0x18], 0
+021d08a3 33d2                           xor        edx, edx
+021d08a5 e8d6f430fe                     call       0x4dfd80 ; 
+021d08aa b001                           mov        al, 1
+021d08ac c7471003000000                 mov        dword ptr [rdi + 0x10], 3
+021d08b3 e9bf010000                     jmp        0x21d0a77 ; 
+021d08b8 c74710ffffffff                 mov        dword ptr [rdi + 0x10], 0xffffffff
+021d08bf 488b0d52051c02                 mov        rcx, qword ptr [rip + 0x21c0552]
+021d08c6 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021d08cd 7505                           jne        0x21d08d4
+021d08cf e8bc0431fe                     call       0x4e0d90 ; 
+021d08d4 33c9                           xor        ecx, ecx
+021d08d6 e8a55440fe                     call       0x5d5d80 ; com.nvidia.reflex.Runtime:Reflex:NVIDIA.Reflex/NvReflex_Status NVIDIA.Reflex::IsReflexLowLatencySupported()
+021d08db 85c0                           test       eax, eax
+021d08dd 7423                           je         0x21d0902
+021d08df 488b0dbad51a02                 mov        rcx, qword ptr [rip + 0x21ad5ba]
+021d08e6 488b5f28                       mov        rbx, qword ptr [rdi + 0x28]
+021d08ea 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021d08f1 7505                           jne        0x21d08f8
+021d08f3 e8980431fe                     call       0x4e0d90 ; 
+021d08f8 33d2                           xor        edx, edx
+021d08fa 488bcb                         mov        rcx, rbx
+021d08fd e88e97e900                     call       0x306a090 ; UnityEngine.CoreModule:Object:System.Void UnityEngine.Object::Destroy(UnityEngine.Object)
+021d0902 488d4f28                       lea        rcx, [rdi + 0x28]
+021d0906 48c7472800000000               mov        qword ptr [rdi + 0x28], 0
+021d090e 33d2                           xor        edx, edx
+021d0910 e86bf430fe                     call       0x4dfd80 ; 
+021d0915 488b0de4fa1a02                 mov        rcx, qword ptr [rip + 0x21afae4]
+021d091c 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021d0923 7505                           jne        0x21d092a
+021d0925 e8660431fe                     call       0x4e0d90 ; 
+021d092a 4533c0                         xor        r8d, r8d
+021d092d b201                           mov        dl, 1
+021d092f 33c9                           xor        ecx, ecx
+021d0931 e8fabe0100                     call       0x21ec830 ; OutGame:OutGameHelper:System.Collections.IEnumerator OutGame.UI.OutGameHelper::LoadSaveDataAllOnBoot(System.Action`1<TXEKernel.TXEErrors>,System.Boolean)
+021d0936 488d4f18                       lea        rcx, [rdi + 0x18]
+021d093a 48894718                       mov        qword ptr [rdi + 0x18], rax
+021d093e 488bd0                         mov        rdx, rax
+021d0941 e83af430fe                     call       0x4dfd80 ; 
+021d0946 b001                           mov        al, 1
+021d0948 c7471004000000                 mov        dword ptr [rdi + 0x10], 4
+021d094f e923010000                     jmp        0x21d0a77 ; 
+021d0954 33c9                           xor        ecx, ecx
+021d0956 c74710ffffffff                 mov        dword ptr [rdi + 0x10], 0xffffffff
+021d095d e8ce4bc4ff                     call       0x1e15530 ; KANAI.Steam:SteamResident:KANAI.Steam.SteamResident KANAI.Steam.SteamResident::Instance()
+021d0962 4885c0                         test       rax, rax
+021d0965 0f8426010000                   je         0x21d0a91
+021d096b 33d2                           xor        edx, edx
+021d096d 488bc8                         mov        rcx, rax
+021d0970 e8eb4cc4ff                     call       0x1e15660 ; KANAI.Steam:SteamResident:System.Boolean KANAI.Steam.SteamResident::IsSteamDeck()
+021d0975 84c0                           test       al, al
+021d0977 0f8592000000                   jne        0x21d0a0f
+021d097d 488b0d64c11d02                 mov        rcx, qword ptr [rip + 0x21dc164]
+021d0984 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021d098b 7505                           jne        0x21d0992
+021d098d e8fe0331fe                     call       0x4e0d90 ; 
+021d0992 33c9                           xor        ecx, ecx
+021d0994 e8f7175100                     call       0x26e2190 ; TXEKernel:TXEDataStore:TXEKernel.GameSetting TXEKernel.TXEDataStore::get_gameSetting()
+021d0999 4885c0                         test       rax, rax
+021d099c 0f84ef000000                   je         0x21d0a91
+021d09a2 33d2                           xor        edx, edx
+021d09a4 488bc8                         mov        rcx, rax
+021d09a7 e8a4465000                     call       0x26d5050 ; TXEKernel:GameSetting:System.Int32 TXEKernel.GameSetting::get_resolution() || TXEKernel:PlayedRecords:System.Int32 TXEKernel.PlayedRecords/Stages/Data::get_HighestStage()
+021d09ac 85c0                           test       eax, eax
+021d09ae 7574                           jne        0x21d0a24
+021d09b0 4885f6                         test       rsi, rsi
+021d09b3 0f84d8000000                   je         0x21d0a91
+021d09b9 3805cc4f4902                   cmp        byte ptr [rip + 0x2494fcc], al
+021d09bf 7513                           jne        0x21d09d4
+021d09c1 488d0db84e1a02                 lea        rcx, [rip + 0x21a4eb8]
+021d09c8 e8830031fe                     call       0x4e0a50 ; 
+021d09cd c605b74f490201                 mov        byte ptr [rip + 0x2494fb7], 1
+021d09d4 488b0da54e1a02                 mov        rcx, qword ptr [rip + 0x21a4ea5]
+021d09db e8d00231fe                     call       0x4e0cb0 ; 
+021d09e0 33d2                           xor        edx, edx
+021d09e2 488bc8                         mov        rcx, rax
+021d09e5 488bd8                         mov        rbx, rax
+021d09e8 e8c3c33efe                     call       0x5bcdb0 ; AEAsAnimation:AEAsAnimationRoot:System.Void AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation:AEComposition:System.Void AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpAsync>d__16::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpChildAsync>d__25::System.IDisposable.Dispose()
+021d09ed c7431000000000                 mov        dword ptr [rbx + 0x10], 0
+021d09f4 488d4f18                       lea        rcx, [rdi + 0x18]
+021d09f8 488bd3                         mov        rdx, rbx
+021d09fb 48895f18                       mov        qword ptr [rdi + 0x18], rbx
+021d09ff e87cf330fe                     call       0x4dfd80 ; 
+021d0a04 b001                           mov        al, 1
+021d0a06 c7471005000000                 mov        dword ptr [rdi + 0x10], 5
+021d0a0d eb68                           jmp        0x21d0a77 ; 
+021d0a0f 33d2                           xor        edx, edx
+021d0a11 b901000000                     mov        ecx, 1
+021d0a16 e8c5e6e300                     call       0x300f0e0 ; UnityEngine.CoreModule:QualitySettings:System.Void UnityEngine.QualitySettings::SetQualityLevel(System.Int32)
+021d0a1b eb07                           jmp        0x21d0a24 ; 
+021d0a1d c74710ffffffff                 mov        dword ptr [rdi + 0x10], 0xffffffff
+021d0a24 488b0d058f1e02                 mov        rcx, qword ptr [rip + 0x21e8f05]
+021d0a2b 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021d0a32 7505                           jne        0x21d0a39
+021d0a34 e8570331fe                     call       0x4e0d90 ; 
+021d0a39 33c9                           xor        ecx, ecx
+021d0a3b e890910100                     call       0x21e9bd0 ; OutGame:FirstResolutionSelection:System.Boolean OutGame.UI.FirstResolutionSelection::IsResolutionChangeAllowed()
+021d0a40 84c0                           test       al, al
+021d0a42 7531                           jne        0x21d0a75
+021d0a44 488b0d9dc01d02                 mov        rcx, qword ptr [rip + 0x21dc09d]
+021d0a4b 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021d0a52 7505                           jne        0x21d0a59
+021d0a54 e8370331fe                     call       0x4e0d90 ; 
+021d0a59 33c9                           xor        ecx, ecx
+021d0a5b e830175100                     call       0x26e2190 ; TXEKernel:TXEDataStore:TXEKernel.GameSetting TXEKernel.TXEDataStore::get_gameSetting()
+021d0a60 4885c0                         test       rax, rax
+021d0a63 742c                           je         0x21d0a91
+021d0a65 4533c0                         xor        r8d, r8d
+021d0a68 ba01000000                     mov        edx, 1
+021d0a6d 488bc8                         mov        rcx, rax
+021d0a70 e80b4d5000                     call       0x26d5780 ; TXEKernel:GameSetting:System.Void TXEKernel.GameSetting::set_vsync(System.Int32) || TXEKernel:MenuStatus:System.Void TXEKernel.MenuStatus/TRAINING::set_Speed(System.Int32)
+021d0a75 32c0                           xor        al, al
+021d0a77 4c8b742440                     mov        r14, qword ptr [rsp + 0x40]
+021d0a7c 488b6c2438                     mov        rbp, qword ptr [rsp + 0x38]
+021d0a81 488b5c2430                     mov        rbx, qword ptr [rsp + 0x30]
+021d0a86 488b742448                     mov        rsi, qword ptr [rsp + 0x48]
+021d0a8b 4883c420                       add        rsp, 0x20
+021d0a8f 5f                             pop        rdi
+021d0a90 c3                             ret        
+021d0a91 e86a0231fe                     call       0x4e0d00 ; 
+021d0a96 cc                             int3       
+021d0a97 90                             nop        

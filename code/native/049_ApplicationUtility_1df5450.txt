@@ -1,0 +1,17 @@
+{"assembly": "KANAI.Kernel", "file": "ApplicationUtility.cs", "originalType": "KANAI.Kernel.ApplicationUtility/<_ResetCoroutine>d__18", "rva": 31413328, "length": 62, "signature": "System.Void KANAI.Kernel.ApplicationUtility/<_ResetCoroutine>d__18::System.Collections.IEnumerator.Reset()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01df5450 4053                           push       rbx
+01df5452 4883ec20                       sub        rsp, 0x20
+01df5456 488d0d737a5802                 lea        rcx, [rip + 0x2587a73]
+01df545d e80eb66efe                     call       0x4e0a70 ; 
+01df5462 488bc8                         mov        rcx, rax
+01df5465 e846b86efe                     call       0x4e0cb0 ; 
+01df546a 33d2                           xor        edx, edx
+01df546c 488bc8                         mov        rcx, rax
+01df546f 488bd8                         mov        rbx, rax
+01df5472 e8f9792300                     call       0x202ce70 ; mscorlib:NotSupportedException:System.Void System.NotSupportedException::.ctor()
+01df5477 488d0d72205902                 lea        rcx, [rip + 0x2592072]
+01df547e e8edb56efe                     call       0x4e0a70 ; 
+01df5483 488bd0                         mov        rdx, rax
+01df5486 488bcb                         mov        rcx, rbx
+01df5489 e832b86efe                     call       0x4e0cc0 ; 

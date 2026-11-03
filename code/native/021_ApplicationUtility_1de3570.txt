@@ -1,0 +1,29 @@
+{"assembly": "KANAI.Kernel", "file": "ApplicationUtility.cs", "originalType": "KANAI.Kernel.ApplicationUtility", "rva": 31339888, "length": 138, "signature": "System.Void KANAI.Kernel.ApplicationUtility::SetReady()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01de3570 4883ec28                       sub        rsp, 0x28
+01de3574 803d1e04880200                 cmp        byte ptr [rip + 0x288041e], 0
+01de357b 7513                           jne        0x1de3590
+01de357d 488d0d741f5a02                 lea        rcx, [rip + 0x25a1f74]
+01de3584 e8c7d46ffe                     call       0x4e0a50 ; 
+01de3589 c6050904880201                 mov        byte ptr [rip + 0x2880409], 1
+01de3590 488b05611f5a02                 mov        rax, qword ptr [rip + 0x25a1f61]
+01de3597 83b8e400000000                 cmp        dword ptr [rax + 0xe4], 0
+01de359e 750f                           jne        0x1de35af
+01de35a0 488bc8                         mov        rcx, rax
+01de35a3 e8e8d76ffe                     call       0x4e0d90 ; 
+01de35a8 488b05491f5a02                 mov        rax, qword ptr [rip + 0x25a1f49]
+01de35af 803dda04880200                 cmp        byte ptr [rip + 0x28804da], 0
+01de35b6 751a                           jne        0x1de35d2
+01de35b8 488d0d391f5a02                 lea        rcx, [rip + 0x25a1f39]
+01de35bf e88cd46ffe                     call       0x4e0a50 ; 
+01de35c4 488b052d1f5a02                 mov        rax, qword ptr [rip + 0x25a1f2d]
+01de35cb c605be04880201                 mov        byte ptr [rip + 0x28804be], 1
+01de35d2 83b8e400000000                 cmp        dword ptr [rax + 0xe4], 0
+01de35d9 750f                           jne        0x1de35ea
+01de35db 488bc8                         mov        rcx, rax
+01de35de e8add76ffe                     call       0x4e0d90 ; 
+01de35e3 488b050e1f5a02                 mov        rax, qword ptr [rip + 0x25a1f0e]
+01de35ea 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+01de35f1 c6412101                       mov        byte ptr [rcx + 0x21], 1
+01de35f5 4883c428                       add        rsp, 0x28
+01de35f9 c3                             ret        

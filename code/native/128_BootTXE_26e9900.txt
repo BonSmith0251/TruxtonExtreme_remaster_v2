@@ -1,0 +1,178 @@
+{"assembly": "TXEKernel", "file": "BootTXE.cs", "originalType": "TXEKernel.BootTXE/<Start>d__0", "rva": 40802560, "length": 760, "signature": "System.Boolean TXEKernel.BootTXE/<Start>d__0::MoveNext()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+026e9900 48896c2418                     mov        qword ptr [rsp + 0x18], rbp
+026e9905 56                             push       rsi
+026e9906 4883ec20                       sub        rsp, 0x20
+026e990a 803d15e9f70100                 cmp        byte ptr [rip + 0x1f7e915], 0
+026e9911 488bf1                         mov        rsi, rcx
+026e9914 7537                           jne        0x26e994d
+026e9916 488d0ddbbbc901                 lea        rcx, [rip + 0x1c9bbdb]
+026e991d e82e71dffd                     call       0x4e0a50 ; 
+026e9922 488d0ddfd7cc01                 lea        rcx, [rip + 0x1ccd7df]
+026e9929 e82271dffd                     call       0x4e0a50 ; 
+026e992e 488d0d931fc901                 lea        rcx, [rip + 0x1c91f93]
+026e9935 e81671dffd                     call       0x4e0a50 ; 
+026e993a 488d0d6f67c801                 lea        rcx, [rip + 0x1c8676f]
+026e9941 e80a71dffd                     call       0x4e0a50 ; 
+026e9946 c605d9e8f70101                 mov        byte ptr [rip + 0x1f7e8d9], 1
+026e994d 8b4e10                         mov        ecx, dword ptr [rsi + 0x10]
+026e9950 488b6e20                       mov        rbp, qword ptr [rsi + 0x20]
+026e9954 85c9                           test       ecx, ecx
+026e9956 0f8455020000                   je         0x26e9bb1
+026e995c 83e901                         sub        ecx, 1
+026e995f 0f84e2000000                   je         0x26e9a47
+026e9965 83e901                         sub        ecx, 1
+026e9968 0f849b000000                   je         0x26e9a09
+026e996e 83e901                         sub        ecx, 1
+026e9971 7412                           je         0x26e9985
+026e9973 83f901                         cmp        ecx, 1
+026e9976 740d                           je         0x26e9985
+026e9978 32c0                           xor        al, al
+026e997a 488b6c2440                     mov        rbp, qword ptr [rsp + 0x40]
+026e997f 4883c420                       add        rsp, 0x20
+026e9983 5e                             pop        rsi
+026e9984 c3                             ret        
+026e9985 c74610ffffffff                 mov        dword ptr [rsi + 0x10], 0xffffffff
+026e998c 488b0d65bbc901                 mov        rcx, qword ptr [rip + 0x1c9bb65]
+026e9993 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+026e999a 7505                           jne        0x26e99a1
+026e999c e8ef73dffd                     call       0x4e0d90 ; 
+026e99a1 803d31e9f70100                 cmp        byte ptr [rip + 0x1f7e931], 0
+026e99a8 7513                           jne        0x26e99bd
+026e99aa 488d0d47bbc901                 lea        rcx, [rip + 0x1c9bb47]
+026e99b1 e89a70dffd                     call       0x4e0a50 ; 
+026e99b6 c6051ce9f70101                 mov        byte ptr [rip + 0x1f7e91c], 1
+026e99bd 488b0d34bbc901                 mov        rcx, qword ptr [rip + 0x1c9bb34]
+026e99c4 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+026e99cb 7505                           jne        0x26e99d2
+026e99cd e8be73dffd                     call       0x4e0d90 ; 
+026e99d2 488b051fbbc901                 mov        rax, qword ptr [rip + 0x1c9bb1f]
+026e99d9 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+026e99e0 80792100                       cmp        byte ptr [rcx + 0x21], 0
+026e99e4 7592                           jne        0x26e9978
+026e99e6 33d2                           xor        edx, edx
+026e99e8 488d4e18                       lea        rcx, [rsi + 0x18]
+026e99ec 48895618                       mov        qword ptr [rsi + 0x18], rdx
+026e99f0 e88b63dffd                     call       0x4dfd80 ; 
+026e99f5 b001                           mov        al, 1
+026e99f7 c7461004000000                 mov        dword ptr [rsi + 0x10], 4
+026e99fe 488b6c2440                     mov        rbp, qword ptr [rsp + 0x40]
+026e9a03 4883c420                       add        rsp, 0x20
+026e9a07 5e                             pop        rsi
+026e9a08 c3                             ret        
+026e9a09 c74610ffffffff                 mov        dword ptr [rsi + 0x10], 0xffffffff
+026e9a10 4885ed                         test       rbp, rbp
+026e9a13 0f84c2010000                   je         0x26e9bdb
+026e9a19 33d2                           xor        edx, edx
+026e9a1b 488bcd                         mov        rcx, rbp
+026e9a1e e8ed8ffeff                     call       0x26d2a10 ; TXEKernel:BootTXE:System.Collections.IEnumerator TXEKernel.BootTXE::_loadScene()
+026e9a23 488d4e18                       lea        rcx, [rsi + 0x18]
+026e9a27 48894618                       mov        qword ptr [rsi + 0x18], rax
+026e9a2b 488bd0                         mov        rdx, rax
+026e9a2e e84d63dffd                     call       0x4dfd80 ; 
+026e9a33 b001                           mov        al, 1
+026e9a35 c7461003000000                 mov        dword ptr [rsi + 0x10], 3
+026e9a3c 488b6c2440                     mov        rbp, qword ptr [rsp + 0x40]
+026e9a41 4883c420                       add        rsp, 0x20
+026e9a45 5e                             pop        rsi
+026e9a46 c3                             ret        
+026e9a47 c74610ffffffff                 mov        dword ptr [rsi + 0x10], 0xffffffff
+026e9a4e 488b0d5b66c801                 mov        rcx, qword ptr [rip + 0x1c8665b]
+026e9a55 48895c2430                     mov        qword ptr [rsp + 0x30], rbx
+026e9a5a 48897c2438                     mov        qword ptr [rsp + 0x38], rdi
+026e9a5f 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+026e9a66 7505                           jne        0x26e9a6d
+026e9a68 e82373dffd                     call       0x4e0d90 ; 
+026e9a6d 33c9                           xor        ecx, ecx
+026e9a6f e86c1670ff                     call       0x1deb0e0 ; KANAI.Kernel:LocalizeUtility:System.Void KANAI.Kernel.LocalizeUtility::SetDefaultAppLanguage()
+026e9a74 488b0d7dbac901                 mov        rcx, qword ptr [rip + 0x1c9ba7d]
+026e9a7b 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+026e9a82 7505                           jne        0x26e9a89
+026e9a84 e80773dffd                     call       0x4e0d90 ; 
+026e9a89 33c9                           xor        ecx, ecx
+026e9a8b e82033edfd                     call       0x5bcdb0 ; AEAsAnimation:AEAsAnimationRoot:System.Void AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation:AEComposition:System.Void AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpAsync>d__16::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpChildAsync>d__25::System.IDisposable.Dispose()
+026e9a90 488b0561bac901                 mov        rax, qword ptr [rip + 0x1c9ba61]
+026e9a97 488bd5                         mov        rdx, rbp
+026e9a9a 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+026e9aa1 48896908                       mov        qword ptr [rcx + 8], rbp
+026e9aa5 488b054cbac901                 mov        rax, qword ptr [rip + 0x1c9ba4c]
+026e9aac 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+026e9ab3 4883c108                       add        rcx, 8
+026e9ab7 e8c462dffd                     call       0x4dfd80 ; 
+026e9abc 488b0535bac901                 mov        rax, qword ptr [rip + 0x1c9ba35]
+026e9ac3 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+026e9aca 488b7918                       mov        rdi, qword ptr [rcx + 0x18]
+026e9ace 488b0df31dc901                 mov        rcx, qword ptr [rip + 0x1c91df3]
+026e9ad5 e8d671dffd                     call       0x4e0cb0 ; 
+026e9ada 4c8b0527d6cc01                 mov        r8, qword ptr [rip + 0x1ccd627]
+026e9ae1 4533c9                         xor        r9d, r9d
+026e9ae4 488bd5                         mov        rdx, rbp
+026e9ae7 488bc8                         mov        rcx, rax
+026e9aea 488bd8                         mov        rbx, rax
+026e9aed e8de030eff                     call       0x17c9ed0 ; System.Xml:XmlSerializationReadCallback:System.Void System.Xml.Serialization.XmlSerializationReadCallback::.ctor(System.Object,System.IntPtr) || System.Xml:XmlValueGetter:System.Void System.Xml.Schema.XmlValueGetter::.ctor(System.Object,System.IntPtr) || Unity.Cinemachine:IInputAxisOwner:System.Void Unity.Cinemachine.IInputAxisOwner/AxisDescriptor/AxisGetter::.ctor(System.Object,System.IntPtr) || Unity.Cinemachine:CinemachinePlayableMixer:System.Void Unity.Cinemachine.CinemachinePlayableMixer/MasterDirectorDelegate::.ctor(System.Object,System.IntPtr) || UnityEngine.UIElementsModule:TimeMsFunction:System.Void UnityEngine.UIElements.TimeMsFunction::.ctor(System.Object,System.IntPtr)
+026e9af2 4533c0                         xor        r8d, r8d
+026e9af5 488bd3                         mov        rdx, rbx
+026e9af8 488bcf                         mov        rcx, rdi
+026e9afb e8b03799ff                     call       0x207d2b0 ; mscorlib:Delegate:System.Delegate System.Delegate::Combine(System.Delegate,System.Delegate)
+026e9b00 488b3dc11dc901                 mov        rdi, qword ptr [rip + 0x1c91dc1]
+026e9b07 488bd8                         mov        rbx, rax
+026e9b0a 4885c0                         test       rax, rax
+026e9b0d 7516                           jne        0x26e9b25
+026e9b0f 488b05e2b9c901                 mov        rax, qword ptr [rip + 0x1c9b9e2]
+026e9b16 33d2                           xor        edx, edx
+026e9b18 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+026e9b1f 48895118                       mov        qword ptr [rcx + 0x18], rdx
+026e9b23 eb40                           jmp        0x26e9b65 ; 
+026e9b25 488bd7                         mov        rdx, rdi
+026e9b28 488bcb                         mov        rcx, rbx
+026e9b2b e87062dffd                     call       0x4dfda0 ; 
+026e9b30 4885c0                         test       rax, rax
+026e9b33 0f84b4000000                   je         0x26e9bed
+026e9b39 488b0db8b9c901                 mov        rcx, qword ptr [rip + 0x1c9b9b8]
+026e9b40 488b91b8000000                 mov        rdx, qword ptr [rcx + 0xb8]
+026e9b47 488bcb                         mov        rcx, rbx
+026e9b4a 48894218                       mov        qword ptr [rdx + 0x18], rax
+026e9b4e 488b3d731dc901                 mov        rdi, qword ptr [rip + 0x1c91d73]
+026e9b55 488bd7                         mov        rdx, rdi
+026e9b58 e84362dffd                     call       0x4dfda0 ; 
+026e9b5d 488bd0                         mov        rdx, rax
+026e9b60 4885c0                         test       rax, rax
+026e9b63 747c                           je         0x26e9be1
+026e9b65 488b058cb9c901                 mov        rax, qword ptr [rip + 0x1c9b98c]
+026e9b6c 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+026e9b73 4883c118                       add        rcx, 0x18
+026e9b77 e80462dffd                     call       0x4dfd80 ; 
+026e9b7c 33c9                           xor        ecx, ecx
+026e9b7e e8ed9a6fff                     call       0x1de3670 ; KANAI.Kernel:ApplicationUtility:System.Collections.IEnumerator KANAI.Kernel.ApplicationUtility::SetupAssetLoader()
+026e9b83 488d4e18                       lea        rcx, [rsi + 0x18]
+026e9b87 48894618                       mov        qword ptr [rsi + 0x18], rax
+026e9b8b 488bd0                         mov        rdx, rax
+026e9b8e e8ed61dffd                     call       0x4dfd80 ; 
+026e9b93 488b5c2430                     mov        rbx, qword ptr [rsp + 0x30]
+026e9b98 b001                           mov        al, 1
+026e9b9a 488b7c2438                     mov        rdi, qword ptr [rsp + 0x38]
+026e9b9f c7461002000000                 mov        dword ptr [rsi + 0x10], 2
+026e9ba6 488b6c2440                     mov        rbp, qword ptr [rsp + 0x40]
+026e9bab 4883c420                       add        rsp, 0x20
+026e9baf 5e                             pop        rsi
+026e9bb0 c3                             ret        
+026e9bb1 33d2                           xor        edx, edx
+026e9bb3 c74610ffffffff                 mov        dword ptr [rsi + 0x10], 0xffffffff
+026e9bba 488d4e18                       lea        rcx, [rsi + 0x18]
+026e9bbe 48895618                       mov        qword ptr [rsi + 0x18], rdx
+026e9bc2 e8b961dffd                     call       0x4dfd80 ; 
+026e9bc7 488b6c2440                     mov        rbp, qword ptr [rsp + 0x40]
+026e9bcc b001                           mov        al, 1
+026e9bce c7461001000000                 mov        dword ptr [rsi + 0x10], 1
+026e9bd5 4883c420                       add        rsp, 0x20
+026e9bd9 5e                             pop        rsi
+026e9bda c3                             ret        
+026e9bdb e82071dffd                     call       0x4e0d00 ; 
+026e9be0 cc                             int3       
+026e9be1 488bd7                         mov        rdx, rdi
+026e9be4 488bcb                         mov        rcx, rbx
+026e9be7 e8d461dffd                     call       0x4dfdc0 ; 
+026e9bec cc                             int3       
+026e9bed 488bd7                         mov        rdx, rdi
+026e9bf0 488bcb                         mov        rcx, rbx
+026e9bf3 e8c861dffd                     call       0x4dfdc0 ; 

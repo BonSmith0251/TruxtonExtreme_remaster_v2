@@ -1,0 +1,14 @@
+Editable reconstruction and supplemental Round1 smoke tests passed; complete original-game reconstruction is not achieved.
+
+Final revision: reconstruction-2023.2.22f1-native-assets-v4, exact Unity 2023.2.22f1 / Windows x64 Mono.
+Final manifest SHA256: a4addaf382b3296745a1da8c15d8aa8d5fd230af1d50d080508df91b36730c7a.
+All 27,737 Assets/Packages/ProjectSettings files match after exact restoration of two diagnostic settings side effects. V4 differs from gameplay-tested v3 only in an Editor capture helper.
+
+COMPLETE: Source preservation check; target attachment audit (14 scenes, 2,150 prefabs, 11,578 native main assets); 24-object Boot structural comparison; ordinary editor Play/Stop twice with visible gameplay and zero test errors; Windows build plus normal Hub/button/gameplay smoke test.
+FAILED/INCOMPLETE: Strict decoding still has 3 source objects failing; most original method bodies and full original startup/gameplay remain unrecovered. 91 simple native methods are independently byte-verified; they do not constitute the full game.
+INCONCLUSIVE: Complete prefab/field/reference fidelity; full native-stage presentation; original-game visual/behavioral parity. Native BG01/BG03 GPU captures show limited rock geometry without stage/camera animation. Source-pipeline probe completed without captured errors but does not establish correct full presentation.
+
+Boot detail: 1,169 checks including 116 local and 29 original-null references. 11 RectTransform loaded-value changes preserve original YAML values; one newer InputSystem property is absent; 13 external references remain unverified.
+Warnings: 258 dummy shaders; 182 approximate material mappings; build has 8 warnings; six OutGame fields across five coroutine types reference unavailable Unity6 AsyncInstantiateOperation APIs; recovered TMP shader fallback warnings remain.
+
+Exact screenshots, logs, limitations and per-scope evidence paths are listed in FINAL_VERIFICATION.json.

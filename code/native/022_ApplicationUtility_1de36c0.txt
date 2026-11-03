@@ -1,0 +1,88 @@
+{"assembly": "KANAI.Kernel", "file": "ApplicationUtility.cs", "originalType": "KANAI.Kernel.ApplicationUtility", "rva": 31340224, "length": 434, "signature": "System.Void KANAI.Kernel.ApplicationUtility::SoftwareReset()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01de36c0 4883ec28                       sub        rsp, 0x28
+01de36c4 803dcf02880200                 cmp        byte ptr [rip + 0x28802cf], 0
+01de36cb 751f                           jne        0x1de36ec
+01de36cd 488d0d241e5a02                 lea        rcx, [rip + 0x25a1e24]
+01de36d4 e877d36ffe                     call       0x4e0a50 ; 
+01de36d9 488d0dc0a75902                 lea        rcx, [rip + 0x259a7c0]
+01de36e0 e86bd36ffe                     call       0x4e0a50 ; 
+01de36e5 c605ae02880201                 mov        byte ptr [rip + 0x28802ae], 1
+01de36ec 488b0d051e5a02                 mov        rcx, qword ptr [rip + 0x25a1e05]
+01de36f3 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de36fa 750c                           jne        0x1de3708
+01de36fc e88fd66ffe                     call       0x4e0d90 ; 
+01de3701 488b0df01d5a02                 mov        rcx, qword ptr [rip + 0x25a1df0]
+01de3708 803d8203880200                 cmp        byte ptr [rip + 0x2880382], 0
+01de370f 751a                           jne        0x1de372b
+01de3711 488d0de01d5a02                 lea        rcx, [rip + 0x25a1de0]
+01de3718 e833d36ffe                     call       0x4e0a50 ; 
+01de371d 488b0dd41d5a02                 mov        rcx, qword ptr [rip + 0x25a1dd4]
+01de3724 c6056603880201                 mov        byte ptr [rip + 0x2880366], 1
+01de372b 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de3732 750c                           jne        0x1de3740
+01de3734 e857d66ffe                     call       0x4e0d90 ; 
+01de3739 488b0db81d5a02                 mov        rcx, qword ptr [rip + 0x25a1db8]
+01de3740 488b81b8000000                 mov        rax, qword ptr [rcx + 0xb8]
+01de3747 80782000                       cmp        byte ptr [rax + 0x20], 0
+01de374b 0f8517010000                   jne        0x1de3868
+01de3751 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de3758 48895c2430                     mov        qword ptr [rsp + 0x30], rbx
+01de375d 750c                           jne        0x1de376b
+01de375f e82cd66ffe                     call       0x4e0d90 ; 
+01de3764 488b0d8d1d5a02                 mov        rcx, qword ptr [rip + 0x25a1d8d]
+01de376b 488b81b8000000                 mov        rax, qword ptr [rcx + 0xb8]
+01de3772 488b0d27a75902                 mov        rcx, qword ptr [rip + 0x259a727]
+01de3779 488b5808                       mov        rbx, qword ptr [rax + 8]
+01de377d 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de3784 7505                           jne        0x1de378b
+01de3786 e805d66ffe                     call       0x4e0d90 ; 
+01de378b 4533c0                         xor        r8d, r8d
+01de378e 33d2                           xor        edx, edx
+01de3790 488bcb                         mov        rcx, rbx
+01de3793 e8d89a2801                     call       0x306d270 ; UnityEngine.CoreModule:Object:System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+01de3798 84c0                           test       al, al
+01de379a 0f85c3000000                   jne        0x1de3863
+01de37a0 48897c2420                     mov        qword ptr [rsp + 0x20], rdi
+01de37a5 488b0d4c1d5a02                 mov        rcx, qword ptr [rip + 0x25a1d4c]
+01de37ac 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de37b3 7505                           jne        0x1de37ba
+01de37b5 e8d6d56ffe                     call       0x4e0d90 ; 
+01de37ba 803dce02880200                 cmp        byte ptr [rip + 0x28802ce], 0
+01de37c1 7513                           jne        0x1de37d6
+01de37c3 488d0d2e1d5a02                 lea        rcx, [rip + 0x25a1d2e]
+01de37ca e881d26ffe                     call       0x4e0a50 ; 
+01de37cf c605b902880201                 mov        byte ptr [rip + 0x28802b9], 1
+01de37d6 488b0d1b1d5a02                 mov        rcx, qword ptr [rip + 0x25a1d1b]
+01de37dd 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de37e4 7505                           jne        0x1de37eb
+01de37e6 e8a5d56ffe                     call       0x4e0d90 ; 
+01de37eb 803da901880200                 cmp        byte ptr [rip + 0x28801a9], 0
+01de37f2 488b05ff1c5a02                 mov        rax, qword ptr [rip + 0x25a1cff]
+01de37f9 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+01de3800 c6412001                       mov        byte ptr [rcx + 0x20], 1
+01de3804 488b05ed1c5a02                 mov        rax, qword ptr [rip + 0x25a1ced]
+01de380b 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+01de3812 488b7908                       mov        rdi, qword ptr [rcx + 8]
+01de3816 7513                           jne        0x1de382b
+01de3818 488d0d41ca5802                 lea        rcx, [rip + 0x258ca41]
+01de381f e82cd26ffe                     call       0x4e0a50 ; 
+01de3824 c6057001880201                 mov        byte ptr [rip + 0x2880170], 1
+01de382b 488b0d2eca5802                 mov        rcx, qword ptr [rip + 0x258ca2e]
+01de3832 e879d46ffe                     call       0x4e0cb0 ; 
+01de3837 33d2                           xor        edx, edx
+01de3839 488bc8                         mov        rcx, rax
+01de383c 488bd8                         mov        rbx, rax
+01de383f e86c957dfe                     call       0x5bcdb0 ; AEAsAnimation:AEAsAnimationRoot:System.Void AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation:AEComposition:System.Void AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpAsync>d__16::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpChildAsync>d__25::System.IDisposable.Dispose()
+01de3844 c7431000000000                 mov        dword ptr [rbx + 0x10], 0
+01de384b 4885ff                         test       rdi, rdi
+01de384e 741d                           je         0x1de386d
+01de3850 4533c0                         xor        r8d, r8d
+01de3853 488bd3                         mov        rdx, rbx
+01de3856 488bcf                         mov        rcx, rdi
+01de3859 e8e2362801                     call       0x3066f40 ; UnityEngine.CoreModule:MonoBehaviour:UnityEngine.Coroutine UnityEngine.MonoBehaviour::StartCoroutine(System.Collections.IEnumerator) || UnityEngine.CoreModule:MonoBehaviour:UnityEngine.Coroutine UnityEngine.MonoBehaviour::StartCoroutine_Auto(System.Collections.IEnumerator)
+01de385e 488b7c2420                     mov        rdi, qword ptr [rsp + 0x20]
+01de3863 488b5c2430                     mov        rbx, qword ptr [rsp + 0x30]
+01de3868 4883c428                       add        rsp, 0x28
+01de386c c3                             ret        
+01de386d e88ed46ffe                     call       0x4e0d00 ; 

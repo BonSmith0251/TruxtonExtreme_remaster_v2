@@ -1,0 +1,58 @@
+{"assembly": "KANAI.Kernel", "file": "ApplicationUtility.cs", "originalType": "KANAI.Kernel.ApplicationUtility/<SetupAssetLoader>d__15", "rva": 31410128, "length": 244, "signature": "System.Boolean KANAI.Kernel.ApplicationUtility/<SetupAssetLoader>d__15::MoveNext()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01df47d0 4053                           push       rbx
+01df47d2 4883ec50                       sub        rsp, 0x50
+01df47d6 803dcef1860200                 cmp        byte ptr [rip + 0x286f1ce], 0
+01df47dd 488bd9                         mov        rbx, rcx
+01df47e0 7537                           jne        0x1df4819
+01df47e2 488d0dafd05802                 lea        rcx, [rip + 0x258d0af]
+01df47e9 e862c26efe                     call       0x4e0a50 ; 
+01df47ee 488d0dcb7c5d02                 lea        rcx, [rip + 0x25d7ccb]
+01df47f5 e856c26efe                     call       0x4e0a50 ; 
+01df47fa 488d0dcf275c02                 lea        rcx, [rip + 0x25c27cf]
+01df4801 e84ac26efe                     call       0x4e0a50 ; 
+01df4806 488d0d7b285c02                 lea        rcx, [rip + 0x25c287b]
+01df480d e83ec26efe                     call       0x4e0a50 ; 
+01df4812 c60592f1860201                 mov        byte ptr [rip + 0x286f192], 1
+01df4819 8b4310                         mov        eax, dword ptr [rbx + 0x10]
+01df481c 85c0                           test       eax, eax
+01df481e 757f                           jne        0x1df489f
+01df4820 c74310ffffffff                 mov        dword ptr [rbx + 0x10], 0xffffffff
+01df4827 488b0d5a285c02                 mov        rcx, qword ptr [rip + 0x25c285a]
+01df482e e8bdbaf1fe                     call       0xd102f0 ; KANAI.Kernel:MonoBehaviourSingleton`1:System.Boolean KANAI.Kernel.MonoBehaviourSingleton`1::IsInstanceNull() || KANAI.Kernel:SimpleSingleton`1:System.Boolean KANAI.Kernel.SimpleSingleton`1::IsInstanceNull()
+01df4833 84c0                           test       al, al
+01df4835 0f8481000000                   je         0x1df48bc
+01df483b 488b0d56d05802                 mov        rcx, qword ptr [rip + 0x258d056]
+01df4842 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01df4849 7505                           jne        0x1df4850
+01df484b e840c56efe                     call       0x4e0d90 ; 
+01df4850 33d2                           xor        edx, edx
+01df4852 488d4c2438                     lea        rcx, [rsp + 0x38]
+01df4857 e854c99a00                     call       0x27a11b0 ; Unity.Addressables:Addressables:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle`1<UnityEngine.AddressableAssets.ResourceLocators.IResourceLocator> UnityEngine.AddressableAssets.Addressables::InitializeAsync()
+01df485c 488b0d5d7c5d02                 mov        rcx, qword ptr [rip + 0x25d7c5d]
+01df4863 488d542420                     lea        rdx, [rsp + 0x20]
+01df4868 0f1000                         movups     xmm0, xmmword ptr [rax]
+01df486b 0f11442420                     movups     xmmword ptr [rsp + 0x20], xmm0
+01df4870 f20f104810                     movsd      xmm1, qword ptr [rax + 0x10]
+01df4875 f20f114c2430                   movsd      qword ptr [rsp + 0x30], xmm1
+01df487b e8e0b46efe                     call       0x4dfd60 ; 
+01df4880 488d4b18                       lea        rcx, [rbx + 0x18]
+01df4884 48894318                       mov        qword ptr [rbx + 0x18], rax
+01df4888 488bd0                         mov        rdx, rax
+01df488b e8f0b46efe                     call       0x4dfd80 ; 
+01df4890 b001                           mov        al, 1
+01df4892 c7431001000000                 mov        dword ptr [rbx + 0x10], 1
+01df4899 4883c450                       add        rsp, 0x50
+01df489d 5b                             pop        rbx
+01df489e c3                             ret        
+01df489f 83f801                         cmp        eax, 1
+01df48a2 7518                           jne        0x1df48bc
+01df48a4 c74310ffffffff                 mov        dword ptr [rbx + 0x10], 0xffffffff
+01df48ab 0fb6d0                         movzx      edx, al
+01df48ae 4c8b051b275c02                 mov        r8, qword ptr [rip + 0x25c271b]
+01df48b5 33c9                           xor        ecx, ecx
+01df48b7 e854b6f1fe                     call       0xd0ff10 ; KANAI.Kernel:MonoBehaviourSingleton`1:System.Boolean KANAI.Kernel.MonoBehaviourSingleton`1::CreateInstance(UnityEngine.Transform,System.Boolean)
+01df48bc 32c0                           xor        al, al
+01df48be 4883c450                       add        rsp, 0x50
+01df48c2 5b                             pop        rbx
+01df48c3 c3                             ret        

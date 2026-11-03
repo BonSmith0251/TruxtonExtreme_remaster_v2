@@ -1,0 +1,42 @@
+{
+  "skill": "unity-reconstruction-code",
+  "verifiedFinding": "Cpp2IL pre-release.21 exposes dll_il_recovery but exact revision FillMethodBody emits ldnull;throw unconditionally.",
+  "evidence": [
+    "tools/AsmResolverDllOutputFormatIlRecovery.cs",
+    "cpp2il-il-recovery.log",
+    "metadata-coverage.json"
+  ],
+  "recommendation": "When IL recovery emits only stubs, inspect exact installed output implementation and available processors before assuming unsupported binary patterns or misconfiguration. Record original-token and injected-helper denominators separately. Preserve compound assembly/type identity and attributes.",
+  "scope": "Tool-revision-specific example; do not assert all Cpp2IL releases behave this way.",
+  "checks": "118 assembly census;130106 throw-null bodies;6928bodyless methods;zero executable recovered IL;exact commit source checked.",
+  "additionalFindings": [
+    {
+      "finding": "Serialized MonoScript catalogs can include types stripped from player IL2CPP metadata, including attached debug/sample types.",
+      "evidence": "4115scriptobjects;1189exact assembly/type misses;joining22852m_Script refs identifies11actual missing attachments.",
+      "recommendation": "Join missing metadata types to component m_Script references before classifying attachment coverage; recover field layouts from preserved source type trees and label inferred inheritance/container kind."
+    },
+    {
+      "finding": "Game DLL global Debug can shadow UnityEngine.Debug inside auto-referenced target package compilation.",
+      "evidence": "KANAI.Kernel.Debug;zero external Debug type refs in33gameDLLs;native no-op methods markedConditional NEVER_DEFINE_SYMBOL.",
+      "recommendation": "Preserve assembly/type identity; prefer reference-boundary repair or evidence-supported visibility compatibility change. Do not rename/delete arbitrary original types to hide conflicts."
+    },
+    {
+      "finding": "Transplanting types into an existing assembly can accidentally create a self AssemblyRef when an imported field references a type already in the destination.",
+      "evidence": "Our OutGame shell merge introduced2self TypeRefs;targetUnity2023 crashed in ReverseAssemblyDependenciesGraph with8GiB allocation;85assemblygraph soleSCCOutGame selfloop.",
+      "recommendation": "Before importing rewritten DLLs, inspect assembly reference graph for self-dependencies/cycles. Resolve same-assembly type identities to destination definitions when cloning. Inspect exact native stack before diagnosing allocation errors.",
+      "verification": "Cecil regeneration0selfrefs; samefield identities; Unity2023 integrated-import-8 completes domain reload and proceeds to asset imports. Full project runtime validation remains separate."
+    },
+    {
+      "finding": "A bounded native pattern lifter can recover a small exact subset even when the installed automatic IL output is only stubs.",
+      "evidence": "91Win64native methods accepted:50declared-field getters,39scalar setters,2integerconstants. Each uniqueRVA,one supportedinstruction+ret,fieldoffset andtype exact, no branches/calls/genericlayout/reference setters. Nativefixtures310andmanagedfixtures309passed;85assemblygraphacyclic;structure/referencesunchanged.",
+      "recommendation": "Treat native lifting as method-scoped evidence: record originalbinary+metadatahash,RVA,bytes,instructiondecoding,typedfieldmapping,baselineDLLhash and emittedIL. Reject ambiguous signatures/layouts and validate actual patchedassembly paths. Keep isolated candidateoutputs and assert targetbaseline beforeintegration; never infer fullgamebehavior from accessor coverage.",
+      "scope": "Verified Win64 accessor/constant subset for this build only; source C# and complex native behavior remain unavailable.",
+      "verification": "simple-native-recovery/native-execution-check.json and managed-execution-check.json; targetruntime integration pending"
+    },
+    {
+      "finding": "Successful Assembly.GetTypes does not guarantee every field type is compatible after a Unity downgrade.",
+      "evidence": "Unity2023 standalone Mono resolves526/526 OutGame types, but field reflection exposes6Unity6 AsyncInstantiateOperation<T>/Awaiter<T> references in5compiler-generated states; actualtargetCore lacks those types. BuildInputSystem emits an OutGame reflection warning; exacteditorcallsiteexception not reproduced.",
+      "recommendation": "Inspect field-type resolution, including private compiler-generated state, as well as GetTypes when diagnosing migration warnings. Preserve exact affected field/type identities and distinguish isolated-runtime evidence from editor reproduction. Do not fabricate operation behavior just to silence a warning."
+    }
+  ]
+}

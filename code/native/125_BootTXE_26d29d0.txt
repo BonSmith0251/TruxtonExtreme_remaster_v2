@@ -1,0 +1,16 @@
+{"assembly": "TXEKernel", "file": "BootTXE.cs", "originalType": "TXEKernel.BootTXE", "rva": 40708560, "length": 54, "signature": "System.Void TXEKernel.BootTXE::.ctor()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+026d29d0 4053                           push       rbx
+026d29d2 4883ec20                       sub        rsp, 0x20
+026d29d6 488b052355fa01                 mov        rax, qword ptr [rip + 0x1fa5523]
+026d29dd 488bd9                         mov        rbx, rcx
+026d29e0 488b90b8000000                 mov        rdx, qword ptr [rax + 0xb8]
+026d29e7 488b12                         mov        rdx, qword ptr [rdx]
+026d29ea 48895120                       mov        qword ptr [rcx + 0x20], rdx
+026d29ee 4883c120                       add        rcx, 0x20
+026d29f2 e889d3e0fd                     call       0x4dfd80 ; 
+026d29f7 33d2                           xor        edx, edx
+026d29f9 488bcb                         mov        rcx, rbx
+026d29fc 4883c420                       add        rsp, 0x20
+026d2a00 5b                             pop        rbx
+026d2a01 e98a559800                     jmp        0x3057f90 ; UnityEngine.CoreModule:Behaviour:System.Void UnityEngine.Behaviour::.ctor() || UnityEngine.CoreModule:Component:System.Void UnityEngine.Component::.ctor() || UnityEngine.CoreModule:MonoBehaviour:System.Void UnityEngine.MonoBehaviour::.ctor()

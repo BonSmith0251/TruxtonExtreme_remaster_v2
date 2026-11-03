@@ -1,0 +1,54 @@
+{"assembly": "OutGame", "file": "BootOutGame.cs", "originalType": "OutGame.BootOutGame", "rva": 35371680, "length": 245, "signature": "System.Void OutGame.BootOutGame::OnDestroy()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+021bbaa0 48895c2408                     mov        qword ptr [rsp + 8], rbx
+021bbaa5 57                             push       rdi
+021bbaa6 4883ec20                       sub        rsp, 0x20
+021bbaaa 803dd69e4a0200                 cmp        byte ptr [rip + 0x24a9ed6], 0
+021bbab1 488bd9                         mov        rbx, rcx
+021bbab4 754f                           jne        0x21bbb05
+021bbab6 488d0d9bdf2002                 lea        rcx, [rip + 0x220df9b]
+021bbabd e88e4f32fe                     call       0x4e0a50 ; 
+021bbac2 488d0dd74b1c02                 lea        rcx, [rip + 0x21c4bd7]
+021bbac9 e8824f32fe                     call       0x4e0a50 ; 
+021bbace 488d0d239a1c02                 lea        rcx, [rip + 0x21c9a23]
+021bbad5 e8764f32fe                     call       0x4e0a50 ; 
+021bbada 488d0d9fb21f02                 lea        rcx, [rip + 0x21fb29f]
+021bbae1 e86a4f32fe                     call       0x4e0a50 ; 
+021bbae6 488d0d63b51f02                 lea        rcx, [rip + 0x21fb563]
+021bbaed e85e4f32fe                     call       0x4e0a50 ; 
+021bbaf2 488d0daf621a02                 lea        rcx, [rip + 0x21a62af]
+021bbaf9 e8524f32fe                     call       0x4e0a50 ; 
+021bbafe c605829e4a0201                 mov        byte ptr [rip + 0x24a9e82], 1
+021bbb05 488b0d944b1c02                 mov        rcx, qword ptr [rip + 0x21c4b94]
+021bbb0c e89f5132fe                     call       0x4e0cb0 ; 
+021bbb11 4c8b0538b51f02                 mov        r8, qword ptr [rip + 0x21fb538]
+021bbb18 4533c9                         xor        r9d, r9d
+021bbb1b 488bd3                         mov        rdx, rbx
+021bbb1e 488bc8                         mov        rcx, rax
+021bbb21 488bf8                         mov        rdi, rax
+021bbb24 e857d747fe                     call       0x639280 ; com.rlabrecque.steamworks.net:ISteamMatchmakingPingResponse:System.Void Steamworks.ISteamMatchmakingPingResponse/ServerFailedToRespond::.ctor(System.Object,System.IntPtr) || com.rlabrecque.steamworks.net:ISteamMatchmakingPlayersResponse:System.Void Steamworks.ISteamMatchmakingPlayersResponse/PlayersFailedToRespond::.ctor(System.Object,System.IntPtr) || com.rlabrecque.steamworks.net:ISteamMatchmakingPlayersResponse:System.Void Steamworks.ISteamMatchmakingPlayersResponse/PlayersRefreshComplete::.ctor(System.Object,System.IntPtr) || com.rlabrecque.steamworks.net:ISteamMatchmakingRulesResponse:System.Void Steamworks.ISteamMatchmakingRulesResponse/RulesFailedToRespond::.ctor(System.Object,System.IntPtr) || com.rlabrecque.steamworks.net:ISteamMatchmakingRulesResponse:System.Void Steamworks.ISteamMatchmakingRulesResponse/RulesRefreshComplete::.ctor(System.Object,System.IntPtr)
+021bbb29 488b0dc8991c02                 mov        rcx, qword ptr [rip + 0x21c99c8]
+021bbb30 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021bbb37 7505                           jne        0x21bbb3e
+021bbb39 e8525232fe                     call       0x4e0d90 ; 
+021bbb3e 33d2                           xor        edx, edx
+021bbb40 488bcf                         mov        rcx, rdi
+021bbb43 e80882c2ff                     call       0x1de3d50 ; KANAI.Kernel:ApplicationUtility:System.Void KANAI.Kernel.ApplicationUtility::remove_onSoftwareReset(System.Action)
+021bbb48 488b0d09df2002                 mov        rcx, qword ptr [rip + 0x220df09]
+021bbb4f e85c5132fe                     call       0x4e0cb0 ; 
+021bbb54 4c8b0525b21f02                 mov        r8, qword ptr [rip + 0x21fb225]
+021bbb5b 4533c9                         xor        r9d, r9d
+021bbb5e 488bd3                         mov        rdx, rbx
+021bbb61 488bc8                         mov        rcx, rax
+021bbb64 488bf8                         mov        rdi, rax
+021bbb67 e884f5a8ff                     call       0x1c4b0f0 ; 
+021bbb6c 488b0d35621a02                 mov        rcx, qword ptr [rip + 0x21a6235]
+021bbb73 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021bbb7a 7505                           jne        0x21bbb81
+021bbb7c e80f5232fe                     call       0x4e0d90 ; 
+021bbb81 33d2                           xor        edx, edx
+021bbb83 488bcf                         mov        rcx, rdi
+021bbb86 488b5c2430                     mov        rbx, qword ptr [rsp + 0x30]
+021bbb8b 4883c420                       add        rsp, 0x20
+021bbb8f 5f                             pop        rdi
+021bbb90 e91b4d7800                     jmp        0x29408b0 ; Unity.InputSystem:InputSystem:System.Void UnityEngine.InputSystem.InputSystem::remove_onDeviceChange(System.Action`2<UnityEngine.InputSystem.InputDevice,UnityEngine.InputSystem.InputDeviceChange>)

@@ -1,0 +1,41 @@
+{
+  "utc": "2026-10-31T12:36:52.114336+00:00",
+  "required_handoff": [
+    "Target editor has fully exited after import/compile",
+    "Integrator supplies frozen code/asset/settings manifest and intended entry scene",
+    "Exclusive target ownership transfers to verifier; unrelated Unity PID27152 remains untouched"
+  ],
+  "tests": [
+    {
+      "name": "Target static identity check",
+      "method": "Fingerprint Assets/Packages/ProjectSettings; duplicate GUID and external PPtr checks; source-native copy provenance and changed-file ledger",
+      "boundary": "Does not prove importer/subasset or object-by-object equivalence"
+    },
+    {
+      "name": "All scenes and prefabs",
+      "method": "Editor APIs enumerate assets, load scenes/prefabs including inactive hierarchy, count missing components/scripts/references and inspect script types; record errors and counts",
+      "boundary": "No silent stripping of unsupported components to obtain zero count"
+    },
+    {
+      "name": "Ordinary editor entry",
+      "method": "Fresh graphics editor session open intended gameplay scene; Play, wait/capture, Stop, Play again, wait/capture, Stop; save logs",
+      "boundary": "Testing supplemental Round1 does not verify original title/menus/other rounds"
+    },
+    {
+      "name": "Standalone",
+      "method": "Windows x64 Mono build with exact2023.2.22f1 then graphics launch; log and capture startup/gameplay; safe process-specific exit",
+      "boundary": "No headless process substituted for rendering evidence"
+    },
+    {
+      "name": "Source preservation",
+      "method": "Coordinator compares final original hashes to275 initial file fingerprints",
+      "boundary": "Verifier raw decompressed hashes already independently checked"
+    }
+  ],
+  "verdict_policy": {
+    "extraction": "Partial:270368decoded objects including726recovered managed layouts;2managed failures plusPlayerSettings remain. All54included containers parsed; final original275file SHA256check supplied by coordinator.",
+    "full_game_behavior": "Fail while original executable methods are stubs and supplemental runtime covers onlysubset",
+    "visual_fidelity": "Inconclusive without matched original captures",
+    "editor_and_player": "Pending frozen target"
+  }
+}

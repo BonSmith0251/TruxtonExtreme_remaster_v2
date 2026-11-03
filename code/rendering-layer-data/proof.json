@@ -1,0 +1,40 @@
+{
+  "type": "UnityEngine.Rendering.UI.DebugUIHandlerRenderingLayerField",
+  "sourceAssembly": "Unity.RenderPipelines.Core.Runtime",
+  "targetAssembly": "Assembly-CSharp",
+  "baseType": "UnityEngine.Rendering.UI.DebugUIHandlerWidget",
+  "baseCompatibility": "Core16 source and original metadata both retain serialized Color colorDefault/colorSelected; target existing base used",
+  "declaredSerializedFields": [
+    {
+      "name": "nameLabel",
+      "type": "UnityEngine.UI.Text"
+    },
+    {
+      "name": "valueToggle",
+      "type": "UnityEngine.Rendering.UI.UIFoldout"
+    },
+    {
+      "name": "toggles",
+      "type": "System.Collections.Generic.List<UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle>"
+    }
+  ],
+  "originalNonserializedPrivateRuntimeFields": [
+    "DebugUI.RenderingLayerField m_Field",
+    "DebugUIHandlerContainer m_Container"
+  ],
+  "runtimeFieldTreatment": "not included in data-only shell; missing Unity6 RenderingLayerField runtime behavior not fabricated",
+  "sourceScript": {
+    "guid": "57c9a3e5193e26c4b968cc86e528416d",
+    "fileID": "1395669578"
+  },
+  "targetScript": {
+    "guid": "86ea1b62b2d94f2f8d20a22623f2e4c7",
+    "fileID": "11500000"
+  },
+  "sourcePrefabComponentFileID": "114177930474251431",
+  "sourceToggleReferences": 32,
+  "compile": "passed Unity2023 Core16 actual DLL references",
+  "integration": "copy only cs+cs.meta; remap exact script pointer. Do not copy compile-check.dll. Preserve all prefab data; target assembly departure is explicit.",
+  "behavior": "original rendering-layer debug UI behavior unrecovered; target base class behavior only",
+  "targetValidation": "pending scene worker"
+}

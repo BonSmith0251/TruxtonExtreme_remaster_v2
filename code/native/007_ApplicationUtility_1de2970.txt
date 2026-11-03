@@ -1,0 +1,81 @@
+{"assembly": "KANAI.Kernel", "file": "ApplicationUtility.cs", "originalType": "KANAI.Kernel.ApplicationUtility", "rva": 31336816, "length": 329, "signature": "System.String KANAI.Kernel.ApplicationUtility::GetPlatformName()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01de2970 4883ec28                       sub        rsp, 0x28
+01de2974 803d1210880200                 cmp        byte ptr [rip + 0x2881012], 0
+01de297b 7573                           jne        0x1de29f0
+01de297d 488d0d4c295a02                 lea        rcx, [rip + 0x25a294c]
+01de2984 e8c7e06ffe                     call       0x4e0a50 ; 
+01de2989 488d0db0685802                 lea        rcx, [rip + 0x25868b0]
+01de2990 e8bbe06ffe                     call       0x4e0a50 ; 
+01de2995 488d0dc4b45802                 lea        rcx, [rip + 0x258b4c4]
+01de299c e8afe06ffe                     call       0x4e0a50 ; 
+01de29a1 488d0d80765d02                 lea        rcx, [rip + 0x25d7680]
+01de29a8 e8a3e06ffe                     call       0x4e0a50 ; 
+01de29ad 488d0da44e5d02                 lea        rcx, [rip + 0x25d4ea4]
+01de29b4 e897e06ffe                     call       0x4e0a50 ; 
+01de29b9 488d0db0cb5c02                 lea        rcx, [rip + 0x25ccbb0]
+01de29c0 e88be06ffe                     call       0x4e0a50 ; 
+01de29c5 488d0ddcda5902                 lea        rcx, [rip + 0x259dadc]
+01de29cc e87fe06ffe                     call       0x4e0a50 ; 
+01de29d1 488d0d00775d02                 lea        rcx, [rip + 0x25d7700]
+01de29d8 e873e06ffe                     call       0x4e0a50 ; 
+01de29dd 488d0d34ff5902                 lea        rcx, [rip + 0x259ff34]
+01de29e4 e867e06ffe                     call       0x4e0a50 ; 
+01de29e9 c6059d0f880201                 mov        byte ptr [rip + 0x2880f9d], 1
+01de29f0 488b0dd9285a02                 mov        rcx, qword ptr [rip + 0x25a28d9]
+01de29f7 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de29fe 7505                           jne        0x1de2a05
+01de2a00 e88be36ffe                     call       0x4e0d90 ; 
+01de2a05 33c9                           xor        ecx, ecx
+01de2a07 e8d4b21e01                     call       0x2fcdce0 ; UnityEngine.CoreModule:Application:UnityEngine.RuntimePlatform UnityEngine.Application::get_platform()
+01de2a0c 83f80b                         cmp        eax, 0xb
+01de2a0f 7e49                           jle        0x1de2a5a
+01de2a11 83f81b                         cmp        eax, 0x1b
+01de2a14 7e22                           jle        0x1de2a38
+01de2a16 83f820                         cmp        eax, 0x20
+01de2a19 750c                           jne        0x1de2a27
+01de2a1b 488b0586da5902                 mov        rax, qword ptr [rip + 0x259da86]
+01de2a22 4883c428                       add        rsp, 0x28
+01de2a26 c3                             ret        
+01de2a27 83f826                         cmp        eax, 0x26
+01de2a2a 7577                           jne        0x1de2aa3
+01de2a2c 488b05a5765d02                 mov        rax, qword ptr [rip + 0x25d76a5]
+01de2a33 4883c428                       add        rsp, 0x28
+01de2a37 c3                             ret        
+01de2a38 83f819                         cmp        eax, 0x19
+01de2a3b 750c                           jne        0x1de2a49
+01de2a3d 488b05e4755d02                 mov        rax, qword ptr [rip + 0x25d75e4]
+01de2a44 4883c428                       add        rsp, 0x28
+01de2a48 c3                             ret        
+01de2a49 83f81b                         cmp        eax, 0x1b
+01de2a4c 7555                           jne        0x1de2aa3
+01de2a4e 488b050bb45802                 mov        rax, qword ptr [rip + 0x258b40b]
+01de2a55 4883c428                       add        rsp, 0x28
+01de2a59 c3                             ret        
+01de2a5a 83f802                         cmp        eax, 2
+01de2a5d 7e22                           jle        0x1de2a81
+01de2a5f 83f808                         cmp        eax, 8
+01de2a62 750c                           jne        0x1de2a70
+01de2a64 488b05adfe5902                 mov        rax, qword ptr [rip + 0x259fead]
+01de2a6b 4883c428                       add        rsp, 0x28
+01de2a6f c3                             ret        
+01de2a70 83f80b                         cmp        eax, 0xb
+01de2a73 752e                           jne        0x1de2aa3
+01de2a75 488b05dc4d5d02                 mov        rax, qword ptr [rip + 0x25d4ddc]
+01de2a7c 4883c428                       add        rsp, 0x28
+01de2a80 c3                             ret        
+01de2a81 83f801                         cmp        eax, 1
+01de2a84 750c                           jne        0x1de2a92
+01de2a86 488b05e3ca5c02                 mov        rax, qword ptr [rip + 0x25ccae3]
+01de2a8d 4883c428                       add        rsp, 0x28
+01de2a91 c3                             ret        
+01de2a92 83f802                         cmp        eax, 2
+01de2a95 750c                           jne        0x1de2aa3
+01de2a97 488b05a2675802                 mov        rax, qword ptr [rip + 0x25867a2]
+01de2a9e 4883c428                       add        rsp, 0x28
+01de2aa2 c3                             ret        
+01de2aa3 488b0556548902                 mov        rax, qword ptr [rip + 0x2895456]
+01de2aaa 488b80b8000000                 mov        rax, qword ptr [rax + 0xb8]
+01de2ab1 488b00                         mov        rax, qword ptr [rax]
+01de2ab4 4883c428                       add        rsp, 0x28
+01de2ab8 c3                             ret        

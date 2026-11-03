@@ -1,0 +1,16 @@
+namespace System.Data;
+
+[Token(Token = "0x2000061")]
+internal enum ValueType : int
+{
+	Unknown = -1,
+	Null = 0,
+	Bool = 1,
+	Numeric = 2,
+	Str = 3,
+	Float = 4,
+	Decimal = 5,
+	Object = 6,
+	Date = 7,
+}
+

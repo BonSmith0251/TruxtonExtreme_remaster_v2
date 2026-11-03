@@ -1,0 +1,18 @@
+{"assembly": "KANAI.Kernel", "file": "ApplicationUtility.cs", "originalType": "KANAI.Kernel.ApplicationUtility", "rva": 31338416, "length": 71, "signature": "System.Boolean KANAI.Kernel.ApplicationUtility::IsPlayStation4()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01de2fb0 4883ec28                       sub        rsp, 0x28
+01de2fb4 803dd409880200                 cmp        byte ptr [rip + 0x28809d4], 0
+01de2fbb 7513                           jne        0x1de2fd0
+01de2fbd 488d0d0c235a02                 lea        rcx, [rip + 0x25a230c]
+01de2fc4 e887da6ffe                     call       0x4e0a50 ; 
+01de2fc9 c605bf09880201                 mov        byte ptr [rip + 0x28809bf], 1
+01de2fd0 488b0df9225a02                 mov        rcx, qword ptr [rip + 0x25a22f9]
+01de2fd7 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2fde 7505                           jne        0x1de2fe5
+01de2fe0 e8abdd6ffe                     call       0x4e0d90 ; 
+01de2fe5 33c9                           xor        ecx, ecx
+01de2fe7 e8f4ac1e01                     call       0x2fcdce0 ; UnityEngine.CoreModule:Application:UnityEngine.RuntimePlatform UnityEngine.Application::get_platform()
+01de2fec 83f819                         cmp        eax, 0x19
+01de2fef 0f94c0                         sete       al
+01de2ff2 4883c428                       add        rsp, 0x28
+01de2ff6 c3                             ret        

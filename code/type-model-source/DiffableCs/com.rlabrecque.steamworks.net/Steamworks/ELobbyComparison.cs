@@ -1,0 +1,13 @@
+namespace Steamworks;
+
+[Token(Token = "0x200011E")]
+public enum ELobbyComparison : int
+{
+	k_ELobbyComparisonEqualToOrLessThan = -2,
+	k_ELobbyComparisonLessThan = -1,
+	k_ELobbyComparisonEqual = 0,
+	k_ELobbyComparisonGreaterThan = 1,
+	k_ELobbyComparisonEqualToOrGreaterThan = 2,
+	k_ELobbyComparisonNotEqual = 3,
+}
+

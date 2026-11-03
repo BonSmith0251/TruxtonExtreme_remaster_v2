@@ -1,0 +1,89 @@
+{"assembly": "KANAI.Kernel", "file": "ApplicationUtility.cs", "originalType": "KANAI.Kernel.ApplicationUtility/<_ResetCoroutine>d__18", "rva": 31412960, "length": 364, "signature": "System.Boolean KANAI.Kernel.ApplicationUtility/<_ResetCoroutine>d__18::MoveNext()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01df52e0 4053                           push       rbx
+01df52e2 4883ec20                       sub        rsp, 0x20
+01df52e6 803dbfe6860200                 cmp        byte ptr [rip + 0x286e6bf], 0
+01df52ed 488bd9                         mov        rbx, rcx
+01df52f0 7513                           jne        0x1df5305
+01df52f2 488d0dff015902                 lea        rcx, [rip + 0x25901ff]
+01df52f9 e852b76efe                     call       0x4e0a50 ; 
+01df52fe c605a7e6860201                 mov        byte ptr [rip + 0x286e6a7], 1
+01df5305 8b4b10                         mov        ecx, dword ptr [rbx + 0x10]
+01df5308 85c9                           test       ecx, ecx
+01df530a 0f84d8000000                   je         0x1df53e8
+01df5310 83e901                         sub        ecx, 1
+01df5313 746c                           je         0x1df5381
+01df5315 83f901                         cmp        ecx, 1
+01df5318 755f                           jne        0x1df5379
+01df531a c74310ffffffff                 mov        dword ptr [rbx + 0x10], 0xffffffff
+01df5321 488b0dd0015902                 mov        rcx, qword ptr [rip + 0x25901d0]
+01df5328 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01df532f 7505                           jne        0x1df5336
+01df5331 e85aba6efe                     call       0x4e0d90 ; 
+01df5336 803d52e7860200                 cmp        byte ptr [rip + 0x286e752], 0
+01df533d 7513                           jne        0x1df5352
+01df533f 488d0db2015902                 lea        rcx, [rip + 0x25901b2]
+01df5346 e805b76efe                     call       0x4e0a50 ; 
+01df534b c6053de7860201                 mov        byte ptr [rip + 0x286e73d], 1
+01df5352 488b0d9f015902                 mov        rcx, qword ptr [rip + 0x259019f]
+01df5359 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01df5360 7505                           jne        0x1df5367
+01df5362 e829ba6efe                     call       0x4e0d90 ; 
+01df5367 488b058a015902                 mov        rax, qword ptr [rip + 0x259018a]
+01df536e 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+01df5375 c6412000                       mov        byte ptr [rcx + 0x20], 0
+01df5379 32c0                           xor        al, al
+01df537b 4883c420                       add        rsp, 0x20
+01df537f 5b                             pop        rbx
+01df5380 c3                             ret        
+01df5381 c74310ffffffff                 mov        dword ptr [rbx + 0x10], 0xffffffff
+01df5388 488b0569015902                 mov        rax, qword ptr [rip + 0x2590169]
+01df538f 83b8e400000000                 cmp        dword ptr [rax + 0xe4], 0
+01df5396 750f                           jne        0x1df53a7
+01df5398 488bc8                         mov        rcx, rax
+01df539b e8f0b96efe                     call       0x4e0d90 ; 
+01df53a0 488b0551015902                 mov        rax, qword ptr [rip + 0x2590151]
+01df53a7 488b80b8000000                 mov        rax, qword ptr [rax + 0xb8]
+01df53ae 488b4818                       mov        rcx, qword ptr [rax + 0x18]
+01df53b2 4885c9                         test       rcx, rcx
+01df53b5 7410                           je         0x1df53c7
+01df53b7 488b4118                       mov        rax, qword ptr [rcx + 0x18]
+01df53bb 488b5128                       mov        rdx, qword ptr [rcx + 0x28]
+01df53bf 488b4940                       mov        rcx, qword ptr [rcx + 0x40]
+01df53c3 ffd0                           call       rax
+01df53c5 eb02                           jmp        0x1df53c9 ; 
+01df53c7 33c0                           xor        eax, eax
+01df53c9 488d4b18                       lea        rcx, [rbx + 0x18]
+01df53cd 48894318                       mov        qword ptr [rbx + 0x18], rax
+01df53d1 488bd0                         mov        rdx, rax
+01df53d4 e8a7a96efe                     call       0x4dfd80 ; 
+01df53d9 b001                           mov        al, 1
+01df53db c7431002000000                 mov        dword ptr [rbx + 0x10], 2
+01df53e2 4883c420                       add        rsp, 0x20
+01df53e6 5b                             pop        rbx
+01df53e7 c3                             ret        
+01df53e8 c74310ffffffff                 mov        dword ptr [rbx + 0x10], 0xffffffff
+01df53ef 488b0502015902                 mov        rax, qword ptr [rip + 0x2590102]
+01df53f6 83b8e400000000                 cmp        dword ptr [rax + 0xe4], 0
+01df53fd 750f                           jne        0x1df540e
+01df53ff 488bc8                         mov        rcx, rax
+01df5402 e889b96efe                     call       0x4e0d90 ; 
+01df5407 488b05ea005902                 mov        rax, qword ptr [rip + 0x25900ea]
+01df540e 488b80b8000000                 mov        rax, qword ptr [rax + 0xb8]
+01df5415 488b4810                       mov        rcx, qword ptr [rax + 0x10]
+01df5419 4885c9                         test       rcx, rcx
+01df541c 740e                           je         0x1df542c
+01df541e 488b4118                       mov        rax, qword ptr [rcx + 0x18]
+01df5422 488b5128                       mov        rdx, qword ptr [rcx + 0x28]
+01df5426 488b4940                       mov        rcx, qword ptr [rcx + 0x40]
+01df542a ffd0                           call       rax
+01df542c 33c0                           xor        eax, eax
+01df542e 488d4b18                       lea        rcx, [rbx + 0x18]
+01df5432 33d2                           xor        edx, edx
+01df5434 48894318                       mov        qword ptr [rbx + 0x18], rax
+01df5438 e843a96efe                     call       0x4dfd80 ; 
+01df543d b001                           mov        al, 1
+01df543f c7431001000000                 mov        dword ptr [rbx + 0x10], 1
+01df5446 4883c420                       add        rsp, 0x20
+01df544a 5b                             pop        rbx
+01df544b c3                             ret        

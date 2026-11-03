@@ -1,0 +1,31 @@
+{
+  "revision": "reconstruction-2023.2.22f1-native-assets-v1",
+  "attempt1": {
+    "pid": 52548,
+    "status": "incomplete; no EnteredPlayMode, completion JSON or screenshots",
+    "events": "editor-play-twice-attempt1-events.jsonl",
+    "log": "editor-play-twice-attempt1.log",
+    "observed": "Input System backend restart modal independently viewed in integrator capture; editor exited after102secondgraphicsrefresh. Exact external modal interaction not established. No verifier input automation was used.",
+    "not_established": "No native crash stack; do not infer deterministic game crash from missing-script warnings during shutdown."
+  },
+  "attempt2": {
+    "pid": 43132,
+    "status": "intentionally aborted before verdict to return editor ownership for integrator repairs",
+    "log": "editor-play-twice-attempt2-aborted.log"
+  },
+  "next": "Integrator repairs input backend configuration and standalone animation sampling; new freeze and rerun required.",
+  "restart_child_confirmed": {
+    "pid": 45264,
+    "parent_pid": 23068,
+    "project": "D:/games/TruxtonExRecon/Reconstructed",
+    "arguments": [
+      "-projectPath",
+      "D:/games/TruxtonExRecon/Reconstructed",
+      "-force-d3d11",
+      "-force-d3d11"
+    ],
+    "executeMethod_present": false,
+    "evidence": "Elevated Win32_Process query and target Library/EditorInstance.json independently agreed; integrator also found same PID and owns closure.",
+    "interpretation": "Target editor restarted without verifier entry method; no normal Play verdict or deterministic native crash established."
+  }
+}

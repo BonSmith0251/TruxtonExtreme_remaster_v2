@@ -1,0 +1,145 @@
+{"assembly": "OutGame", "file": "BootOutGame.cs", "originalType": "OutGame.BootOutGame/<_initResolution>d__6", "rva": 35451760, "length": 587, "signature": "System.Boolean OutGame.BootOutGame/<_initResolution>d__6::MoveNext()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+021cf370 4157                           push       r15
+021cf372 4883ec40                       sub        rsp, 0x40
+021cf376 803d1b66490200                 cmp        byte ptr [rip + 0x249661b], 0
+021cf37d 4c8bf9                         mov        r15, rcx
+021cf380 752b                           jne        0x21cf3ad
+021cf382 488d0ddf041f02                 lea        rcx, [rip + 0x21f04df]
+021cf389 e8c21631fe                     call       0x4e0a50 ; 
+021cf38e 488d0d53d71d02                 lea        rcx, [rip + 0x21dd753]
+021cf395 e8b61631fe                     call       0x4e0a50 ; 
+021cf39a 488d0da77d1902                 lea        rcx, [rip + 0x2197da7]
+021cf3a1 e8aa1631fe                     call       0x4e0a50 ; 
+021cf3a6 c605eb65490201                 mov        byte ptr [rip + 0x24965eb], 1
+021cf3ad 418b4f10                       mov        ecx, dword ptr [r15 + 0x10]
+021cf3b1 85c9                           test       ecx, ecx
+021cf3b3 0f849c000000                   je         0x21cf455
+021cf3b9 83e901                         sub        ecx, 1
+021cf3bc 741a                           je         0x21cf3d8
+021cf3be 32c0                           xor        al, al
+021cf3c0 83f901                         cmp        ecx, 1
+021cf3c3 0f85e0010000                   jne        0x21cf5a9
+021cf3c9 41c74710ffffffff               mov        dword ptr [r15 + 0x10], 0xffffffff
+021cf3d1 4883c440                       add        rsp, 0x40
+021cf3d5 415f                           pop        r15
+021cf3d7 c3                             ret        
+021cf3d8 41c74710ffffffff               mov        dword ptr [r15 + 0x10], 0xffffffff
+021cf3e0 488b0d617d1902                 mov        rcx, qword ptr [rip + 0x2197d61]
+021cf3e7 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021cf3ee 7505                           jne        0x21cf3f5
+021cf3f0 e89b1931fe                     call       0x4e0d90 ; 
+021cf3f5 803d2741490200                 cmp        byte ptr [rip + 0x2494127], 0
+021cf3fc 7513                           jne        0x21cf411
+021cf3fe 488d0d437d1902                 lea        rcx, [rip + 0x2197d43]
+021cf405 e8461631fe                     call       0x4e0a50 ; 
+021cf40a c6051241490201                 mov        byte ptr [rip + 0x2494112], 1
+021cf411 488b0d307d1902                 mov        rcx, qword ptr [rip + 0x2197d30]
+021cf418 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021cf41f 7505                           jne        0x21cf426
+021cf421 e86a1931fe                     call       0x4e0d90 ; 
+021cf426 488b051b7d1902                 mov        rax, qword ptr [rip + 0x2197d1b]
+021cf42d 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+021cf434 488b11                         mov        rdx, qword ptr [rcx]
+021cf437 498d4f18                       lea        rcx, [r15 + 0x18]
+021cf43b 49895718                       mov        qword ptr [r15 + 0x18], rdx
+021cf43f e83c0931fe                     call       0x4dfd80 ; 
+021cf444 b001                           mov        al, 1
+021cf446 41c7471002000000               mov        dword ptr [r15 + 0x10], 2
+021cf44e 4883c440                       add        rsp, 0x40
+021cf452 415f                           pop        r15
+021cf454 c3                             ret        
+021cf455 48896c2458                     mov        qword ptr [rsp + 0x58], rbp
+021cf45a 33ed                           xor        ebp, ebp
+021cf45c 41c74710ffffffff               mov        dword ptr [r15 + 0x10], 0xffffffff
+021cf464 488b05fd031f02                 mov        rax, qword ptr [rip + 0x21f03fd]
+021cf46b 4889742460                     mov        qword ptr [rsp + 0x60], rsi
+021cf470 4c89642430                     mov        qword ptr [rsp + 0x30], r12
+021cf475 448be5                         mov        r12d, ebp
+021cf478 4c896c2428                     mov        qword ptr [rsp + 0x28], r13
+021cf47d 39a8e4000000                   cmp        dword ptr [rax + 0xe4], ebp
+021cf483 750f                           jne        0x21cf494
+021cf485 488bc8                         mov        rcx, rax
+021cf488 e8031931fe                     call       0x4e0d90 ; 
+021cf48d 488b05d4031f02                 mov        rax, qword ptr [rip + 0x21f03d4]
+021cf494 488b80b8000000                 mov        rax, qword ptr [rax + 0xb8]
+021cf49b 8bf5                           mov        esi, ebp
+021cf49d 48895c2450                     mov        qword ptr [rsp + 0x50], rbx
+021cf4a2 48897c2438                     mov        qword ptr [rsp + 0x38], rdi
+021cf4a7 4c89742420                     mov        qword ptr [rsp + 0x20], r14
+021cf4ac 4c8b28                         mov        r13, qword ptr [rax]
+021cf4af 8bc5                           mov        eax, ebp
+021cf4b1 4d85ed                         test       r13, r13
+021cf4b4 0f84f6000000                   je         0x21cf5b0
+021cf4ba 4d8d7520                       lea        r14, [r13 + 0x20]
+021cf4be 6690                           nop        
+021cf4c0 413b4518                       cmp        eax, dword ptr [r13 + 0x18]
+021cf4c4 7d42                           jge        0x21cf508
+021cf4c6 413b7518                       cmp        esi, dword ptr [r13 + 0x18]
+021cf4ca 0f83e6000000                   jae        0x21cf5b6
+021cf4d0 498b1e                         mov        rbx, qword ptr [r14]
+021cf4d3 488bfb                         mov        rdi, rbx
+021cf4d6 48c1ef20                       shr        rdi, 0x20
+021cf4da 3bdd                           cmp        ebx, ebp
+021cf4dc 7e20                           jle        0x21cf4fe
+021cf4de 413bfc                         cmp        edi, r12d
+021cf4e1 7e1b                           jle        0x21cf4fe
+021cf4e3 33c9                           xor        ecx, ecx
+021cf4e5 e82647e400                     call       0x3013c10 ; UnityEngine.CoreModule:Screen:System.Int32 UnityEngine.Screen::get_width()
+021cf4ea 3bd8                           cmp        ebx, eax
+021cf4ec 7f10                           jg         0x21cf4fe
+021cf4ee 33c9                           xor        ecx, ecx
+021cf4f0 e86b46e400                     call       0x3013b60 ; UnityEngine.CoreModule:Screen:System.Int32 UnityEngine.Screen::get_height()
+021cf4f5 3bf8                           cmp        edi, eax
+021cf4f7 7f05                           jg         0x21cf4fe
+021cf4f9 8beb                           mov        ebp, ebx
+021cf4fb 448be7                         mov        r12d, edi
+021cf4fe ffc6                           inc        esi
+021cf500 4983c608                       add        r14, 8
+021cf504 8bc6                           mov        eax, esi
+021cf506 ebb8                           jmp        0x21cf4c0 ; 
+021cf508 85ed                           test       ebp, ebp
+021cf50a 750b                           jne        0x21cf517
+021cf50c bd80070000                     mov        ebp, 0x780
+021cf511 41bc38040000                   mov        r12d, 0x438
+021cf517 4533c9                         xor        r9d, r9d
+021cf51a 41b802000000                   mov        r8d, 2
+021cf520 418bd4                         mov        edx, r12d
+021cf523 8bcd                           mov        ecx, ebp
+021cf525 e8d6405000                     call       0x26d3600 ; TXEKernel:GameSetting:System.Int32 TXEKernel.GameSetting::PackResolution(System.Int32,System.Int32,System.Int32)
+021cf52a 488b0db7d51d02                 mov        rcx, qword ptr [rip + 0x21dd5b7]
+021cf531 8bd8                           mov        ebx, eax
+021cf533 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021cf53a 7505                           jne        0x21cf541
+021cf53c e84f1831fe                     call       0x4e0d90 ; 
+021cf541 33c9                           xor        ecx, ecx
+021cf543 e8482c5100                     call       0x26e2190 ; TXEKernel:TXEDataStore:TXEKernel.GameSetting TXEKernel.TXEDataStore::get_gameSetting()
+021cf548 4885c0                         test       rax, rax
+021cf54b 7463                           je         0x21cf5b0
+021cf54d 4533c0                         xor        r8d, r8d
+021cf550 8bd3                           mov        edx, ebx
+021cf552 488bc8                         mov        rcx, rax
+021cf555 e8b6605000                     call       0x26d5610 ; TXEKernel:GameSetting:System.Void TXEKernel.GameSetting::set_resolution(System.Int32)
+021cf55a f30f10053e364201               movss      xmm0, dword ptr [rip + 0x142363e]
+021cf562 4533c0                         xor        r8d, r8d
+021cf565 33d2                           xor        edx, edx
+021cf567 e8f4175100                     call       0x26e0d60 ; TXEKernel:TXEDataStoreUtility:System.Collections.IEnumerator TXEKernel.TXEDataStoreUtility::SaveProcess(System.Single,System.Boolean)
+021cf56c 498d4f18                       lea        rcx, [r15 + 0x18]
+021cf570 49894718                       mov        qword ptr [r15 + 0x18], rax
+021cf574 488bd0                         mov        rdx, rax
+021cf577 e8040831fe                     call       0x4dfd80 ; 
+021cf57c 488b5c2450                     mov        rbx, qword ptr [rsp + 0x50]
+021cf581 b001                           mov        al, 1
+021cf583 488b7c2438                     mov        rdi, qword ptr [rsp + 0x38]
+021cf588 4c8b742420                     mov        r14, qword ptr [rsp + 0x20]
+021cf58d 488b742460                     mov        rsi, qword ptr [rsp + 0x60]
+021cf592 488b6c2458                     mov        rbp, qword ptr [rsp + 0x58]
+021cf597 4c8b642430                     mov        r12, qword ptr [rsp + 0x30]
+021cf59c 4c8b6c2428                     mov        r13, qword ptr [rsp + 0x28]
+021cf5a1 41c7471001000000               mov        dword ptr [r15 + 0x10], 1
+021cf5a9 4883c440                       add        rsp, 0x40
+021cf5ad 415f                           pop        r15
+021cf5af c3                             ret        
+021cf5b0 e84b1731fe                     call       0x4e0d00 ; 
+021cf5b5 cc                             int3       
+021cf5b6 e8351731fe                     call       0x4e0cf0 ; 

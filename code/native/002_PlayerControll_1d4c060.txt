@@ -1,0 +1,127 @@
+{"assembly": "InGame.Kernel", "file": "PlayerControll.cs", "originalType": "InGame.Kernel.Player.PlayerControll", "rva": 30720096, "length": 638, "signature": "System.Single InGame.Kernel.Player.PlayerControll::_moveYaw(System.Single)"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01d4c060 4053                           push       rbx
+01d4c062 4883ec50                       sub        rsp, 0x50
+01d4c066 803dce75910200                 cmp        byte ptr [rip + 0x29175ce], 0
+01d4c06d 488bd9                         mov        rbx, rcx
+01d4c070 0f29742440                     movaps     xmmword ptr [rsp + 0x40], xmm6
+01d4c075 0f28f1                         movaps     xmm6, xmm1
+01d4c078 751f                           jne        0x1d4c099
+01d4c07a 488d0d7fbf6602                 lea        rcx, [rip + 0x266bf7f]
+01d4c081 e8ca4979fe                     call       0x4e0a50 ; 
+01d4c086 488d0d3b636702                 lea        rcx, [rip + 0x267633b]
+01d4c08d e8be4979fe                     call       0x4e0a50 ; 
+01d4c092 c605a275910201                 mov        byte ptr [rip + 0x29175a2], 1
+01d4c099 f30f1083a4000000               movss      xmm0, dword ptr [rbx + 0xa4]
+01d4c0a1 0f2ec6                         ucomiss    xmm0, xmm6
+01d4c0a4 4889742460                     mov        qword ptr [rsp + 0x60], rsi
+01d4c0a9 48897c2468                     mov        qword ptr [rsp + 0x68], rdi
+01d4c0ae 0f297c2430                     movaps     xmmword ptr [rsp + 0x30], xmm7
+01d4c0b3 440f294c2420                   movaps     xmmword ptr [rsp + 0x20], xmm9
+01d4c0b9 7a06                           jp         0x1d4c0c1
+01d4c0bb 0f8413010000                   je         0x1d4c1d4
+01d4c0c1 8b83a0000000                   mov        eax, dword ptr [rbx + 0xa0]
+01d4c0c7 0f57c0                         xorps      xmm0, xmm0
+01d4c0ca 0f2ef0                         ucomiss    xmm6, xmm0
+01d4c0cd 488bbbb8010000                 mov        rdi, qword ptr [rbx + 0x1b8]
+01d4c0d4 c783b000000000000000           mov        dword ptr [rbx + 0xb0], 0
+01d4c0de 8983b4000000                   mov        dword ptr [rbx + 0xb4], eax
+01d4c0e4 7a15                           jp         0x1d4c0fb
+01d4c0e6 7513                           jne        0x1d4c0fb
+01d4c0e8 f30f1183a8000000               movss      dword ptr [rbx + 0xa8], xmm0
+01d4c0f0 4885ff                         test       rdi, rdi
+01d4c0f3 0f84e0010000                   je         0x1d4c2d9
+01d4c0f9 eb3d                           jmp        0x1d4c138 ; 
+01d4c0fb 488b0dc6626702                 mov        rcx, qword ptr [rip + 0x26762c6]
+01d4c102 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01d4c109 7505                           jne        0x1d4c110
+01d4c10b e8804c79fe                     call       0x4e0d90 ; 
+01d4c110 0f28c6                         movaps     xmm0, xmm6
+01d4c113 33d2                           xor        edx, edx
+01d4c115 f30f5905c34a7901               mulss      xmm0, dword ptr [rip + 0x1794ac3]
+01d4c11d e84ec90a00                     call       0x1df8a70 ; KANAI.Kernel:VectorUtility:System.Single KANAI.Kernel.VectorUtility::Sinf(System.Single)
+01d4c122 4885ff                         test       rdi, rdi
+01d4c125 0f84ae010000                   je         0x1d4c2d9
+01d4c12b f30f594728                     mulss      xmm0, dword ptr [rdi + 0x28]
+01d4c130 f30f1183a8000000               movss      dword ptr [rbx + 0xa8], xmm0
+01d4c138 f30f10bba8000000               movss      xmm7, dword ptr [rbx + 0xa8]
+01d4c140 f30f5cbbb4000000               subss      xmm7, dword ptr [rbx + 0xb4]
+01d4c148 f30f104728                     movss      xmm0, dword ptr [rdi + 0x28]
+01d4c14d 488bb380000000                 mov        rsi, qword ptr [rbx + 0x80]
+01d4c154 f30f58c0                       addss      xmm0, xmm0
+01d4c158 0f543dc1077a01                 andps      xmm7, xmmword ptr [rip + 0x17a07c1]
+01d4c15f f30f5ef8                       divss      xmm7, xmm0
+01d4c163 4885f6                         test       rsi, rsi
+01d4c166 0f846d010000                   je         0x1d4c2d9
+01d4c16c 803dd474910200                 cmp        byte ptr [rip + 0x29174d4], 0
+01d4c173 f3440f104f18                   movss      xmm9, dword ptr [rdi + 0x18]
+01d4c179 8b7640                         mov        esi, dword ptr [rsi + 0x40]
+01d4c17c 7513                           jne        0x1d4c191
+01d4c17e 488d0d2b716202                 lea        rcx, [rip + 0x262712b]
+01d4c185 e8c64879fe                     call       0x4e0a50 ; 
+01d4c18a c605b674910201                 mov        byte ptr [rip + 0x29174b6], 1
+01d4c191 83fe05                         cmp        esi, 5
+01d4c194 7f1d                           jg         0x1d4c1b3
+01d4c196 488b4f20                       mov        rcx, qword ptr [rdi + 0x20]
+01d4c19a 4885c9                         test       rcx, rcx
+01d4c19d 0f8436010000                   je         0x1d4c2d9
+01d4c1a3 4c8b0506716202                 mov        r8, qword ptr [rip + 0x2627106]
+01d4c1aa 8bd6                           mov        edx, esi
+01d4c1ac e82fc4edfe                     call       0xc285e0 ; 
+01d4c1b1 eb08                           jmp        0x1d4c1bb ; 
+01d4c1b3 f30f1005114a7901               movss      xmm0, dword ptr [rip + 0x1794a11]
+01d4c1bb f3410f59c1                     mulss      xmm0, xmm9
+01d4c1c0 f30f5e05a44c7901               divss      xmm0, dword ptr [rip + 0x1794ca4]
+01d4c1c8 f30f59c7                       mulss      xmm0, xmm7
+01d4c1cc f30f1183ac000000               movss      dword ptr [rbx + 0xac], xmm0
+01d4c1d4 f30f1083ac000000               movss      xmm0, dword ptr [rbx + 0xac]
+01d4c1dc 0f2f83b0000000                 comiss     xmm0, dword ptr [rbx + 0xb0]
+01d4c1e3 f30f11b3a4000000               movss      dword ptr [rbx + 0xa4], xmm6
+01d4c1eb 7666                           jbe        0x1d4c253
+01d4c1ed 488b050cbe6602                 mov        rax, qword ptr [rip + 0x266be0c]
+01d4c1f4 f30f10b3b0000000               movss      xmm6, dword ptr [rbx + 0xb0]
+01d4c1fc 488b4020                       mov        rax, qword ptr [rax + 0x20]
+01d4c200 f6803501000001                 test       byte ptr [rax + 0x135], 1
+01d4c207 7508                           jne        0x1d4c211
+01d4c209 488bc8                         mov        rcx, rax
+01d4c20c e8cf1f79fe                     call       0x4de1e0 ; 
+01d4c211 488b80c0000000                 mov        rax, qword ptr [rax + 0xc0]
+01d4c218 488b4010                       mov        rax, qword ptr [rax + 0x10]
+01d4c21c f6803501000001                 test       byte ptr [rax + 0x135], 1
+01d4c223 7508                           jne        0x1d4c22d
+01d4c225 488bc8                         mov        rcx, rax
+01d4c228 e8b31f79fe                     call       0x4de1e0 ; 
+01d4c22d 488b80b8000000                 mov        rax, qword ptr [rax + 0xb8]
+01d4c234 488b08                         mov        rcx, qword ptr [rax]
+01d4c237 4885c9                         test       rcx, rcx
+01d4c23a 0f8499000000                   je         0x1d4c2d9
+01d4c240 33d2                           xor        edx, edx
+01d4c242 e83967faff                     call       0x1cf2980 ; InGame.Kernel:InGameManager:System.Single InGame.Kernel.InGameManager::get_DeltaTime()
+01d4c247 f30f58c6                       addss      xmm0, xmm6
+01d4c24b f30f1183b0000000               movss      dword ptr [rbx + 0xb0], xmm0
+01d4c253 f30f10b3b0000000               movss      xmm6, dword ptr [rbx + 0xb0]
+01d4c25b f30f5eb3ac000000               divss      xmm6, dword ptr [rbx + 0xac]
+01d4c263 f30f5d3561497901               minss      xmm6, dword ptr [rip + 0x1794961]
+01d4c26b 488b0d56616702                 mov        rcx, qword ptr [rip + 0x2676156]
+01d4c272 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01d4c279 7505                           jne        0x1d4c280
+01d4c27b e8104b79fe                     call       0x4e0d90 ; 
+01d4c280 f30f593520077a01               mulss      xmm6, dword ptr [rip + 0x17a0720]
+01d4c288 33d2                           xor        edx, edx
+01d4c28a 0f28c6                         movaps     xmm0, xmm6
+01d4c28d e8dec70a00                     call       0x1df8a70 ; KANAI.Kernel:VectorUtility:System.Single KANAI.Kernel.VectorUtility::Sinf(System.Single)
+01d4c292 f30f108ba8000000               movss      xmm1, dword ptr [rbx + 0xa8]
+01d4c29a f30f5c8bb4000000               subss      xmm1, dword ptr [rbx + 0xb4]
+01d4c2a2 440f284c2420                   movaps     xmm9, xmmword ptr [rsp + 0x20]
+01d4c2a8 0f287c2430                     movaps     xmm7, xmmword ptr [rsp + 0x30]
+01d4c2ad 488b7c2468                     mov        rdi, qword ptr [rsp + 0x68]
+01d4c2b2 488b742460                     mov        rsi, qword ptr [rsp + 0x60]
+01d4c2b7 0f28742440                     movaps     xmm6, xmmword ptr [rsp + 0x40]
+01d4c2bc f30f59c8                       mulss      xmm1, xmm0
+01d4c2c0 f30f588bb4000000               addss      xmm1, dword ptr [rbx + 0xb4]
+01d4c2c8 f30f118ba0000000               movss      dword ptr [rbx + 0xa0], xmm1
+01d4c2d0 0f28c1                         movaps     xmm0, xmm1
+01d4c2d3 4883c450                       add        rsp, 0x50
+01d4c2d7 5b                             pop        rbx
+01d4c2d8 c3                             ret        
+01d4c2d9 e8224a79fe                     call       0x4e0d00 ; 

@@ -1,0 +1,193 @@
+{
+    "checks": [
+        {
+            "name": "no start without credit",
+            "detail": "credits=0",
+            "pass": true
+        },
+        {
+            "name": "coin gives a credit",
+            "detail": "credits=1",
+            "pass": true
+        },
+        {
+            "name": "stage 1 is BG03",
+            "detail": "StagePlay_BG03",
+            "pass": true
+        },
+        {
+            "name": "arcade schedule mode",
+            "detail": "32",
+            "pass": true
+        },
+        {
+            "name": "arcade bullet selectors",
+            "detail": "0",
+            "pass": true
+        },
+        {
+            "name": "credit spent, 3 ships, manual",
+            "detail": "credits=0 games=1 lives=3",
+            "pass": true
+        },
+        {
+            "name": "stage 2 is BG05 with the ship carried",
+            "detail": "score 53000/53000 level 1/1",
+            "pass": true
+        },
+        {
+            "name": "no takeoff movie on stage 2",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "no retry banner in arcade",
+            "detail": "None",
+            "pass": true
+        },
+        {
+            "name": "continue refused without credit",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "continue in place",
+            "detail": "lives=3 continues=1",
+            "pass": true
+        },
+        {
+            "name": "initials saved in the table",
+            "detail": "453000 rank 3",
+            "pass": true
+        },
+        {
+            "name": "demo flies itself",
+            "detail": "StagePlay_BG03 weapon=True auto=True shield=True session=False state=Demo",
+            "pass": true
+        },
+        {
+            "name": "test switch opens the service menu",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "open COIN SETTINGS",
+            "detail": "Coin",
+            "pass": true
+        },
+        {
+            "name": "coinage set",
+            "detail": "1 COIN 2 CREDITS / 2 COINS 1 CREDIT",
+            "pass": true
+        },
+        {
+            "name": "open GAME SETTINGS",
+            "detail": "Game",
+            "pass": true
+        },
+        {
+            "name": "game settings set",
+            "detail": "EASY / 2  BG05",
+            "pass": true
+        },
+        {
+            "name": "open SOUND SETTINGS",
+            "detail": "Sound",
+            "pass": true
+        },
+        {
+            "name": "master volume applied",
+            "detail": "listener 0.5",
+            "pass": true
+        },
+        {
+            "name": "sound test plays the title music",
+            "detail": "txe_bgm_o000",
+            "pass": true
+        },
+        {
+            "name": "open DISPLAY SETTINGS",
+            "detail": "Display",
+            "pass": true
+        },
+        {
+            "name": "frame limit applied",
+            "detail": "target 120",
+            "pass": true
+        },
+        {
+            "name": "open INPUT TEST",
+            "detail": "Input",
+            "pass": true
+        },
+        {
+            "name": "input test shows a press",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "input test does not count coins",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "test switch leaves the input test",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "open SCREEN TEST",
+            "detail": "Screen",
+            "pass": true
+        },
+        {
+            "name": "open BOOKKEEPING",
+            "detail": "Bookkeeping",
+            "pass": true
+        },
+        {
+            "name": "service mode saved and closed",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "coin B needs two coins",
+            "detail": "credits 2",
+            "pass": true
+        },
+        {
+            "name": "coin chutes credit",
+            "detail": "credits 3",
+            "pass": true
+        },
+        {
+            "name": "start stage 2 at EASY (Story rules)",
+            "detail": "StagePlay_BG05 mask 2",
+            "pass": true
+        },
+        {
+            "name": "test switch ends the game",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "factory settings ask first",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "factory settings restored",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "ledger on disk",
+            "detail": "{\"credits\":2,\"coinRemainder\":0,\"coinRemainderB\":0,\"totalCoins\":5,\"coinsB\":2,\"serviceCredits\":0,\"gamesStarted\":2,\"continuesUsed\":1,\"extendsGiven\":0,\"allClears\":0,\"playSeconds\":141.5404694732279}",
+            "pass": true
+        }
+    ],
+    "errors": 0,
+    "events": "0.0 Title: boot data=C:/Users/Administrator/AppData/LocalLow/Reconstruction/Truxton Extreme Reconstruction\\arcade\n5.7 Title: coin A -> credits 1\n5.9 Title: start game credits=0\n8.1 Loading: stage in StagePlay_BG03 lives=3 score=0 level=1\n120.8 Playing: cleared 1 score=53000\n123.3 Loading: stage in StagePlay_BG05 lives=3 score=53000 level=1\n139.6 Continue: coin A -> credits 1\n139.7 Continue: continue 1 credits=0\n161.7 Initials: initials CAT 453000 rank 3\n188.7 Rankings: demo BG03\n189.4 Loading: demo in StagePlay_BG03 lives=3 score=0 level=1\n200.7 Operator: sound test TITLE MUSIC\n206.9 Operator: service mode closed by test\n206.9 Operator: service mode saved\n207.4 Title: coin A -> credits 2\n207.4 Title: coin B\n207.4 Title: coin B -> credits 3\n207.8 Title: start game credits=2\n209.7 Loading: stage in StagePlay_BG05 lives=3 score=0 level=1\n212.1 Playing: game ended by service mode\n212.7 Operator: factory settings\n212.8 Operator: service mode closed by test\n212.8 Operator: service mode saved",
+    "finished": true,
+    "failedWait": ""
+}

@@ -1,0 +1,278 @@
+{"assembly": "OutGame", "file": "BootOutGame.cs", "originalType": "OutGame.BootOutGame/<Start>d__1", "rva": 35434480, "length": 1244, "signature": "System.Boolean OutGame.BootOutGame/<Start>d__1::MoveNext()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+021caff0 4889742410                     mov        qword ptr [rsp + 0x10], rsi
+021caff5 57                             push       rdi
+021caff6 4883ec30                       sub        rsp, 0x30
+021caffa 803d96a9490200                 cmp        byte ptr [rip + 0x249a996], 0
+021cb001 488bf9                         mov        rdi, rcx
+021cb004 0f85af000000                   jne        0x21cb0b9
+021cb00a 488d0d8f561b02                 lea        rcx, [rip + 0x21b568f]
+021cb011 e83a5a31fe                     call       0x4e0a50 ; 
+021cb016 488d0ddba41b02                 lea        rcx, [rip + 0x21ba4db]
+021cb01d e82e5a31fe                     call       0x4e0a50 ; 
+021cb022 488d0d27c01e02                 lea        rcx, [rip + 0x21ec027]
+021cb029 e8225a31fe                     call       0x4e0a50 ; 
+021cb02e 488d0d5b241f02                 lea        rcx, [rip + 0x21f245b]
+021cb035 e8165a31fe                     call       0x4e0a50 ; 
+021cb03a 488d0dd7ab1a02                 lea        rcx, [rip + 0x21aabd7]
+021cb041 e80a5a31fe                     call       0x4e0a50 ; 
+021cb046 488d0ddb781c02                 lea        rcx, [rip + 0x21c78db]
+021cb04d e8fe5931fe                     call       0x4e0a50 ; 
+021cb052 488d0d574e1d02                 lea        rcx, [rip + 0x21d4e57]
+021cb059 e8f25931fe                     call       0x4e0a50 ; 
+021cb05e 488d0dabeb1e02                 lea        rcx, [rip + 0x21eebab]
+021cb065 e8e65931fe                     call       0x4e0a50 ; 
+021cb06a 488d0d6fd41e02                 lea        rcx, [rip + 0x21ed46f]
+021cb071 e8da5931fe                     call       0x4e0a50 ; 
+021cb076 488d0d83531b02                 lea        rcx, [rip + 0x21b5383]
+021cb07d e8ce5931fe                     call       0x4e0a50 ; 
+021cb082 488d0d37e61d02                 lea        rcx, [rip + 0x21de637]
+021cb089 e8c25931fe                     call       0x4e0a50 ; 
+021cb08e 488d0d531a1e02                 lea        rcx, [rip + 0x21e1a53]
+021cb095 e8b65931fe                     call       0x4e0a50 ; 
+021cb09a 488d0dc7371e02                 lea        rcx, [rip + 0x21e37c7]
+021cb0a1 e8aa5931fe                     call       0x4e0a50 ; 
+021cb0a6 488d0d9b9f1f02                 lea        rcx, [rip + 0x21f9f9b]
+021cb0ad e89e5931fe                     call       0x4e0a50 ; 
+021cb0b2 c605dea8490201                 mov        byte ptr [rip + 0x249a8de], 1
+021cb0b9 8b4f10                         mov        ecx, dword ptr [rdi + 0x10]
+021cb0bc 488b7720                       mov        rsi, qword ptr [rdi + 0x20]
+021cb0c0 85c9                           test       ecx, ecx
+021cb0c2 0f84d1030000                   je         0x21cb499
+021cb0c8 48895c2440                     mov        qword ptr [rsp + 0x40], rbx
+021cb0cd 83e901                         sub        ecx, 1
+021cb0d0 0f84f2020000                   je         0x21cb3c8
+021cb0d6 83e901                         sub        ecx, 1
+021cb0d9 0f8413020000                   je         0x21cb2f2
+021cb0df 83f901                         cmp        ecx, 1
+021cb0e2 0f85f8010000                   jne        0x21cb2e0
+021cb0e8 c74710ffffffff                 mov        dword ptr [rdi + 0x10], 0xffffffff
+021cb0ef 488b0d0a531b02                 mov        rcx, qword ptr [rip + 0x21b530a]
+021cb0f6 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021cb0fd 7505                           jne        0x21cb104
+021cb0ff e88c5c31fe                     call       0x4e0d90 ; 
+021cb104 33c9                           xor        ecx, ecx
+021cb106 e8d5150200                     call       0x21ec6e0 ; OutGame:OutGameHelper:System.Collections.IEnumerator OutGame.UI.OutGameHelper::LoadBgmSeReady()
+021cb10b 4885f6                         test       rsi, rsi
+021cb10e 0f84b3030000                   je         0x21cb4c7
+021cb114 4533c0                         xor        r8d, r8d
+021cb117 488bd0                         mov        rdx, rax
+021cb11a 488bce                         mov        rcx, rsi
+021cb11d e81ebee900                     call       0x3066f40 ; UnityEngine.CoreModule:MonoBehaviour:UnityEngine.Coroutine UnityEngine.MonoBehaviour::StartCoroutine(System.Collections.IEnumerator) || UnityEngine.CoreModule:MonoBehaviour:UnityEngine.Coroutine UnityEngine.MonoBehaviour::StartCoroutine_Auto(System.Collections.IEnumerator)
+021cb122 488b0db7d31e02                 mov        rcx, qword ptr [rip + 0x21ed3b7]
+021cb129 e812c4e5fd                     call       0x27540 ; 
+021cb12e 488b0d8be51d02                 mov        rcx, qword ptr [rip + 0x21de58b]
+021cb135 488bf0                         mov        rsi, rax
+021cb138 e8735b31fe                     call       0x4e0cb0 ; 
+021cb13d 33d2                           xor        edx, edx
+021cb13f 488bc8                         mov        rcx, rax
+021cb142 488bf8                         mov        rdi, rax
+021cb145 e896583efe                     call       0x5b09e0 ; AEAsAnimation:UnitySourceGeneratedAssemblyMonoScriptTypes_v1:System.Void UnitySourceGeneratedAssemblyMonoScriptTypes_v1::.ctor() || AEAsAnimation:AEAsAnimationRoot:System.Void AEAsAnimation.AEAsAnimationRoot/<>c__DisplayClass21_0::.ctor() || AEAsAnimation:AEAsAnimationRoot:System.Void AEAsAnimation.AEAsAnimationRoot/<>c__DisplayClass33_0::.ctor() || AEAsAnimation:AEItemsAccessor:System.Void AEAsAnimation.AEItemsAccessor::.ctor() || AEAsAnimation:AEAsAnimationUtils:System.Void AEAsAnimation.AEAsAnimationUtils::.ctor()
+021cb14a 488b0dffcd4a02                 mov        rcx, qword ptr [rip + 0x24acdff]
+021cb151 488b1d584d1d02                 mov        rbx, qword ptr [rip + 0x21d4d58]
+021cb158 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021cb15f 7505                           jne        0x21cb166
+021cb161 e82a5c31fe                     call       0x4e0d90 ; 
+021cb166 33d2                           xor        edx, edx
+021cb168 488bcb                         mov        rcx, rbx
+021cb16b e8806ae8ff                     call       0x2051bf0 ; mscorlib:Type:System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)
+021cb170 4885ff                         test       rdi, rdi
+021cb173 0f844e030000                   je         0x21cb4c7
+021cb179 488d4f10                       lea        rcx, [rdi + 0x10]
+021cb17d 48894710                       mov        qword ptr [rdi + 0x10], rax
+021cb181 488bd0                         mov        rdx, rax
+021cb184 e8f74b31fe                     call       0x4dfd80 ; 
+021cb189 488b0d88aa1a02                 mov        rcx, qword ptr [rip + 0x21aaa88]
+021cb190 e81b5b31fe                     call       0x4e0cb0 ; 
+021cb195 33d2                           xor        edx, edx
+021cb197 488bc8                         mov        rcx, rax
+021cb19a 488bd8                         mov        rbx, rax
+021cb19d e80e1c3ffe                     call       0x5bcdb0 ; AEAsAnimation:AEAsAnimationRoot:System.Void AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation:AEComposition:System.Void AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpAsync>d__16::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpChildAsync>d__25::System.IDisposable.Dispose()
+021cb1a2 488d4f18                       lea        rcx, [rdi + 0x18]
+021cb1a6 48895f18                       mov        qword ptr [rdi + 0x18], rbx
+021cb1aa 488bd3                         mov        rdx, rbx
+021cb1ad e8ce4b31fe                     call       0x4dfd80 ; 
+021cb1b2 4885f6                         test       rsi, rsi
+021cb1b5 0f840c030000                   je         0x21cb4c7
+021cb1bb 4533c0                         xor        r8d, r8d
+021cb1be 488bd7                         mov        rdx, rdi
+021cb1c1 488bce                         mov        rcx, rsi
+021cb1c4 e80709c3ff                     call       0x1dfbad0 ; KANAI.MVPSystem:MVPManager:System.Void KANAI.MVPSystem.MVPManager::PushStack(KANAI.MVPSystem.MVPManager/PresenterValue)
+021cb1c9 488b0d18191e02                 mov        rcx, qword ptr [rip + 0x21e1918]
+021cb1d0 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021cb1d7 7505                           jne        0x21cb1de
+021cb1d9 e8b25b31fe                     call       0x4e0d90 ; 
+021cb1de 33c9                           xor        ecx, ecx
+021cb1e0 e82b715100                     call       0x26e2310 ; TXEKernel:TXEDataStore:TXEKernel.StorySaveData TXEKernel.TXEDataStore::get_storySaveData()
+021cb1e5 4885c0                         test       rax, rax
+021cb1e8 0f84d9020000                   je         0x21cb4c7
+021cb1ee 4533c0                         xor        r8d, r8d
+021cb1f1 ba02000000                     mov        edx, 2
+021cb1f6 488bc8                         mov        rcx, rax
+021cb1f9 e8721d5300                     call       0x26fcf70 ; TXEKernel:StorySaveData:System.Boolean TXEKernel.StorySaveData::HasFlag(TXEKernel.StorySaveData/StoryFlag)
+021cb1fe 84c0                           test       al, al
+021cb200 0f85a7000000                   jne        0x21cb2ad
+021cb206 488b0dd3d21e02                 mov        rcx, qword ptr [rip + 0x21ed2d3]
+021cb20d e82ec3e5fd                     call       0x27540 ; 
+021cb212 488b0da7e41d02                 mov        rcx, qword ptr [rip + 0x21de4a7]
+021cb219 488bf0                         mov        rsi, rax
+021cb21c e88f5a31fe                     call       0x4e0cb0 ; 
+021cb221 33d2                           xor        edx, edx
+021cb223 488bc8                         mov        rcx, rax
+021cb226 488bf8                         mov        rdi, rax
+021cb229 e8b2573efe                     call       0x5b09e0 ; AEAsAnimation:UnitySourceGeneratedAssemblyMonoScriptTypes_v1:System.Void UnitySourceGeneratedAssemblyMonoScriptTypes_v1::.ctor() || AEAsAnimation:AEAsAnimationRoot:System.Void AEAsAnimation.AEAsAnimationRoot/<>c__DisplayClass21_0::.ctor() || AEAsAnimation:AEAsAnimationRoot:System.Void AEAsAnimation.AEAsAnimationRoot/<>c__DisplayClass33_0::.ctor() || AEAsAnimation:AEItemsAccessor:System.Void AEAsAnimation.AEItemsAccessor::.ctor() || AEAsAnimation:AEAsAnimationUtils:System.Void AEAsAnimation.AEAsAnimationUtils::.ctor()
+021cb22e 488b0d1bcd4a02                 mov        rcx, qword ptr [rip + 0x24acd1b]
+021cb235 488b1d2c361e02                 mov        rbx, qword ptr [rip + 0x21e362c]
+021cb23c 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021cb243 7505                           jne        0x21cb24a
+021cb245 e8465b31fe                     call       0x4e0d90 ; 
+021cb24a 33d2                           xor        edx, edx
+021cb24c 488bcb                         mov        rcx, rbx
+021cb24f e89c69e8ff                     call       0x2051bf0 ; mscorlib:Type:System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)
+021cb254 4885ff                         test       rdi, rdi
+021cb257 0f846a020000                   je         0x21cb4c7
+021cb25d 488d4f10                       lea        rcx, [rdi + 0x10]
+021cb261 48894710                       mov        qword ptr [rdi + 0x10], rax
+021cb265 488bd0                         mov        rdx, rax
+021cb268 e8134b31fe                     call       0x4dfd80 ; 
+021cb26d 488b0da4a91a02                 mov        rcx, qword ptr [rip + 0x21aa9a4]
+021cb274 e8375a31fe                     call       0x4e0cb0 ; 
+021cb279 33d2                           xor        edx, edx
+021cb27b 488bc8                         mov        rcx, rax
+021cb27e 488bd8                         mov        rbx, rax
+021cb281 e82a1b3ffe                     call       0x5bcdb0 ; AEAsAnimation:AEAsAnimationRoot:System.Void AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation:AEComposition:System.Void AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpAsync>d__16::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpChildAsync>d__25::System.IDisposable.Dispose()
+021cb286 488d4f18                       lea        rcx, [rdi + 0x18]
+021cb28a 48895f18                       mov        qword ptr [rdi + 0x18], rbx
+021cb28e 488bd3                         mov        rdx, rbx
+021cb291 e8ea4a31fe                     call       0x4dfd80 ; 
+021cb296 4885f6                         test       rsi, rsi
+021cb299 0f8428020000                   je         0x21cb4c7
+021cb29f 4533c0                         xor        r8d, r8d
+021cb2a2 488bd7                         mov        rdx, rdi
+021cb2a5 488bce                         mov        rcx, rsi
+021cb2a8 e82308c3ff                     call       0x1dfbad0 ; KANAI.MVPSystem:MVPManager:System.Void KANAI.MVPSystem.MVPManager::PushStack(KANAI.MVPSystem.MVPManager/PresenterValue)
+021cb2ad 488b0d2cd21e02                 mov        rcx, qword ptr [rip + 0x21ed22c]
+021cb2b4 e887c2e5fd                     call       0x27540 ; 
+021cb2b9 4885c0                         test       rax, rax
+021cb2bc 0f8405020000                   je         0x21cb4c7
+021cb2c2 488b0d5f761c02                 mov        rcx, qword ptr [rip + 0x21c765f]
+021cb2c9 41b101                         mov        r9b, 1
+021cb2cc 48894c2420                     mov        qword ptr [rsp + 0x20], rcx
+021cb2d1 4533c0                         xor        r8d, r8d
+021cb2d4 488bc8                         mov        rcx, rax
+021cb2d7 410fb6d1                       movzx      edx, r9b
+021cb2db e8c08a69fe                     call       0x863da0 ; KANAI.MVPSystem:MVPManager:System.Void KANAI.MVPSystem.MVPManager::Jump(System.Boolean,KANAI.MVPSystem.IPresenterValue,System.Boolean)
+021cb2e0 488b5c2440                     mov        rbx, qword ptr [rsp + 0x40]
+021cb2e5 32c0                           xor        al, al
+021cb2e7 488b742448                     mov        rsi, qword ptr [rsp + 0x48]
+021cb2ec 4883c430                       add        rsp, 0x30
+021cb2f0 5f                             pop        rdi
+021cb2f1 c3                             ret        
+021cb2f2 c74710ffffffff                 mov        dword ptr [rdi + 0x10], 0xffffffff
+021cb2f9 488b0df8a11b02                 mov        rcx, qword ptr [rip + 0x21ba1f8]
+021cb300 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021cb307 7505                           jne        0x21cb30e
+021cb309 e8825a31fe                     call       0x4e0d90 ; 
+021cb30e 33c9                           xor        ecx, ecx
+021cb310 e85b82c1ff                     call       0x1de3570 ; KANAI.Kernel:ApplicationUtility:System.Void KANAI.Kernel.ApplicationUtility::SetReady()
+021cb315 488b0d84531b02                 mov        rcx, qword ptr [rip + 0x21b5384]
+021cb31c e88f5931fe                     call       0x4e0cb0 ; 
+021cb321 4c8b0528bd1e02                 mov        r8, qword ptr [rip + 0x21ebd28]
+021cb328 4533c9                         xor        r9d, r9d
+021cb32b 488bd6                         mov        rdx, rsi
+021cb32e 488bc8                         mov        rcx, rax
+021cb331 488bd8                         mov        rbx, rax
+021cb334 e847df46fe                     call       0x639280 ; com.rlabrecque.steamworks.net:ISteamMatchmakingPingResponse:System.Void Steamworks.ISteamMatchmakingPingResponse/ServerFailedToRespond::.ctor(System.Object,System.IntPtr) || com.rlabrecque.steamworks.net:ISteamMatchmakingPlayersResponse:System.Void Steamworks.ISteamMatchmakingPlayersResponse/PlayersFailedToRespond::.ctor(System.Object,System.IntPtr) || com.rlabrecque.steamworks.net:ISteamMatchmakingPlayersResponse:System.Void Steamworks.ISteamMatchmakingPlayersResponse/PlayersRefreshComplete::.ctor(System.Object,System.IntPtr) || com.rlabrecque.steamworks.net:ISteamMatchmakingRulesResponse:System.Void Steamworks.ISteamMatchmakingRulesResponse/RulesFailedToRespond::.ctor(System.Object,System.IntPtr) || com.rlabrecque.steamworks.net:ISteamMatchmakingRulesResponse:System.Void Steamworks.ISteamMatchmakingRulesResponse/RulesRefreshComplete::.ctor(System.Object,System.IntPtr)
+021cb339 33d2                           xor        edx, edx
+021cb33b 488bcb                         mov        rcx, rbx
+021cb33e e8bd87c1ff                     call       0x1de3b00 ; KANAI.Kernel:ApplicationUtility:System.Void KANAI.Kernel.ApplicationUtility::add_onSoftwareReset(System.Action)
+021cb343 33c9                           xor        ecx, ecx
+021cb345 e8067dc1ff                     call       0x1de3050 ; KANAI.Kernel:ApplicationUtility:System.Boolean KANAI.Kernel.ApplicationUtility::IsPlayStation()
+021cb34a 4885f6                         test       rsi, rsi
+021cb34d 0f8474010000                   je         0x21cb4c7
+021cb353 803d30a6490200                 cmp        byte ptr [rip + 0x249a630], 0
+021cb35a 7513                           jne        0x21cb36f
+021cb35c 488d0dfda71a02                 lea        rcx, [rip + 0x21aa7fd]
+021cb363 e8e85631fe                     call       0x4e0a50 ; 
+021cb368 c6051ba6490201                 mov        byte ptr [rip + 0x249a61b], 1
+021cb36f 488b0deaa71a02                 mov        rcx, qword ptr [rip + 0x21aa7ea]
+021cb376 e8355931fe                     call       0x4e0cb0 ; 
+021cb37b 33d2                           xor        edx, edx
+021cb37d 488bc8                         mov        rcx, rax
+021cb380 488bd8                         mov        rbx, rax
+021cb383 e8281a3ffe                     call       0x5bcdb0 ; AEAsAnimation:AEAsAnimationRoot:System.Void AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation:AEComposition:System.Void AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpAsync>d__16::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpChildAsync>d__25::System.IDisposable.Dispose()
+021cb388 488d4b20                       lea        rcx, [rbx + 0x20]
+021cb38c c7431000000000                 mov        dword ptr [rbx + 0x10], 0
+021cb393 488bd6                         mov        rdx, rsi
+021cb396 48897320                       mov        qword ptr [rbx + 0x20], rsi
+021cb39a e8e14931fe                     call       0x4dfd80 ; 
+021cb39f 488d4f18                       lea        rcx, [rdi + 0x18]
+021cb3a3 48895f18                       mov        qword ptr [rdi + 0x18], rbx
+021cb3a7 488bd3                         mov        rdx, rbx
+021cb3aa e8d14931fe                     call       0x4dfd80 ; 
+021cb3af 488b5c2440                     mov        rbx, qword ptr [rsp + 0x40]
+021cb3b4 b001                           mov        al, 1
+021cb3b6 c7471003000000                 mov        dword ptr [rdi + 0x10], 3
+021cb3bd 488b742448                     mov        rsi, qword ptr [rsp + 0x48]
+021cb3c2 4883c430                       add        rsp, 0x30
+021cb3c6 5f                             pop        rdi
+021cb3c7 c3                             ret        
+021cb3c8 c74710ffffffff                 mov        dword ptr [rdi + 0x10], 0xffffffff
+021cb3cf 33d2                           xor        edx, edx
+021cb3d1 488b0d709c1f02                 mov        rcx, qword ptr [rip + 0x21f9c70]
+021cb3d8 e8c364e900                     call       0x30618a0 ; UnityEngine.CoreModule:GameObject:UnityEngine.GameObject UnityEngine.GameObject::Find(System.String)
+021cb3dd 4885c0                         test       rax, rax
+021cb3e0 0f84e1000000                   je         0x21cb4c7
+021cb3e6 488b15a3201f02                 mov        rdx, qword ptr [rip + 0x21f20a3]
+021cb3ed 488bc8                         mov        rcx, rax
+021cb3f0 e83b7d64fe                     call       0x813130 ; UnityEngine.CoreModule:GameObject:T UnityEngine.GameObject::GetComponent()
+021cb3f5 488b0d14e81e02                 mov        rcx, qword ptr [rip + 0x21ee814]
+021cb3fc 488bd8                         mov        rbx, rax
+021cb3ff e83cc1e5fd                     call       0x27540 ; 
+021cb404 4885c0                         test       rax, rax
+021cb407 0f84ba000000                   je         0x21cb4c7
+021cb40d 4533c0                         xor        r8d, r8d
+021cb410 488bd3                         mov        rdx, rbx
+021cb413 488bc8                         mov        rcx, rax
+021cb416 e815285300                     call       0x26fdc30 ; TXEKernel:TXE3DSystem:System.Void TXEKernel.TXE3DSystem::InitializeSystem(UnityEngine.Camera)
+021cb41b 4885f6                         test       rsi, rsi
+021cb41e 0f84a3000000                   je         0x21cb4c7
+021cb424 803d5da5490200                 cmp        byte ptr [rip + 0x249a55d], 0
+021cb42b 7513                           jne        0x21cb440
+021cb42d 488d0d04a51a02                 lea        rcx, [rip + 0x21aa504]
+021cb434 e8175631fe                     call       0x4e0a50 ; 
+021cb439 c60548a5490201                 mov        byte ptr [rip + 0x249a548], 1
+021cb440 488b0df1a41a02                 mov        rcx, qword ptr [rip + 0x21aa4f1]
+021cb447 e8645831fe                     call       0x4e0cb0 ; 
+021cb44c 33d2                           xor        edx, edx
+021cb44e 488bc8                         mov        rcx, rax
+021cb451 488bd8                         mov        rbx, rax
+021cb454 e857193ffe                     call       0x5bcdb0 ; AEAsAnimation:AEAsAnimationRoot:System.Void AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation:AEComposition:System.Void AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpAsync>d__16::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpChildAsync>d__25::System.IDisposable.Dispose()
+021cb459 488d4b20                       lea        rcx, [rbx + 0x20]
+021cb45d c7431000000000                 mov        dword ptr [rbx + 0x10], 0
+021cb464 488bd6                         mov        rdx, rsi
+021cb467 48897320                       mov        qword ptr [rbx + 0x20], rsi
+021cb46b e8104931fe                     call       0x4dfd80 ; 
+021cb470 488d4f18                       lea        rcx, [rdi + 0x18]
+021cb474 48895f18                       mov        qword ptr [rdi + 0x18], rbx
+021cb478 488bd3                         mov        rdx, rbx
+021cb47b e8004931fe                     call       0x4dfd80 ; 
+021cb480 488b5c2440                     mov        rbx, qword ptr [rsp + 0x40]
+021cb485 b001                           mov        al, 1
+021cb487 c7471002000000                 mov        dword ptr [rdi + 0x10], 2
+021cb48e 488b742448                     mov        rsi, qword ptr [rsp + 0x48]
+021cb493 4883c430                       add        rsp, 0x30
+021cb497 5f                             pop        rdi
+021cb498 c3                             ret        
+021cb499 488d4f18                       lea        rcx, [rdi + 0x18]
+021cb49d c74710ffffffff                 mov        dword ptr [rdi + 0x10], 0xffffffff
+021cb4a4 33d2                           xor        edx, edx
+021cb4a6 48c7471800000000               mov        qword ptr [rdi + 0x18], 0
+021cb4ae e8cd4831fe                     call       0x4dfd80 ; 
+021cb4b3 488b742448                     mov        rsi, qword ptr [rsp + 0x48]
+021cb4b8 b001                           mov        al, 1
+021cb4ba c7471001000000                 mov        dword ptr [rdi + 0x10], 1
+021cb4c1 4883c430                       add        rsp, 0x30
+021cb4c5 5f                             pop        rdi
+021cb4c6 c3                             ret        
+021cb4c7 e8345831fe                     call       0x4e0d00 ; 

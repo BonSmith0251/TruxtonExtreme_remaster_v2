@@ -1,0 +1,33 @@
+{"assembly": "KANAI.Kernel", "file": "ApplicationUtility.cs", "originalType": "KANAI.Kernel.ApplicationUtility", "rva": 31339216, "length": 156, "signature": "System.Void KANAI.Kernel.ApplicationUtility::OverridePersistentDataPath(System.String)"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01de32d0 4053                           push       rbx
+01de32d2 4883ec20                       sub        rsp, 0x20
+01de32d6 803dcc06880200                 cmp        byte ptr [rip + 0x28806cc], 0
+01de32dd 488bd9                         mov        rbx, rcx
+01de32e0 7513                           jne        0x1de32f5
+01de32e2 488d0d0f225a02                 lea        rcx, [rip + 0x25a220f]
+01de32e9 e862d76ffe                     call       0x4e0a50 ; 
+01de32ee c605b406880201                 mov        byte ptr [rip + 0x28806b4], 1
+01de32f5 488b0dfc215a02                 mov        rcx, qword ptr [rip + 0x25a21fc]
+01de32fc 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de3303 7505                           jne        0x1de330a
+01de3305 e886da6ffe                     call       0x4e0d90 ; 
+01de330a 803d8107880200                 cmp        byte ptr [rip + 0x2880781], 0
+01de3311 7513                           jne        0x1de3326
+01de3313 488d0dde215a02                 lea        rcx, [rip + 0x25a21de]
+01de331a e831d76ffe                     call       0x4e0a50 ; 
+01de331f c6056c07880201                 mov        byte ptr [rip + 0x288076c], 1
+01de3326 488b0dcb215a02                 mov        rcx, qword ptr [rip + 0x25a21cb]
+01de332d 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de3334 7505                           jne        0x1de333b
+01de3336 e855da6ffe                     call       0x4e0d90 ; 
+01de333b 488b05b6215a02                 mov        rax, qword ptr [rip + 0x25a21b6]
+01de3342 488bd3                         mov        rdx, rbx
+01de3345 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+01de334c 48895938                       mov        qword ptr [rcx + 0x38], rbx
+01de3350 488b05a1215a02                 mov        rax, qword ptr [rip + 0x25a21a1]
+01de3357 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+01de335e 4883c138                       add        rcx, 0x38
+01de3362 4883c420                       add        rsp, 0x20
+01de3366 5b                             pop        rbx
+01de3367 e914ca6ffe                     jmp        0x4dfd80 ; 

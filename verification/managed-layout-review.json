@@ -1,0 +1,36 @@
+{
+  "utc": "2026-10-31T12:38:30.972812+00:00",
+  "recovered_rows": 726,
+  "unique_recovered_ids": 726,
+  "binary_headers_checked": 726,
+  "binary_header_failures": [],
+  "binary_header_method": "Independent struct.unpack little-endian GameObject at0, Enabled at12, Script at16, name length28,string32; original serialized gzip object byte ranges",
+  "additional_reference_counts": {
+    "original-null": 1524,
+    "resolved": 2638
+  },
+  "invalid_reference_owners_or_targets": [],
+  "initial_reference_overlap": 0,
+  "remaining_managed_failures": [
+    {
+      "id": "TATSUJIN EXTREME_Data/globalgamemanagers.assets::globalgamemanagers.assets::3838",
+      "bytes": 2904,
+      "status": "failed",
+      "error": "EOFError('read_str out of bounds')"
+    },
+    {
+      "id": "TATSUJIN EXTREME_Data/Resources/unity default resources::unity default resources::11000",
+      "bytes": 8488,
+      "status": "failed",
+      "error": "AssertionError('failed to dump nodes as json')"
+    }
+  ],
+  "merged_decoded_objects": 270368,
+  "merged_failed_objects": 3,
+  "merged_nonnull_resolved_references": 945368,
+  "merged_null_references": 305027,
+  "limitations": [
+    "Generator strict byte consumption and complete body values inspected in decoder code, not independently decoded by second implementation.",
+    "Header alignment and source pointer targets verified directly; no target import, attachment or runtime claim."
+  ]
+}

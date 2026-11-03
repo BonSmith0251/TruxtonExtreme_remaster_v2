@@ -1,0 +1,20 @@
+{"assembly": "OutGame", "file": "BootOutGame.cs", "originalType": "OutGame.BootOutGame", "rva": 35372608, "length": 75, "signature": "System.Collections.IEnumerator OutGame.BootOutGame::_initResolution()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+021bbe40 4053                           push       rbx
+021bbe42 4883ec20                       sub        rsp, 0x20
+021bbe46 803d3e9b4a0200                 cmp        byte ptr [rip + 0x24a9b3e], 0
+021bbe4d 7513                           jne        0x21bbe62
+021bbe4f 488d0d2a9a1b02                 lea        rcx, [rip + 0x21b9a2a]
+021bbe56 e8f54b32fe                     call       0x4e0a50 ; 
+021bbe5b c605299b4a0201                 mov        byte ptr [rip + 0x24a9b29], 1
+021bbe62 488b0d179a1b02                 mov        rcx, qword ptr [rip + 0x21b9a17]
+021bbe69 e8424e32fe                     call       0x4e0cb0 ; 
+021bbe6e 33d2                           xor        edx, edx
+021bbe70 488bc8                         mov        rcx, rax
+021bbe73 488bd8                         mov        rbx, rax
+021bbe76 e8350f40fe                     call       0x5bcdb0 ; AEAsAnimation:AEAsAnimationRoot:System.Void AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation:AEComposition:System.Void AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpAsync>d__16::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpChildAsync>d__25::System.IDisposable.Dispose()
+021bbe7b 488bc3                         mov        rax, rbx
+021bbe7e c7431000000000                 mov        dword ptr [rbx + 0x10], 0
+021bbe85 4883c420                       add        rsp, 0x20
+021bbe89 5b                             pop        rbx
+021bbe8a c3                             ret        

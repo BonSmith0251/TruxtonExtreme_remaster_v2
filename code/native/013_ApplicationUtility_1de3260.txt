@@ -1,0 +1,29 @@
+{"assembly": "KANAI.Kernel", "file": "ApplicationUtility.cs", "originalType": "KANAI.Kernel.ApplicationUtility", "rva": 31339104, "length": 111, "signature": "System.Boolean KANAI.Kernel.ApplicationUtility::IsXbox()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01de3260 4883ec28                       sub        rsp, 0x28
+01de3264 803d2807880200                 cmp        byte ptr [rip + 0x2880728], 0
+01de326b 7513                           jne        0x1de3280
+01de326d 488d0d5c205a02                 lea        rcx, [rip + 0x25a205c]
+01de3274 e8d7d76ffe                     call       0x4e0a50 ; 
+01de3279 c6051307880201                 mov        byte ptr [rip + 0x2880713], 1
+01de3280 488b0d49205a02                 mov        rcx, qword ptr [rip + 0x25a2049]
+01de3287 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de328e 7505                           jne        0x1de3295
+01de3290 e8fbda6ffe                     call       0x4e0d90 ; 
+01de3295 33c9                           xor        ecx, ecx
+01de3297 e844aa1e01                     call       0x2fcdce0 ; UnityEngine.CoreModule:Application:UnityEngine.RuntimePlatform UnityEngine.Application::get_platform()
+01de329c 83f825                         cmp        eax, 0x25
+01de329f 7507                           jne        0x1de32a8
+01de32a1 b001                           mov        al, 1
+01de32a3 4883c428                       add        rsp, 0x28
+01de32a7 c3                             ret        
+01de32a8 488b0d21205a02                 mov        rcx, qword ptr [rip + 0x25a2021]
+01de32af 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de32b6 7505                           jne        0x1de32bd
+01de32b8 e8d3da6ffe                     call       0x4e0d90 ; 
+01de32bd 33c9                           xor        ecx, ecx
+01de32bf e81caa1e01                     call       0x2fcdce0 ; UnityEngine.CoreModule:Application:UnityEngine.RuntimePlatform UnityEngine.Application::get_platform()
+01de32c4 83f824                         cmp        eax, 0x24
+01de32c7 0f94c0                         sete       al
+01de32ca 4883c428                       add        rsp, 0x28
+01de32ce c3                             ret        

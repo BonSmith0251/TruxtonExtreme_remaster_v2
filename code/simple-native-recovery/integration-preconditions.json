@@ -1,0 +1,33 @@
+{
+  "assembliesInGraph": 85,
+  "cycles": [],
+  "baselineHashChecks": [
+    {
+      "assembly": "InGame.Kernel, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "expected": "441958ba091eba07241004da3eee8a92456525b7126dcfcb49fa7df8506c49cb",
+      "actual": "441958ba091eba07241004da3eee8a92456525b7126dcfcb49fa7df8506c49cb"
+    },
+    {
+      "assembly": "KANAI.HybridCollision, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "expected": "648fb7be3ee5d3274205535c84404b6f302a5b9f21511df541cdd311fdd422c4",
+      "actual": "648fb7be3ee5d3274205535c84404b6f302a5b9f21511df541cdd311fdd422c4"
+    },
+    {
+      "assembly": "KANAI.Popup, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "expected": "d18863d62634f14319ce785069076a675595b6f823e20c3ac2add0e6c93e1a01",
+      "actual": "d18863d62634f14319ce785069076a675595b6f823e20c3ac2add0e6c93e1a01"
+    },
+    {
+      "assembly": "KANAI.UI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "expected": "77e367c41743d80777b3bdabf28c0462b0afb6015ef96ead32903c9c2dc76c7e",
+      "actual": "77e367c41743d80777b3bdabf28c0462b0afb6015ef96ead32903c9c2dc76c7e"
+    },
+    {
+      "assembly": "OutGame, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "expected": "34e8df1f961f32fa6ddd56b5fb3a0d8c3ac0d95f51dd8c2e893c9687c6cfb15d",
+      "actual": "34e8df1f961f32fa6ddd56b5fb3a0d8c3ac0d95f51dd8c2e893c9687c6cfb15d"
+    }
+  ],
+  "integrationStatus": "not_integrated",
+  "instruction": "Stop editor/build. Before copying each candidate DLL, assert current target SHA256 equals manifest baselineSha256. Preserve target .meta files. If hash differs, rebase patch rather than overwrite. Target runtime/standalone validation remains required."
+}

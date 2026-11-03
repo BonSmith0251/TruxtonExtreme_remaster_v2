@@ -1,0 +1,27 @@
+{"assembly": "OutGame", "file": "BootOutGame.cs", "originalType": "OutGame.BootOutGame", "rva": 35372144, "length": 103, "signature": "System.Collections.IEnumerator OutGame.BootOutGame::Start()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+021bbc70 48895c2408                     mov        qword ptr [rsp + 8], rbx
+021bbc75 57                             push       rdi
+021bbc76 4883ec20                       sub        rsp, 0x20
+021bbc7a 803d059d4a0200                 cmp        byte ptr [rip + 0x24a9d05], 0
+021bbc81 488bf9                         mov        rdi, rcx
+021bbc84 7513                           jne        0x21bbc99
+021bbc86 488d0d839a1b02                 lea        rcx, [rip + 0x21b9a83]
+021bbc8d e8be4d32fe                     call       0x4e0a50 ; 
+021bbc92 c605ed9c4a0201                 mov        byte ptr [rip + 0x24a9ced], 1
+021bbc99 488b0d709a1b02                 mov        rcx, qword ptr [rip + 0x21b9a70]
+021bbca0 e80b5032fe                     call       0x4e0cb0 ; 
+021bbca5 33d2                           xor        edx, edx
+021bbca7 488bc8                         mov        rcx, rax
+021bbcaa 488bd8                         mov        rbx, rax
+021bbcad e8fe1040fe                     call       0x5bcdb0 ; AEAsAnimation:AEAsAnimationRoot:System.Void AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation:AEComposition:System.Void AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpAsync>d__16::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpChildAsync>d__25::System.IDisposable.Dispose()
+021bbcb2 488d4b20                       lea        rcx, [rbx + 0x20]
+021bbcb6 c7431000000000                 mov        dword ptr [rbx + 0x10], 0
+021bbcbd 488bd7                         mov        rdx, rdi
+021bbcc0 48897b20                       mov        qword ptr [rbx + 0x20], rdi
+021bbcc4 e8b74032fe                     call       0x4dfd80 ; 
+021bbcc9 488bc3                         mov        rax, rbx
+021bbccc 488b5c2430                     mov        rbx, qword ptr [rsp + 0x30]
+021bbcd1 4883c420                       add        rsp, 0x20
+021bbcd5 5f                             pop        rdi
+021bbcd6 c3                             ret        

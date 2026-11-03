@@ -1,0 +1,17 @@
+{"assembly": "TXEKernel", "file": "BootTXE.cs", "originalType": "TXEKernel.BootTXE/<_loadScene>d__2", "rva": 40805088, "length": 62, "signature": "System.Void TXEKernel.BootTXE/<_loadScene>d__2::System.Collections.IEnumerator.Reset()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+026ea2e0 4053                           push       rbx
+026ea2e2 4883ec20                       sub        rsp, 0x20
+026ea2e6 488d0de32bc901                 lea        rcx, [rip + 0x1c92be3]
+026ea2ed e87e67dffd                     call       0x4e0a70 ; 
+026ea2f2 488bc8                         mov        rcx, rax
+026ea2f5 e8b669dffd                     call       0x4e0cb0 ; 
+026ea2fa 33d2                           xor        edx, edx
+026ea2fc 488bc8                         mov        rcx, rax
+026ea2ff 488bd8                         mov        rbx, rax
+026ea302 e8692b94ff                     call       0x202ce70 ; mscorlib:NotSupportedException:System.Void System.NotSupportedException::.ctor()
+026ea307 488d0d4a0dc801                 lea        rcx, [rip + 0x1c80d4a]
+026ea30e e85d67dffd                     call       0x4e0a70 ; 
+026ea313 488bd0                         mov        rdx, rax
+026ea316 488bcb                         mov        rcx, rbx
+026ea319 e8a269dffd                     call       0x4e0cc0 ; 

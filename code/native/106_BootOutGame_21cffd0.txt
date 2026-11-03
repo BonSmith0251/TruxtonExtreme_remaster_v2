@@ -1,0 +1,81 @@
+{"assembly": "OutGame", "file": "BootOutGame.cs", "originalType": "OutGame.BootOutGame/<_loadPresenter>d__9", "rva": 35454928, "length": 338, "signature": "System.Boolean OutGame.BootOutGame/<_loadPresenter>d__9::MoveNext()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+021cffd0 4053                           push       rbx
+021cffd2 4883ec20                       sub        rsp, 0x20
+021cffd6 803dbd59490200                 cmp        byte ptr [rip + 0x24959bd], 0
+021cffdd 488bd9                         mov        rbx, rcx
+021cffe0 751f                           jne        0x21d0001
+021cffe2 488d0d77231c02                 lea        rcx, [rip + 0x21c2377]
+021cffe9 e8620a31fe                     call       0x4e0a50 ; 
+021cffee 488d0d5bf11e02                 lea        rcx, [rip + 0x21ef15b]
+021cfff5 e8560a31fe                     call       0x4e0a50 ; 
+021cfffa c6059959490201                 mov        byte ptr [rip + 0x2495999], 1
+021d0001 8b4310                         mov        eax, dword ptr [rbx + 0x10]
+021d0004 48897c2430                     mov        qword ptr [rsp + 0x30], rdi
+021d0009 85c0                           test       eax, eax
+021d000b 0f85b4000000                   jne        0x21d00c5
+021d0011 48837b2000                     cmp        qword ptr [rbx + 0x20], 0
+021d0016 488b7b28                       mov        rdi, qword ptr [rbx + 0x28]
+021d001a c74310ffffffff                 mov        dword ptr [rbx + 0x10], 0xffffffff
+021d0021 0f84f6000000                   je         0x21d011d
+021d0027 38055f594902                   cmp        byte ptr [rip + 0x249595f], al
+021d002d 751f                           jne        0x21d004e
+021d002f 488d0d7ade1e02                 lea        rcx, [rip + 0x21ede7a]
+021d0036 e8150a31fe                     call       0x4e0a50 ; 
+021d003b 488d0db6b31b02                 lea        rcx, [rip + 0x21bb3b6]
+021d0042 e8090a31fe                     call       0x4e0a50 ; 
+021d0047 c6053e59490201                 mov        byte ptr [rip + 0x249593e], 1
+021d004e 4885ff                         test       rdi, rdi
+021d0051 0f84c6000000                   je         0x21d011d
+021d0057 488b17                         mov        rdx, qword ptr [rdi]
+021d005a 488bcf                         mov        rcx, rdi
+021d005d 488b82b8010000                 mov        rax, qword ptr [rdx + 0x1b8]
+021d0064 488b92c0010000                 mov        rdx, qword ptr [rdx + 0x1c0]
+021d006b ffd0                           call       rax
+021d006d 4c8b0584b31b02                 mov        r8, qword ptr [rip + 0x21bb384]
+021d0074 4533c9                         xor        r9d, r9d
+021d0077 488b0d32de1e02                 mov        rcx, qword ptr [rip + 0x21ede32]
+021d007e 488bd0                         mov        rdx, rax
+021d0081 e8fae8caff                     call       0x1e7e980 ; mscorlib:String:System.String System.String::Concat(System.String,System.String,System.String)
+021d0086 488d4b38                       lea        rcx, [rbx + 0x38]
+021d008a 48894338                       mov        qword ptr [rbx + 0x38], rax
+021d008e 488bd0                         mov        rdx, rax
+021d0091 e8eafc30fe                     call       0x4dfd80 ; 
+021d0096 488b4b38                       mov        rcx, qword ptr [rbx + 0x38]
+021d009a 33d2                           xor        edx, edx
+021d009c e8df43c1ff                     call       0x1de4480 ; KANAI.Kernel:AssetLoader:System.Collections.IEnumerator KANAI.Kernel.AssetLoader::Load(System.String)
+021d00a1 488d4b18                       lea        rcx, [rbx + 0x18]
+021d00a5 48894318                       mov        qword ptr [rbx + 0x18], rax
+021d00a9 488bd0                         mov        rdx, rax
+021d00ac e8cffc30fe                     call       0x4dfd80 ; 
+021d00b1 b001                           mov        al, 1
+021d00b3 c7431001000000                 mov        dword ptr [rbx + 0x10], 1
+021d00ba 488b7c2430                     mov        rdi, qword ptr [rsp + 0x30]
+021d00bf 4883c420                       add        rsp, 0x20
+021d00c3 5b                             pop        rbx
+021d00c4 c3                             ret        
+021d00c5 83f801                         cmp        eax, 1
+021d00c8 7546                           jne        0x21d0110
+021d00ca 488b4b38                       mov        rcx, qword ptr [rbx + 0x38]
+021d00ce c74310ffffffff                 mov        dword ptr [rbx + 0x10], 0xffffffff
+021d00d5 488b1584221c02                 mov        rdx, qword ptr [rip + 0x21c2284]
+021d00dc e8bf4a56fe                     call       0x734ba0 ; KANAI.Kernel:AssetLoader:T KANAI.Kernel.AssetLoader::Get(System.String)
+021d00e1 4885c0                         test       rax, rax
+021d00e4 7437                           je         0x21d011d
+021d00e6 488b1563f01e02                 mov        rdx, qword ptr [rip + 0x21ef063]
+021d00ed 488bc8                         mov        rcx, rax
+021d00f0 e83b3064fe                     call       0x813130 ; UnityEngine.CoreModule:GameObject:T UnityEngine.GameObject::GetComponent()
+021d00f5 488b4b30                       mov        rcx, qword ptr [rbx + 0x30]
+021d00f9 4885c9                         test       rcx, rcx
+021d00fc 7412                           je         0x21d0110
+021d00fe 4c8b4918                       mov        r9, qword ptr [rcx + 0x18]
+021d0102 488bd0                         mov        rdx, rax
+021d0105 4c8b4128                       mov        r8, qword ptr [rcx + 0x28]
+021d0109 488b4940                       mov        rcx, qword ptr [rcx + 0x40]
+021d010d 41ffd1                         call       r9
+021d0110 488b7c2430                     mov        rdi, qword ptr [rsp + 0x30]
+021d0115 32c0                           xor        al, al
+021d0117 4883c420                       add        rsp, 0x20
+021d011b 5b                             pop        rbx
+021d011c c3                             ret        
+021d011d e8de0b31fe                     call       0x4e0d00 ; 

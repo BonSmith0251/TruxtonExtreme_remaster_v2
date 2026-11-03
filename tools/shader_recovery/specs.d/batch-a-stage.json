@@ -1,0 +1,14 @@
+{
+ "Shader Graphs/sg_bgmap_triplaner_grassobj1": {"kind": "sg-lit", "body": "sg_bgmap_triplaner_grassobj1.hlsl", "defines": [], "pragmas": [],
+  "note": "UV0 object maps (albedo raw, metallic R / smoothness A*int, normal) with world triplanar grass on up-facing masked areas; occlusion = blend*grass G."},
+ "Shader Graphs/sg_bgmap_triplaner_ground1": {"kind": "sg-lit", "body": "sg_bgmap_triplaner_ground1.hlsl", "defines": [], "pragmas": [],
+  "note": "Transparent triplanar ground (world or _ObjectSpace), GlayScale metallic R / occlusion G / smoothness A, triplanar HDR emission, alpha = vertex colour alpha."},
+ "Shader Graphs/sg_bgmap_triplaner_lava1": {"kind": "sg-lit", "body": "sg_bgmap_triplaner_lava1.hlsl", "defines": [], "pragmas": [],
+  "note": "Triplanar lava: albedo Difference-blended with GlayScale.b, emission Overlay-boosted by world triplanar Simple Noise hot spots (static, no time)."},
+ "Shader Graphs/sg_object_scale_texture": {"kind": "sg-lit", "body": "sg_object_scale_texture.hlsl", "defines": [], "pragmas": [],
+  "note": "UV0 scaled by object scale (x,z) * _TexScale; GlayScale metallic R / occlusion G / smoothness A; alpha clip vertex alpha vs (1-B)*_CutOut."},
+ "Shader Graphs/sg_deferred_nofog_planet": {"kind": "sg-unlit", "body": "sg_deferred_nofog_planet.hlsl", "defines": ["TX_NOFOG"], "pragmas": [],
+  "note": "Unlit planet: Fresnel rim lerp(_Color_In, HDR _ColorEdge) * MainTex, times night tint lerp(_Color, 1, smoothstep(_NightVol, _NightEdge, N.NightPos))."},
+ "Shader Graphs/sg_volume_light": {"kind": "sg-unlit", "body": "sg_volume_light.hlsl", "defines": ["TX_NOFOG"], "pragmas": [],
+  "note": "Unlit transparent light shaft: HDR _Color, alpha = depth fade * inverse Fresnel * near/far distance fades * uv0.y, Dodge-blended with scrolling noise."}
+}

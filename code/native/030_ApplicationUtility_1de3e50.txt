@@ -1,0 +1,21 @@
+{"assembly": "KANAI.Kernel", "file": "ApplicationUtility.cs", "originalType": "KANAI.Kernel.ApplicationUtility", "rva": 31342160, "length": 84, "signature": "System.Void KANAI.Kernel.ApplicationUtility::set_IsReady(System.Boolean)"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01de3e50 4053                           push       rbx
+01de3e52 4883ec20                       sub        rsp, 0x20
+01de3e56 803d45fb870200                 cmp        byte ptr [rip + 0x287fb45], 0
+01de3e5d 0fb6d9                         movzx      ebx, cl
+01de3e60 7513                           jne        0x1de3e75
+01de3e62 488d0d8f165a02                 lea        rcx, [rip + 0x25a168f]
+01de3e69 e8e2cb6ffe                     call       0x4e0a50 ; 
+01de3e6e c6052dfb870201                 mov        byte ptr [rip + 0x287fb2d], 1
+01de3e75 488b057c165a02                 mov        rax, qword ptr [rip + 0x25a167c]
+01de3e7c 83b8e400000000                 cmp        dword ptr [rax + 0xe4], 0
+01de3e83 750f                           jne        0x1de3e94
+01de3e85 488bc8                         mov        rcx, rax
+01de3e88 e803cf6ffe                     call       0x4e0d90 ; 
+01de3e8d 488b0564165a02                 mov        rax, qword ptr [rip + 0x25a1664]
+01de3e94 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+01de3e9b 885921                         mov        byte ptr [rcx + 0x21], bl
+01de3e9e 4883c420                       add        rsp, 0x20
+01de3ea2 5b                             pop        rbx
+01de3ea3 c3                             ret        

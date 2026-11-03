@@ -1,0 +1,22 @@
+{
+  "findings": [
+    {
+      "topic": "Do not count every YAML guid token as an asset reference",
+      "evidence": "Pristine SoundMixer.mixer six m_ExposedParameters guid values had no corresponding .meta because they are internal mixer parameter identities; TimelineTest000 two missing-prefab GUIDs occur inside m_Name strings. Only one genuine missing script GUID across4PPtrattachments remained.",
+      "recommendation": "Static GUID audits should parse PPtr records (fileID plusguid), distinguish internal IDs/name strings, then resolve imported subassets separately.",
+      "verified_in": "independent-extraction-review.json pristine_unknown_pptr_guids and pristine_guid_scan_nonreferences"
+    },
+    {
+      "topic": "Generator full-byte consumption alone does not prove managed header alignment",
+      "evidence": "726recovered MonoBehaviour headers independently matched raw GameObject/Enabled/Script/Name fields after m_Enabled alignment flag16384 correction.",
+      "recommendation": "Compare generated decoder headers against independent raw/native header pointers; retain exact-byte checks and target-existence checks as additional dimensions.",
+      "verified_in": "managed-layout-review.json; all726binary_header_checks passed"
+    },
+    {
+      "topic": "A temporary editor render-pipeline probe can persist project settings despite finally restoring live object references",
+      "evidence": "Unity2023.2.22f1 probe saved null pipeline refs in GraphicsSettings/QualitySettings and changed active quality antiAliasing2to0. Probe assignmentsRestored=True was insufficient. Post-test SHA256 caught both files; exact frozen bytes were restored and all files rechecked.",
+      "recommendation": "Back up exact GraphicsSettings/QualitySettings bytes before probing; restore runtime assignments in finally, then compare hashes after editor exit and restore exact bytes if needed. Never treat an in-memory equality check as proof of unchanged on-disk settings.",
+      "verified_in": "native-pipeline-settings-side-effect/restoration.json and both .diff.txt files"
+    }
+  ]
+}

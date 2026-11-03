@@ -1,0 +1,484 @@
+{
+  "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+  "sourceMetadataSha256": "8dc5e099564bd7de4c5f7a6c6d102f4d192da9ec704729c981ab4f217493d685",
+  "unitySourceVersion": "6000.3.7f1",
+  "targetVersion": "2023.2.22f1",
+  "metadataVersion": 39,
+  "tool": "Cpp2IL 2022.1.0-pre-release.21+58fc404ac503f4e512055cafc48c03088fc6e224",
+  "registration": {
+    "code": "0x18358B570",
+    "metadata": "0x183DB4460"
+  },
+  "automaticILRecovery": {
+    "recovered": 0,
+    "reason": "Installed exact output implementation unconditionally writes ldnull;throw. Not a missing processor configuration.",
+    "sourceUrl": "https://github.com/SamboyCoding/Cpp2IL/blob/58fc404ac503f4e512055cafc48c03088fc6e224/Cpp2IL.Core/OutputFormats/AsmResolverDllOutputFormatIlRecovery.cs",
+    "sourceSha256": "04a55a580db909db208c128d95e4397e2cd5661a34941f6c61e6c2983647b3fd"
+  },
+  "nativeRecovery": {
+    "selectedDisassemblies": 151,
+    "BootTXE": [
+      "Start: initial frame yield, default language, ApplicationUtility.Start, bootRoot assignment, software reboot delegate, SetupAssetLoader coroutine, additive scene load, readiness wait",
+      "_loadScene: yield LoadSceneAsync(_SceneName,Additive)",
+      "_softReboot: yield UnloadSceneAsync, frame, UnloadUnusedAssets, GC.Collect, WaitForSeconds(1), _loadScene"
+    ],
+    "BootTXE_source": "native-reconstructed-source/BootTXE.cs",
+    "compile": "passed standalone Unity2023 Mono compiler with exact netstandard refs",
+    "runtime": "not installed or runtime tested; dependent methods remain stubs",
+    "BootOutGame": "Partial call graph recovered: asset/audio setup, presenter stack, save flags, ready flag, reset/input callbacks. Full logic not reconstructed.",
+    "BootTXE_patch": "native-boot-patch/TXEKernel.dll",
+    "patchValidation": {
+      "originalAssemblyIdentityPreserved": true,
+      "topLevelTypesBefore": 103,
+      "topLevelTypesAfter": 103,
+      "unrelatedStructureCountChanges": 0,
+      "temporaryCompileAssemblyReferences": 0,
+      "patchedMethodsIncludingGeneratedCoroutines": 22,
+      "decompilation": "verified state machine branching and calls; no full runtime validation"
+    },
+    "simpleNativeBodies": {
+      "summary": {
+        "gameMethodsConsidered": 12417,
+        "smallUniqueNonGenericCandidatesDisassembled": 445,
+        "accepted": 91,
+        "acceptedKinds": {
+          "instance_field_getter": 50,
+          "instance_scalar_field_setter": 39,
+          "integer_constant": 2
+        },
+        "acceptedAssemblies": {
+          "InGame.Kernel": 75,
+          "KANAI.HybridCollision": 4,
+          "KANAI.Popup": 1,
+          "KANAI.UI": 9,
+          "OutGame": 2
+        },
+        "rejected": {
+          "outside_small_straight_line_scope": 5371,
+          "generated_generic_value_or_constructor": 4653,
+          "injected_method": 66,
+          "shared_native_address": 1759,
+          "instruction_or_field_semantics_not_supported": 284,
+          "not_plain_ret": 70,
+          "no_native_address": 123
+        },
+        "policy": "Unique RVA only, exactly one supported instruction and ret, exact declared field offset and managed type, no calls/branches/reference setters/value type or generic layout/constructors. Other methods unrecovered.",
+        "nativeExecution": 310,
+        "managedExecution": 309,
+        "managedMethodPasses": 91,
+        "managedMethodFailures": 0,
+        "patchAssemblies": 5,
+        "originalBootCountsExcluded": true,
+        "dependencyGraphAssemblies": 85,
+        "dependencyCycles": 0,
+        "targetBaselineHashesMatched": true,
+        "targetRuntimeValidation": "not performed; candidate outputs only",
+        "classification": "91 native-backed simple method bodies with independent native/managed synthetic fixture checks; separately tracked Boot recovery excluded; remaining original game methods unrecovered",
+        "originalGameMethodsConsidered": 12351,
+        "sourceMetadataSha256": "8dc5e099564bd7de4c5f7a6c6d102f4d192da9ec704729c981ab4f217493d685"
+      },
+      "path": "simple-native-recovery",
+      "sourceTransformer": "patch_simple_native.ps1",
+      "nativeDecoder": "recover_simple_native.py",
+      "integration": "All5target DLLs byte-match checked candidates at handoff; target editor/player validation reported separately by coordinator.",
+      "bodyCountsIndependentOfBoot": true
+    }
+  },
+  "nativePlugins": [
+    "Galaxy64.dll",
+    "steam_api64.dll",
+    "GfxPluginNVIDIAReflex.dll",
+    "lib_burst_generated.dll"
+  ],
+  "integration": {
+    "stubClosure": "integration-stubs/Assets/OriginalRecovered",
+    "stubDLLCount": 33,
+    "engineOrPackageDLLsExcluded": true,
+    "existingScriptMetaGuidsPreserved": true,
+    "nativeBootPatchMustReplaceOriginalType": true,
+    "typeMap": "monoscript-type-map.json",
+    "dependencySurface": "game-unity-api-references.json",
+    "originalRuntimePlayable": false,
+    "note": "Target worker must use Unity2023 PluginImporter metas with original GUID; original exporter v3 metadata schema unsuitable for direct target use. Target project owned by scenes worker.",
+    "compatibilityPatches": [
+      {
+        "assembly": "KANAI.Kernel.dll",
+        "path": "unity2023-compat/KANAI.Kernel.dll",
+        "change": "global Debug type visibility public->internal",
+        "reason": "prevents shadowing UnityEngine.Debug in auto-referenced official target packages",
+        "evidence": "zero external Debug type references in33retainedDLLs; source Debug methods Conditional NEVER_DEFINE_SYMBOL/native shared no-op",
+        "serializedFieldsChanged": 0,
+        "installedStatus": "Not installed: scene worker isolated game DLL compiler references instead. Visibility patch retained as optional candidate."
+      },
+      {
+        "assembly": "OutGame.dll",
+        "path": "unity2023-compat/OutGame.dll",
+        "change": "Localized OutGame.UI.TXERSelecter and TXERSelecterNumber references to current module; removed OutGame self AssemblyRef",
+        "cause": "Our stripped-type shell merge imported original same-assembly field types as external self references",
+        "evidence": "85-target-assembly SCC audit found sole cycle OutGame->OutGame; Unity native stack ReverseAssemblyDependenciesGraph::ExpandReferencesToIncludeIndirectOnes requested8GiB",
+        "serializedTypesAndFieldsChanged": 0,
+        "generatorFixed": "patch_missing_shells.ps1 resolves same-assembly types locally; regenerated missing-type-shells/integration/OutGame.dll has0selfrefs",
+        "targetRuntimeValidation": "Unity2023 domain reload passed; log integrated-import-8.log subsequently imports native assets. Full scene/player audit pending.",
+        "generatorSha256": "641bec6186fd7e1af1460daee9aca8b0b0ca64023098b1bdac3880122dfdbfda",
+        "fixedDllSha256": "34e8df1f961f32fa6ddd56b5fb3a0d8c3ac0d95f51dd8c2e893c9687c6cfb15d",
+        "installedStatus": "Self-reference repair incorporated before91-method patch baseline; target now byte-matches resulting91-method OutGame candidate."
+      }
+    ],
+    "remainingCallbackWarning": {
+      "assembly": "UniTask",
+      "type": "Cysharp.Threading.Tasks.Triggers.AsyncParticleUpdateJobScheduledTrigger",
+      "method": "OnParticleUpdateJobScheduled(ParticleSystemJobData)",
+      "nativeRva": "0x277BB70",
+      "sourceSerializedAttachments": 0,
+      "status": "Unity2023 ignores parameterized engine callback; no behavior recovered; signature preserved to avoid fabricating async payload semantics"
+    },
+    "finalDataAttachmentCandidates": [
+      {
+        "path": "gdk-edition-data",
+        "type": "Unity.XGamingRuntime.GdkEditionAsset",
+        "assemblyIdentity": "Unity.Microsoft.GDK, Version=0.0.0.0",
+        "scope": "Single private serialized int field retained; GDK platform runtime/API absent",
+        "compile": "passed",
+        "targetImport": "Source or DLL byte-match observed in target; scene worker owns actual serialization/import validation."
+      },
+      {
+        "path": "rendering-layer-data",
+        "type": "UnityEngine.Rendering.UI.DebugUIHandlerRenderingLayerField",
+        "assemblyIdentityChange": "Unity.RenderPipelines.Core.Runtime -> Assembly-CSharp",
+        "scope": "Exact compatible Core16 base and3declaredserializedfields;32togglepointers retained in sourceprefab; original Unity6 rendering-layer interaction unrecovered",
+        "compile": "passed against actual target Core16 DLL",
+        "targetImport": "Source or DLL byte-match observed in target; scene worker owns actual serialization/import validation."
+      }
+    ],
+    "outGameAsyncInstantiationDowngradeGap": {
+      "assembly": "OutGame",
+      "missingTargetType": "UnityEngine.AsyncInstantiateOperation<T> and its nested Awaiter<T>",
+      "targetEngine": "2023.2.22f1",
+      "sourceEngine": "6000.3.7f1",
+      "affectedTypes": [
+        "OutGame.Extra.ModelViewerPresenter/ModelMan/<load>d__5",
+        "OutGame.ModelGamePlayBase/<LoadResidentData>d__2",
+        "OutGame.PipipruVillage.PipiruVillagePresenter/<_instantiateStage>d__6",
+        "OutGame.UI.OutGameHelper/<SetupFunctions>d__10",
+        "OutGame.UI.OutGameHelper/<SetupUIGuides>d__9"
+      ],
+      "affectedPrivateCompilerStateFields": 6,
+      "serializedComponentFieldsChanged": 0,
+      "probe": "outgame-load-diagnostic/mono-probe.json",
+      "staticEvidence": "outgame-load-diagnostic/field-compatibility-evidence.json",
+      "reproduce": "probe_outgame_types.ps1",
+      "observations": "Standalone Unity2023 Mono GetTypes loads526/526 OutGame types; individual field-type reflection fails for5compiler-generated state types. Static metadata proves targetCore lacks the Unity6 generic API and source metadata contains it. No unresolved assembly loads in the probe.",
+      "buildWarning": "standalone-build-3.log InputSystem LinkFileGenerator Could not load types from OutGame",
+      "causalityLimit": "The isolated Mono probe confirms the API/field incompatibility but does not reproduce the Unity-editor ReflectionTypeLoadException at the identical call site. Treat it as the specific demonstrated downgrade gap associated with the warning, not proof every editor loader exception has been captured.",
+      "impact": "Incomplete original resident loading, village-stage instantiation, function/UI-guide setup and model-viewer loading state machines retain unavailable Unity6 async operation types. All are unrecovered behavior paths; prefab component attachment success does not cover these private fields.",
+      "nextAction": "Recover these loader state machines and design an evidence-supported Unity2023 instantiation/await adapter when restoring those original paths. Do not rewrite field types or add a fake operation merely to suppress a successful-build warning.",
+      "targetModification": "none"
+    }
+  },
+  "priorReimplementation": {
+    "path": "prior-round1-reimplementation",
+    "classification": "Round1 evidence-based reimplementation with explicit approximations",
+    "nativeAndMetadataFingerprints": "all present source fingerprint records matched; prior derived timeline artifacts unavailable",
+    "fullGameSource": false
+  },
+  "missing": [
+    "Original executable gameplay for all non-manually recovered methods",
+    "Original menu/presenter/save/network/store logic",
+    "Unity6 package type-to-Unity2023 script reference mapping and compatibility",
+    "Original VFX/render-pass implementation",
+    "Standalone original-game runtime parity validation"
+  ],
+  "userComicScope": "Comic excluded by user; shared blank placeholder handled by integration worker",
+  "metadataCensus": {
+    "assemblies": 118,
+    "types": 18705,
+    "methods": 137034,
+    "fields": 83764,
+    "statuses": {
+      "stub_throw_null": 130106,
+      "no_managed_body": 6928
+    }
+  },
+  "originalMethodDefinitions": 136680,
+  "injectedHelperMethods": 354,
+  "sourceScriptAttachments": {
+    "scriptReferenceCount": 22852,
+    "referencedMonoScriptObjects": 382,
+    "missingMetadataAttachmentCount": 11,
+    "strippedTypesLayoutShells": {
+      "coveredAttachments": 11,
+      "componentTypes": 9,
+      "helperTypes": 2,
+      "path": "missing-type-shells/integration",
+      "compile": "passed",
+      "fields": "recovered original names/order/serialized types from source typetrees",
+      "approximations": [
+        "Original inheritance stripped: use flattened MonoBehaviour layout",
+        "Serialized vectors implemented as arrays; original array/List distinction unavailable",
+        "No original methods recovered"
+      ],
+      "scriptIds": "Samples originalGUID33508ddbc422746d6776ccb54dbb91eb; OutGame originalassemblyGUID retained",
+      "runtime": "not tested by code worker; target importer must verify no missing scripts and value roundtrip"
+    }
+  },
+  "baselineAutomaticOutputCounts": {
+    "originalMethodDefinitions": 136680,
+    "originalMethodsWithThrowNullBodies": 129752,
+    "originalMethodsWithoutManagedBodies": 6928,
+    "injectedHelperMethodsWithThrowNullBodies": 354,
+    "allEmittedMethods": 137034,
+    "allEmittedThrowNullBodies": 130106,
+    "automaticallyRecoveredExecutableBodies": 0,
+    "emittedAssemblies": 118,
+    "emittedTypesIncludingInjected": 18705,
+    "emittedFields": 83764,
+    "gameAssemblySubsetOriginalMethods": 12351,
+    "gameSubsetThrowNullBodies": 12204,
+    "gameSubsetBodylessMethods": 147,
+    "gameSubsetDefinition": "Assembly names TXEKernel*, InGame.*, KANAI.*, OutGame; excludes vendor and Unity packages",
+    "countingPolicy": "These are immutable initial Cpp2IL IL-output counts, not a current-target stub census. Target replaces framework/package assemblies with real Unity2023 packages and adds separately tracked native bodies/schema shells."
+  },
+  "currentTargetObservation": {
+    "observedUtc": "2026-10-31T13:14:47.092809+00:00",
+    "method": "read-only SHA256 comparison; not a substitute for Unity runtime validation",
+    "artifacts": [
+      {
+        "kind": "91-method patch assembly",
+        "assembly": "InGame.Kernel, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "target": "D:\\Games\\TruxtonExRecon\\Reconstructed\\Assets\\OriginalRecovered\\Plugins\\InGame.Kernel.dll",
+        "sha256": "2318e5f51e9be734e24cac4d408b070ef069e1367e5d06e5a4668684a62f262f",
+        "matchesCandidate": true
+      },
+      {
+        "kind": "91-method patch assembly",
+        "assembly": "KANAI.HybridCollision, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "target": "D:\\Games\\TruxtonExRecon\\Reconstructed\\Assets\\OriginalRecovered\\Plugins\\KANAI.HybridCollision.dll",
+        "sha256": "751f1a9608ca820a2e46e8cfde0d76443ea4ba0e59c74715af2743b436d43f7a",
+        "matchesCandidate": true
+      },
+      {
+        "kind": "91-method patch assembly",
+        "assembly": "KANAI.Popup, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "target": "D:\\Games\\TruxtonExRecon\\Reconstructed\\Assets\\OriginalRecovered\\Plugins\\KANAI.Popup.dll",
+        "sha256": "758dcd832b690135015b5f31d4e9e531bced3fb2997626f05355bc3851c24c8d",
+        "matchesCandidate": true
+      },
+      {
+        "kind": "91-method patch assembly",
+        "assembly": "KANAI.UI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "target": "D:\\Games\\TruxtonExRecon\\Reconstructed\\Assets\\OriginalRecovered\\Plugins\\KANAI.UI.dll",
+        "sha256": "5ba125dd19f4b8c837fe77572af651f81db39d9c98ba9f09a3fa43584adc3345",
+        "matchesCandidate": true
+      },
+      {
+        "kind": "91-method patch assembly",
+        "assembly": "OutGame, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "target": "D:\\Games\\TruxtonExRecon\\Reconstructed\\Assets\\OriginalRecovered\\Plugins\\OutGame.dll",
+        "sha256": "044a94c47233e72516bfeb7942a238eaa474e069be8310ad08e7df234add5b4c",
+        "matchesCandidate": true
+      },
+      {
+        "kind": "BootTXE patch",
+        "target": "D:\\Games\\TruxtonExRecon\\Reconstructed\\Assets\\OriginalRecovered\\Plugins\\TXEKernel.dll",
+        "sha256": "b4393dff5d0dde9a7d82a0794dc7fae96f1690b52875dc3654a3b356d01a6b28",
+        "matchesCandidate": true
+      },
+      {
+        "kind": "GDK edition data shell",
+        "target": "D:\\Games\\TruxtonExRecon\\Reconstructed\\Assets\\OriginalRecovered\\Plugins\\Unity.Microsoft.GDK.dll",
+        "sha256": "5da6b877db9899fc45cfb972e4dbea2bb8979916e577294278268a75eec2ca25",
+        "matchesCandidate": true
+      },
+      {
+        "kind": "Samples data shells",
+        "target": "D:\\Games\\TruxtonExRecon\\Reconstructed\\Assets\\OriginalRecovered\\Plugins\\Samples.dll",
+        "sha256": "bc2a6959da811852194be5d2088fdfe589269428aa851b4fed42057ee57ecdc7",
+        "matchesCandidate": true
+      },
+      {
+        "kind": "Rendering-layer data shell",
+        "target": "D:\\Games\\TruxtonExRecon\\Reconstructed\\Assets\\DebugUIHandlerRenderingLayerField.cs",
+        "sha256": "4fe53871182bcb9cb1114cd12a52cad8dfa21fb7d97c99ca48bd6b14047cb636",
+        "matchesCandidate": true
+      }
+    ],
+    "simpleNativeOriginalMethods": 91,
+    "simpleNativeKinds": {
+      "getters": 50,
+      "scalarSetters": 39,
+      "integerConstants": 2
+    },
+    "bootSourceCoroutines": 3,
+    "bootPatchedEmittedMethodsIncludingConstructorAndCoroutineScaffolding": 22,
+    "countsAreSeparate": true,
+    "targetBuildAndPlayValidationOwner": "coordinator and scene worker"
+  },
+  "reproducibleWorkflow": [
+    {
+      "step": "Recover original metadata and confirm empty IL mode",
+      "scripts": [
+        "recover_metadata.ps1",
+        "census.ps1"
+      ],
+      "outputs": [
+        "metadata-assemblies",
+        "type-model-source",
+        "types.jsonl",
+        "methods.jsonl"
+      ]
+    },
+    {
+      "step": "Recover boot source, compile and transplant preserving type identity",
+      "scripts": [
+        "analyze_native.py",
+        "compile_native_boot.ps1",
+        "patch_boot.ps1"
+      ],
+      "outputs": [
+        "native-reconstructed-source",
+        "native-boot-patch"
+      ]
+    },
+    {
+      "step": "Recover stripped attachment layouts and merge shells with no self-assembly references",
+      "scripts": [
+        "check_script_attachments.py",
+        "recover_missing_layouts.py",
+        "compile_missing_shells.ps1",
+        "patch_missing_shells.ps1"
+      ],
+      "outputs": [
+        "missing-type-shells",
+        "script-attachment-coverage.json"
+      ]
+    },
+    {
+      "step": "Lift and verify91strictnative methods",
+      "scripts": [
+        "recover_simple_native.py",
+        "patch_simple_native.ps1",
+        "simple-native-recovery/verify_native_fragments.py",
+        "simple-native-recovery/VerifyManaged.cs",
+        "verify_simple_managed.ps1"
+      ],
+      "outputs": [
+        "simple-native-recovery/candidates.json",
+        "simple-native-recovery/patched",
+        "simple-native-recovery/patch-manifest.json"
+      ]
+    },
+    {
+      "step": "Compile final two schema repairs",
+      "scripts": [
+        "compile_gdk_data.ps1",
+        "compile_rendering_layer_data.ps1"
+      ],
+      "outputs": [
+        "gdk-edition-data",
+        "rendering-layer-data"
+      ]
+    },
+    {
+      "step": "Diagnose the OutGame build reflection warning without another Unity editor",
+      "scripts": [
+        "probe_outgame_types.ps1",
+        "outgame-load-diagnostic/LoadTypesProbe.cs"
+      ],
+      "outputs": [
+        "outgame-load-diagnostic/mono-probe.json",
+        "outgame-load-diagnostic/field-compatibility-evidence.json"
+      ]
+    }
+  ],
+  "actionableRemainingGaps": [
+    {
+      "area": "Original gameplay",
+      "gap": "Only91simplemethod bodies and3Bootcoroutine implementations are recovered; main player/enemy/boss loops, spawning orchestration, damage, UI presenters and save flow remain largely metadata stubs.",
+      "nextStep": "Recover named systems from native control flow and original runtime traces; do not infer behavior from successful asset import or the separate Round1 reimplementation."
+    },
+    {
+      "area": "Boot dependencies",
+      "gap": "Native BootTXE delegates to ApplicationUtility/asset-loading/OutGame readiness logic whose executable implementations remain incomplete.",
+      "nextStep": "Trace SetupAssetLoader and BootOutGame initialization/presenter state machines before calling original startup playable."
+    },
+    {
+      "area": "Data compatibility shells",
+      "gap": "Samples/debug shells flatten unknown stripped inheritance and use inferred array containers. GDK shell includes edition data only. Rendering-layer shell changes assembly toAssembly-CSharp and has no recovered Unity6 interaction logic.",
+      "nextStep": "Preserve exact source values and pointer maps; validate target serialized values independently. Implement behavior only from additional evidence."
+    },
+    {
+      "area": "Platform and middleware",
+      "gap": "GOG/Steam/Reflex/GDK/native integrations are not reconstructed from data shells or placeholder vendorDLLs.",
+      "nextStep": "Recover required initialization and ABI contracts per supported platform; do not invoke unavailable stubs as working services."
+    },
+    {
+      "area": "Callback migration",
+      "gap": "UniTask AsyncParticleUpdateJobScheduledTrigger has a Unity2023-ignored parameterized callback, with0source serializedattachments.",
+      "nextStep": "Keep explicit compatibility gap; restore only with a verified target-version event adaptation if a runtime path needs it."
+    },
+    {
+      "area": "Full runtime fidelity",
+      "gap": "Code worker checks cover isolated native/managed fragments, compilation, structure and domain-crash repair. Full editor/standalone/visual fidelity is not established by those checks.",
+      "nextStep": "Use coordinator build/Play/scene checks and compare tested scope with original game."
+    },
+    {
+      "area": "Unity6 asynchronous instantiation in OutGame",
+      "gap": "Six private compiler-state fields across five loader types reference AsyncInstantiateOperation<T>/Awaiter<T>, absent from Unity2023. StandaloneGetTypes passes but field-type reflection fails.",
+      "nextStep": "Recover these loader state machines and design an evidence-supported Unity2023 instantiation/await adapter when restoring those original paths. Do not rewrite field types or add a fake operation merely to suppress a successful-build warning."
+    }
+  ],
+  "uniTaskParticleCallbackCompatibility": {
+    "status": "candidate prepared; target integration and player validation owned by scenes",
+    "classification": "compatibility-only unsupported optional callback; zero recovered behavior",
+    "candidate": "unitask-callback-compat/patched/UniTask.dll",
+    "baselineSha256": "9ce48490e4a344d4ed564d311321ac2615b147e792144f3188d00a700ae6f719",
+    "candidateSha256": "94b55b6088f4b4a72305ae4667eb754bddb3a433a95fc4b6d549bd2a27b8458f",
+    "change": {
+      "before": "System.Void Cysharp.Threading.Tasks.Triggers.AsyncParticleUpdateJobScheduledTrigger::OnParticleUpdateJobScheduled(UnityEngine.ParticleSystemJobs.ParticleSystemJobData)",
+      "after": "System.Void Cysharp.Threading.Tasks.Triggers.AsyncParticleUpdateJobScheduledTrigger::UnsupportedParticleJobDataCallback(UnityEngine.ParticleSystemJobs.ParticleSystemJobData)",
+      "privateOnly": true,
+      "bodyUnchanged": [
+        "ret"
+      ],
+      "typesFieldsPublicAPIAssemblyRefsUnchanged": true
+    },
+    "referenceAudit": {
+      "currentAssemblies": 88,
+      "triggerTypeOrMemberReferences": 0,
+      "directCallOperands": 0,
+      "reflectiveNameStrings": 0,
+      "sourceMonoScripts": 4115,
+      "matchingSourceMonoScripts": 0
+    },
+    "sourceNativeEvidence": {
+      "originalToken": "0x06000AC1",
+      "rva": "0x277BB70",
+      "length": 246
+    },
+    "upstream": {
+      "commit": "a77a1b4a89824fb6df293099de3060daf2a432c1",
+      "Runtime/Triggers/MonoBehaviourMessagesTriggers.cs": {
+        "url": "https://raw.githubusercontent.com/Cysharp/UniTask/a77a1b4a89824fb6df293099de3060daf2a432c1/src/UniTask/Assets/Plugins/UniTask/Runtime/Triggers/MonoBehaviourMessagesTriggers.cs",
+        "sha256": "0b8e703cc7bb9bf88d04b8579456448fe27cf45723181a29ce1ebd9ef46ecf0c"
+      },
+      "package.json": {
+        "url": "https://raw.githubusercontent.com/Cysharp/UniTask/a77a1b4a89824fb6df293099de3060daf2a432c1/src/UniTask/Assets/Plugins/UniTask/package.json",
+        "sha256": "74eee17457be4a04ce282dc96b62602e81d36dbc60448b488cb0c7a1847ba2dc"
+      }
+    },
+    "upstreamReplacementAssessment": "Not suitable for this fix: upstream has same invalid signature. Broad replacement needs original version/API compatibility audit and runtime testing; current task does not authorize unverified global behavior change.",
+    "reason": "Unity2023 callback requires no parameters. Original and upstream UniTask wrongly request ParticleSystemJobData; Unity ignores it. Rename prevents invalid message registration; do not fabricate job data.",
+    "limitations": "No trigger functionality restored. Async public methods remain existing metadata stubs. Static scan cannot rule out dynamically constructed reflection names in unrecovered native behavior.",
+    "reproduce": [
+      "audit_unitask_callback.ps1",
+      "patch_unitask_callback.ps1",
+      "prove_unitask_callback.py"
+    ],
+    "proof": [
+      "unitask-callback-compat/patch-proof.json",
+      "unitask-callback-compat/source-proof.json",
+      "unitask-callback-compat/original-method-metadata.json",
+      "unitask-callback-compat/original-native-callback.txt"
+    ]
+  }
+}

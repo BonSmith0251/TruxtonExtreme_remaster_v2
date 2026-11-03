@@ -1,0 +1,41 @@
+{"assembly": "OutGame", "file": "BootOutGame.cs", "originalType": "OutGame.BootOutGame", "rva": 35372800, "length": 161, "signature": "System.Collections.IEnumerator OutGame.BootOutGame::_loadPresenter(System.Type,System.Func`2<KANAI.MVPSystem.PresenterBase,KANAI.MVPSystem.PresenterBase>)"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+021bbf00 48895c2408                     mov        qword ptr [rsp + 8], rbx
+021bbf05 48896c2410                     mov        qword ptr [rsp + 0x10], rbp
+021bbf0a 4889742418                     mov        qword ptr [rsp + 0x18], rsi
+021bbf0f 57                             push       rdi
+021bbf10 4883ec20                       sub        rsp, 0x20
+021bbf14 803d729a4a0200                 cmp        byte ptr [rip + 0x24a9a72], 0
+021bbf1b 498bf8                         mov        rdi, r8
+021bbf1e 488bf2                         mov        rsi, rdx
+021bbf21 488be9                         mov        rbp, rcx
+021bbf24 7513                           jne        0x21bbf39
+021bbf26 488d0dc39a1b02                 lea        rcx, [rip + 0x21b9ac3]
+021bbf2d e81e4b32fe                     call       0x4e0a50 ; 
+021bbf32 c605549a4a0201                 mov        byte ptr [rip + 0x24a9a54], 1
+021bbf39 488b0db09a1b02                 mov        rcx, qword ptr [rip + 0x21b9ab0]
+021bbf40 e86b4d32fe                     call       0x4e0cb0 ; 
+021bbf45 33d2                           xor        edx, edx
+021bbf47 488bc8                         mov        rcx, rax
+021bbf4a 488bd8                         mov        rbx, rax
+021bbf4d e85e0e40fe                     call       0x5bcdb0 ; AEAsAnimation:AEAsAnimationRoot:System.Void AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation:AEComposition:System.Void AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpAsync>d__16::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpChildAsync>d__25::System.IDisposable.Dispose()
+021bbf52 488d4b20                       lea        rcx, [rbx + 0x20]
+021bbf56 c7431000000000                 mov        dword ptr [rbx + 0x10], 0
+021bbf5d 488bd5                         mov        rdx, rbp
+021bbf60 48896b20                       mov        qword ptr [rbx + 0x20], rbp
+021bbf64 e8173e32fe                     call       0x4dfd80 ; 
+021bbf69 488d4b28                       lea        rcx, [rbx + 0x28]
+021bbf6d 48897328                       mov        qword ptr [rbx + 0x28], rsi
+021bbf71 488bd6                         mov        rdx, rsi
+021bbf74 e8073e32fe                     call       0x4dfd80 ; 
+021bbf79 488d4b30                       lea        rcx, [rbx + 0x30]
+021bbf7d 48897b30                       mov        qword ptr [rbx + 0x30], rdi
+021bbf81 488bd7                         mov        rdx, rdi
+021bbf84 e8f73d32fe                     call       0x4dfd80 ; 
+021bbf89 488b6c2438                     mov        rbp, qword ptr [rsp + 0x38]
+021bbf8e 488bc3                         mov        rax, rbx
+021bbf91 488b5c2430                     mov        rbx, qword ptr [rsp + 0x30]
+021bbf96 488b742440                     mov        rsi, qword ptr [rsp + 0x40]
+021bbf9b 4883c420                       add        rsp, 0x20
+021bbf9f 5f                             pop        rdi
+021bbfa0 c3                             ret        

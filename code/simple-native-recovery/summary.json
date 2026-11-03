@@ -1,0 +1,40 @@
+{
+  "gameMethodsConsidered": 12417,
+  "smallUniqueNonGenericCandidatesDisassembled": 445,
+  "accepted": 91,
+  "acceptedKinds": {
+    "instance_field_getter": 50,
+    "instance_scalar_field_setter": 39,
+    "integer_constant": 2
+  },
+  "acceptedAssemblies": {
+    "InGame.Kernel": 75,
+    "KANAI.HybridCollision": 4,
+    "KANAI.Popup": 1,
+    "KANAI.UI": 9,
+    "OutGame": 2
+  },
+  "rejected": {
+    "outside_small_straight_line_scope": 5371,
+    "generated_generic_value_or_constructor": 4653,
+    "injected_method": 66,
+    "shared_native_address": 1759,
+    "instruction_or_field_semantics_not_supported": 284,
+    "not_plain_ret": 70,
+    "no_native_address": 123
+  },
+  "policy": "Unique RVA only, exactly one supported instruction and ret, exact declared field offset and managed type, no calls/branches/reference setters/value type or generic layout/constructors. Other methods unrecovered.",
+  "nativeExecution": 310,
+  "managedExecution": 309,
+  "managedMethodPasses": 91,
+  "managedMethodFailures": 0,
+  "patchAssemblies": 5,
+  "originalBootCountsExcluded": true,
+  "dependencyGraphAssemblies": 85,
+  "dependencyCycles": 0,
+  "targetBaselineHashesMatched": true,
+  "targetRuntimeValidation": "not performed; candidate outputs only",
+  "classification": "91 native-backed simple method bodies with independent native/managed synthetic fixture checks; separately tracked Boot recovery excluded; remaining original game methods unrecovered",
+  "originalGameMethodsConsidered": 12351,
+  "sourceMetadataSha256": "8dc5e099564bd7de4c5f7a6c6d102f4d192da9ec704729c981ab4f217493d685"
+}

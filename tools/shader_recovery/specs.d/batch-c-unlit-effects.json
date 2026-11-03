@@ -1,0 +1,18 @@
+{
+ "Shader Graphs/sg_distortion": {"kind": "sg-unlit", "body": "sg_distortion.hlsl", "defines": ["TX_NOFOG"],
+  "note": "Opaque-texture refraction offset by gradient noise or view-depth ripple (toggle _NoizeOrRipple); alpha = vertex alpha. Needs Opaque Texture."},
+ "Shader Graphs/sg_distortion_fade": {"kind": "sg-unlit", "body": "sg_distortion_fade.hlsl", "defines": ["TX_NOFOG"],
+  "note": "sg_distortion with alpha = _Transparency. Needs Opaque Texture."},
+ "Shader Graphs/sg_explosion_sphere": {"kind": "sg-unlit", "body": "sg_explosion_sphere.hlsl", "defines": ["TX_NOFOG"],
+  "note": "Additive world triplanar texture x scrolled noise mask, smoothstep alpha edges, ColorOut/ColorIn HDR tint, vertex colour, silhouette fade."},
+ "Shader Graphs/sg_flame02_additive": {"kind": "sg-unlit", "body": "sg_flame02_additive.hlsl", "defines": ["TX_NOFOG", "TX_HAS_VERTEX_FUNCTION", "TX_ALPHATEST"],
+  "note": "Additive two-sided flame: two scrolled mask samples, uv fade, alpha clip 0.5, simple-noise vertex wobble along the normal."},
+ "Shader Graphs/sg_flame02_multiply": {"kind": "sg-unlit", "body": "sg_flame02_multiply.hlsl", "defines": ["TX_NOFOG", "TX_HAS_VERTEX_FUNCTION", "TX_ALPHATEST"],
+  "note": "sg_flame02_additive graph in multiply blend: rgb = lerp(1, colour, alpha)."},
+ "Shader Graphs/sg_fresnel_outline": {"kind": "sg-unlit", "body": "sg_fresnel_outline.hlsl", "defines": ["TX_NOFOG"],
+  "note": "Fresnel rim lerp(base, edge colour) with alpha = fresnel, plus emission image x colour x intensity."},
+ "Shader Graphs/sg_overlaid_fire": {"kind": "sg-unlit", "body": "sg_overlaid_fire.hlsl", "defines": ["TX_NOFOG"],
+  "note": "Additive object-space triplanar fire with hue-rotated position/normal over time, simple-noise mask, smoothstep alpha edges, ColorOut/ColorIn tint."},
+ "Shader Graphs/sg_shield": {"kind": "sg-unlit", "body": "sg_shield.hlsl", "defines": ["TX_NOFOG"],
+  "note": "Colour shield: alpha = (|fresnel|^power + depth-intersection edge) x flickering overlaid scrolling hex texture. Needs Depth Texture."}
+}

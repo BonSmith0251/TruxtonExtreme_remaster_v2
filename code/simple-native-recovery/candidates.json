@@ -1,0 +1,3978 @@
+[
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.InGameBullet",
+    "signature": "System.Boolean InGame.Kernel.InGameBullet::IsSimpleCalc()",
+    "originalToken": "0x600007E",
+    "rva": "0x1cce420",
+    "nativeBytes": "0fb681b5000000c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0xb5]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_isSimpleCalc",
+      "type": "System.Boolean",
+      "token": "[Field:0x0034]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "UnityEngine.SerializeField",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x400003F"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0xB5"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.InGameBulletBow",
+    "signature": "System.Void InGame.Kernel.InGameBulletBow::Setup(System.Single)",
+    "originalToken": "0x6000094",
+    "rva": "0x1cc9d20",
+    "nativeBytes": "f30f1189f4000000c3",
+    "instructions": [
+      "movss dword ptr [rcx + 0xf4], xmm1",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_fadeInTime",
+      "type": "System.Single",
+      "token": "[Field:0x0054]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x400005F"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0xF4"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.InGameBulletItem",
+    "signature": "InGame.Kernel.BulletColorType InGame.Kernel.InGameBulletItem::ColorType()",
+    "originalToken": "0x60000C1",
+    "rva": "0x1cc9ee0",
+    "nativeBytes": "b86e000000c3",
+    "instructions": [
+      "mov eax, 0x6e",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "integer_constant",
+    "field": null,
+    "constant": 110,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.InGameCollisionBase",
+    "signature": "System.Void InGame.Kernel.InGameCollisionBase::SetInvincibleTime(System.Single)",
+    "originalToken": "0x6000119",
+    "rva": "0x1ccf560",
+    "nativeBytes": "f30f118998000000c3",
+    "instructions": [
+      "movss dword ptr [rcx + 0x98], xmm1",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_invincibleTime",
+      "type": "System.Single",
+      "token": "[Field:0x00a8]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x40000CF"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x98"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.InGameCollisionBase",
+    "signature": "System.Void InGame.Kernel.InGameCollisionBase::SetNodamagedTime(System.Single)",
+    "originalToken": "0x600011B",
+    "rva": "0x1ccf570",
+    "nativeBytes": "f30f11899c000000c3",
+    "instructions": [
+      "movss dword ptr [rcx + 0x9c], xmm1",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_nodamagedTime",
+      "type": "System.Single",
+      "token": "[Field:0x00a9]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x40000D0"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x9C"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.InGameEnemyMoveBase",
+    "signature": "System.Void InGame.Kernel.InGameEnemyMoveBase::SetSpeed(System.Single)",
+    "originalToken": "0x6000205",
+    "rva": "0x1cdb5b0",
+    "nativeBytes": "f30f118964010000c3",
+    "instructions": [
+      "movss dword ptr [rcx + 0x164], xmm1",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_currentSpeed",
+      "type": "System.Single",
+      "token": "[Field:0x00fd]",
+      "flags": "Family",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000176"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x164"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.InGameEnemyMoveBase",
+    "signature": "System.Void InGame.Kernel.InGameEnemyMoveBase::SetLaserCanselFlag(System.Boolean)",
+    "originalToken": "0x6000221",
+    "rva": "0x1cdaf00",
+    "nativeBytes": "8891d4010000c3",
+    "instructions": [
+      "mov byte ptr [rcx + 0x1d4], dl",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_laserCancelFlag",
+      "type": "System.Boolean",
+      "token": "[Field:0x010e]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000187"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1D4"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.InGameEnemyMoveBase",
+    "signature": "System.Boolean InGame.Kernel.InGameEnemyMoveBase::IsLaserCancel()",
+    "originalToken": "0x6000222",
+    "rva": "0x1cdaa00",
+    "nativeBytes": "0fb681d4010000c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x1d4]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_laserCancelFlag",
+      "type": "System.Boolean",
+      "token": "[Field:0x010e]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000187"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1D4"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.InGameEnemyMoveBase",
+    "signature": "System.Void InGame.Kernel.InGameEnemyMoveBase::SetLookAtType(InGame.Kernel.Timeline.LookAtType)",
+    "originalToken": "0x6000227",
+    "rva": "0x1cdaf10",
+    "nativeBytes": "8991ac010000c3",
+    "instructions": [
+      "mov dword ptr [rcx + 0x1ac], edx",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_lookAtType",
+      "type": "InGame.Kernel.Timeline.LookAtType",
+      "token": "[Field:0x0108]",
+      "flags": "Family",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "UnityEngine.SerializeField",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "KANAI.Editor.Kernel.ReadonlyAttribute",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000181"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1AC"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.InGameEnemyMoveBase",
+    "signature": "System.Void InGame.Kernel.InGameEnemyMoveBase::SetWakeAfterSecond(System.Single)",
+    "originalToken": "0x6000229",
+    "rva": "0x1cdb780",
+    "nativeBytes": "f30f118958010000c3",
+    "instructions": [
+      "movss dword ptr [rcx + 0x158], xmm1",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_wakeAfterSecond",
+      "type": "System.Single",
+      "token": "[Field:0x00fa]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000173"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x158"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.InGameEnemyMoveBase",
+    "signature": "System.Void InGame.Kernel.InGameEnemyMoveBase::SetSmoothRotateParam(System.Single)",
+    "originalToken": "0x600023C",
+    "rva": "0x1cdb590",
+    "nativeBytes": "f30f1189d8010000c3",
+    "instructions": [
+      "movss dword ptr [rcx + 0x1d8], xmm1",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_smoothRotateValue",
+      "type": "System.Single",
+      "token": "[Field:0x0110]",
+      "flags": "Family",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000189"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1D8"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.InGameEnemyMoveBase",
+    "signature": "System.Single InGame.Kernel.InGameEnemyMoveBase::get_LocalDuration()",
+    "originalToken": "0x6000246",
+    "rva": "0x1cdd530",
+    "nativeBytes": "f30f108150010000c3",
+    "instructions": [
+      "movss xmm0, dword ptr [rcx + 0x150]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_localDuration",
+      "type": "System.Single",
+      "token": "[Field:0x00f8]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000171"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x150"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.InGameEnemyMoveBase",
+    "signature": "System.Single InGame.Kernel.InGameEnemyMoveBase::get_WakeAfterSecond()",
+    "originalToken": "0x6000247",
+    "rva": "0x1cdd5f0",
+    "nativeBytes": "f30f108158010000c3",
+    "instructions": [
+      "movss xmm0, dword ptr [rcx + 0x158]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_wakeAfterSecond",
+      "type": "System.Single",
+      "token": "[Field:0x00fa]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000173"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x158"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.InGameEnemyMoveBase",
+    "signature": "System.Single InGame.Kernel.InGameEnemyMoveBase::get_CurrentSpeed()",
+    "originalToken": "0x6000249",
+    "rva": "0x1cdd4b0",
+    "nativeBytes": "f30f108164010000c3",
+    "instructions": [
+      "movss xmm0, dword ptr [rcx + 0x164]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_currentSpeed",
+      "type": "System.Single",
+      "token": "[Field:0x00fd]",
+      "flags": "Family",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000176"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x164"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.InGameEnemyMoveBase",
+    "signature": "System.Boolean InGame.Kernel.InGameEnemyMoveBase::get_IsDirtyTransform()",
+    "originalToken": "0x600024C",
+    "rva": "0x1cdd4f0",
+    "nativeBytes": "0fb68191010000c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x191]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_isDirtyTransform",
+      "type": "System.Boolean",
+      "token": "[Field:0x0103]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x400017C"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x191"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.InGameEnemyMoveBase",
+    "signature": "System.Single InGame.Kernel.InGameEnemyMoveBase::get_SplineRate()",
+    "originalToken": "0x6000252",
+    "rva": "0x1cdd5c0",
+    "nativeBytes": "f30f1081dc010000c3",
+    "instructions": [
+      "movss xmm0, dword ptr [rcx + 0x1dc]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_spRate",
+      "type": "System.Single",
+      "token": "[Field:0x0111]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x400018A"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1DC"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.InGameManager",
+    "signature": "System.Void InGame.Kernel.InGameManager::SetRushMode(System.Boolean)",
+    "originalToken": "0x60002B8",
+    "rva": "0x1ceb120",
+    "nativeBytes": "885153c3",
+    "instructions": [
+      "mov byte ptr [rcx + 0x53], dl",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_isRushMode",
+      "type": "System.Boolean",
+      "token": "[Field:0x012e]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000237"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x53"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.InGameManager",
+    "signature": "System.Void InGame.Kernel.InGameManager::SetNextStage(System.Boolean)",
+    "originalToken": "0x60002C8",
+    "rva": "0x1ceae00",
+    "nativeBytes": "885157c3",
+    "instructions": [
+      "mov byte ptr [rcx + 0x57], dl",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_isNextStage",
+      "type": "System.Boolean",
+      "token": "[Field:0x0132]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x400023B"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x57"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.InGameManager",
+    "signature": "System.Boolean InGame.Kernel.InGameManager::get_IsNextStage()",
+    "originalToken": "0x60002CF",
+    "rva": "0x1cf2c40",
+    "nativeBytes": "0fb64157c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x57]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_isNextStage",
+      "type": "System.Boolean",
+      "token": "[Field:0x0132]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x400023B"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x57"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.InGameManager",
+    "signature": "System.Int32 InGame.Kernel.InGameManager::get_StrongestCount()",
+    "originalToken": "0x6000338",
+    "rva": "0x1cf2eb0",
+    "nativeBytes": "8b8108020000c3",
+    "instructions": [
+      "mov eax, dword ptr [rcx + 0x208]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_strongestCount",
+      "type": "System.Int32",
+      "token": "[Field:0x0184]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x400028D"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x208"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.InGameManager",
+    "signature": "System.Void InGame.Kernel.InGameManager::SetPlayPhase(InGame.Kernel.InGameManager/Phase)",
+    "originalToken": "0x6000356",
+    "rva": "0x1ceaf30",
+    "nativeBytes": "89915c020000c3",
+    "instructions": [
+      "mov dword ptr [rcx + 0x25c], edx",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_playPhase",
+      "type": "InGame.Kernel.InGameManager/Phase",
+      "token": "[Field:0x01a3]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "UnityEngine.SerializeField",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "KANAI.Editor.Kernel.ReadonlyAttribute",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x40002AC"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x25C"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.InGameManager",
+    "signature": "InGame.Kernel.InGameManager/Phase InGame.Kernel.InGameManager::get_PlayPhase()",
+    "originalToken": "0x6000366",
+    "rva": "0x1cf2e30",
+    "nativeBytes": "8b815c020000c3",
+    "instructions": [
+      "mov eax, dword ptr [rcx + 0x25c]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_playPhase",
+      "type": "InGame.Kernel.InGameManager/Phase",
+      "token": "[Field:0x01a3]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "UnityEngine.SerializeField",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "KANAI.Editor.Kernel.ReadonlyAttribute",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x40002AC"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x25C"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.InGameManager",
+    "signature": "System.Void InGame.Kernel.InGameManager::SetNoDeadCount(System.Boolean)",
+    "originalToken": "0x600037A",
+    "rva": "0x1ceae10",
+    "nativeBytes": "889168020000c3",
+    "instructions": [
+      "mov byte ptr [rcx + 0x268], dl",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_isNoDeadCount",
+      "type": "System.Boolean",
+      "token": "[Field:0x01a5]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x40002AE"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x268"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.InGameManager",
+    "signature": "System.Single InGame.Kernel.InGameManager::get_GetDiPoint()",
+    "originalToken": "0x600038A",
+    "rva": "0x1cf29f0",
+    "nativeBytes": "f30f108198020000c3",
+    "instructions": [
+      "movss xmm0, dword ptr [rcx + 0x298]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_DiPoint",
+      "type": "System.Single",
+      "token": "[Field:0x01af]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x40002B8"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x298"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.LinkedCamera",
+    "signature": "System.Void InGame.Kernel.LinkedCamera::set_LinkRotate(System.Boolean)",
+    "originalToken": "0x60005C4",
+    "rva": "0x1d39ae0",
+    "nativeBytes": "8891b8010000c3",
+    "instructions": [
+      "mov byte ptr [rcx + 0x1b8], dl",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_linkRotate",
+      "type": "System.Boolean",
+      "token": "[Field:0x0245]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "UnityEngine.SerializeField",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x40004CC"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1B8"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.LinkedCamera",
+    "signature": "System.Void InGame.Kernel.LinkedCamera::set_LinkTranslate(System.Boolean)",
+    "originalToken": "0x60005C6",
+    "rva": "0x1d39b00",
+    "nativeBytes": "8891b9010000c3",
+    "instructions": [
+      "mov byte ptr [rcx + 0x1b9], dl",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_linkTranslate",
+      "type": "System.Boolean",
+      "token": "[Field:0x0246]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "UnityEngine.SerializeField",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x40004CD"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1B9"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.LinkedCamera",
+    "signature": "System.Boolean InGame.Kernel.LinkedCamera::get_LinkTranslate()",
+    "originalToken": "0x60005C7",
+    "rva": "0x1d39ad0",
+    "nativeBytes": "0fb681b9010000c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x1b9]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_linkTranslate",
+      "type": "System.Boolean",
+      "token": "[Field:0x0246]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "UnityEngine.SerializeField",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x40004CD"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1B9"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.LinkedCamera",
+    "signature": "System.Void InGame.Kernel.LinkedCamera::set_LinkShift(System.Boolean)",
+    "originalToken": "0x60005C8",
+    "rva": "0x1d39af0",
+    "nativeBytes": "8891ba010000c3",
+    "instructions": [
+      "mov byte ptr [rcx + 0x1ba], dl",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_linkShift",
+      "type": "System.Boolean",
+      "token": "[Field:0x0247]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "UnityEngine.SerializeField",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x40004CE"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1BA"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.LinkedCamera",
+    "signature": "System.Boolean InGame.Kernel.LinkedCamera::get_LinkShift()",
+    "originalToken": "0x60005C9",
+    "rva": "0x1d39ac0",
+    "nativeBytes": "0fb681ba010000c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x1ba]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_linkShift",
+      "type": "System.Boolean",
+      "token": "[Field:0x0247]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "UnityEngine.SerializeField",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x40004CE"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1BA"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.SimpleMoveRocket",
+    "signature": "System.Single InGame.Kernel.SimpleMoveRocket::GetFirstSpeed()",
+    "originalToken": "0x6000670",
+    "rva": "0x1d42770",
+    "nativeBytes": "f30f1081e8000000c3",
+    "instructions": [
+      "movss xmm0, dword ptr [rcx + 0xe8]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "FirstTimeSpeed",
+      "type": "System.Single",
+      "token": "[Field:0x02af]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "UnityEngine.SerializeField",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "UnityEngine.TooltipAttribute",
+          "args": [
+            "\u521d\u671f\u901f\u5ea6"
+          ],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000555"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0xE8"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.SplineMover",
+    "signature": "System.Void InGame.Kernel.SplineMover::SetEndRouteKeep(System.Boolean)",
+    "originalToken": "0x600067E",
+    "rva": "0x1d44230",
+    "nativeBytes": "8891f8010000c3",
+    "instructions": [
+      "mov byte ptr [rcx + 0x1f8], dl",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_isEndRouteKeep",
+      "type": "System.Boolean",
+      "token": "[Field:0x02c0]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000566"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1F8"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Timeline.EnemyEntryClip",
+    "signature": "System.Boolean InGame.Kernel.Timeline.EnemyEntryClip::IsClone()",
+    "originalToken": "0x6000788",
+    "rva": "0x1d34dc0",
+    "nativeBytes": "0fb64133c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x33]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_isClone",
+      "type": "System.Boolean",
+      "token": "[Field:0x0364]",
+      "flags": "Public",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "UnityEngine.SerializeField",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "UnityEngine.TooltipAttribute",
+          "args": [
+            "\u8907\u88fd\u30d5\u30e9\u30b0\uff1a\u6709\u52b9\u3060\u3068\u30ea\u30bd\u30fc\u30b9\u91cf\u304c\u6e1b"
+          ],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000646"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x33"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.RouteEditor.RouteDataEdit",
+    "signature": "System.Double InGame.Kernel.RouteEditor.RouteDataEdit::get_Distance()",
+    "originalToken": "0x6000840",
+    "rva": "0x1d509c0",
+    "nativeBytes": "f20f104178c3",
+    "instructions": [
+      "movsd xmm0, qword ptr [rcx + 0x78]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_dummyDistance",
+      "type": "System.Double",
+      "token": "[Field:0x041f]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x400074E"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x78"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Player.PlayerControll",
+    "signature": "System.Single InGame.Kernel.Player.PlayerControll::get_RemainRescueTime()",
+    "originalToken": "0x60008BD",
+    "rva": "0x1d4e650",
+    "nativeBytes": "f30f10811c020000c3",
+    "instructions": [
+      "movss xmm0, dword ptr [rcx + 0x21c]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_rescueTime",
+      "type": "System.Single",
+      "token": "[Field:0x046b]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x400079E"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x21C"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Player.PlayerControll",
+    "signature": "System.Int32 InGame.Kernel.Player.PlayerControll::get_PlayerShotCount()",
+    "originalToken": "0x60008C9",
+    "rva": "0x1d4e640",
+    "nativeBytes": "8b812c020000c3",
+    "instructions": [
+      "mov eax, dword ptr [rcx + 0x22c]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_playerShotCount",
+      "type": "System.Int32",
+      "token": "[Field:0x0479]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x40007AC"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x22C"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Player.PlayerControll",
+    "signature": "System.Int32 InGame.Kernel.Player.PlayerControll::get_PlayerExShotCount()",
+    "originalToken": "0x60008CA",
+    "rva": "0x1d4e630",
+    "nativeBytes": "8b8130020000c3",
+    "instructions": [
+      "mov eax, dword ptr [rcx + 0x230]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_playerExShotCount",
+      "type": "System.Int32",
+      "token": "[Field:0x047a]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x40007AD"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x230"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Player.superFighterCollision",
+    "signature": "System.Void InGame.Kernel.Player.superFighterCollision::SetRescueFlag(System.Boolean)",
+    "originalToken": "0x600090F",
+    "rva": "0x1d60590",
+    "nativeBytes": "8891b3000000c3",
+    "instructions": [
+      "mov byte ptr [rcx + 0xb3], dl",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_isRescued",
+      "type": "System.Boolean",
+      "token": "[Field:0x0497]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000823"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0xB3"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Player.WeaponCollisionBase",
+    "signature": "System.Single InGame.Kernel.Player.WeaponCollisionBase::FirstDamage()",
+    "originalToken": "0x600094A",
+    "rva": "0x1d589b0",
+    "nativeBytes": "f30f1081a4000000c3",
+    "instructions": [
+      "movss xmm0, dword ptr [rcx + 0xa4]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_FirstDamage",
+      "type": "System.Single",
+      "token": "[Field:0x04c5]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "UnityEngine.RangeAttribute",
+          "args": [
+            "0",
+            "99999"
+          ],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "UnityEngine.SerializeField",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000861"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0xA4"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Player.WeaponCollisionBase",
+    "signature": "System.Single InGame.Kernel.Player.WeaponCollisionBase::ContiniousDamage()",
+    "originalToken": "0x600094B",
+    "rva": "0x1d589a0",
+    "nativeBytes": "f30f1081a8000000c3",
+    "instructions": [
+      "movss xmm0, dword ptr [rcx + 0xa8]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_ContiniousDamage",
+      "type": "System.Single",
+      "token": "[Field:0x04c6]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "UnityEngine.RangeAttribute",
+          "args": [
+            "0",
+            "99999"
+          ],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "UnityEngine.SerializeField",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000862"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0xA8"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Player.WeaponLaserCollision",
+    "signature": "System.Single InGame.Kernel.Player.WeaponLaserCollision::get_LDistance()",
+    "originalToken": "0x600099F",
+    "rva": "0x1d5fda0",
+    "nativeBytes": "f30f10812c010000c3",
+    "instructions": [
+      "movss xmm0, dword ptr [rcx + 0x12c]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_distance",
+      "type": "System.Single",
+      "token": "[Field:0x04f4]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000899"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x12C"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.EnemyLaserCollision",
+    "signature": "System.Void InGame.Kernel.Enemy.EnemyLaserCollision::SetIrradiationTime(System.Single)",
+    "originalToken": "0x6000AB5",
+    "rva": "0x1d68790",
+    "nativeBytes": "f30f1189c0010000c3",
+    "instructions": [
+      "movss dword ptr [rcx + 0x1c0], xmm1",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_irradiationTime",
+      "type": "System.Single",
+      "token": "[Field:0x0603]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000A09"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1C0"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.EnemyLaserCollision",
+    "signature": "System.Void InGame.Kernel.Enemy.EnemyLaserCollision::_setLaserState(InGame.Kernel.Enemy.EnemyLaserCollision/LaserState)",
+    "originalToken": "0x6000ADA",
+    "rva": "0x1d6a390",
+    "nativeBytes": "8991dc010000c3",
+    "instructions": [
+      "mov dword ptr [rcx + 0x1dc], edx",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_laserState",
+      "type": "InGame.Kernel.Enemy.EnemyLaserCollision/LaserState",
+      "token": "[Field:0x060a]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000A10"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1DC"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.EnemyLaserCollision",
+    "signature": "InGame.Kernel.Enemy.EnemyLaserCollision/LaserState InGame.Kernel.Enemy.EnemyLaserCollision::get_LState()",
+    "originalToken": "0x6000ADC",
+    "rva": "0x1d6ad00",
+    "nativeBytes": "8b81dc010000c3",
+    "instructions": [
+      "mov eax, dword ptr [rcx + 0x1dc]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_laserState",
+      "type": "InGame.Kernel.Enemy.EnemyLaserCollision/LaserState",
+      "token": "[Field:0x060a]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000A10"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1DC"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.EnemyLaserCollision2",
+    "signature": "System.Void InGame.Kernel.Enemy.EnemyLaserCollision2::_setLaserState(InGame.Kernel.Enemy.EnemyLaserCollision2/LaserState)",
+    "originalToken": "0x6000B0E",
+    "rva": "0x1d66b80",
+    "nativeBytes": "8991a4010000c3",
+    "instructions": [
+      "mov dword ptr [rcx + 0x1a4], edx",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_laserState",
+      "type": "InGame.Kernel.Enemy.EnemyLaserCollision2/LaserState",
+      "token": "[Field:0x0634]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000A41"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1A4"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.EnemyLaserCollision2",
+    "signature": "InGame.Kernel.Enemy.EnemyLaserCollision2/LaserState InGame.Kernel.Enemy.EnemyLaserCollision2::get_LState()",
+    "originalToken": "0x6000B10",
+    "rva": "0x1d67c10",
+    "nativeBytes": "8b81a4010000c3",
+    "instructions": [
+      "mov eax, dword ptr [rcx + 0x1a4]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_laserState",
+      "type": "InGame.Kernel.Enemy.EnemyLaserCollision2/LaserState",
+      "token": "[Field:0x0634]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000A41"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1A4"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.EnemyMover",
+    "signature": "System.Void InGame.Kernel.Enemy.EnemyMover::SetRangeFireLimit(System.Boolean)",
+    "originalToken": "0x6000B2E",
+    "rva": "0x1d6cc30",
+    "nativeBytes": "889190020000c3",
+    "instructions": [
+      "mov byte ptr [rcx + 0x290], dl",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_isRangeFireLimit",
+      "type": "System.Boolean",
+      "token": "[Field:0x0644]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000A5B"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x290"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.EnemyMover",
+    "signature": "System.Void InGame.Kernel.Enemy.EnemyMover::SetInGamePlayArea(System.Boolean)",
+    "originalToken": "0x6000B2F",
+    "rva": "0x1d6cc00",
+    "nativeBytes": "889191020000c3",
+    "instructions": [
+      "mov byte ptr [rcx + 0x291], dl",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_isInGamePlayArea",
+      "type": "System.Boolean",
+      "token": "[Field:0x0645]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000A5C"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x291"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.EnemyMover",
+    "signature": "System.Void InGame.Kernel.Enemy.EnemyMover::SetForceFire(System.Boolean)",
+    "originalToken": "0x6000B30",
+    "rva": "0x1d6cbf0",
+    "nativeBytes": "889192020000c3",
+    "instructions": [
+      "mov byte ptr [rcx + 0x292], dl",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_isForceFire",
+      "type": "System.Boolean",
+      "token": "[Field:0x0646]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000A5D"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x292"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.EnemyMover",
+    "signature": "System.Void InGame.Kernel.Enemy.EnemyMover::SetAreaStart(System.Boolean)",
+    "originalToken": "0x6000B33",
+    "rva": "0x1d6cbd0",
+    "nativeBytes": "889193020000c3",
+    "instructions": [
+      "mov byte ptr [rcx + 0x293], dl",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_inAreaStart",
+      "type": "System.Boolean",
+      "token": "[Field:0x0647]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000A5E"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x293"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.EnemyMover",
+    "signature": "System.Boolean InGame.Kernel.Enemy.EnemyMover::get_IsRangeFireLimit()",
+    "originalToken": "0x6000B36",
+    "rva": "0x1d6d630",
+    "nativeBytes": "0fb68190020000c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x290]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_isRangeFireLimit",
+      "type": "System.Boolean",
+      "token": "[Field:0x0644]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000A5B"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x290"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.EnemyMover",
+    "signature": "System.Boolean InGame.Kernel.Enemy.EnemyMover::get_IsStayPlayArea()",
+    "originalToken": "0x6000B37",
+    "rva": "0x1d6d640",
+    "nativeBytes": "0fb68191020000c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x291]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_isInGamePlayArea",
+      "type": "System.Boolean",
+      "token": "[Field:0x0645]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000A5C"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x291"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.EnemyMover",
+    "signature": "System.Boolean InGame.Kernel.Enemy.EnemyMover::get__isEventStackPlay()",
+    "originalToken": "0x6000B39",
+    "rva": "0x1d6d650",
+    "nativeBytes": "0fb68194020000c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x294]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "<_isEventStackPlay>k__BackingField",
+      "type": "System.Boolean",
+      "token": "[Field:0x0648]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "System.Runtime.CompilerServices.CompilerGeneratedAttribute",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000A5F"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x294"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.EnemyTurret",
+    "signature": "System.Void InGame.Kernel.Enemy.EnemyTurret::SetLocked(System.Boolean)",
+    "originalToken": "0x6000B78",
+    "rva": "0x1d6e980",
+    "nativeBytes": "88514bc3",
+    "instructions": [
+      "mov byte ptr [rcx + 0x4b], dl",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_isLocked",
+      "type": "System.Boolean",
+      "token": "[Field:0x0673]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000A95"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x4B"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.EnemyTurret",
+    "signature": "System.Boolean InGame.Kernel.Enemy.EnemyTurret::get_IsLocked()",
+    "originalToken": "0x6000B84",
+    "rva": "0x1d6f040",
+    "nativeBytes": "0fb6414bc3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x4b]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_isLocked",
+      "type": "System.Boolean",
+      "token": "[Field:0x0673]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000A95"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x4B"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.EnePartsGroup",
+    "signature": "System.Void InGame.Kernel.Enemy.EnePartsGroup::SetDamageBlinkRate(System.Single)",
+    "originalToken": "0x6000BB7",
+    "rva": "0x1d62f90",
+    "nativeBytes": "f30f1189a4000000c3",
+    "instructions": [
+      "movss dword ptr [rcx + 0xa4], xmm1",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_damageBlinkRate",
+      "type": "System.Single",
+      "token": "[Field:0x0694]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000AB6"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0xA4"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.Ene_BosBase",
+    "signature": "System.Void InGame.Kernel.Enemy.Ene_BosBase::SetDirectionScale(System.Single)",
+    "originalToken": "0x6000E19",
+    "rva": "0x1dba4c0",
+    "nativeBytes": "f30f1189cc010000c3",
+    "instructions": [
+      "movss dword ptr [rcx + 0x1cc], xmm1",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_directionTimeScale",
+      "type": "System.Single",
+      "token": "[Field:0x0997]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x400100E"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1CC"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.Ene_BosBase",
+    "signature": "System.Void InGame.Kernel.Enemy.Ene_BosBase::SetDirectionPause(System.Boolean)",
+    "originalToken": "0x6000E1B",
+    "rva": "0x1dba4b0",
+    "nativeBytes": "8891b4010000c3",
+    "instructions": [
+      "mov byte ptr [rcx + 0x1b4], dl",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_isDirectionPause",
+      "type": "System.Boolean",
+      "token": "[Field:0x098e]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4001005"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1B4"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.Ene_BosBase",
+    "signature": "System.Boolean InGame.Kernel.Enemy.Ene_BosBase::get_IsDamageTurned()",
+    "originalToken": "0x6000E2B",
+    "rva": "0x1dbb170",
+    "nativeBytes": "0fb681b1010000c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x1b1]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_isDamageTurned",
+      "type": "System.Boolean",
+      "token": "[Field:0x098b]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4001002"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1B1"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.Ene_BosBase",
+    "signature": "System.Boolean InGame.Kernel.Enemy.Ene_BosBase::get_IsDeadEffectCalled()",
+    "originalToken": "0x6000E2C",
+    "rva": "0x1dbb180",
+    "nativeBytes": "0fb681b3010000c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x1b3]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_isDeadEffectCalled",
+      "type": "System.Boolean",
+      "token": "[Field:0x098d]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4001004"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1B3"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.Ene_BosBase",
+    "signature": "System.Boolean InGame.Kernel.Enemy.Ene_BosBase::get_IsPlayerSideLeft()",
+    "originalToken": "0x6000E2D",
+    "rva": "0x1dbb1d0",
+    "nativeBytes": "0fb681b5010000c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x1b5]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_isPlayerSideLeft",
+      "type": "System.Boolean",
+      "token": "[Field:0x098f]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4001006"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1B5"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.Ene_BosBase",
+    "signature": "System.Boolean InGame.Kernel.Enemy.Ene_BosBase::get_IsPlayerSideDown()",
+    "originalToken": "0x6000E2F",
+    "rva": "0x1dbb1c0",
+    "nativeBytes": "0fb681b6010000c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x1b6]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_isPlayerSideDown",
+      "type": "System.Boolean",
+      "token": "[Field:0x0990]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4001007"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1B6"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.Ene_BosBase",
+    "signature": "System.Boolean InGame.Kernel.Enemy.Ene_BosBase::get_IsPlayerSideCenter()",
+    "originalToken": "0x6000E30",
+    "rva": "0x1dbb1b0",
+    "nativeBytes": "0fb681b7010000c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x1b7]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_isPlayerSideCenter",
+      "type": "System.Boolean",
+      "token": "[Field:0x0991]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4001008"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1B7"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.Ene_BosBase",
+    "signature": "System.Single InGame.Kernel.Enemy.Ene_BosBase::get_BossAliveTime()",
+    "originalToken": "0x6000E32",
+    "rva": "0x1dbb130",
+    "nativeBytes": "f30f1081bc010000c3",
+    "instructions": [
+      "movss xmm0, dword ptr [rcx + 0x1bc]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_bossAliveTime",
+      "type": "System.Single",
+      "token": "[Field:0x0993]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x400100A"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1BC"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.Ene_BosBase",
+    "signature": "System.Boolean InGame.Kernel.Enemy.Ene_BosBase::get_IsRepeatLaped()",
+    "originalToken": "0x6000E34",
+    "rva": "0x1dbb1f0",
+    "nativeBytes": "0fb681dc010000c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x1dc]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_repeatLaped",
+      "type": "System.Boolean",
+      "token": "[Field:0x099b]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4001012"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1DC"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.Ene_BosBase",
+    "signature": "System.Int32 InGame.Kernel.Enemy.Ene_BosBase::get__enemyDataCount()",
+    "originalToken": "0x6000E36",
+    "rva": "0x1dbb2e0",
+    "nativeBytes": "8b81fc010000c3",
+    "instructions": [
+      "mov eax, dword ptr [rcx + 0x1fc]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "<_enemyDataCount>k__BackingField",
+      "type": "System.Int32",
+      "token": "[Field:0x09a1]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "System.Runtime.CompilerServices.CompilerGeneratedAttribute",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4001018"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x1FC"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.Ene_Ss01",
+    "signature": "System.Void InGame.Kernel.Enemy.Ene_Ss01::SetOffsetAngle(System.Single)",
+    "originalToken": "0x6000F7F",
+    "rva": "0x1d06550",
+    "nativeBytes": "f30f118910020000c3",
+    "instructions": [
+      "movss dword ptr [rcx + 0x210], xmm1",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_offsetAngle",
+      "type": "System.Single",
+      "token": "[Field:0x0b5b]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4001288"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x210"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.Ene_Ss01",
+    "signature": "System.Void InGame.Kernel.Enemy.Ene_Ss01::SetTargetPlayer(System.Int32)",
+    "originalToken": "0x6000F80",
+    "rva": "0x1d06560",
+    "nativeBytes": "899120020000c3",
+    "instructions": [
+      "mov dword ptr [rcx + 0x220], edx",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_targetPlayer",
+      "type": "System.Int32",
+      "token": "[Field:0x0b5f]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x400128C"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x220"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.PawnEnemy",
+    "signature": "System.Boolean InGame.Kernel.Enemy.PawnEnemy::IsSimpleCalc()",
+    "originalToken": "0x6000FEF",
+    "rva": "0x1d0e780",
+    "nativeBytes": "0fb6818c010000c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x18c]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_isSimpleCalc",
+      "type": "System.Boolean",
+      "token": "[Field:0x0bd9]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "UnityEngine.SerializeField",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4001326"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x18C"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.PawnEnemy",
+    "signature": "System.Void InGame.Kernel.Enemy.PawnEnemy::SkipDestroyRate(System.Boolean)",
+    "originalToken": "0x600101B",
+    "rva": "0x1d10220",
+    "nativeBytes": "88913e010000c3",
+    "instructions": [
+      "mov byte ptr [rcx + 0x13e], dl",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_isSkipDestroyCount",
+      "type": "System.Boolean",
+      "token": "[Field:0x0bcb]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4001318"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x13E"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.PawnEnemy",
+    "signature": "System.Boolean InGame.Kernel.Enemy.PawnEnemy::get_IsFirstFrame()",
+    "originalToken": "0x6001037",
+    "rva": "0x1d11cb0",
+    "nativeBytes": "0fb6813c010000c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x13c]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_isFirstFrame",
+      "type": "System.Boolean",
+      "token": "[Field:0x0bc9]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4001316"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x13C"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.PawnEnemy",
+    "signature": "System.Boolean InGame.Kernel.Enemy.PawnEnemy::get_IsEventDone()",
+    "originalToken": "0x6001039",
+    "rva": "0x1d11c60",
+    "nativeBytes": "0fb68141010000c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x141]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_isEventDone",
+      "type": "System.Boolean",
+      "token": "[Field:0x0bce]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x400131B"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x141"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.PawnEnemy",
+    "signature": "System.Single InGame.Kernel.Enemy.PawnEnemy::get_TargetY()",
+    "originalToken": "0x600103D",
+    "rva": "0x1d11d10",
+    "nativeBytes": "f30f108170010000c3",
+    "instructions": [
+      "movss xmm0, dword ptr [rcx + 0x170]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_targetY",
+      "type": "System.Single",
+      "token": "[Field:0x0bd4]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4001321"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x170"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.PawnEnemy",
+    "signature": "System.Void InGame.Kernel.Enemy.PawnEnemy::SetTargetY(System.Single)",
+    "originalToken": "0x600103E",
+    "rva": "0x1d0fe40",
+    "nativeBytes": "f30f118970010000c3",
+    "instructions": [
+      "movss dword ptr [rcx + 0x170], xmm1",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_targetY",
+      "type": "System.Single",
+      "token": "[Field:0x0bd4]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4001321"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x170"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Enemy.PhysicsEnemy",
+    "signature": "System.Int32 InGame.Kernel.Enemy.PhysicsEnemy::ProgressPriority()",
+    "originalToken": "0x6001096",
+    "rva": "0x1d18ad0",
+    "nativeBytes": "b82d010000c3",
+    "instructions": [
+      "mov eax, 0x12d",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "integer_constant",
+    "field": null,
+    "constant": 301,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "InGame.Kernel",
+    "type": "InGame.Kernel.Effect.InGameEffect",
+    "signature": "System.Boolean InGame.Kernel.Effect.InGameEffect::get_IsDone()",
+    "originalToken": "0x60010EF",
+    "rva": "0x1d16d30",
+    "nativeBytes": "0fb681ab000000c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0xab]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_isDone",
+      "type": "System.Boolean",
+      "token": "[Field:0x0c29]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x40013A5"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0xAB"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "KANAI.HybridCollision",
+    "type": "KANAI.HybridCollision.HybridCollisionManager",
+    "signature": "System.Void KANAI.HybridCollision.HybridCollisionManager::UpdateCameraTall(System.Single)",
+    "originalToken": "0x600001D",
+    "rva": "0x119fc20",
+    "nativeBytes": "f30f11898c000000c3",
+    "instructions": [
+      "movss dword ptr [rcx + 0x8c], xmm1",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_cameraTall",
+      "type": "System.Single",
+      "token": "[Field:0x001d]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000022"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x8C"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "KANAI.HybridCollision",
+    "type": "KANAI.HybridCollision.HybridCollisionManager",
+    "signature": "System.Single KANAI.HybridCollision.HybridCollisionManager::ScreenZ()",
+    "originalToken": "0x6000033",
+    "rva": "0x119fa90",
+    "nativeBytes": "f30f10818c000000c3",
+    "instructions": [
+      "movss xmm0, dword ptr [rcx + 0x8c]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_cameraTall",
+      "type": "System.Single",
+      "token": "[Field:0x001d]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000022"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x8C"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "KANAI.HybridCollision",
+    "type": "KANAI.HybridCollision.HybridCollisions",
+    "signature": "System.Boolean KANAI.HybridCollision.HybridCollisions::IsGround()",
+    "originalToken": "0x60000B4",
+    "rva": "0x1ddf7c0",
+    "nativeBytes": "0fb64136c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x36]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_isGround",
+      "type": "System.Boolean",
+      "token": "[Field:0x003c]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x400005F"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x36"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "KANAI.HybridCollision",
+    "type": "KANAI.HybridCollision.HybridCollisions",
+    "signature": "System.Boolean KANAI.HybridCollision.HybridCollisions::get_IsUseLocal()",
+    "originalToken": "0x60000DE",
+    "rva": "0x1de1510",
+    "nativeBytes": "0fb64137c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x37]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_isUseLocal",
+      "type": "System.Boolean",
+      "token": "[Field:0x003d]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000060"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x37"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "KANAI.Popup",
+    "type": "KANAI.Popup.MessagePopupContent",
+    "signature": "System.Void KANAI.Popup.MessagePopupContent::SetTimer(System.Single)",
+    "originalToken": "0x600004E",
+    "rva": "0x1e064d0",
+    "nativeBytes": "f30f118994000000c3",
+    "instructions": [
+      "movss dword ptr [rcx + 0x94], xmm1",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_remainTime",
+      "type": "System.Single",
+      "token": "[Field:0x003b]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000052"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x94"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "KANAI.UI",
+    "type": "KANAI.UI.ButtonBase",
+    "signature": "System.Boolean KANAI.UI.ButtonBase::get_IsValidShortClick()",
+    "originalToken": "0x600001B",
+    "rva": "0x1e16800",
+    "nativeBytes": "0fb68108010000c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x108]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "<IsValidShortClick>k__BackingField",
+      "type": "System.Boolean",
+      "token": "[Field:0x000e]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "System.Runtime.CompilerServices.CompilerGeneratedAttribute",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000013"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x108"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "KANAI.UI",
+    "type": "KANAI.UI.ButtonBase",
+    "signature": "System.Void KANAI.UI.ButtonBase::set_IsValidShortClick(System.Boolean)",
+    "originalToken": "0x600001C",
+    "rva": "0x1e16840",
+    "nativeBytes": "889108010000c3",
+    "instructions": [
+      "mov byte ptr [rcx + 0x108], dl",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "<IsValidShortClick>k__BackingField",
+      "type": "System.Boolean",
+      "token": "[Field:0x000e]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "System.Runtime.CompilerServices.CompilerGeneratedAttribute",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000013"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x108"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "KANAI.UI",
+    "type": "KANAI.UI.ButtonBase",
+    "signature": "System.Boolean KANAI.UI.ButtonBase::get_IsValidLongClick()",
+    "originalToken": "0x600001D",
+    "rva": "0x1e167f0",
+    "nativeBytes": "0fb68109010000c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x109]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "<IsValidLongClick>k__BackingField",
+      "type": "System.Boolean",
+      "token": "[Field:0x000f]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "System.Runtime.CompilerServices.CompilerGeneratedAttribute",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000014"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x109"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "KANAI.UI",
+    "type": "KANAI.UI.ButtonBase",
+    "signature": "System.Void KANAI.UI.ButtonBase::set_IsValidLongClick(System.Boolean)",
+    "originalToken": "0x600001E",
+    "rva": "0x1e16830",
+    "nativeBytes": "889109010000c3",
+    "instructions": [
+      "mov byte ptr [rcx + 0x109], dl",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "<IsValidLongClick>k__BackingField",
+      "type": "System.Boolean",
+      "token": "[Field:0x000f]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "System.Runtime.CompilerServices.CompilerGeneratedAttribute",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000014"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x109"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "KANAI.UI",
+    "type": "KANAI.UI.ButtonBase",
+    "signature": "System.Boolean KANAI.UI.ButtonBase::get_IsInvalidButton()",
+    "originalToken": "0x600001F",
+    "rva": "0x1e167d0",
+    "nativeBytes": "0fb6810a010000c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x10a]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "<IsInvalidButton>k__BackingField",
+      "type": "System.Boolean",
+      "token": "[Field:0x0010]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "System.Runtime.CompilerServices.CompilerGeneratedAttribute",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000015"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x10A"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "KANAI.UI",
+    "type": "KANAI.UI.ButtonBase",
+    "signature": "System.Void KANAI.UI.ButtonBase::set_IsInvalidButton(System.Boolean)",
+    "originalToken": "0x6000020",
+    "rva": "0x1e16820",
+    "nativeBytes": "88910a010000c3",
+    "instructions": [
+      "mov byte ptr [rcx + 0x10a], dl",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "<IsInvalidButton>k__BackingField",
+      "type": "System.Boolean",
+      "token": "[Field:0x0010]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "System.Runtime.CompilerServices.CompilerGeneratedAttribute",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000015"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x10A"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "KANAI.UI",
+    "type": "KANAI.UI.SimpleButtonBase",
+    "signature": "System.Boolean KANAI.UI.SimpleButtonBase::get_IsInvalidButton()",
+    "originalToken": "0x600003E",
+    "rva": "0x1e17310",
+    "nativeBytes": "0fb68114010000c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0x114]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "<IsInvalidButton>k__BackingField",
+      "type": "System.Boolean",
+      "token": "[Field:0x0021]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "System.Runtime.CompilerServices.CompilerGeneratedAttribute",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000029"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x114"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "KANAI.UI",
+    "type": "KANAI.UI.SimpleButtonBase",
+    "signature": "System.Void KANAI.UI.SimpleButtonBase::set_IsInvalidButton(System.Boolean)",
+    "originalToken": "0x600003F",
+    "rva": "0x1e17340",
+    "nativeBytes": "889114010000c3",
+    "instructions": [
+      "mov byte ptr [rcx + 0x114], dl",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "<IsInvalidButton>k__BackingField",
+      "type": "System.Boolean",
+      "token": "[Field:0x0021]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "System.Runtime.CompilerServices.CompilerGeneratedAttribute",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000029"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x114"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "KANAI.UI",
+    "type": "KANAI.UI.UITextMeshPro",
+    "signature": "System.String KANAI.UI.UITextMeshPro::get_localizeKey()",
+    "originalToken": "0x60001EF",
+    "rva": "0x1e28ad0",
+    "nativeBytes": "488b81e0070000c3",
+    "instructions": [
+      "mov rax, qword ptr [rcx + 0x7e0]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_localizeKey",
+      "type": "System.String",
+      "token": "[Field:0x014a]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "UnityEngine.SerializeField",
+          "args": [],
+          "fields": {},
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x40001D6"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x7E0"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "OutGame",
+    "type": "OutGame.Starter.TutorialPlayModel",
+    "signature": "System.Boolean OutGame.Starter.TutorialPlayModel::get_IsComplete()",
+    "originalToken": "0x6000449",
+    "rva": "0x21dcce0",
+    "nativeBytes": "0fb681d1000000c3",
+    "instructions": [
+      "movzx eax, byte ptr [rcx + 0xd1]",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_field_getter",
+    "field": {
+      "name": "_isComplete",
+      "type": "System.Boolean",
+      "token": "[Field:0x00b2]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x400028F"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0xD1"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  },
+  {
+    "assembly": "OutGame",
+    "type": "OutGame.UI.StageResultPopupContent",
+    "signature": "System.Void OutGame.UI.StageResultPopupContent::SetWaitEnd(System.Boolean)",
+    "originalToken": "0x6000813",
+    "rva": "0x22027a0",
+    "nativeBytes": "889129010000c3",
+    "instructions": [
+      "mov byte ptr [rcx + 0x129], dl",
+      "ret "
+    ],
+    "nativeAddressAliases": 1,
+    "kind": "instance_scalar_field_setter",
+    "field": {
+      "name": "_isDisplayWait",
+      "type": "System.Boolean",
+      "token": "[Field:0x0214]",
+      "flags": "Private",
+      "constant": null,
+      "attributes": [
+        {
+          "type": "Cpp2ILInjected.TokenAttribute",
+          "args": [],
+          "fields": {
+            "Token": "0x4000598"
+          },
+          "properties": {}
+        },
+        {
+          "type": "Cpp2ILInjected.FieldOffsetAttribute",
+          "args": [],
+          "fields": {
+            "Offset": "0x129"
+          },
+          "properties": {}
+        }
+      ]
+    },
+    "constant": null,
+    "sourceGameAssemblySha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+    "status": "native_recovered_candidate_not_integrated"
+  }
+]

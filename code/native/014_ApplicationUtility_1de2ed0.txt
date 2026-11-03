@@ -1,0 +1,47 @@
+{"assembly": "KANAI.Kernel", "file": "ApplicationUtility.cs", "originalType": "KANAI.Kernel.ApplicationUtility", "rva": 31338192, "length": 209, "signature": "System.Boolean KANAI.Kernel.ApplicationUtility::IsNintendo()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01de2ed0 4883ec28                       sub        rsp, 0x28
+01de2ed4 803db90a880200                 cmp        byte ptr [rip + 0x2880ab9], 0
+01de2edb 7513                           jne        0x1de2ef0
+01de2edd 488d0d14265a02                 lea        rcx, [rip + 0x25a2614]
+01de2ee4 e867db6ffe                     call       0x4e0a50 ; 
+01de2ee9 c605a40a880201                 mov        byte ptr [rip + 0x2880aa4], 1
+01de2ef0 488b0d01265a02                 mov        rcx, qword ptr [rip + 0x25a2601]
+01de2ef7 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2efe 7505                           jne        0x1de2f05
+01de2f00 e88bde6ffe                     call       0x4e0d90 ; 
+01de2f05 803d850a880200                 cmp        byte ptr [rip + 0x2880a85], 0
+01de2f0c 7513                           jne        0x1de2f21
+01de2f0e 488d0dbb235a02                 lea        rcx, [rip + 0x25a23bb]
+01de2f15 e836db6ffe                     call       0x4e0a50 ; 
+01de2f1a c605700a880201                 mov        byte ptr [rip + 0x2880a70], 1
+01de2f21 488b0da8235a02                 mov        rcx, qword ptr [rip + 0x25a23a8]
+01de2f28 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2f2f 7505                           jne        0x1de2f36
+01de2f31 e85ade6ffe                     call       0x4e0d90 ; 
+01de2f36 33c9                           xor        ecx, ecx
+01de2f38 e8a3ad1e01                     call       0x2fcdce0 ; UnityEngine.CoreModule:Application:UnityEngine.RuntimePlatform UnityEngine.Application::get_platform()
+01de2f3d 83f820                         cmp        eax, 0x20
+01de2f40 7507                           jne        0x1de2f49
+01de2f42 b001                           mov        al, 1
+01de2f44 4883c428                       add        rsp, 0x28
+01de2f48 c3                             ret        
+01de2f49 488b0da8255a02                 mov        rcx, qword ptr [rip + 0x25a25a8]
+01de2f50 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2f57 7505                           jne        0x1de2f5e
+01de2f59 e832de6ffe                     call       0x4e0d90 ; 
+01de2f5e 803d2d0a880200                 cmp        byte ptr [rip + 0x2880a2d], 0
+01de2f65 7513                           jne        0x1de2f7a
+01de2f67 488d0d62235a02                 lea        rcx, [rip + 0x25a2362]
+01de2f6e e8ddda6ffe                     call       0x4e0a50 ; 
+01de2f73 c605180a880201                 mov        byte ptr [rip + 0x2880a18], 1
+01de2f7a 488b0d4f235a02                 mov        rcx, qword ptr [rip + 0x25a234f]
+01de2f81 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2f88 7505                           jne        0x1de2f8f
+01de2f8a e801de6ffe                     call       0x4e0d90 ; 
+01de2f8f 33c9                           xor        ecx, ecx
+01de2f91 e84aad1e01                     call       0x2fcdce0 ; UnityEngine.CoreModule:Application:UnityEngine.RuntimePlatform UnityEngine.Application::get_platform()
+01de2f96 83f833                         cmp        eax, 0x33
+01de2f99 0f94c0                         sete       al
+01de2f9c 4883c428                       add        rsp, 0x28
+01de2fa0 c3                             ret        

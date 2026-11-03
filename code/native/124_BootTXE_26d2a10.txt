@@ -1,0 +1,27 @@
+{"assembly": "TXEKernel", "file": "BootTXE.cs", "originalType": "TXEKernel.BootTXE", "rva": 40708624, "length": 103, "signature": "System.Collections.IEnumerator TXEKernel.BootTXE::_loadScene()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+026d2a10 48895c2408                     mov        qword ptr [rsp + 8], rbx
+026d2a15 57                             push       rdi
+026d2a16 4883ec20                       sub        rsp, 0x20
+026d2a1a 803d0458f90100                 cmp        byte ptr [rip + 0x1f95804], 0
+026d2a21 488bf9                         mov        rdi, rcx
+026d2a24 7513                           jne        0x26d2a39
+026d2a26 488d0d5b33ca01                 lea        rcx, [rip + 0x1ca335b]
+026d2a2d e81ee0e0fd                     call       0x4e0a50 ; 
+026d2a32 c605ec57f90101                 mov        byte ptr [rip + 0x1f957ec], 1
+026d2a39 488b0d4833ca01                 mov        rcx, qword ptr [rip + 0x1ca3348]
+026d2a40 e86be2e0fd                     call       0x4e0cb0 ; 
+026d2a45 33d2                           xor        edx, edx
+026d2a47 488bc8                         mov        rcx, rax
+026d2a4a 488bd8                         mov        rbx, rax
+026d2a4d e85ea3eefd                     call       0x5bcdb0 ; AEAsAnimation:AEAsAnimationRoot:System.Void AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation:AEComposition:System.Void AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpAsync>d__16::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpChildAsync>d__25::System.IDisposable.Dispose()
+026d2a52 488d4b20                       lea        rcx, [rbx + 0x20]
+026d2a56 c7431000000000                 mov        dword ptr [rbx + 0x10], 0
+026d2a5d 488bd7                         mov        rdx, rdi
+026d2a60 48897b20                       mov        qword ptr [rbx + 0x20], rdi
+026d2a64 e817d3e0fd                     call       0x4dfd80 ; 
+026d2a69 488bc3                         mov        rax, rbx
+026d2a6c 488b5c2430                     mov        rbx, qword ptr [rsp + 0x30]
+026d2a71 4883c420                       add        rsp, 0x20
+026d2a75 5f                             pop        rdi
+026d2a76 c3                             ret        

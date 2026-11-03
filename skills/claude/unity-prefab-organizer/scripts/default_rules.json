@@ -1,0 +1,24 @@
+{
+  "note": "First matching rule wins. Fields (all given ones must match): name_re = case-insensitive regex searched in the prefab name; has_any = any of these component or script names anywhere in the prefab; has_only = every component other than GameObject/Transform is one of these; rootUI = root is a RectTransform/Canvas. Copy this file, reorder or add rules for the project's own naming, and pass it with --rules.",
+  "root": "Assets/Prefabs",
+  "keep": ["/Resources/", "/Editor/", "/Dedup/"],
+  "categories": [
+    {"name": "UI", "rootUI": true},
+    {"name": "UI", "name_re": "(^|[_\\-\\s])(ui|hud|menu|panel|button|dialog|popup|canvas|window)([_\\-\\s\\d]|$)"},
+    {"name": "Projectiles", "name_re": "bullet|projectile|missile|laser|(^|_)shot|beam|rocket|arrow|grenade"},
+    {"name": "Effects", "name_re": "(^|[_\\-])(eff|fx|vfx|sfx)([_\\-\\d]|$)|explosion|explo|spark|smoke|muzzle|trail|flash|burst|shockwave|impact|particle|glow"},
+    {"name": "Bosses", "name_re": "boss|(^|[_\\-])bos\\d"},
+    {"name": "Pickups", "name_re": "item|pickup|coin|powerup|power_up|collect|gem|loot|chest"},
+    {"name": "Player", "name_re": "player|hero|avatar"},
+    {"name": "Enemies", "name_re": "enemy|(^|[_\\-])ene([_\\-]|obj|$)|(^|[_\\-])mob([_\\-\\d]|$)|monster|creature"},
+    {"name": "Characters", "name_re": "npc|character|villager"},
+    {"name": "Environment", "name_re": "(^|[_\\-])(bg|env|prop|rock|tree|mountain|terrain|ground|building|wall|floor|stage|level|tile|meteo|asteroid|cloud|sky)"},
+    {"name": "Effects", "has_any": ["ParticleSystem", "VisualEffect", "TrailRenderer", "LineRenderer"]},
+    {"name": "Lighting", "has_only": ["Light", "MonoBehaviour"], "has_any": ["Light"]},
+    {"name": "Cameras", "has_any": ["Camera"]},
+    {"name": "Audio", "has_only": ["AudioSource", "MonoBehaviour"], "has_any": ["AudioSource"]},
+    {"name": "Systems", "name_re": "manager|system|director|spawner|controller|pool|loader"},
+    {"name": "Environment", "has_any": ["MeshRenderer", "SkinnedMeshRenderer", "SpriteRenderer", "TilemapRenderer"]}
+  ],
+  "fallback": "Misc"
+}

@@ -1,0 +1,40 @@
+namespace InGame.Kernel.Enemy;
+
+[Token(Token = "0x2000159")]
+public enum EnemyBullet : int
+{
+	None = 0,
+	Way1 = 1,
+	Way2 = 2,
+	Way3 = 3,
+	Way4 = 4,
+	Way5 = 5,
+	Way6 = 6,
+	Way7 = 7,
+	Way8 = 8,
+	Way9 = 9,
+	Way10 = 10,
+	Way11 = 11,
+	Way12 = 12,
+	Way13 = 13,
+	Way14 = 14,
+	Way15 = 15,
+	Way16 = 16,
+	Way17 = 17,
+	Way18 = 18,
+	Way19 = 19,
+	Way20 = 20,
+	Way21 = 21,
+	Way22 = 22,
+	Way23 = 23,
+	Way24 = 24,
+	Way25 = 25,
+	Way26 = 26,
+	Way27 = 27,
+	Way28 = 28,
+	Way29 = 29,
+	Way30 = 30,
+	Way31 = 31,
+	Way32 = 32,
+}
+

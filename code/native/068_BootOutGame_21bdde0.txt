@@ -1,0 +1,18 @@
+{"assembly": "OutGame", "file": "BootOutGame.cs", "originalType": "OutGame.BootOutGame/LaunchParam", "rva": 35380704, "length": 78, "signature": "System.String OutGame.BootOutGame/LaunchParam::GetString()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+021bdde0 4883ec28                       sub        rsp, 0x28
+021bdde4 803da77b4a0200                 cmp        byte ptr [rip + 0x24a7ba7], 0
+021bddeb 7513                           jne        0x21bde00
+021bdded 488d0d04391b02                 lea        rcx, [rip + 0x21b3904]
+021bddf4 e8572c32fe                     call       0x4e0a50 ; 
+021bddf9 c605927b4a0201                 mov        byte ptr [rip + 0x24a7b92], 1
+021bde00 488b05f1381b02                 mov        rax, qword ptr [rip + 0x21b38f1]
+021bde07 83b8e400000000                 cmp        dword ptr [rax + 0xe4], 0
+021bde0e 750f                           jne        0x21bde1f
+021bde10 488bc8                         mov        rcx, rax
+021bde13 e8782f32fe                     call       0x4e0d90 ; 
+021bde18 488b05d9381b02                 mov        rax, qword ptr [rip + 0x21b38d9]
+021bde1f 488b80b8000000                 mov        rax, qword ptr [rax + 0xb8]
+021bde26 488b00                         mov        rax, qword ptr [rax]
+021bde29 4883c428                       add        rsp, 0x28
+021bde2d c3                             ret        

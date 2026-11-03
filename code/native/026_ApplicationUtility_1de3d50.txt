@@ -1,0 +1,58 @@
+{"assembly": "KANAI.Kernel", "file": "ApplicationUtility.cs", "originalType": "KANAI.Kernel.ApplicationUtility", "rva": 31341904, "length": 242, "signature": "System.Void KANAI.Kernel.ApplicationUtility::remove_onSoftwareReset(System.Action)"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01de3d50 48896c2410                     mov        qword ptr [rsp + 0x10], rbp
+01de3d55 4889742418                     mov        qword ptr [rsp + 0x18], rsi
+01de3d5a 57                             push       rdi
+01de3d5b 4883ec20                       sub        rsp, 0x20
+01de3d5f 803d38fc870200                 cmp        byte ptr [rip + 0x287fc38], 0
+01de3d66 488be9                         mov        rbp, rcx
+01de3d69 751f                           jne        0x1de3d8a
+01de3d6b 488d0d2ec95902                 lea        rcx, [rip + 0x259c92e]
+01de3d72 e8d9cc6ffe                     call       0x4e0a50 ; 
+01de3d77 488d0d7a175a02                 lea        rcx, [rip + 0x25a177a]
+01de3d7e e8cdcc6ffe                     call       0x4e0a50 ; 
+01de3d83 c60514fc870201                 mov        byte ptr [rip + 0x287fc14], 1
+01de3d8a 488b0567175a02                 mov        rax, qword ptr [rip + 0x25a1767]
+01de3d91 83b8e400000000                 cmp        dword ptr [rax + 0xe4], 0
+01de3d98 750f                           jne        0x1de3da9
+01de3d9a 488bc8                         mov        rcx, rax
+01de3d9d e8eecf6ffe                     call       0x4e0d90 ; 
+01de3da2 488b054f175a02                 mov        rax, qword ptr [rip + 0x25a174f]
+01de3da9 488b80b8000000                 mov        rax, qword ptr [rax + 0xb8]
+01de3db0 48895c2430                     mov        qword ptr [rsp + 0x30], rbx
+01de3db5 488b7810                       mov        rdi, qword ptr [rax + 0x10]
+01de3db9 0f1f8000000000                 nop        dword ptr [rax]
+01de3dc0 4533c0                         xor        r8d, r8d
+01de3dc3 488bd5                         mov        rdx, rbp
+01de3dc6 488bcf                         mov        rcx, rdi
+01de3dc9 488bf7                         mov        rsi, rdi
+01de3dcc e8ffb82900                     call       0x207f6d0 ; mscorlib:Delegate:System.Delegate System.Delegate::Remove(System.Delegate,System.Delegate)
+01de3dd1 488b15c8c85902                 mov        rdx, qword ptr [rip + 0x259c8c8]
+01de3dd8 33db                           xor        ebx, ebx
+01de3dda 4885c0                         test       rax, rax
+01de3ddd 740c                           je         0x1de3deb
+01de3ddf 483910                         cmp        qword ptr [rax], rdx
+01de3de2 480f44d8                       cmove      rbx, rax
+01de3de6 4885db                         test       rbx, rbx
+01de3de9 744f                           je         0x1de3e3a
+01de3deb 488b0d06175a02                 mov        rcx, qword ptr [rip + 0x25a1706]
+01de3df2 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de3df9 750c                           jne        0x1de3e07
+01de3dfb e890cf6ffe                     call       0x4e0d90 ; 
+01de3e00 488b0df1165a02                 mov        rcx, qword ptr [rip + 0x25a16f1]
+01de3e07 488b89b8000000                 mov        rcx, qword ptr [rcx + 0xb8]
+01de3e0e 4c8bc7                         mov        r8, rdi
+01de3e11 4883c110                       add        rcx, 0x10
+01de3e15 488bd3                         mov        rdx, rbx
+01de3e18 e873636ffe                     call       0x4da190 ; 
+01de3e1d 488bf8                         mov        rdi, rax
+01de3e20 483bc6                         cmp        rax, rsi
+01de3e23 759b                           jne        0x1de3dc0
+01de3e25 488b5c2430                     mov        rbx, qword ptr [rsp + 0x30]
+01de3e2a 488b6c2438                     mov        rbp, qword ptr [rsp + 0x38]
+01de3e2f 488b742440                     mov        rsi, qword ptr [rsp + 0x40]
+01de3e34 4883c420                       add        rsp, 0x20
+01de3e38 5f                             pop        rdi
+01de3e39 c3                             ret        
+01de3e3a 488bc8                         mov        rcx, rax
+01de3e3d e87ebf6ffe                     call       0x4dfdc0 ; 

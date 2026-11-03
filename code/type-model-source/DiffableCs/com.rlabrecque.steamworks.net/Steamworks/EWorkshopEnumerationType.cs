@@ -1,0 +1,14 @@
+namespace Steamworks;
+
+[Token(Token = "0x2000130")]
+public enum EWorkshopEnumerationType : int
+{
+	k_EWorkshopEnumerationTypeRankedByVote = 0,
+	k_EWorkshopEnumerationTypeRecent = 1,
+	k_EWorkshopEnumerationTypeTrending = 2,
+	k_EWorkshopEnumerationTypeFavoritesOfFriends = 3,
+	k_EWorkshopEnumerationTypeVotedByFriends = 4,
+	k_EWorkshopEnumerationTypeContentByFriends = 5,
+	k_EWorkshopEnumerationTypeRecentFromFollowedUsers = 6,
+}
+

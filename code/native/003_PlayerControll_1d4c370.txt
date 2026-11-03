@@ -1,0 +1,228 @@
+{"assembly": "InGame.Kernel", "file": "PlayerControll.cs", "originalType": "InGame.Kernel.Player.PlayerControll", "rva": 30720880, "length": 994, "signature": "System.Void InGame.Kernel.Player.PlayerControll::_playerControllFire(KANAI.UI.UIGamePad,System.Single)"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01d4c370 48895c2420                     mov        qword ptr [rsp + 0x20], rbx
+01d4c375 57                             push       rdi
+01d4c376 4883ec50                       sub        rsp, 0x50
+01d4c37a 803dbd72910200                 cmp        byte ptr [rip + 0x29172bd], 0
+01d4c381 488bfa                         mov        rdi, rdx
+01d4c384 0f297c2430                     movaps     xmmword ptr [rsp + 0x30], xmm7
+01d4c389 488bd9                         mov        rbx, rcx
+01d4c38c 0f28fa                         movaps     xmm7, xmm2
+01d4c38f 752b                           jne        0x1d4c3bc
+01d4c391 488d0d30b36802                 lea        rcx, [rip + 0x268b330]
+01d4c398 e8b34679fe                     call       0x4e0a50 ; 
+01d4c39d 488d0d9c966302                 lea        rcx, [rip + 0x263969c]
+01d4c3a4 e8a74679fe                     call       0x4e0a50 ; 
+01d4c3a9 488d0db85f6502                 lea        rcx, [rip + 0x2655fb8]
+01d4c3b0 e89b4679fe                     call       0x4e0a50 ; 
+01d4c3b5 c6058272910201                 mov        byte ptr [rip + 0x2917282], 1
+01d4c3bc f7831802000002080000           test       dword ptr [rbx + 0x218], 0x802
+01d4c3c6 48896c2460                     mov        qword ptr [rsp + 0x60], rbp
+01d4c3cb 4889742468                     mov        qword ptr [rsp + 0x68], rsi
+01d4c3d0 4c89742470                     mov        qword ptr [rsp + 0x70], r14
+01d4c3d5 0f29742440                     movaps     xmmword ptr [rsp + 0x40], xmm6
+01d4c3da 7605                           jbe        0x1d4c3e1
+01d4c3dc 4532f6                         xor        r14b, r14b
+01d4c3df eb59                           jmp        0x1d4c43a ; 
+01d4c3e1 8b93e8010000                   mov        edx, dword ptr [rbx + 0x1e8]
+01d4c3e7 8bb3d0010000                   mov        esi, dword ptr [rbx + 0x1d0]
+01d4c3ed 85d2                           test       edx, edx
+01d4c3ef 7428                           je         0x1d4c419
+01d4c3f1 4885ff                         test       rdi, rdi
+01d4c3f4 0f844d030000                   je         0x1d4c747
+01d4c3fa 4c8b07                         mov        r8, qword ptr [rdi]
+01d4c3fd 488bcf                         mov        rcx, rdi
+01d4c400 498b80c8010000                 mov        rax, qword ptr [r8 + 0x1c8]
+01d4c407 4d8b80d0010000                 mov        r8, qword ptr [r8 + 0x1d0]
+01d4c40e ffd0                           call       rax
+01d4c410 84c0                           test       al, al
+01d4c412 7405                           je         0x1d4c419
+01d4c414 41b601                         mov        r14b, 1
+01d4c417 eb21                           jmp        0x1d4c43a ; 
+01d4c419 4885ff                         test       rdi, rdi
+01d4c41c 0f8425030000                   je         0x1d4c747
+01d4c422 448b838c000000                 mov        r8d, dword ptr [rbx + 0x8c]
+01d4c429 4533c9                         xor        r9d, r9d
+01d4c42c 8bd6                           mov        edx, esi
+01d4c42e 488bcf                         mov        rcx, rdi
+01d4c431 e85a060d00                     call       0x1e1ca90 ; KANAI.UI:UIGamePad:System.Boolean KANAI.UI.UIGamePad::IsOn(KANAI.UI.UIGamePad/Buttons,System.Int32)
+01d4c436 440fb6f0                       movzx      r14d, al
+01d4c43a 8b93ec010000                   mov        edx, dword ptr [rbx + 0x1ec]
+01d4c440 8bb3d4010000                   mov        esi, dword ptr [rbx + 0x1d4]
+01d4c446 85d2                           test       edx, edx
+01d4c448 7427                           je         0x1d4c471
+01d4c44a 4885ff                         test       rdi, rdi
+01d4c44d 0f84f4020000                   je         0x1d4c747
+01d4c453 4c8b07                         mov        r8, qword ptr [rdi]
+01d4c456 488bcf                         mov        rcx, rdi
+01d4c459 498b80c8010000                 mov        rax, qword ptr [r8 + 0x1c8]
+01d4c460 4d8b80d0010000                 mov        r8, qword ptr [r8 + 0x1d0]
+01d4c467 ffd0                           call       rax
+01d4c469 84c0                           test       al, al
+01d4c46b 7404                           je         0x1d4c471
+01d4c46d b001                           mov        al, 1
+01d4c46f eb1d                           jmp        0x1d4c48e ; 
+01d4c471 4885ff                         test       rdi, rdi
+01d4c474 0f84cd020000                   je         0x1d4c747
+01d4c47a 448b838c000000                 mov        r8d, dword ptr [rbx + 0x8c]
+01d4c481 4533c9                         xor        r9d, r9d
+01d4c484 8bd6                           mov        edx, esi
+01d4c486 488bcf                         mov        rcx, rdi
+01d4c489 e802060d00                     call       0x1e1ca90 ; KANAI.UI:UIGamePad:System.Boolean KANAI.UI.UIGamePad::IsOn(KANAI.UI.UIGamePad/Buttons,System.Int32)
+01d4c48e 488b8b80000000                 mov        rcx, qword ptr [rbx + 0x80]
+01d4c495 4032ed                         xor        bpl, bpl
+01d4c498 4885c9                         test       rcx, rcx
+01d4c49b 0f84a6020000                   je         0x1d4c747
+01d4c4a1 33f6                           xor        esi, esi
+01d4c4a3 4038ab20020000                 cmp        byte ptr [rbx + 0x220], bpl
+01d4c4aa 0f85a7010000                   jne        0x1d4c657
+01d4c4b0 f30f104148                     movss      xmm0, dword ptr [rcx + 0x48]
+01d4c4b5 0f2f0510477901                 comiss     xmm0, dword ptr [rip + 0x1794710]
+01d4c4bc 0fb6c8                         movzx      ecx, al
+01d4c4bf 8bc6                           mov        eax, esi
+01d4c4c1 0f47c1                         cmova      eax, ecx
+01d4c4c4 85c0                           test       eax, eax
+01d4c4c6 0f84e7000000                   je         0x1d4c5b3
+01d4c4cc f6831802000010                 test       byte ptr [rbx + 0x218], 0x10
+01d4c4d3 0f87da000000                   ja         0x1d4c5b3
+01d4c4d9 f7831802000002080000           test       dword ptr [rbx + 0x218], 0x802
+01d4c4e3 0f87bb000000                   ja         0x1d4c5a4
+01d4c4e9 0f57f6                         xorps      xmm6, xmm6
+01d4c4ec 0f2fb324020000                 comiss     xmm6, dword ptr [rbx + 0x224]
+01d4c4f3 726a                           jb         0x1d4c55f
+01d4c4f5 488b8b80010000                 mov        rcx, qword ptr [rbx + 0x180]
+01d4c4fc 4885c9                         test       rcx, rcx
+01d4c4ff 0f8442020000                   je         0x1d4c747
+01d4c505 4533c0                         xor        r8d, r8d
+01d4c508 ba04000000                     mov        edx, 4
+01d4c50d e8be280000                     call       0x1d4edd0 ; InGame.Kernel:PlayerEffects:System.Void InGame.Kernel.Player.PlayerEffects::StartEffect(InGame.Kernel.Player.PlayerEffects/EffectKind)
+01d4c512 4c8b8360010000                 mov        r8, qword ptr [rbx + 0x160]
+01d4c519 4d85c0                         test       r8, r8
+01d4c51c 0f8425020000                   je         0x1d4c747
+01d4c522 488b159fb16802                 mov        rdx, qword ptr [rip + 0x268b19f]
+01d4c529 b90d000000                     mov        ecx, 0xd
+01d4c52e e87d5d2bfe                     call       0x22b0 ; 
+01d4c533 488b0d2e5e6502                 mov        rcx, qword ptr [rip + 0x2655e2e]
+01d4c53a 8bf8                           mov        edi, eax
+01d4c53c 39b1e4000000                   cmp        dword ptr [rcx + 0xe4], esi
+01d4c542 7505                           jne        0x1d4c549
+01d4c544 e8474879fe                     call       0x4e0d90 ; 
+01d4c549 4533c9                         xor        r9d, r9d
+01d4c54c 4533c0                         xor        r8d, r8d
+01d4c54f 0f57c9                         xorps      xmm1, xmm1
+01d4c552 8bcf                           mov        ecx, edi
+01d4c554 e8377c9d00                     call       0x2724190 ; TXEKernel:SoundUtility:System.Int32 TXEKernel.Sound.SoundUtility::Play(TXEKernel.Sound.SoundUtility/ID,System.Single,System.Boolean)
+01d4c559 898328020000                   mov        dword ptr [rbx + 0x228], eax
+01d4c55f 0f28f7                         movaps     xmm6, xmm7
+01d4c562 f30f58b324020000               addss      xmm6, dword ptr [rbx + 0x224]
+01d4c56a f30f11b324020000               movss      dword ptr [rbx + 0x224], xmm6
+01d4c572 488b05c7946302                 mov        rax, qword ptr [rip + 0x26394c7]
+01d4c579 39b0e4000000                   cmp        dword ptr [rax + 0xe4], esi
+01d4c57f 750f                           jne        0x1d4c590
+01d4c581 488bc8                         mov        rcx, rax
+01d4c584 e8074879fe                     call       0x4e0d90 ; 
+01d4c589 488b05b0946302                 mov        rax, qword ptr [rip + 0x26394b0]
+01d4c590 488b80b8000000                 mov        rax, qword ptr [rax + 0xb8]
+01d4c597 0f2f700c                       comiss     xmm6, dword ptr [rax + 0xc]
+01d4c59b 0f93c0                         setae      al
+01d4c59e 888320020000                   mov        byte ptr [rbx + 0x220], al
+01d4c5a4 0fb6bb20020000                 movzx      edi, byte ptr [rbx + 0x220]
+01d4c5ab 4532f6                         xor        r14b, r14b
+01d4c5ae e958010000                     jmp        0x1d4c70b ; 
+01d4c5b3 f30f108b24020000               movss      xmm1, dword ptr [rbx + 0x224]
+01d4c5bb 0f57c0                         xorps      xmm0, xmm0
+01d4c5be 0f2fc8                         comiss     xmm1, xmm0
+01d4c5c1 0f8685000000                   jbe        0x1d4c64c
+01d4c5c7 488bbb80010000                 mov        rdi, qword ptr [rbx + 0x180]
+01d4c5ce 4885ff                         test       rdi, rdi
+01d4c5d1 0f8470010000                   je         0x1d4c747
+01d4c5d7 40383570709102                 cmp        byte ptr [rip + 0x2917070], sil
+01d4c5de 7513                           jne        0x1d4c5f3
+01d4c5e0 488d0db9186302                 lea        rcx, [rip + 0x26318b9]
+01d4c5e7 e8644479fe                     call       0x4e0a50 ; 
+01d4c5ec c6055b70910201                 mov        byte ptr [rip + 0x291705b], 1
+01d4c5f3 488b4720                       mov        rax, qword ptr [rdi + 0x20]
+01d4c5f7 4885c0                         test       rax, rax
+01d4c5fa 0f8447010000                   je         0x1d4c747
+01d4c600 83781804                       cmp        dword ptr [rax + 0x18], 4
+01d4c604 0f8643010000                   jbe        0x1d4c74d
+01d4c60a 488b0d8f186302                 mov        rcx, qword ptr [rip + 0x263188f]
+01d4c611 488b7840                       mov        rdi, qword ptr [rax + 0x40]
+01d4c615 39b1e4000000                   cmp        dword ptr [rcx + 0xe4], esi
+01d4c61b 7505                           jne        0x1d4c622
+01d4c61d e86e4779fe                     call       0x4e0d90 ; 
+01d4c622 4533c0                         xor        r8d, r8d
+01d4c625 33d2                           xor        edx, edx
+01d4c627 488bcf                         mov        rcx, rdi
+01d4c62a e8d10d3201                     call       0x306d400 ; UnityEngine.CoreModule:Object:System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01d4c62f 84c0                           test       al, al
+01d4c631 7419                           je         0x1d4c64c
+01d4c633 4885ff                         test       rdi, rdi
+01d4c636 0f840b010000                   je         0x1d4c747
+01d4c63c 4533c9                         xor        r9d, r9d
+01d4c63f 4533c0                         xor        r8d, r8d
+01d4c642 b201                           mov        dl, 1
+01d4c644 488bcf                         mov        rcx, rdi
+01d4c647 e804293d01                     call       0x311ef50 ; UnityEngine.ParticleSystemModule:ParticleSystem:System.Void UnityEngine.ParticleSystem::Stop(System.Boolean,UnityEngine.ParticleSystemStopBehavior)
+01d4c64c 89b324020000                   mov        dword ptr [rbx + 0x224], esi
+01d4c652 4032ff                         xor        dil, dil
+01d4c655 eb7d                           jmp        0x1d4c6d4 ; 
+01d4c657 0f57c0                         xorps      xmm0, xmm0
+01d4c65a 0f2f4148                       comiss     xmm0, dword ptr [rcx + 0x48]
+01d4c65e 7344                           jae        0x1d4c6a4
+01d4c660 84c0                           test       al, al
+01d4c662 7440                           je         0x1d4c6a4
+01d4c664 f7831802000002080000           test       dword ptr [rbx + 0x218], 0x802
+01d4c66e 7734                           ja         0x1d4c6a4
+01d4c670 488b4370                       mov        rax, qword ptr [rbx + 0x70]
+01d4c674 4885c0                         test       rax, rax
+01d4c677 0f84ca000000                   je         0x1d4c747
+01d4c67d 4038b0b1000000                 cmp        byte ptr [rax + 0xb1], sil
+01d4c684 752e                           jne        0x1d4c6b4
+01d4c686 4885c9                         test       rcx, rcx
+01d4c689 0f84b8000000                   je         0x1d4c747
+01d4c68f 0f28cf                         movaps     xmm1, xmm7
+01d4c692 4533c0                         xor        r8d, r8d
+01d4c695 f30f590d07678a01               mulss      xmm1, dword ptr [rip + 0x18a6707]
+01d4c69d e85e209900                     call       0x26de700 ; TXEKernel:PlayerInformation:System.Void TXEKernel.PlayerInformation::PipilCountUp(System.Single)
+01d4c6a2 eb10                           jmp        0x1d4c6b4 ; 
+01d4c6a4 4088b320020000                 mov        byte ptr [rbx + 0x220], sil
+01d4c6ab 40b501                         mov        bpl, 1
+01d4c6ae 89b324020000                   mov        dword ptr [rbx + 0x224], esi
+01d4c6b4 f7831802000002080000           test       dword ptr [rbx + 0x218], 0x802
+01d4c6be 8bc6                           mov        eax, esi
+01d4c6c0 7707                           ja         0x1d4c6c9
+01d4c6c2 0fb68320020000                 movzx      eax, byte ptr [rbx + 0x220]
+01d4c6c9 85c0                           test       eax, eax
+01d4c6cb 400f95c7                       setne      dil
+01d4c6cf 4084ed                         test       bpl, bpl
+01d4c6d2 7437                           je         0x1d4c70b
+01d4c6d4 83bb28020000ff                 cmp        dword ptr [rbx + 0x228], -1
+01d4c6db 742e                           je         0x1d4c70b
+01d4c6dd 488b0d845c6502                 mov        rcx, qword ptr [rip + 0x2655c84]
+01d4c6e4 8bab28020000                   mov        ebp, dword ptr [rbx + 0x228]
+01d4c6ea 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01d4c6f1 7505                           jne        0x1d4c6f8
+01d4c6f3 e8984679fe                     call       0x4e0d90 ; 
+01d4c6f8 33d2                           xor        edx, edx
+01d4c6fa 8bcd                           mov        ecx, ebp
+01d4c6fc e85f8e9d00                     call       0x2725560 ; TXEKernel:SoundUtility:System.Void TXEKernel.Sound.SoundUtility::StopCh(System.Int32)
+01d4c701 c78328020000ffffffff           mov        dword ptr [rbx + 0x228], 0xffffffff
+01d4c70b 0f28df                         movaps     xmm3, xmm7
+01d4c70e 4889742420                     mov        qword ptr [rsp + 0x20], rsi
+01d4c713 440fb6c7                       movzx      r8d, dil
+01d4c717 410fb6d6                       movzx      edx, r14b
+01d4c71b 488bcb                         mov        rcx, rbx
+01d4c71e e87dccffff                     call       0x1d493a0 ; InGame.Kernel:PlayerControll:System.Void InGame.Kernel.Player.PlayerControll::FireWeapon(System.Boolean,System.Boolean,System.Single)
+01d4c723 0f28742440                     movaps     xmm6, xmmword ptr [rsp + 0x40]
+01d4c728 4c8b742470                     mov        r14, qword ptr [rsp + 0x70]
+01d4c72d 488b742468                     mov        rsi, qword ptr [rsp + 0x68]
+01d4c732 488b6c2460                     mov        rbp, qword ptr [rsp + 0x60]
+01d4c737 488b5c2478                     mov        rbx, qword ptr [rsp + 0x78]
+01d4c73c 0f287c2430                     movaps     xmm7, xmmword ptr [rsp + 0x30]
+01d4c741 4883c450                       add        rsp, 0x50
+01d4c745 5f                             pop        rdi
+01d4c746 c3                             ret        
+01d4c747 e8b44579fe                     call       0x4e0d00 ; 
+01d4c74c cc                             int3       
+01d4c74d e89e4579fe                     call       0x4e0cf0 ; 

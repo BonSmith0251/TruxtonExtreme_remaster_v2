@@ -1,0 +1,9 @@
+91 additional native-backed simple methods; 50 getters,39 scalar setters,2integerconstants in5gameassemblies. Separate from BootTXE coroutine recovery.
+
+Native fragments:91methods310cases pass. Managed candidate IL:91methods309cases pass underUnity2023Mono with targetdependencies and syntheticinstances. Managedvalidator explicitlypreloads patchedDLLs and assertsassemblypaths; abstractowners use disposabletestsubclasses. No UnitylifecycleororiginalgameDLL executed.
+
+Only one supported nativeinstruction+ret, uniqueaddress, exactdeclaredfieldoffsetandtype. No calls,branches,generic/value-layout guesses,reference setters,constructors. Complex behavior remains unrecovered.
+
+Before integration stopeditor/player, assertcurrenttargethash==patch-manifest.json baselineSha256, copyonlypatchedDLLs preservingcurrentmetas. If anyhashdiffers rebase ratherthanoverwrite. SnapshotpreservesBoot/OutGame layout-shell/self-referencefixes. Targetdomain/playerchecks remain integrationworker scope.
+
+Source/proof:recover_simple_native.py,patch_simple_native.ps1,candidates.json,method-patches.json,recovered-method-bodies.il.txt. Dependencygraph85assemblies has0cycles;type/field/signature/interface/dependencyinventoriesunchanged.

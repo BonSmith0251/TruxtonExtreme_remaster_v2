@@ -1,0 +1,17 @@
+{"assembly": "KANAI.Kernel", "file": "ApplicationUtility.cs", "originalType": "KANAI.Kernel.ApplicationUtility/<SetupAssetLoader>d__15", "rva": 31410384, "length": 62, "signature": "System.Void KANAI.Kernel.ApplicationUtility/<SetupAssetLoader>d__15::System.Collections.IEnumerator.Reset()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01df48d0 4053                           push       rbx
+01df48d2 4883ec20                       sub        rsp, 0x20
+01df48d6 488d0df3855802                 lea        rcx, [rip + 0x25885f3]
+01df48dd e88ec16efe                     call       0x4e0a70 ; 
+01df48e2 488bc8                         mov        rcx, rax
+01df48e5 e8c6c36efe                     call       0x4e0cb0 ; 
+01df48ea 33d2                           xor        edx, edx
+01df48ec 488bc8                         mov        rcx, rax
+01df48ef 488bd8                         mov        rbx, rax
+01df48f2 e879852300                     call       0x202ce70 ; mscorlib:NotSupportedException:System.Void System.NotSupportedException::.ctor()
+01df48f7 488d0d322b5902                 lea        rcx, [rip + 0x2592b32]
+01df48fe e86dc16efe                     call       0x4e0a70 ; 
+01df4903 488bd0                         mov        rdx, rax
+01df4906 488bcb                         mov        rcx, rbx
+01df4909 e8b2c36efe                     call       0x4e0cc0 ; 

@@ -1,0 +1,18 @@
+{"assembly": "KANAI.Kernel", "file": "ApplicationUtility.cs", "originalType": "KANAI.Kernel.ApplicationUtility", "rva": 31338800, "length": 71, "signature": "System.Boolean KANAI.Kernel.ApplicationUtility::IsSwitch2()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01de3130 4883ec28                       sub        rsp, 0x28
+01de3134 803d5708880200                 cmp        byte ptr [rip + 0x2880857], 0
+01de313b 7513                           jne        0x1de3150
+01de313d 488d0d8c215a02                 lea        rcx, [rip + 0x25a218c]
+01de3144 e807d96ffe                     call       0x4e0a50 ; 
+01de3149 c6054208880201                 mov        byte ptr [rip + 0x2880842], 1
+01de3150 488b0d79215a02                 mov        rcx, qword ptr [rip + 0x25a2179]
+01de3157 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de315e 7505                           jne        0x1de3165
+01de3160 e82bdc6ffe                     call       0x4e0d90 ; 
+01de3165 33c9                           xor        ecx, ecx
+01de3167 e874ab1e01                     call       0x2fcdce0 ; UnityEngine.CoreModule:Application:UnityEngine.RuntimePlatform UnityEngine.Application::get_platform()
+01de316c 83f833                         cmp        eax, 0x33
+01de316f 0f94c0                         sete       al
+01de3172 4883c428                       add        rsp, 0x28
+01de3176 c3                             ret        

@@ -1,0 +1,19 @@
+{
+ "Shader Graphs/sg_emission_FlickerDepth": {"kind": "sg-lit", "body": "sg_emission_FlickerDepth.hlsl",
+  "defines": ["TX_HAS_VERTEX_FUNCTION"],
+  "note": "Lit UV maps; emission colour*map*4 Overlay-flickers with sin(time*_FlickerSpeed)*_MaskPower*map.a; clip z += _Shifter."},
+ "Shader Graphs/sg_emission_flicker_fogswitch": {"kind": "sg-lit", "body": "sg_emission_flicker_fogswitch.hlsl",
+  "pragmas": ["#pragma shader_feature_local _USEFOG_ON _USEFOG_OFF", "#if defined(_USEFOG_OFF)", "#define TX_NOFOG", "#endif"],
+  "note": "Lit UV maps; emission colour*map*4 Overlay-flickers with sin(time*_FlickerSpeed)*_MaskPower*map.a; _USEFOG keyword toggles fog."},
+ "Shader Graphs/sg_fresnel": {"kind": "sg-lit", "body": "sg_fresnel.hlsl",
+  "note": "Lit UV maps; emission = lerp(_FresnelColor, _FresnelEdgeColor, pow(1-N.V, _FresnelIntensity)) + emission map*colour*5."},
+ "Shader Graphs/sg_vertex_shader_opaque_nofog": {"kind": "sg-lit", "body": "sg_vertex_shader_opaque_nofog.hlsl",
+  "defines": ["TX_HAS_VERTEX_FUNCTION", "TX_NOFOG"],
+  "note": "Object-XY simple-noise vertex inflation scrolled by time; Lit UV maps with optional fresnel rim emission; no fog."},
+ "Shader Graphs/sg_vertex_shader_tranceparent": {"kind": "sg-lit", "body": "sg_vertex_shader_tranceparent.hlsl",
+  "defines": ["TX_HAS_VERTEX_FUNCTION", "_ALPHAPREMULTIPLY_ON 1"],
+  "note": "World-XY simple-noise vertex inflation; premultiplied transparent Lit with fresnel rim emission, alpha = fresnel + albedo.a."},
+ "Shader Graphs/sg_burnt_ground": {"kind": "sg-unlit", "body": "sg_burnt_ground.hlsl",
+  "defines": ["TX_NOFOG"],
+  "note": "Unlit alpha-blended ground decal; scrolling simple-noise embers * flicker mask * pulsing _FlickerColor added; no fog."}
+}

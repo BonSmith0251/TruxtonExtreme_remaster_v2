@@ -1,0 +1,22 @@
+{"assembly": "KANAI.Kernel", "file": "ApplicationUtility.cs", "originalType": "KANAI.Kernel.ApplicationUtility", "rva": 31340032, "length": 102, "signature": "System.Void KANAI.Kernel.ApplicationUtility::SetScreenSize(UnityEngine.Vector2)"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01de3600 4883ec28                       sub        rsp, 0x28
+01de3604 803d9903880200                 cmp        byte ptr [rip + 0x2880399], 0
+01de360b 48894c2440                     mov        qword ptr [rsp + 0x40], rcx
+01de3610 7513                           jne        0x1de3625
+01de3612 488d0ddf1e5a02                 lea        rcx, [rip + 0x25a1edf]
+01de3619 e832d46ffe                     call       0x4e0a50 ; 
+01de361e c6057f03880201                 mov        byte ptr [rip + 0x288037f], 1
+01de3625 488b05cc1e5a02                 mov        rax, qword ptr [rip + 0x25a1ecc]
+01de362c 83b8e400000000                 cmp        dword ptr [rax + 0xe4], 0
+01de3633 750f                           jne        0x1de3644
+01de3635 488bc8                         mov        rcx, rax
+01de3638 e853d76ffe                     call       0x4e0d90 ; 
+01de363d 488b05b41e5a02                 mov        rax, qword ptr [rip + 0x25a1eb4]
+01de3644 488b80b8000000                 mov        rax, qword ptr [rax + 0xb8]
+01de364b f30f10442440                   movss      xmm0, dword ptr [rsp + 0x40]
+01de3651 f30f104c2444                   movss      xmm1, dword ptr [rsp + 0x44]
+01de3657 f30f114024                     movss      dword ptr [rax + 0x24], xmm0
+01de365c f30f114828                     movss      dword ptr [rax + 0x28], xmm1
+01de3661 4883c428                       add        rsp, 0x28
+01de3665 c3                             ret        

@@ -1,0 +1,117 @@
+{"assembly": "TXEKernel", "file": "BootTXE.cs", "originalType": "TXEKernel.BootTXE/<_softReboot>d__1", "rva": 40805152, "length": 476, "signature": "System.Boolean TXEKernel.BootTXE/<_softReboot>d__1::MoveNext()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+026ea320 4057                           push       rdi
+026ea322 4883ec20                       sub        rsp, 0x20
+026ea326 803dfbdef70100                 cmp        byte ptr [rip + 0x1f7defb], 0
+026ea32d 488bf9                         mov        rdi, rcx
+026ea330 752b                           jne        0x26ea35d
+026ea332 488d0d9f1ecd01                 lea        rcx, [rip + 0x1cd1e9f]
+026ea339 e81267dffd                     call       0x4e0a50 ; 
+026ea33e 488d0d2301cb01                 lea        rcx, [rip + 0x1cb0123]
+026ea345 e80667dffd                     call       0x4e0a50 ; 
+026ea34a 488d0d07adcd01                 lea        rcx, [rip + 0x1cdad07]
+026ea351 e8fa66dffd                     call       0x4e0a50 ; 
+026ea356 c605cbdef70101                 mov        byte ptr [rip + 0x1f7decb], 1
+026ea35d 48634710                       movsxd     rax, dword ptr [rdi + 0x10]
+026ea361 4c8b4720                       mov        r8, qword ptr [rdi + 0x20]
+026ea365 48895c2430                     mov        qword ptr [rsp + 0x30], rbx
+026ea36a 83f805                         cmp        eax, 5
+026ea36d 0f8774010000                   ja         0x26ea4e7
+026ea373 488d15865c91fd                 lea        rdx, [rip - 0x26ea37a]
+026ea37a 8b8c82fca46e02                 mov        ecx, dword ptr [rdx + rax*4 + 0x26ea4fc]
+026ea381 4803ca                         add        rcx, rdx
+026ea384 ffe1                           jmp        rcx
+026ea386 c74710ffffffff                 mov        dword ptr [rdi + 0x10], 0xffffffff
+026ea38d 4d85c0                         test       r8, r8
+026ea390 0f845e010000                   je         0x26ea4f4
+026ea396 488b0dcb00cb01                 mov        rcx, qword ptr [rip + 0x1cb00cb]
+026ea39d 498b5820                       mov        rbx, qword ptr [r8 + 0x20]
+026ea3a1 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+026ea3a8 7505                           jne        0x26ea3af
+026ea3aa e8e169dffd                     call       0x4e0d90 ; 
+026ea3af 33d2                           xor        edx, edx
+026ea3b1 488bcb                         mov        rcx, rbx
+026ea3b4 e817d39900                     call       0x30876d0 ; UnityEngine.CoreModule:SceneManager:UnityEngine.AsyncOperation UnityEngine.SceneManagement.SceneManager::UnloadSceneAsync(System.String)
+026ea3b9 488d4f18                       lea        rcx, [rdi + 0x18]
+026ea3bd 48894718                       mov        qword ptr [rdi + 0x18], rax
+026ea3c1 488bd0                         mov        rdx, rax
+026ea3c4 e8b759dffd                     call       0x4dfd80 ; 
+026ea3c9 b001                           mov        al, 1
+026ea3cb c7471001000000                 mov        dword ptr [rdi + 0x10], 1
+026ea3d2 488b5c2430                     mov        rbx, qword ptr [rsp + 0x30]
+026ea3d7 4883c420                       add        rsp, 0x20
+026ea3db 5f                             pop        rdi
+026ea3dc c3                             ret        
+026ea3dd 488d4f18                       lea        rcx, [rdi + 0x18]
+026ea3e1 c74710ffffffff                 mov        dword ptr [rdi + 0x10], 0xffffffff
+026ea3e8 33d2                           xor        edx, edx
+026ea3ea 48c7471800000000               mov        qword ptr [rdi + 0x18], 0
+026ea3f2 e88959dffd                     call       0x4dfd80 ; 
+026ea3f7 b001                           mov        al, 1
+026ea3f9 c7471002000000                 mov        dword ptr [rdi + 0x10], 2
+026ea400 488b5c2430                     mov        rbx, qword ptr [rsp + 0x30]
+026ea405 4883c420                       add        rsp, 0x20
+026ea409 5f                             pop        rdi
+026ea40a c3                             ret        
+026ea40b 33c9                           xor        ecx, ecx
+026ea40d c74710ffffffff                 mov        dword ptr [rdi + 0x10], 0xffffffff
+026ea414 e8276d9800                     call       0x3071140 ; UnityEngine.CoreModule:Resources:UnityEngine.AsyncOperation UnityEngine.Resources::UnloadUnusedAssets()
+026ea419 488d4f18                       lea        rcx, [rdi + 0x18]
+026ea41d 48894718                       mov        qword ptr [rdi + 0x18], rax
+026ea421 488bd0                         mov        rdx, rax
+026ea424 e85759dffd                     call       0x4dfd80 ; 
+026ea429 b001                           mov        al, 1
+026ea42b c7471003000000                 mov        dword ptr [rdi + 0x10], 3
+026ea432 488b5c2430                     mov        rbx, qword ptr [rsp + 0x30]
+026ea437 4883c420                       add        rsp, 0x20
+026ea43b 5f                             pop        rdi
+026ea43c c3                             ret        
+026ea43d c74710ffffffff                 mov        dword ptr [rdi + 0x10], 0xffffffff
+026ea444 488b0d8d1dcd01                 mov        rcx, qword ptr [rip + 0x1cd1d8d]
+026ea44b 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+026ea452 7505                           jne        0x26ea459
+026ea454 e83769dffd                     call       0x4e0d90 ; 
+026ea459 33c9                           xor        ecx, ecx
+026ea45b e870fb97ff                     call       0x2069fd0 ; mscorlib:GC:System.Void System.GC::Collect()
+026ea460 488b0df1abcd01                 mov        rcx, qword ptr [rip + 0x1cdabf1]
+026ea467 e84468dffd                     call       0x4e0cb0 ; 
+026ea46c f30f100d5867df00               movss      xmm1, dword ptr [rip + 0xdf6758]
+026ea474 4533c0                         xor        r8d, r8d
+026ea477 488bc8                         mov        rcx, rax
+026ea47a 488bd8                         mov        rbx, rax
+026ea47d e8aebb9800                     call       0x3076030 ; UnityEngine.CoreModule:WaitForSeconds:System.Void UnityEngine.WaitForSeconds::.ctor(System.Single)
+026ea482 488d4f18                       lea        rcx, [rdi + 0x18]
+026ea486 48895f18                       mov        qword ptr [rdi + 0x18], rbx
+026ea48a 488bd3                         mov        rdx, rbx
+026ea48d e8ee58dffd                     call       0x4dfd80 ; 
+026ea492 b001                           mov        al, 1
+026ea494 c7471004000000                 mov        dword ptr [rdi + 0x10], 4
+026ea49b 488b5c2430                     mov        rbx, qword ptr [rsp + 0x30]
+026ea4a0 4883c420                       add        rsp, 0x20
+026ea4a4 5f                             pop        rdi
+026ea4a5 c3                             ret        
+026ea4a6 c74710ffffffff                 mov        dword ptr [rdi + 0x10], 0xffffffff
+026ea4ad 4d85c0                         test       r8, r8
+026ea4b0 7442                           je         0x26ea4f4
+026ea4b2 33d2                           xor        edx, edx
+026ea4b4 498bc8                         mov        rcx, r8
+026ea4b7 e85485feff                     call       0x26d2a10 ; TXEKernel:BootTXE:System.Collections.IEnumerator TXEKernel.BootTXE::_loadScene()
+026ea4bc 488d4f18                       lea        rcx, [rdi + 0x18]
+026ea4c0 48894718                       mov        qword ptr [rdi + 0x18], rax
+026ea4c4 488bd0                         mov        rdx, rax
+026ea4c7 e8b458dffd                     call       0x4dfd80 ; 
+026ea4cc b001                           mov        al, 1
+026ea4ce c7471005000000                 mov        dword ptr [rdi + 0x10], 5
+026ea4d5 488b5c2430                     mov        rbx, qword ptr [rsp + 0x30]
+026ea4da 4883c420                       add        rsp, 0x20
+026ea4de 5f                             pop        rdi
+026ea4df c3                             ret        
+026ea4e0 c74710ffffffff                 mov        dword ptr [rdi + 0x10], 0xffffffff
+026ea4e7 488b5c2430                     mov        rbx, qword ptr [rsp + 0x30]
+026ea4ec 32c0                           xor        al, al
+026ea4ee 4883c420                       add        rsp, 0x20
+026ea4f2 5f                             pop        rdi
+026ea4f3 c3                             ret        
+026ea4f4 e80768dffd                     call       0x4e0d00 ; 
+026ea4f9 cc                             int3       
+026ea4fa 6690                           nop        

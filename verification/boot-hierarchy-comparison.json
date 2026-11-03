@@ -1,0 +1,107 @@
+{
+  "utc": "2026-10-31T13:47:05.616839+00:00",
+  "target_audit_time": "2026-10-31T13:36:27.1640142Z",
+  "unity": "2023.2.22f1",
+  "results": [
+    {
+      "source": "level0",
+      "scene": "Assets/OriginalRecovered/Scenes/Boot.unity",
+      "source_objects": 1,
+      "target_objects": 1,
+      "missingScripts": 0,
+      "missingReferences": 0,
+      "differences": [],
+      "tested_fields_match": true
+    },
+    {
+      "source": "level1",
+      "scene": "Assets/OriginalRecovered/Scenes/BootTXE.unity",
+      "source_objects": 23,
+      "target_objects": 23,
+      "missingScripts": 0,
+      "missingReferences": 0,
+      "differences": [
+        {
+          "path": "BootMainLoop/UISystem/UICanvas/covers/btmCover",
+          "field": "localPosition",
+          "source": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "target": {
+            "x": 0.0,
+            "y": -1080.0,
+            "z": 0.0
+          }
+        },
+        {
+          "path": "BootMainLoop/UISystem/UICanvas/covers/topCover",
+          "field": "localPosition",
+          "source": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "target": {
+            "x": 0.0,
+            "y": 2080.0,
+            "z": 0.0
+          }
+        },
+        {
+          "path": "BootMainLoop/UISystem/UICanvas/covers/sideCoverR",
+          "field": "localPosition",
+          "source": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "target": {
+            "x": 1920.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "path": "BootMainLoop/UISystem/UICanvas/covers/sideCoverL",
+          "field": "localPosition",
+          "source": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "target": {
+            "x": -1920.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "path": "BootMainLoop/UISystem/UICanvas",
+          "field": "localScale",
+          "source": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "target": {
+            "x": 0.0034722224809229374,
+            "y": 0.0034722224809229374,
+            "z": 0.0034722224809229374
+          }
+        }
+      ],
+      "tested_fields_match": false
+    }
+  ],
+  "limitations": [
+    "Tests24originalBootGameObjects only; no2150prefab fidelity claim.",
+    "Component types and order are checked; metadata stub behaviors are not original methods.",
+    "Serialized component values, UnityEvents, RectTransform anchors/pivots and scene lighting are not emitted by this Editor audit and remain unverified.",
+    "Local transforms compare withabs1e-5/rel1e-6 float tolerance; original two scenes each contain one root."
+  ],
+  "revision": "reconstruction-2023.2.22f1-native-assets-v3",
+  "freeze_manifest_sha256": "f657986bb8f0e82cafb9a918279d64dfcff73c62646cb9a30829d3c9d96656db",
+  "phase": "Final frozen target comparison"
+}

@@ -1,0 +1,47 @@
+{"assembly": "KANAI.Kernel", "file": "ApplicationUtility.cs", "originalType": "KANAI.Kernel.ApplicationUtility", "rva": 31338576, "length": 209, "signature": "System.Boolean KANAI.Kernel.ApplicationUtility::IsPlayStation()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01de3050 4883ec28                       sub        rsp, 0x28
+01de3054 803d3309880200                 cmp        byte ptr [rip + 0x2880933], 0
+01de305b 7513                           jne        0x1de3070
+01de305d 488d0d94245a02                 lea        rcx, [rip + 0x25a2494]
+01de3064 e8e7d96ffe                     call       0x4e0a50 ; 
+01de3069 c6051e09880201                 mov        byte ptr [rip + 0x288091e], 1
+01de3070 488b0d81245a02                 mov        rcx, qword ptr [rip + 0x25a2481]
+01de3077 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de307e 7505                           jne        0x1de3085
+01de3080 e80bdd6ffe                     call       0x4e0d90 ; 
+01de3085 803d0309880200                 cmp        byte ptr [rip + 0x2880903], 0
+01de308c 7513                           jne        0x1de30a1
+01de308e 488d0d3b225a02                 lea        rcx, [rip + 0x25a223b]
+01de3095 e8b6d96ffe                     call       0x4e0a50 ; 
+01de309a c605ee08880201                 mov        byte ptr [rip + 0x28808ee], 1
+01de30a1 488b0d28225a02                 mov        rcx, qword ptr [rip + 0x25a2228]
+01de30a8 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de30af 7505                           jne        0x1de30b6
+01de30b1 e8dadc6ffe                     call       0x4e0d90 ; 
+01de30b6 33c9                           xor        ecx, ecx
+01de30b8 e823ac1e01                     call       0x2fcdce0 ; UnityEngine.CoreModule:Application:UnityEngine.RuntimePlatform UnityEngine.Application::get_platform()
+01de30bd 83f819                         cmp        eax, 0x19
+01de30c0 7507                           jne        0x1de30c9
+01de30c2 b001                           mov        al, 1
+01de30c4 4883c428                       add        rsp, 0x28
+01de30c8 c3                             ret        
+01de30c9 488b0d28245a02                 mov        rcx, qword ptr [rip + 0x25a2428]
+01de30d0 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de30d7 7505                           jne        0x1de30de
+01de30d9 e8b2dc6ffe                     call       0x4e0d90 ; 
+01de30de 803dab08880200                 cmp        byte ptr [rip + 0x28808ab], 0
+01de30e5 7513                           jne        0x1de30fa
+01de30e7 488d0de2215a02                 lea        rcx, [rip + 0x25a21e2]
+01de30ee e85dd96ffe                     call       0x4e0a50 ; 
+01de30f3 c6059608880201                 mov        byte ptr [rip + 0x2880896], 1
+01de30fa 488b0dcf215a02                 mov        rcx, qword ptr [rip + 0x25a21cf]
+01de3101 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de3108 7505                           jne        0x1de310f
+01de310a e881dc6ffe                     call       0x4e0d90 ; 
+01de310f 33c9                           xor        ecx, ecx
+01de3111 e8caab1e01                     call       0x2fcdce0 ; UnityEngine.CoreModule:Application:UnityEngine.RuntimePlatform UnityEngine.Application::get_platform()
+01de3116 83f826                         cmp        eax, 0x26
+01de3119 0f94c0                         sete       al
+01de311c 4883c428                       add        rsp, 0x28
+01de3120 c3                             ret        

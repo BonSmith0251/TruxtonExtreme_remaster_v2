@@ -1,0 +1,24 @@
+{"assembly": "KANAI.Kernel", "file": "ApplicationUtility.cs", "originalType": "KANAI.Kernel.ApplicationUtility", "rva": 31339776, "length": 105, "signature": "System.Void KANAI.Kernel.ApplicationUtility::SetDataDate(System.String)"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01de3500 4053                           push       rbx
+01de3502 4883ec20                       sub        rsp, 0x20
+01de3506 803d8f04880200                 cmp        byte ptr [rip + 0x288048f], 0
+01de350d 488bd9                         mov        rbx, rcx
+01de3510 7513                           jne        0x1de3525
+01de3512 488d0ddf1f5a02                 lea        rcx, [rip + 0x25a1fdf]
+01de3519 e832d56ffe                     call       0x4e0a50 ; 
+01de351e c6057704880201                 mov        byte ptr [rip + 0x2880477], 1
+01de3525 488b05cc1f5a02                 mov        rax, qword ptr [rip + 0x25a1fcc]
+01de352c 83b8e400000000                 cmp        dword ptr [rax + 0xe4], 0
+01de3533 750f                           jne        0x1de3544
+01de3535 488bc8                         mov        rcx, rax
+01de3538 e853d86ffe                     call       0x4e0d90 ; 
+01de353d 488b05b41f5a02                 mov        rax, qword ptr [rip + 0x25a1fb4]
+01de3544 488b80b8000000                 mov        rax, qword ptr [rax + 0xb8]
+01de354b 488bd3                         mov        rdx, rbx
+01de354e 488918                         mov        qword ptr [rax], rbx
+01de3551 488b0da01f5a02                 mov        rcx, qword ptr [rip + 0x25a1fa0]
+01de3558 488b89b8000000                 mov        rcx, qword ptr [rcx + 0xb8]
+01de355f 4883c420                       add        rsp, 0x20
+01de3563 5b                             pop        rbx
+01de3564 e917c86ffe                     jmp        0x4dfd80 ; 

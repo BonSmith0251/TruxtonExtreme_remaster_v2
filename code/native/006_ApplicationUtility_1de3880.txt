@@ -1,0 +1,21 @@
+{"assembly": "KANAI.Kernel", "file": "ApplicationUtility.cs", "originalType": "KANAI.Kernel.ApplicationUtility", "rva": 31340672, "length": 94, "signature": "System.String KANAI.Kernel.ApplicationUtility::Version()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01de3880 4883ec28                       sub        rsp, 0x28
+01de3884 803d0101880200                 cmp        byte ptr [rip + 0x2880101], 0
+01de388b 751f                           jne        0x1de38ac
+01de388d 488d0d3c1a5a02                 lea        rcx, [rip + 0x25a1a3c]
+01de3894 e8b7d16ffe                     call       0x4e0a50 ; 
+01de3899 488d0d98ae5902                 lea        rcx, [rip + 0x259ae98]
+01de38a0 e8abd16ffe                     call       0x4e0a50 ; 
+01de38a5 c605e000880201                 mov        byte ptr [rip + 0x28800e0], 1
+01de38ac 488b0d1d1a5a02                 mov        rcx, qword ptr [rip + 0x25a1a1d]
+01de38b3 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de38ba 7505                           jne        0x1de38c1
+01de38bc e8cfd46ffe                     call       0x4e0d90 ; 
+01de38c1 33c9                           xor        ecx, ecx
+01de38c3 e8d8a81e01                     call       0x2fce1a0 ; UnityEngine.CoreModule:Application:System.String UnityEngine.Application::get_version()
+01de38c8 488b0d69ae5902                 mov        rcx, qword ptr [rip + 0x259ae69]
+01de38cf 4533c0                         xor        r8d, r8d
+01de38d2 488bd0                         mov        rdx, rax
+01de38d5 4883c428                       add        rsp, 0x28
+01de38d9 e992b30900                     jmp        0x1e7ec70 ; mscorlib:String:System.String System.String::Concat(System.String,System.String)

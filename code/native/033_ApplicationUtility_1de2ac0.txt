@@ -1,0 +1,55 @@
+{"assembly": "KANAI.Kernel", "file": "ApplicationUtility.cs", "originalType": "KANAI.Kernel.ApplicationUtility", "rva": 31337152, "length": 261, "signature": "System.Void KANAI.Kernel.ApplicationUtility::InitializeScreenSize()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01de2ac0 4883ec48                       sub        rsp, 0x48
+01de2ac4 803dda0e880200                 cmp        byte ptr [rip + 0x2880eda], 0
+01de2acb 0f29742430                     movaps     xmmword ptr [rsp + 0x30], xmm6
+01de2ad0 7513                           jne        0x1de2ae5
+01de2ad2 488d0d1f2a5a02                 lea        rcx, [rip + 0x25a2a1f]
+01de2ad9 e872df6ffe                     call       0x4e0a50 ; 
+01de2ade c605c00e880201                 mov        byte ptr [rip + 0x2880ec0], 1
+01de2ae5 488b0d0c2a5a02                 mov        rcx, qword ptr [rip + 0x25a2a0c]
+01de2aec 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2af3 750c                           jne        0x1de2b01
+01de2af5 e896e26ffe                     call       0x4e0d90 ; 
+01de2afa 488b0df7295a02                 mov        rcx, qword ptr [rip + 0x25a29f7]
+01de2b01 488b81b8000000                 mov        rax, qword ptr [rcx + 0xb8]
+01de2b08 0f57f6                         xorps      xmm6, xmm6
+01de2b0b 0f2f7024                       comiss     xmm6, dword ptr [rax + 0x24]
+01de2b0f 7326                           jae        0x1de2b37
+01de2b11 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2b18 750c                           jne        0x1de2b26
+01de2b1a e871e26ffe                     call       0x4e0d90 ; 
+01de2b1f 488b0dd2295a02                 mov        rcx, qword ptr [rip + 0x25a29d2]
+01de2b26 488b81b8000000                 mov        rax, qword ptr [rcx + 0xb8]
+01de2b2d 0f2f7028                       comiss     xmm6, dword ptr [rax + 0x28]
+01de2b31 0f8284000000                   jb         0x1de2bbb
+01de2b37 33c9                           xor        ecx, ecx
+01de2b39 0f297c2420                     movaps     xmmword ptr [rsp + 0x20], xmm7
+01de2b3e e8cd102301                     call       0x3013c10 ; UnityEngine.CoreModule:Screen:System.Int32 UnityEngine.Screen::get_width()
+01de2b43 33c9                           xor        ecx, ecx
+01de2b45 660f6ef0                       movd       xmm6, eax
+01de2b49 0f5bf6                         cvtdq2ps   xmm6, xmm6
+01de2b4c e80f102301                     call       0x3013b60 ; UnityEngine.CoreModule:Screen:System.Int32 UnityEngine.Screen::get_height()
+01de2b51 488b0da0295a02                 mov        rcx, qword ptr [rip + 0x25a29a0]
+01de2b58 660f6ef8                       movd       xmm7, eax
+01de2b5c 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2b63 0f5bff                         cvtdq2ps   xmm7, xmm7
+01de2b66 7505                           jne        0x1de2b6d
+01de2b68 e823e26ffe                     call       0x4e0d90 ; 
+01de2b6d 803d0c0e880200                 cmp        byte ptr [rip + 0x2880e0c], 0
+01de2b74 7513                           jne        0x1de2b89
+01de2b76 488d0d7b295a02                 lea        rcx, [rip + 0x25a297b]
+01de2b7d e8cede6ffe                     call       0x4e0a50 ; 
+01de2b82 c605f70d880201                 mov        byte ptr [rip + 0x2880df7], 1
+01de2b89 488b0d68295a02                 mov        rcx, qword ptr [rip + 0x25a2968]
+01de2b90 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2b97 7505                           jne        0x1de2b9e
+01de2b99 e8f2e16ffe                     call       0x4e0d90 ; 
+01de2b9e 488b0553295a02                 mov        rax, qword ptr [rip + 0x25a2953]
+01de2ba5 488b88b8000000                 mov        rcx, qword ptr [rax + 0xb8]
+01de2bac f30f117124                     movss      dword ptr [rcx + 0x24], xmm6
+01de2bb1 f30f117928                     movss      dword ptr [rcx + 0x28], xmm7
+01de2bb6 0f287c2420                     movaps     xmm7, xmmword ptr [rsp + 0x20]
+01de2bbb 0f28742430                     movaps     xmm6, xmmword ptr [rsp + 0x30]
+01de2bc0 4883c448                       add        rsp, 0x48
+01de2bc4 c3                             ret        

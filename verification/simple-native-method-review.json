@@ -1,0 +1,40 @@
+{
+  "native_source_sha256": "b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6",
+  "methods": 91,
+  "distinct_native_RVAs": 91,
+  "original_native_bytes_mismatched": [],
+  "kinds": {
+    "instance_field_getter": 50,
+    "instance_scalar_field_setter": 39,
+    "integer_constant": 2
+  },
+  "independence": "Independent PE section mapping and byte comparison against immutable original GameAssembly.dll; synthetic native and managed execution reports reviewed, not rerun by verifier.",
+  "target_installation": [
+    {
+      "assembly": "InGame.Kernel, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "sha256": "2318e5f51e9be734e24cac4d408b070ef069e1367e5d06e5a4668684a62f262f",
+      "matches_verified_candidate": true
+    },
+    {
+      "assembly": "KANAI.HybridCollision, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "sha256": "751f1a9608ca820a2e46e8cfde0d76443ea4ba0e59c74715af2743b436d43f7a",
+      "matches_verified_candidate": true
+    },
+    {
+      "assembly": "KANAI.Popup, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "sha256": "758dcd832b690135015b5f31d4e9e531bced3fb2997626f05355bc3851c24c8d",
+      "matches_verified_candidate": true
+    },
+    {
+      "assembly": "KANAI.UI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "sha256": "5ba125dd19f4b8c837fe77572af651f81db39d9c98ba9f09a3fa43584adc3345",
+      "matches_verified_candidate": true
+    },
+    {
+      "assembly": "OutGame, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "sha256": "044a94c47233e72516bfeb7942a238eaa474e069be8310ad08e7df234add5b4c",
+      "matches_verified_candidate": true
+    }
+  ],
+  "full_game_boundary": "91 tiny getters/setters/constants do not establish complex movement, spawning, progression, UI, loading, audio or rendering behavior."
+}

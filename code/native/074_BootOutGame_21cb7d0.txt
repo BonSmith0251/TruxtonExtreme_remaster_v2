@@ -1,0 +1,16 @@
+{"assembly": "OutGame", "file": "BootOutGame.cs", "originalType": "OutGame.BootOutGame/<>c", "rva": 35436496, "length": 69, "signature": "System.Void OutGame.BootOutGame/<>c::<_setup>b__5_0()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+021cb7d0 4883ec28                       sub        rsp, 0x28
+021cb7d4 803db9a1490200                 cmp        byte ptr [rip + 0x249a1b9], 0
+021cb7db 7513                           jne        0x21cb7f0
+021cb7dd 488d0d846b1d02                 lea        rcx, [rip + 0x21d6b84]
+021cb7e4 e8675231fe                     call       0x4e0a50 ; 
+021cb7e9 c605a4a1490201                 mov        byte ptr [rip + 0x249a1a4], 1
+021cb7f0 488b0d716b1d02                 mov        rcx, qword ptr [rip + 0x21d6b71]
+021cb7f7 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021cb7fe 7505                           jne        0x21cb805
+021cb800 e88b5531fe                     call       0x4e0d90 ; 
+021cb805 33d2                           xor        edx, edx
+021cb807 b9d0070000                     mov        ecx, 0x7d0
+021cb80c 4883c428                       add        rsp, 0x28
+021cb810 e9eb865500                     jmp        0x2723f00 ; TXEKernel:SoundUtility:System.Int32 TXEKernel.Sound.SoundUtility::PlaySE(TXEKernel.Sound.SoundUtility/ID)

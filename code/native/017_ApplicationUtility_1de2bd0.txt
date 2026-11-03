@@ -1,0 +1,157 @@
+{"assembly": "KANAI.Kernel", "file": "ApplicationUtility.cs", "originalType": "KANAI.Kernel.ApplicationUtility", "rva": 31337424, "length": 762, "signature": "System.Boolean KANAI.Kernel.ApplicationUtility::IsCommonMonitor()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+01de2bd0 4883ec28                       sub        rsp, 0x28
+01de2bd4 803dbb0d880200                 cmp        byte ptr [rip + 0x2880dbb], 0
+01de2bdb 7513                           jne        0x1de2bf0
+01de2bdd 488d0d14295a02                 lea        rcx, [rip + 0x25a2914]
+01de2be4 e867de6ffe                     call       0x4e0a50 ; 
+01de2be9 c605a60d880201                 mov        byte ptr [rip + 0x2880da6], 1
+01de2bf0 488b0d01295a02                 mov        rcx, qword ptr [rip + 0x25a2901]
+01de2bf7 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2bfe 7505                           jne        0x1de2c05
+01de2c00 e88be16ffe                     call       0x4e0d90 ; 
+01de2c05 803d890d880200                 cmp        byte ptr [rip + 0x2880d89], 0
+01de2c0c 7513                           jne        0x1de2c21
+01de2c0e 488d0dbb265a02                 lea        rcx, [rip + 0x25a26bb]
+01de2c15 e836de6ffe                     call       0x4e0a50 ; 
+01de2c1a c605740d880201                 mov        byte ptr [rip + 0x2880d74], 1
+01de2c21 488b0da8265a02                 mov        rcx, qword ptr [rip + 0x25a26a8]
+01de2c28 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2c2f 7505                           jne        0x1de2c36
+01de2c31 e85ae16ffe                     call       0x4e0d90 ; 
+01de2c36 33c9                           xor        ecx, ecx
+01de2c38 e8a3b01e01                     call       0x2fcdce0 ; UnityEngine.CoreModule:Application:UnityEngine.RuntimePlatform UnityEngine.Application::get_platform()
+01de2c3d 83f802                         cmp        eax, 2
+01de2c40 0f847d020000                   je         0x1de2ec3
+01de2c46 488b0d83265a02                 mov        rcx, qword ptr [rip + 0x25a2683]
+01de2c4d 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2c54 7505                           jne        0x1de2c5b
+01de2c56 e835e16ffe                     call       0x4e0d90 ; 
+01de2c5b 33c9                           xor        ecx, ecx
+01de2c5d e87eb01e01                     call       0x2fcdce0 ; UnityEngine.CoreModule:Application:UnityEngine.RuntimePlatform UnityEngine.Application::get_platform()
+01de2c62 83f807                         cmp        eax, 7
+01de2c65 0f8458020000                   je         0x1de2ec3
+01de2c6b 488b0d5e265a02                 mov        rcx, qword ptr [rip + 0x25a265e]
+01de2c72 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2c79 7505                           jne        0x1de2c80
+01de2c7b e810e16ffe                     call       0x4e0d90 ; 
+01de2c80 33c9                           xor        ecx, ecx
+01de2c82 e859b01e01                     call       0x2fcdce0 ; UnityEngine.CoreModule:Application:UnityEngine.RuntimePlatform UnityEngine.Application::get_platform()
+01de2c87 83f82c                         cmp        eax, 0x2c
+01de2c8a 0f8433020000                   je         0x1de2ec3
+01de2c90 488b0d61285a02                 mov        rcx, qword ptr [rip + 0x25a2861]
+01de2c97 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2c9e 7505                           jne        0x1de2ca5
+01de2ca0 e8ebe06ffe                     call       0x4e0d90 ; 
+01de2ca5 803de20c880200                 cmp        byte ptr [rip + 0x2880ce2], 0
+01de2cac 7513                           jne        0x1de2cc1
+01de2cae 488d0d43285a02                 lea        rcx, [rip + 0x25a2843]
+01de2cb5 e896dd6ffe                     call       0x4e0a50 ; 
+01de2cba c605cd0c880201                 mov        byte ptr [rip + 0x2880ccd], 1
+01de2cc1 488b0d30285a02                 mov        rcx, qword ptr [rip + 0x25a2830]
+01de2cc8 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2ccf 7505                           jne        0x1de2cd6
+01de2cd1 e8bae06ffe                     call       0x4e0d90 ; 
+01de2cd6 803db20c880200                 cmp        byte ptr [rip + 0x2880cb2], 0
+01de2cdd 7513                           jne        0x1de2cf2
+01de2cdf 488d0dea255a02                 lea        rcx, [rip + 0x25a25ea]
+01de2ce6 e865dd6ffe                     call       0x4e0a50 ; 
+01de2ceb c6059d0c880201                 mov        byte ptr [rip + 0x2880c9d], 1
+01de2cf2 488b0dd7255a02                 mov        rcx, qword ptr [rip + 0x25a25d7]
+01de2cf9 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2d00 7505                           jne        0x1de2d07
+01de2d02 e889e06ffe                     call       0x4e0d90 ; 
+01de2d07 33c9                           xor        ecx, ecx
+01de2d09 e8d2af1e01                     call       0x2fcdce0 ; UnityEngine.CoreModule:Application:UnityEngine.RuntimePlatform UnityEngine.Application::get_platform()
+01de2d0e 83f819                         cmp        eax, 0x19
+01de2d11 0f84ac010000                   je         0x1de2ec3
+01de2d17 488b0dda275a02                 mov        rcx, qword ptr [rip + 0x25a27da]
+01de2d1e 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2d25 7505                           jne        0x1de2d2c
+01de2d27 e864e06ffe                     call       0x4e0d90 ; 
+01de2d2c 803d5d0c880200                 cmp        byte ptr [rip + 0x2880c5d], 0
+01de2d33 7513                           jne        0x1de2d48
+01de2d35 488d0d94255a02                 lea        rcx, [rip + 0x25a2594]
+01de2d3c e80fdd6ffe                     call       0x4e0a50 ; 
+01de2d41 c605480c880201                 mov        byte ptr [rip + 0x2880c48], 1
+01de2d48 488b0d81255a02                 mov        rcx, qword ptr [rip + 0x25a2581]
+01de2d4f 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2d56 7505                           jne        0x1de2d5d
+01de2d58 e833e06ffe                     call       0x4e0d90 ; 
+01de2d5d 33c9                           xor        ecx, ecx
+01de2d5f e87caf1e01                     call       0x2fcdce0 ; UnityEngine.CoreModule:Application:UnityEngine.RuntimePlatform UnityEngine.Application::get_platform()
+01de2d64 83f826                         cmp        eax, 0x26
+01de2d67 0f8456010000                   je         0x1de2ec3
+01de2d6d 488b0d84275a02                 mov        rcx, qword ptr [rip + 0x25a2784]
+01de2d74 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2d7b 7505                           jne        0x1de2d82
+01de2d7d e80ee06ffe                     call       0x4e0d90 ; 
+01de2d82 803d0a0c880200                 cmp        byte ptr [rip + 0x2880c0a], 0
+01de2d89 7513                           jne        0x1de2d9e
+01de2d8b 488d0d3e255a02                 lea        rcx, [rip + 0x25a253e]
+01de2d92 e8b9dc6ffe                     call       0x4e0a50 ; 
+01de2d97 c605f50b880201                 mov        byte ptr [rip + 0x2880bf5], 1
+01de2d9e 488b0d2b255a02                 mov        rcx, qword ptr [rip + 0x25a252b]
+01de2da5 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2dac 7505                           jne        0x1de2db3
+01de2dae e8dddf6ffe                     call       0x4e0d90 ; 
+01de2db3 33c9                           xor        ecx, ecx
+01de2db5 e826af1e01                     call       0x2fcdce0 ; UnityEngine.CoreModule:Application:UnityEngine.RuntimePlatform UnityEngine.Application::get_platform()
+01de2dba 83f825                         cmp        eax, 0x25
+01de2dbd 0f8400010000                   je         0x1de2ec3
+01de2dc3 488b0d06255a02                 mov        rcx, qword ptr [rip + 0x25a2506]
+01de2dca 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2dd1 7505                           jne        0x1de2dd8
+01de2dd3 e8b8df6ffe                     call       0x4e0d90 ; 
+01de2dd8 33c9                           xor        ecx, ecx
+01de2dda e801af1e01                     call       0x2fcdce0 ; UnityEngine.CoreModule:Application:UnityEngine.RuntimePlatform UnityEngine.Application::get_platform()
+01de2ddf 83f824                         cmp        eax, 0x24
+01de2de2 0f84db000000                   je         0x1de2ec3
+01de2de8 488b0d09275a02                 mov        rcx, qword ptr [rip + 0x25a2709]
+01de2def 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2df6 7505                           jne        0x1de2dfd
+01de2df8 e893df6ffe                     call       0x4e0d90 ; 
+01de2dfd 803d900b880200                 cmp        byte ptr [rip + 0x2880b90], 0
+01de2e04 7513                           jne        0x1de2e19
+01de2e06 488d0deb265a02                 lea        rcx, [rip + 0x25a26eb]
+01de2e0d e83edc6ffe                     call       0x4e0a50 ; 
+01de2e12 c6057b0b880201                 mov        byte ptr [rip + 0x2880b7b], 1
+01de2e19 488b0dd8265a02                 mov        rcx, qword ptr [rip + 0x25a26d8]
+01de2e20 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2e27 7505                           jne        0x1de2e2e
+01de2e29 e862df6ffe                     call       0x4e0d90 ; 
+01de2e2e 803d5c0b880200                 cmp        byte ptr [rip + 0x2880b5c], 0
+01de2e35 7513                           jne        0x1de2e4a
+01de2e37 488d0d92245a02                 lea        rcx, [rip + 0x25a2492]
+01de2e3e e80ddc6ffe                     call       0x4e0a50 ; 
+01de2e43 c605470b880201                 mov        byte ptr [rip + 0x2880b47], 1
+01de2e4a 488b0d7f245a02                 mov        rcx, qword ptr [rip + 0x25a247f]
+01de2e51 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2e58 7505                           jne        0x1de2e5f
+01de2e5a e831df6ffe                     call       0x4e0d90 ; 
+01de2e5f 33c9                           xor        ecx, ecx
+01de2e61 e87aae1e01                     call       0x2fcdce0 ; UnityEngine.CoreModule:Application:UnityEngine.RuntimePlatform UnityEngine.Application::get_platform()
+01de2e66 83f820                         cmp        eax, 0x20
+01de2e69 7458                           je         0x1de2ec3
+01de2e6b 488b0d86265a02                 mov        rcx, qword ptr [rip + 0x25a2686]
+01de2e72 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2e79 7505                           jne        0x1de2e80
+01de2e7b e810df6ffe                     call       0x4e0d90 ; 
+01de2e80 803d0b0b880200                 cmp        byte ptr [rip + 0x2880b0b], 0
+01de2e87 7513                           jne        0x1de2e9c
+01de2e89 488d0d40245a02                 lea        rcx, [rip + 0x25a2440]
+01de2e90 e8bbdb6ffe                     call       0x4e0a50 ; 
+01de2e95 c605f60a880201                 mov        byte ptr [rip + 0x2880af6], 1
+01de2e9c 488b0d2d245a02                 mov        rcx, qword ptr [rip + 0x25a242d]
+01de2ea3 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+01de2eaa 7505                           jne        0x1de2eb1
+01de2eac e8dfde6ffe                     call       0x4e0d90 ; 
+01de2eb1 33c9                           xor        ecx, ecx
+01de2eb3 e828ae1e01                     call       0x2fcdce0 ; UnityEngine.CoreModule:Application:UnityEngine.RuntimePlatform UnityEngine.Application::get_platform()
+01de2eb8 83f833                         cmp        eax, 0x33
+01de2ebb 0f94c0                         sete       al
+01de2ebe 4883c428                       add        rsp, 0x28
+01de2ec2 c3                             ret        
+01de2ec3 b001                           mov        al, 1
+01de2ec5 4883c428                       add        rsp, 0x28
+01de2ec9 c3                             ret        

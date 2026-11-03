@@ -1,0 +1,90 @@
+{"assembly": "OutGame", "file": "BootOutGame.cs", "originalType": "OutGame.BootOutGame/<_releasePresenter>d__10", "rva": 35455344, "length": 372, "signature": "System.Boolean OutGame.BootOutGame/<_releasePresenter>d__10::MoveNext()"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+021d0170 4053                           push       rbx
+021d0172 4883ec20                       sub        rsp, 0x20
+021d0176 803d1e58490200                 cmp        byte ptr [rip + 0x249581e], 0
+021d017d 488bd9                         mov        rbx, rcx
+021d0180 7513                           jne        0x21d0195
+021d0182 488d0d4fc01e02                 lea        rcx, [rip + 0x21ec04f]
+021d0189 e8c20831fe                     call       0x4e0a50 ; 
+021d018e c6050658490201                 mov        byte ptr [rip + 0x2495806], 1
+021d0195 8b4b10                         mov        ecx, dword ptr [rbx + 0x10]
+021d0198 85c9                           test       ecx, ecx
+021d019a 0f8497000000                   je         0x21d0237
+021d01a0 83e901                         sub        ecx, 1
+021d01a3 7462                           je         0x21d0207
+021d01a5 83e901                         sub        ecx, 1
+021d01a8 7418                           je         0x21d01c2
+021d01aa 32c0                           xor        al, al
+021d01ac 83f901                         cmp        ecx, 1
+021d01af 0f8524010000                   jne        0x21d02d9
+021d01b5 c74310ffffffff                 mov        dword ptr [rbx + 0x10], 0xffffffff
+021d01bc 4883c420                       add        rsp, 0x20
+021d01c0 5b                             pop        rbx
+021d01c1 c3                             ret        
+021d01c2 c74310ffffffff                 mov        dword ptr [rbx + 0x10], 0xffffffff
+021d01c9 488b0d08c01e02                 mov        rcx, qword ptr [rip + 0x21ec008]
+021d01d0 83b9e400000000                 cmp        dword ptr [rcx + 0xe4], 0
+021d01d7 7505                           jne        0x21d01de
+021d01d9 e8b20b31fe                     call       0x4e0d90 ; 
+021d01de 33c9                           xor        ecx, ecx
+021d01e0 e8eb9de9ff                     call       0x2069fd0 ; mscorlib:GC:System.Void System.GC::Collect()
+021d01e5 488d4b18                       lea        rcx, [rbx + 0x18]
+021d01e9 48c7431800000000               mov        qword ptr [rbx + 0x18], 0
+021d01f1 33d2                           xor        edx, edx
+021d01f3 e888fb30fe                     call       0x4dfd80 ; 
+021d01f8 b001                           mov        al, 1
+021d01fa c7431003000000                 mov        dword ptr [rbx + 0x10], 3
+021d0201 4883c420                       add        rsp, 0x20
+021d0205 5b                             pop        rbx
+021d0206 c3                             ret        
+021d0207 33c9                           xor        ecx, ecx
+021d0209 c74310ffffffff                 mov        dword ptr [rbx + 0x10], 0xffffffff
+021d0210 e82b0fea00                     call       0x3071140 ; UnityEngine.CoreModule:Resources:UnityEngine.AsyncOperation UnityEngine.Resources::UnloadUnusedAssets()
+021d0215 488d4b18                       lea        rcx, [rbx + 0x18]
+021d0219 48c7431800000000               mov        qword ptr [rbx + 0x18], 0
+021d0221 33d2                           xor        edx, edx
+021d0223 e858fb30fe                     call       0x4dfd80 ; 
+021d0228 b001                           mov        al, 1
+021d022a c7431002000000                 mov        dword ptr [rbx + 0x10], 2
+021d0231 4883c420                       add        rsp, 0x20
+021d0235 5b                             pop        rbx
+021d0236 c3                             ret        
+021d0237 48837b2000                     cmp        qword ptr [rbx + 0x20], 0
+021d023c 48897c2430                     mov        qword ptr [rsp + 0x30], rdi
+021d0241 488b7b28                       mov        rdi, qword ptr [rbx + 0x28]
+021d0245 c74310ffffffff                 mov        dword ptr [rbx + 0x10], 0xffffffff
+021d024c 0f848d000000                   je         0x21d02df
+021d0252 803d3357490200                 cmp        byte ptr [rip + 0x2495733], 0
+021d0259 751f                           jne        0x21d027a
+021d025b 488d0d4edc1e02                 lea        rcx, [rip + 0x21edc4e]
+021d0262 e8e90731fe                     call       0x4e0a50 ; 
+021d0267 488d0d8ab11b02                 lea        rcx, [rip + 0x21bb18a]
+021d026e e8dd0731fe                     call       0x4e0a50 ; 
+021d0273 c6051257490201                 mov        byte ptr [rip + 0x2495712], 1
+021d027a 4885ff                         test       rdi, rdi
+021d027d 7460                           je         0x21d02df
+021d027f 488b17                         mov        rdx, qword ptr [rdi]
+021d0282 488bcf                         mov        rcx, rdi
+021d0285 488b82b8010000                 mov        rax, qword ptr [rdx + 0x1b8]
+021d028c 488b92c0010000                 mov        rdx, qword ptr [rdx + 0x1c0]
+021d0293 ffd0                           call       rax
+021d0295 4c8b055cb11b02                 mov        r8, qword ptr [rip + 0x21bb15c]
+021d029c 4533c9                         xor        r9d, r9d
+021d029f 488b0d0adc1e02                 mov        rcx, qword ptr [rip + 0x21edc0a]
+021d02a6 488bd0                         mov        rdx, rax
+021d02a9 e8d2e6caff                     call       0x1e7e980 ; mscorlib:String:System.String System.String::Concat(System.String,System.String,System.String)
+021d02ae 33d2                           xor        edx, edx
+021d02b0 488bc8                         mov        rcx, rax
+021d02b3 e8f842c1ff                     call       0x1de45b0 ; KANAI.Kernel:AssetLoader:System.Void KANAI.Kernel.AssetLoader::Release(System.String)
+021d02b8 488d4b18                       lea        rcx, [rbx + 0x18]
+021d02bc 48c7431800000000               mov        qword ptr [rbx + 0x18], 0
+021d02c4 33d2                           xor        edx, edx
+021d02c6 e8b5fa30fe                     call       0x4dfd80 ; 
+021d02cb 488b7c2430                     mov        rdi, qword ptr [rsp + 0x30]
+021d02d0 b001                           mov        al, 1
+021d02d2 c7431001000000                 mov        dword ptr [rbx + 0x10], 1
+021d02d9 4883c420                       add        rsp, 0x20
+021d02dd 5b                             pop        rbx
+021d02de c3                             ret        
+021d02df e81c0a31fe                     call       0x4e0d00 ; 

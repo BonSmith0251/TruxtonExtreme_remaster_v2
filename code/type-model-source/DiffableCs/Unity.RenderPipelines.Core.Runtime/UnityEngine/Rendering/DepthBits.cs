@@ -1,0 +1,12 @@
+namespace UnityEngine.Rendering;
+
+[Token(Token = "0x2000195")]
+public enum DepthBits : int
+{
+	None = 0,
+	Depth8 = 8,
+	Depth16 = 16,
+	Depth24 = 24,
+	Depth32 = 32,
+}
+

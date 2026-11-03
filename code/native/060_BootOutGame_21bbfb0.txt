@@ -1,0 +1,34 @@
+{"assembly": "OutGame", "file": "BootOutGame.cs", "originalType": "OutGame.BootOutGame", "rva": 35372976, "length": 132, "signature": "System.Collections.IEnumerator OutGame.BootOutGame::_releasePresenter(System.Type)"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+021bbfb0 48895c2408                     mov        qword ptr [rsp + 8], rbx
+021bbfb5 4889742410                     mov        qword ptr [rsp + 0x10], rsi
+021bbfba 57                             push       rdi
+021bbfbb 4883ec20                       sub        rsp, 0x20
+021bbfbf 803dc8994a0200                 cmp        byte ptr [rip + 0x24a99c8], 0
+021bbfc6 488bfa                         mov        rdi, rdx
+021bbfc9 488bf1                         mov        rsi, rcx
+021bbfcc 7513                           jne        0x21bbfe1
+021bbfce 488d0dd39a1b02                 lea        rcx, [rip + 0x21b9ad3]
+021bbfd5 e8764a32fe                     call       0x4e0a50 ; 
+021bbfda c605ad994a0201                 mov        byte ptr [rip + 0x24a99ad], 1
+021bbfe1 488b0dc09a1b02                 mov        rcx, qword ptr [rip + 0x21b9ac0]
+021bbfe8 e8c34c32fe                     call       0x4e0cb0 ; 
+021bbfed 33d2                           xor        edx, edx
+021bbfef 488bc8                         mov        rcx, rax
+021bbff2 488bd8                         mov        rbx, rax
+021bbff5 e8b60d40fe                     call       0x5bcdb0 ; AEAsAnimation:AEAsAnimationRoot:System.Void AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation:AEComposition:System.Void AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpAsync>d__16::System.IDisposable.Dispose() || AEAsAnimation:AELayerReflection:System.Void AEAsAnimation.AELayerReflection/<SetUpChildAsync>d__25::System.IDisposable.Dispose()
+021bbffa 488d4b20                       lea        rcx, [rbx + 0x20]
+021bbffe c7431000000000                 mov        dword ptr [rbx + 0x10], 0
+021bc005 488bd6                         mov        rdx, rsi
+021bc008 48897320                       mov        qword ptr [rbx + 0x20], rsi
+021bc00c e86f3d32fe                     call       0x4dfd80 ; 
+021bc011 488d4b28                       lea        rcx, [rbx + 0x28]
+021bc015 48897b28                       mov        qword ptr [rbx + 0x28], rdi
+021bc019 488bd7                         mov        rdx, rdi
+021bc01c e85f3d32fe                     call       0x4dfd80 ; 
+021bc021 488b742438                     mov        rsi, qword ptr [rsp + 0x38]
+021bc026 488bc3                         mov        rax, rbx
+021bc029 488b5c2430                     mov        rbx, qword ptr [rsp + 0x30]
+021bc02e 4883c420                       add        rsp, 0x20
+021bc032 5f                             pop        rdi
+021bc033 c3                             ret        

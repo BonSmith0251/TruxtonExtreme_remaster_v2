@@ -1,0 +1,27 @@
+{"assembly": "OutGame", "file": "BootOutGame.cs", "originalType": "OutGame.BootOutGame", "rva": 35372496, "length": 111, "signature": "System.String OutGame.BootOutGame::_getPresenterPath(System.Type)"}
+source_sha256=b3ee81c6bf8506e8134512e14640b7bdae6092269893ccdea40f2afe758b5ab6
+021bbdd0 4053                           push       rbx
+021bbdd2 4883ec20                       sub        rsp, 0x20
+021bbdd6 803daf9b4a0200                 cmp        byte ptr [rip + 0x24a9baf], 0
+021bbddd 488bda                         mov        rbx, rdx
+021bbde0 751f                           jne        0x21bbe01
+021bbde2 488d0dc7202002                 lea        rcx, [rip + 0x22020c7]
+021bbde9 e8624c32fe                     call       0x4e0a50 ; 
+021bbdee 488d0d03f61c02                 lea        rcx, [rip + 0x21cf603]
+021bbdf5 e8564c32fe                     call       0x4e0a50 ; 
+021bbdfa c6058b9b4a0201                 mov        byte ptr [rip + 0x24a9b8b], 1
+021bbe01 4885db                         test       rbx, rbx
+021bbe04 7434                           je         0x21bbe3a
+021bbe06 488b13                         mov        rdx, qword ptr [rbx]
+021bbe09 488bcb                         mov        rcx, rbx
+021bbe0c 488b82b8010000                 mov        rax, qword ptr [rdx + 0x1b8]
+021bbe13 488b92c0010000                 mov        rdx, qword ptr [rdx + 0x1c0]
+021bbe1a ffd0                           call       rax
+021bbe1c 4c8b05d5f51c02                 mov        r8, qword ptr [rip + 0x21cf5d5]
+021bbe23 4533c9                         xor        r9d, r9d
+021bbe26 488b0d83202002                 mov        rcx, qword ptr [rip + 0x2202083]
+021bbe2d 488bd0                         mov        rdx, rax
+021bbe30 4883c420                       add        rsp, 0x20
+021bbe34 5b                             pop        rbx
+021bbe35 e9462bccff                     jmp        0x1e7e980 ; mscorlib:String:System.String System.String::Concat(System.String,System.String,System.String)
+021bbe3a e8c14e32fe                     call       0x4e0d00 ; 
