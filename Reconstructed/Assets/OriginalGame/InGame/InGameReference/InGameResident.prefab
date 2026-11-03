@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1709254077376921
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4730242686860875}
+  - component: {fileID: 114724804207875695}
+  m_Layer: 0
+  m_Name: InGameResident
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4730242686860875
+Transform:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709254077376921}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!114 &114724804207875695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709254077376921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1053863514, guid: e1f38f7444bde25d3daf9193fd376658, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  _routeData:
+  - itemCarryDrop00
+  - itemCarryDrop01
+  - powerItemSelect00
+  _effectPalette: {fileID: 11400000, guid: 7c94f4fed6c1b014091b1dc7fcfc9339, type: 2}
+  _animationPalette: {fileID: 11400000, guid: d0820f8974d182648983b0078f034c49, type: 2}
+  _bulletPalette: {fileID: 11400000, guid: 2b425b4b1634d0748bc5ed726114208c, type: 2}
+  _bulletSEPalette: {fileID: 11400000, guid: 7af23d9c5119e0d4b898d814c33cd508, type: 2}
+  _regidentBullet: {fileID: 11400000, guid: 3315de09eb3c8434cb86dbb0769deb1a, type: 2}
+  _hitFlashColors:
+  - {r: 1, g: 1, b: 1, a: 0.101960786}
+  - {r: 0.19277322, g: 0.43333438, b: 0.7169812, a: 0.101960786}
+  - {r: 0.23073158, g: 0.5754717, b: 0.25667974, a: 0.101960786}
+  - {r: 0.6784314, g: 0.34481877, b: 0.19999999, a: 0.101960786}
+  - {r: 0.6886792, g: 0.4258302, b: 0.11369702, a: 0.101960786}
+  - {r: 0.31243324, g: 0.51552814, b: 0.5566038, a: 0.101960786}
+  - {r: 0.6603774, g: 0.19624422, b: 0.434698, a: 0.101960786}
+  - {r: 0.2291788, g: 0.21293165, b: 0.5188679, a: 0.101960786}
+  - {r: 0.45763257, g: 0.3216002, b: 0.6886792, a: 0.101960786}
+  _playerShotAssets:
+  - m_AssetGUID: 963553dce8dcb184cb329513690fb068
+    m_SubObjectName:
+    m_SubObjectType:
+  - m_AssetGUID: 365ba339a31ca774393a48622e60d612
+    m_SubObjectName:
+    m_SubObjectType:
+  - m_AssetGUID: 97357a866adda7f4fb9f144972acf47a
+    m_SubObjectName:
+    m_SubObjectType:
+  - m_AssetGUID: 66b49b7c295431546bda32a1a9d37ae2
+    m_SubObjectName:
+    m_SubObjectType:
+  - m_AssetGUID: 203ad5c067e593e43b3927ffcadb2ad8
+    m_SubObjectName:
+    m_SubObjectType:
+  - m_AssetGUID: 81934cea1e4f23b4d9a09d644aa849ef
+    m_SubObjectName:
+    m_SubObjectType:
+  - m_AssetGUID: c213fd109e260234590991a213bd94df
+    m_SubObjectName:
+    m_SubObjectType:
+  _ingameScaler:
+    m_AssetGUID: a8f296161c0196f488a1750ab247e208
+    m_SubObjectName:
+    m_SubObjectType:
+  _playerJetColors: {fileID: 11400000, guid: 52c810b593557424283ae36056c7d8a0, type: 2}
+  _billboardMaterial: {fileID: 2100000, guid: 6c4f055f91d030f4b8b68ade6755be38, type: 2}
+  _dropItemTable: {fileID: 11400000, guid: 56c1f2dff1d66464bae488379632994a, type: 2}

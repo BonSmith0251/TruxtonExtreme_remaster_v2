@@ -1,0 +1,636 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1370681095, guid: e1f38f7444bde25d3daf9193fd376658, type: 3}
+  m_Name: ene_mq01
+  m_EditorClassIdentifier:
+  dataVersion: 539099684
+  attribute: 16
+  objectName: Pf_Ene_Mq01
+  routeNames: []
+  _smoothRotateValue: 0.1
+  durationTime: 120
+  startPosition: {x: 0, y: 0, z: 150}
+  invincibleTime: 0
+  PlaneBaseY: -20
+  placementDatas:
+  - objectName:
+    moveSpeed: 30
+    delayTime: 0
+    _moveSpeedRange: 0
+    offset: {x: 0, y: 0, z: 0}
+    rotate: {x: 0, y: 180, z: 0}
+    _offsetRange: {x: 0, y: 0, z: 0}
+    easeType: 7
+    lookAt: 31
+    attributeFlag: 0
+    PlaneOffsetY: 0
+  eventDatas:
+  - eventType: 10
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 0
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: common_U120
+    intValue1: 512
+    intValue2: 0
+    intValue3: 0
+    dotime: 60
+    randomFire: 0
+    randomWait: 0
+    nameValue:
+    subnameValue:
+    flag0: 0
+    rpidf: 0
+  - eventType: 21
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 0
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: wings
+    intValue1: 0
+    intValue2: 0
+    intValue3: 0
+    dotime: 60
+    randomFire: 0
+    randomWait: 0
+    nameValue:
+    subnameValue:
+    flag0: 0
+    rpidf: 0
+  - eventType: 2
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 0
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: -90}
+    stringValue: common_D60
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 0
+    randomFire: 0
+    randomWait: 0
+    nameValue: pf_ene_mq01/ene_mq01_wing60
+    subnameValue:
+    flag0: 1
+    rpidf: 0
+  - eventType: 2
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 0
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 90}
+    stringValue: common_D60
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 0
+    randomFire: 0
+    randomWait: 0
+    nameValue: pf_ene_mq01/ene_mq01_wing40
+    subnameValue:
+    flag0: 1
+    rpidf: 0
+  - eventType: 15
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 0
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: common_D120
+    intValue1: 0
+    intValue2: 0
+    intValue3: 0
+    dotime: 60
+    randomFire: 0
+    randomWait: 0
+    nameValue:
+    subnameValue:
+    flag0: 0
+    rpidf: 0
+  - eventType: 2
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 1.2
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 90}
+    stringValue: common_D60
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 2
+    randomFire: 0
+    randomWait: 0
+    nameValue: pf_ene_mq01/ene_mq01_wing60
+    subnameValue:
+    flag0: 0
+    rpidf: 0
+  - eventType: 2
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 1.2
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: -90}
+    stringValue: common_D60
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 2
+    randomFire: 0
+    randomWait: 0
+    nameValue: pf_ene_mq01/ene_mq01_wing40
+    subnameValue:
+    flag0: 0
+    rpidf: 0
+  - eventType: 8
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 1.2
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: mq01_fire2a
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 0
+    randomFire: 0
+    randomWait: 0
+    nameValue: pf_ene_mq01/ene_mq01_body/muzzle_body_barrel_60
+    subnameValue:
+    flag0: 1
+    rpidf: 0
+  - eventType: 8
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 1.2
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: mq01_fire2b
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 0
+    randomFire: 0
+    randomWait: 0
+    nameValue: pf_ene_mq01/ene_mq01_body/muzzle_body_barrel_40
+    subnameValue:
+    flag0: 1
+    rpidf: 0
+  - eventType: 8
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 3.2
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: mq01_fire3a
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 0
+    randomFire: 0
+    randomWait: 0
+    nameValue: pf_ene_mq01/ene_mq01_body/muzzle_body_barrel_60
+    subnameValue:
+    flag0: 0
+    rpidf: 0
+  - eventType: 8
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 3.2
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: mq01_fire3b
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 0
+    randomFire: 0
+    randomWait: 0
+    nameValue: pf_ene_mq01/ene_mq01_body/muzzle_body_barrel_40
+    subnameValue:
+    flag0: 0
+    rpidf: 0
+  - eventType: 21
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 3
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: wings
+    intValue1: 1
+    intValue2: 0
+    intValue3: 0
+    dotime: 60
+    randomFire: 0
+    randomWait: 0
+    nameValue:
+    subnameValue:
+    flag0: 0
+    rpidf: 0
+  - eventType: 80
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 0
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: common_D60
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 60
+    randomFire: 0
+    randomWait: 0
+    nameValue:
+    subnameValue:
+    flag0: 0
+    rpidf: 0
+  - eventType: 8
+    repeatCount: 1
+    repeatDelay: 3
+    awakeRate: 0
+    value0: 0.1
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: mq01_fire1
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 0
+    randomFire: 0
+    randomWait: 0
+    nameValue: muzzles2
+    subnameValue:
+    flag0: 1
+    rpidf: 0
+  - eventType: 8
+    repeatCount: 1
+    repeatDelay: 3
+    awakeRate: 0
+    value0: 0.2
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: mq01_fire1
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 0
+    randomFire: 0
+    randomWait: 0
+    nameValue: muzzles3
+    subnameValue:
+    flag0: 1
+    rpidf: 0
+  - eventType: 8
+    repeatCount: 1
+    repeatDelay: 3
+    awakeRate: 0
+    value0: 0.3
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: mq01_fire1
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 0
+    randomFire: 0
+    randomWait: 0
+    nameValue: muzzles4
+    subnameValue:
+    flag0: 1
+    rpidf: 0
+  - eventType: 8
+    repeatCount: 2
+    repeatDelay: 2.5
+    awakeRate: 0
+    value0: 0
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: mq01_fire2a
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 0
+    randomFire: 0
+    randomWait: 0
+    nameValue: pf_ene_mq01/ene_mq01_body/muzzle_body_barrel_60
+    subnameValue:
+    flag0: 1
+    rpidf: 0
+  - eventType: 8
+    repeatCount: 2
+    repeatDelay: 2.5
+    awakeRate: 0
+    value0: 0
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: mq01_fire2b
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 0
+    randomFire: 0
+    randomWait: 0
+    nameValue: pf_ene_mq01/ene_mq01_body/muzzle_body_barrel_40
+    subnameValue:
+    flag0: 1
+    rpidf: 0
+  - eventType: 8
+    repeatCount: 2
+    repeatDelay: 2.5
+    awakeRate: 0
+    value0: 2
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: mq01_fire3a
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 0
+    randomFire: 0
+    randomWait: 0
+    nameValue: pf_ene_mq01/ene_mq01_body/muzzle_body_barrel_60
+    subnameValue:
+    flag0: 0
+    rpidf: 0
+  - eventType: 8
+    repeatCount: 2
+    repeatDelay: 2.5
+    awakeRate: 0
+    value0: 2
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: mq01_fire3b
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 0
+    randomFire: 0
+    randomWait: 0
+    nameValue: pf_ene_mq01/ene_mq01_body/muzzle_body_barrel_40
+    subnameValue:
+    flag0: 0
+    rpidf: 0
+  - eventType: 14
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 3
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: common_D60
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 0
+    randomFire: 0
+    randomWait: 0
+    nameValue:
+    subnameValue:
+    flag0: 0
+    rpidf: 0
+  - eventType: 5
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 0
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: LP1
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 60
+    randomFire: 0
+    randomWait: 0
+    nameValue:
+    subnameValue:
+    flag0: 0
+    rpidf: 0
+  - eventType: 15
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 0
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: common_U10
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 60
+    randomFire: 0
+    randomWait: 0
+    nameValue:
+    subnameValue:
+    flag0: 0
+    rpidf: 0
+  - eventType: 80
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 0
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: common_D60
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 60
+    randomFire: 0
+    randomWait: 0
+    nameValue:
+    subnameValue:
+    flag0: 0
+    rpidf: 0
+  - eventType: 15
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 0
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: common_D10
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 60
+    randomFire: 0
+    randomWait: 0
+    nameValue:
+    subnameValue:
+    flag0: 0
+    rpidf: 0
+  - eventType: 80
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 0
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: common_D60
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 60
+    randomFire: 0
+    randomWait: 0
+    nameValue:
+    subnameValue:
+    flag0: 0
+    rpidf: 0
+  - eventType: 101
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 0
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: LP1
+    intValue1: 0
+    intValue2: 0
+    intValue3: 0
+    dotime: 60
+    randomFire: 0
+    randomWait: 0
+    nameValue:
+    subnameValue:
+    flag0: 0
+    rpidf: 0
+  - eventType: 10
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 0
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: common_U120
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 60
+    randomFire: 0
+    randomWait: 0
+    nameValue:
+    subnameValue:
+    flag0: 0
+    rpidf: 0
+  - eventType: 2
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 0
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: -90}
+    stringValue: common_U120
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 1
+    randomFire: 0
+    randomWait: 0
+    nameValue: pf_ene_mq01/ene_mq01_wing60
+    subnameValue:
+    flag0: 0
+    rpidf: 0
+  - eventType: 2
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 0
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 90}
+    stringValue: common_U120
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 1
+    randomFire: 0
+    randomWait: 0
+    nameValue: pf_ene_mq01/ene_mq01_wing40
+    subnameValue:
+    flag0: 0
+    rpidf: 0
+  - eventType: 21
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 0.5
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: wings
+    intValue1: 0
+    intValue2: 0
+    intValue3: 0
+    dotime: 60
+    randomFire: 0
+    randomWait: 0
+    nameValue:
+    subnameValue:
+    flag0: 0
+    rpidf: 0
+  - eventType: 14
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 45
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: common_D60
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 0
+    randomFire: 0
+    randomWait: 0
+    nameValue:
+    subnameValue:
+    flag0: 0
+    rpidf: 0
+  - eventType: 15
+    repeatCount: 0
+    repeatDelay: 0
+    awakeRate: 0
+    value0: 0
+    value1: 0
+    vectorValue: {x: 0, y: 0, z: 0}
+    stringValue: common_U120
+    intValue1: 256
+    intValue2: 0
+    intValue3: 0
+    dotime: 60
+    randomFire: 0
+    randomWait: 0
+    nameValue:
+    subnameValue:
+    flag0: 0
+    rpidf: 0
+  repeatDatas:
+  - _repeatTimes: 0
+    _offsetStep: {x: 0, y: 0, z: 0}
+    _delayStep: 0
+    _speedStep: 0
+    attributeFlag: 0

@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: sg_vertex_shader_opaque_nofog
+  m_Shader: {fileID: 4800000, guid: ee206f13bde6eef4c80b8a3f562ce227, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties:
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _Tx_Albed:
+        m_Texture: {fileID: 2800000, guid: 3b735bbba61883c44942b87e8c4e8ace, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _Tx_Emission:
+        m_Texture: {fileID: 2800000, guid: c14d398cf0ebef045a5de612aec09477, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _Tx_Metaric:
+        m_Texture: {fileID: 2800000, guid: 283944e958c28e4479687154eaeaf76e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _Tx_Normal:
+        m_Texture: {fileID: 2800000, guid: b3a3d91dff9c5b746b599a8ce3e72c29, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: {}
+    m_Floats:
+      _FrensnelIntencity: 2
+      _FresnelOn: 1
+      _LocalNoisePower: 0
+      _LocalNoiseScale: 5
+      _LocalNoiseSpeed: 1.5
+      _QueueControl: -1
+      _QueueOffset: 0
+      _Smooth: 1
+      _VertexInflat: 1
+    m_Colors:
+      _EmissionColor: {r: 3.999998, g: 2.69481, b: 1.754716, a: 1}
+      _FresnelEdgeColor: {r: 0.1559265, g: 0.7156938, b: 0.3613069, a: 1}
+      _SeedV3: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 0
