@@ -1,0 +1,9 @@
+01de88f0 movss xmm3, dword ptr [rip + 0x16f82d4] ; rva=34e0bcc f=1 d=50.12387842
+01de88f8 movaps xmm2, xmm3 
+01de88fb subss xmm2, xmm0 
+01de88ff movaps xmm1, xmm2 
+01de8902 mulss xmm1, xmm2 
+01de8906 mulss xmm1, xmm2 
+01de890a subss xmm3, xmm1 
+01de890e movaps xmm0, xmm3 
+01de8911 ret 

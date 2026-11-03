@@ -1,0 +1,76 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04::Pattern1Move(System.Single) RVA 1d8cc90 len 15b
+01d8cc90 mov        qword ptr [rsp + 8], rbx
+01d8cc95 push       rdi
+01d8cc96 sub        rsp, 0x60
+01d8cc9a cmp        byte ptr [rip + 0x28d6b18], 0 ; [.data 46637b9]
+01d8cca1 mov        rbx, rcx
+01d8cca4 movaps     xmmword ptr [rsp + 0x50], xmm6
+01d8cca9 movaps     xmm6, xmm1
+01d8ccac jne        0x1d8ccc1
+01d8ccae lea        rcx, [rip + 0x2635713] ; [.data 43c23c8] TypeInfo#48759
+01d8ccb5 call       0x4e0a50
+01d8ccba mov        byte ptr [rip + 0x28d6af8], 1 ; [.data 46637b9]
+01d8ccc1 mov        rcx, qword ptr [rip + 0x2635700] ; [.data 43c23c8] TypeInfo#48759
+01d8ccc8 cmp        dword ptr [rcx + 0xe4], 0
+01d8cccf jne        0x1d8ccd6
+01d8ccd1 call       0x4e0d90
+01d8ccd6 movss      xmm3, dword ptr [rip + 0x1753efa] ; [.rdata 34e0bd8] f=10.0 d=134217760.5625 v4=['10', '20', '57.2958', '100']
+01d8ccde lea        rcx, [rsp + 0x40]
+01d8cce3 xorps      xmm2, xmm2
+01d8cce6 mov        qword ptr [rsp + 0x20], 0
+01d8ccef movaps     xmm1, xmm6
+01d8ccf2 call       0x1df7690 ; KANAI.Kernel.VectorUtility::InfinitySymbol(System.Single,System.Single,System.Single)
+01d8ccf7 xor        edx, edx
+01d8ccf9 movsd      xmm0, qword ptr [rax]
+01d8ccfd mov        edi, dword ptr [rax + 8]
+01d8cd00 movsd      qword ptr [rsp + 0x30], xmm0
+01d8cd06 movaps     xmm0, xmm6
+01d8cd09 call       0x1df71b0 ; KANAI.Kernel.VectorUtility::FreeFall(System.Single)
+01d8cd0e cmp        byte ptr [rbx + 0x2df], 0 ; ~_isReverseMove
+01d8cd15 movaps     xmm6, xmm0
+01d8cd18 je         0x1d8cd22
+01d8cd1a mulss      xmm6, dword ptr [rip + 0x1753ed2] ; [.rdata 34e0bf4] f=-1.0 d=1.58735232e-314 v4=['-1', '0', '0', '1']
+01d8cd22 movsd      xmm1, qword ptr [rbx + 0x228] ; ~_startInGamePosition
+01d8cd2a movaps     xmm2, xmm6
+01d8cd2d mulss      xmm2, dword ptr [rip + 0x18660b7] ; [.rdata 35f2dec] f=-40.0 d=-1099512422912.0 v4=['-40', '-60', '-70', '-80']
+01d8cd35 movaps     xmm0, xmm1
+01d8cd38 mov        rcx, qword ptr [rbx + 0x50]
+01d8cd3c movss      xmm4, dword ptr [rsp + 0x34]
+01d8cd42 movaps     xmm3, xmm1
+01d8cd45 movsd      qword ptr [rsp + 0x40], xmm1
+01d8cd4b shufps     xmm0, xmm0, 0x55
+01d8cd4f addss      xmm3, xmm2
+01d8cd53 movd       xmm1, edi
+01d8cd57 addss      xmm4, xmm0
+01d8cd5b addss      xmm1, dword ptr [rbx + 0x230]
+01d8cd63 test       rcx, rcx
+01d8cd66 je         0x1d8cde6
+01d8cd68 unpcklps   xmm3, xmm4
+01d8cd6b lea        rdx, [rsp + 0x30]
+01d8cd70 xor        r8d, r8d
+01d8cd73 movsd      qword ptr [rsp + 0x30], xmm3
+01d8cd79 movss      dword ptr [rsp + 0x38], xmm1
+01d8cd7f call       0x3094570 ; UnityEngine.Transform::set_localPosition(UnityEngine.Vector3)
+01d8cd84 mulss      xmm6, dword ptr [rip + 0x1866044] ; [.rdata 35f2dd0] f=80.0 d=809240697765888.0 v4=['80', '135', '150', '-0']
+01d8cd8c lea        rdx, [rsp + 0x30]
+01d8cd91 mov        rbx, qword ptr [rbx + 0x50]
+01d8cd95 lea        rcx, [rsp + 0x40]
+01d8cd9a xor        r8d, r8d
+01d8cd9d mov        qword ptr [rsp + 0x30], 0
+01d8cda6 mulss      xmm6, dword ptr [rip + 0x1753e12] ; [.rdata 34e0bc0] f=0.01745329238474369 d=2.0463635523047694e-13 v4=['0.0174533', '0.05', '0.5', '1']
+01d8cdae movss      dword ptr [rsp + 0x38], xmm6
+01d8cdb4 call       0x304d890 ; UnityEngine.Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01d8cdb9 test       rbx, rbx
+01d8cdbc je         0x1d8cde6
+01d8cdbe movups     xmm0, xmmword ptr [rax]
+01d8cdc1 xor        r8d, r8d
+01d8cdc4 lea        rdx, [rsp + 0x40]
+01d8cdc9 mov        rcx, rbx
+01d8cdcc movaps     xmmword ptr [rsp + 0x40], xmm0
+01d8cdd1 call       0x3094650 ; UnityEngine.Transform::set_localRotation(UnityEngine.Quaternion)
+01d8cdd6 mov        rbx, qword ptr [rsp + 0x70]
+01d8cddb movaps     xmm6, xmmword ptr [rsp + 0x50]
+01d8cde0 add        rsp, 0x60
+01d8cde4 pop        rdi
+01d8cde5 ret        
+01d8cde6 call       0x4e0d00

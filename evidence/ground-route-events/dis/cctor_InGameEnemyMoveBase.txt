@@ -1,0 +1,164 @@
+01cdbd00  push     rbx
+01cdbd02  sub      rsp, 0x20
+01cdbd06  cmp      byte ptr [rip + 0x29875cf], 0   ; [46632dc] bss
+01cdbd0d  jne      0x1cdbdb6
+01cdbd13  lea      rcx, [rip + 0x2698096]   ; [4373db0] MethodRef System.Collections.Generic.Dictionary`2<prim8,.TaskFlags>::Add
+01cdbd1a  call     0x4e0a50
+01cdbd1f  lea      rcx, [rip + 0x26aec7a]   ; [438a9a0] MethodRef System.Collections.Generic.Dictionary`2<prime,prime>::.ctor
+01cdbd26  call     0x4e0a50
+01cdbd2b  lea      rcx, [rip + 0x2697fc6]   ; [4373cf8] MethodRef System.Collections.Generic.Dictionary`2<prim8,.TaskFlags>::.ctor
+01cdbd32  call     0x4e0a50
+01cdbd37  lea      rcx, [rip + 0x26ae1e2]   ; [4389f20] MethodRef System.Collections.Generic.Dictionary`2<prime,InGame.Kernel.RouteLutAsset>::.ctor
+01cdbd3e  call     0x4e0a50
+01cdbd43  lea      rcx, [rip + 0x268c80e]   ; [4368558] TypeInfo G<System.Collections.Generic.Dictionary`2>
+01cdbd4a  call     0x4e0a50
+01cdbd4f  lea      rcx, [rip + 0x2691142]   ; [436ce98] TypeInfo G<System.Collections.Generic.Dictionary`2>
+01cdbd56  call     0x4e0a50
+01cdbd5b  lea      rcx, [rip + 0x2690f0e]   ; [436cc70] TypeInfo G<System.Collections.Generic.Dictionary`2>
+01cdbd62  call     0x4e0a50
+01cdbd67  lea      rcx, [rip + 0x26fd782]   ; [43d94f0] TypeInfo InGame.Kernel.InGameEnemyMoveBase
+01cdbd6e  call     0x4e0a50
+01cdbd73  lea      rcx, [rip + 0x26a206e]   ; [437dde8] TypeInfo prim1c
+01cdbd7a  call     0x4e0a50
+01cdbd7f  lea      rcx, [rip + 0x2696622]   ; [43723a8] TypeInfo primc[]
+01cdbd86  call     0x4e0a50
+01cdbd8b  lea      rcx, [rip + 0x26b7cbe]   ; [4393a50] Field .<PrivateImplementationDetails>.2A1CADED03DE data(i32)=(1110704128, 1106247680, 1101004800, 0, 10, 38, 39, 0, 0, 1, 2, 3) data(f32)=['45', '30', '20', '0', '1.4013e-44', '5.32493e-44', '5.46506e-44', '0', '0', '1.4013e-45', '2.8026e-45', '4.2039e-45']
+01cdbd92  call     0x4e0a50
+01cdbd97  lea      rcx, [rip + 0x26b8292]   ; [4394030] Field .<PrivateImplementationDetails>.692E0360A45F data(i32)=(1127481344, 1119092736, 1110704128, 0, 1065353216, 1067450368, 1069547520, 0, 1065353216, 1065353216, 1065353216, 0) data(f32)=['180', '90', '45', '0', '1', '1.25', '1.5', '0', '1', '1', '1', '0']
+01cdbd9e  call     0x4e0a50
+01cdbda3  lea      rcx, [rip + 0x26b8866]   ; [4394610] Field .<PrivateImplementationDetails>.B9B2E35D0338 data(i32)=(1077936128, 1073741824, 1065353216, 0, 0, 1, 2, 3, 0, 0, 1106247680, 1110704128) data(f32)=['3', '2', '1', '0', '0', '1.4013e-45', '2.8026e-45', '4.2039e-45', '0', '0', '30', '45']
+01cdbdaa  call     0x4e0a50
+01cdbdaf  mov      byte ptr [rip + 0x2987526], 1   ; [46632dc] bss
+01cdbdb6  mov      rcx, qword ptr [rip + 0x268c79b]   ; [4368558] TypeInfo G<System.Collections.Generic.Dictionary`2>
+01cdbdbd  call     0x4e0cb0
+01cdbdc2  mov      rdx, qword ptr [rip + 0x2697f2f]   ; [4373cf8] MethodRef System.Collections.Generic.Dictionary`2<prim8,.TaskFlags>::.ctor
+01cdbdc9  mov      rcx, rax
+01cdbdcc  mov      rbx, rax
+01cdbdcf  call     0x1832500
+01cdbdd4  test     rbx, rbx
+01cdbdd7  je       0x1cdc05a
+01cdbddd  mov      r9, qword ptr [rip + 0x2697fcc]   ; [4373db0] MethodRef System.Collections.Generic.Dictionary`2<prim8,.TaskFlags>::Add
+01cdbde4  mov      edx, 0xd
+01cdbde9  mov      r8d, 4
+01cdbdef  mov      rcx, rbx
+01cdbdf2  call     0x1843f60
+01cdbdf7  mov      r9, qword ptr [rip + 0x2697fb2]   ; [4373db0] MethodRef System.Collections.Generic.Dictionary`2<prim8,.TaskFlags>::Add
+01cdbdfe  mov      edx, 2
+01cdbe03  mov      r8d, 1
+01cdbe09  mov      rcx, rbx
+01cdbe0c  call     0x1843f60
+01cdbe11  mov      r9, qword ptr [rip + 0x2697f98]   ; [4373db0] MethodRef System.Collections.Generic.Dictionary`2<prim8,.TaskFlags>::Add
+01cdbe18  mov      edx, 3
+01cdbe1d  mov      r8d, 2
+01cdbe23  mov      rcx, rbx
+01cdbe26  call     0x1843f60
+01cdbe2b  mov      r9, qword ptr [rip + 0x2697f7e]   ; [4373db0] MethodRef System.Collections.Generic.Dictionary`2<prim8,.TaskFlags>::Add
+01cdbe32  mov      edx, 4
+01cdbe37  mov      r8d, 8
+01cdbe3d  mov      rcx, rbx
+01cdbe40  call     0x1843f60
+01cdbe45  mov      r9, qword ptr [rip + 0x2697f64]   ; [4373db0] MethodRef System.Collections.Generic.Dictionary`2<prim8,.TaskFlags>::Add
+01cdbe4c  mov      edx, 9
+01cdbe51  mov      r8d, 0x10
+01cdbe57  mov      rcx, rbx
+01cdbe5a  call     0x1843f60
+01cdbe5f  mov      rax, qword ptr [rip + 0x26fd68a]   ; [43d94f0] TypeInfo InGame.Kernel.InGameEnemyMoveBase
+01cdbe66  mov      rdx, rbx
+01cdbe69  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cdbe70  mov      qword ptr [rcx], rbx
+01cdbe73  mov      rcx, qword ptr [rip + 0x26fd676]   ; [43d94f0] TypeInfo InGame.Kernel.InGameEnemyMoveBase
+01cdbe7a  mov      rcx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cdbe81  call     0x4dfd80
+01cdbe86  mov      rcx, qword ptr [rip + 0x2690de3]   ; [436cc70] TypeInfo G<System.Collections.Generic.Dictionary`2>
+01cdbe8d  call     0x4e0cb0
+01cdbe92  mov      rdx, qword ptr [rip + 0x26ae087]   ; [4389f20] MethodRef System.Collections.Generic.Dictionary`2<prime,InGame.Kernel.RouteLutAsset>::.ctor
+01cdbe99  mov      rcx, rax
+01cdbe9c  mov      rbx, rax
+01cdbe9f  call     0x18919b0
+01cdbea4  mov      rcx, qword ptr [rip + 0x26fd645]   ; [43d94f0] TypeInfo InGame.Kernel.InGameEnemyMoveBase
+01cdbeab  mov      rdx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cdbeb2  mov      qword ptr [rdx + 8], rbx
+01cdbeb6  mov      rdx, rbx
+01cdbeb9  mov      rcx, qword ptr [rip + 0x26fd630]   ; [43d94f0] TypeInfo InGame.Kernel.InGameEnemyMoveBase
+01cdbec0  mov      rcx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cdbec7  add      rcx, 8
+01cdbecb  call     0x4dfd80
+01cdbed0  mov      rcx, qword ptr [rip + 0x2690fc1]   ; [436ce98] TypeInfo G<System.Collections.Generic.Dictionary`2>
+01cdbed7  call     0x4e0cb0
+01cdbedc  mov      rdx, qword ptr [rip + 0x26aeabd]   ; [438a9a0] MethodRef System.Collections.Generic.Dictionary`2<prime,prime>::.ctor
+01cdbee3  mov      rcx, rax
+01cdbee6  mov      rbx, rax
+01cdbee9  call     0x18919b0
+01cdbeee  mov      rcx, qword ptr [rip + 0x26fd5fb]   ; [43d94f0] TypeInfo InGame.Kernel.InGameEnemyMoveBase
+01cdbef5  mov      rdx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cdbefc  mov      qword ptr [rdx + 0x10], rbx   ; ev.eventType
+01cdbf00  mov      rdx, rbx
+01cdbf03  mov      rcx, qword ptr [rip + 0x26fd5e6]   ; [43d94f0] TypeInfo InGame.Kernel.InGameEnemyMoveBase
+01cdbf0a  mov      rcx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cdbf11  add      rcx, 0x10
+01cdbf15  call     0x4dfd80
+01cdbf1a  mov      rcx, qword ptr [rip + 0x26a1ec7]   ; [437dde8] TypeInfo prim1c
+01cdbf21  call     0x4e0cb0
+01cdbf26  xor      edx, edx
+01cdbf28  mov      rcx, rax
+01cdbf2b  mov      rbx, rax
+01cdbf2e  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01cdbf33  mov      rcx, qword ptr [rip + 0x26fd5b6]   ; [43d94f0] TypeInfo InGame.Kernel.InGameEnemyMoveBase
+01cdbf3a  mov      rdx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cdbf41  mov      qword ptr [rdx + 0x18], rbx   ; ev.repeatDelay
+01cdbf45  mov      rdx, rbx
+01cdbf48  mov      rcx, qword ptr [rip + 0x26fd5a1]   ; [43d94f0] TypeInfo InGame.Kernel.InGameEnemyMoveBase
+01cdbf4f  mov      rcx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cdbf56  add      rcx, 0x18
+01cdbf5a  call     0x4dfd80
+01cdbf5f  mov      rcx, qword ptr [rip + 0x2696442]   ; [43723a8] TypeInfo primc[]
+01cdbf66  mov      edx, 3
+01cdbf6b  call     0x4dfe00
+01cdbf70  mov      rdx, qword ptr [rip + 0x26b7ad9]   ; [4393a50] Field .<PrivateImplementationDetails>.2A1CADED03DE data(i32)=(1110704128, 1106247680, 1101004800, 0, 10, 38, 39, 0, 0, 1, 2, 3) data(f32)=['45', '30', '20', '0', '1.4013e-44', '5.32493e-44', '5.46506e-44', '0', '0', '1.4013e-45', '2.8026e-45', '4.2039e-45']
+01cdbf77  mov      rbx, rax
+01cdbf7a  xor      r8d, r8d
+01cdbf7d  mov      rcx, rax
+01cdbf80  call     0x1f40520   ; RuntimeHelpers::InitializeArray(System.Array,System.RuntimeFieldHandle)
+01cdbf85  mov      rcx, qword ptr [rip + 0x26fd564]   ; [43d94f0] TypeInfo InGame.Kernel.InGameEnemyMoveBase
+01cdbf8c  mov      rdx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cdbf93  mov      qword ptr [rdx + 0x20], rbx   ; ev.value0
+01cdbf97  mov      rdx, rbx
+01cdbf9a  mov      rcx, qword ptr [rip + 0x26fd54f]   ; [43d94f0] TypeInfo InGame.Kernel.InGameEnemyMoveBase
+01cdbfa1  mov      rcx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cdbfa8  add      rcx, 0x20
+01cdbfac  call     0x4dfd80
+01cdbfb1  mov      rcx, qword ptr [rip + 0x26963f0]   ; [43723a8] TypeInfo primc[]
+01cdbfb8  mov      edx, 3
+01cdbfbd  call     0x4dfe00
+01cdbfc2  mov      rdx, qword ptr [rip + 0x26b8647]   ; [4394610] Field .<PrivateImplementationDetails>.B9B2E35D0338 data(i32)=(1077936128, 1073741824, 1065353216, 0, 0, 1, 2, 3, 0, 0, 1106247680, 1110704128) data(f32)=['3', '2', '1', '0', '0', '1.4013e-45', '2.8026e-45', '4.2039e-45', '0', '0', '30', '45']
+01cdbfc9  xor      r8d, r8d
+01cdbfcc  mov      rcx, rax
+01cdbfcf  mov      rbx, rax
+01cdbfd2  call     0x1f40520   ; RuntimeHelpers::InitializeArray(System.Array,System.RuntimeFieldHandle)
+01cdbfd7  mov      rcx, qword ptr [rip + 0x26fd512]   ; [43d94f0] TypeInfo InGame.Kernel.InGameEnemyMoveBase
+01cdbfde  mov      rdx, rbx
+01cdbfe1  mov      r8, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cdbfe8  mov      qword ptr [r8 + 0x28], rbx   ; ev.vectorValue
+01cdbfec  mov      rcx, qword ptr [rip + 0x26fd4fd]   ; [43d94f0] TypeInfo InGame.Kernel.InGameEnemyMoveBase
+01cdbff3  mov      rcx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cdbffa  add      rcx, 0x28
+01cdbffe  call     0x4dfd80
+01cdc003  mov      rcx, qword ptr [rip + 0x269639e]   ; [43723a8] TypeInfo primc[]
+01cdc00a  mov      edx, 3
+01cdc00f  call     0x4dfe00
+01cdc014  mov      rdx, qword ptr [rip + 0x26b8015]   ; [4394030] Field .<PrivateImplementationDetails>.692E0360A45F data(i32)=(1127481344, 1119092736, 1110704128, 0, 1065353216, 1067450368, 1069547520, 0, 1065353216, 1065353216, 1065353216, 0) data(f32)=['180', '90', '45', '0', '1', '1.25', '1.5', '0', '1', '1', '1', '0']
+01cdc01b  xor      r8d, r8d
+01cdc01e  mov      rcx, rax
+01cdc021  mov      rbx, rax
+01cdc024  call     0x1f40520   ; RuntimeHelpers::InitializeArray(System.Array,System.RuntimeFieldHandle)
+01cdc029  mov      rcx, qword ptr [rip + 0x26fd4c0]   ; [43d94f0] TypeInfo InGame.Kernel.InGameEnemyMoveBase
+01cdc030  mov      rdx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cdc037  mov      qword ptr [rdx + 0x30], rbx   ; .<>u__1
+01cdc03b  mov      rdx, rbx
+01cdc03e  mov      rcx, qword ptr [rip + 0x26fd4ab]   ; [43d94f0] TypeInfo InGame.Kernel.InGameEnemyMoveBase
+01cdc045  mov      rcx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cdc04c  add      rcx, 0x30
+01cdc050  add      rsp, 0x20
+01cdc054  pop      rbx
+01cdc055  jmp      0x4dfd80
+01cdc05a  call     0x4e0d00

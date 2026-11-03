@@ -1,0 +1,170 @@
+#### InGame.Kernel.Enemy.EnemyMover::Progress(System.Single) RVA 1d6cb50 len 76
+01d6cb50  push     rbx
+01d6cb52  sub      rsp, 0x30
+01d6cb56  movaps   xmmword ptr [rsp + 0x20], xmm6   ; ev.value0
+01d6cb5b  xorps    xmm0, xmm0
+01d6cb5e  movaps   xmm6, xmm1
+01d6cb61  mov      rbx, rcx
+01d6cb64  comiss   xmm0, xmm6
+01d6cb67  jae      0x1d6cbbb
+01d6cb69  mov      rdx, qword ptr [rcx]
+01d6cb6c  mov      rax, qword ptr [rdx + 0x258]
+01d6cb73  mov      rdx, qword ptr [rdx + 0x260]
+01d6cb7a  call     rax
+01d6cb7c  test     al, al
+01d6cb7e  je       0x1d6cbbb
+01d6cb80  cmp      byte ptr [rbx + 0x294], 0   ; .<_isEventStackPlay>k__BackingField
+01d6cb87  je       0x1d6cb97
+01d6cb89  xor      r8d, r8d
+01d6cb8c  movaps   xmm1, xmm6
+01d6cb8f  mov      rcx, rbx
+01d6cb92  call     0x1d6ced0   ; EnemyMover::_execStackEvent(System.Single)
+01d6cb97  xor      edx, edx
+01d6cb99  mov      rcx, rbx
+01d6cb9c  call     0x1d43d60   ; SplineMover::IsSplineRoute()
+01d6cba1  test     al, al
+01d6cba3  jne      0x1d6cbad
+01d6cba5  cmp      byte ptr [rbx + 0x294], al   ; .<_isEventStackPlay>k__BackingField
+01d6cbab  jne      0x1d6cbbb
+01d6cbad  xor      r8d, r8d
+01d6cbb0  movaps   xmm1, xmm6
+01d6cbb3  mov      rcx, rbx
+01d6cbb6  call     0x1d43df0   ; SplineMover::Progress(System.Single)
+01d6cbbb  movaps   xmm6, xmmword ptr [rsp + 0x20]   ; ev.value0
+01d6cbc0  add      rsp, 0x30
+01d6cbc4  pop      rbx
+01d6cbc5  ret      
+#### InGame.Kernel.Enemy.EnemyMoverSnake::Progress(System.Single) RVA 1d6b210 len 20
+01d6b210  push     rbx
+01d6b212  sub      rsp, 0x20
+01d6b216  xor      r8d, r8d
+01d6b219  mov      rbx, rcx
+01d6b21c  call     0x1d6cb50   ; EnemyMover::Progress(System.Single)
+01d6b221  xor      edx, edx
+01d6b223  mov      rcx, rbx
+01d6b226  add      rsp, 0x20
+01d6b22a  pop      rbx
+01d6b22b  jmp      0x1d6b460   ; EnemyMoverSnake::_updateBones()
+#### InGame.Kernel.Enemy.EnemyMoverTurrets::Progress(System.Single) RVA 1d6c3d0 len 24b
+01d6c3d0  push     r13
+01d6c3d2  sub      rsp, 0xa0
+01d6c3d9  cmp      byte ptr [rip + 0x28f735b], 0   ; [466373b] bss
+01d6c3e0  mov      r13, rcx
+01d6c3e3  movaps   xmmword ptr [rsp + 0x70], xmm6   ; ._transformCache
+01d6c3e8  movaps   xmm6, xmm1
+01d6c3eb  jne      0x1d6c40c
+01d6c3ed  lea      rcx, [rip + 0x264baa4]   ; [43b7e98] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::IsInstanceNull
+01d6c3f4  call     0x4e0a50
+01d6c3f9  lea      rcx, [rip + 0x264bc00]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d6c400  call     0x4e0a50
+01d6c405  mov      byte ptr [rip + 0x28f732f], 1   ; [466373b] bss
+01d6c40c  xor      r8d, r8d
+01d6c40f  movaps   xmm1, xmm6
+01d6c412  mov      rcx, r13
+01d6c415  call     0x1d6cb50   ; EnemyMover::Progress(System.Single)
+01d6c41a  mov      rcx, qword ptr [rip + 0x264ba77]   ; [43b7e98] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::IsInstanceNull
+01d6c421  call     0xd102f0   ; MonoBehaviourSingleton`1::IsInstanceNull() | SimpleSingleton`1::IsInstanceNull()
+01d6c426  test     al, al
+01d6c428  jne      0x1d6c601
+01d6c42e  mov      rax, qword ptr [rip + 0x264bbcb]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d6c435  mov      qword ptr [rsp + 0xc0], rsi   ; ._speedToken
+01d6c43d  mov      qword ptr [rsp + 0x98], rdi   ; ._animationToken
+01d6c445  mov      qword ptr [rsp + 0x80], r15   ; ._transformCaches
+01d6c44d  mov      rax, qword ptr [rax + 0x20]   ; ev.value0
+01d6c451  test     byte ptr [rax + 0x135], 1
+01d6c458  jne      0x1d6c462
+01d6c45a  mov      rcx, rax
+01d6c45d  call     0x4de1e0
+01d6c462  mov      rax, qword ptr [rax + 0xc0]   ; ._speedToken
+01d6c469  mov      rax, qword ptr [rax + 0x10]   ; ev.eventType
+01d6c46d  test     byte ptr [rax + 0x135], 1
+01d6c474  jne      0x1d6c47e
+01d6c476  mov      rcx, rax
+01d6c479  call     0x4de1e0
+01d6c47e  mov      rax, qword ptr [rax + 0xb8]   ; ._hormingToken
+01d6c485  xor      edi, edi
+01d6c487  mov      rsi, qword ptr [r13 + 0x2c0]   ; ._turrets
+01d6c48e  mov      qword ptr [rsp + 0xb0], rbx   ; ._translateToken
+01d6c496  mov      qword ptr [rsp + 0xb8], rbp   ; ._hormingToken
+01d6c49e  mov      r15, qword ptr [rax]
+01d6c4a1  xor      eax, eax
+01d6c4a3  mov      qword ptr [rsp + 0x90], r12   ; ._destroyedToken
+01d6c4ab  mov      qword ptr [rsp + 0x88], r14   ; ._eventDatas
+01d6c4b3  test     rsi, rsi
+01d6c4b6  je       0x1d6c616
+01d6c4bc  lea      r14, [rsi + 0x20]   ; ev.value0
+01d6c4c0  cmp      eax, dword ptr [rsi + 0x18]   ; ev.repeatDelay
+01d6c4c3  jge      0x1d6c5c9
+01d6c4c9  cmp      edi, dword ptr [rsi + 0x18]   ; ev.repeatDelay
+01d6c4cc  jae      0x1d6c610
+01d6c4d2  test     r15, r15
+01d6c4d5  je       0x1d6c616
+01d6c4db  mov      rbx, qword ptr [r14]
+01d6c4de  mov      rbp, qword ptr [r15 + 0x130]
+01d6c4e5  test     rbx, rbx
+01d6c4e8  je       0x1d6c616
+01d6c4ee  mov      rdx, qword ptr [rbx + 0x50]   ; ev.randomFire/._animatorsPlay
+01d6c4f2  test     rdx, rdx
+01d6c4f5  je       0x1d6c616
+01d6c4fb  xor      r8d, r8d
+01d6c4fe  lea      rcx, [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01d6c503  call     0x3093ba0   ; Transform::get_position()
+01d6c508  xor      edx, edx
+01d6c50a  mov      rcx, r13
+01d6c50d  movsd    xmm6, qword ptr [rax]
+01d6c511  mov      r12d, dword ptr [rax + 8]
+01d6c515  call     0x1cdd500   ; InGameEnemyMoveBase::get_IsGroundDivision()
+01d6c51a  test     rbp, rbp
+01d6c51d  je       0x1d6c616
+01d6c523  mov      qword ptr [rsp + 0x28], 0   ; ev.vectorValue
+01d6c52c  lea      r8, [rsp + 0x30]   ; ._entryFlag
+01d6c531  movzx    r9d, al
+01d6c535  mov      byte ptr [rsp + 0x20], 0   ; ev.value0
+01d6c53a  mov      rdx, rbp
+01d6c53d  movsd    qword ptr [rsp + 0x30], xmm6   ; ._entryFlag
+01d6c543  lea      rcx, [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01d6c548  mov      dword ptr [rsp + 0x38], r12d   ; ev.stringValue/._psystems
+01d6c54d  call     0x1ddaa00   ; HybridCollisionManager::GetScreenPosition(UnityEngine.Vector3,System.Boolean,System.Boolean)
+01d6c552  movsd    xmm6, qword ptr [rax]
+01d6c556  mov      ebp, dword ptr [rax + 8]
+01d6c559  mov      rax, qword ptr [rip + 0x264baa0]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d6c560  mov      rax, qword ptr [rax + 0x20]   ; ev.value0
+01d6c564  test     byte ptr [rax + 0x135], 1
+01d6c56b  jne      0x1d6c575
+01d6c56d  mov      rcx, rax
+01d6c570  call     0x4de1e0
+01d6c575  mov      rax, qword ptr [rax + 0xc0]   ; ._speedToken
+01d6c57c  mov      rax, qword ptr [rax + 0x10]   ; ev.eventType
+01d6c580  test     byte ptr [rax + 0x135], 1
+01d6c587  jne      0x1d6c591
+01d6c589  mov      rcx, rax
+01d6c58c  call     0x4de1e0
+01d6c591  mov      rax, qword ptr [rax + 0xb8]   ; ._hormingToken
+01d6c598  mov      rcx, qword ptr [rax]
+01d6c59b  test     rcx, rcx
+01d6c59e  je       0x1d6c616
+01d6c5a0  xor      r8d, r8d
+01d6c5a3  movsd    qword ptr [rsp + 0x40], xmm6   ; ev.intValue1/._animators
+01d6c5a9  lea      rdx, [rsp + 0x40]   ; ev.intValue1/._animators
+01d6c5ae  mov      dword ptr [rsp + 0x48], ebp   ; ev.intValue3/.GameObjectCache
+01d6c5b2  call     0x1ce7300   ; InGameManager::IsFireDistance(UnityEngine.Vector3)
+01d6c5b7  xor      al, 1
+01d6c5b9  inc      edi
+01d6c5bb  mov      byte ptr [rbx + 0x4b], al
+01d6c5be  add      r14, 8
+01d6c5c2  mov      eax, edi
+01d6c5c4  jmp      0x1d6c4c0
+01d6c5c9  mov      r14, qword ptr [rsp + 0x88]   ; ._eventDatas
+01d6c5d1  mov      r12, qword ptr [rsp + 0x90]   ; ._destroyedToken
+01d6c5d9  mov      rbp, qword ptr [rsp + 0xb8]   ; ._hormingToken
+01d6c5e1  mov      rbx, qword ptr [rsp + 0xb0]   ; ._translateToken
+01d6c5e9  mov      rsi, qword ptr [rsp + 0xc0]   ; ._speedToken
+01d6c5f1  mov      rdi, qword ptr [rsp + 0x98]   ; ._animationToken
+01d6c5f9  mov      r15, qword ptr [rsp + 0x80]   ; ._transformCaches
+01d6c601  movaps   xmm6, xmmword ptr [rsp + 0x70]   ; ._transformCache
+01d6c606  add      rsp, 0xa0
+01d6c60d  pop      r13
+01d6c60f  ret      
+01d6c610  call     0x4e0cf0
+01d6c615  int3     
+01d6c616  call     0x4e0d00

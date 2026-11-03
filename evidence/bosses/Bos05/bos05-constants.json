@@ -1,0 +1,69 @@
+{
+  "source": "GameAssembly.dll (IL2CPP x64) static constructors, read with evidence/bosses/Bos05/dis.py",
+  "Ene_Bos05.cctor": {
+    "rva": "0x1D9A300",
+    "_BulletTemplateNames[AttackPhase,AttackId]": {
+      "First":  ["Boss05/bos05front1A", "Boss05/bos05front1B", "Boss05/bos05berry1", "Boss05/bos05eyes1", "Boss05/bos05legs1", "Boss05/bos05laser01"],
+      "Second": ["Boss05/bos05front2A", "Boss05/bos05front2B", "Boss05/bos05berry2", "Boss05/bos05eyes2", "Boss05/bos05legs2", "Boss05/bos05laser01"],
+      "columns": ["FrontA", "FrontB", "Berry", "Eyes", "Legs", "Laser"]
+    },
+    "_LegHP66": 0.6666667, "_LegHP33": 0.3333333, "_LegHP00": 0.0,
+    "_PhaseEventSecondElapsedTime": "UIBossGauge.defaultBossTimeMax(180) * 0.5 = 90",
+    "_PhaseEventSecondDifficulty": "TimeSteps 9 (Passed90 / PassedHalf)",
+    "_MuzzlePackTurret": "turret",
+    "_Boss05ClipDatas": ["bos05_arm"],
+    "_Bos05childdatas": [{"childName": "Pf_EneObj_Bos05_Arm", "childNode": null, "childCount": 20}],
+    "MuzzleCount": "Enum.GetValues(Boss05MZ).Count = 4 (muzzle_body20, muzzle_body21, muzzle_turret_laser, turret_edge)",
+    "_LegAngle[LegId]": {"leg10": 30, "leg40": 45, "leg70": 60, "leg30": -30, "leg60": -45, "leg90": -60, "source": "RuntimeHelpers.InitializeArray from <PrivateImplementationDetails> field (metadata fieldDefaultValues)"},
+    "PI2": 6.2831855,
+    "_EntryNoHitTime": 2.5,
+    "_FloatHorizonTime": 20.0, "_FloatHorizonDistance": 60.0,
+    "_FloatVerticalTime": 5.0, "_FloatVerticalDistance": 8.0,
+    "_FloatAutoRecoverTime": 3.0,
+    "_ShotWait1_Turret": 1.5, "_ShotWait2_Leg": 0.5, "_ShotWait3_Body": 1.5,
+    "_arm40Inner": [60, 0, 0], "_arm60Inner": [-60, 0, 0], "_armMeshInner": [0, 0, -60],
+    "_LaserPositonX": 80.0,
+    "_ArmFireInterval": 2.5,
+    "_LaserStartPositionMoveTime": 2.7, "_LaserEndPositionMoveTime": 1.5,
+    "_LaserTurretWaitTime": 3.0, "_LaserTurretMoveTime": 1.5,
+    "_TurretRestoreSpeed": 80.0,
+    "_LaserTurretChargeTime": 1.0, "_LaserHomingTime": 0.0, "_LaserEndTime": 0.5,
+    "_LaserCancelDissolveTime": 0.2,
+    "_LaserStartAngle": 90.0, "_LaserEndAngle": -30.0,
+    "_ArmGenerateLimitCount": 10,
+    "_ArmDestroyCountResetAfterLaser": false,
+    "_ArmLimitCount1": 3, "_ArmLimitCount2": 2,
+    "_BellyTurnTime": 1.5, "_BellyTurnAngleX": 75.0, "_BellyFireInternval": 3.0
+  },
+  "Ene_Bos05.ctor": {"rva": "0x1D9AC60", "_armSEId": -1, "_legHitPoint40": 1.0, "_legHitPoint60": 1.0},
+  "Ene_Bos05_Arm.cctor": {
+    "rva": "0x1D94770",
+    "_GrowTime": 1.2, "_TwistSpeed": 360.0, "_AcceleTime": 1.0, "_StartMoveTime": 1.0,
+    "_TurnBaseSpeed": 50.0, "_TurnAngleSpeedInner": 120.0, "_TurnAngleSpeedOuter": 72.0,
+    "_minGrowScale": [0.4, 0.4, 0.4], "_maxGrowScale": [1, 1, 1],
+    "UpPosY": 50.0, "UpTime": 3.0, "upRatePerSecond": 16.666666
+  },
+  "Ene_BosBase": {
+    "hpRateRanges": [0.9, 0.75, 0.51, 0.4, 0.3, 0.2, 0.1, 0.0],
+    "hpRateRanges.source": "Ene_BosBase.cctor 0x1DBAFF0 InitializeArray (metadata fieldDefaultValues)",
+    "bossActionUpTime(step)": 10.0,
+    "battleTime(GetBattileTime = UIBossGauge.defaultBossTimeMax)": 180.0
+  },
+  "SoundUtility.ID used": {
+    "40": "exp_st3_boss_a01 (destruction small bombs)",
+    "41": "exp_st3_boss_b02 (prefab _overplayDeadSound)",
+    "42": "exp_st3_boss_c03 (end of destruction)",
+    "74": "bg5_boss_app_01 (GetStart)",
+    "75": "bg5_boss_turning_01 (belly open / close)",
+    "77": "bg5_boss_parts_firing_01 (arm enters Fire)",
+    "78": "bg5_boss_parts_return_01 (arm grow half-way, body arm regrow at 0.5 s)",
+    "79": "bg5_boss_cannon_01 (laser start / laser end)",
+    "80": "bg5_boss_charge_01 (laser charge sound)",
+    "81": "bg5_boss_beam_01 (laser beam, isLeftSide)",
+    "82": "bg5_boss_beam_02 (laser beam, right side)",
+    "106": "enemybullet013_01 (ChangeSE BulletKind.B004 on every boss template, Ene_BosBase.InitializeToPlay)",
+    "177": "boss_defeat01_01 (Ene_BosBase.StopBossTimer)",
+    "183": "bg5_boss_tentacle_01 (GetStart, Play() channel kept in _armSEId)"
+  },
+  "ShortCutEffect explosion codes": {"Little": "pf_eff_explposion04", "Small": "pf_eff_explposion01", "Middle": "pf_eff_explposion02", "Large": "pf_eff_explposion03", "Huge": "pf_eff_explposion05", "source": "ShortCutEffect.cctor 0x1D40830"}
+}

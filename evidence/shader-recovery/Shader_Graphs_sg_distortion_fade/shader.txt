@@ -1,0 +1,57 @@
+//////////////////////////////////////////
+//
+// NOTE: This is *not* a valid shader file
+//
+///////////////////////////////////////////
+Shader "Shader Graphs/sg_distortion_fade" {
+Properties {
+
+_Scale ("Scale", Float) = 10.0
+
+_ScrollSpeed ("ScrollSpeed", Float) = 1.0
+
+[ToggleUI] _NoizeOrRipple ("NoizeOrRipple", Float) = 1.0
+
+_Intensity ("Intensity", Float) = 1.0
+
+_Transparency ("Transparency", Float) = 0.5
+
+_QueueOffset ("_QueueOffset", Float) = 0.0
+
+_QueueControl ("_QueueControl", Float) = -1.0
+
+unity_Lightmaps ("unity_Lightmaps", 2DArray) = "" { }
+
+unity_LightmapsInd ("unity_LightmapsInd", 2DArray) = "" { }
+
+unity_ShadowMasks ("unity_ShadowMasks", 2DArray) = "" { }
+
+}
+SubShader {
+ Tags { "DisableBatching" = "False" "QUEUE" = "Transparent" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Transparent" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalUnlitSubTarget" "UniversalMaterialType" = "Unlit" }
+ Pass {
+ Name "Universal Forward"
+  Tags { "DisableBatching" = "False" "QUEUE" = "Transparent" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Transparent" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalUnlitSubTarget" "UniversalMaterialType" = "Unlit" }
+ ZWrite Off
+  GpuProgramID 27766
+}
+ Pass {
+ Name "MotionVectors"
+  Tags { "DisableBatching" = "False" "LIGHTMODE" = "MOTIONVECTORS" "QUEUE" = "Transparent" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Transparent" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalUnlitSubTarget" "UniversalMaterialType" = "Unlit" }
+  GpuProgramID 97398
+}
+ Pass {
+ Name "DepthNormalsOnly"
+  Tags { "DisableBatching" = "False" "LIGHTMODE" = "DepthNormalsOnly" "QUEUE" = "Transparent" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Transparent" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalUnlitSubTarget" "UniversalMaterialType" = "Unlit" }
+  GpuProgramID 146741
+}
+ Pass {
+ Name "GBuffer"
+  Tags { "DisableBatching" = "False" "LIGHTMODE" = "UniversalGBuffer" "QUEUE" = "Transparent" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Transparent" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalUnlitSubTarget" "UniversalMaterialType" = "Unlit" }
+ ZWrite Off
+  GpuProgramID 237656
+}
+}
+Fall back "Hidden/Shader Graph/FallbackError"
+CustomEditor "UnityEditor.ShaderGraph.GenericShaderGraphMaterialGUI"
+}

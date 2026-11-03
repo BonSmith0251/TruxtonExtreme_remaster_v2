@@ -1,0 +1,15 @@
+01d9b590 push rbx 
+01d9b592 sub rsp, 0x20 
+01d9b596 xor edx, edx 
+01d9b598 mov rbx, rcx 
+01d9b59b call 0x1d0dfc0 ; PawnEnemy::Initialize()
+01d9b5a0 mov rax, qword ptr [rbx + 0xb8] 
+01d9b5a7 test rax, rax 
+01d9b5aa je 0x1d9b5b9 
+01d9b5ac mov byte ptr [rax + 0x292], 1 
+01d9b5b3 add rsp, 0x20 
+01d9b5b7 pop rbx 
+01d9b5b8 ret 
+01d9b5b9 call 0x4e0d00 
+01d9b5be int3 
+01d9b5bf int3 

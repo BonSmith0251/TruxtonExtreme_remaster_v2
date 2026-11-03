@@ -1,0 +1,45 @@
+01d8ad20 mov qword ptr [rsp + 8], rbx 
+01d8ad25 push rdi 
+01d8ad26 sub rsp, 0x20 
+01d8ad2a mov rbx, rcx 
+01d8ad2d mov rcx, qword ptr [rcx + 0x40] 
+01d8ad31 test rcx, rcx 
+01d8ad34 je 0x1d8ad3d 
+01d8ad36 xor edx, edx 
+01d8ad38 call 0x2094220 ; CancellationTokenSource::Cancel()
+01d8ad3d xor edi, edi 
+01d8ad3f lea rcx, [rbx + 0x40] 
+01d8ad43 xor edx, edx 
+01d8ad45 mov qword ptr [rbx + 0x40], rdi 
+01d8ad49 call 0x4dfd80 
+01d8ad4e lea rcx, [rbx + 0x30] 
+01d8ad52 mov qword ptr [rbx + 0x30], rdi 
+01d8ad56 xor edx, edx 
+01d8ad58 call 0x4dfd80 
+01d8ad5d lea rcx, [rbx + 0x38] 
+01d8ad61 mov qword ptr [rbx + 0x38], rdi 
+01d8ad65 xor edx, edx 
+01d8ad67 call 0x4dfd80 
+01d8ad6c lea rcx, [rbx + 0x48] 
+01d8ad70 mov qword ptr [rbx + 0x48], rdi 
+01d8ad74 xor edx, edx 
+01d8ad76 call 0x4dfd80 
+01d8ad7b lea rcx, [rbx + 0x50] 
+01d8ad7f mov qword ptr [rbx + 0x50], rdi 
+01d8ad83 xor edx, edx 
+01d8ad85 mov rbx, qword ptr [rsp + 0x30] 
+01d8ad8a add rsp, 0x20 
+01d8ad8e pop rdi 
+01d8ad8f jmp 0x4dfd80 
+01d8ad94 int3 
+01d8ad95 int3 
+01d8ad96 int3 
+01d8ad97 int3 
+01d8ad98 int3 
+01d8ad99 int3 
+01d8ad9a int3 
+01d8ad9b int3 
+01d8ad9c int3 
+01d8ad9d int3 
+01d8ad9e int3 
+01d8ad9f int3 

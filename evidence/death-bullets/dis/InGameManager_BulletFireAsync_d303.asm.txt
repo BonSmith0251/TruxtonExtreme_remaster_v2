@@ -1,0 +1,334 @@
+#### InGame.Kernel.InGameManager/<BulletFireAsync>d__303::MoveNext() RVA 1d25750 len 5da
+01d25750  mov      rax, rsp
+01d25753  mov      qword ptr [rax + 0x10], rbx
+01d25757  mov      qword ptr [rax + 8], rcx
+01d2575b  push     rsi
+01d2575c  push     rdi
+01d2575d  push     r12
+01d2575f  push     r14
+01d25761  push     r15
+01d25763  sub      rsp, 0x170
+01d2576a  movaps   xmmword ptr [rax - 0x38], xmm6
+01d2576e  movaps   xmmword ptr [rax - 0x48], xmm7
+01d25772  movaps   xmmword ptr [rax - 0x58], xmm8
+01d25777  movaps   xmmword ptr [rax - 0x68], xmm9
+01d2577c  movaps   xmmword ptr [rax - 0x78], xmm10
+01d25781  mov      rbx, rcx
+01d25784  mov      qword ptr [rsp + 0x80], rcx   ; ._systemRoot
+01d2578c  cmp      byte ptr [rip + 0x293dcf9], 0   ; [466348c] bss
+01d25793  jne      0x1d257d8
+01d25795  lea      rcx, [rip + 0x2682cec]   ; [43a8488] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder::AwaitUnsafeOnCompleted<.Awaiter,.<BulletFireAsync>d__303>
+01d2579c  call     0x4e0a50
+01d257a1  lea      rcx, [rip + 0x266fc70]   ; [4395418] TypeInfo System.Threading.CancellationToken
+01d257a8  call     0x4e0a50
+01d257ad  lea      rcx, [rip + 0x26b377c]   ; [43d8f30] TypeInfo InGame.Kernel.InGameBulletManager
+01d257b4  call     0x4e0a50
+01d257b9  lea      rcx, [rip + 0x26586e0]   ; [437dea0] TypeInfo UnityEngine.Object
+01d257c0  call     0x4e0a50
+01d257c5  lea      rcx, [rip + 0x2696b04]   ; [43bc2d0] TypeInfo Cysharp.Threading.Tasks.UniTask
+01d257cc  call     0x4e0a50
+01d257d1  mov      byte ptr [rip + 0x293dcb4], 1   ; [466348c] bss
+01d257d8  xor      r12d, r12d
+01d257db  mov      dword ptr [rsp + 0x1b0], r12d   ; ._destroyedToken
+01d257e3  mov      dword ptr [rsp + 0x1b8], r12d   ; ._stageToken
+01d257eb  mov      dword ptr [rsp + 0x78], r12d   ; ._stageOrder
+01d257f0  mov      eax, dword ptr [rbx]
+01d257f2  mov      rdi, qword ptr [rbx + 0x20]   ; ._baseTimeFactor
+01d257f6  test     eax, eax
+01d257f8  jne      0x1d2582a
+01d257fa  mov      eax, dword ptr [rbx + 0x74]   ; .<>u__1
+01d257fd  mov      dword ptr [rsp + 0x1b0], eax   ; ._destroyedToken
+01d25804  xor      eax, eax
+01d25806  mov      dword ptr [rbx + 0x74], eax   ; .<>u__1
+01d25809  mov      dword ptr [rbx], 0xffffffff
+01d2580f  xorps    xmm10, xmm10
+01d25813  movss    xmm9, dword ptr [rip + 0x17bb3a0]   ; rdata 34e0bbc f=0.01,0.01745329,0.05,0.5 d=5.373717929e-17
+01d2581c  movss    xmm8, dword ptr [rip + 0x17bb3bf]   ; rdata 34e0be4 f=100,180,2000,-0.0001 d=5.629500655e+15
+01d25825  jmp      0x1d25c24
+01d2582a  mov      rax, qword ptr [rbx + 0x10]
+01d2582e  test     rax, rax
+01d25831  je       0x1d25d25
+01d25837  mov      eax, dword ptr [rax + 0x4c]   ; ._withPauseMenu
+01d2583a  mov      dword ptr [rbx + 0x48], eax   ; ._pauseReqPadNo
+01d2583d  mov      rax, qword ptr [rbx + 0x10]
+01d25841  test     rax, rax
+01d25844  je       0x1d25d20
+01d2584a  mov      eax, dword ptr [rax + 0x30]   ; ._effectTimeFactor
+01d2584d  mov      dword ptr [rbx + 0x4c], eax   ; ._withPauseMenu
+01d25850  mov      dword ptr [rbx + 0x50], r12d   ; ._isStopStage
+01d25854  mov      dword ptr [rbx + 0x54], 0x3f800000   ; ._isQuitDone
+01d2585b  mov      rax, qword ptr [rbx + 0x10]
+01d2585f  test     rax, rax
+01d25862  je       0x1d25d1b
+01d25868  movzx    eax, byte ptr [rax + 0x7c]
+01d2586c  mov      byte ptr [rbx + 0x58], al   ; ._isManualQuit
+01d2586f  cmp      qword ptr [rbx + 0x18], 0
+01d25874  je       0x1d25883
+01d25876  xor      edx, edx
+01d25878  mov      rcx, qword ptr [rbx + 0x18]
+01d2587c  call     0x2095a70   ; CancellationTokenSource::get_Token()
+01d25881  jmp      0x1d258b0
+01d25883  test     rdi, rdi
+01d25886  je       0x1d25d16
+01d2588c  mov      rax, qword ptr [rdi + 0xf0]   ; ._bulletManager
+01d25893  test     rax, rax
+01d25896  je       0x1d25d11
+01d2589c  mov      rcx, qword ptr [rax + 0x20]   ; ._baseTimeFactor
+01d258a0  test     rcx, rcx
+01d258a3  je       0x1d25d0c
+01d258a9  xor      edx, edx
+01d258ab  call     0x2095a70   ; CancellationTokenSource::get_Token()
+01d258b0  mov      qword ptr [rbx + 0x60], rax   ; ._damageMag
+01d258b4  lea      rcx, [rbx + 0x60]   ; ._damageMag
+01d258b8  xor      edx, edx
+01d258ba  call     0x4dfd80
+01d258bf  mov      qword ptr [rbx + 0x68], r12   ; ._bulletDistanceMax
+01d258c3  mov      rax, qword ptr [rbx + 0x10]
+01d258c7  test     rax, rax
+01d258ca  je       0x1d25d07
+01d258d0  mov      eax, dword ptr [rax + 0x58]   ; ._isManualQuit
+01d258d3  mov      dword ptr [rbx + 0x70], eax   ; ._stageTimeline
+01d258d6  xorps    xmm10, xmm10
+01d258da  movss    xmm9, dword ptr [rip + 0x17bb2d9]   ; rdata 34e0bbc f=0.01,0.01745329,0.05,0.5 d=5.373717929e-17
+01d258e3  movss    xmm8, dword ptr [rip + 0x17bb2f8]   ; rdata 34e0be4 f=100,180,2000,-0.0001 d=5.629500655e+15
+01d258ec  mov      eax, dword ptr [rbx + 0x48]   ; ._pauseReqPadNo
+01d258ef  cmp      dword ptr [rbx + 0x68], eax   ; ._bulletDistanceMax
+01d258f2  jge      0x1d25c63
+01d258f8  mov      rcx, qword ptr [rip + 0x266fb19]   ; [4395418] TypeInfo System.Threading.CancellationToken
+01d258ff  cmp      dword ptr [rcx + 0xe4], 0
+01d25906  jne      0x1d2590d
+01d25908  call     0x4e0d90
+01d2590d  xor      edx, edx
+01d2590f  lea      rcx, [rbx + 0x60]   ; ._damageMag
+01d25913  call     0x2096440   ; CancellationToken::get_IsCancellationRequested()
+01d25918  test     al, al
+01d2591a  jne      0x1d25c63
+01d25920  test     rdi, rdi
+01d25923  je       0x1d25d02
+01d25929  xor      edx, edx
+01d2592b  mov      rcx, rdi
+01d2592e  call     0x1cf2b30   ; InGameManager::get_IsEnemyBulletPhase()
+01d25933  test     al, al
+01d25935  je       0x1d25c63
+01d2593b  movss    xmm6, dword ptr [rbx + 0x6c]   ; ._playerCountMax
+01d25940  xor      edx, edx
+01d25942  mov      rcx, rdi
+01d25945  call     0x1cf2980   ; InGameManager::get_DeltaTime()
+01d2594a  subss    xmm6, xmm0
+01d2594e  movss    dword ptr [rbx + 0x6c], xmm6   ; ._playerCountMax
+01d25953  comiss   xmm10, dword ptr [rbx + 0x6c]   ; ._playerCountMax
+01d25958  jb       0x1d25bd8
+01d2595e  mov      rsi, qword ptr [rbx + 0x28]   ; ._playTimeFactor
+01d25962  mov      rcx, qword ptr [rip + 0x2658537]   ; [437dea0] TypeInfo UnityEngine.Object
+01d25969  cmp      dword ptr [rcx + 0xe4], 0
+01d25970  jne      0x1d25977
+01d25972  call     0x4e0d90
+01d25977  xor      r8d, r8d
+01d2597a  xor      edx, edx
+01d2597c  mov      rcx, rsi
+01d2597f  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01d25984  test     al, al
+01d25986  je       0x1d259ee
+01d25988  mov      rdx, qword ptr [rbx + 0x28]   ; ._playTimeFactor
+01d2598c  test     rdx, rdx
+01d2598f  je       0x1d25ce3
+01d25995  xor      r8d, r8d
+01d25998  lea      rcx, [rsp + 0xe8]   ; ._enemyManager
+01d259a0  call     0x3093ba0   ; Transform::get_position()
+01d259a5  movsd    xmm0, qword ptr [rax]
+01d259a9  movsd    qword ptr [rsp + 0x90], xmm0   ; ._inGameEnemyRootObject
+01d259b2  mov      eax, dword ptr [rax + 8]
+01d259b5  mov      dword ptr [rsp + 0x98], eax   ; ._inGameEnemyRoot
+01d259bc  mov      qword ptr [rsp + 0x20], r12   ; ._baseTimeFactor
+01d259c1  xor      r9d, r9d
+01d259c4  lea      r8, [rsp + 0x90]   ; ._inGameEnemyRootObject
+01d259cc  mov      rdx, rdi
+01d259cf  lea      rcx, [rsp + 0xf8]   ; ._particleManager
+01d259d7  call     0x1ce6750   ; InGameManager::GetSkyRootPosition(UnityEngine.Vector3,System.Boolean)
+01d259dc  mov      rcx, rax
+01d259df  mov      eax, dword ptr [rax + 8]
+01d259e2  movsd    xmm0, qword ptr [rcx]
+01d259e6  movsd    qword ptr [rbx + 0x30], xmm0   ; ._effectTimeFactor
+01d259eb  mov      dword ptr [rbx + 0x38], eax   ; ._lapedDeltaTime
+01d259ee  cmp      byte ptr [rbx + 0x58], 0   ; ._isManualQuit
+01d259f2  je       0x1d25acb
+01d259f8  xor      edx, edx
+01d259fa  mov      rcx, rdi
+01d259fd  call     0x1cf2d40   ; InGameManager::get_IsPlayerShooting()
+01d25a02  test     al, al
+01d25a04  je       0x1d25acb
+01d25a0a  movsd    xmm0, qword ptr [rbx + 0x30]   ; ._effectTimeFactor
+01d25a0f  movsd    qword ptr [rsp + 0xa0], xmm0   ; ._inGameGroundSkyObject
+01d25a18  mov      eax, dword ptr [rbx + 0x38]   ; ._lapedDeltaTime
+01d25a1b  mov      dword ptr [rsp + 0xa8], eax   ; ._inGameGroundSky
+01d25a22  xor      r8d, r8d
+01d25a25  lea      rdx, [rsp + 0xa0]   ; ._inGameGroundSkyObject
+01d25a2d  mov      rcx, rdi
+01d25a30  call     0x1ce4bc0   ; InGameManager::GetNearestPlayerIndexInLocal(UnityEngine.Vector3)
+01d25a35  xor      r9d, r9d
+01d25a38  mov      r8d, eax
+01d25a3b  mov      rdx, rdi
+01d25a3e  lea      rcx, [rsp + 0x108]   ; ._effectManager
+01d25a46  call     0x1ce5c90   ; InGameManager::GetPlayerSkyPosition(System.Int32)
+01d25a4b  mov      rsi, qword ptr [rbx + 0x10]
+01d25a4f  movsd    xmm6, qword ptr [rbx + 0x30]   ; ._effectTimeFactor
+01d25a54  mov      r14d, dword ptr [rbx + 0x38]   ; ._lapedDeltaTime
+01d25a58  movsd    xmm7, qword ptr [rax]
+01d25a5c  mov      r15d, dword ptr [rax + 8]
+01d25a60  mov      rcx, qword ptr [rip + 0x26b34c9]   ; [43d8f30] TypeInfo InGame.Kernel.InGameBulletManager
+01d25a67  cmp      dword ptr [rcx + 0xe4], 0
+01d25a6e  jne      0x1d25a75
+01d25a70  call     0x4e0d90
+01d25a75  movsd    qword ptr [rsp + 0xb0], xmm7   ; ._poolObject
+01d25a7e  mov      dword ptr [rsp + 0xb8], r15d   ; ._poolRoot
+01d25a86  movsd    qword ptr [rsp + 0xc0], xmm6   ; ._collisionArea
+01d25a8f  mov      dword ptr [rsp + 0xc8], r14d   ; ._pauseLabel
+01d25a97  xor      r8d, r8d
+01d25a9a  lea      rdx, [rsp + 0xb0]   ; ._poolObject
+01d25aa2  lea      rcx, [rsp + 0xc0]   ; ._collisionArea
+01d25aaa  call     0x1ccb620   ; InGameBulletManager::GetTargetBulletArc(UnityEngine.Vector3,UnityEngine.Vector3)
+01d25aaf  test     rsi, rsi
+01d25ab2  je       0x1d25ce9
+01d25ab8  xor      r8d, r8d
+01d25abb  movaps   xmm1, xmm0
+01d25abe  mov      rcx, rsi
+01d25ac1  call     0x1d614b0   ; BulletTemplate::GetLimitArc(System.Single)
+01d25ac6  movss    dword ptr [rbx + 0x50], xmm0   ; ._isStopStage
+01d25acb  mov      rcx, qword ptr [rdi + 0xf0]   ; ._bulletManager
+01d25ad2  mov      edx, dword ptr [rbx + 0x68]   ; ._bulletDistanceMax
+01d25ad5  movss    xmm1, dword ptr [rbx + 0x4c]   ; ._withPauseMenu
+01d25ada  movss    xmm2, dword ptr [rbx + 0x54]   ; ._isQuitDone
+01d25adf  movss    xmm3, dword ptr [rbx + 0x3c]   ; ._effectedTime
+01d25ae4  mov      r8, qword ptr [rbx + 0x40]   ; ._bgSlideRate
+01d25ae8  test     rcx, rcx
+01d25aeb  je       0x1d25cfd
+01d25af1  movsd    xmm0, qword ptr [rbx + 0x30]   ; ._effectTimeFactor
+01d25af6  movsd    qword ptr [rsp + 0xd0], xmm0   ; ._gameoverLabel
+01d25aff  mov      eax, dword ptr [rbx + 0x38]   ; ._lapedDeltaTime
+01d25b02  mov      dword ptr [rsp + 0xd8], eax   ; ._timeupLabel
+01d25b09  subss    xmm1, dword ptr [rbx + 0x50]   ; ._isStopStage
+01d25b0e  mov      qword ptr [rsp + 0x68], r12   ; ._bulletDistanceMax
+01d25b13  mov      qword ptr [rsp + 0x60], r8   ; ._damageMag
+01d25b18  movss    dword ptr [rsp + 0x58], xmm3   ; ._isManualQuit
+01d25b1e  movss    dword ptr [rsp + 0x50], xmm2   ; ._isStopStage
+01d25b24  movss    dword ptr [rsp + 0x48], xmm1   ; ._pauseReqPadNo
+01d25b2a  mov      qword ptr [rsp + 0x40], r12   ; ._bgSlideRate
+01d25b2f  mov      qword ptr [rsp + 0x38], r12   ; ._lapedDeltaTime
+01d25b34  mov      qword ptr [rsp + 0x30], r12   ; ._effectTimeFactor
+01d25b39  mov      dword ptr [rsp + 0x28], edx   ; ._playTimeFactor
+01d25b3d  lea      rax, [rsp + 0xd0]   ; ._gameoverLabel
+01d25b45  mov      qword ptr [rsp + 0x20], rax   ; ._baseTimeFactor
+01d25b4a  mov      r9, qword ptr [rbx + 0x10]
+01d25b4e  xor      r8d, r8d
+01d25b51  mov      rdx, rdi
+01d25b54  call     0x1ccaa40   ; InGameBulletManager::BulletFire(InGame.Kernel.InGameManager,System.Collections.Generic.List`1<InGame.Kernel.InGameBulletInterface>,InGame.Kernel.Enemy.BulletTemplate,UnityEngine.Vector3,System.Int32,UnityEngine.Transform,UnityEngine.Transform,InGame.Kernel.InGameEnemyMoveBase,System.Single,System.Single,System.Single,System.Action`1<InGame.Kernel.InGameBulletInterface>)
+01d25b59  mov      eax, dword ptr [rbx + 0x68]   ; ._bulletDistanceMax
+01d25b5c  inc      eax
+01d25b5e  mov      dword ptr [rbx + 0x68], eax   ; ._bulletDistanceMax
+01d25b61  cmp      eax, dword ptr [rbx + 0x48]   ; ._pauseReqPadNo
+01d25b64  jge      0x1d25bd8
+01d25b66  movss    xmm0, dword ptr [rbx + 0x70]   ; ._stageTimeline
+01d25b6b  addss    xmm0, dword ptr [rbx + 0x6c]   ; ._playerCountMax
+01d25b70  movss    dword ptr [rbx + 0x6c], xmm0   ; ._playerCountMax
+01d25b75  movss    xmm1, dword ptr [rbx + 0x54]   ; ._isQuitDone
+01d25b7a  mov      rax, qword ptr [rbx + 0x10]
+01d25b7e  test     rax, rax
+01d25b81  je       0x1d25cf8
+01d25b87  addss    xmm1, dword ptr [rax + 0x54]   ; ._isQuitDone
+01d25b8c  comiss   xmm9, xmm1
+01d25b90  ja       0x1d25b9e
+01d25b92  comiss   xmm1, xmm8
+01d25b96  jbe      0x1d25ba2
+01d25b98  movaps   xmm1, xmm8
+01d25b9c  jmp      0x1d25ba2
+01d25b9e  movaps   xmm1, xmm9
+01d25ba2  movss    dword ptr [rbx + 0x54], xmm1   ; ._isQuitDone
+01d25ba7  movss    xmm0, dword ptr [rbx + 0x4c]   ; ._withPauseMenu
+01d25bac  mov      rax, qword ptr [rbx + 0x10]
+01d25bb0  test     rax, rax
+01d25bb3  je       0x1d25cf3
+01d25bb9  addss    xmm0, dword ptr [rax + 0x5c]   ; ._isQuiting
+01d25bbe  movss    dword ptr [rbx + 0x4c], xmm0   ; ._withPauseMenu
+01d25bc3  test     rax, rax
+01d25bc6  je       0x1d25cee
+01d25bcc  movzx    eax, byte ptr [rax + 0x7d]
+01d25bd0  mov      byte ptr [rbx + 0x58], al   ; ._isManualQuit
+01d25bd3  jmp      0x1d25953
+01d25bd8  mov      rcx, qword ptr [rip + 0x26966f1]   ; [43bc2d0] TypeInfo Cysharp.Threading.Tasks.UniTask
+01d25bdf  cmp      dword ptr [rcx + 0xe4], 0
+01d25be6  jne      0x1d25bed
+01d25be8  call     0x4e0d90
+01d25bed  xor      ecx, ecx
+01d25bef  call     0x9dcba0   ; UInt16::GetTypeCode() | IntPtr::get_Size()
+01d25bf4  mov      dword ptr [rsp + 0x1b8], eax   ; ._stageToken
+01d25bfb  xor      edx, edx
+01d25bfd  lea      rcx, [rsp + 0x1b8]   ; ._stageToken
+01d25c05  call     0x607140   ; CSteamID::GetAccountID() | SafeModeReport::get_totMissingTargetOrFieldErrors()
+01d25c0a  mov      dword ptr [rsp + 0x1b0], eax   ; ._destroyedToken
+01d25c11  xor      edx, edx
+01d25c13  lea      rcx, [rsp + 0x1b0]   ; ._destroyedToken
+01d25c1b  call     0x7aa370   ; InGameBullet::IsLaser() | InGameBulletItem::IsLaser()
+01d25c20  test     al, al
+01d25c22  je       0x1d25c38
+01d25c24  xor      edx, edx
+01d25c26  lea      rcx, [rsp + 0x1b0]   ; ._destroyedToken
+01d25c2e  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01d25c33  jmp      0x1d258ec
+01d25c38  mov      dword ptr [rbx], r12d
+01d25c3b  mov      eax, dword ptr [rsp + 0x1b0]   ; ._destroyedToken
+01d25c42  mov      dword ptr [rbx + 0x74], eax   ; .<>u__1
+01d25c45  lea      rcx, [rbx + 8]
+01d25c49  mov      r9, qword ptr [rip + 0x2682838]   ; [43a8488] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder::AwaitUnsafeOnCompleted<.Awaiter,.<BulletFireAsync>d__303>
+01d25c50  mov      r8, rbx
+01d25c53  lea      rdx, [rsp + 0x1b0]   ; ._destroyedToken
+01d25c5b  call     0x2be10
+01d25c60  nop      
+01d25c61  jmp      0x1d25c7a
+01d25c63  mov      dword ptr [rbx], 0xfffffffe
+01d25c69  xor      eax, eax
+01d25c6b  mov      qword ptr [rbx + 0x60], rax   ; ._damageMag
+01d25c6f  lea      rcx, [rbx + 8]
+01d25c73  xor      edx, edx
+01d25c75  call     0x1132d50
+01d25c7a  lea      r11, [rsp + 0x170]   ; ._playerGamePosition
+01d25c82  mov      rbx, qword ptr [r11 + 0x38]   ; ._lapedDeltaTime
+01d25c86  movaps   xmm6, xmmword ptr [r11 - 0x10]
+01d25c8b  movaps   xmm7, xmmword ptr [r11 - 0x20]
+01d25c90  movaps   xmm8, xmmword ptr [r11 - 0x30]
+01d25c95  movaps   xmm9, xmmword ptr [r11 - 0x40]
+01d25c9a  movaps   xmm10, xmmword ptr [r11 - 0x50]
+01d25c9f  mov      rsp, r11
+01d25ca2  pop      r15
+01d25ca4  pop      r14
+01d25ca6  pop      r12
+01d25ca8  pop      rdi
+01d25ca9  pop      rsi
+01d25caa  ret      
+01d25cab  mov      rax, qword ptr [rsp + 0x80]   ; ._systemRoot
+01d25cb3  mov      dword ptr [rax], 0xfffffffe
+01d25cb9  mov      rcx, qword ptr [rsp + 0x1a0]   ; ._pauseAction
+01d25cc1  xor      eax, eax
+01d25cc3  mov      qword ptr [rcx + 0x60], rax   ; ._damageMag
+01d25cc7  mov      eax, dword ptr [rsp + 0x78]   ; ._stageOrder
+01d25ccb  dec      eax
+01d25ccd  movsxd   rdx, eax
+01d25cd0  add      rcx, 8
+01d25cd4  xor      r8d, r8d
+01d25cd7  mov      rdx, qword ptr [rsp + rdx*8 + 0x70]   ; ._stageTimeline
+01d25cdc  call     0x1132c80
+01d25ce1  jmp      0x1d25c7a
+01d25ce3  call     0x4e0d00
+01d25ce8  nop      
+01d25ce9  call     0x4e0d00
+01d25cee  call     0x4e0d00
+01d25cf3  call     0x4e0d00
+01d25cf8  call     0x4e0d00
+01d25cfd  call     0x4e0d00
+01d25d02  call     0x4e0d00
+01d25d07  call     0x4e0d00
+01d25d0c  call     0x4e0d00
+01d25d11  call     0x4e0d00
+01d25d16  call     0x4e0d00
+01d25d1b  call     0x4e0d00
+01d25d20  call     0x4e0d00
+01d25d25  call     0x4e0d00

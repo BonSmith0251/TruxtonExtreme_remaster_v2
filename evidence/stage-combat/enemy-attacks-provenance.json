@@ -1,0 +1,3515 @@
+{
+ "output": "Resources/StageCombat/enemy-attacks.json",
+ "counts": {
+  "patterns": 189,
+  "selectors": 17,
+  "models": 68,
+  "lasers": 5,
+  "speeds": 23
+ },
+ "items": {
+  "Sepper0_3way": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Regident/Sepper0_3way.asset",
+   "stages": [],
+   "sources": [
+    "R:BulletPallet"
+   ]
+  },
+  "Seppers_3way": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Regident/Seppers_3way.asset",
+   "stages": [],
+   "sources": [
+    "R:BulletPallet"
+   ]
+  },
+  "bg04_grass_fired": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/bg04_grass_fired.asset",
+   "stages": [
+    "BG04"
+   ],
+   "sources": [
+    "P:Pf_EneObj_Bg04_Grass._deadBullet"
+   ]
+  },
+  "bg05Tree": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/bg05Tree.asset",
+   "stages": [
+    "BG05"
+   ],
+   "sources": [
+    "P:Pf_BGObj_tree01b_upper._damageBullet"
+   ]
+  },
+  "bg08_battery01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/bg08_battery01_fire1.asset",
+   "stages": [
+    "BG08"
+   ],
+   "sources": [
+    "P:Pf_EneObj_Bg08_ZoneD._enemyDataName->default_bg08_battery01a",
+    "P:Pf_EneObj_Bg08_ZoneE._enemyDataName->default_bg08_battery01a"
+   ]
+  },
+  "bg08_battery02_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/bg08_battery02_fire1.asset",
+   "stages": [
+    "BG08"
+   ],
+   "sources": [
+    "P:Pf_EneObj_Bg08_ZoneA._enemyDataName->default_bg08_battery02a",
+    "P:Pf_EneObj_Bg08_ZoneB._enemyDataName->default_bg08_battery02a",
+    "P:Pf_EneObj_Bg08_ZoneC._enemyDataName->default_bg08_battery02a",
+    "P:Pf_EneObj_Bg08_ZoneF._enemyDataName->default_bg08_battery02a",
+    "P:Pf_EneObj_Bg08_ZoneG._enemyDataName->default_bg08_battery02a",
+    "P:Pf_EneObj_Bg08_ZonezBOSS._enemyDataName->default_bg08_battery02a"
+   ]
+  },
+  "bla01_fire": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/bla01_fire.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "S:pf_ene_bla01"
+   ]
+  },
+  "bma01_fire": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/bma01_fire.asset",
+   "stages": [
+    "BG03",
+    "BG05",
+    "BG06",
+    "BG07"
+   ],
+   "sources": [
+    "S:default_BMa01"
+   ]
+  },
+  "bma01_fired": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/bma01_fired.asset",
+   "stages": [
+    "BG03",
+    "BG05",
+    "BG06",
+    "BG07"
+   ],
+   "sources": [
+    "X:bma01_fired_sel"
+   ]
+  },
+  "bma01_fired_sel": {
+   "kind": "selector",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletSelecter/bma01_fired_sel.asset",
+   "stages": [
+    "BG03",
+    "BG05",
+    "BG06",
+    "BG07"
+   ],
+   "sources": [
+    "P:Pf_Ene_BMa01._deadBulletSelecter"
+   ]
+  },
+  "bos01bullet01": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss01/bos01bullet01.asset",
+   "stages": [
+    "BG01"
+   ],
+   "sources": [
+    "N:\"Boss01/bos01bullet01\""
+   ]
+  },
+  "bos01bullet10": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss01/bos01bullet10.asset",
+   "stages": [
+    "BG01"
+   ],
+   "sources": [
+    "N:\"Boss01/bos01bullet10\""
+   ]
+  },
+  "bos01bullet11": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss01/bos01bullet11.asset",
+   "stages": [
+    "BG01"
+   ],
+   "sources": [
+    "N:\"Boss01/bos01bullet11\""
+   ]
+  },
+  "bos01laser01": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss01/bos01laser01.asset",
+   "stages": [
+    "BG01"
+   ],
+   "sources": [
+    "N:\"Boss01/bos01laser01\""
+   ]
+  },
+  "bos01laser02": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss01/bos01laser02.asset",
+   "stages": [
+    "BG01"
+   ],
+   "sources": [
+    "N:\"Boss01/bos01laser02\""
+   ]
+  },
+  "bos02b04x3": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss02/bos02b04x3.asset",
+   "stages": [
+    "BG02"
+   ],
+   "sources": [
+    "N:\"Boss02/bos02b04x3\""
+   ]
+  },
+  "bos02laser01": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss02/bos02laser01.asset",
+   "stages": [
+    "BG02"
+   ],
+   "sources": [
+    "N:\"Boss02/bos02laser01\""
+   ]
+  },
+  "bos02laser10": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss02/bos02laser10.asset",
+   "stages": [
+    "BG02"
+   ],
+   "sources": [
+    "N:\"Boss02/bos02laser10\""
+   ]
+  },
+  "bos02way16_1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss02/bos02way16_1.asset",
+   "stages": [
+    "BG02"
+   ],
+   "sources": [
+    "N:\"Boss02/bos02way16_1\""
+   ]
+  },
+  "bos02way16_2": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss02/bos02way16_2.asset",
+   "stages": [
+    "BG02"
+   ],
+   "sources": [
+    "N:\"Boss02/bos02way16_2\""
+   ]
+  },
+  "bos02way5": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss02/bos02way5.asset",
+   "stages": [
+    "BG02"
+   ],
+   "sources": [
+    "N:\"Boss02/bos02way5\""
+   ]
+  },
+  "bos02way6_1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss02/bos02way6_1.asset",
+   "stages": [
+    "BG02"
+   ],
+   "sources": [
+    "N:\"Boss02/bos02way6_1\""
+   ]
+  },
+  "bos02way6_2": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss02/bos02way6_2.asset",
+   "stages": [
+    "BG02"
+   ],
+   "sources": [
+    "N:\"Boss02/bos02way6_2\""
+   ]
+  },
+  "bos02way8": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss02/bos02way8.asset",
+   "stages": [
+    "BG02"
+   ],
+   "sources": [
+    "N:\"Boss02/bos02way8\""
+   ]
+  },
+  "bos03_7way": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss03/bos03_7way.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "N:\"Boss03/bos03_7way\""
+   ]
+  },
+  "bos03_arm0": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss03/bos03_arm0.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "N:\"Boss03/bos03_arm0\""
+   ]
+  },
+  "bos03_faceL1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss03/bos03_faceL1.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "N:\"Boss03/bos03_faceL1\""
+   ]
+  },
+  "bos03_faceL2": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss03/bos03_faceL2.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "N:\"Boss03/bos03_faceL2\""
+   ]
+  },
+  "bos03_faceL3": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss03/bos03_faceL3.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "N:\"Boss03/bos03_faceL3\""
+   ]
+  },
+  "bos03_faceR1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss03/bos03_faceR1.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "N:\"Boss03/bos03_faceR1\""
+   ]
+  },
+  "bos03_faceR2": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss03/bos03_faceR2.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "N:\"Boss03/bos03_faceR2\""
+   ]
+  },
+  "bos03_faceR3": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss03/bos03_faceR3.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "N:\"Boss03/bos03_faceR3\""
+   ]
+  },
+  "bos03_las00": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss03/bos03_las00.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "N:\"Boss03/bos03_las00\""
+   ]
+  },
+  "bos03_rap3": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss03/bos03_rap3.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "N:\"Boss03/bos03_rap3\""
+   ]
+  },
+  "bos03_sidewayL": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss03/bos03_sidewayL.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "N:\"Boss03/bos03_sidewayL\""
+   ]
+  },
+  "bos03_sidewayR": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss03/bos03_sidewayR.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "N:\"Boss03/bos03_sidewayR\""
+   ]
+  },
+  "bos03_turret0": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss03/bos03_turret0.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "N:\"Boss03/bos03_turret0\""
+   ]
+  },
+  "bos04bit0": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss04/bos04bit0.asset",
+   "stages": [
+    "BG04"
+   ],
+   "sources": [
+    "N:\"Boss04/bos04bit0\""
+   ]
+  },
+  "bos04laser": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss04/bos04laser.asset",
+   "stages": [
+    "BG04"
+   ],
+   "sources": [
+    "N:\"Boss04/bos04laser\""
+   ]
+  },
+  "bos04p1way3l": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss04/bos04p1way3l.asset",
+   "stages": [
+    "BG04"
+   ],
+   "sources": [
+    "N:\"Boss04/bos04p1way3l\""
+   ]
+  },
+  "bos04p1way3r": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss04/bos04p1way3r.asset",
+   "stages": [
+    "BG04"
+   ],
+   "sources": [
+    "N:\"Boss04/bos04p1way3r\""
+   ]
+  },
+  "bos04p5way3": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss04/bos04p5way3.asset",
+   "stages": [
+    "BG04"
+   ],
+   "sources": [
+    "N:\"Boss04/bos04p5way3\""
+   ]
+  },
+  "bos04p5way3s": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss04/bos04p5way3s.asset",
+   "stages": [
+    "BG04"
+   ],
+   "sources": [
+    "N:\"Boss04/bos04p5way3s\""
+   ]
+  },
+  "bos04p6rs": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss04/bos04p6rs.asset",
+   "stages": [
+    "BG04"
+   ],
+   "sources": [
+    "N:\"Boss04/bos04p6rs\""
+   ]
+  },
+  "bos04p6sl": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss04/bos04p6sl.asset",
+   "stages": [
+    "BG04"
+   ],
+   "sources": [
+    "N:\"Boss04/bos04p6sl\""
+   ]
+  },
+  "bos05berry1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss05/bos05berry1.asset",
+   "stages": [
+    "BG05"
+   ],
+   "sources": [
+    "N:\"Boss05/bos05berry1\""
+   ]
+  },
+  "bos05berry2": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss05/bos05berry2.asset",
+   "stages": [
+    "BG05"
+   ],
+   "sources": [
+    "N:\"Boss05/bos05berry2\""
+   ]
+  },
+  "bos05eyes1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss05/bos05eyes1.asset",
+   "stages": [
+    "BG05"
+   ],
+   "sources": [
+    "N:\"Boss05/bos05eyes1\""
+   ]
+  },
+  "bos05eyes2": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss05/bos05eyes2.asset",
+   "stages": [
+    "BG05"
+   ],
+   "sources": [
+    "N:\"Boss05/bos05eyes2\""
+   ]
+  },
+  "bos05front1A": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss05/bos05front1A.asset",
+   "stages": [
+    "BG05"
+   ],
+   "sources": [
+    "N:\"Boss05/bos05front1A\""
+   ]
+  },
+  "bos05front1B": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss05/bos05front1B.asset",
+   "stages": [
+    "BG05"
+   ],
+   "sources": [
+    "N:\"Boss05/bos05front1B\""
+   ]
+  },
+  "bos05front2A": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss05/bos05front2A.asset",
+   "stages": [
+    "BG05"
+   ],
+   "sources": [
+    "N:\"Boss05/bos05front2A\""
+   ]
+  },
+  "bos05front2B": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss05/bos05front2B.asset",
+   "stages": [
+    "BG05"
+   ],
+   "sources": [
+    "N:\"Boss05/bos05front2B\""
+   ]
+  },
+  "bos05laser01": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss05/bos05laser01.asset",
+   "stages": [
+    "BG05"
+   ],
+   "sources": [
+    "N:\"Boss05/bos05laser01\""
+   ]
+  },
+  "bos05legs1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss05/bos05legs1.asset",
+   "stages": [
+    "BG05"
+   ],
+   "sources": [
+    "N:\"Boss05/bos05legs1\""
+   ]
+  },
+  "bos05legs2": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss05/bos05legs2.asset",
+   "stages": [
+    "BG05"
+   ],
+   "sources": [
+    "N:\"Boss05/bos05legs2\""
+   ]
+  },
+  "bos06_bind0": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss06/bos06_bind0.asset",
+   "stages": [
+    "BG07"
+   ],
+   "sources": [
+    "N:\"Boss06/bos06_bind0\""
+   ]
+  },
+  "bos06_core0": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss06/bos06_core0.asset",
+   "stages": [
+    "BG07"
+   ],
+   "sources": [
+    "N:\"Boss06/bos06_core0\""
+   ]
+  },
+  "bos06_core1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss06/bos06_core1.asset",
+   "stages": [
+    "BG07"
+   ],
+   "sources": [
+    "N:\"Boss06/bos06_core1\""
+   ]
+  },
+  "bos06_core1short": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss06/bos06_core1short.asset",
+   "stages": [
+    "BG07"
+   ],
+   "sources": [
+    "N:\"Boss06/bos06_core1short\""
+   ]
+  },
+  "bos06_core2": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss06/bos06_core2.asset",
+   "stages": [
+    "BG07"
+   ],
+   "sources": [
+    "N:\"Boss06/bos06_core2\""
+   ]
+  },
+  "bos06_core3": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss06/bos06_core3.asset",
+   "stages": [
+    "BG07"
+   ],
+   "sources": [
+    "N:\"Boss06/bos06_core3\""
+   ]
+  },
+  "bos06_core4": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss06/bos06_core4.asset",
+   "stages": [
+    "BG07"
+   ],
+   "sources": [
+    "N:\"Boss06/bos06_core4\""
+   ]
+  },
+  "bos06_side1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss06/bos06_side1.asset",
+   "stages": [
+    "BG07"
+   ],
+   "sources": [
+    "N:\"Boss06/bos06_side1\""
+   ]
+  },
+  "bos06_side2": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss06/bos06_side2.asset",
+   "stages": [
+    "BG07"
+   ],
+   "sources": [
+    "N:\"Boss06/bos06_side2\""
+   ]
+  },
+  "bos06_sideway": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss06/bos06_sideway.asset",
+   "stages": [
+    "BG07"
+   ],
+   "sources": [
+    "N:\"Boss06/bos06_sideway\""
+   ]
+  },
+  "bos06laser01": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss06/bos06laser01.asset",
+   "stages": [
+    "BG07"
+   ],
+   "sources": [
+    "N:\"Boss06/bos06laser01\""
+   ]
+  },
+  "bos07armh": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss07/bos07armh.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "N:\"Boss07/bos07armh\""
+   ]
+  },
+  "bos07body": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss07/bos07body.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "N:\"Boss07/bos07body\""
+   ]
+  },
+  "bos07body3way": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss07/bos07body3way.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "N:\"Boss07/bos07body3way\""
+   ]
+  },
+  "bos07bodyS": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss07/bos07bodyS.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "N:\"Boss07/bos07bodyS\""
+   ]
+  },
+  "bos07face": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss07/bos07face.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "N:\"Boss07/bos07face\""
+   ]
+  },
+  "bos07laser": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss07/bos07laser.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "N:\"Boss07/bos07laser\""
+   ]
+  },
+  "bos07leg": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss07/bos07leg.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "N:\"Boss07/bos07leg\""
+   ]
+  },
+  "bos07leg1way": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss07/bos07leg1way.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "N:\"Boss07/bos07leg1way\""
+   ]
+  },
+  "bos07leg2": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss07/bos07leg2.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "N:\"Boss07/bos07leg2\""
+   ]
+  },
+  "bos07leg2way": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss07/bos07leg2way.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "N:\"Boss07/bos07leg2way\""
+   ]
+  },
+  "bos08arm0": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss08/bos08arm0.asset",
+   "stages": [
+    "BG08"
+   ],
+   "sources": [
+    "N:\"Boss08/bos08arm0\""
+   ]
+  },
+  "bos08b_00": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss08/bos08b_00.asset",
+   "stages": [
+    "BG08"
+   ],
+   "sources": [
+    "N:\"Boss08/bos08b_00\""
+   ]
+  },
+  "bos08b_10": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss08/bos08b_10.asset",
+   "stages": [
+    "BG08"
+   ],
+   "sources": [
+    "N:\"Boss08/bos08b_10\""
+   ]
+  },
+  "bos08b_11": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss08/bos08b_11.asset",
+   "stages": [
+    "BG08"
+   ],
+   "sources": [
+    "N:\"Boss08/bos08b_11\""
+   ]
+  },
+  "bos08b_bow": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss08/bos08b_bow.asset",
+   "stages": [
+    "BG08"
+   ],
+   "sources": [
+    "N:\"Boss08/bos08b_bow\""
+   ]
+  },
+  "bos08c_00": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss08/bos08c_00.asset",
+   "stages": [
+    "BG08"
+   ],
+   "sources": [
+    "N:\"Boss08/bos08c_00\""
+   ]
+  },
+  "bos08c_01": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss08/bos08c_01.asset",
+   "stages": [
+    "BG08"
+   ],
+   "sources": [
+    "N:\"Boss08/bos08c_01\""
+   ]
+  },
+  "bos08c_02": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss08/bos08c_02.asset",
+   "stages": [
+    "BG08"
+   ],
+   "sources": [
+    "N:\"Boss08/bos08c_02\""
+   ]
+  },
+  "bos08c_03": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss08/bos08c_03.asset",
+   "stages": [
+    "BG08"
+   ],
+   "sources": [
+    "N:\"Boss08/bos08c_03\""
+   ]
+  },
+  "bos08cover0": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss08/bos08cover0.asset",
+   "stages": [
+    "BG08"
+   ],
+   "sources": [
+    "N:\"Boss08/bos08cover0\""
+   ]
+  },
+  "bos08cover1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/Boss08/bos08cover1.asset",
+   "stages": [
+    "BG08"
+   ],
+   "sources": [
+    "N:\"Boss08/bos08cover1\""
+   ]
+  },
+  "bow_fan130": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/bow_fan130.asset",
+   "stages": [],
+   "sources": [
+    "N:\"bow_fan130\" (owner unknown)"
+   ]
+  },
+  "bow_fan140": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/bow_fan140.asset",
+   "stages": [],
+   "sources": [
+    "N:\"bow_fan140\" (owner unknown)"
+   ]
+  },
+  "bow_fan150": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/bow_fan150.asset",
+   "stages": [],
+   "sources": [
+    "N:\"bow_fan150\" (owner unknown)"
+   ]
+  },
+  "bow_fan160": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/bow_fan160.asset",
+   "stages": [],
+   "sources": [
+    "N:\"bow_fan160\" (owner unknown)"
+   ]
+  },
+  "bow_fan170": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/bow_fan170.asset",
+   "stages": [],
+   "sources": [
+    "N:\"bow_fan170\" (owner unknown)"
+   ]
+  },
+  "bow_fan180": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/bow_fan180.asset",
+   "stages": [],
+   "sources": [
+    "N:\"bow_fan180\" (owner unknown)"
+   ]
+  },
+  "bow_fan190": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/bow_fan190.asset",
+   "stages": [],
+   "sources": [
+    "N:\"bow_fan190\" (owner unknown)"
+   ]
+  },
+  "bow_fan200": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/bow_fan200.asset",
+   "stages": [],
+   "sources": [
+    "N:\"bow_fan200\" (owner unknown)"
+   ]
+  },
+  "bow_fan210": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/bow_fan210.asset",
+   "stages": [],
+   "sources": [
+    "N:\"bow_fan210\" (owner unknown)"
+   ]
+  },
+  "bow_fan220": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/bow_fan220.asset",
+   "stages": [],
+   "sources": [
+    "N:\"bow_fan220\" (owner unknown)"
+   ]
+  },
+  "bow_fan230": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/bow_fan230.asset",
+   "stages": [],
+   "sources": [
+    "N:\"bow_fan230\" (owner unknown)"
+   ]
+  },
+  "bsa01_fire": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/bsa01_fire.asset",
+   "stages": [
+    "BG03",
+    "BG06"
+   ],
+   "sources": [
+    "S:default_BSa01",
+    "S:default_BSa01_DR100",
+    "S:default_BSa01_L100",
+    "S:default_BSa01_LR",
+    "S:default_BSa01_R100",
+    "S:default_BSa01_R100W",
+    "S:default_BSa01_UL200"
+   ]
+  },
+  "bsb01_fire": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/bsb01_fire.asset",
+   "stages": [
+    "BG03",
+    "BG05",
+    "BG07"
+   ],
+   "sources": [
+    "S:default_BSb01"
+   ]
+  },
+  "bsc01_fire": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/bsc01_fire.asset",
+   "stages": [
+    "BG02",
+    "BG03",
+    "BG05",
+    "BG06",
+    "BG07"
+   ],
+   "sources": [
+    "S:pf_bg02_ship01a",
+    "X:bsc01_fire_sel"
+   ]
+  },
+  "bsc01_fire_easy": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/bsc01_fire_easy.asset",
+   "stages": [
+    "BG02",
+    "BG03",
+    "BG05",
+    "BG06",
+    "BG07"
+   ],
+   "sources": [
+    "X:bsc01_fire_sel"
+   ]
+  },
+  "bsc01_fire_sel": {
+   "kind": "selector",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletSelecter/bsc01_fire_sel.asset",
+   "stages": [
+    "BG02",
+    "BG03",
+    "BG05",
+    "BG06",
+    "BG07"
+   ],
+   "sources": [
+    "S:default_BSc01"
+   ]
+  },
+  "bsc01_fired": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/bsc01_fired.asset",
+   "stages": [
+    "BG02",
+    "BG03",
+    "BG05",
+    "BG06",
+    "BG07"
+   ],
+   "sources": [
+    "X:bsc01_fired_sel"
+   ]
+  },
+  "bsc01_fired_sel": {
+   "kind": "selector",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletSelecter/bsc01_fired_sel.asset",
+   "stages": [
+    "BG02",
+    "BG03",
+    "BG05",
+    "BG06",
+    "BG07"
+   ],
+   "sources": [
+    "P:Pf_Ene_BSc01._deadBulletSelecter"
+   ]
+  },
+  "bsd01_fire": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/bsd01_fire.asset",
+   "stages": [
+    "BG02"
+   ],
+   "sources": [
+    "S:pf_ene_bsd01ld",
+    "S:pf_ene_bsd01lu",
+    "S:pf_ene_bsd01rd",
+    "S:pf_ene_bsd01ru"
+   ]
+  },
+  "ene_x01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/ene_x01_fire1.asset",
+   "stages": [
+    "BG01"
+   ],
+   "sources": [
+    "N:\"ene_x01\"",
+    "N:\"ene_x01_fire1\"",
+    "S:ene_x01"
+   ]
+  },
+  "ene_x02_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/ene_x02_fire1.asset",
+   "stages": [
+    "BG02"
+   ],
+   "sources": [
+    "N:\"ene_x02\"",
+    "N:\"ene_x02_fire1\"",
+    "S:ene_x02"
+   ]
+  },
+  "ene_x03_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/ene_x03_fire1.asset",
+   "stages": [
+    "BG07"
+   ],
+   "sources": [
+    "N:\"ene_x03\"",
+    "N:\"ene_x03_fire1\"",
+    "S:ene_x03"
+   ]
+  },
+  "fan150": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/fan150.asset",
+   "stages": [],
+   "sources": [
+    "N:\"fan150\" (owner unknown)"
+   ]
+  },
+  "fan170": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/fan170.asset",
+   "stages": [],
+   "sources": [
+    "N:\"fan170\" (owner unknown)"
+   ]
+  },
+  "fan180": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/fan180.asset",
+   "stages": [],
+   "sources": [
+    "N:\"fan180\" (owner unknown)"
+   ]
+  },
+  "fan190": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/fan190.asset",
+   "stages": [],
+   "sources": [
+    "N:\"fan190\" (owner unknown)"
+   ]
+  },
+  "fan200": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/fan200.asset",
+   "stages": [],
+   "sources": [
+    "N:\"fan200\" (owner unknown)"
+   ]
+  },
+  "fan220": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/fan220.asset",
+   "stages": [],
+   "sources": [
+    "N:\"fan220\" (owner unknown)"
+   ]
+  },
+  "la01_turret1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/la01_turret1.asset",
+   "stages": [
+    "BG02"
+   ],
+   "sources": [
+    "S:ene_la01_1",
+    "S:ene_la01_1l",
+    "S:ene_la01_1r"
+   ]
+  },
+  "la01_turret2": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/la01_turret2.asset",
+   "stages": [
+    "BG02"
+   ],
+   "sources": [
+    "S:ene_la01_1",
+    "S:ene_la01_1l",
+    "S:ene_la01_1r"
+   ]
+  },
+  "lb01_fire_head": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/lb01_fire_head.asset",
+   "stages": [
+    "BG03",
+    "BG08"
+   ],
+   "sources": [
+    "X:lb01_fire_head_sel"
+   ]
+  },
+  "lb01_fire_head_easy": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/lb01_fire_head_easy.asset",
+   "stages": [
+    "BG03",
+    "BG08"
+   ],
+   "sources": [
+    "X:lb01_fire_head_sel"
+   ]
+  },
+  "lb01_fire_head_sel": {
+   "kind": "selector",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletSelecter/lb01_fire_head_sel.asset",
+   "stages": [
+    "BG03",
+    "BG08"
+   ],
+   "sources": [
+    "S:ene_lb01"
+   ]
+  },
+  "lb01_fire_side_l": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/lb01_fire_side_l.asset",
+   "stages": [
+    "BG03",
+    "BG08"
+   ],
+   "sources": [
+    "X:lb01_fire_side_l_sel"
+   ]
+  },
+  "lb01_fire_side_l_easy": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/lb01_fire_side_l_easy.asset",
+   "stages": [
+    "BG03",
+    "BG08"
+   ],
+   "sources": [
+    "X:lb01_fire_side_l_sel"
+   ]
+  },
+  "lb01_fire_side_l_sel": {
+   "kind": "selector",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletSelecter/lb01_fire_side_l_sel.asset",
+   "stages": [
+    "BG03",
+    "BG08"
+   ],
+   "sources": [
+    "S:ene_lb01"
+   ]
+  },
+  "lb01_fire_side_r": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/lb01_fire_side_r.asset",
+   "stages": [
+    "BG03",
+    "BG08"
+   ],
+   "sources": [
+    "X:lb01_fire_side_r_sel"
+   ]
+  },
+  "lb01_fire_side_r_easy": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/lb01_fire_side_r_easy.asset",
+   "stages": [
+    "BG03",
+    "BG08"
+   ],
+   "sources": [
+    "X:lb01_fire_side_r_sel"
+   ]
+  },
+  "lb01_fire_side_r_sel": {
+   "kind": "selector",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletSelecter/lb01_fire_side_r_sel.asset",
+   "stages": [
+    "BG03",
+    "BG08"
+   ],
+   "sources": [
+    "S:ene_lb01"
+   ]
+  },
+  "lc01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/lc01_fire1.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "N:\"lc01_fire1\""
+   ]
+  },
+  "lc01_fire3": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/lc01_fire3.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "N:\"lc01_fire3\""
+   ]
+  },
+  "lc01_firec": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/lc01_firec.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "N:\"lc01_firec\""
+   ]
+  },
+  "lc01_firec2": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/lc01_firec2.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "N:\"lc01_firec2\""
+   ]
+  },
+  "ma01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/ma01_fire1.asset",
+   "stages": [
+    "BG03",
+    "BG08"
+   ],
+   "sources": [
+    "S:ene_ma01_3",
+    "X:ma01_fire1_sel"
+   ]
+  },
+  "ma01_fire1_easy": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/ma01_fire1_easy.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "X:ma01_fire1_sel"
+   ]
+  },
+  "ma01_fire1_sel": {
+   "kind": "selector",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletSelecter/ma01_fire1_sel.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "S:ene_ma01_1a",
+    "S:ene_ma01_1b"
+   ]
+  },
+  "ma01_fire2": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/ma01_fire2.asset",
+   "stages": [
+    "BG03",
+    "BG08"
+   ],
+   "sources": [
+    "S:ene_ma01_3",
+    "X:ma01_fire2_sel"
+   ]
+  },
+  "ma01_fire2_sel": {
+   "kind": "selector",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletSelecter/ma01_fire2_sel.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "S:ene_ma01_1a",
+    "S:ene_ma01_1b"
+   ]
+  },
+  "ma01_laser1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/ma01_laser1.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "S:ene_ma01_1a",
+    "S:ene_ma01_1b"
+   ]
+  },
+  "ma01_laser2": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/ma01_laser2.asset",
+   "stages": [
+    "BG03",
+    "BG08"
+   ],
+   "sources": [
+    "S:ene_ma01_3"
+   ]
+  },
+  "mb01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mb01_fire1.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "N:\"mb01_fire1\""
+   ]
+  },
+  "mb01_fire2": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mb01_fire2.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "N:\"mb01_fire2\""
+   ]
+  },
+  "mb01_fire3": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mb01_fire3.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "N:\"mb01_fire3\""
+   ]
+  },
+  "mb01_fire4": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mb01_fire4.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "N:\"mb01_fire4\""
+   ]
+  },
+  "md01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/md01_fire1.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "X:md01_fire1_sel"
+   ]
+  },
+  "md01_fire1_easy": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/md01_fire1_easy.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "X:md01_fire1_sel"
+   ]
+  },
+  "md01_fire1_sel": {
+   "kind": "selector",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletSelecter/md01_fire1_sel.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "N:\"md01_fire1_sel\""
+   ]
+  },
+  "md01_fire3": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/md01_fire3.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "X:md01_fire3_sel"
+   ]
+  },
+  "md01_fire3_easy": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/md01_fire3_easy.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "X:md01_fire3_sel"
+   ]
+  },
+  "md01_fire3_sel": {
+   "kind": "selector",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletSelecter/md01_fire3_sel.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "N:\"md01_fire3_sel\""
+   ]
+  },
+  "me01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/me01_fire1.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "S:ene_me01_1a",
+    "S:ene_me01_1b"
+   ]
+  },
+  "me01_fire2": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/me01_fire2.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "S:ene_me01_1a",
+    "S:ene_me01_1b"
+   ]
+  },
+  "me01_fire3": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/me01_fire3.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "S:ene_me01_1a",
+    "S:ene_me01_1b"
+   ]
+  },
+  "me01_fire3b": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/me01_fire3b.asset",
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "S:ene_me01_1a",
+    "S:ene_me01_1b"
+   ]
+  },
+  "mf01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mf01_fire1.asset",
+   "stages": [
+    "BG07",
+    "BG08"
+   ],
+   "sources": [
+    "N:\"mf01_fire1\""
+   ]
+  },
+  "mf01_fire2": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mf01_fire2.asset",
+   "stages": [
+    "BG07",
+    "BG08"
+   ],
+   "sources": [
+    "N:\"mf01_fire2\"",
+    "S:ene_mf01_3a1",
+    "S:ene_mf01_3a2",
+    "S:ene_mf01_3a3",
+    "S:ene_mf01_5a1",
+    "S:ene_mf01_5a2",
+    "S:ene_mf01_5a3",
+    "S:ene_mf01_5a4",
+    "S:ene_mf01_5a5",
+    "S:ene_mf01_5b1",
+    "S:ene_mf01_5b2",
+    "S:ene_mf01_5b3",
+    "S:ene_mf01_5b4",
+    "S:ene_mf01_5b5",
+    "S:ene_mf01_7a1",
+    "S:ene_mf01_7a2",
+    "S:ene_mf01_7a3",
+    "S:ene_mf01_7a4",
+    "S:ene_mf01_7a5",
+    "S:ene_mf01_7a6",
+    "S:ene_mf01_7a7",
+    "S:ene_mf01_7b1",
+    "S:ene_mf01_7b2",
+    "S:ene_mf01_7b3",
+    "S:ene_mf01_7b4",
+    "S:ene_mf01_7b5",
+    "S:ene_mf01_7b6",
+    "S:ene_mf01_7b7"
+   ]
+  },
+  "mg01_fired": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mg01_fired.asset",
+   "stages": [
+    "BG04"
+   ],
+   "sources": [
+    "P:Pf_Ene_Mg01._deadBullet"
+   ]
+  },
+  "mg01sp1_1way": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mg01sp1_1way.asset",
+   "stages": [
+    "BG04"
+   ],
+   "sources": [
+    "N:\"mg01sp1_1way\""
+   ]
+  },
+  "mh01_laser": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mh01_laser.asset",
+   "stages": [
+    "BG02"
+   ],
+   "sources": [
+    "S:ene_mh01_2a",
+    "S:ene_mh01_2b"
+   ]
+  },
+  "mh01_shot2a_2": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mh01_shot2a_2.asset",
+   "stages": [
+    "BG02"
+   ],
+   "sources": [
+    "S:ene_mh01_2a",
+    "S:ene_mh01_2b"
+   ]
+  },
+  "mi01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mi01_fire1.asset",
+   "stages": [
+    "BG04"
+   ],
+   "sources": [
+    "S:ene_mi01_1a",
+    "S:ene_mi01_2a",
+    "S:ene_mi01_2b",
+    "S:ene_mi01_3a",
+    "S:ene_mi01_3b",
+    "S:ene_mi01_8",
+    "S:ene_mi01_8b"
+   ]
+  },
+  "mi01_fired": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mi01_fired.asset",
+   "stages": [
+    "BG04"
+   ],
+   "sources": [
+    "P:Pf_Ene_Mi01._deadBullet"
+   ]
+  },
+  "mk01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mk01_fire1.asset",
+   "stages": [
+    "BG05"
+   ],
+   "sources": [
+    "N:\"mk01_fire1\""
+   ]
+  },
+  "mn01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mn01_fire1.asset",
+   "stages": [
+    "BG06",
+    "BG08"
+   ],
+   "sources": [
+    "P:Pf_Ene_Mn01._useBullet"
+   ]
+  },
+  "mo01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mo01_fire1.asset",
+   "stages": [
+    "BG02",
+    "BG08"
+   ],
+   "sources": [
+    "S:ene_mo01_1a",
+    "S:ene_mo01_1b"
+   ]
+  },
+  "mo01_fired": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mo01_fired.asset",
+   "stages": [
+    "BG02",
+    "BG08"
+   ],
+   "sources": [
+    "P:Pf_Ene_Mo01._deadBullet"
+   ]
+  },
+  "mo01_firez": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mo01_firez.asset",
+   "stages": [
+    "BG02"
+   ],
+   "sources": [
+    "S:ene_mo01_z"
+   ]
+  },
+  "mp01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mp01_fire1.asset",
+   "stages": [
+    "BG01"
+   ],
+   "sources": [
+    "P:Pf_Ene_Mp01._bulletName"
+   ]
+  },
+  "mp01_fire2": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mp01_fire2.asset",
+   "stages": [
+    "BG01"
+   ],
+   "sources": [
+    "S:ene_mp01l",
+    "S:ene_mp01r"
+   ]
+  },
+  "mp01_fire3": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mp01_fire3.asset",
+   "stages": [
+    "BG01",
+    "BG08"
+   ],
+   "sources": [
+    "S:ene_mp02a",
+    "S:ene_mp02b"
+   ]
+  },
+  "mq01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mq01_fire1.asset",
+   "stages": [
+    "BG01"
+   ],
+   "sources": [
+    "S:ene_mq01"
+   ]
+  },
+  "mq01_fire2a": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mq01_fire2a.asset",
+   "stages": [
+    "BG01"
+   ],
+   "sources": [
+    "S:ene_mq01"
+   ]
+  },
+  "mq01_fire2b": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mq01_fire2b.asset",
+   "stages": [
+    "BG01"
+   ],
+   "sources": [
+    "S:ene_mq01"
+   ]
+  },
+  "mq01_fire3a": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mq01_fire3a.asset",
+   "stages": [
+    "BG01"
+   ],
+   "sources": [
+    "S:ene_mq01"
+   ]
+  },
+  "mq01_fire3b": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mq01_fire3b.asset",
+   "stages": [
+    "BG01"
+   ],
+   "sources": [
+    "S:ene_mq01"
+   ]
+  },
+  "mx02_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/mx02_fire1.asset",
+   "stages": [
+    "BG08"
+   ],
+   "sources": [
+    "S:ene_mx02_1a",
+    "S:ene_mx02_1b"
+   ]
+  },
+  "sa01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/sa01_fire1.asset",
+   "stages": [
+    "BG02",
+    "BG03",
+    "BG08"
+   ],
+   "sources": [
+    "X:sa01_fire1_sel"
+   ]
+  },
+  "sa01_fire1_sel": {
+   "kind": "selector",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletSelecter/sa01_fire1_sel.asset",
+   "stages": [
+    "BG02",
+    "BG03",
+    "BG08"
+   ],
+   "sources": [
+    "S:ene_sa01_1a",
+    "S:ene_sa01_2a",
+    "S:ene_sa01_2b",
+    "S:ene_sa01_4d",
+    "S:ene_sa01_4l",
+    "S:ene_sa01_4r",
+    "S:ene_sa01_4u"
+   ]
+  },
+  "sb01_fire": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/sb01_fire.asset",
+   "stages": [
+    "BG02",
+    "BG04",
+    "BG06",
+    "BG08"
+   ],
+   "sources": [
+    "S:ene_sb01",
+    "S:ene_sb01ent_d",
+    "S:ene_sb01ent_dl",
+    "S:ene_sb01ent_dr",
+    "S:ene_sb01ent_l",
+    "S:ene_sb01ent_r",
+    "S:ene_sb01ent_u",
+    "S:ene_sb01ent_ul",
+    "S:ene_sb01ent_ur"
+   ]
+  },
+  "se01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/se01_fire1.asset",
+   "stages": [
+    "BG03",
+    "BG06",
+    "BG08"
+   ],
+   "sources": [
+    "X:se01_fire1_sel"
+   ]
+  },
+  "se01_fire1_sel": {
+   "kind": "selector",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletSelecter/se01_fire1_sel.asset",
+   "stages": [
+    "BG03",
+    "BG06",
+    "BG08"
+   ],
+   "sources": [
+    "S:ene_se01_1a",
+    "S:ene_se01_1b",
+    "S:ene_se01_1c",
+    "S:ene_se01_1d",
+    "S:ene_se01_2a",
+    "S:ene_se01_2b",
+    "S:ene_se01_3a",
+    "S:ene_se01_3b",
+    "S:ene_se01_4a",
+    "S:ene_se01_4b"
+   ]
+  },
+  "sf01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/sf01_fire1.asset",
+   "stages": [
+    "BG05",
+    "BG08"
+   ],
+   "sources": [
+    "S:ene_sf01_4a",
+    "S:ene_sf01_4b",
+    "S:ene_sf01_5a",
+    "S:ene_sf01_5a2",
+    "S:ene_sf01_5a3",
+    "S:ene_sf01_5b",
+    "S:ene_sf01_5b2",
+    "S:ene_sf01_5b3",
+    "S:ene_sf01a",
+    "S:ene_sf01b"
+   ]
+  },
+  "sg01_fired": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/sg01_fired.asset",
+   "stages": [
+    "BG02",
+    "BG04"
+   ],
+   "sources": [
+    "P:Pf_Ene_Sg01._deadBullet"
+   ]
+  },
+  "sh01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/sh01_fire1.asset",
+   "stages": [
+    "BG04",
+    "BG08"
+   ],
+   "sources": [
+    "X:sh01_fire1_sel"
+   ]
+  },
+  "sh01_fire1_sel": {
+   "kind": "selector",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletSelecter/sh01_fire1_sel.asset",
+   "stages": [
+    "BG04",
+    "BG08"
+   ],
+   "sources": [
+    "S:ene_sh01_1a",
+    "S:ene_sh01_1b",
+    "S:ene_sh01_2a",
+    "S:ene_sh01_2b",
+    "S:ene_sh01_3a",
+    "S:ene_sh01_3a2",
+    "S:ene_sh01_3b",
+    "S:ene_sh01_3b2",
+    "S:ene_sh01_4a",
+    "S:ene_sh01_4b"
+   ]
+  },
+  "sh01_fired": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/sh01_fired.asset",
+   "stages": [
+    "BG04",
+    "BG08"
+   ],
+   "sources": [
+    "X:sh01_fired_sel"
+   ]
+  },
+  "sh01_fired_sel": {
+   "kind": "selector",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletSelecter/sh01_fired_sel.asset",
+   "stages": [
+    "BG04",
+    "BG08"
+   ],
+   "sources": [
+    "P:Pf_Ene_Sh01._deadBulletSelecter"
+   ]
+  },
+  "shot01": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/shot01.asset",
+   "stages": [
+    "BG02"
+   ],
+   "sources": [
+    "N:\"bos02_00_sa01\""
+   ]
+  },
+  "shot06": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/shot06.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "P:Pf_Ene_Ss01._bulletName"
+   ]
+  },
+  "si01_fire": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/si01_fire.asset",
+   "stages": [
+    "BG05"
+   ],
+   "sources": [
+    "N:\"si01_fire\""
+   ]
+  },
+  "sj01_fire": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/sj01_fire.asset",
+   "stages": [
+    "BG04",
+    "BG08"
+   ],
+   "sources": [
+    "X:sj01_fired_sel"
+   ]
+  },
+  "sj01_fired_sel": {
+   "kind": "selector",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletSelecter/sj01_fired_sel.asset",
+   "stages": [
+    "BG04",
+    "BG08"
+   ],
+   "sources": [
+    "P:Pf_Ene_Sj01._deadBulletSelecter",
+    "P:Pf_Ene_Su01._deadBulletSelecter"
+   ]
+  },
+  "sk01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/sk01_fire1.asset",
+   "stages": [
+    "BG02"
+   ],
+   "sources": [
+    "S:ene_sk01a",
+    "S:ene_sk01b"
+   ]
+  },
+  "sl01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/sl01_fire1.asset",
+   "stages": [
+    "BG01",
+    "BG08"
+   ],
+   "sources": [
+    "S:ene_sl01_1"
+   ]
+  },
+  "sn01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/sn01_fire1.asset",
+   "stages": [
+    "BG07",
+    "BG08"
+   ],
+   "sources": [
+    "S:ene_sn01_1a",
+    "S:ene_sn01_1b"
+   ]
+  },
+  "sp01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/sp01_fire1.asset",
+   "stages": [
+    "BG07",
+    "BG08"
+   ],
+   "sources": [
+    "S:ene_sp01x"
+   ]
+  },
+  "sq01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/sq01_fire1.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "X:sq01_fire1_sel"
+   ]
+  },
+  "sq01_fire1_easy": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/sq01_fire1_easy.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "X:sq01_fire1_sel"
+   ]
+  },
+  "sq01_fire1_sel": {
+   "kind": "selector",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletSelecter/sq01_fire1_sel.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "N:\"sq01_fire1_sel\""
+   ]
+  },
+  "sq01_fire2": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/sq01_fire2.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "X:sq01_fire2_sel"
+   ]
+  },
+  "sq01_fire2_easy": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/sq01_fire2_easy.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "X:sq01_fire2_sel"
+   ]
+  },
+  "sq01_fire2_sel": {
+   "kind": "selector",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletSelecter/sq01_fire2_sel.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "N:\"sq01_fire2_sel\""
+   ]
+  },
+  "sr01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/sr01_fire1.asset",
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "S:ene_sr01_1a",
+    "S:ene_sr01_1b"
+   ]
+  },
+  "st01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/st01_fire1.asset",
+   "stages": [
+    "BG01",
+    "BG07",
+    "BG08"
+   ],
+   "sources": [
+    "N:\"st01_fire1\""
+   ]
+  },
+  "su01_fire": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/su01_fire.asset",
+   "stages": [
+    "BG04",
+    "BG08"
+   ],
+   "sources": [
+    "S:ene_su01",
+    "S:ene_su01_1"
+   ]
+  },
+  "sv01_fire1": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/sv01_fire1.asset",
+   "stages": [
+    "BG02",
+    "BG08"
+   ],
+   "sources": [
+    "S:ene_sv01"
+   ]
+  },
+  "timeup_fire": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/timeup_fire.asset",
+   "stages": [],
+   "sources": [
+    "N:\"timeup_fire\" (owner unknown)"
+   ]
+  },
+  "tsa01_fire": {
+   "kind": "template",
+   "asset": "OriginalRecovered/InGame/InGameReference/BulletTemplate/tsa01_fire.asset",
+   "stages": [
+    "BG05",
+    "BG07"
+   ],
+   "sources": [
+    "S:default_TSa01",
+    "S:defautl_TSa01_hid_h_1stp",
+    "S:defautl_TSa01_hid_l_1stp",
+    "S:defautl_TSa01_hid_m_1stp",
+    "S:defautl_TSa01_hid_m_2stp",
+    "S:defautl_TSa01_m_1stp",
+    "S:defautl_TSa01_run04_r90",
+    "S:defautl_TSa01_run06_l90",
+    "S:defautl_TSa01_run06_r90",
+    "S:defautl_TSa01_run08_l90",
+    "S:defautl_TSa01_run08_r90",
+    "S:defautl_TSa01_run10_l90",
+    "S:defautl_TSa01_run10_r90",
+    "S:defautl_TSa01_run12_l90",
+    "S:defautl_TSa01_run_que3",
+    "S:defautl_TSa01_run_que4"
+   ]
+  }
+ },
+ "models": {
+  "Pf_EneObj_Bg08_ZoneA": {
+   "stages": [
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Obstacle/Pf_EneObj_Bg08_ZoneA.prefab"
+  },
+  "Pf_EneObj_Bg08_ZoneB": {
+   "stages": [
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Obstacle/Pf_EneObj_Bg08_ZoneB.prefab"
+  },
+  "Pf_EneObj_Bg08_ZoneC": {
+   "stages": [
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Obstacle/Pf_EneObj_Bg08_ZoneC.prefab"
+  },
+  "Pf_EneObj_Bg08_ZoneD": {
+   "stages": [
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Obstacle/Pf_EneObj_Bg08_ZoneD.prefab"
+  },
+  "Pf_EneObj_Bg08_ZoneE": {
+   "stages": [
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Obstacle/Pf_EneObj_Bg08_ZoneE.prefab"
+  },
+  "Pf_EneObj_Bg08_ZoneF": {
+   "stages": [
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Obstacle/Pf_EneObj_Bg08_ZoneF.prefab"
+  },
+  "Pf_EneObj_Bg08_ZoneG": {
+   "stages": [
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Obstacle/Pf_EneObj_Bg08_ZoneG.prefab"
+  },
+  "Pf_EneObj_Bg08_ZonezBOSS": {
+   "stages": [
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Obstacle/Pf_EneObj_Bg08_ZonezBOSS.prefab"
+  },
+  "Pf_EneObj_Meteo_La01": {
+   "stages": [
+    "BG01"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_EneObj_Meteo_La01.prefab"
+  },
+  "Pf_EneObj_Meteo_La02": {
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_EneObj_Meteo_La02.prefab"
+  },
+  "Pf_EneObj_Meteo_Ma01": {
+   "stages": [
+    "BG01"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_EneObj_Meteo_Ma01.prefab"
+  },
+  "Pf_EneObj_Meteo_Ma02": {
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_EneObj_Meteo_Ma02.prefab"
+  },
+  "Pf_EneObj_Meteo_Sa01": {
+   "stages": [
+    "BG01"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_EneObj_Meteo_Sa01.prefab"
+  },
+  "Pf_EneObj_Meteo_Sa02": {
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_EneObj_Meteo_Sa02.prefab"
+  },
+  "Pf_Ene_BLa01": {
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "packs"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_BLa01.prefab"
+  },
+  "Pf_Ene_Bos02": {
+   "stages": [
+    "BG02"
+   ],
+   "sources": [
+    "packs"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Bos02.prefab"
+  },
+  "Pf_Ene_Bos04": {
+   "stages": [
+    "BG04"
+   ],
+   "sources": [
+    "packs"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Bos04.prefab"
+  },
+  "Pf_Ene_Bos05": {
+   "stages": [
+    "BG05"
+   ],
+   "sources": [
+    "packs"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Bos05.prefab"
+  },
+  "Pf_Ene_Bos07": {
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "packs"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Bos07.prefab"
+  },
+  "Pf_Ene_Bos08B": {
+   "stages": [
+    "BG08"
+   ],
+   "sources": [
+    "packs"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Bos08B.prefab"
+  },
+  "Pf_Ene_La01": {
+   "stages": [
+    "BG02"
+   ],
+   "sources": [
+    "air",
+    "packs"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_La01.prefab"
+  },
+  "Pf_Ene_Lb01": {
+   "stages": [
+    "BG03",
+    "BG08"
+   ],
+   "sources": [
+    "air",
+    "packs"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_Lb01.prefab"
+  },
+  "Pf_Ene_Ma01": {
+   "stages": [
+    "BG03",
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Ma01.prefab"
+  },
+  "Pf_Ene_Mb01": {
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "air",
+    "packs"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Mb01.prefab"
+  },
+  "Pf_Ene_Mc01": {
+   "stages": [
+    "BG07",
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Mc01.prefab"
+  },
+  "Pf_Ene_Md01": {
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Md01.prefab"
+  },
+  "Pf_Ene_Me01": {
+   "stages": [
+    "BG03"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Me01.prefab"
+  },
+  "Pf_Ene_Mf01": {
+   "stages": [
+    "BG07",
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Mf01.prefab"
+  },
+  "Pf_Ene_Mg01": {
+   "stages": [
+    "BG04"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Mg01.prefab"
+  },
+  "Pf_Ene_Mh01": {
+   "stages": [
+    "BG02"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Mh01.prefab"
+  },
+  "Pf_Ene_Mi01": {
+   "stages": [
+    "BG04"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Mi01.prefab"
+  },
+  "Pf_Ene_Mj01h": {
+   "stages": [
+    "BG01",
+    "BG02",
+    "BG03",
+    "BG04",
+    "BG05",
+    "BG07"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Mj01h.prefab"
+  },
+  "Pf_Ene_Mk01": {
+   "stages": [
+    "BG05"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Mk01.prefab"
+  },
+  "Pf_Ene_Ml01": {
+   "stages": [
+    "BG04"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Ml01.prefab"
+  },
+  "Pf_Ene_Mm01": {
+   "stages": [
+    "BG05",
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Mm01.prefab"
+  },
+  "Pf_Ene_Mn01": {
+   "stages": [
+    "BG06",
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Mn01.prefab"
+  },
+  "Pf_Ene_Mn01c": {
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Mn01c.prefab"
+  },
+  "Pf_Ene_Mn01c2": {
+   "stages": [
+    "BG01",
+    "BG06",
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Mn01c2.prefab"
+  },
+  "Pf_Ene_Mo01": {
+   "stages": [
+    "BG02",
+    "BG08"
+   ],
+   "sources": [
+    "air",
+    "packs"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Mo01.prefab"
+  },
+  "Pf_Ene_Mp01": {
+   "stages": [
+    "BG01"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Mp01.prefab"
+  },
+  "Pf_Ene_Mp02": {
+   "stages": [
+    "BG01",
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Mp02.prefab"
+  },
+  "Pf_Ene_Mq01": {
+   "stages": [
+    "BG01"
+   ],
+   "sources": [
+    "air",
+    "packs"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Mq01.prefab"
+  },
+  "Pf_Ene_Mx02": {
+   "stages": [
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Mx02.prefab"
+  },
+  "Pf_Ene_Sa01": {
+   "stages": [
+    "BG02",
+    "BG03",
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_Sa01.prefab"
+  },
+  "Pf_Ene_Sb01": {
+   "stages": [
+    "BG02",
+    "BG04",
+    "BG06",
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_Sb01.prefab"
+  },
+  "Pf_Ene_Sc01": {
+   "stages": [
+    "BG07",
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_Sc01.prefab"
+  },
+  "Pf_Ene_Sd01": {
+   "stages": [
+    "BG03",
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_Sd01.prefab"
+  },
+  "Pf_Ene_Se01": {
+   "stages": [
+    "BG03",
+    "BG06",
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_Se01.prefab"
+  },
+  "Pf_Ene_Sf01": {
+   "stages": [
+    "BG05",
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_Sf01.prefab"
+  },
+  "Pf_Ene_Sg01": {
+   "stages": [
+    "BG02",
+    "BG04"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_Sg01.prefab"
+  },
+  "Pf_Ene_Sh01": {
+   "stages": [
+    "BG04",
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_Sh01.prefab"
+  },
+  "Pf_Ene_Sj01": {
+   "stages": [
+    "BG04"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_Sj01.prefab"
+  },
+  "Pf_Ene_Sk01": {
+   "stages": [
+    "BG02"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_Sk01.prefab"
+  },
+  "Pf_Ene_Sl01": {
+   "stages": [
+    "BG01",
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_Sl01.prefab"
+  },
+  "Pf_Ene_Sm01": {
+   "stages": [
+    "BG04",
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_Sm01.prefab"
+  },
+  "Pf_Ene_Sm02": {
+   "stages": [
+    "BG04",
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_Sm02.prefab"
+  },
+  "Pf_Ene_Sn01": {
+   "stages": [
+    "BG07",
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_Sn01.prefab"
+  },
+  "Pf_Ene_So01": {
+   "stages": [
+    "BG01",
+    "BG05",
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_So01.prefab"
+  },
+  "Pf_Ene_Sp01": {
+   "stages": [
+    "BG07",
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_Sp01.prefab"
+  },
+  "Pf_Ene_Sq01": {
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_Sq01.prefab"
+  },
+  "Pf_Ene_Sr01": {
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_Sr01.prefab"
+  },
+  "Pf_Ene_Ss01": {
+   "stages": [
+    "BG06"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_Ss01.prefab"
+  },
+  "Pf_Ene_St01": {
+   "stages": [
+    "BG01",
+    "BG07",
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_St01.prefab"
+  },
+  "Pf_Ene_Su01": {
+   "stages": [
+    "BG04",
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_Su01.prefab"
+  },
+  "Pf_Ene_Sv01": {
+   "stages": [
+    "BG02",
+    "BG08"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_Sv01.prefab"
+  },
+  "Pf_Ene_X01": {
+   "stages": [
+    "BG01"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_X01.prefab"
+  },
+  "Pf_Ene_X02": {
+   "stages": [
+    "BG02"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_X02.prefab"
+  },
+  "Pf_Ene_X03": {
+   "stages": [
+    "BG07"
+   ],
+   "sources": [
+    "air"
+   ],
+   "prefab": "OriginalRecovered/Pf_Ene_X03.prefab"
+  }
+ },
+ "bullets": [
+  {
+   "bulletName": "boss03laser000",
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/laser/Prefabs/boss03laser000.prefab",
+   "_colorType": null,
+   "laserComponent": "InGame.Kernel.Enemy.EnemyLaserCollision",
+   "guid": "478ec1aec49740243af2bc0c6cbf2cd8",
+   "usedByPatterns": true,
+   "stages": [
+    "BG03"
+   ]
+  },
+  {
+   "bulletName": "dropitem001",
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/bullet/Prefabs/dropitem001.prefab",
+   "_colorType": null,
+   "laserComponent": null,
+   "guid": "6f67c99424e3a334096a14329a02c342",
+   "usedByPatterns": false,
+   "stages": []
+  },
+  {
+   "bulletName": "enemybullet001",
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/bullet/Prefabs/enemybullet001.prefab",
+   "_colorType": 1,
+   "laserComponent": null,
+   "guid": "3891098a02e63e549b1303cb0b0668bf",
+   "usedByPatterns": true,
+   "stages": [
+    "BG01",
+    "BG02",
+    "BG03",
+    "BG04",
+    "BG05",
+    "BG06",
+    "BG07",
+    "BG08"
+   ]
+  },
+  {
+   "bulletName": "enemybullet002",
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/bullet/Prefabs/enemybullet002.prefab",
+   "_colorType": 1,
+   "laserComponent": null,
+   "guid": "4b13811a59b8367448f6c10cba60da4b",
+   "usedByPatterns": true,
+   "stages": [
+    "BG01",
+    "BG02",
+    "BG03",
+    "BG05",
+    "BG06",
+    "BG07",
+    "BG08"
+   ]
+  },
+  {
+   "bulletName": "enemybullet003",
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/bullet/Prefabs/enemybullet003.prefab",
+   "_colorType": 1,
+   "laserComponent": null,
+   "guid": "c70c641984d3b834094d82be9f1bf648",
+   "usedByPatterns": true,
+   "stages": [
+    "BG03",
+    "BG06",
+    "BG08"
+   ]
+  },
+  {
+   "bulletName": "enemybullet004",
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/bullet/Prefabs/enemybullet004.prefab",
+   "_colorType": 2,
+   "laserComponent": null,
+   "guid": "3d42552aada66364893d9735c4d04c48",
+   "usedByPatterns": true,
+   "stages": [
+    "BG01",
+    "BG02",
+    "BG03",
+    "BG04",
+    "BG06",
+    "BG07",
+    "BG08"
+   ]
+  },
+  {
+   "bulletName": "enemybullet005",
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/bullet/Prefabs/enemybullet005.prefab",
+   "_colorType": 2,
+   "laserComponent": null,
+   "guid": "1be5673cc63b20540ab106504670a8a1",
+   "usedByPatterns": true,
+   "stages": [
+    "BG01",
+    "BG02",
+    "BG03",
+    "BG04",
+    "BG05",
+    "BG06",
+    "BG07",
+    "BG08"
+   ]
+  },
+  {
+   "bulletName": "enemybullet006",
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/bullet/Prefabs/enemybullet006.prefab",
+   "_colorType": 1,
+   "laserComponent": null,
+   "guid": "e5516a86e190a2042b7c3eb36729e893",
+   "usedByPatterns": true,
+   "stages": [
+    "BG01",
+    "BG02",
+    "BG03",
+    "BG04",
+    "BG05",
+    "BG06",
+    "BG07",
+    "BG08"
+   ]
+  },
+  {
+   "bulletName": "enemybullet007",
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/bullet/Prefabs/enemybullet007.prefab",
+   "_colorType": 1,
+   "laserComponent": null,
+   "guid": "8f3e3de26677fdf4b9078a39194ec523",
+   "usedByPatterns": true,
+   "stages": [
+    "BG01",
+    "BG02",
+    "BG04",
+    "BG07",
+    "BG08"
+   ]
+  },
+  {
+   "bulletName": "enemybullet008",
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/bullet/Prefabs/enemybullet008.prefab",
+   "_colorType": 3,
+   "laserComponent": null,
+   "guid": "62150ce245225c246b2c546122838fe2",
+   "usedByPatterns": true,
+   "stages": [
+    "BG02",
+    "BG04",
+    "BG08"
+   ]
+  },
+  {
+   "bulletName": "enemybullet009",
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/bullet/Prefabs/enemybullet009.prefab",
+   "_colorType": 1,
+   "laserComponent": null,
+   "guid": "153d7afb2cdeb364a881648243a6a203",
+   "usedByPatterns": true,
+   "stages": [
+    "BG02",
+    "BG03",
+    "BG04",
+    "BG05",
+    "BG06",
+    "BG07",
+    "BG08"
+   ]
+  },
+  {
+   "bulletName": "enemybullet010",
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/bullet/Prefabs/enemybullet010.prefab",
+   "_colorType": 2,
+   "laserComponent": null,
+   "guid": "787c7f64b0669314ab23683243f23397",
+   "usedByPatterns": true,
+   "stages": [
+    "BG02",
+    "BG06",
+    "BG07",
+    "BG08"
+   ]
+  },
+  {
+   "bulletName": "enemybullet011",
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/bullet/Prefabs/enemybullet011.prefab",
+   "_colorType": 3,
+   "laserComponent": null,
+   "guid": "91c16e935c4cce0498f832390fb7fecb",
+   "usedByPatterns": true,
+   "stages": [
+    "BG04"
+   ]
+  },
+  {
+   "bulletName": "enemybullet011s",
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/bullet/Prefabs/enemybullet011s.prefab",
+   "_colorType": 3,
+   "laserComponent": null,
+   "guid": "84c4fabb419514948ba1cc350a683b9e",
+   "usedByPatterns": true,
+   "stages": [
+    "BG04"
+   ]
+  },
+  {
+   "bulletName": "enemybullet012",
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/bullet/Prefabs/enemybullet012.prefab",
+   "_colorType": 1,
+   "laserComponent": null,
+   "guid": "cd671a21a32afbf4c9b748e603abbcf3",
+   "usedByPatterns": false,
+   "stages": []
+  },
+  {
+   "bulletName": "enemybullet013",
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/bullet/Prefabs/enemybullet013.prefab",
+   "_colorType": 1,
+   "laserComponent": null,
+   "guid": "2a4efab9fc330f547991b06a6f50340b",
+   "usedByPatterns": true,
+   "stages": [
+    "BG08"
+   ]
+  },
+  {
+   "bulletName": "enemybullet100",
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/bullet/Prefabs/enemybullet100.prefab",
+   "_colorType": 1,
+   "laserComponent": null,
+   "guid": "9228570f752584247b4dc61e88b089a2",
+   "usedByPatterns": true,
+   "stages": [
+    "BG06"
+   ]
+  },
+  {
+   "bulletName": "enemybullet101",
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/bullet/Prefabs/enemybullet101.prefab",
+   "_colorType": 1,
+   "laserComponent": null,
+   "guid": "2811755ecf39ee647b9754f5dc5cf95e",
+   "usedByPatterns": false,
+   "stages": []
+  },
+  {
+   "bulletName": "enemylaser000",
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/laser/Prefabs/enemylaser000.prefab",
+   "_colorType": null,
+   "laserComponent": "InGame.Kernel.Enemy.EnemyLaserCollision",
+   "guid": "a23a6702335f6b347858760d78a90001",
+   "usedByPatterns": true,
+   "stages": [
+    "BG01",
+    "BG02",
+    "BG03",
+    "BG08"
+   ]
+  },
+  {
+   "bulletName": "enemylaser001",
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/laser/Prefabs/enemylaser001.prefab",
+   "_colorType": null,
+   "laserComponent": "InGame.Kernel.Enemy.EnemyLaserCollision",
+   "guid": "12a775df6cca49b46889dd708badd460",
+   "usedByPatterns": true,
+   "stages": [
+    "BG07"
+   ]
+  },
+  {
+   "bulletName": "enemylaser003",
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/laser/Prefabs/enemylaser003.prefab",
+   "_colorType": null,
+   "laserComponent": "InGame.Kernel.Enemy.EnemyLaserCollision",
+   "guid": "d6c180021fbb7494a8cb07a18445bc9c",
+   "usedByPatterns": true,
+   "stages": [
+    "BG02",
+    "BG04",
+    "BG05",
+    "BG06"
+   ]
+  },
+  {
+   "bulletName": "enemylaser010",
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/laser/Prefabs/enemylaser010.prefab",
+   "_colorType": null,
+   "laserComponent": "InGame.Kernel.Enemy.EnemyLaserCollision2",
+   "guid": "731fc34e2fabc954e85061e12a0e5ac9",
+   "usedByPatterns": true,
+   "stages": [
+    "BG06"
+   ]
+  },
+  {
+   "bulletName": "enemylaser0a0",
+   "prefab": "OriginalRecovered/Samples/Prefabs/Reference/Enemy/laser/Prefabs/enemylaser0a0.prefab",
+   "_colorType": null,
+   "laserComponent": "InGame.Kernel.Enemy.EnemyLaserCollision",
+   "guid": "6b62773ac9e715e4cb5251040553f208",
+   "usedByPatterns": true,
+   "stages": [
+    "BG01",
+    "BG08"
+   ]
+  }
+ ],
+ "aimSteps": {
+  "file": "D:/games/Truxton Extreme/TATSUJIN EXTREME_Data/il2cpp_data/Metadata/global-metadata.dat",
+  "offset": 8856280,
+  "values": [
+   1.0,
+   90.0,
+   45.0,
+   22.5,
+   15.0,
+   11.25,
+   7.5,
+   5.625
+  ],
+  "locator": "unique float32 run 360/{4,8,16,24,32,48,64} (LimitArcKind _div4.._div64) preceded by entry 0"
+ },
+ "speedsAsset": "OriginalRecovered/InGame/InGameReference/Resident/BulletSpeeds00.asset",
+ "residentPalette": {
+  "asset": "OriginalRecovered/InGame/InGameReference/Resident/BulletPallet.asset",
+  "names": [
+   "Regident/Sepper0_3way",
+   "Regident/Seppers_3way"
+  ]
+ },
+ "nativeLiterals": {
+  "templatesOrSelectors": [
+   "Boss01/bos01bullet01",
+   "Boss01/bos01bullet10",
+   "Boss01/bos01bullet11",
+   "Boss01/bos01laser01",
+   "Boss01/bos01laser02",
+   "Boss02/bos02b04x3",
+   "Boss02/bos02laser01",
+   "Boss02/bos02laser10",
+   "Boss02/bos02way16_1",
+   "Boss02/bos02way16_2",
+   "Boss02/bos02way5",
+   "Boss02/bos02way6_1",
+   "Boss02/bos02way6_2",
+   "Boss02/bos02way8",
+   "Boss03/bos03_7way",
+   "Boss03/bos03_arm0",
+   "Boss03/bos03_faceL1",
+   "Boss03/bos03_faceL2",
+   "Boss03/bos03_faceL3",
+   "Boss03/bos03_faceR1",
+   "Boss03/bos03_faceR2",
+   "Boss03/bos03_faceR3",
+   "Boss03/bos03_las00",
+   "Boss03/bos03_rap3",
+   "Boss03/bos03_sidewayL",
+   "Boss03/bos03_sidewayR",
+   "Boss03/bos03_turret0",
+   "Boss04/bos04bit0",
+   "Boss04/bos04laser",
+   "Boss04/bos04p1way3l",
+   "Boss04/bos04p1way3r",
+   "Boss04/bos04p5way3",
+   "Boss04/bos04p5way3s",
+   "Boss04/bos04p6rs",
+   "Boss04/bos04p6sl",
+   "Boss05/bos05berry1",
+   "Boss05/bos05berry2",
+   "Boss05/bos05eyes1",
+   "Boss05/bos05eyes2",
+   "Boss05/bos05front1A",
+   "Boss05/bos05front1B",
+   "Boss05/bos05front2A",
+   "Boss05/bos05front2B",
+   "Boss05/bos05laser01",
+   "Boss05/bos05legs1",
+   "Boss05/bos05legs2",
+   "Boss06/bos06_bind0",
+   "Boss06/bos06_core0",
+   "Boss06/bos06_core1",
+   "Boss06/bos06_core1short",
+   "Boss06/bos06_core2",
+   "Boss06/bos06_core3",
+   "Boss06/bos06_core4",
+   "Boss06/bos06_side1",
+   "Boss06/bos06_side2",
+   "Boss06/bos06_sideway",
+   "Boss06/bos06laser01",
+   "Boss07/bos07armh",
+   "Boss07/bos07body",
+   "Boss07/bos07body3way",
+   "Boss07/bos07bodyS",
+   "Boss07/bos07face",
+   "Boss07/bos07laser",
+   "Boss07/bos07leg",
+   "Boss07/bos07leg1way",
+   "Boss07/bos07leg2",
+   "Boss07/bos07leg2way",
+   "Boss08/bos08arm0",
+   "Boss08/bos08b_00",
+   "Boss08/bos08b_10",
+   "Boss08/bos08b_11",
+   "Boss08/bos08b_bow",
+   "Boss08/bos08c_00",
+   "Boss08/bos08c_01",
+   "Boss08/bos08c_02",
+   "Boss08/bos08c_03",
+   "Boss08/bos08cover0",
+   "Boss08/bos08cover1",
+   "bow_fan130",
+   "bow_fan140",
+   "bow_fan150",
+   "bow_fan160",
+   "bow_fan170",
+   "bow_fan180",
+   "bow_fan190",
+   "bow_fan200",
+   "bow_fan210",
+   "bow_fan220",
+   "bow_fan230",
+   "ene_x01_fire1",
+   "ene_x02_fire1",
+   "ene_x03_fire1",
+   "fan150",
+   "fan170",
+   "fan180",
+   "fan190",
+   "fan200",
+   "fan220",
+   "lc01_fire1",
+   "lc01_fire3",
+   "lc01_firec",
+   "lc01_firec2",
+   "mb01_fire1",
+   "mb01_fire2",
+   "mb01_fire3",
+   "mb01_fire4",
+   "md01_fire1_sel",
+   "md01_fire3_sel",
+   "mf01_fire1",
+   "mf01_fire2",
+   "mg01sp1_1way",
+   "mk01_fire1",
+   "si01_fire",
+   "sq01_fire1_sel",
+   "sq01_fire2_sel",
+   "st01_fire1",
+   "timeup_fire"
+  ],
+  "enemyData": [
+   "bos02_00_sa01",
+   "bos04_bitL",
+   "bos04_bitR",
+   "bos04_sg00C",
+   "bos04_sg00L",
+   "bos04_sg00R",
+   "bos05_arm",
+   "ene_asteroid_bs_l_l",
+   "ene_asteroid_bs_l_r",
+   "ene_asteroid_bs_m_l",
+   "ene_asteroid_bs_m_r",
+   "ene_asteroid_bs_s_l",
+   "ene_asteroid_bs_s_r",
+   "ene_boss08c",
+   "ene_sd02",
+   "ene_tutorial",
+   "ene_x01",
+   "ene_x02",
+   "ene_x03",
+   "item_box_airB",
+   "item_box_airL",
+   "item_box_airR",
+   "item_box_airT",
+   "item_box_stay"
+  ]
+ },
+ "unreferencedAssets": [
+  "bos02way3",
+  "bos02way3i",
+  "bos03_face",
+  "bos03_face0",
+  "bos03_face1",
+  "bos03_sideway0",
+  "bos03_sideway1",
+  "bos03_way3_",
+  "btBullet04_15way2time",
+  "bulletTemplate",
+  "bulletTemplateWide2",
+  "bulletTemplateWide2Self",
+  "fan130",
+  "fan140",
+  "fan160",
+  "fan210",
+  "fan230",
+  "laser000Test00_1way",
+  "laser000Test00_2way",
+  "laser1",
+  "laser2",
+  "lasera",
+  "mc01_fire1",
+  "mc01_fire2",
+  "mg01_fire1",
+  "mg01sp1_3way",
+  "mh01_shot1",
+  "mh01_shot1a",
+  "mh01_shot1b",
+  "mh01_shot1c",
+  "mh01_shot1d",
+  "mh01_shot1e",
+  "mh01_shot2",
+  "mh01_shot2a_1",
+  "mp01_fire1b",
+  "mx02_fire2",
+  "mx02_fire3",
+  "shot00",
+  "shot00x5",
+  "shot01x8",
+  "shot02",
+  "shot02x4",
+  "shot03",
+  "shot04",
+  "shot04x3",
+  "shot05",
+  "so01_fire",
+  "way12x5",
+  "way16",
+  "way3",
+  "way4",
+  "way5",
+  "way5x5",
+  "way5x8+rot",
+  "way6x6",
+  "way8",
+  "way8x16+rot",
+  "wid2",
+  "wide6x60",
+  "SelecterTest000"
+ ],
+ "unresolved": [
+  {
+   "item": "Pf_Ene_Bos06/turret",
+   "kind": "muzzle pack",
+   "reason": "muzzle {'fileID': '0'} is not a transform of the prefab"
+  },
+  {
+   "item": "Pf_Ene_Bos06/legs",
+   "kind": "muzzle pack",
+   "reason": "muzzle {'fileID': '0'} is not a transform of the prefab"
+  },
+  {
+   "item": "Pf_Ene_Bos08A/turret",
+   "kind": "muzzle pack",
+   "reason": "muzzle {'fileID': '0'} is not a transform of the prefab"
+  },
+  {
+   "item": "Pf_Ene_Bos08A/legs",
+   "kind": "muzzle pack",
+   "reason": "muzzle {'fileID': '0'} is not a transform of the prefab"
+  },
+  {
+   "item": "Pf_Ene_Bos08B/legs",
+   "kind": "muzzle pack",
+   "reason": "muzzle {'fileID': '0'} is not a transform of the prefab"
+  },
+  {
+   "item": "enemybullet002",
+   "kind": "irradiation without laser",
+   "patterns": [
+    "bos01bullet10",
+    "bos01bullet11",
+    "mx02_fire1"
+   ],
+   "reason": "nIrradiation > 0 but enemybullet002 is a plain bullet prefab (no EnemyLaserCollision component); Round1EnemyAttacks would draw it as a beam"
+  },
+  {
+   "item": "enemybullet004",
+   "kind": "irradiation without laser",
+   "patterns": [
+    "bos01bullet01"
+   ],
+   "reason": "nIrradiation > 0 but enemybullet004 is a plain bullet prefab (no EnemyLaserCollision component); Round1EnemyAttacks would draw it as a beam"
+  },
+  {
+   "item": "enemybullet006",
+   "kind": "irradiation without laser",
+   "patterns": [
+    "bos04p6sl",
+    "mh01_shot2a_2",
+    "mp01_fire1"
+   ],
+   "reason": "nIrradiation > 0 but enemybullet006 is a plain bullet prefab (no EnemyLaserCollision component); Round1EnemyAttacks would draw it as a beam"
+  },
+  {
+   "item": "enemybullet007",
+   "kind": "irradiation without laser",
+   "patterns": [
+    "bos06_core1short"
+   ],
+   "reason": "nIrradiation > 0 but enemybullet007 is a plain bullet prefab (no EnemyLaserCollision component); Round1EnemyAttacks would draw it as a beam"
+  },
+  {
+   "item": "enemybullet010",
+   "kind": "irradiation without laser",
+   "patterns": [
+    "bos08c_01"
+   ],
+   "reason": "nIrradiation > 0 but enemybullet010 is a plain bullet prefab (no EnemyLaserCollision component); Round1EnemyAttacks would draw it as a beam"
+  },
+  {
+   "item": "enemylaser010",
+   "kind": "laser",
+   "reason": "InGame.Kernel.Enemy.EnemyLaserCollision2 has no _laserWidth/_chargeTime (VFX-graph beam); charge and width left out, so JsonUtility reads 0 for them"
+  }
+ ]
+}

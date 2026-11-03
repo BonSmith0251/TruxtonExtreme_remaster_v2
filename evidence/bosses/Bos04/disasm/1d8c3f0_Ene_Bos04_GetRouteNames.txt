@@ -1,0 +1,33 @@
+== System.Collections.Generic.List`1<System.String> InGame.Kernel.Enemy.Ene_Bos04::GetRouteNames() RVA 1d8c3f0 len 8a
+01d8c3f0 push       rbx
+01d8c3f2 sub        rsp, 0x20
+01d8c3f6 cmp        byte ptr [rip + 0x28d73b4], 0 ; [.data 46637b1]
+01d8c3fd mov        rbx, rcx
+01d8c400 jne        0x1d8c421
+01d8c402 lea        rcx, [rip + 0x26253ef] ; [.data 43b17f8] TypeInfo#37303
+01d8c409 call       0x4e0a50
+01d8c40e lea        rcx, [rip + 0x25e9063] ; [.data 4375478] MethodRef#202061
+01d8c415 call       0x4e0a50
+01d8c41a mov        byte ptr [rip + 0x28d7390], 1 ; [.data 46637b1]
+01d8c421 xor        edx, edx
+01d8c423 mov        rcx, rbx
+01d8c426 call       0x1d0dae0 ; InGame.Kernel.Enemy.PawnEnemy::GetRouteNames()
+01d8c42b mov        rdx, qword ptr [rip + 0x26253c6] ; [.data 43b17f8] TypeInfo#37303
+01d8c432 mov        rbx, rax
+01d8c435 cmp        dword ptr [rdx + 0xe4], 0
+01d8c43c jne        0x1d8c44d
+01d8c43e mov        rcx, rdx
+01d8c441 call       0x4e0d90
+01d8c446 mov        rdx, qword ptr [rip + 0x26253ab] ; [.data 43b17f8] TypeInfo#37303
+01d8c44d test       rbx, rbx
+01d8c450 je         0x1d8c475
+01d8c452 mov        rdx, qword ptr [rdx + 0xb8] ; ~_mover
+01d8c459 mov        rcx, rbx
+01d8c45c mov        r8, qword ptr [rip + 0x25e9015] ; [.data 4375478] MethodRef#202061
+01d8c463 mov        rdx, qword ptr [rdx + 0x18]
+01d8c467 call       0xbc80e0
+01d8c46c mov        rax, rbx
+01d8c46f add        rsp, 0x20
+01d8c473 pop        rbx
+01d8c474 ret        
+01d8c475 call       0x4e0d00

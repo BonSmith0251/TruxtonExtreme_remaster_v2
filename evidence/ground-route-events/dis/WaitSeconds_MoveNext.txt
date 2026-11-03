@@ -1,0 +1,150 @@
+01cf53b0  mov      qword ptr [rsp + 8], rcx   ; sm.<>t__builder
+01cf53b5  push     rbx
+01cf53b6  push     rsi
+01cf53b7  push     rdi
+01cf53b8  sub      rsp, 0x70
+01cf53bc  movaps   xmmword ptr [rsp + 0x60], xmm6   ; ev.subnameValue/._psystemCount
+01cf53c1  movaps   xmmword ptr [rsp + 0x50], xmm7   ; ev.randomFire/._animatorsPlay
+01cf53c6  mov      rbx, rcx
+01cf53c9  mov      qword ptr [rsp + 0x20], rcx   ; sm.<>4__this/ev.value0
+01cf53ce  cmp      byte ptr [rip + 0x296df14], 0   ; [46632e9] bss
+01cf53d5  jne      0x1cf540e
+01cf53d7  lea      rcx, [rip + 0x26af23a]   ; [43a4618] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::AwaitUnsafeOnCompleted<.Awaiter,.<<_execEventWithRepeat>g__WaitSeconds|1>d>
+01cf53de  call     0x4e0a50
+01cf53e3  lea      rcx, [rip + 0x26a002e]   ; [4395418] TypeInfo System.Threading.CancellationToken
+01cf53ea  call     0x4e0a50
+01cf53ef  lea      rcx, [rip + 0x26c2c0a]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01cf53f6  call     0x4e0a50
+01cf53fb  lea      rcx, [rip + 0x26c6ece]   ; [43bc2d0] TypeInfo Cysharp.Threading.Tasks.UniTask
+01cf5402  call     0x4e0a50
+01cf5407  mov      byte ptr [rip + 0x296dedb], 1   ; [46632e9] bss
+01cf540e  xor      esi, esi
+01cf5410  mov      dword ptr [rsp + 0xa0], esi   ; ._rotateToken
+01cf5417  mov      dword ptr [rsp + 0xa8], esi   ; ._scaleToken
+01cf541e  mov      dword ptr [rsp + 0x40], esi   ; ev.intValue1/._animators
+01cf5422  mov      eax, dword ptr [rbx]   ; sm.<>1__state
+01cf5424  mov      rdi, qword ptr [rbx + 0x20]   ; sm.<>4__this/ev.value0
+01cf5428  xorps    xmm7, xmm7
+01cf542b  test     eax, eax
+01cf542d  jne      0x1cf5449
+01cf542f  mov      eax, dword ptr [rbx + 0x28]   ; sm.<>u__1/ev.vectorValue
+01cf5432  mov      dword ptr [rsp + 0xa0], eax   ; ._rotateToken
+01cf5439  xor      eax, eax
+01cf543b  mov      dword ptr [rbx + 0x28], eax   ; sm.<>u__1/ev.vectorValue
+01cf543e  mov      dword ptr [rbx], 0xffffffff   ; sm.<>1__state
+01cf5444  jmp      0x1cf5540
+01cf5449  movss    xmm0, dword ptr [rbx + 0x18]   ; sm.tsec/ev.repeatDelay
+01cf544e  comiss   xmm0, xmm7
+01cf5451  jbe      0x1cf557e
+01cf5457  test     rdi, rdi
+01cf545a  je       0x1cf5637
+01cf5460  mov      rcx, qword ptr [rip + 0x269ffb1]   ; [4395418] TypeInfo System.Threading.CancellationToken
+01cf5467  cmp      dword ptr [rcx + 0xe4], 0
+01cf546e  jne      0x1cf5475
+01cf5470  call     0x4e0d90
+01cf5475  lea      rcx, [rdi + 0x18]   ; sm.tsec/ev.repeatDelay
+01cf5479  xor      edx, edx
+01cf547b  call     0x2096440   ; CancellationToken::get_IsCancellationRequested()
+01cf5480  test     al, al
+01cf5482  jne      0x1cf5587
+01cf5488  movss    xmm6, dword ptr [rbx + 0x18]   ; sm.tsec/ev.repeatDelay
+01cf548d  mov      rax, qword ptr [rip + 0x26c2b6c]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01cf5494  mov      rax, qword ptr [rax + 0x20]   ; sm.<>4__this/ev.value0
+01cf5498  test     byte ptr [rax + 0x135], 1
+01cf549f  jne      0x1cf54a9
+01cf54a1  mov      rcx, rax
+01cf54a4  call     0x4de1e0
+01cf54a9  mov      rax, qword ptr [rax + 0xc0]   ; ._speedToken
+01cf54b0  mov      rax, qword ptr [rax + 0x10]   ; ev.eventType
+01cf54b4  test     byte ptr [rax + 0x135], 1
+01cf54bb  jne      0x1cf54c5
+01cf54bd  mov      rcx, rax
+01cf54c0  call     0x4de1e0
+01cf54c5  mov      rax, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf54cc  mov      rax, qword ptr [rax]   ; sm.<>1__state
+01cf54cf  test     rax, rax
+01cf54d2  je       0x1cf5632
+01cf54d8  mov      rax, qword ptr [rax + 0x28]   ; sm.<>u__1/ev.vectorValue
+01cf54dc  test     rax, rax
+01cf54df  je       0x1cf562c
+01cf54e5  subss    xmm6, dword ptr [rax + 0x18]   ; sm.tsec/ev.repeatDelay
+01cf54ea  movss    dword ptr [rbx + 0x18], xmm6   ; sm.tsec/ev.repeatDelay
+01cf54ef  mov      rcx, qword ptr [rip + 0x26c6dda]   ; [43bc2d0] TypeInfo Cysharp.Threading.Tasks.UniTask
+01cf54f6  cmp      dword ptr [rcx + 0xe4], 0
+01cf54fd  jne      0x1cf5504
+01cf54ff  call     0x4e0d90
+01cf5504  xor      edx, edx
+01cf5506  mov      ecx, 8
+01cf550b  call     0x604260   ; HAuthTicket::op_Explicit(System.UInt32) | HAuthTicket::op_Explicit(Steamworks.HAuthTicket)
+01cf5510  mov      dword ptr [rsp + 0xa8], eax   ; ._scaleToken
+01cf5517  xor      edx, edx
+01cf5519  lea      rcx, [rsp + 0xa8]   ; ._scaleToken
+01cf5521  call     0x607140   ; CSteamID::GetAccountID() | SafeModeReport::get_totMissingTargetOrFieldErrors()
+01cf5526  mov      dword ptr [rsp + 0xa0], eax   ; ._rotateToken
+01cf552d  xor      edx, edx
+01cf552f  lea      rcx, [rsp + 0xa0]   ; ._rotateToken
+01cf5537  call     0x7aa370   ; InGameBullet::IsLaser() | InGameBulletItem::IsLaser()
+01cf553c  test     al, al
+01cf553e  je       0x1cf5554
+01cf5540  xor      edx, edx
+01cf5542  lea      rcx, [rsp + 0xa0]   ; ._rotateToken
+01cf554a  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01cf554f  jmp      0x1cf5449
+01cf5554  mov      dword ptr [rbx], esi   ; sm.<>1__state
+01cf5556  mov      eax, dword ptr [rsp + 0xa0]   ; ._rotateToken
+01cf555d  mov      dword ptr [rbx + 0x28], eax   ; sm.<>u__1/ev.vectorValue
+01cf5560  lea      rcx, [rbx + 8]   ; sm.<>t__builder
+01cf5564  mov      r9, qword ptr [rip + 0x26af0ad]   ; [43a4618] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::AwaitUnsafeOnCompleted<.Awaiter,.<<_execEventWithRepeat>g__WaitSeconds|1>d>
+01cf556b  mov      r8, rbx
+01cf556e  lea      rdx, [rsp + 0xa0]   ; ._rotateToken
+01cf5576  call     0x2ab60
+01cf557b  nop      
+01cf557c  jmp      0x1cf55eb
+01cf557e  test     rdi, rdi
+01cf5581  je       0x1cf563c
+01cf5587  movss    xmm1, dword ptr [rdi + 0x24]   ; ev.value1
+01cf558c  movss    xmm0, dword ptr [rdi + 0x20]   ; sm.<>4__this/ev.value0
+01cf5591  addss    xmm0, dword ptr [rbx + 0x18]   ; sm.tsec/ev.repeatDelay
+01cf5596  comiss   xmm7, xmm0
+01cf5599  ja       0x1cf55a5
+01cf559b  comiss   xmm0, xmm1
+01cf559e  jbe      0x1cf55a8
+01cf55a0  movaps   xmm0, xmm1
+01cf55a3  jmp      0x1cf55a8
+01cf55a5  movaps   xmm0, xmm7
+01cf55a8  movss    dword ptr [rdi + 0x20], xmm0   ; sm.<>4__this/ev.value0
+01cf55ad  mov      dword ptr [rbx], 0xfffffffe   ; sm.<>1__state
+01cf55b3  cmp      byte ptr [rip + 0x296b36a], 0   ; [4660924] bss
+01cf55ba  jne      0x1cf55cf
+01cf55bc  lea      rcx, [rip + 0x26dfe85]   ; [43d5448] TypeInfo Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise
+01cf55c3  call     0x4e0a50
+01cf55c8  mov      byte ptr [rip + 0x296b355], 1   ; [4660924] bss
+01cf55cf  cmp      qword ptr [rbx + 8], 0   ; sm.<>t__builder
+01cf55d4  je       0x1cf55eb
+01cf55d6  mov      ecx, 2
+01cf55db  mov      r8, qword ptr [rbx + 8]   ; sm.<>t__builder
+01cf55df  mov      rdx, qword ptr [rip + 0x26dfe62]   ; [43d5448] TypeInfo Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise
+01cf55e6  call     0x22b0
+01cf55eb  movaps   xmm6, xmmword ptr [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01cf55f0  movaps   xmm7, xmmword ptr [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01cf55f5  add      rsp, 0x70
+01cf55f9  pop      rdi
+01cf55fa  pop      rsi
+01cf55fb  pop      rbx
+01cf55fc  ret      
+01cf55fd  mov      rax, qword ptr [rsp + 0x20]   ; sm.<>4__this/ev.value0
+01cf5602  mov      dword ptr [rax], 0xfffffffe   ; sm.<>1__state
+01cf5608  mov      eax, dword ptr [rsp + 0x40]   ; ev.intValue1/._animators
+01cf560c  dec      eax
+01cf560e  movsxd   rdx, eax
+01cf5611  mov      rcx, qword ptr [rsp + 0x90]   ; ._destroyedToken
+01cf5619  add      rcx, 8
+01cf561d  xor      r8d, r8d
+01cf5620  mov      rdx, qword ptr [rsp + rdx*8 + 0x38]
+01cf5625  call     0x1132bc0
+01cf562a  jmp      0x1cf55eb
+01cf562c  call     0x4e0d00
+01cf5631  nop      
+01cf5632  call     0x4e0d00
+01cf5637  call     0x4e0d00
+01cf563c  call     0x4e0d00

@@ -1,0 +1,208 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04::Initialize() RVA 1d8c5f0 len 385
+01d8c5f0 mov        qword ptr [rsp + 8], rcx
+01d8c5f5 push       rbx
+01d8c5f6 push       rsi
+01d8c5f7 push       rdi
+01d8c5f8 push       r12
+01d8c5fa push       r13
+01d8c5fc push       r14
+01d8c5fe push       r15
+01d8c600 sub        rsp, 0x40
+01d8c604 mov        r14, rcx
+01d8c607 cmp        byte ptr [rip + 0x28d719a], 0 ; [.data 46637a8]
+01d8c60e jne        0x1d8c65f
+01d8c610 lea        rcx, [rip + 0x262a659] ; [.data 43b6c70] Il2CppType#53897
+01d8c617 call       0x4e0a50
+01d8c61c lea        rcx, [rip + 0x264036d] ; [.data 43cc990] TypeInfo#39371
+01d8c623 call       0x4e0a50
+01d8c628 lea        rcx, [rip + 0x2641331] ; [.data 43cd960] TypeInfo#39412
+01d8c62f call       0x4e0a50
+01d8c634 lea        rcx, [rip + 0x263125d] ; [.data 43bd898] MethodRef#201292
+01d8c63b call       0x4e0a50
+01d8c640 lea        rcx, [rip + 0x261df31] ; [.data 43aa578] TypeInfo#67210
+01d8c647 call       0x4e0a50
+01d8c64c lea        rcx, [rip + 0x25e8855] ; [.data 4374ea8] TypeInfo#32139
+01d8c653 call       0x4e0a50
+01d8c658 mov        byte ptr [rip + 0x28d7149], 1 ; [.data 46637a8]
+01d8c65f xor        r15d, r15d
+01d8c662 mov        qword ptr [rsp + 0x90], r15 ; ~_priority
+01d8c66a mov        qword ptr [rsp + 0x98], r15 ; ~_invincibleTime
+01d8c672 xor        edx, edx
+01d8c674 mov        rcx, r14
+01d8c677 call       0x1d0dfc0 ; InGame.Kernel.Enemy.PawnEnemy::Initialize()
+01d8c67c mov        rax, qword ptr [r14 + 0xb8] ; ~_mover
+01d8c683 test       rax, rax
+01d8c686 je         0x1d8c93b
+01d8c68c mov        byte ptr [rax + 0x292], 1
+01d8c693 mov        edx, dword ptr [r14 + 0x270] ; ~_MuzzleCount
+01d8c69a mov        rcx, qword ptr [rip + 0x25e8807] ; [.data 4374ea8] TypeInfo#32139
+01d8c6a1 call       0x4dfe00
+01d8c6a6 mov        qword ptr [r14 + 0x278], rax ; ~_muzzles
+01d8c6ad lea        rcx, [r14 + 0x278] ; ~_muzzles
+01d8c6b4 mov        rdx, rax
+01d8c6b7 call       0x4dfd80
+01d8c6bc mov        rbx, qword ptr [rip + 0x262a5ad] ; [.data 43b6c70] Il2CppType#53897
+01d8c6c3 mov        rcx, qword ptr [rip + 0x28eb886] ; [.data 4677f50]
+01d8c6ca cmp        dword ptr [rcx + 0xe4], r15d
+01d8c6d1 jne        0x1d8c6d8
+01d8c6d3 call       0x4e0d90
+01d8c6d8 xor        edx, edx
+01d8c6da mov        rcx, rbx
+01d8c6dd call       0x2051bf0 ; System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)
+01d8c6e2 mov        rbx, rax
+01d8c6e5 mov        rcx, qword ptr [rip + 0x28eb81c] ; [.data 4677f08]
+01d8c6ec cmp        dword ptr [rcx + 0xe4], r15d
+01d8c6f3 jne        0x1d8c6fa
+01d8c6f5 call       0x4e0d90
+01d8c6fa xor        edx, edx
+01d8c6fc mov        rcx, rbx
+01d8c6ff call       0x2064b50 ; System.Enum::GetValues(System.Type)
+01d8c704 test       rax, rax
+01d8c707 je         0x1d8c93b
+01d8c70d xor        edx, edx
+01d8c70f mov        rcx, rax
+01d8c712 call       0x203ede0 ; System.Array::GetEnumerator()
+01d8c717 mov        qword ptr [rsp + 0x90], rax ; ~_priority
+01d8c71f mov        qword ptr [rsp + 0x28], r15
+01d8c724 lea        r13, [rsp + 0x90] ; ~_priority
+01d8c72c mov        qword ptr [rsp + 0x30], r13
+01d8c731 lea        r12, [rsp + 0x98] ; ~_invincibleTime
+01d8c739 mov        qword ptr [rsp + 0x38], r12
+01d8c73e nop        
+01d8c740 mov        r8, qword ptr [rsp + 0x90] ; ~_priority
+01d8c748 test       r8, r8
+01d8c74b je         0x1d8c96a
+01d8c751 xor        ecx, ecx
+01d8c753 mov        rdx, qword ptr [rip + 0x2641206] ; [.data 43cd960] TypeInfo#39412
+01d8c75a call       0x22b0
+01d8c75f test       al, al
+01d8c761 je         0x1d8c8ab
+01d8c767 mov        rbx, qword ptr [rsp + 0x90] ; ~_priority
+01d8c76f test       rbx, rbx
+01d8c772 je         0x1d8c965
+01d8c778 mov        r9, qword ptr [rip + 0x26411e1] ; [.data 43cd960] TypeInfo#39412
+01d8c77f mov        r10, qword ptr [rbx]
+01d8c782 movzx      ecx, r15w
+01d8c786 movzx      edx, word ptr [r10 + 0x12e]
+01d8c78e cmp        r15w, dx
+01d8c792 jae        0x1d8c7b8
+01d8c794 mov        r8, qword ptr [r10 + 0xb0] ; ~_updateEventCount
+01d8c79b nop        dword ptr [rax + rax]
+01d8c7a0 movzx      eax, cx
+01d8c7a3 add        rax, rax
+01d8c7a6 cmp        qword ptr [r8 + rax*8], r9
+01d8c7aa je         0x1d8c842
+01d8c7b0 inc        cx
+01d8c7b3 cmp        cx, dx
+01d8c7b6 jb         0x1d8c7a0
+01d8c7b8 mov        r8d, 1
+01d8c7be mov        rdx, r9
+01d8c7c1 mov        rcx, rbx
+01d8c7c4 call       0x4ddae0
+01d8c7c9 mov        rdx, rax
+01d8c7cc mov        rax, qword ptr [rdx]
+01d8c7cf mov        rdx, qword ptr [rdx + 8]
+01d8c7d3 mov        rcx, rbx
+01d8c7d6 call       rax
+01d8c7d8 mov        rdi, rax
+01d8c7db mov        rbx, qword ptr [r14 + 0x168] ; ~_modelTop
+01d8c7e2 test       rax, rax
+01d8c7e5 je         0x1d8c960
+01d8c7eb mov        rdx, qword ptr [rax]
+01d8c7ee mov        r8, qword ptr [rdx + 0x168] ; ~_modelTop
+01d8c7f5 mov        rdx, qword ptr [rdx + 0x170] ; ~_targetY
+01d8c7fc mov        rcx, rax
+01d8c7ff call       r8
+01d8c802 xor        r8d, r8d
+01d8c805 mov        rdx, rax
+01d8c808 mov        rcx, rbx
+01d8c80b call       0x1de9050 ; KANAI.Kernel.Extensions.Extensions::FindAlls(UnityEngine.Transform,System.String)
+01d8c810 mov        rsi, rax
+01d8c813 mov        rbx, qword ptr [r14 + 0x278] ; ~_muzzles
+01d8c81a test       rbx, rbx
+01d8c81d je         0x1d8c95b
+01d8c823 test       rax, rax
+01d8c826 je         0x1d8c865
+01d8c828 mov        rdx, qword ptr [rbx]
+01d8c82b mov        rdx, qword ptr [rdx + 0x40]
+01d8c82f mov        rcx, rax
+01d8c832 call       0x4dfda0
+01d8c837 test       rax, rax
+01d8c83a je         0x1d8c941
+01d8c840 jmp        0x1d8c865
+01d8c842 movzx      ecx, cx
+01d8c845 add        rcx, rcx
+01d8c848 mov        ecx, dword ptr [r8 + rcx*8 + 8]
+01d8c84d inc        ecx
+01d8c84f movsxd     rdx, ecx
+01d8c852 shl        rdx, 4
+01d8c856 add        rdx, 0x138
+01d8c85d add        rdx, r10
+01d8c860 jmp        0x1d8c7cc
+01d8c865 mov        rdx, qword ptr [rip + 0x28eb64c] ; [.data 4677eb8]
+01d8c86c mov        rcx, qword ptr [rdi]
+01d8c86f mov        rax, qword ptr [rdx + 0x40]
+01d8c873 cmp        qword ptr [rcx + 0x40], rax
+01d8c877 mov        rcx, rdi
+01d8c87a jne        0x1d8c956
+01d8c880 call       0x4dff60
+01d8c885 movsxd     rcx, dword ptr [rax]
+01d8c888 cmp        ecx, dword ptr [rbx + 0x18]
+01d8c88b jae        0x1d8c951
+01d8c891 mov        qword ptr [rbx + rcx*8 + 0x20], rsi
+01d8c896 lea        rax, [rbx + 0x20]
+01d8c89a lea        rcx, [rax + rcx*8]
+01d8c89e mov        rdx, rsi
+01d8c8a1 call       0x4dfd80
+01d8c8a6 jmp        0x1d8c740
+01d8c8ab mov        rdx, qword ptr [rip + 0x26400de] ; [.data 43cc990] TypeInfo#39371
+01d8c8b2 mov        rcx, qword ptr [r13]
+01d8c8b6 call       0x4dfda0
+01d8c8bb mov        qword ptr [r12], rax
+01d8c8bf test       rax, rax
+01d8c8c2 je         0x1d8c8d5
+01d8c8c4 xor        ecx, ecx
+01d8c8c6 mov        r8, rax
+01d8c8c9 mov        rdx, qword ptr [rip + 0x26400c0] ; [.data 43cc990] TypeInfo#39371
+01d8c8d0 call       0x22b0
+01d8c8d5 jmp        0x1d8c8f7
+01d8c8d7 lea        rcx, [rsp + 0x30]
+01d8c8dc call       0x71b4f0
+01d8c8e1 mov        rcx, qword ptr [rsp + 0x28]
+01d8c8e6 test       rcx, rcx
+01d8c8e9 jne        0x1d8c970
+01d8c8ef mov        r14, qword ptr [rsp + 0x80]
+01d8c8f7 mov        rcx, qword ptr [rip + 0x261dc7a] ; [.data 43aa578] TypeInfo#67210
+01d8c8fe call       0x4e0cb0
+01d8c903 mov        rbx, rax
+01d8c906 mov        rdx, qword ptr [rip + 0x2630f8b] ; [.data 43bd898] MethodRef#201292
+01d8c90d mov        rcx, rax
+01d8c910 call       0xb16050 ; System.Collections.Generic.List`1::.ctor() || System.Collections.Generic.LowLevelList`1::.ctor()
+01d8c915 mov        qword ptr [r14 + 0x2e8], rbx ; ~_guardianList
+01d8c91c lea        rcx, [r14 + 0x2e8] ; ~_guardianList
+01d8c923 mov        rdx, rbx
+01d8c926 call       0x4dfd80
+01d8c92b add        rsp, 0x40
+01d8c92f pop        r15
+01d8c931 pop        r14
+01d8c933 pop        r13
+01d8c935 pop        r12
+01d8c937 pop        rdi
+01d8c938 pop        rsi
+01d8c939 pop        rbx
+01d8c93a ret        
+01d8c93b call       0x4e0d00
+01d8c940 nop        
+01d8c941 call       0x4e0670
+01d8c946 nop        
+01d8c947 xor        edx, edx
+01d8c949 mov        rcx, rax
+01d8c94c call       0x4e0cc0
+01d8c951 call       0x4e0cf0
+01d8c956 call       0x4dfdc0
+01d8c95b call       0x4e0d00
+01d8c960 call       0x4e0d00
+01d8c965 call       0x4e0d00
+01d8c96a call       0x4e0d00
+01d8c96f nop        
+01d8c970 call       0x4dc9e0

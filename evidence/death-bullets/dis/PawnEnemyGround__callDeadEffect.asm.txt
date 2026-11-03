@@ -1,0 +1,141 @@
+#### InGame.Kernel.Enemy.PawnEnemyGround::_callDeadEffect() RVA 1d17fe0 len 2be
+01d17fe0  mov      qword ptr [rsp + 0x18], rbx
+01d17fe5  push     rdi
+01d17fe6  sub      rsp, 0xa0
+01d17fed  cmp      byte ptr [rip + 0x294b44f], 0   ; [4663443] bss
+01d17ff4  mov      rbx, rcx
+01d17ff7  jne      0x1d18018
+01d17ff9  lea      rcx, [rip + 0x26a0000]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d18000  call     0x4e0a50
+01d18005  lea      rcx, [rip + 0x2665e94]   ; [437dea0] TypeInfo UnityEngine.Object
+01d1800c  call     0x4e0a50
+01d18011  mov      byte ptr [rip + 0x294b42b], 1   ; [4663443] bss
+01d18018  mov      rax, qword ptr [rip + 0x269ffe1]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d1801f  mov      rax, qword ptr [rax + 0x20]   ; ._collisions
+01d18023  test     byte ptr [rax + 0x135], 1
+01d1802a  jne      0x1d18034
+01d1802c  mov      rcx, rax
+01d1802f  call     0x4de1e0
+01d18034  mov      rax, qword ptr [rax + 0xc0]   ; ._burnShake
+01d1803b  mov      rax, qword ptr [rax + 0x10]
+01d1803f  test     byte ptr [rax + 0x135], 1
+01d18046  jne      0x1d18050
+01d18048  mov      rcx, rax
+01d1804b  call     0x4de1e0
+01d18050  mov      rax, qword ptr [rax + 0xb8]   ; ._mover
+01d18057  mov      qword ptr [rsp + 0xb0], rbp   ; ._updateEventCount
+01d1805f  mov      qword ptr [rsp + 0xb8], rsi   ; ._mover
+01d18067  movaps   xmmword ptr [rsp + 0x90], xmm6   ; ._priority
+01d1806f  mov      rdi, qword ptr [rax]
+01d18072  movaps   xmmword ptr [rsp + 0x80], xmm7
+01d1807a  movaps   xmmword ptr [rsp + 0x70], xmm8
+01d18080  movaps   xmmword ptr [rsp + 0x60], xmm9   ; ._currentPosition
+01d18086  test     rdi, rdi
+01d18089  je       0x1d18293
+01d1808f  mov      rcx, qword ptr [rip + 0x2665e0a]   ; [437dea0] TypeInfo UnityEngine.Object
+01d18096  mov      rbp, qword ptr [rdi + 0x80]
+01d1809d  mov      rsi, qword ptr [rbx + 0xb8]   ; ._mover
+01d180a4  cmp      dword ptr [rcx + 0xe4], 0
+01d180ab  jne      0x1d180b2
+01d180ad  call     0x4e0d90
+01d180b2  xor      r8d, r8d
+01d180b5  xor      edx, edx
+01d180b7  mov      rcx, rsi
+01d180ba  call     0x306d270   ; Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+01d180bf  test     al, al
+01d180c1  je       0x1d180cd
+01d180c3  movss    xmm6, dword ptr [rip + 0x17c8b0d]   ; rdata 34e0bd8 f=10,20,57.29578,100 d=134217760.6
+01d180cb  jmp      0x1d180e7
+01d180cd  mov      rcx, qword ptr [rbx + 0xb8]   ; ._mover
+01d180d4  test     rcx, rcx
+01d180d7  je       0x1d18293
+01d180dd  xor      edx, edx
+01d180df  call     0x1cdd4c0   ; InGameEnemyMoveBase::get_DurationRemain()
+01d180e4  movaps   xmm6, xmm0
+01d180e7  mov      r8, qword ptr [rbx]
+01d180ea  lea      rcx, [rsp + 0x40]   ; ._hitOrders
+01d180ef  mov      rdx, rbx
+01d180f2  mov      rax, qword ptr [r8 + 0x258]   ; vcall InGame.Kernel.Enemy.PawnEnemy::_getCurrentPosition
+01d180f9  mov      r8, qword ptr [r8 + 0x260]   ; vcall InGame.Kernel.Enemy.PawnEnemy::_getCurrentPosition
+01d18100  call     rax
+01d18102  movsd    xmm1, qword ptr [rbx + 0x1dc]   ; ._groundRuinOffset
+01d1810a  lea      r9, [rsp + 0x40]   ; ._hitOrders
+01d1810f  movss    xmm9, dword ptr [rbx + 0x1e4]
+01d18118  movaps   xmm8, xmm1
+01d1811c  mov      edx, dword ptr [rbx + 0x1fc]   ; ._dropKind
+01d18122  movaps   xmm7, xmm1
+01d18125  movsd    xmm2, qword ptr [rax]
+01d18129  mov      r8, rbp
+01d1812c  addss    xmm9, dword ptr [rax + 8]
+01d18132  mov      rax, qword ptr [rbx]
+01d18135  addss    xmm8, xmm2
+01d1813a  movaps   xmm0, xmm2
+01d1813d  shufps   xmm7, xmm7, 0x55
+01d18141  shufps   xmm0, xmm0, 0x55
+01d18145  mov      rcx, rbx
+01d18148  addss    xmm7, xmm0
+01d1814c  mov      r10, qword ptr [rax + 0x688]   ; vcall InGame.Kernel.Enemy.PawnEnemyGround::DropItem
+01d18153  mov      rax, qword ptr [rax + 0x690]   ; vcall InGame.Kernel.Enemy.PawnEnemyGround::DropItem
+01d1815a  movaps   xmm0, xmm8
+01d1815e  mov      qword ptr [rsp + 0x28], rax   ; ._HitPoint
+01d18163  movss    dword ptr [rsp + 0x48], xmm9   ; ._hitIndex
+01d1816a  unpcklps xmm0, xmm7
+01d1816d  movsd    qword ptr [rsp + 0x40], xmm0   ; ._hitOrders
+01d18173  movss    dword ptr [rsp + 0x20], xmm6   ; ._collisions
+01d18179  call     r10
+01d1817c  cmp      dword ptr [rbx + 0x1d8], 0   ; ._ruinBurnt
+01d18183  je       0x1d1824d
+01d18189  cmp      byte ptr [rip + 0x294b2b7], 0   ; [4663447] bss
+01d18190  mov      rdi, qword ptr [rdi + 0x128]   ; ._recordData
+01d18197  jne      0x1d181ac
+01d18199  lea      rcx, [rip + 0x266a878]   ; [4382a18] TypeInfo InGame.Kernel.Enemy.PawnEnemyGround
+01d181a0  call     0x4e0a50
+01d181a5  mov      byte ptr [rip + 0x294b29b], 1   ; [4663447] bss
+01d181ac  mov      rax, qword ptr [rip + 0x266a865]   ; [4382a18] TypeInfo InGame.Kernel.Enemy.PawnEnemyGround
+01d181b3  cmp      dword ptr [rax + 0xe4], 0
+01d181ba  jne      0x1d181cb
+01d181bc  mov      rcx, rax
+01d181bf  call     0x4e0d90
+01d181c4  mov      rax, qword ptr [rip + 0x266a84d]   ; [4382a18] TypeInfo InGame.Kernel.Enemy.PawnEnemyGround
+01d181cb  mov      rax, qword ptr [rax + 0xb8]
+01d181d2  mov      rcx, qword ptr [rax + 0x20]   ; static PawnEnemyGround.BurntNames
+01d181d6  test     rcx, rcx
+01d181d9  je       0x1d18293
+01d181df  movsxd   rax, dword ptr [rbx + 0x1d8]   ; ._ruinBurnt
+01d181e6  cmp      eax, dword ptr [rcx + 0x18]
+01d181e9  jae      0x1d18299
+01d181ef  mov      rdx, qword ptr [rbx]
+01d181f2  mov      rsi, qword ptr [rcx + rax*8 + 0x20]   ; ._collisions
+01d181f7  mov      rcx, rbx
+01d181fa  mov      rax, qword ptr [rdx + 0x238]   ; vcall InGame.Kernel.Enemy.PawnEnemy::IsGround
+01d18201  mov      rdx, qword ptr [rdx + 0x240]   ; vcall InGame.Kernel.Enemy.PawnEnemy::IsGround
+01d18208  call     rax
+01d1820a  test     rdi, rdi
+01d1820d  je       0x1d18293
+01d18213  movaps   xmm0, xmm8
+01d18217  mov      qword ptr [rsp + 0x30], 0   ; ._Damage
+01d18220  unpcklps xmm0, xmm7
+01d18223  lea      r9, [rsp + 0x40]   ; ._hitOrders
+01d18228  mov      byte ptr [rsp + 0x28], al   ; ._HitPoint
+01d1822c  mov      r8, rbp
+01d1822f  mov      rdx, rsi
+01d18232  movsd    qword ptr [rsp + 0x40], xmm0   ; ._hitOrders
+01d18238  mov      rcx, rdi
+01d1823b  movss    dword ptr [rsp + 0x48], xmm9   ; ._hitIndex
+01d18242  movss    dword ptr [rsp + 0x20], xmm6   ; ._collisions
+01d18248  call     0x1d24010   ; InGameRuinManager::EmitterFrom3D(System.String,UnityEngine.Transform,UnityEngine.Vector3,System.Single,System.Boolean)
+01d1824d  xor      edx, edx
+01d1824f  mov      rcx, rbx
+01d18252  movaps   xmm9, xmmword ptr [rsp + 0x60]   ; ._currentPosition
+01d18258  movaps   xmm8, xmmword ptr [rsp + 0x70]
+01d1825e  movaps   xmm7, xmmword ptr [rsp + 0x80]
+01d18266  movaps   xmm6, xmmword ptr [rsp + 0x90]   ; ._priority
+01d1826e  mov      rsi, qword ptr [rsp + 0xb8]   ; ._mover
+01d18276  mov      rbp, qword ptr [rsp + 0xb0]   ; ._updateEventCount
+01d1827e  mov      rbx, qword ptr [rsp + 0xc0]   ; ._burnShake
+01d18286  add      rsp, 0xa0
+01d1828d  pop      rdi
+01d1828e  jmp      0x1d10e20   ; PawnEnemy::_callDeadEffect()
+01d18293  call     0x4e0d00
+01d18298  int3     
+01d18299  call     0x4e0cf0

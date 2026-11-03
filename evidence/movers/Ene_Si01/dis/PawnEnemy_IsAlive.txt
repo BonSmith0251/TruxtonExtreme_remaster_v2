@@ -1,0 +1,40 @@
+#### InGame.Kernel.Enemy.PawnEnemy::IsAlive() RVA 1d0e480 len 93
+01d0e480  mov      qword ptr [rsp + 8], rbx
+01d0e485  push     rdi
+01d0e486  sub      rsp, 0x20
+01d0e48a  cmp      byte ptr [rip + 0x2954f7c], 0   ; [466340d] bss
+01d0e491  mov      rbx, rcx
+01d0e494  jne      0x1d0e4a9
+01d0e496  lea      rcx, [rip + 0x266fa03]   ; [437dea0] TypeInfo UnityEngine.Object
+01d0e49d  call     0x4e0a50
+01d0e4a2  mov      byte ptr [rip + 0x2954f64], 1   ; [466340d] bss
+01d0e4a9  mov      rcx, qword ptr [rip + 0x266f9f0]   ; [437dea0] TypeInfo UnityEngine.Object
+01d0e4b0  mov      rdi, qword ptr [rbx + 0xb8]   ; ._hormingToken
+01d0e4b7  cmp      dword ptr [rcx + 0xe4], 0
+01d0e4be  jne      0x1d0e4c5
+01d0e4c0  call     0x4e0d90
+01d0e4c5  xor      r8d, r8d
+01d0e4c8  xor      edx, edx
+01d0e4ca  mov      rcx, rdi
+01d0e4cd  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01d0e4d2  test     al, al
+01d0e4d4  je       0x1d0e4fa
+01d0e4d6  mov      rcx, qword ptr [rbx + 0xb8]   ; ._hormingToken
+01d0e4dd  test     rcx, rcx
+01d0e4e0  je       0x1d0e50e
+01d0e4e2  xor      edx, edx
+01d0e4e4  call     0x1d6d5f0   ; EnemyMover::get_IsCallWait()
+01d0e4e9  test     al, al
+01d0e4eb  je       0x1d0e4fa
+01d0e4ed  mov      al, 1
+01d0e4ef  mov      rbx, qword ptr [rsp + 0x30]   ; ._entryFlag
+01d0e4f4  add      rsp, 0x20
+01d0e4f8  pop      rdi
+01d0e4f9  ret      
+01d0e4fa  xor      edx, edx
+01d0e4fc  mov      rcx, rbx
+01d0e4ff  mov      rbx, qword ptr [rsp + 0x30]   ; ._entryFlag
+01d0e504  add      rsp, 0x20
+01d0e508  pop      rdi
+01d0e509  jmp      0x1ddf640   ; HybridCollisions::IsAlive()
+01d0e50e  call     0x4e0d00

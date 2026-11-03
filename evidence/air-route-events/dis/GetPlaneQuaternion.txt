@@ -1,0 +1,134 @@
+#### InGame.Utility.KernelUtility::GetPlaneQuaternion(UnityEngine.Vector3) RVA 1dd7270 len 25b
+01dd7270  mov      rax, rsp
+01dd7273  mov      qword ptr [rax + 8], rbx
+01dd7277  mov      qword ptr [rax + 0x10], rbp   ; ev.eventType
+01dd727b  mov      qword ptr [rax + 0x18], rsi   ; ev.repeatDelay
+01dd727f  push     rdi
+01dd7280  sub      rsp, 0x90
+01dd7287  movzx    r8d, byte ptr [rip + 0x2885282]   ; [465c511] bss
+01dd728f  mov      rbx, rdx
+01dd7292  movaps   xmmword ptr [rax - 0x18], xmm6
+01dd7296  mov      rdi, rcx
+01dd7299  movaps   xmmword ptr [rax - 0x28], xmm7
+01dd729d  movaps   xmmword ptr [rax - 0x38], xmm8
+01dd72a2  movaps   xmmword ptr [rax - 0x48], xmm9
+01dd72a7  test     r8b, r8b
+01dd72aa  jne      0x1dd72c2
+01dd72ac  lea      rcx, [rip + 0x25ea425]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01dd72b3  call     0x4e0a50
+01dd72b8  mov      r8b, 1
+01dd72bb  mov      byte ptr [rip + 0x288524f], r8b   ; [465c511] bss
+01dd72c2  cmp      byte ptr [rip + 0x288c01a], 0   ; [46632e3] bss
+01dd72c9  mov      rax, qword ptr [rip + 0x25ea408]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01dd72d0  mov      ebp, dword ptr [rbx + 8]
+01dd72d3  mov      rdx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01dd72da  movsd    xmm0, qword ptr [rdx + 0x18]   ; ev.repeatDelay
+01dd72df  mov      esi, dword ptr [rdx + 0x20]   ; ev.value0
+01dd72e2  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01dd72e8  movsd    xmm0, qword ptr [rbx]
+01dd72ec  movsd    qword ptr [rsp + 0x30], xmm0   ; ._entryFlag
+01dd72f2  jne      0x1dd730f
+01dd72f4  lea      rcx, [rip + 0x259ba2d]   ; [4372d28] TypeInfo UnityEngine.Mathf
+01dd72fb  call     0x4e0a50
+01dd7300  movzx    r8d, byte ptr [rip + 0x2885209]   ; [465c511] bss
+01dd7308  mov      byte ptr [rip + 0x288bfd4], 1   ; [46632e3] bss
+01dd730f  movss    xmm7, dword ptr [rsp + 0x24]   ; ev.value1
+01dd7315  movss    xmm8, dword ptr [rsp + 0x20]   ; ev.value0
+01dd731c  movaps   xmm6, xmm7
+01dd731f  mov      rax, qword ptr [rip + 0x259ba02]   ; [4372d28] TypeInfo UnityEngine.Mathf
+01dd7326  movaps   xmm0, xmm8
+01dd732a  mulss    xmm6, xmm7
+01dd732e  mulss    xmm0, xmm8
+01dd7333  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01dd733a  movd     xmm9, esi
+01dd733f  movaps   xmm1, xmm9
+01dd7343  addss    xmm6, xmm0
+01dd7347  mulss    xmm1, xmm9
+01dd734c  movss    xmm0, dword ptr [rcx]
+01dd7350  addss    xmm6, xmm1
+01dd7354  comiss   xmm0, xmm6
+01dd7357  ja       0x1dd73bb
+01dd7359  movss    xmm2, dword ptr [rsp + 0x30]   ; ._entryFlag
+01dd735f  movaps   xmm4, xmm7
+01dd7362  movss    xmm5, dword ptr [rsp + 0x34]   ; ._particleLayer
+01dd7368  movaps   xmm0, xmm8
+01dd736c  mulss    xmm4, xmm5
+01dd7370  movaps   xmm1, xmm9
+01dd7374  mulss    xmm0, xmm2
+01dd7378  movd     xmm3, ebp
+01dd737c  mulss    xmm1, xmm3
+01dd7380  addss    xmm4, xmm0
+01dd7384  addss    xmm4, xmm1
+01dd7388  divss    xmm4, xmm6
+01dd738c  movaps   xmm0, xmm4
+01dd738f  movaps   xmm1, xmm4
+01dd7392  mulss    xmm0, xmm8
+01dd7397  mulss    xmm1, xmm7
+01dd739b  mulss    xmm4, xmm9
+01dd73a0  subss    xmm2, xmm0
+01dd73a4  subss    xmm5, xmm1
+01dd73a8  subss    xmm3, xmm4
+01dd73ac  unpcklps xmm2, xmm5
+01dd73af  movsd    qword ptr [rsp + 0x20], xmm2   ; ev.value0
+01dd73b5  movd     eax, xmm3
+01dd73b9  jmp      0x1dd73c7
+01dd73bb  movsd    xmm0, qword ptr [rbx]
+01dd73bf  mov      eax, ebp
+01dd73c1  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01dd73c7  movss    xmm7, dword ptr [rsp + 0x24]   ; ev.value1
+01dd73cd  movss    xmm6, dword ptr [rsp + 0x20]   ; ev.value0
+01dd73d3  movaps   xmm2, xmm7
+01dd73d6  movaps   xmm0, xmm6
+01dd73d9  mulss    xmm2, xmm7
+01dd73dd  mulss    xmm0, xmm6
+01dd73e1  movd     xmm8, eax
+01dd73e6  movaps   xmm1, xmm8
+01dd73ea  addss    xmm2, xmm0
+01dd73ee  mulss    xmm1, xmm8
+01dd73f3  movss    xmm0, dword ptr [rip + 0x17097c1]   ; rdata 34e0bbc f=0.01,0.01745329,0.05,0.5 d=5.373717929e-17
+01dd73fb  addss    xmm2, xmm1
+01dd73ff  comiss   xmm0, xmm2
+01dd7402  ja       0x1dd746b
+01dd7404  test     r8b, r8b
+01dd7407  jne      0x1dd741c
+01dd7409  lea      rcx, [rip + 0x25ea2c8]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01dd7410  call     0x4e0a50
+01dd7415  mov      byte ptr [rip + 0x28850f5], 1   ; [465c511] bss
+01dd741c  mov      rax, qword ptr [rip + 0x25ea2b5]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01dd7423  lea      r8, [rsp + 0x30]   ; ._entryFlag
+01dd7428  xor      r9d, r9d
+01dd742b  movss    dword ptr [rsp + 0x28], xmm8   ; ev.vectorValue
+01dd7432  lea      rdx, [rsp + 0x20]   ; ev.value0
+01dd7437  lea      rcx, [rsp + 0x40]   ; ev.intValue1/._animators
+01dd743c  mov      rax, qword ptr [rax + 0xb8]   ; ._hormingToken
+01dd7443  movsd    xmm0, qword ptr [rax + 0x18]   ; ev.repeatDelay
+01dd7448  mov      eax, dword ptr [rax + 0x20]   ; ev.value0
+01dd744b  movsd    qword ptr [rsp + 0x30], xmm0   ; ._entryFlag
+01dd7451  movaps   xmm0, xmm6
+01dd7454  unpcklps xmm0, xmm7
+01dd7457  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01dd745d  mov      dword ptr [rsp + 0x38], eax   ; ev.stringValue/._psystems
+01dd7461  call     0x304db80   ; Quaternion::Internal_LookRotation(UnityEngine.Vector3&,UnityEngine.Vector3&)
+01dd7466  movups   xmm0, xmmword ptr [rax]
+01dd7469  jmp      0x1dd7498
+01dd746b  cmp      byte ptr [rip + 0x2884fef], 0   ; [465c461] bss
+01dd7472  jne      0x1dd7487
+01dd7474  lea      rcx, [rip + 0x25b44dd]   ; [438b958] TypeInfo UnityEngine.Quaternion
+01dd747b  call     0x4e0a50
+01dd7480  mov      byte ptr [rip + 0x2884fda], 1   ; [465c461] bss
+01dd7487  mov      rax, qword ptr [rip + 0x25b44ca]   ; [438b958] TypeInfo UnityEngine.Quaternion
+01dd748e  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01dd7495  movups   xmm0, xmmword ptr [rcx]
+01dd7498  movaps   xmm7, xmmword ptr [rsp + 0x70]   ; ._transformCache
+01dd749d  lea      r11, [rsp + 0x90]   ; ._destroyedToken
+01dd74a5  mov      rbx, qword ptr [r11 + 0x10]   ; ev.eventType
+01dd74a9  mov      rax, rdi
+01dd74ac  mov      rbp, qword ptr [r11 + 0x18]   ; ev.repeatDelay
+01dd74b0  mov      rsi, qword ptr [r11 + 0x20]   ; ev.value0
+01dd74b4  movaps   xmm6, xmmword ptr [r11 - 0x10]
+01dd74b9  movaps   xmm8, xmmword ptr [r11 - 0x30]
+01dd74be  movaps   xmm9, xmmword ptr [r11 - 0x40]
+01dd74c3  movups   xmmword ptr [rdi], xmm0
+01dd74c6  mov      rsp, r11
+01dd74c9  pop      rdi
+01dd74ca  ret      

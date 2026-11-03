@@ -1,0 +1,73 @@
+01dba790 push rbx 
+01dba792 sub rsp, 0x20 
+01dba796 cmp byte ptr [rip + 0x28a90dd], 0 ; rva=466387a
+01dba79d mov rbx, rcx 
+01dba7a0 jne 0x1dba7c1 
+01dba7a2 lea rcx, [rip + 0x25fd857] ; rva=43b8000
+01dba7a9 call 0x4e0a50 
+01dba7ae lea rcx, [rip + 0x25e7bb3] ; rva=43a2368
+01dba7b5 call 0x4e0a50 
+01dba7ba mov byte ptr [rip + 0x28a90b9], 1 ; rva=466387a
+01dba7c1 xor edx, edx 
+01dba7c3 mov qword ptr [rsp + 0x30], rdi 
+01dba7c8 mov rcx, rbx 
+01dba7cb call 0x1d0d580 ; PawnEnemy::DisabledAllParts()
+01dba7d0 cmp byte ptr [rbx + 0x1b2], 0 
+01dba7d7 je 0x1dba872 
+01dba7dd mov rax, qword ptr [rip + 0x25fd81c] ; rva=43b8000
+01dba7e4 mov rax, qword ptr [rax + 0x20] 
+01dba7e8 test byte ptr [rax + 0x135], 1 
+01dba7ef jne 0x1dba7f9 
+01dba7f1 mov rcx, rax 
+01dba7f4 call 0x4de1e0 
+01dba7f9 mov rax, qword ptr [rax + 0xc0] 
+01dba800 mov rax, qword ptr [rax + 0x10] 
+01dba804 test byte ptr [rax + 0x135], 1 
+01dba80b jne 0x1dba815 
+01dba80d mov rcx, rax 
+01dba810 call 0x4de1e0 
+01dba815 mov rax, qword ptr [rax + 0xb8] 
+01dba81c mov rdi, qword ptr [rax] 
+01dba81f test rdi, rdi 
+01dba822 je 0x1dba88d 
+01dba824 xor edx, edx 
+01dba826 mov rcx, rdi 
+01dba829 call 0x1ce2150 ; InGameManager::AddDiPoint_BossDestroy()
+01dba82e mov rdx, qword ptr [rbx] 
+01dba831 mov rcx, rbx 
+01dba834 mov rax, qword ptr [rdx + 0x6e8] 
+01dba83b mov rdx, qword ptr [rdx + 0x6f0] 
+01dba842 call rax 
+01dba844 xor r8d, r8d 
+01dba847 mov edx, eax 
+01dba849 mov rcx, rdi 
+01dba84c call 0x1cea790 ; InGameManager::SetBossTime(System.Int32)
+01dba851 mov rcx, qword ptr [rip + 0x25e7b10] ; rva=43a2368
+01dba858 cmp dword ptr [rcx + 0xe4], 0 
+01dba85f jne 0x1dba866 
+01dba861 call 0x4e0d90 
+01dba866 xor edx, edx 
+01dba868 mov ecx, 0xb1 
+01dba86d call 0x2723de0 ; SoundUtility::PlayQue(TXEKernel.Sound.SoundUtility/ID)
+01dba872 xor edx, edx 
+01dba874 mov byte ptr [rbx + 0x1b2], 0 
+01dba87b mov rcx, rbx 
+01dba87e mov rdi, qword ptr [rsp + 0x30] 
+01dba883 add rsp, 0x20 
+01dba887 pop rbx 
+01dba888 jmp 0x1d0d200 ; PawnEnemy::DeadResultUpdate()
+01dba88d call 0x4e0d00 
+01dba892 int3 
+01dba893 int3 
+01dba894 int3 
+01dba895 int3 
+01dba896 int3 
+01dba897 int3 
+01dba898 int3 
+01dba899 int3 
+01dba89a int3 
+01dba89b int3 
+01dba89c int3 
+01dba89d int3 
+01dba89e int3 
+01dba89f int3 

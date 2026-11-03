@@ -1,0 +1,33 @@
+01dba430 push rbx 
+01dba432 sub rsp, 0x30 
+01dba436 mov byte ptr [rcx + 0x1b2], dl 
+01dba43c mov rbx, rcx 
+01dba43f mov rdx, qword ptr [rcx + 0x50] 
+01dba443 mov dword ptr [rcx + 0x1bc], 0 
+01dba44d mov word ptr [rcx + 0x1b3], 0 
+01dba456 mov dword ptr [rcx + 0x21c], 0 
+01dba460 test rdx, rdx 
+01dba463 je 0x1dba4a1 
+01dba465 xor r8d, r8d 
+01dba468 lea rcx, [rsp + 0x20] 
+01dba46d call 0x3093700 ; Transform::get_localPosition()
+01dba472 movsd xmm0, qword ptr [rax] 
+01dba476 mov ecx, dword ptr [rax + 8] 
+01dba479 movsd qword ptr [rbx + 0x228], xmm0 
+01dba481 mov dword ptr [rbx + 0x230], ecx 
+01dba487 mov dword ptr [rbx + 0x224], 0 
+01dba491 mov dword ptr [rbx + 0x1c0], 0x41200000 
+01dba49b add rsp, 0x30 
+01dba49f pop rbx 
+01dba4a0 ret 
+01dba4a1 call 0x4e0d00 
+01dba4a6 int3 
+01dba4a7 int3 
+01dba4a8 int3 
+01dba4a9 int3 
+01dba4aa int3 
+01dba4ab int3 
+01dba4ac int3 
+01dba4ad int3 
+01dba4ae int3 
+01dba4af int3 

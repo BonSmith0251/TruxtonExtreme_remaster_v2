@@ -1,0 +1,82 @@
+01d44720  push     rdi
+01d44722  sub      rsp, 0x50
+01d44726  cmp      byte ptr [rip + 0x291ee3b], 0   ; [4663568] bss
+01d4472d  mov      rdi, rcx
+01d44730  movaps   xmmword ptr [rsp + 0x30], xmm7   ; .<>u__1
+01d44735  movaps   xmm7, xmm1
+01d44738  movaps   xmmword ptr [rsp + 0x20], xmm8   ; ev.value0
+01d4473e  movaps   xmm8, xmm2
+01d44742  jne      0x1d44763
+01d44744  lea      rcx, [rip + 0x2629bbd]   ; [436e308] MethodRef System.Collections.Generic.List`1<InGame.Kernel.Timeline.RouteEvent>::get_Count
+01d4474b  call     0x4e0a50
+01d44750  lea      rcx, [rip + 0x2629c69]   ; [436e3c0] MethodRef System.Collections.Generic.List`1<InGame.Kernel.Timeline.RouteEvent>::get_Item
+01d44757  call     0x4e0a50
+01d4475c  mov      byte ptr [rip + 0x291ee05], 1   ; [4663568] bss
+01d44763  cmp      qword ptr [rdi + 0x88], 0   ; .<>u__1
+01d4476b  je       0x1d4486d
+01d44771  mov      rax, qword ptr [rdi + 0x88]   ; .<>u__1
+01d44778  cmp      dword ptr [rax + 0x18], 0   ; ev.repeatDelay
+01d4477c  je       0x1d4486d
+01d44782  xorps    xmm0, xmm0
+01d44785  comiss   xmm0, xmm8
+01d44789  jae      0x1d4486d
+01d4478f  movaps   xmmword ptr [rsp + 0x40], xmm6   ; ev.intValue1/.muzzleTransform
+01d44794  movd     xmm0, dword ptr [rdi + 0x1f0]   ; ._routesIndex
+01d4479c  cvtdq2ps xmm0, xmm0
+01d4479f  addss    xmm7, xmm0
+01d447a3  movss    xmm0, dword ptr [rdi + 0x284]   ; ._eventLastRate
+01d447ab  movaps   xmm6, xmm7
+01d447ae  addss    xmm6, xmm8
+01d447b3  comiss   xmm0, xmm6
+01d447b6  jae      0x1d44868
+01d447bc  mov      qword ptr [rsp + 0x68], rbp   ; ev.flag0/.<loopcount>5__3
+01d447c1  mov      qword ptr [rsp + 0x60], rbx   ; ev.subnameValue/.<gm>5__2
+01d447c6  mov      qword ptr [rsp + 0x70], rsi   ; .<selfArc>5__5
+01d447cb  movss    dword ptr [rdi + 0x284], xmm6   ; ._eventLastRate
+01d447d3  test     rax, rax
+01d447d6  je       0x1d4487e
+01d447dc  mov      ebp, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01d447df  mov      ebx, dword ptr [rdi + 0x280]   ; ._eventIndex
+01d447e5  cmp      ebx, ebp
+01d447e7  jge      0x1d44853
+01d447e9  nop      dword ptr [rax]
+01d447f0  mov      r8, qword ptr [rip + 0x2629bc9]   ; [436e3c0] MethodRef System.Collections.Generic.List`1<InGame.Kernel.Timeline.RouteEvent>::get_Item
+01d447f7  mov      edx, ebx
+01d447f9  mov      rcx, rax
+01d447fc  call     0xb16860
+01d44801  mov      rsi, rax
+01d44804  test     rax, rax
+01d44807  je       0x1d4487e
+01d44809  movss    xmm0, dword ptr [rax + 0x1c]   ; ev.awakeRate
+01d4480e  comiss   xmm7, xmm0
+01d44811  ja       0x1d4483f
+01d44813  comiss   xmm6, xmm0
+01d44816  jbe      0x1d44853
+01d44818  xor      edx, edx
+01d4481a  mov      rcx, rdi
+01d4481d  call     0x1cdd580   ; InGameEnemyMoveBase::get_RouteToken()
+01d44822  mov      r9, qword ptr [rdi]
+01d44825  mov      r8, rax
+01d44828  mov      rdx, rsi
+01d4482b  mov      rcx, rdi
+01d4482e  mov      r10, qword ptr [r9 + 0x2c8]
+01d44835  mov      r9, qword ptr [r9 + 0x2d0]
+01d4483c  call     r10
+01d4483f  inc      ebx
+01d44841  cmp      ebx, ebp
+01d44843  jge      0x1d44853
+01d44845  mov      rax, qword ptr [rdi + 0x88]   ; .<>u__1
+01d4484c  test     rax, rax
+01d4484f  je       0x1d4487e
+01d44851  jmp      0x1d447f0
+01d44853  mov      rsi, qword ptr [rsp + 0x70]   ; .<selfArc>5__5
+01d44858  mov      rbp, qword ptr [rsp + 0x68]   ; ev.flag0/.<loopcount>5__3
+01d4485d  mov      dword ptr [rdi + 0x280], ebx   ; ._eventIndex
+01d44863  mov      rbx, qword ptr [rsp + 0x60]   ; ev.subnameValue/.<gm>5__2
+01d44868  movaps   xmm6, xmmword ptr [rsp + 0x40]   ; ev.intValue1/.muzzleTransform
+01d4486d  movaps   xmm7, xmmword ptr [rsp + 0x30]   ; .<>u__1
+01d44872  movaps   xmm8, xmmword ptr [rsp + 0x20]   ; ev.value0
+01d44878  add      rsp, 0x50
+01d4487c  pop      rdi
+01d4487d  ret      
+01d4487e  call     0x4e0d00

@@ -1,0 +1,7 @@
+== UnityEngine.Vector3 InGame.Kernel.Enemy.Ene_BosBase::get_StartInGamePosition() RVA 1dbb2c0 len 19
+01dbb2c0 mov        eax, dword ptr [rdx + 0x230]
+01dbb2c6 movsd      xmm0, qword ptr [rdx + 0x228] ; ~_startInGamePosition
+01dbb2ce movsd      qword ptr [rcx], xmm0
+01dbb2d2 mov        dword ptr [rcx + 8], eax
+01dbb2d5 mov        rax, rcx
+01dbb2d8 ret        

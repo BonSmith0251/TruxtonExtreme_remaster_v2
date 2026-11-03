@@ -1,0 +1,285 @@
+{
+ "name": "TATSUJIN/ThunderLaserAnime",
+ "bundle": "ingame_assets_all_8034fdacf783ddd76b81996e259b6efa.bundle",
+ "path_id": "8763154228754975228",
+ "keywordNames": [
+  "STEREO_INSTANCING_ON",
+  "UNITY_SINGLE_PASS_STEREO",
+  "STEREO_MULTIVIEW_ON",
+  "STEREO_CUBEMAP_RENDER_ON",
+  "SOFTPARTICLES_ON",
+  "FOG_LINEAR",
+  "FOG_EXP",
+  "FOG_EXP2"
+ ],
+ "passes": [
+  {
+   "label": "0_0_pass",
+   "name": "",
+   "useName": "",
+   "tags": {
+    "IGNOREPROJECTOR": "true",
+    "PreviewType": "Plane",
+    "QUEUE": "Transparent",
+    "RenderType": "Transparent"
+   },
+   "subShaderTags": {
+    "IGNOREPROJECTOR": "true",
+    "PreviewType": "Plane",
+    "QUEUE": "Transparent",
+    "RenderType": "Transparent"
+   },
+   "lod": 0,
+   "state": {
+    "blend": [
+     [
+      0.0,
+      "_SrcFactor"
+     ],
+     [
+      0.0,
+      "_DstFactor"
+     ],
+     [
+      0.0,
+      "_SrcFactor"
+     ],
+     [
+      0.0,
+      "_DstFactor"
+     ]
+    ],
+    "blendOp": [
+     0.0,
+     0.0
+    ],
+    "colMask": 14.0,
+    "zTest": [
+     0.0,
+     "_ZTest"
+    ],
+    "zWrite": [
+     0.0,
+     "_ZWrite"
+    ],
+    "culling": [
+     0.0,
+     "_Cull"
+    ],
+    "offsetFactor": 0.0,
+    "offsetUnits": 0.0,
+    "stencilRef": 0.0,
+    "stencilComp": 8.0,
+    "stencilPass": 0.0,
+    "stencilFail": 0.0,
+    "stencilZFail": 0.0,
+    "stencilReadMask": 255.0,
+    "stencilWriteMask": 255.0
+   },
+   "programs": {
+    "vs": [
+     {
+      "blob": 4,
+      "params": 0,
+      "keywords": []
+     },
+     {
+      "blob": 5,
+      "params": 1,
+      "keywords": [
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 6,
+      "params": 1,
+      "keywords": [
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 7,
+      "params": 1,
+      "keywords": [
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 8,
+      "params": 2,
+      "keywords": [
+       "SOFTPARTICLES_ON"
+      ]
+     },
+     {
+      "blob": 9,
+      "params": 3,
+      "keywords": [
+       "SOFTPARTICLES_ON",
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 10,
+      "params": 3,
+      "keywords": [
+       "SOFTPARTICLES_ON",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 11,
+      "params": 3,
+      "keywords": [
+       "SOFTPARTICLES_ON",
+       "FOG_EXP2"
+      ]
+     }
+    ],
+    "ps": [
+     {
+      "blob": 14,
+      "params": 12,
+      "keywords": []
+     },
+     {
+      "blob": 15,
+      "params": 12,
+      "keywords": [
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 16,
+      "params": 12,
+      "keywords": [
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 17,
+      "params": 12,
+      "keywords": [
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 18,
+      "params": 13,
+      "keywords": [
+       "SOFTPARTICLES_ON"
+      ]
+     },
+     {
+      "blob": 19,
+      "params": 13,
+      "keywords": [
+       "SOFTPARTICLES_ON",
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 20,
+      "params": 13,
+      "keywords": [
+       "SOFTPARTICLES_ON",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 21,
+      "params": 13,
+      "keywords": [
+       "SOFTPARTICLES_ON",
+       "FOG_EXP2"
+      ]
+     }
+    ]
+   },
+   "bindings": {
+    "vs": {
+     "constantBuffers": [
+      {
+       "name": "UnityPerDraw",
+       "slot": null,
+       "size": 176,
+       "members": [
+        {
+         "name": "unity_ObjectToWorld",
+         "offset": 0,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerFrame",
+       "slot": null,
+       "size": 368,
+       "members": [
+        {
+         "name": "unity_MatrixVP",
+         "offset": 272,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerMaterial",
+       "slot": null,
+       "size": 48,
+       "members": [
+        {
+         "name": "_MainTex_ST",
+         "offset": 16,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "_DividedH",
+         "offset": 32,
+         "dim": 1,
+         "array": 0
+        },
+        {
+         "name": "_DividedV",
+         "offset": 36,
+         "dim": 1,
+         "array": 0
+        },
+        {
+         "name": "_AIndex",
+         "offset": 40,
+         "dim": 1,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    },
+    "ps": {
+     "constantBuffers": [
+      {
+       "name": "UnityPerMaterial",
+       "slot": null,
+       "size": 48,
+       "members": [
+        {
+         "name": "_TintColor",
+         "offset": 0,
+         "dim": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    }
+   }
+  }
+ ]
+}

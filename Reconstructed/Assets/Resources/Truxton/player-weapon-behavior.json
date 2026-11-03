@@ -1,0 +1,148 @@
+{
+  "version": 1,
+  "profiles": [
+    {
+      "kind": 0,
+      "interval": 0.06666666666666667,
+      "ammoVolleys": 4,
+      "textureSeconds": 0.10000000149011612,
+      "speed": 320.0
+    },
+    {
+      "kind": 1,
+      "interval": 0.05,
+      "ammoVolleys": 16,
+      "textureSeconds": 0.10000000149011612,
+      "speed": 480.0
+    },
+    {
+      "kind": 2,
+      "interval": 0.016666666666666666,
+      "ammoVolleys": 0,
+      "textureSeconds": 0.1,
+      "speed": 720.0
+    },
+    {
+      "kind": 3,
+      "interval": 0.016666666666666666,
+      "ammoVolleys": 0,
+      "textureSeconds": 0.1,
+      "speed": 720.0
+    },
+    {
+      "kind": 4,
+      "interval": 0.08333333333333333,
+      "ammoVolleys": 4,
+      "textureSeconds": 0.15000000596046448,
+      "speed": 200.0
+    },
+    {
+      "kind": 5,
+      "interval": 0.15,
+      "ammoVolleys": 8,
+      "textureSeconds": 0.20000000298023224,
+      "speed": 250.0
+    },
+    {
+      "kind": 6,
+      "interval": 0.016666666666666666,
+      "ammoVolleys": 0,
+      "textureSeconds": 0.1,
+      "speed": 720.0
+    }
+  ],
+  "emitters": [
+    "proot/modelTop/pf_player01/emitter (center)",
+    "proot/modelTop/pf_player01/emitter (left)",
+    "proot/modelTop/pf_player01/emitter (right)",
+    "proot/opt/option01L1/root/pf_player01_op/emitter",
+    "proot/opt/option01R1/root/pf_player01_op/emitter",
+    "proot/opt/option01L2/root/pf_player01_op/emitter",
+    "proot/opt/option01R2/root/pf_player01_op/emitter"
+  ],
+  "enemies": [
+    {
+      "name": "Pf_Ene_Sa01",
+      "lockOn": false,
+      "blocksLaser": false,
+      "priority": 1000
+    },
+    {
+      "name": "Pf_Ene_Se01",
+      "lockOn": false,
+      "blocksLaser": false,
+      "priority": 1000
+    },
+    {
+      "name": "Pf_Ene_Ma01",
+      "lockOn": true,
+      "blocksLaser": true,
+      "priority": 1000
+    },
+    {
+      "name": "Pf_Ene_Md01",
+      "lockOn": true,
+      "blocksLaser": true,
+      "priority": 1000
+    },
+    {
+      "name": "Pf_Ene_Me01",
+      "lockOn": true,
+      "blocksLaser": true,
+      "priority": 1000
+    },
+    {
+      "name": "Pf_Ene_Mj01h",
+      "lockOn": true,
+      "blocksLaser": true,
+      "priority": 1000
+    },
+    {
+      "name": "Pf_EneObj_Meteo_Sa02",
+      "lockOn": false,
+      "blocksLaser": false,
+      "priority": 0
+    },
+    {
+      "name": "Pf_EneObj_Meteo_Ma02",
+      "lockOn": false,
+      "blocksLaser": false,
+      "priority": 0
+    },
+    {
+      "name": "Pf_EneObj_Meteo_La02",
+      "lockOn": false,
+      "blocksLaser": false,
+      "priority": 0
+    },
+    {
+      "name": "Pf_Ene_Lb01",
+      "lockOn": true,
+      "blocksLaser": true,
+      "priority": 1000
+    },
+    {
+      "name": "Pf_Ene_Sd01",
+      "lockOn": false,
+      "blocksLaser": false,
+      "priority": 1000
+    },
+    {
+      "name": "Pf_Ene_Bos03",
+      "lockOn": true,
+      "blocksLaser": true,
+      "priority": 1000
+    }
+  ],
+  "homingStart": 0.009999999776482582,
+  "homingEnd": 1.5,
+  "homingDegreesPerFrame": 8.0,
+  "growDistance": 84.0,
+  "growTime": 0.3,
+  "growStay": 0.1,
+  "growDecay": 8,
+  "growScale": 4.0,
+  "childAngle": 60,
+  "childFirstDamage": 10,
+  "childStayDamage": 10
+}

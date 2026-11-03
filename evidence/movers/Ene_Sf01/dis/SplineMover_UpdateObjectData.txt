@@ -1,0 +1,59 @@
+#### InGame.Kernel.SplineMover::UpdateObjectData(InGame.Kernel.Timeline.EnemyPlacementData,System.Single) RVA 1d44890 len f7
+01d44890  mov      qword ptr [rsp + 8], rbx
+01d44895  push     rdi
+01d44896  sub      rsp, 0x60
+01d4489a  movaps   xmmword ptr [rsp + 0x40], xmm7   ; ._animators
+01d4489f  movaps   xmm7, xmm2
+01d448a2  mov      rbx, rdx
+01d448a5  mov      rdi, rcx
+01d448a8  test     rdx, rdx
+01d448ab  je       0x1d44982
+01d448b1  movss    xmm0, dword ptr [rbx + 0x20]   ; ev.value0
+01d448b6  movaps   xmmword ptr [rsp + 0x50], xmm6   ; ._animatorsPlay
+01d448bb  movss    xmm6, dword ptr [rdx + 0x18]   ; ev.repeatDelay
+01d448c0  xor      edx, edx
+01d448c2  call     0x1df1700   ; RandomUtility::Range(System.Single)
+01d448c7  movss    xmm1, dword ptr [rip + 0x179c351]   ; rdata 34e0c20 f=0.0001,0.1,0.45,0 d=5.238690653e-11
+01d448cf  addss    xmm0, xmm6
+01d448d3  movaps   xmm6, xmmword ptr [rsp + 0x50]   ; ._animatorsPlay
+01d448d8  addss    xmm0, xmm7
+01d448dc  comiss   xmm1, xmm0
+01d448df  ja       0x1d448ee
+01d448e1  movss    xmm1, dword ptr [rip + 0x18ae313]   ; rdata 35f2bfc f=999,1080,1920,100000 d=1.357680605e+22
+01d448e9  comiss   xmm0, xmm1
+01d448ec  jbe      0x1d448f1
+01d448ee  movaps   xmm0, xmm1
+01d448f1  mov      eax, dword ptr [rbx + 0x4c]   ; ev.dotime
+01d448f4  lea      rdx, [rsp + 0x20]   ; ev.value0
+01d448f9  movss    xmm2, dword ptr [rip + 0x179c2bf]   ; rdata 34e0bc0 f=0.01745329,0.05,0.5,1 d=2.046363552e-13
+01d44901  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01d44906  mov      dword ptr [rdi + 0x1ac], eax   ; ._lookAtType
+01d4490c  xor      r8d, r8d
+01d4490f  mov      eax, dword ptr [rbx + 0x48]   ; .GameObjectCache
+01d44912  movss    dword ptr [rdi + 0x164], xmm0   ; ._currentSpeed
+01d4491a  mov      dword ptr [rdi + 0x194], eax   ; ._easingType
+01d44920  movsd    xmm0, qword ptr [rbx + 0x30]   ; ._entryFlag
+01d44925  movss    xmm1, dword ptr [rbx + 0x38]   ; ._psystems
+01d4492a  movaps   xmm4, xmm0
+01d4492d  movaps   xmm3, xmm0
+01d44930  mulss    xmm4, xmm2
+01d44934  shufps   xmm3, xmm3, 0x55
+01d44938  mulss    xmm3, xmm2
+01d4493c  mulss    xmm1, xmm2
+01d44940  unpcklps xmm4, xmm3
+01d44943  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01d44949  movsd    qword ptr [rsp + 0x20], xmm4   ; ev.value0
+01d4494f  movss    dword ptr [rsp + 0x28], xmm1   ; ev.vectorValue
+01d44955  call     0x304d890   ; Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01d4495a  xor      r8d, r8d
+01d4495d  lea      rdx, [rsp + 0x20]   ; ev.value0
+01d44962  mov      rcx, rdi
+01d44965  movups   xmm0, xmmword ptr [rax]
+01d44968  movaps   xmmword ptr [rsp + 0x20], xmm0   ; ev.value0
+01d4496d  call     0x1cdb120   ; InGameEnemyMoveBase::SetRotate(UnityEngine.Quaternion)
+01d44972  mov      rbx, qword ptr [rsp + 0x70]   ; ._transformCache
+01d44977  movaps   xmm7, xmmword ptr [rsp + 0x40]   ; ._animators
+01d4497c  add      rsp, 0x60
+01d44980  pop      rdi
+01d44981  ret      
+01d44982  call     0x4e0d00

@@ -1,0 +1,18 @@
+01d9b2f0 sub rsp, 0x28 
+01d9b2f4 cmp byte ptr [rip + 0x28c84fa], 0 ; rva=46637f5
+01d9b2fb jne 0x1d9b310 
+01d9b2fd lea rcx, [rip + 0x26167c4] ; rva=43b1ac8
+01d9b304 call 0x4e0a50 
+01d9b309 mov byte ptr [rip + 0x28c84e5], 1 ; rva=46637f5
+01d9b310 mov rax, qword ptr [rip + 0x26167b1] ; rva=43b1ac8
+01d9b317 cmp dword ptr [rax + 0xe4], 0 
+01d9b31e jne 0x1d9b32f 
+01d9b320 mov rcx, rax 
+01d9b323 call 0x4e0d90 
+01d9b328 mov rax, qword ptr [rip + 0x2616799] ; rva=43b1ac8
+01d9b32f mov rax, qword ptr [rax + 0xb8] 
+01d9b336 mov rax, qword ptr [rax] 
+01d9b339 add rsp, 0x28 
+01d9b33d ret 
+01d9b33e int3 
+01d9b33f int3 

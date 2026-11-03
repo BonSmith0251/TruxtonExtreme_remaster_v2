@@ -1,0 +1,250 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04::infinityMove(System.Single,System.Single,System.Single,System.Single,System.Boolean) RVA 1d92aa0 len 47a
+01d92aa0 mov        rax, rsp
+01d92aa3 mov        qword ptr [rax + 0x10], rbx
+01d92aa7 mov        qword ptr [rax + 0x18], rdi
+01d92aab push       rbp
+01d92aac lea        rbp, [rax - 0x47]
+01d92ab0 sub        rsp, 0xd0
+01d92ab7 cmp        byte ptr [rip + 0x28d0d03], 0 ; [.data 46637c1]
+01d92abe mov        rbx, rcx
+01d92ac1 movaps     xmmword ptr [rax - 0x18], xmm6
+01d92ac5 movaps     xmmword ptr [rax - 0x28], xmm7
+01d92ac9 movaps     xmm7, xmm1
+01d92acc movaps     xmmword ptr [rax - 0x38], xmm8
+01d92ad1 movaps     xmmword ptr [rax - 0x48], xmm9
+01d92ad6 movaps     xmm9, xmm3
+01d92ada movaps     xmmword ptr [rax - 0x58], xmm10
+01d92adf movaps     xmm10, xmm2
+01d92ae3 mov        qword ptr [rax + 8], rsi
+01d92ae7 jne        0x1d92b08
+01d92ae9 lea        rcx, [rip + 0x261ed08] ; [.data 43b17f8] TypeInfo#37303
+01d92af0 call       0x4e0a50
+01d92af5 lea        rcx, [rip + 0x262f8cc] ; [.data 43c23c8] TypeInfo#48759
+01d92afc call       0x4e0a50
+01d92b01 mov        byte ptr [rip + 0x28d0cb9], 1 ; [.data 46637c1]
+01d92b08 cmp        byte ptr [rbx + 0x2df], 0 ; ~_isReverseMove
+01d92b0f movaps     xmm0, xmm7
+01d92b12 movss      xmm6, dword ptr [rip + 0x174e0b2] ; [.rdata 34e0bcc] f=1.0 d=50.12387841939926 v4=['1', '3.14159', '4', '10']
+01d92b1a je         0x1d92b23
+01d92b1c movaps     xmm0, xmm6
+01d92b1f subss      xmm0, xmm7
+01d92b23 xor        edx, edx
+01d92b25 call       0x1de86f0 ; KANAI.Kernel.EasingUtility::InOutSine01(System.Single)
+01d92b2a mov        rcx, qword ptr [rip + 0x262f897] ; [.data 43c23c8] TypeInfo#48759
+01d92b31 movaps     xmm8, xmm0
+01d92b35 cmp        dword ptr [rcx + 0xe4], 0
+01d92b3c jne        0x1d92b43
+01d92b3e call       0x4e0d90
+01d92b43 movaps     xmm1, xmm6
+01d92b46 mov        qword ptr [rsp + 0x20], 0
+01d92b4f subss      xmm1, xmm8
+01d92b54 movaps     xmm3, xmm9
+01d92b58 movaps     xmm2, xmm10
+01d92b5c lea        rcx, [rbp - 0x51]
+01d92b60 call       0x1df7690 ; KANAI.Kernel.VectorUtility::InfinitySymbol(System.Single,System.Single,System.Single)
+01d92b65 mov        rdi, qword ptr [rbx + 0x50]
+01d92b69 movsd      xmm0, qword ptr [rax]
+01d92b6d mov        esi, dword ptr [rax + 8]
+01d92b70 mov        rax, qword ptr [rip + 0x261ec81] ; [.data 43b17f8] TypeInfo#37303
+01d92b77 movsd      qword ptr [rbp - 0x61], xmm0
+01d92b7c cmp        dword ptr [rax + 0xe4], 0
+01d92b83 jne        0x1d92b94
+01d92b85 mov        rcx, rax
+01d92b88 call       0x4e0d90
+01d92b8d mov        rax, qword ptr [rip + 0x261ec64] ; [.data 43b17f8] TypeInfo#37303
+01d92b94 mov        rax, qword ptr [rax + 0xb8] ; ~_mover
+01d92b9b movss      xmm2, dword ptr [rbp - 0x61]
+01d92ba0 movss      xmm3, dword ptr [rbp - 0x5d]
+01d92ba5 movsd      xmm1, qword ptr [rax + 0x30]
+01d92baa movsd      qword ptr [rbp - 0x51], xmm1
+01d92baf movaps     xmm0, xmm1
+01d92bb2 shufps     xmm0, xmm0, 0x55
+01d92bb6 addss      xmm2, xmm1
+01d92bba movd       xmm1, esi
+01d92bbe addss      xmm3, xmm0
+01d92bc2 mov        rsi, qword ptr [rsp + 0xe0] ; ~_deadExplosion
+01d92bca addss      xmm1, dword ptr [rax + 0x38]
+01d92bcf test       rdi, rdi
+01d92bd2 je         0x1d92f15
+01d92bd8 movaps     xmmword ptr [rsp + 0x70], xmm11
+01d92bde lea        rdx, [rbp - 0x61]
+01d92be2 unpcklps   xmm2, xmm3
+01d92be5 xor        r8d, r8d
+01d92be8 movaps     xmmword ptr [rsp + 0x60], xmm12
+01d92bee mov        rcx, rdi
+01d92bf1 movaps     xmmword ptr [rsp + 0x50], xmm13
+01d92bf7 movsd      qword ptr [rbp - 0x61], xmm2
+01d92bfc movss      dword ptr [rbp - 0x59], xmm1
+01d92c01 call       0x3094570 ; UnityEngine.Transform::set_localPosition(UnityEngine.Vector3)
+01d92c06 xor        edx, edx
+01d92c08 movaps     xmm0, xmm7
+01d92c0b call       0x1de8830 ; KANAI.Kernel.EasingUtility::InQuart01(System.Single)
+01d92c10 cmp        byte ptr [rbp + 0x77], 0
+01d92c14 movaps     xmm7, xmm6
+01d92c17 subss      xmm7, xmm0
+01d92c1b jne        0x1d92c25
+01d92c1d movss      xmm6, dword ptr [rip + 0x174dfcf] ; [.rdata 34e0bf4] f=-1.0 d=1.58735232e-314 v4=['-1', '0', '0', '1']
+01d92c25 mov        rax, qword ptr [rip + 0x261ebcc] ; [.data 43b17f8] TypeInfo#37303
+01d92c2c movss      xmm8, dword ptr [rbx + 0x304] ; ~_lookAngle
+01d92c35 cmp        dword ptr [rax + 0xe4], 0
+01d92c3c jne        0x1d92c4d
+01d92c3e mov        rcx, rax
+01d92c41 call       0x4e0d90
+01d92c46 mov        rax, qword ptr [rip + 0x261ebab] ; [.data 43b17f8] TypeInfo#37303
+01d92c4d mov        rax, qword ptr [rax + 0xb8] ; ~_mover
+01d92c54 lea        rdx, [rbp - 0x61]
+01d92c58 xor        r8d, r8d
+01d92c5b mov        qword ptr [rbp - 0x61], 0
+01d92c63 lea        rcx, [rbp - 0x51]
+01d92c67 mulss      xmm6, dword ptr [rax + 0xe0] ; ~_deadExplosion
+01d92c6f mulss      xmm6, dword ptr [rbp + 0x6f]
+01d92c74 mulss      xmm6, xmm7
+01d92c78 addss      xmm6, xmm8
+01d92c7d movss      dword ptr [rbx + 0x304], xmm6 ; ~_lookAngle
+01d92c85 movss      xmm1, dword ptr [rbx + 0x314] ; ~_wingRotation
+01d92c8d mulss      xmm1, dword ptr [rip + 0x174df2b] ; [.rdata 34e0bc0] f=0.01745329238474369 d=2.0463635523047694e-13 v4=['0.0174533', '0.05', '0.5', '1']
+01d92c95 movss      dword ptr [rbp - 0x59], xmm1
+01d92c9a call       0x304d890 ; UnityEngine.Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01d92c9f xor        r8d, r8d
+01d92ca2 lea        rdx, [rbp - 0x61]
+01d92ca6 lea        rcx, [rbp - 0x51]
+01d92caa movups     xmm13, xmmword ptr [rax]
+01d92cae mov        qword ptr [rbp - 0x61], 0
+01d92cb6 mov        dword ptr [rbp - 0x59], 0xc0490fdb
+01d92cbd call       0x304d890 ; UnityEngine.Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01d92cc2 movss      xmm0, dword ptr [rbx + 0x304] ; ~_lookAngle
+01d92cca lea        rdx, [rbp - 0x61]
+01d92cce xorps      xmm0, xmmword ptr [rip + 0x174df3b] ; [.rdata 34e0c10] f=-0.0 d=-1.0609978955e-314 v4=['-0', '-0', '-0', '-0']
+01d92cd5 lea        rcx, [rbp - 0x51]
+01d92cd9 mulss      xmm0, dword ptr [rip + 0x174dedf] ; [.rdata 34e0bc0] f=0.01745329238474369 d=2.0463635523047694e-13 v4=['0.0174533', '0.05', '0.5', '1']
+01d92ce1 xor        r8d, r8d
+01d92ce4 movups     xmm8, xmmword ptr [rax]
+01d92ce8 mov        qword ptr [rbp - 0x61], 0
+01d92cf0 movss      dword ptr [rbp - 0x59], xmm0
+01d92cf5 call       0x304d890 ; UnityEngine.Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01d92cfa mov        rcx, qword ptr [rbx + 0x288] ; ~_upperCore
+01d92d01 movaps     xmm6, xmm8
+01d92d05 shufps     xmm6, xmm8, 0xff
+01d92d0a movaps     xmm4, xmm8
+01d92d0e shufps     xmm4, xmm8, 0xaa
+01d92d13 movaps     xmm2, xmm8
+01d92d17 movups     xmm7, xmmword ptr [rax]
+01d92d1a shufps     xmm2, xmm8, 0x55
+01d92d1f movaps     xmm11, xmm7
+01d92d23 movaps     xmm12, xmm7
+01d92d27 shufps     xmm11, xmm7, 0xff
+01d92d2c movaps     xmm5, xmm7
+01d92d2f movaps     xmm0, xmm11
+01d92d33 shufps     xmm5, xmm7, 0x55
+01d92d37 mulss      xmm0, xmm8
+01d92d3c movaps     xmm3, xmm7
+01d92d3f shufps     xmm3, xmm7, 0xaa
+01d92d43 movaps     xmm10, xmm5
+01d92d47 mulss      xmm12, xmm6
+01d92d4c movaps     xmm1, xmm3
+01d92d4f mulss      xmm10, xmm6
+01d92d54 movaps     xmm9, xmm3
+01d92d58 addss      xmm12, xmm0
+01d92d5d mulss      xmm1, xmm8
+01d92d62 movaps     xmm0, xmm5
+01d92d65 mulss      xmm9, xmm6
+01d92d6a mulss      xmm0, xmm4
+01d92d6e addss      xmm12, xmm0
+01d92d73 movaps     xmm0, xmm3
+01d92d76 mulss      xmm0, xmm2
+01d92d7a subss      xmm12, xmm0
+01d92d7f movaps     xmm0, xmm11
+01d92d83 mulss      xmm0, xmm2
+01d92d87 addss      xmm10, xmm0
+01d92d8c movaps     xmm0, xmm7
+01d92d8f mulss      xmm0, xmm4
+01d92d93 addss      xmm10, xmm1
+01d92d98 movaps     xmm1, xmm7
+01d92d9b mulss      xmm1, xmm2
+01d92d9f mulss      xmm7, xmm8
+01d92da4 subss      xmm10, xmm0
+01d92da9 movaps     xmm0, xmm11
+01d92dad mulss      xmm0, xmm4
+01d92db1 mulss      xmm11, xmm6
+01d92db6 addss      xmm9, xmm0
+01d92dbb movaps     xmm0, xmm5
+01d92dbe mulss      xmm0, xmm8
+01d92dc3 subss      xmm11, xmm7
+01d92dc8 addss      xmm9, xmm1
+01d92dcd subss      xmm9, xmm0
+01d92dd2 mulss      xmm5, xmm2
+01d92dd6 movaps     xmm0, xmm13
+01d92dda mulss      xmm3, xmm4
+01d92dde movaps     xmm6, xmm13
+01d92de2 shufps     xmm6, xmm13, 0xff
+01d92de7 subss      xmm11, xmm5
+01d92dec movaps     xmm1, xmm6
+01d92def movaps     xmm2, xmm6
+01d92df2 mulss      xmm1, xmm12
+01d92df7 movaps     xmm5, xmm13
+01d92dfb shufps     xmm5, xmm13, 0xaa
+01d92e00 movaps     xmm4, xmm13
+01d92e04 shufps     xmm4, xmm13, 0x55
+01d92e09 subss      xmm11, xmm3
+01d92e0e mulss      xmm2, xmm10
+01d92e13 movaps     xmm3, xmm6
+01d92e16 mulss      xmm3, xmm9
+01d92e1b mulss      xmm0, xmm11
+01d92e20 mulss      xmm6, xmm11
+01d92e25 addss      xmm1, xmm0
+01d92e29 movaps     xmm0, xmm5
+01d92e2c mulss      xmm0, xmm10
+01d92e31 addss      xmm1, xmm0
+01d92e35 movaps     xmm0, xmm4
+01d92e38 mulss      xmm0, xmm9
+01d92e3d subss      xmm1, xmm0
+01d92e41 movaps     xmm0, xmm4
+01d92e44 mulss      xmm0, xmm11
+01d92e49 movss      dword ptr [rbp - 0x51], xmm1
+01d92e4e addss      xmm2, xmm0
+01d92e52 movaps     xmm1, xmm13
+01d92e56 movaps     xmm0, xmm5
+01d92e59 mulss      xmm0, xmm12
+01d92e5e mulss      xmm1, xmm9
+01d92e63 addss      xmm2, xmm1
+01d92e67 movaps     xmm1, xmm4
+01d92e6a mulss      xmm1, xmm12
+01d92e6f mulss      xmm4, xmm10
+01d92e74 subss      xmm2, xmm0
+01d92e78 movaps     xmm0, xmm5
+01d92e7b mulss      xmm0, xmm11
+01d92e80 movaps     xmm11, xmmword ptr [rsp + 0x70]
+01d92e86 mulss      xmm5, xmm9
+01d92e8b movss      dword ptr [rbp - 0x4d], xmm2
+01d92e90 addss      xmm3, xmm0
+01d92e94 movaps     xmm0, xmm13
+01d92e98 mulss      xmm13, xmm12
+01d92e9d movaps     xmm12, xmmword ptr [rsp + 0x60]
+01d92ea3 mulss      xmm0, xmm10
+01d92ea8 subss      xmm6, xmm13
+01d92ead movaps     xmm13, xmmword ptr [rsp + 0x50]
+01d92eb3 addss      xmm3, xmm1
+01d92eb7 subss      xmm6, xmm4
+01d92ebb subss      xmm3, xmm0
+01d92ebf subss      xmm6, xmm5
+01d92ec3 movss      dword ptr [rbp - 0x49], xmm3
+01d92ec8 movss      dword ptr [rbp - 0x45], xmm6
+01d92ecd test       rcx, rcx
+01d92ed0 je         0x1d92f15
+01d92ed2 movups     xmm0, xmmword ptr [rbp - 0x51]
+01d92ed6 xor        r8d, r8d
+01d92ed9 lea        rdx, [rbp - 0x51]
+01d92edd movdqa     xmmword ptr [rbp - 0x51], xmm0
+01d92ee2 call       0x3094650 ; UnityEngine.Transform::set_localRotation(UnityEngine.Quaternion)
+01d92ee7 lea        r11, [rsp + 0xd0] ; ~_startDelayTime
+01d92eef mov        rbx, qword ptr [r11 + 0x18]
+01d92ef3 mov        rdi, qword ptr [r11 + 0x20]
+01d92ef7 movaps     xmm6, xmmword ptr [r11 - 0x10]
+01d92efc movaps     xmm7, xmmword ptr [r11 - 0x20]
+01d92f01 movaps     xmm8, xmmword ptr [r11 - 0x30]
+01d92f06 movaps     xmm9, xmmword ptr [r11 - 0x40]
+01d92f0b movaps     xmm10, xmmword ptr [r11 - 0x50]
+01d92f10 mov        rsp, r11
+01d92f13 pop        rbp
+01d92f14 ret        
+01d92f15 call       0x4e0d00

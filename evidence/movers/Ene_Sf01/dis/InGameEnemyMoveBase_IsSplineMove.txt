@@ -1,0 +1,14 @@
+#### InGame.Kernel.InGameEnemyMoveBase::IsSplineMove() RVA 1cdabd0 len 1e
+01cdabd0  cmp      dword ptr [rcx + 0x1b0], 4   ; ._moverState
+01cdabd7  jne      0x1cdabdc
+01cdabd9  xor      al, al
+01cdabdb  ret      
+01cdabdc  movss    xmm1, dword ptr [rcx + 0x168]   ; ._splineLength
+01cdabe4  xorps    xmm0, xmm0
+01cdabe7  comiss   xmm1, xmm0
+01cdabea  seta     al
+01cdabed  ret      
+#### InGame.Kernel.InGameEnemyMoveBase::IsPausing() RVA 1cdaa10 len b
+01cdaa10  cmp      dword ptr [rcx + 0x1b0], 4   ; ._moverState
+01cdaa17  sete     al
+01cdaa1a  ret      

@@ -1,0 +1,100 @@
+#### InGame.Kernel.InGameEnemyManager::_enemyEntry(InGame.Kernel.Enemy.PawnEnemy,InGame.Kernel.Timeline.EnemyData,System.Int32,UnityEngine.Vector3,System.Single,System.Single,System.Single,System.Boolean) RVA 1cd86c0 len 1ba
+01cd86c0  mov      qword ptr [rsp + 8], rbx
+01cd86c5  mov      qword ptr [rsp + 0x10], rsi   ; ev.eventType
+01cd86ca  push     rdi
+01cd86cb  sub      rsp, 0x40
+01cd86cf  cmp      byte ptr [rip + 0x298abd6], 0   ; [46632ac] bss
+01cd86d6  mov      rbx, r8
+01cd86d9  movsxd   rsi, r9d
+01cd86dc  mov      rdi, rdx
+01cd86df  jne      0x1cd8700
+01cd86e1  lea      rcx, [rip + 0x26a7fb8]   ; [43806a0] TypeInfo System.Action
+01cd86e8  call     0x4e0a50
+01cd86ed  lea      rcx, [rip + 0x26a57ac]   ; [437dea0] TypeInfo UnityEngine.Object
+01cd86f4  call     0x4e0a50
+01cd86f9  mov      byte ptr [rip + 0x298abac], 1   ; [46632ac] bss
+01cd8700  movaps   xmmword ptr [rsp + 0x30], xmm6   ; ._entryFlag
+01cd8705  test     rdi, rdi
+01cd8708  je       0x1cd886f
+01cd870e  mov      rax, qword ptr [rsp + 0x70]   ; ._transformCache
+01cd8713  lea      r8, [rsp + 0x20]   ; ev.value0
+01cd8718  mov      r9, qword ptr [rdi]
+01cd871b  mov      rdx, rbx
+01cd871e  mov      rcx, rdi
+01cd8721  movsd    xmm0, qword ptr [rax]
+01cd8725  mov      eax, dword ptr [rax + 8]
+01cd8728  mov      dword ptr [rsp + 0x28], eax   ; ev.vectorValue
+01cd872c  mov      rax, qword ptr [r9 + 0x618]
+01cd8733  mov      r9, qword ptr [r9 + 0x620]
+01cd873a  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01cd8740  call     rax
+01cd8742  mov      rcx, qword ptr [rip + 0x26a5757]   ; [437dea0] TypeInfo UnityEngine.Object
+01cd8749  cmp      dword ptr [rcx + 0xe4], 0
+01cd8750  jne      0x1cd8757
+01cd8752  call     0x4e0d90
+01cd8757  xor      r8d, r8d
+01cd875a  xor      edx, edx
+01cd875c  mov      rcx, rbx
+01cd875f  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01cd8764  test     al, al
+01cd8766  je       0x1cd87f7
+01cd876c  test     rbx, rbx
+01cd876f  je       0x1cd886f
+01cd8775  mov      rcx, qword ptr [rbx + 0x50]   ; ev.randomFire/._animatorsPlay
+01cd8779  test     rcx, rcx
+01cd877c  je       0x1cd886f
+01cd8782  cmp      esi, dword ptr [rcx + 0x18]   ; ev.repeatDelay
+01cd8785  jae      0x1cd8875
+01cd878b  mov      rdx, qword ptr [rcx + rsi*8 + 0x20]
+01cd8790  test     rdx, rdx
+01cd8793  je       0x1cd886f
+01cd8799  movss    xmm6, dword ptr [rsp + 0x78]   ; ._transformNameCache
+01cd879f  xor      r9d, r9d
+01cd87a2  movss    xmm2, dword ptr [rsp + 0x88]   ; ._eventDatas
+01cd87ab  mov      rcx, rdi
+01cd87ae  addss    xmm6, dword ptr [rdx + 0x1c]   ; ev.awakeRate
+01cd87b3  call     0x1d10d00   ; PawnEnemy::UpdateObjectData(InGame.Kernel.Timeline.EnemyPlacementData,System.Single)
+01cd87b8  mov      rcx, qword ptr [rbx + 0x50]   ; ev.randomFire/._animatorsPlay
+01cd87bc  movss    xmm0, dword ptr [rbx + 0x48]   ; ev.intValue3/.GameObjectCache
+01cd87c1  test     rcx, rcx
+01cd87c4  je       0x1cd886f
+01cd87ca  cmp      esi, dword ptr [rcx + 0x18]   ; ev.repeatDelay
+01cd87cd  jae      0x1cd8875
+01cd87d3  mov      rdx, qword ptr [rcx + rsi*8 + 0x20]
+01cd87d8  test     rdx, rdx
+01cd87db  je       0x1cd886f
+01cd87e1  xorps    xmm0, xmmword ptr [rip + 0x1808428]   ; rdata 34e0c10 f=-0,-0,-0,-0 d=-1.060997895e-314
+01cd87e8  addss    xmm0, dword ptr [rdx + 0x54]   ; ev.randomWait/._particleTimeScale
+01cd87ed  movss    dword ptr [rdi + 0x170], xmm0   ; ._firstRotate
+01cd87f5  jmp      0x1cd87fd
+01cd87f7  movss    xmm6, dword ptr [rsp + 0x78]   ; ._transformNameCache
+01cd87fd  movzx    eax, byte ptr [rsp + 0x90]   ; ._destroyedToken
+01cd8805  test     al, al
+01cd8807  je       0x1cd880f
+01cd8809  mov      byte ptr [rdi + 0x13e], al
+01cd880f  mov      rcx, qword ptr [rip + 0x26a7e8a]   ; [43806a0] TypeInfo System.Action
+01cd8816  call     0x4e0cb0
+01cd881b  mov      r8, qword ptr [rdi]
+01cd881e  xor      r9d, r9d
+01cd8821  mov      rdx, rdi
+01cd8824  mov      rcx, rax
+01cd8827  mov      rbx, rax
+01cd882a  mov      r8, qword ptr [r8 + 0x600]
+01cd8831  call     0x639280   ; ISteamMatchmakingPingResponse/ServerFailedToRespond::.ctor(System.Object,System.IntPtr) | ISteamMatchmakingPlayersResponse/PlayersFailedToRespond::.ctor(System.Object,System.IntPtr)
+01cd8836  xor      r8d, r8d
+01cd8839  mov      rdx, rbx
+01cd883c  mov      rcx, rdi
+01cd883f  call     0x1ddfde0   ; HybridCollisions::SetDisableAction(System.Action)
+01cd8844  movss    xmm2, dword ptr [rsp + 0x80]   ; ._transformCaches
+01cd884d  xor      r9d, r9d
+01cd8850  movaps   xmm1, xmm6
+01cd8853  mov      rcx, rdi
+01cd8856  movaps   xmm6, xmmword ptr [rsp + 0x30]   ; ._entryFlag
+01cd885b  mov      rbx, qword ptr [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01cd8860  mov      rsi, qword ptr [rsp + 0x58]   ; ev.nameValue/._particleSpeed
+01cd8865  add      rsp, 0x40
+01cd8869  pop      rdi
+01cd886a  jmp      0x1d0f6f0   ; PawnEnemy::SetDelayTime(System.Single,System.Single)
+01cd886f  call     0x4e0d00
+01cd8874  int3     
+01cd8875  call     0x4e0cf0

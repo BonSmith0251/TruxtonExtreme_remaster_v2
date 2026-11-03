@@ -1,0 +1,21 @@
+01d8a160 push rbx 
+01d8a162 sub rsp, 0x20 
+01d8a166 mov rbx, rcx 
+01d8a169 mov rcx, qword ptr [rcx + 0x38] 
+01d8a16d test rcx, rcx 
+01d8a170 je 0x1d8a197 
+01d8a172 xor edx, edx 
+01d8a174 call 0x1d631e0 ; EnePartsGroup::ToSleep()
+01d8a179 mov rax, qword ptr [rbx + 0x38] 
+01d8a17d test rax, rax 
+01d8a180 je 0x1d8a197 
+01d8a182 mov byte ptr [rax + 0xad], 0 
+01d8a189 mov qword ptr [rbx + 0x10], 1 
+01d8a191 add rsp, 0x20 
+01d8a195 pop rbx 
+01d8a196 ret 
+01d8a197 call 0x4e0d00 
+01d8a19c int3 
+01d8a19d int3 
+01d8a19e int3 
+01d8a19f int3 

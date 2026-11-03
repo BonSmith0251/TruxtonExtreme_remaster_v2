@@ -1,0 +1,215 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04::CheckGuardians() RVA 1d8b840 len 3fa
+01d8b840 mov        qword ptr [rsp + 0x10], rbx
+01d8b845 mov        qword ptr [rsp + 8], rcx
+01d8b84a push       rsi
+01d8b84b push       rdi
+01d8b84c push       r14
+01d8b84e sub        rsp, 0x80
+01d8b855 mov        r14, rcx
+01d8b858 cmp        byte ptr [rip + 0x28d7f56], 0 ; [.data 46637b5]
+01d8b85f jne        0x1d8b8c8
+01d8b861 lea        rcx, [rip + 0x2626040] ; [.data 43b18a8] TypeInfo#37306
+01d8b868 call       0x4e0a50
+01d8b86d lea        rcx, [rip + 0x25fff34] ; [.data 438b7a8] MethodDef#71689
+01d8b874 call       0x4e0a50
+01d8b879 lea        rcx, [rip + 0x25fffe8] ; [.data 438b868] MethodDef#71690
+01d8b880 call       0x4e0a50
+01d8b885 lea        rcx, [rip + 0x262f854] ; [.data 43bb0e0] MethodRef#199176
+01d8b88c call       0x4e0a50
+01d8b891 lea        rcx, [rip + 0x262f900] ; [.data 43bb198] MethodRef#199177
+01d8b898 call       0x4e0a50
+01d8b89d lea        rcx, [rip + 0x262f9ac] ; [.data 43bb250] MethodRef#199178
+01d8b8a4 call       0x4e0a50
+01d8b8a9 lea        rcx, [rip + 0x25d7550] ; [.data 4362e00] MethodRef#201786
+01d8b8b0 call       0x4e0a50
+01d8b8b5 lea        rcx, [rip + 0x262a75c] ; [.data 43b6018] TypeInfo#56701
+01d8b8bc call       0x4e0a50
+01d8b8c1 mov        byte ptr [rip + 0x28d7eed], 1 ; [.data 46637b5]
+01d8b8c8 xorps      xmm0, xmm0
+01d8b8cb xor        eax, eax
+01d8b8cd movups     xmmword ptr [rsp + 0x60], xmm0
+01d8b8d2 mov        qword ptr [rsp + 0x70], rax
+01d8b8d7 cmp        byte ptr [r14 + 0x2dc], al ; ~_isGuardianLeft
+01d8b8de jne        0x1d8ba67
+01d8b8e4 mov        byte ptr [r14 + 0x2dc], 1 ; ~_isGuardianLeft
+01d8b8ec cmp        byte ptr [rip + 0x28d0b6b], al ; [.data 465c45d]
+01d8b8f2 jne        0x1d8b907
+01d8b8f4 lea        rcx, [rip + 0x2635ddd] ; [.data 43c16d8] TypeInfo#48704
+01d8b8fb call       0x4e0a50
+01d8b900 mov        byte ptr [rip + 0x28d0b56], 1 ; [.data 465c45d]
+01d8b907 mov        rax, qword ptr [rip + 0x2635dca] ; [.data 43c16d8] TypeInfo#48704
+01d8b90e mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d8b915 movsd      xmm0, qword ptr [rcx]
+01d8b919 movsd      qword ptr [rsp + 0xb0], xmm0 ; ~_updateEventCount
+01d8b922 mov        edi, dword ptr [rcx + 8]
+01d8b925 mov        rcx, qword ptr [rip + 0x262a6ec] ; [.data 43b6018] TypeInfo#56701
+01d8b92c call       0x4e0cb0
+01d8b931 mov        rbx, rax
+01d8b934 xor        r9d, r9d
+01d8b937 mov        r8, qword ptr [rip + 0x25ffe6a] ; [.data 438b7a8] MethodDef#71689
+01d8b93e mov        rdx, r14
+01d8b941 mov        rcx, rax
+01d8b944 call       0x639280 ; Steamworks.ISteamMatchmakingPingResponse/ServerFailedToRespond::.ctor(System.Object,System.IntPtr) || Steamworks.ISteamMatchmakingPlayersResponse/PlayersFailedToRespond::.ctor(System.Object,System.IntPtr) || Steamworks.ISteamMatchmakingPlayersResponse/PlayersRefreshComplete::.ctor(System.Object,System.IntPtr)
+01d8b949 movsd      xmm0, qword ptr [rsp + 0xb0] ; ~_updateEventCount
+01d8b952 movsd      qword ptr [rsp + 0x40], xmm0
+01d8b958 mov        dword ptr [rsp + 0x48], edi
+01d8b95c xor        esi, esi
+01d8b95e mov        qword ptr [rsp + 0x20], rsi
+01d8b963 mov        r9, rbx
+01d8b966 lea        r8, [rsp + 0x40]
+01d8b96b xor        edx, edx
+01d8b96d mov        rcx, r14
+01d8b970 call       0x1db8f70 ; InGame.Kernel.Enemy.Ene_BosBase::CallEnemyClip(System.Int32,UnityEngine.Vector3,InGame.Kernel.Enemy.PawnEnemy/poolEventFunction)
+01d8b975 test       rax, rax
+01d8b978 je         0x1d8bc35
+01d8b97e mov        r8, qword ptr [rip + 0x25d747b] ; [.data 4362e00] MethodRef#201786
+01d8b985 mov        rdx, rax
+01d8b988 lea        rcx, [rsp + 0x40]
+01d8b98d call       0xb11790
+01d8b992 movups     xmm0, xmmword ptr [rsp + 0x40]
+01d8b997 movups     xmmword ptr [rsp + 0x60], xmm0
+01d8b99c movsd      xmm1, qword ptr [rsp + 0x50]
+01d8b9a2 movsd      qword ptr [rsp + 0x70], xmm1
+01d8b9a8 mov        qword ptr [rsp + 0x40], rsi
+01d8b9ad lea        rbx, [rsp + 0x60]
+01d8b9b2 mov        qword ptr [rsp + 0x48], rbx
+01d8b9b7 nop        word ptr [rax + rax]
+01d8b9c0 mov        rdx, qword ptr [rip + 0x262f7d1] ; [.data 43bb198] MethodRef#199177
+01d8b9c7 lea        rcx, [rsp + 0x60]
+01d8b9cc call       0x198e510
+01d8b9d1 test       al, al
+01d8b9d3 je         0x1d8ba2f
+01d8b9d5 mov        rdx, qword ptr [rip + 0x2625ecc] ; [.data 43b18a8] TypeInfo#37306
+01d8b9dc mov        r8, qword ptr [rsp + 0x70]
+01d8b9e1 test       r8, r8
+01d8b9e4 je         0x1d8bc0c
+01d8b9ea mov        r9, qword ptr [r8]
+01d8b9ed movzx      eax, byte ptr [rdx + 0x130] ; ~_causeOfDeath
+01d8b9f4 cmp        byte ptr [r9 + 0x130], al ; ~_causeOfDeath
+01d8b9fb jb         0x1d8bc12
+01d8ba01 movzx      ecx, al
+01d8ba04 mov        rax, qword ptr [r9 + 0xc8] ; ~_burnShakeSpeed
+01d8ba0b cmp        qword ptr [rax + rcx*8 - 8], rdx
+01d8ba10 jne        0x1d8bc12
+01d8ba16 test       r8, r8
+01d8ba19 je         0x1d8bc12
+01d8ba1f mov        rcx, r8
+01d8ba22 xor        r8d, r8d
+01d8ba25 mov        rdx, r14
+01d8ba28 call       0x1d8b0c0 ; InGame.Kernel.Enemy.Ene_Bos04Bit::Setup(InGame.Kernel.Enemy.Ene_Bos04)
+01d8ba2d jmp        0x1d8b9c0
+01d8ba2f mov        rdx, qword ptr [rip + 0x262f6aa] ; [.data 43bb0e0] MethodRef#199176
+01d8ba36 mov        rcx, rbx
+01d8ba39 call       0x5bcdb0 ; AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose()
+01d8ba3e jmp        0x1d8ba69
+01d8ba40 mov        rdx, qword ptr [rip + 0x262f699] ; [.data 43bb0e0] MethodRef#199176
+01d8ba47 mov        rcx, qword ptr [rsp + 0x48]
+01d8ba4c call       0x5bcdb0 ; AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose()
+01d8ba51 mov        rcx, qword ptr [rsp + 0x40]
+01d8ba56 test       rcx, rcx
+01d8ba59 jne        0x1d8bc1b
+01d8ba5f mov        r14, qword ptr [rsp + 0xa0] ; ~PoolEvent
+01d8ba67 xor        esi, esi
+01d8ba69 cmp        byte ptr [r14 + 0x2dd], 0 ; ~_isGuardianRight
+01d8ba71 jne        0x1d8bbf8
+01d8ba77 mov        byte ptr [r14 + 0x2dd], 1 ; ~_isGuardianRight
+01d8ba7f cmp        byte ptr [rip + 0x28d09d7], 0 ; [.data 465c45d]
+01d8ba86 jne        0x1d8ba9b
+01d8ba88 lea        rcx, [rip + 0x2635c49] ; [.data 43c16d8] TypeInfo#48704
+01d8ba8f call       0x4e0a50
+01d8ba94 mov        byte ptr [rip + 0x28d09c2], 1 ; [.data 465c45d]
+01d8ba9b mov        rax, qword ptr [rip + 0x2635c36] ; [.data 43c16d8] TypeInfo#48704
+01d8baa2 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d8baa9 movsd      xmm0, qword ptr [rcx]
+01d8baad movsd      qword ptr [rsp + 0xa0], xmm0 ; ~PoolEvent
+01d8bab6 mov        edi, dword ptr [rcx + 8]
+01d8bab9 mov        rcx, qword ptr [rip + 0x262a558] ; [.data 43b6018] TypeInfo#56701
+01d8bac0 call       0x4e0cb0
+01d8bac5 mov        rbx, rax
+01d8bac8 xor        r9d, r9d
+01d8bacb mov        r8, qword ptr [rip + 0x25ffd96] ; [.data 438b868] MethodDef#71690
+01d8bad2 mov        rdx, r14
+01d8bad5 mov        rcx, rax
+01d8bad8 call       0x639280 ; Steamworks.ISteamMatchmakingPingResponse/ServerFailedToRespond::.ctor(System.Object,System.IntPtr) || Steamworks.ISteamMatchmakingPlayersResponse/PlayersFailedToRespond::.ctor(System.Object,System.IntPtr) || Steamworks.ISteamMatchmakingPlayersResponse/PlayersRefreshComplete::.ctor(System.Object,System.IntPtr)
+01d8badd movsd      xmm0, qword ptr [rsp + 0xa0] ; ~PoolEvent
+01d8bae6 movsd      qword ptr [rsp + 0x40], xmm0
+01d8baec mov        dword ptr [rsp + 0x48], edi
+01d8baf0 mov        qword ptr [rsp + 0x20], rsi
+01d8baf5 mov        r9, rbx
+01d8baf8 lea        r8, [rsp + 0x40]
+01d8bafd mov        edx, 1
+01d8bb02 mov        rcx, r14
+01d8bb05 call       0x1db8f70 ; InGame.Kernel.Enemy.Ene_BosBase::CallEnemyClip(System.Int32,UnityEngine.Vector3,InGame.Kernel.Enemy.PawnEnemy/poolEventFunction)
+01d8bb0a test       rax, rax
+01d8bb0d je         0x1d8bc35
+01d8bb13 mov        r8, qword ptr [rip + 0x25d72e6] ; [.data 4362e00] MethodRef#201786
+01d8bb1a mov        rdx, rax
+01d8bb1d lea        rcx, [rsp + 0x40]
+01d8bb22 call       0xb11790
+01d8bb27 movups     xmm0, xmmword ptr [rsp + 0x40]
+01d8bb2c movups     xmmword ptr [rsp + 0x60], xmm0
+01d8bb31 movsd      xmm1, qword ptr [rsp + 0x50]
+01d8bb37 movsd      qword ptr [rsp + 0x70], xmm1
+01d8bb3d mov        qword ptr [rsp + 0x40], rsi
+01d8bb42 lea        rbx, [rsp + 0x60]
+01d8bb47 mov        qword ptr [rsp + 0x48], rbx
+01d8bb4c nop        dword ptr [rax]
+01d8bb50 mov        rdx, qword ptr [rip + 0x262f641] ; [.data 43bb198] MethodRef#199177
+01d8bb57 lea        rcx, [rsp + 0x60]
+01d8bb5c call       0x198e510
+01d8bb61 test       al, al
+01d8bb63 je         0x1d8bbcc
+01d8bb65 mov        rdx, qword ptr [rip + 0x2625d3c] ; [.data 43b18a8] TypeInfo#37306
+01d8bb6c mov        r8, qword ptr [rsp + 0x70]
+01d8bb71 test       r8, r8
+01d8bb74 je         0x1d8bc21
+01d8bb7a mov        r9, qword ptr [r8]
+01d8bb7d movzx      eax, byte ptr [rdx + 0x130] ; ~_causeOfDeath
+01d8bb84 cmp        byte ptr [r9 + 0x130], al ; ~_causeOfDeath
+01d8bb8b jb         0x1d8bc26
+01d8bb91 movzx      ecx, al
+01d8bb94 mov        rax, qword ptr [r9 + 0xc8] ; ~_burnShakeSpeed
+01d8bb9b cmp        qword ptr [rax + rcx*8 - 8], rdx
+01d8bba0 jne        0x1d8bc26
+01d8bba6 mov        rax, rsi
+01d8bba9 test       sil, sil
+01d8bbac cmove      rax, r8
+01d8bbb0 test       rax, rax
+01d8bbb3 je         0x1d8bc26
+01d8bbb5 mov        rcx, rsi
+01d8bbb8 test       sil, sil
+01d8bbbb cmove      rcx, r8
+01d8bbbf xor        r8d, r8d
+01d8bbc2 mov        rdx, r14
+01d8bbc5 call       0x1d8b0c0 ; InGame.Kernel.Enemy.Ene_Bos04Bit::Setup(InGame.Kernel.Enemy.Ene_Bos04)
+01d8bbca jmp        0x1d8bb50
+01d8bbcc mov        rdx, qword ptr [rip + 0x262f50d] ; [.data 43bb0e0] MethodRef#199176
+01d8bbd3 mov        rcx, rbx
+01d8bbd6 call       0x5bcdb0 ; AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose()
+01d8bbdb jmp        0x1d8bbf8
+01d8bbdd mov        rdx, qword ptr [rip + 0x262f4fc] ; [.data 43bb0e0] MethodRef#199176
+01d8bbe4 mov        rcx, qword ptr [rsp + 0x48]
+01d8bbe9 call       0x5bcdb0 ; AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose()
+01d8bbee mov        rcx, qword ptr [rsp + 0x40]
+01d8bbf3 test       rcx, rcx
+01d8bbf6 jne        0x1d8bc2f
+01d8bbf8 mov        rbx, qword ptr [rsp + 0xa8] ; ~_updateEvents
+01d8bc00 add        rsp, 0x80
+01d8bc07 pop        r14
+01d8bc09 pop        rdi
+01d8bc0a pop        rsi
+01d8bc0b ret        
+01d8bc0c call       0x4e0d00
+01d8bc11 nop        
+01d8bc12 mov        rcx, r8
+01d8bc15 call       0x4dfdc0
+01d8bc1a nop        
+01d8bc1b call       0x4dc9e0
+01d8bc20 nop        
+01d8bc21 call       0x4e0d00
+01d8bc26 mov        rcx, r8
+01d8bc29 call       0x4dfdc0
+01d8bc2e nop        
+01d8bc2f call       0x4dc9e0
+01d8bc34 int3       
+01d8bc35 call       0x4e0d00

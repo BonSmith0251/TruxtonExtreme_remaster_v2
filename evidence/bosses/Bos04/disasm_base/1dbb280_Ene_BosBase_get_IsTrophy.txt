@@ -1,0 +1,8 @@
+== System.Boolean InGame.Kernel.Enemy.Ene_BosBase::get_IsTrophy() RVA 1dbb280 len 17
+01dbb280 cmp        dword ptr [rcx + 0x210], 0x64 ; ~_currentPlayMode
+01dbb287 jne        0x1dbb28c
+01dbb289 xor        al, al
+01dbb28b ret        
+01dbb28c cmp        byte ptr [rcx + 0x218], 0 ; ~_isTraining
+01dbb293 sete       al
+01dbb296 ret        

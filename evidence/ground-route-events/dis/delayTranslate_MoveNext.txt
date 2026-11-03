@@ -1,0 +1,310 @@
+01d2dcb0  mov      qword ptr [rsp + 0x10], rbx   ; ev.eventType
+01d2dcb5  mov      qword ptr [rsp + 8], rcx   ; sm.<>t__builder
+01d2dcba  push     rsi
+01d2dcbb  push     rdi
+01d2dcbc  push     r14
+01d2dcbe  sub      rsp, 0x90
+01d2dcc5  movaps   xmmword ptr [rsp + 0x80], xmm6   ; ._transformCaches
+01d2dccd  mov      rbx, rcx
+01d2dcd0  mov      qword ptr [rsp + 0x40], rcx   ; ev.intValue1/._animators
+01d2dcd5  cmp      byte ptr [rip + 0x29357fa], 0   ; [46634d6] bss
+01d2dcdc  jne      0x1d2dd51
+01d2dcde  lea      rcx, [rip + 0x267622b]   ; [43a3f10] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::AwaitUnsafeOnCompleted<.Awaiter,.<_delayTranslate>d__15>
+01d2dce5  call     0x4e0a50
+01d2dcea  lea      rcx, [rip + 0x2674ae7]   ; [43a27d8] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::AwaitUnsafeOnCompleted<.Awaiter,.<_delayTranslate>d__15>
+01d2dcf1  call     0x4e0a50
+01d2dcf6  lea      rcx, [rip + 0x266771b]   ; [4395418] TypeInfo System.Threading.CancellationToken
+01d2dcfd  call     0x4e0a50
+01d2dd02  lea      rcx, [rip + 0x26aba0f]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01d2dd09  call     0x4e0a50
+01d2dd0e  lea      rcx, [rip + 0x26829e3]   ; [43b06f8] MethodRef DG.Tweening.TweenSettingsExtensions::SetEase<G<DG.Tweening.Core.TweenerCore`3>>
+01d2dd15  call     0x4e0a50
+01d2dd1a  lea      rcx, [rip + 0x2682ca7]   ; [43b09c8] MethodRef DG.Tweening.TweenSettingsExtensions::SetId<G<DG.Tweening.Core.TweenerCore`3>>
+01d2dd21  call     0x4e0a50
+01d2dd26  lea      rcx, [rip + 0x2683023]   ; [43b0d50] MethodRef DG.Tweening.TweenSettingsExtensions::SetRelative<G<DG.Tweening.Core.TweenerCore`3>>
+01d2dd2d  call     0x4e0a50
+01d2dd32  lea      rcx, [rip + 0x2683cbf]   ; [43b19f8] MethodRef DG.Tweening.TweenSettingsExtensions::SetUpdate<G<DG.Tweening.Core.TweenerCore`3>>
+01d2dd39  call     0x4e0a50
+01d2dd3e  lea      rcx, [rip + 0x268e58b]   ; [43bc2d0] TypeInfo Cysharp.Threading.Tasks.UniTask
+01d2dd45  call     0x4e0a50
+01d2dd4a  mov      byte ptr [rip + 0x2935785], 1   ; [46634d6] bss
+01d2dd51  xor      r14d, r14d
+01d2dd54  mov      dword ptr [rsp + 0xc0], r14d   ; ._speedToken
+01d2dd5c  mov      dword ptr [rsp + 0xc8], r14d   ; ._taskFlag
+01d2dd64  mov      dword ptr [rsp + 0x78], r14d   ; ._transformNameCache
+01d2dd69  mov      ecx, dword ptr [rbx]   ; sm.<>1__state
+01d2dd6b  mov      rdi, qword ptr [rbx + 0x18]   ; sm.<>4__this/ev.repeatDelay
+01d2dd6f  test     ecx, ecx
+01d2dd71  je       0x1d2de71
+01d2dd77  sub      ecx, 1
+01d2dd7a  je       0x1d2de57
+01d2dd80  cmp      ecx, 1
+01d2dd83  je       0x1d2de3c
+01d2dd89  test     rdi, rdi
+01d2dd8c  je       0x1d2e211
+01d2dd92  or       dword ptr [rdi + 0xc8], 4   ; ._taskFlag
+01d2dd99  mov      qword ptr [rsp + 0x30], r14   ; sm._tempTransform/._entryFlag
+01d2dd9e  mov      qword ptr [rsp + 0x28], r14   ; sm.preWait/ev.vectorValue
+01d2dda3  mov      qword ptr [rsp + 0x20], r14   ; sm.token/ev.value0
+01d2dda8  movss    xmm3, dword ptr [rbx + 0x28]   ; sm.preWait/ev.vectorValue
+01d2ddad  mov      r8, qword ptr [rbx + 0x20]   ; sm.token/ev.value0
+01d2ddb1  mov      rdx, rdi
+01d2ddb4  lea      rcx, [rsp + 0x60]   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2ddb9  call     0x1d1e5f0   ; InGameObjectWithEvent::_delaySecondWithPause(System.Threading.CancellationToken,System.Single,InGame.Kernel.Timeline.RouteEvent,System.Action`1<InGame.Kernel.Timeline.RouteEvent>)
+01d2ddbe  movups   xmm6, xmmword ptr [rax]   ; sm.<>1__state
+01d2ddc1  mov      rcx, qword ptr [rip + 0x268e508]   ; [43bc2d0] TypeInfo Cysharp.Threading.Tasks.UniTask
+01d2ddc8  cmp      dword ptr [rcx + 0xe4], r14d
+01d2ddcf  jne      0x1d2ddd6
+01d2ddd1  call     0x4e0d90
+01d2ddd6  movdqa   xmmword ptr [rsp + 0x60], xmm6   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2dddc  xor      edx, edx
+01d2ddde  lea      rcx, [rsp + 0x60]   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2dde3  call     0x4dfd80
+01d2dde8  movaps   xmm0, xmmword ptr [rsp + 0x60]   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2dded  movdqa   xmmword ptr [rsp + 0x60], xmm0   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2ddf3  xor      edx, edx
+01d2ddf5  lea      rcx, [rsp + 0x60]   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2ddfa  call     0xa55c00
+01d2ddff  test     al, al
+01d2de01  jne      0x1d2de87
+01d2de07  mov      dword ptr [rbx], r14d   ; sm.<>1__state
+01d2de0a  movaps   xmm0, xmmword ptr [rsp + 0x60]   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2de0f  movups   xmmword ptr [rbx + 0x50], xmm0   ; sm.<>u__1/ev.randomFire/._animatorsPlay
+01d2de13  lea      rcx, [rbx + 0x50]   ; sm.<>u__1/ev.randomFire/._animatorsPlay
+01d2de17  xor      edx, edx
+01d2de19  call     0x4dfd80
+01d2de1e  lea      rcx, [rbx + 8]   ; sm.<>t__builder
+01d2de22  mov      r9, qword ptr [rip + 0x26749af]   ; [43a27d8] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::AwaitUnsafeOnCompleted<.Awaiter,.<_delayTranslate>d__15>
+01d2de29  mov      r8, rbx
+01d2de2c  lea      rdx, [rsp + 0x60]   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2de31  call     0x2bba0
+01d2de36  nop      
+01d2de37  jmp      0x1d2e191
+01d2de3c  movups   xmm0, xmmword ptr [rbx + 0x50]   ; sm.<>u__1/ev.randomFire/._animatorsPlay
+01d2de40  movaps   xmmword ptr [rsp + 0x60], xmm0   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2de45  xorps    xmm1, xmm1
+01d2de48  movups   xmmword ptr [rbx + 0x50], xmm1   ; sm.<>u__1/ev.randomFire/._animatorsPlay
+01d2de4c  mov      dword ptr [rbx], 0xffffffff   ; sm.<>1__state
+01d2de52  jmp      0x1d2e127
+01d2de57  mov      eax, dword ptr [rbx + 0x6c]   ; sm.<>u__2/._flagStateNow
+01d2de5a  mov      dword ptr [rsp + 0xc0], eax   ; ._speedToken
+01d2de61  xor      eax, eax
+01d2de63  mov      dword ptr [rbx + 0x6c], eax   ; sm.<>u__2/._flagStateNow
+01d2de66  mov      dword ptr [rbx], 0xffffffff   ; sm.<>1__state
+01d2de6c  jmp      0x1d2e067
+01d2de71  movups   xmm0, xmmword ptr [rbx + 0x50]   ; sm.<>u__1/ev.randomFire/._animatorsPlay
+01d2de75  movaps   xmmword ptr [rsp + 0x60], xmm0   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2de7a  xorps    xmm1, xmm1
+01d2de7d  movups   xmmword ptr [rbx + 0x50], xmm1   ; sm.<>u__1/ev.randomFire/._animatorsPlay
+01d2de81  mov      dword ptr [rbx], 0xffffffff   ; sm.<>1__state
+01d2de87  xor      edx, edx
+01d2de89  lea      rcx, [rsp + 0x60]   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2de8e  call     0xa55b40
+01d2de93  mov      rcx, qword ptr [rip + 0x266757e]   ; [4395418] TypeInfo System.Threading.CancellationToken
+01d2de9a  cmp      dword ptr [rcx + 0xe4], 0
+01d2dea1  jne      0x1d2dea8
+01d2dea3  call     0x4e0d90
+01d2dea8  lea      rcx, [rbx + 0x20]   ; sm.token/ev.value0
+01d2deac  xor      edx, edx
+01d2deae  call     0x2096440   ; CancellationToken::get_IsCancellationRequested()
+01d2deb3  test     al, al
+01d2deb5  jne      0x1d2e153
+01d2debb  movsd    xmm0, qword ptr [rbx + 0x38]   ; sm.translate/ev.stringValue/._psystems
+01d2dec0  movsd    qword ptr [rsp + 0x60], xmm0   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2dec6  mov      eax, dword ptr [rbx + 0x40]   ; ev.intValue1/._animators
+01d2dec9  mov      dword ptr [rsp + 0x68], eax   ; sm.<isPlay>5__3/ev.flag0/._flagStateFuture
+01d2decd  mov      qword ptr [rsp + 0x20], r14   ; sm.token/ev.value0
+01d2ded2  xor      r9d, r9d
+01d2ded5  movss    xmm2, dword ptr [rbx + 0x44]   ; sm.dotime/ev.intValue2
+01d2deda  lea      rdx, [rsp + 0x60]   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2dedf  mov      rcx, qword ptr [rbx + 0x30]   ; sm._tempTransform/._entryFlag
+01d2dee3  call     0x656120   ; ShortcutExtensions::DOLocalMove(UnityEngine.Transform,UnityEngine.Vector3,System.Single,System.Boolean)
+01d2dee8  mov      r8, qword ptr [rip + 0x2682e61]   ; [43b0d50] MethodRef DG.Tweening.TweenSettingsExtensions::SetRelative<G<DG.Tweening.Core.TweenerCore`3>>
+01d2deef  movzx    edx, byte ptr [rbx + 0x48]   ; sm.isRelative/ev.intValue3/.GameObjectCache
+01d2def3  mov      rcx, rax
+01d2def6  call     0x9502a0   ; TweenSettingsExtensions::SetRelative(T,System.Boolean)
+01d2defb  mov      r8, qword ptr [rip + 0x26827f6]   ; [43b06f8] MethodRef DG.Tweening.TweenSettingsExtensions::SetEase<G<DG.Tweening.Core.TweenerCore`3>>
+01d2df02  mov      edx, 1
+01d2df07  mov      rcx, rax
+01d2df0a  call     0x94f8b0   ; TweenSettingsExtensions::SetEase(T,DG.Tweening.Ease)
+01d2df0f  mov      r8, qword ptr [rip + 0x2683ae2]   ; [43b19f8] MethodRef DG.Tweening.TweenSettingsExtensions::SetUpdate<G<DG.Tweening.Core.TweenerCore`3>>
+01d2df16  mov      edx, 3
+01d2df1b  mov      rcx, rax
+01d2df1e  call     0x9505e0   ; TweenSettingsExtensions::SetUpdate(T,DG.Tweening.UpdateType)
+01d2df23  mov      rsi, rax
+01d2df26  mov      rdx, qword ptr [rip + 0x26ab7eb]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01d2df2d  cmp      dword ptr [rdx + 0xe4], 0
+01d2df34  jne      0x1d2df45
+01d2df36  mov      rcx, rdx
+01d2df39  call     0x4e0d90
+01d2df3e  mov      rdx, qword ptr [rip + 0x26ab7d3]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01d2df45  mov      rdx, qword ptr [rdx + 0xb8]   ; ._hormingToken
+01d2df4c  mov      r8, qword ptr [rip + 0x2682a75]   ; [43b09c8] MethodRef DG.Tweening.TweenSettingsExtensions::SetId<G<DG.Tweening.Core.TweenerCore`3>>
+01d2df53  mov      rdx, qword ptr [rdx + 0x10]   ; ev.eventType
+01d2df57  mov      rcx, rsi
+01d2df5a  call     0x94fed0   ; TweenSettingsExtensions::SetId(T,System.String)
+01d2df5f  mov      qword ptr [rbx + 0x60], rax   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2df63  lea      rcx, [rbx + 0x60]   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2df67  mov      rdx, rax
+01d2df6a  call     0x4dfd80
+01d2df6f  mov      byte ptr [rbx + 0x68], 1   ; sm.<isPlay>5__3/ev.flag0/._flagStateFuture
+01d2df73  cmp      qword ptr [rbx + 0x60], 0   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2df78  je       0x1d2e0ac
+01d2df7e  xor      edx, edx
+01d2df80  mov      rcx, qword ptr [rbx + 0x60]   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2df84  call     0x65d6d0   ; TweenExtensions::IsActive(DG.Tweening.Tween)
+01d2df89  test     al, al
+01d2df8b  je       0x1d2e0ac
+01d2df91  xor      edx, edx
+01d2df93  mov      rcx, qword ptr [rbx + 0x60]   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2df97  call     0x65d750   ; TweenExtensions::IsComplete(DG.Tweening.Tween)
+01d2df9c  test     al, al
+01d2df9e  jne      0x1d2e0ac
+01d2dfa4  mov      rcx, qword ptr [rip + 0x266746d]   ; [4395418] TypeInfo System.Threading.CancellationToken
+01d2dfab  cmp      dword ptr [rcx + 0xe4], 0
+01d2dfb2  jne      0x1d2dfb9
+01d2dfb4  call     0x4e0d90
+01d2dfb9  xor      edx, edx
+01d2dfbb  lea      rcx, [rbx + 0x20]   ; sm.token/ev.value0
+01d2dfbf  call     0x2096440   ; CancellationToken::get_IsCancellationRequested()
+01d2dfc4  test     al, al
+01d2dfc6  jne      0x1d2e0ac
+01d2dfcc  test     rdi, rdi
+01d2dfcf  je       0x1d2e216
+01d2dfd5  mov      rdx, qword ptr [rdi]   ; sm.<>1__state
+01d2dfd8  mov      rax, qword ptr [rdx + 0x258]
+01d2dfdf  mov      rdx, qword ptr [rdx + 0x260]
+01d2dfe6  mov      rcx, rdi
+01d2dfe9  call     rax
+01d2dfeb  movzx    ecx, byte ptr [rbx + 0x68]   ; sm.<isPlay>5__3/ev.flag0/._flagStateFuture
+01d2dfef  test     al, al
+01d2dff1  je       0x1d2e008
+01d2dff3  test     cl, cl
+01d2dff5  jne      0x1d2e01b
+01d2dff7  xor      edx, edx
+01d2dff9  mov      rcx, qword ptr [rbx + 0x30]   ; sm._tempTransform/._entryFlag
+01d2dffd  call     0x658360   ; ShortcutExtensions::DOPlay(UnityEngine.Component)
+01d2e002  mov      byte ptr [rbx + 0x68], 1   ; sm.<isPlay>5__3/ev.flag0/._flagStateFuture
+01d2e006  jmp      0x1d2e01b
+01d2e008  test     cl, cl
+01d2e00a  je       0x1d2e01b
+01d2e00c  xor      edx, edx
+01d2e00e  mov      rcx, qword ptr [rbx + 0x30]   ; sm._tempTransform/._entryFlag
+01d2e012  call     0x657cd0   ; ShortcutExtensions::DOPause(UnityEngine.Component)
+01d2e017  mov      byte ptr [rbx + 0x68], 0   ; sm.<isPlay>5__3/ev.flag0/._flagStateFuture
+01d2e01b  mov      rcx, qword ptr [rip + 0x268e2ae]   ; [43bc2d0] TypeInfo Cysharp.Threading.Tasks.UniTask
+01d2e022  cmp      dword ptr [rcx + 0xe4], 0
+01d2e029  jne      0x1d2e030
+01d2e02b  call     0x4e0d90
+01d2e030  xor      ecx, ecx
+01d2e032  call     0x9dcba0   ; UInt16::GetTypeCode() | IntPtr::get_Size()
+01d2e037  mov      dword ptr [rsp + 0xc8], eax   ; ._taskFlag
+01d2e03e  xor      edx, edx
+01d2e040  lea      rcx, [rsp + 0xc8]   ; ._taskFlag
+01d2e048  call     0x607140   ; CSteamID::GetAccountID() | SafeModeReport::get_totMissingTargetOrFieldErrors()
+01d2e04d  mov      dword ptr [rsp + 0xc0], eax   ; ._speedToken
+01d2e054  xor      edx, edx
+01d2e056  lea      rcx, [rsp + 0xc0]   ; ._speedToken
+01d2e05e  call     0x7aa370   ; InGameBullet::IsLaser() | InGameBulletItem::IsLaser()
+01d2e063  test     al, al
+01d2e065  je       0x1d2e07b
+01d2e067  xor      edx, edx
+01d2e069  lea      rcx, [rsp + 0xc0]   ; ._speedToken
+01d2e071  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01d2e076  jmp      0x1d2df73
+01d2e07b  mov      dword ptr [rbx], 1   ; sm.<>1__state
+01d2e081  mov      eax, dword ptr [rsp + 0xc0]   ; ._speedToken
+01d2e088  mov      dword ptr [rbx + 0x6c], eax   ; sm.<>u__2/._flagStateNow
+01d2e08b  lea      rcx, [rbx + 8]   ; sm.<>t__builder
+01d2e08f  mov      r9, qword ptr [rip + 0x2675e7a]   ; [43a3f10] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::AwaitUnsafeOnCompleted<.Awaiter,.<_delayTranslate>d__15>
+01d2e096  mov      r8, rbx
+01d2e099  lea      rdx, [rsp + 0xc0]   ; ._speedToken
+01d2e0a1  call     0x2b040
+01d2e0a6  nop      
+01d2e0a7  jmp      0x1d2e191
+01d2e0ac  xor      r8d, r8d
+01d2e0af  xor      edx, edx
+01d2e0b1  mov      rcx, qword ptr [rbx + 0x60]   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2e0b5  call     0x65d8a0   ; TweenExtensions::Kill(DG.Tweening.Tween,System.Boolean)
+01d2e0ba  test     rdi, rdi
+01d2e0bd  je       0x1d2e220
+01d2e0c3  mov      qword ptr [rsp + 0x20], r14   ; sm.token/ev.value0
+01d2e0c8  movss    xmm3, dword ptr [rbx + 0x4c]   ; sm.postWait/ev.dotime
+01d2e0cd  mov      r8, qword ptr [rbx + 0x20]   ; sm.token/ev.value0
+01d2e0d1  mov      rdx, rdi
+01d2e0d4  lea      rcx, [rsp + 0x60]   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2e0d9  call     0x1d1e730   ; InGameObjectWithEvent::_delaySecond(System.Threading.CancellationToken,System.Single)
+01d2e0de  movups   xmm6, xmmword ptr [rax]   ; sm.<>1__state
+01d2e0e1  mov      rcx, qword ptr [rip + 0x268e1e8]   ; [43bc2d0] TypeInfo Cysharp.Threading.Tasks.UniTask
+01d2e0e8  cmp      dword ptr [rcx + 0xe4], 0
+01d2e0ef  jne      0x1d2e0f6
+01d2e0f1  call     0x4e0d90
+01d2e0f6  movdqa   xmmword ptr [rsp + 0x60], xmm6   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2e0fc  xor      edx, edx
+01d2e0fe  lea      rcx, [rsp + 0x60]   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2e103  call     0x4dfd80
+01d2e108  movaps   xmm0, xmmword ptr [rsp + 0x60]   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2e10d  movdqa   xmmword ptr [rsp + 0x60], xmm0   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2e113  xor      edx, edx
+01d2e115  lea      rcx, [rsp + 0x60]   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2e11a  call     0xa55c00
+01d2e11f  test     al, al
+01d2e121  je       0x1d2e1ad
+01d2e127  xor      edx, edx
+01d2e129  lea      rcx, [rsp + 0x60]   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2e12e  call     0xa55b40
+01d2e133  test     rdi, rdi
+01d2e136  je       0x1d2e21b
+01d2e13c  and      dword ptr [rdi + 0xc8], 0xfffffffb   ; ._taskFlag
+01d2e143  mov      qword ptr [rbx + 0x60], r14   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2e147  lea      rcx, [rbx + 0x60]   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2e14b  xor      edx, edx
+01d2e14d  call     0x4dfd80
+01d2e152  nop      
+01d2e153  mov      dword ptr [rbx], 0xfffffffe   ; sm.<>1__state
+01d2e159  cmp      byte ptr [rip + 0x29327c4], 0   ; [4660924] bss
+01d2e160  jne      0x1d2e175
+01d2e162  lea      rcx, [rip + 0x26a72df]   ; [43d5448] TypeInfo Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise
+01d2e169  call     0x4e0a50
+01d2e16e  mov      byte ptr [rip + 0x29327af], 1   ; [4660924] bss
+01d2e175  cmp      qword ptr [rbx + 8], 0   ; sm.<>t__builder
+01d2e17a  je       0x1d2e191
+01d2e17c  mov      ecx, 2
+01d2e181  mov      r8, qword ptr [rbx + 8]   ; sm.<>t__builder
+01d2e185  mov      rdx, qword ptr [rip + 0x26a72bc]   ; [43d5448] TypeInfo Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise
+01d2e18c  call     0x22b0
+01d2e191  mov      rbx, qword ptr [rsp + 0xb8]   ; ._hormingToken
+01d2e199  movaps   xmm6, xmmword ptr [rsp + 0x80]   ; ._transformCaches
+01d2e1a1  add      rsp, 0x90
+01d2e1a8  pop      r14
+01d2e1aa  pop      rdi
+01d2e1ab  pop      rsi
+01d2e1ac  ret      
+01d2e1ad  mov      dword ptr [rbx], 2   ; sm.<>1__state
+01d2e1b3  movaps   xmm0, xmmword ptr [rsp + 0x60]   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2e1b8  movups   xmmword ptr [rbx + 0x50], xmm0   ; sm.<>u__1/ev.randomFire/._animatorsPlay
+01d2e1bc  lea      rcx, [rbx + 0x50]   ; sm.<>u__1/ev.randomFire/._animatorsPlay
+01d2e1c0  xor      edx, edx
+01d2e1c2  call     0x4dfd80
+01d2e1c7  lea      rcx, [rbx + 8]   ; sm.<>t__builder
+01d2e1cb  mov      r9, qword ptr [rip + 0x2674606]   ; [43a27d8] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::AwaitUnsafeOnCompleted<.Awaiter,.<_delayTranslate>d__15>
+01d2e1d2  mov      r8, rbx
+01d2e1d5  lea      rdx, [rsp + 0x60]   ; sm.<eveseq>5__2/ev.subnameValue/._psystemCount
+01d2e1da  call     0x2bba0
+01d2e1df  nop      
+01d2e1e0  jmp      0x1d2e191
+01d2e1e2  mov      rax, qword ptr [rsp + 0x40]   ; ev.intValue1/._animators
+01d2e1e7  mov      dword ptr [rax], 0xfffffffe   ; sm.<>1__state
+01d2e1ed  mov      eax, dword ptr [rsp + 0x78]   ; ._transformNameCache
+01d2e1f1  dec      eax
+01d2e1f3  movsxd   rdx, eax
+01d2e1f6  mov      rcx, qword ptr [rsp + 0xb0]   ; ._translateToken
+01d2e1fe  add      rcx, 8
+01d2e202  xor      r8d, r8d
+01d2e205  mov      rdx, qword ptr [rsp + rdx*8 + 0x70]
+01d2e20a  call     0x1132bc0
+01d2e20f  jmp      0x1d2e191
+01d2e211  call     0x4e0d00
+01d2e216  call     0x4e0d00
+01d2e21b  call     0x4e0d00
+01d2e220  call     0x4e0d00

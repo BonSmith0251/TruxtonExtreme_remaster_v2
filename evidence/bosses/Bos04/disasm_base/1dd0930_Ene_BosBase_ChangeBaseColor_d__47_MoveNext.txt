@@ -1,0 +1,296 @@
+== System.Void InGame.Kernel.Enemy.Ene_BosBase/<ChangeBaseColor>d__47::MoveNext() RVA 1dd0930 len 50c
+01dd0930 mov        qword ptr [rsp + 0x10], rbx
+01dd0935 mov        qword ptr [rsp + 8], rcx
+01dd093a push       rsi
+01dd093b push       rdi
+01dd093c push       r14
+01dd093e sub        rsp, 0x80
+01dd0945 movaps     xmmword ptr [rsp + 0x70], xmm6
+01dd094a movaps     xmmword ptr [rsp + 0x60], xmm7
+01dd094f mov        rdi, rcx
+01dd0952 mov        qword ptr [rsp + 0x20], rcx
+01dd0957 cmp        byte ptr [rip + 0x2892f2a], 0 ; [.data 4663888]
+01dd095e jne        0x1dd09af
+01dd0960 lea        rcx, [rip + 0x25d2d39] ; [.data 43a36a0] MethodRef#179762
+01dd0967 call       0x4e0a50
+01dd096c lea        rcx, [rip + 0x25d1775] ; [.data 43a20e8] MethodRef#179731
+01dd0973 call       0x4e0a50
+01dd0978 lea        rcx, [rip + 0x2608d99] ; [.data 43d9718] TypeInfo#40068
+01dd097f call       0x4e0a50
+01dd0984 lea        rcx, [rip + 0x25e750d] ; [.data 43b7e98] MethodRef#202979
+01dd098b call       0x4e0a50
+01dd0990 lea        rcx, [rip + 0x25e7669] ; [.data 43b8000] MethodRef#202981
+01dd0997 call       0x4e0a50
+01dd099c lea        rcx, [rip + 0x25eb92d] ; [.data 43bc2d0] TypeInfo#48080
+01dd09a3 call       0x4e0a50
+01dd09a8 mov        byte ptr [rip + 0x2892ed9], 1 ; [.data 4663888]
+01dd09af xor        r14d, r14d
+01dd09b2 mov        dword ptr [rsp + 0xb0], r14d ; ~_updateEventCount
+01dd09ba mov        dword ptr [rsp + 0xb8], r14d ; ~_mover
+01dd09c2 mov        dword ptr [rsp + 0x40], r14d
+01dd09c7 mov        eax, dword ptr [rdi]
+01dd09c9 mov        rsi, qword ptr [rdi + 0x18]
+01dd09cd test       eax, eax
+01dd09cf jne        0x1dd09e7
+01dd09d1 movups     xmm6, xmmword ptr [rdi + 0x40]
+01dd09d5 xorps      xmm0, xmm0
+01dd09d8 movups     xmmword ptr [rdi + 0x40], xmm0
+01dd09dc mov        dword ptr [rdi], 0xffffffff
+01dd09e2 jmp        0x1dd0b7e
+01dd09e7 cmp        eax, 1
+01dd09ea jne        0x1dd0a11
+01dd09ec mov        eax, dword ptr [rdi + 0x50]
+01dd09ef mov        dword ptr [rsp + 0xb0], eax ; ~_updateEventCount
+01dd09f6 xor        eax, eax
+01dd09f8 mov        dword ptr [rdi + 0x50], eax
+01dd09fb mov        dword ptr [rdi], 0xffffffff
+01dd0a01 xorps      xmm7, xmm7
+01dd0a04 movss      xmm6, dword ptr [rip + 0x17101c0] ; [.rdata 34e0bcc] f=1.0 d=50.12387841939926 v4=['1', '3.14159', '4', '10']
+01dd0a0c jmp        0x1dd0d8c
+01dd0a11 test       rsi, rsi
+01dd0a14 je         0x1dd0e37
+01dd0a1a xor        edx, edx
+01dd0a1c mov        rcx, rsi
+01dd0a1f call       0x1d11bc0 ; InGame.Kernel.Enemy.PawnEnemy::get_CToken()
+01dd0a24 mov        rbx, rax
+01dd0a27 movss      xmm6, dword ptr [rdi + 0x20]
+01dd0a2c mov        rcx, qword ptr [rip + 0x2608ce5] ; [.data 43d9718] TypeInfo#40068
+01dd0a33 cmp        dword ptr [rcx + 0xe4], 0
+01dd0a3a jne        0x1dd0a41
+01dd0a3c call       0x4e0d90
+01dd0a41 xor        r9d, r9d
+01dd0a44 movaps     xmm2, xmm6
+01dd0a47 mov        rdx, rbx
+01dd0a4a lea        rcx, [rsp + 0x50]
+01dd0a4f call       0x1ce3290 ; InGame.Kernel.InGameManager::DelaySecond(System.Threading.CancellationToken,System.Single)
+01dd0a54 movups     xmm6, xmmword ptr [rax]
+01dd0a57 mov        rcx, qword ptr [rip + 0x25eb872] ; [.data 43bc2d0] TypeInfo#48080
+01dd0a5e cmp        dword ptr [rcx + 0xe4], 0
+01dd0a65 jne        0x1dd0a6c
+01dd0a67 call       0x4e0d90
+01dd0a6c movdqa     xmmword ptr [rsp + 0x50], xmm6
+01dd0a72 xor        edx, edx
+01dd0a74 lea        rcx, [rsp + 0x50]
+01dd0a79 call       0x4dfd80
+01dd0a7e movaps     xmm6, xmmword ptr [rsp + 0x50]
+01dd0a83 movaps     xmmword ptr [rsp + 0x50], xmm6
+01dd0a88 cmp        byte ptr [rip + 0x288e036], 0 ; [.data 465eac5]
+01dd0a8f jne        0x1dd0aa4
+01dd0a91 lea        rcx, [rip + 0x25eb838] ; [.data 43bc2d0] TypeInfo#48080
+01dd0a98 call       0x4e0a50
+01dd0a9d mov        byte ptr [rip + 0x288e021], 1 ; [.data 465eac5]
+01dd0aa4 mov        rcx, qword ptr [rip + 0x25eb825] ; [.data 43bc2d0] TypeInfo#48080
+01dd0aab cmp        dword ptr [rcx + 0xe4], 0
+01dd0ab2 jne        0x1dd0ab9
+01dd0ab4 call       0x4e0d90
+01dd0ab9 cmp        byte ptr [rip + 0x288e007], 0 ; [.data 465eac7]
+01dd0ac0 jne        0x1dd0ad5
+01dd0ac2 lea        rcx, [rip + 0x26061ef] ; [.data 43d6cb8] TypeInfo#39909
+01dd0ac9 call       0x4e0a50
+01dd0ace mov        byte ptr [rip + 0x288dff2], 1 ; [.data 465eac7]
+01dd0ad5 movq       rbx, xmm6
+01dd0ada test       rbx, rbx
+01dd0add je         0x1dd0b7e
+01dd0ae3 mov        r9, qword ptr [rip + 0x26061ce] ; [.data 43d6cb8] TypeInfo#39909
+01dd0aea mov        r10, qword ptr [rbx]
+01dd0aed movzx      ecx, r14w
+01dd0af1 movzx      edx, word ptr [r10 + 0x12e]
+01dd0af9 cmp        r14w, dx
+01dd0afd jae        0x1dd0b28
+01dd0aff mov        r8, qword ptr [r10 + 0xb0] ; ~_updateEventCount
+01dd0b06 nop        word ptr [rax + rax]
+01dd0b10 movzx      eax, cx
+01dd0b13 add        rax, rax
+01dd0b16 cmp        qword ptr [r8 + rax*8], r9
+01dd0b1a je         0x1dd0cd2
+01dd0b20 inc        cx
+01dd0b23 cmp        cx, dx
+01dd0b26 jb         0x1dd0b10
+01dd0b28 xor        r8d, r8d
+01dd0b2b mov        rdx, r9
+01dd0b2e mov        rcx, rbx
+01dd0b31 call       0x4ddae0
+01dd0b36 mov        r8, rax
+01dd0b39 mov        rax, qword ptr [r8]
+01dd0b3c mov        r8, qword ptr [r8 + 8]
+01dd0b40 pextrw     edx, xmm6, 4
+01dd0b45 mov        rcx, rbx
+01dd0b48 call       rax
+01dd0b4a test       eax, eax
+01dd0b4c jne        0x1dd0b7e
+01dd0b4e mov        dword ptr [rdi], r14d
+01dd0b51 movups     xmmword ptr [rdi + 0x40], xmm6
+01dd0b55 lea        rcx, [rdi + 0x40]
+01dd0b59 xor        edx, edx
+01dd0b5b call       0x4dfd80
+01dd0b60 lea        rcx, [rdi + 8]
+01dd0b64 mov        r9, qword ptr [rip + 0x25d157d] ; [.data 43a20e8] MethodRef#179731
+01dd0b6b mov        r8, rdi
+01dd0b6e lea        rdx, [rsp + 0x50]
+01dd0b73 call       0x738f80
+01dd0b78 nop        
+01dd0b79 jmp        0x1dd0ddf
+01dd0b7e cmp        byte ptr [rip + 0x288df41], 0 ; [.data 465eac6]
+01dd0b85 jne        0x1dd0b9a
+01dd0b87 lea        rcx, [rip + 0x260612a] ; [.data 43d6cb8] TypeInfo#39909
+01dd0b8e call       0x4e0a50
+01dd0b93 mov        byte ptr [rip + 0x288df2c], 1 ; [.data 465eac6]
+01dd0b9a movq       rbx, xmm6
+01dd0b9f test       rbx, rbx
+01dd0ba2 je         0x1dd0c12
+01dd0ba4 mov        r9, qword ptr [rip + 0x260610d] ; [.data 43d6cb8] TypeInfo#39909
+01dd0bab mov        r10, qword ptr [rbx]
+01dd0bae movzx      ecx, r14w
+01dd0bb2 movzx      edx, word ptr [r10 + 0x12e]
+01dd0bba cmp        r14w, dx
+01dd0bbe jae        0x1dd0be8
+01dd0bc0 mov        r8, qword ptr [r10 + 0xb0] ; ~_updateEventCount
+01dd0bc7 nop        word ptr [rax + rax]
+01dd0bd0 movzx      eax, cx
+01dd0bd3 add        rax, rax
+01dd0bd6 cmp        qword ptr [r8 + rax*8], r9
+01dd0bda je         0x1dd0cf0
+01dd0be0 inc        cx
+01dd0be3 cmp        cx, dx
+01dd0be6 jb         0x1dd0bd0
+01dd0be8 mov        r8d, 2
+01dd0bee mov        rdx, r9
+01dd0bf1 mov        rcx, rbx
+01dd0bf4 call       0x4ddae0
+01dd0bf9 mov        r8, rax
+01dd0bfc mov        rax, qword ptr [r8]
+01dd0bff mov        r8, qword ptr [r8 + 8]
+01dd0c03 psrldq     xmm6, 8
+01dd0c08 movq       rdx, xmm6
+01dd0c0d mov        rcx, rbx
+01dd0c10 call       rax
+01dd0c12 mov        dword ptr [rdi + 0x3c], r14d
+01dd0c16 xorps      xmm7, xmm7
+01dd0c19 movss      xmm6, dword ptr [rip + 0x170ffab] ; [.rdata 34e0bcc] f=1.0 d=50.12387841939926 v4=['1', '3.14159', '4', '10']
+01dd0c21 movss      xmm0, dword ptr [rdi + 0x24]
+01dd0c26 comiss     xmm0, dword ptr [rdi + 0x3c]
+01dd0c2a jbe        0x1dd0dce
+01dd0c30 test       rsi, rsi
+01dd0c33 je         0x1dd0e32
+01dd0c39 xor        edx, edx
+01dd0c3b mov        rcx, rsi
+01dd0c3e call       0x1d11c40 ; InGame.Kernel.Enemy.PawnEnemy::get_IsCancelToken()
+01dd0c43 test       al, al
+01dd0c45 jne        0x1dd0dce
+01dd0c4b mov        rcx, qword ptr [rip + 0x25e7246] ; [.data 43b7e98] MethodRef#202979
+01dd0c52 call       0xd102f0 ; KANAI.Kernel.MonoBehaviourSingleton`1::IsInstanceNull() || KANAI.Kernel.SimpleSingleton`1::IsInstanceNull()
+01dd0c57 test       al, al
+01dd0c59 jne        0x1dd0dce
+01dd0c5f mov        rax, qword ptr [rip + 0x25e739a] ; [.data 43b8000] MethodRef#202981
+01dd0c66 mov        rax, qword ptr [rax + 0x20]
+01dd0c6a test       byte ptr [rax + 0x135], 1
+01dd0c71 jne        0x1dd0c7b
+01dd0c73 mov        rcx, rax
+01dd0c76 call       0x4de1e0
+01dd0c7b mov        rax, qword ptr [rax + 0xc0] ; ~_burnShake
+01dd0c82 mov        rax, qword ptr [rax + 0x10]
+01dd0c86 test       byte ptr [rax + 0x135], 1
+01dd0c8d jne        0x1dd0c97
+01dd0c8f mov        rcx, rax
+01dd0c92 call       0x4de1e0
+01dd0c97 mov        rax, qword ptr [rax + 0xb8] ; ~_mover
+01dd0c9e mov        rcx, qword ptr [rax]
+01dd0ca1 test       rcx, rcx
+01dd0ca4 je         0x1dd0e2c
+01dd0caa xor        edx, edx
+01dd0cac call       0x1cf2980 ; InGame.Kernel.InGameManager::get_DeltaTime()
+01dd0cb1 movaps     xmm1, xmm0
+01dd0cb4 addss      xmm1, dword ptr [rdi + 0x3c]
+01dd0cb9 movss      dword ptr [rdi + 0x3c], xmm1
+01dd0cbe divss      xmm1, dword ptr [rdi + 0x24]
+01dd0cc3 comiss     xmm7, xmm1
+01dd0cc6 ja         0x1dd0d14
+01dd0cc8 comiss     xmm1, xmm6
+01dd0ccb jbe        0x1dd0d17
+01dd0ccd movaps     xmm1, xmm6
+01dd0cd0 jmp        0x1dd0d17
+01dd0cd2 movzx      ecx, cx
+01dd0cd5 add        rcx, rcx
+01dd0cd8 movsxd     r8, dword ptr [r8 + rcx*8 + 8]
+01dd0cdd shl        r8, 4
+01dd0ce1 add        r8, 0x138
+01dd0ce8 add        r8, r10
+01dd0ceb jmp        0x1dd0b39
+01dd0cf0 movzx      ecx, cx
+01dd0cf3 add        rcx, rcx
+01dd0cf6 mov        ecx, dword ptr [r8 + rcx*8 + 8]
+01dd0cfb add        ecx, 2
+01dd0cfe movsxd     r8, ecx
+01dd0d01 shl        r8, 4
+01dd0d05 add        r8, 0x138
+01dd0d0c add        r8, r10
+01dd0d0f jmp        0x1dd0bfc
+01dd0d14 movaps     xmm1, xmm7
+01dd0d17 cmp        byte ptr [rdi + 0x28], 0
+01dd0d1b jne        0x1dd0d27
+01dd0d1d movaps     xmm0, xmm6
+01dd0d20 subss      xmm0, xmm1
+01dd0d24 movaps     xmm1, xmm0
+01dd0d27 movups     xmm0, xmmword ptr [rdi + 0x2c]
+01dd0d2b movaps     xmmword ptr [rsp + 0x50], xmm0
+01dd0d30 xor        r9d, r9d
+01dd0d33 lea        r8, [rsp + 0x50]
+01dd0d38 mov        rcx, rsi
+01dd0d3b call       0x1d0caf0 ; InGame.Kernel.Enemy.PawnEnemy::BaseBlend(System.Single,UnityEngine.Color)
+01dd0d40 mov        rcx, qword ptr [rip + 0x25eb589] ; [.data 43bc2d0] TypeInfo#48080
+01dd0d47 cmp        dword ptr [rcx + 0xe4], 0
+01dd0d4e jne        0x1dd0d55
+01dd0d50 call       0x4e0d90
+01dd0d55 xor        ecx, ecx
+01dd0d57 call       0x9dcba0 ; System.UInt16::GetTypeCode() || System.IntPtr::get_Size() || System.UIntPtr::get_Size()
+01dd0d5c mov        dword ptr [rsp + 0xb8], eax ; ~_mover
+01dd0d63 xor        edx, edx
+01dd0d65 lea        rcx, [rsp + 0xb8] ; ~_mover
+01dd0d6d call       0x607140 ; Steamworks.CSteamID::GetAccountID() || DG.Tweening.Core.SafeModeReport::get_totMissingTargetOrFieldErrors() || KANAI.UI.UIKeyboardPad/KeyboardButton::get__code()
+01dd0d72 mov        dword ptr [rsp + 0xb0], eax ; ~_updateEventCount
+01dd0d79 xor        edx, edx
+01dd0d7b lea        rcx, [rsp + 0xb0] ; ~_updateEventCount
+01dd0d83 call       0x7aa370 ; InGame.Kernel.InGameBullet::IsLaser() || InGame.Kernel.InGameBulletItem::IsLaser() || InGame.Kernel.InGameCollisionBase::IsSimpleCalc()
+01dd0d88 test       al, al
+01dd0d8a je         0x1dd0da0
+01dd0d8c xor        edx, edx
+01dd0d8e lea        rcx, [rsp + 0xb0] ; ~_updateEventCount
+01dd0d96 call       0x5bcdb0 ; AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose()
+01dd0d9b jmp        0x1dd0c21
+01dd0da0 mov        dword ptr [rdi], 1
+01dd0da6 mov        eax, dword ptr [rsp + 0xb0] ; ~_updateEventCount
+01dd0dad mov        dword ptr [rdi + 0x50], eax
+01dd0db0 lea        rcx, [rdi + 8]
+01dd0db4 mov        r9, qword ptr [rip + 0x25d28e5] ; [.data 43a36a0] MethodRef#179762
+01dd0dbb mov        r8, rdi
+01dd0dbe lea        rdx, [rsp + 0xb0] ; ~_updateEventCount
+01dd0dc6 call       0x2a5b0
+01dd0dcb nop        
+01dd0dcc jmp        0x1dd0ddf
+01dd0dce mov        dword ptr [rdi], 0xfffffffe
+01dd0dd4 lea        rcx, [rdi + 8]
+01dd0dd8 xor        edx, edx
+01dd0dda call       0x1132c30
+01dd0ddf mov        rbx, qword ptr [rsp + 0xa8] ; ~_updateEvents
+01dd0de7 movaps     xmm6, xmmword ptr [rsp + 0x70]
+01dd0dec movaps     xmm7, xmmword ptr [rsp + 0x60]
+01dd0df1 add        rsp, 0x80
+01dd0df8 pop        r14
+01dd0dfa pop        rdi
+01dd0dfb pop        rsi
+01dd0dfc ret        
+01dd0dfd mov        rax, qword ptr [rsp + 0x20]
+01dd0e02 mov        dword ptr [rax], 0xfffffffe
+01dd0e08 mov        eax, dword ptr [rsp + 0x40]
+01dd0e0c dec        eax
+01dd0e0e movsxd     rdx, eax
+01dd0e11 mov        rcx, qword ptr [rsp + 0xa0] ; ~PoolEvent
+01dd0e19 add        rcx, 8
+01dd0e1d xor        r8d, r8d
+01dd0e20 mov        rdx, qword ptr [rsp + rdx*8 + 0x38]
+01dd0e25 call       0x1132bc0
+01dd0e2a jmp        0x1dd0ddf
+01dd0e2c call       0x4e0d00
+01dd0e31 nop        
+01dd0e32 call       0x4e0d00
+01dd0e37 call       0x4e0d00

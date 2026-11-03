@@ -1,0 +1,14 @@
+== InGame.Kernel.Enemy.BulletTemplate InGame.Kernel.Enemy.Ene_BosBase::GetBT(System.Int32) RVA 1db9840 len 2e
+01db9840 sub        rsp, 0x28
+01db9844 mov        r8, qword ptr [rcx + 0x208] ; ~btemplates
+01db984b test       r8, r8
+01db984e je         0x1db9863
+01db9850 cmp        edx, dword ptr [r8 + 0x18]
+01db9854 jae        0x1db9869
+01db9856 movsxd     rax, edx
+01db9859 mov        rax, qword ptr [r8 + rax*8 + 0x20]
+01db985e add        rsp, 0x28
+01db9862 ret        
+01db9863 call       0x4e0d00
+01db9868 int3       
+01db9869 call       0x4e0cf0

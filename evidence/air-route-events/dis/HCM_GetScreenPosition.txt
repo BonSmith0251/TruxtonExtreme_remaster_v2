@@ -1,0 +1,122 @@
+#### KANAI.HybridCollision.HybridCollisionManager::GetScreenPosition(UnityEngine.Vector3,System.Boolean,System.Boolean) RVA 1ddaa00 len 215
+01ddaa00  mov      qword ptr [rsp + 8], rbx
+01ddaa05  mov      qword ptr [rsp + 0x10], rsi   ; ev.eventType
+01ddaa0a  push     rdi
+01ddaa0b  sub      rsp, 0x50
+01ddaa0f  mov      rsi, r8
+01ddaa12  mov      rdi, rdx
+01ddaa15  mov      rbx, rcx
+01ddaa18  test     r9b, r9b
+01ddaa1b  je       0x1ddaa65
+01ddaa1d  movsd    xmm0, qword ptr [r8]
+01ddaa22  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01ddaa27  mov      eax, dword ptr [r8 + 8]
+01ddaa2b  xor      r9d, r9d
+01ddaa2e  lea      r8, [rsp + 0x20]   ; ev.value0
+01ddaa33  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01ddaa39  mov      dword ptr [rsp + 0x28], eax   ; ev.vectorValue
+01ddaa3d  call     0x1ddada0   ; HybridCollisionManager::GroundToScreenBase(UnityEngine.Vector3)
+01ddaa42  xorps    xmm1, xmm1
+01ddaa45  movsd    xmm0, qword ptr [rax]
+01ddaa49  mov      rax, rbx
+01ddaa4c  movsd    qword ptr [rbx], xmm0
+01ddaa50  movss    dword ptr [rbx + 8], xmm1
+01ddaa55  mov      rbx, qword ptr [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01ddaa5a  mov      rsi, qword ptr [rsp + 0x68]   ; ev.flag0/._flagStateFuture
+01ddaa5f  add      rsp, 0x50
+01ddaa63  pop      rdi
+01ddaa64  ret      
+01ddaa65  cmp      byte ptr [rsp + 0x80], 0   ; ._transformCaches
+01ddaa6d  jne      0x1ddabca
+01ddaa73  cmp      byte ptr [rip + 0x2888ed2], 0   ; [466394c] bss
+01ddaa7a  jne      0x1ddaa8f
+01ddaa7c  lea      rcx, [rip + 0x25aaa75]   ; [43854f8] TypeInfo KANAI.Kernel.ApplicationUtility
+01ddaa83  call     0x4e0a50
+01ddaa88  mov      byte ptr [rip + 0x2888ebd], 1   ; [466394c] bss
+01ddaa8f  mov      rdx, qword ptr [rdi + 0x68]   ; ev.flag0/._flagStateFuture
+01ddaa93  test     rdx, rdx
+01ddaa96  je       0x1ddac10
+01ddaa9c  movsd    xmm0, qword ptr [rsi]
+01ddaaa0  lea      r8, [rsp + 0x20]   ; ev.value0
+01ddaaa5  mov      eax, dword ptr [rsi + 8]
+01ddaaa8  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01ddaaad  xor      r9d, r9d
+01ddaab0  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01ddaab6  movaps   xmmword ptr [rsp + 0x40], xmm6   ; ev.intValue1/._animators
+01ddaabb  mov      dword ptr [rsp + 0x28], eax   ; ev.vectorValue
+01ddaabf  call     0x2fd65a0   ; Camera::WorldToViewportPoint(UnityEngine.Vector3)
+01ddaac4  mov      rdx, qword ptr [rdi + 0x68]   ; ev.flag0/._flagStateFuture
+01ddaac8  xor      r9d, r9d
+01ddaacb  mov      rcx, rdi
+01ddaace  movsd    xmm0, qword ptr [rax]
+01ddaad2  movaps   xmm2, xmm0
+01ddaad5  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01ddaadb  call     0x1dda420   ; HybridCollisionManager::AdjustViewportXToTarget(UnityEngine.Camera,System.Single)
+01ddaae0  mov      rcx, qword ptr [rip + 0x25aaa11]   ; [43854f8] TypeInfo KANAI.Kernel.ApplicationUtility
+01ddaae7  movaps   xmm6, xmm0
+01ddaaea  cmp      dword ptr [rcx + 0xe4], 0
+01ddaaf1  jne      0x1ddaaf8
+01ddaaf3  call     0x4e0d90
+01ddaaf8  movzx    ecx, byte ptr [rip + 0x2888893]   ; [4663392] bss
+01ddaaff  test     cl, cl
+01ddab01  jne      0x1ddab17
+01ddab03  lea      rcx, [rip + 0x25aa9ee]   ; [43854f8] TypeInfo KANAI.Kernel.ApplicationUtility
+01ddab0a  call     0x4e0a50
+01ddab0f  mov      cl, 1
+01ddab11  mov      byte ptr [rip + 0x288887b], cl   ; [4663392] bss
+01ddab17  mov      rax, qword ptr [rip + 0x25aa9da]   ; [43854f8] TypeInfo KANAI.Kernel.ApplicationUtility
+01ddab1e  cmp      dword ptr [rax + 0xe4], 0
+01ddab25  jne      0x1ddab36
+01ddab27  mov      rcx, rax
+01ddab2a  call     0x4e0d90
+01ddab2f  movzx    ecx, byte ptr [rip + 0x288885c]   ; [4663392] bss
+01ddab36  mov      rax, qword ptr [rip + 0x25aa9bb]   ; [43854f8] TypeInfo KANAI.Kernel.ApplicationUtility
+01ddab3d  mov      rdx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01ddab44  mulss    xmm6, dword ptr [rdx + 0x24]   ; ev.value1
+01ddab49  movss    dword ptr [rsp + 0x20], xmm6   ; ev.value0
+01ddab4f  movaps   xmm6, xmmword ptr [rsp + 0x40]   ; ev.intValue1/._animators
+01ddab54  test     cl, cl
+01ddab56  jne      0x1ddab6b
+01ddab58  lea      rcx, [rip + 0x25aa999]   ; [43854f8] TypeInfo KANAI.Kernel.ApplicationUtility
+01ddab5f  call     0x4e0a50
+01ddab64  mov      byte ptr [rip + 0x2888827], 1   ; [4663392] bss
+01ddab6b  mov      rcx, qword ptr [rip + 0x25aa986]   ; [43854f8] TypeInfo KANAI.Kernel.ApplicationUtility
+01ddab72  cmp      dword ptr [rcx + 0xe4], 0
+01ddab79  jne      0x1ddab80
+01ddab7b  call     0x4e0d90
+01ddab80  mov      rax, qword ptr [rip + 0x25aa971]   ; [43854f8] TypeInfo KANAI.Kernel.ApplicationUtility
+01ddab87  xorps    xmm2, xmm2
+01ddab8a  movsd    xmm0, qword ptr [rsp + 0x20]   ; ev.value0
+01ddab90  movss    xmm1, dword ptr [rsp + 0x24]   ; ev.value1
+01ddab96  shufps   xmm0, xmm0, 0xe1
+01ddab9a  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01ddaba1  mov      rax, rbx
+01ddaba4  mulss    xmm1, dword ptr [rcx + 0x28]   ; ev.vectorValue
+01ddaba9  movss    xmm0, xmm1
+01ddabad  shufps   xmm0, xmm0, 0xe1
+01ddabb1  movsd    qword ptr [rbx], xmm0
+01ddabb5  movss    dword ptr [rbx + 8], xmm2
+01ddabba  mov      rbx, qword ptr [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01ddabbf  mov      rsi, qword ptr [rsp + 0x68]   ; ev.flag0/._flagStateFuture
+01ddabc4  add      rsp, 0x50
+01ddabc8  pop      rdi
+01ddabc9  ret      
+01ddabca  movsd    xmm0, qword ptr [r8]
+01ddabcf  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01ddabd4  mov      eax, dword ptr [r8 + 8]
+01ddabd8  xor      r9d, r9d
+01ddabdb  lea      r8, [rsp + 0x20]   ; ev.value0
+01ddabe0  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01ddabe6  mov      dword ptr [rsp + 0x28], eax   ; ev.vectorValue
+01ddabea  call     0x1ddb650   ; HybridCollisionManager::LocalToScreen(UnityEngine.Vector3)
+01ddabef  mov      rsi, qword ptr [rsp + 0x68]   ; ev.flag0/._flagStateFuture
+01ddabf4  movsd    xmm0, qword ptr [rax]
+01ddabf8  mov      eax, dword ptr [rax + 8]
+01ddabfb  movsd    qword ptr [rbx], xmm0
+01ddabff  mov      dword ptr [rbx + 8], eax
+01ddac02  mov      rax, rbx
+01ddac05  mov      rbx, qword ptr [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01ddac0a  add      rsp, 0x50
+01ddac0e  pop      rdi
+01ddac0f  ret      
+01ddac10  call     0x4e0d00

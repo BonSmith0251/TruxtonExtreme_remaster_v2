@@ -1,0 +1,59 @@
+//////////////////////////////////////////
+//
+// NOTE: This is *not* a valid shader file
+//
+///////////////////////////////////////////
+Shader "Shader Graphs/sg_fresnel_outline" {
+Properties {
+
+_EmissionImage ("EmissionImage", 2D) = "white" { }
+
+_Emissioncolor ("Emissioncolor", Color) = (10.5319,6.4392,0.645822,0)
+
+_Emissionintencity ("Emissionintencity", Float) = 10.0
+
+_FrsnelEdgeIntencity ("FrsnelEdgeIntencity", Float) = 1.809999942779541
+
+_FresnelBaceColor ("FresnelBaceColor", Color) = (0.216981,0.0747152,0.0747152,0)
+
+_FresnelEdgeColor ("FresnelEdgeColor", Color) = (5.58431,0.501961,0.501961,0)
+
+_QueueOffset ("_QueueOffset", Float) = 0.0
+
+_QueueControl ("_QueueControl", Float) = -1.0
+
+unity_Lightmaps ("unity_Lightmaps", 2DArray) = "" { }
+
+unity_LightmapsInd ("unity_LightmapsInd", 2DArray) = "" { }
+
+unity_ShadowMasks ("unity_ShadowMasks", 2DArray) = "" { }
+
+}
+SubShader {
+ Tags { "DisableBatching" = "False" "QUEUE" = "Transparent" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Transparent" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalUnlitSubTarget" "UniversalMaterialType" = "Unlit" }
+ Pass {
+ Name "Universal Forward"
+  Tags { "DisableBatching" = "False" "QUEUE" = "Transparent" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Transparent" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalUnlitSubTarget" "UniversalMaterialType" = "Unlit" }
+ ZWrite Off
+  GpuProgramID 15957
+}
+ Pass {
+ Name "MotionVectors"
+  Tags { "DisableBatching" = "False" "LIGHTMODE" = "MOTIONVECTORS" "QUEUE" = "Transparent" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Transparent" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalUnlitSubTarget" "UniversalMaterialType" = "Unlit" }
+  GpuProgramID 73596
+}
+ Pass {
+ Name "DepthNormalsOnly"
+  Tags { "DisableBatching" = "False" "LIGHTMODE" = "DepthNormalsOnly" "QUEUE" = "Transparent" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Transparent" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalUnlitSubTarget" "UniversalMaterialType" = "Unlit" }
+  GpuProgramID 152106
+}
+ Pass {
+ Name "GBuffer"
+  Tags { "DisableBatching" = "False" "LIGHTMODE" = "UniversalGBuffer" "QUEUE" = "Transparent" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Transparent" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalUnlitSubTarget" "UniversalMaterialType" = "Unlit" }
+ ZWrite Off
+  GpuProgramID 212947
+}
+}
+Fall back "Hidden/Shader Graph/FallbackError"
+CustomEditor "UnityEditor.ShaderGraph.GenericShaderGraphMaterialGUI"
+}

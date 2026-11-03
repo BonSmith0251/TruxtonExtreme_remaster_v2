@@ -1,0 +1,99 @@
+== System.Boolean InGame.Kernel.Enemy.Ene_Bos04::<PatternMove6>g__pat6fire|118_0(InGame.Kernel.Enemy.Ene_Bos04/<>c__DisplayClass118_0&) RVA 1d90df0 len 1d2
+01d90df0 mov        qword ptr [rsp + 0x10], rbx
+01d90df5 push       rdi
+01d90df6 sub        rsp, 0x80
+01d90dfd cmp        byte ptr [rip + 0x28d29c5], 0 ; [.data 46637c9]
+01d90e04 mov        rdi, rdx
+01d90e07 movaps     xmmword ptr [rsp + 0x70], xmm6
+01d90e0c mov        rbx, rcx
+01d90e0f jne        0x1d90e30
+01d90e11 lea        rcx, [rip + 0x26209e0] ; [.data 43b17f8] TypeInfo#37303
+01d90e18 call       0x4e0a50
+01d90e1d lea        rcx, [rip + 0x2611544] ; [.data 43a2368] TypeInfo#45781
+01d90e24 call       0x4e0a50
+01d90e29 mov        byte ptr [rip + 0x28d2999], 1 ; [.data 46637c9]
+01d90e30 movss      xmm0, dword ptr [rbx + 0x2cc] ; ~_localTime
+01d90e38 xorps      xmm6, xmm6
+01d90e3b subss      xmm0, dword ptr [rdi + 8]
+01d90e40 comiss     xmm6, xmm0
+01d90e43 movss      dword ptr [rbx + 0x2cc], xmm0 ; ~_localTime
+01d90e4b jae        0x1d90e54
+01d90e4d xor        al, al
+01d90e4f jmp        0x1d90fa1
+01d90e54 cmp        dword ptr [rbx + 0x2e0], 0 ; ~_laserCount
+01d90e5b mov        rcx, rbx
+01d90e5e mov        qword ptr [rsp + 0x90], rsi ; ~_priority
+01d90e66 jg         0x1d90f54
+01d90e6c xor        r8d, r8d
+01d90e6f mov        edx, 7
+01d90e74 call       0x1db9840 ; InGame.Kernel.Enemy.Ene_BosBase::GetBT(System.Int32)
+01d90e79 mov        rcx, qword ptr [rip + 0x26114e8] ; [.data 43a2368] TypeInfo#45781
+01d90e80 mov        rsi, rax
+01d90e83 cmp        dword ptr [rcx + 0xe4], 0
+01d90e8a jne        0x1d90e91
+01d90e8c call       0x4e0d90
+01d90e91 xor        edx, edx
+01d90e93 mov        ecx, 0x63
+01d90e98 call       0x2723de0 ; TXEKernel.Sound.SoundUtility::PlayQue(TXEKernel.Sound.SoundUtility/ID)
+01d90e9d mov        rdi, qword ptr [rbx + 0xb8] ; ~_mover
+01d90ea4 xor        edx, edx
+01d90ea6 mov        rcx, rbx
+01d90ea9 call       0x1d11bc0 ; InGame.Kernel.Enemy.PawnEnemy::get_CToken()
+01d90eae mov        rcx, qword ptr [rbx + 0x278] ; ~_muzzles
+01d90eb5 test       rcx, rcx
+01d90eb8 je         0x1d90fbd
+01d90ebe cmp        dword ptr [rcx + 0x18], 7
+01d90ec2 jbe        0x1d90fb7
+01d90ec8 test       rdi, rdi
+01d90ecb je         0x1d90fbd
+01d90ed1 mov        rcx, qword ptr [rcx + 0x58]
+01d90ed5 xor        edx, edx
+01d90ed7 mov        qword ptr [rsp + 0x58], rdx
+01d90edc mov        r9, rsi
+01d90edf mov        qword ptr [rsp + 0x50], rdx
+01d90ee4 mov        r8, rax
+01d90ee7 mov        dword ptr [rsp + 0x48], edx
+01d90eeb movss      dword ptr [rsp + 0x40], xmm6
+01d90ef1 mov        qword ptr [rsp + 0x38], rdx
+01d90ef6 mov        qword ptr [rsp + 0x30], rcx
+01d90efb lea        rcx, [rsp + 0x60]
+01d90f00 mov        byte ptr [rsp + 0x28], dl
+01d90f04 mov        byte ptr [rsp + 0x20], dl
+01d90f08 mov        rdx, rdi
+01d90f0b call       0x1cd8fe0 ; InGame.Kernel.InGameEnemyMoveBase::BulletFireAsync(System.Threading.CancellationToken,InGame.Kernel.Enemy.BulletTemplate,System.Boolean,System.Boolean,UnityEngine.Transform,UnityEngine.Transform,System.Single,System.Int32,System.Action`1<InGame.Kernel.InGameBulletInterface>)
+01d90f10 xor        edx, edx
+01d90f12 lea        rcx, [rsp + 0x60]
+01d90f17 movups     xmm0, xmmword ptr [rax]
+01d90f1a movaps     xmmword ptr [rsp + 0x60], xmm0
+01d90f1f call       0x2742890 ; Cysharp.Threading.Tasks.UniTaskExtensions::Forget(Cysharp.Threading.Tasks.UniTask)
+01d90f24 mov        rax, qword ptr [rip + 0x26208cd] ; [.data 43b17f8] TypeInfo#37303
+01d90f2b cmp        dword ptr [rax + 0xe4], 0
+01d90f32 jne        0x1d90f43
+01d90f34 mov        rcx, rax
+01d90f37 call       0x4e0d90
+01d90f3c mov        rax, qword ptr [rip + 0x26208b5] ; [.data 43b17f8] TypeInfo#37303
+01d90f43 mov        rax, qword ptr [rax + 0xb8] ; ~_mover
+01d90f4a movss      xmm0, dword ptr [rax + 0xec]
+01d90f52 jmp        0x1d90f8f
+01d90f54 xor        edx, edx
+01d90f56 call       0x1d91dc0 ; InGame.Kernel.Enemy.Ene_Bos04::coreLongLaser()
+01d90f5b mov        rax, qword ptr [rip + 0x2620896] ; [.data 43b17f8] TypeInfo#37303
+01d90f62 cmp        dword ptr [rax + 0xe4], 0
+01d90f69 jne        0x1d90f7a
+01d90f6b mov        rcx, rax
+01d90f6e call       0x4e0d90
+01d90f73 mov        rax, qword ptr [rip + 0x262087e] ; [.data 43b17f8] TypeInfo#37303
+01d90f7a mov        rax, qword ptr [rax + 0xb8] ; ~_mover
+01d90f81 movss      xmm0, dword ptr [rax + 0xe8] ; ~_deadExplosionHash
+01d90f89 dec        dword ptr [rbx + 0x2e0] ; ~_laserCount
+01d90f8f movss      dword ptr [rbx + 0x2cc], xmm0 ; ~_localTime
+01d90f97 mov        al, 1
+01d90f99 mov        rsi, qword ptr [rsp + 0x90] ; ~_priority
+01d90fa1 mov        rbx, qword ptr [rsp + 0x98] ; ~_invincibleTime
+01d90fa9 movaps     xmm6, xmmword ptr [rsp + 0x70]
+01d90fae add        rsp, 0x80
+01d90fb5 pop        rdi
+01d90fb6 ret        
+01d90fb7 call       0x4e0cf0
+01d90fbc int3       
+01d90fbd call       0x4e0d00

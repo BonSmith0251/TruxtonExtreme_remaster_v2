@@ -1,0 +1,135 @@
+01d44240  mov      qword ptr [rsp + 0x20], rbp   ; ev.value0
+01d44245  push     rdi
+01d44246  push     r12
+01d44248  push     r15
+01d4424a  sub      rsp, 0x30
+01d4424e  cmp      byte ptr [rip + 0x291f310], 0   ; [4663565] bss
+01d44255  movzx    r12d, r9b
+01d44259  movzx    r15d, r8b
+01d4425d  mov      rbp, rdx
+01d44260  mov      rdi, rcx
+01d44263  jne      0x1d4429c
+01d44265  lea      rcx, [rip + 0x2629b94]   ; [436de00] MethodRef System.Collections.Generic.List`1<InGame.Kernel.Timeline.RouteEvent>::Add
+01d4426c  call     0x4e0a50
+01d44271  lea      rcx, [rip + 0x2629c40]   ; [436deb8] MethodRef System.Collections.Generic.List`1<InGame.Kernel.Timeline.RouteEvent>::Clear
+01d44278  call     0x4e0a50
+01d4427d  lea      rcx, [rip + 0x2629fcc]   ; [436e250] MethodRef System.Collections.Generic.List`1<InGame.Kernel.Timeline.RouteEvent>::get_Capacity
+01d44284  call     0x4e0a50
+01d44289  lea      rcx, [rip + 0x262a1e8]   ; [436e478] MethodRef System.Collections.Generic.List`1<InGame.Kernel.Timeline.RouteEvent>::set_Capacity
+01d44290  call     0x4e0a50
+01d44295  mov      byte ptr [rip + 0x291f2c9], 1   ; [4663565] bss
+01d4429c  mov      rcx, qword ptr [rdi + 0x88]   ; .<>u__1
+01d442a3  mov      qword ptr [rsp + 0x50], rbx   ; ev.randomFire/.offsetAngle
+01d442a8  mov      qword ptr [rsp + 0x58], rsi   ; ev.nameValue/.<>u__1
+01d442ad  mov      qword ptr [rsp + 0x60], r14   ; ev.subnameValue/.<gm>5__2
+01d442b2  movaps   xmmword ptr [rsp + 0x20], xmm6   ; ev.value0
+01d442b7  test     rcx, rcx
+01d442ba  je       0x1d4444e
+01d442c0  mov      r8d, dword ptr [rcx + 0x18]   ; ev.repeatDelay
+01d442c4  xor      esi, esi
+01d442c6  inc      dword ptr [rcx + 0x1c]   ; ev.awakeRate
+01d442c9  mov      dword ptr [rcx + 0x18], esi   ; ev.repeatDelay
+01d442cc  test     r8d, r8d
+01d442cf  jle      0x1d442df
+01d442d1  mov      rcx, qword ptr [rcx + 0x10]   ; ev.eventType
+01d442d5  xor      r9d, r9d
+01d442d8  xor      edx, edx
+01d442da  call     0x203d380   ; Array::Clear(System.Array,System.Int32,System.Int32)
+01d442df  mov      dword ptr [rdi + 0x280], esi   ; ._eventIndex
+01d442e5  mov      dword ptr [rdi + 0x284], 0xff800000   ; ._eventLastRate
+01d442ef  test     rbp, rbp
+01d442f2  je       0x1d4442b
+01d442f8  cmp      qword ptr [rbp + 0x18], rsi   ; ev.repeatDelay
+01d442fc  je       0x1d4442b
+01d44302  mov      rcx, qword ptr [rdi + 0x88]   ; .<>u__1
+01d44309  test     rcx, rcx
+01d4430c  je       0x1d4444e
+01d44312  mov      rdx, qword ptr [rip + 0x2629f37]   ; [436e250] MethodRef System.Collections.Generic.List`1<InGame.Kernel.Timeline.RouteEvent>::get_Capacity
+01d44319  call     0xb0ec60   ; LocalDataStoreMgr::GetSlotTableLength() | SparselyPopulatedArrayFragment`1::get_Length()
+01d4431e  cmp      eax, dword ptr [rbp + 0x18]   ; ev.repeatDelay
+01d44321  jge      0x1d44342
+01d44323  mov      rcx, qword ptr [rdi + 0x88]   ; .<>u__1
+01d4432a  test     rcx, rcx
+01d4432d  je       0x1d4444e
+01d44333  mov      r8, qword ptr [rip + 0x262a13e]   ; [436e478] MethodRef System.Collections.Generic.List`1<InGame.Kernel.Timeline.RouteEvent>::set_Capacity
+01d4433a  mov      edx, dword ptr [rbp + 0x18]   ; ev.repeatDelay
+01d4433d  call     0xb16910   ; List`1::set_Capacity(System.Int32)
+01d44342  lea      r14, [rbp + 0x20]   ; ev.value0
+01d44346  xorps    xmm6, xmm6
+01d44349  mov      eax, esi
+01d4434b  nop      dword ptr [rax + rax]
+01d44350  cmp      eax, dword ptr [rbp + 0x18]   ; ev.repeatDelay
+01d44353  jge      0x1d4442b
+01d44359  cmp      esi, dword ptr [rbp + 0x18]   ; ev.repeatDelay
+01d4435c  jae      0x1d44454
+01d44362  mov      rbx, qword ptr [r14]
+01d44365  test     rbx, rbx
+01d44368  je       0x1d4444e
+01d4436e  mov      eax, dword ptr [rbx + 0x10]   ; ev.eventType
+01d44371  cmp      eax, 4
+01d44374  jle      0x1d443d2
+01d44376  cmp      eax, 9
+01d44379  jne      0x1d443af
+01d4437b  test     r12b, r15b
+01d4437e  je       0x1d443b4
+01d44380  xor      edx, edx
+01d44382  mov      rcx, rdi
+01d44385  call     0x1cdd580   ; InGameEnemyMoveBase::get_RouteToken()
+01d4438a  mov      r9, qword ptr [rdi]
+01d4438d  mov      r8, rax
+01d44390  mov      rdx, rbx
+01d44393  mov      rcx, rdi
+01d44396  mov      r10, qword ptr [r9 + 0x2c8]
+01d4439d  mov      r9, qword ptr [r9 + 0x2d0]
+01d443a4  call     r10
+01d443a7  inc      esi
+01d443a9  add      r14, 8
+01d443ad  jmp      0x1d44349
+01d443af  cmp      eax, 0xd
+01d443b2  je       0x1d443dc
+01d443b4  test     r15b, r15b
+01d443b7  jne      0x1d44405
+01d443b9  xor      r8d, r8d
+01d443bc  mov      rdx, rbx
+01d443bf  mov      rcx, rdi
+01d443c2  call     0x1d43be0   ; SplineMover::InsertEventSorted(InGame.Kernel.Timeline.RouteEvent)
+01d443c7  inc      esi
+01d443c9  add      r14, 8
+01d443cd  jmp      0x1d44349
+01d443d2  add      eax, -2
+01d443d5  test     eax, 0xfffffffd
+01d443da  jne      0x1d443b4
+01d443dc  movss    xmm0, dword ptr [rbx + 0x4c]   ; ev.dotime/.postWait
+01d443e1  ucomiss  xmm0, xmm6
+01d443e4  jp       0x1d443b4
+01d443e6  jne      0x1d443b4
+01d443e8  movss    xmm0, dword ptr [rbx + 0x1c]   ; ev.awakeRate
+01d443ed  ucomiss  xmm0, xmm6
+01d443f0  jp       0x1d443b4
+01d443f2  jne      0x1d443b4
+01d443f4  test     r15b, r15b
+01d443f7  jne      0x1d44405
+01d443f9  mov      byte ptr [rdi + 0x191], 1   ; ._isDirtyTransform
+01d44400  jmp      0x1d44380
+01d44405  mov      rcx, qword ptr [rdi + 0x88]   ; .<>u__1
+01d4440c  test     rcx, rcx
+01d4440f  je       0x1d4444e
+01d44411  mov      r8, qword ptr [rip + 0x26299e8]   ; [436de00] MethodRef System.Collections.Generic.List`1<InGame.Kernel.Timeline.RouteEvent>::Add
+01d44418  mov      rdx, rbx
+01d4441b  call     0x2500
+01d44420  inc      esi
+01d44422  add      r14, 8
+01d44426  jmp      0x1d44349
+01d4442b  movaps   xmm6, xmmword ptr [rsp + 0x20]   ; ev.value0
+01d44430  mov      r14, qword ptr [rsp + 0x60]   ; ev.subnameValue/.<gm>5__2
+01d44435  mov      rsi, qword ptr [rsp + 0x58]   ; ev.nameValue/.<>u__1
+01d4443a  mov      rbx, qword ptr [rsp + 0x50]   ; ev.randomFire/.offsetAngle
+01d4443f  mov      rbp, qword ptr [rsp + 0x68]   ; ev.flag0/.<loopcount>5__3
+01d44444  add      rsp, 0x30
+01d44448  pop      r15
+01d4444a  pop      r12
+01d4444c  pop      rdi
+01d4444d  ret      
+01d4444e  call     0x4e0d00
+01d44453  int3     
+01d44454  call     0x4e0cf0

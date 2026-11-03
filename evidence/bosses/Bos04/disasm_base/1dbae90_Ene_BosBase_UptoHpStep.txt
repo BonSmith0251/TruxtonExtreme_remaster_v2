@@ -1,0 +1,6 @@
+== System.Boolean InGame.Kernel.Enemy.Ene_BosBase::UptoHpStep(InGame.Kernel.Enemy.Ene_BosBase/HitPState) RVA 1dbae90 len 12
+01dbae90 mov        eax, dword ptr [rcx + 0x21c] ; ~_hpState
+01dbae96 cmp        eax, edx
+01dbae98 mov        dword ptr [rcx + 0x21c], edx ; ~_hpState
+01dbae9e setl       al
+01dbaea1 ret        

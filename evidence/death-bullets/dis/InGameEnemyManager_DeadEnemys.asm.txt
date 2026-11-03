@@ -1,0 +1,91 @@
+#### InGame.Kernel.InGameEnemyManager::DeadEnemys() RVA 1cd3810 len 177
+01cd3810  push     rbx
+01cd3812  sub      rsp, 0x30
+01cd3816  cmp      byte ptr [rip + 0x298fa78], 0   ; [4663295] bss
+01cd381d  mov      rbx, rcx
+01cd3820  jne      0x1cd3835
+01cd3822  lea      rcx, [rip + 0x268f7ff]   ; [4363028] MethodRef System.Collections.Generic.List`1<InGame.Kernel.Enemy.PawnEnemy>::ToArray
+01cd3829  call     0x4e0a50
+01cd382e  mov      byte ptr [rip + 0x298fa60], 1   ; [4663295] bss
+01cd3835  mov      rcx, qword ptr [rbx + 0x28]   ; ._enemyLineups
+01cd3839  mov      qword ptr [rsp + 0x40], rbp   ; ._activeEnemys
+01cd383e  mov      qword ptr [rsp + 0x48], rsi   ; ._errorMessages
+01cd3843  mov      qword ptr [rsp + 0x50], rdi   ; ._poser
+01cd3848  mov      qword ptr [rsp + 0x58], r14   ; ._enemyDestroyCounter
+01cd384d  test     rcx, rcx
+01cd3850  je       0x1cd3982
+01cd3856  mov      rdx, qword ptr [rip + 0x268f7cb]   ; [4363028] MethodRef System.Collections.Generic.List`1<InGame.Kernel.Enemy.PawnEnemy>::ToArray
+01cd385d  call     0xb15e40   ; List`1::ToArray()
+01cd3862  xor      r14d, r14d
+01cd3865  mov      rbp, rax
+01cd3868  mov      edi, r14d
+01cd386b  mov      ecx, r14d
+01cd386e  test     rax, rax
+01cd3871  je       0x1cd3982
+01cd3877  lea      rsi, [rax + 0x20]   ; ._enemyDestroyed
+01cd387b  nop      dword ptr [rax + rax]
+01cd3880  cmp      ecx, dword ptr [rbp + 0x18]
+01cd3883  jge      0x1cd3962
+01cd3889  cmp      edi, dword ptr [rbp + 0x18]
+01cd388c  jae      0x1cd397c
+01cd3892  mov      rbx, qword ptr [rsi]
+01cd3895  test     rbx, rbx
+01cd3898  je       0x1cd3982
+01cd389e  mov      rdx, qword ptr [rbx]
+01cd38a1  mov      rcx, rbx
+01cd38a4  mov      rax, qword ptr [rdx + 0x538]   ; vcall None
+01cd38ab  mov      rdx, qword ptr [rdx + 0x540]   ; vcall None
+01cd38b2  call     rax
+01cd38b4  test     al, al
+01cd38b6  jne      0x1cd3955
+01cd38bc  xor      r9d, r9d
+01cd38bf  mov      qword ptr [rsp + 0x20], r14   ; ._enemyDestroyed
+01cd38c4  mov      edx, 0xffffffff
+01cd38c9  mov      r8d, 0x6e
+01cd38cf  mov      rcx, rbx
+01cd38d2  call     0x1d0f680   ; PawnEnemy::SetCauseOfDeath(System.Int32,TXEKernel.TXEKernelHybridCollisions/attackType,System.Boolean)
+01cd38d7  mov      rcx, qword ptr [rbx + 0xb8]   ; ._mover
+01cd38de  test     rcx, rcx
+01cd38e1  je       0x1cd3982
+01cd38e7  xor      edx, edx
+01cd38e9  call     0x1d6cc40   ; EnemyMover::StartCanceled()
+01cd38ee  mov      rdx, qword ptr [rbx]
+01cd38f1  mov      rcx, rbx
+01cd38f4  test     al, al
+01cd38f6  je       0x1cd3915
+01cd38f8  mov      rax, qword ptr [rdx + 0x308]   ; vcall None
+01cd38ff  mov      rdx, qword ptr [rdx + 0x310]   ; vcall None
+01cd3906  call     rax
+01cd3908  inc      edi
+01cd390a  add      rsi, 8
+01cd390e  mov      ecx, edi
+01cd3910  jmp      0x1cd3880
+01cd3915  mov      rax, qword ptr [rdx + 0x1b8]   ; ._isPlayerSideBottom
+01cd391c  mov      rdx, qword ptr [rdx + 0x1c0]   ; ._bossActionUpTime
+01cd3923  call     rax
+01cd3925  test     al, al
+01cd3927  je       0x1cd3955
+01cd3929  mov      rdx, qword ptr [rbx]
+01cd392c  mov      rcx, rbx
+01cd392f  mov      rax, qword ptr [rdx + 0x2f8]   ; vcall None
+01cd3936  mov      rdx, qword ptr [rdx + 0x300]   ; vcall None
+01cd393d  call     rax
+01cd393f  mov      rdx, qword ptr [rbx]
+01cd3942  mov      rcx, rbx
+01cd3945  mov      rax, qword ptr [rdx + 0x318]   ; vcall None
+01cd394c  mov      rdx, qword ptr [rdx + 0x320]   ; vcall None
+01cd3953  call     rax
+01cd3955  inc      edi
+01cd3957  add      rsi, 8
+01cd395b  mov      ecx, edi
+01cd395d  jmp      0x1cd3880
+01cd3962  mov      r14, qword ptr [rsp + 0x58]   ; ._enemyDestroyCounter
+01cd3967  mov      rdi, qword ptr [rsp + 0x50]   ; ._poser
+01cd396c  mov      rsi, qword ptr [rsp + 0x48]   ; ._errorMessages
+01cd3971  mov      rbp, qword ptr [rsp + 0x40]   ; ._activeEnemys
+01cd3976  add      rsp, 0x30
+01cd397a  pop      rbx
+01cd397b  ret      
+01cd397c  call     0x4e0cf0
+01cd3981  int3     
+01cd3982  call     0x4e0d00

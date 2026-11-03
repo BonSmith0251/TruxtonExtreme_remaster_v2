@@ -1,0 +1,120 @@
+01d9e370 push rbx 
+01d9e372 sub rsp, 0x40 
+01d9e376 mov rbx, rcx 
+01d9e379 movaps xmmword ptr [rsp + 0x30], xmm6 
+01d9e37e mov ecx, dword ptr [rcx + 0x2b0] 
+01d9e384 movaps xmm6, xmm1 
+01d9e387 lea eax, [rcx + 1] 
+01d9e38a cmp eax, 6 
+01d9e38d ja 0x1d9e4ef 
+01d9e393 lea eax, [rcx + 1] 
+01d9e396 movsxd rdx, eax 
+01d9e399 lea r8, [rip - 0x1d9e3a0] ; rva=0
+01d9e3a0 mov eax, dword ptr [r8 + rdx*4 + 0x1d9e510] 
+01d9e3a8 add rax, r8 
+01d9e3ab jmp rax 
+01d9e3ad xor r8d, r8d 
+01d9e3b0 mov rcx, rbx 
+01d9e3b3 movaps xmm6, xmmword ptr [rsp + 0x30] 
+01d9e3b8 add rsp, 0x40 
+01d9e3bc pop rbx 
+01d9e3bd jmp 0x1d9bc90 ; Ene_Bos06::PatternMoveEntryWait(System.Single)
+01d9e3c2 xor r8d, r8d 
+01d9e3c5 mov rcx, rbx 
+01d9e3c8 movaps xmm6, xmmword ptr [rsp + 0x30] 
+01d9e3cd add rsp, 0x40 
+01d9e3d1 pop rbx 
+01d9e3d2 jmp 0x1d9bee0 ; Ene_Bos06::PatternMovePT1(System.Single)
+01d9e3d7 xor r8d, r8d 
+01d9e3da mov rcx, rbx 
+01d9e3dd movaps xmm6, xmmword ptr [rsp + 0x30] 
+01d9e3e2 add rsp, 0x40 
+01d9e3e6 pop rbx 
+01d9e3e7 jmp 0x1d9c690 ; Ene_Bos06::PatternMovePT3Break(System.Single)
+01d9e3ec xor r8d, r8d 
+01d9e3ef mov rcx, rbx 
+01d9e3f2 movaps xmm6, xmmword ptr [rsp + 0x30] 
+01d9e3f7 add rsp, 0x40 
+01d9e3fb pop rbx 
+01d9e3fc jmp 0x1d9cf70 ; Ene_Bos06::PatternMovePT6Bind(System.Single)
+01d9e401 xor r8d, r8d 
+01d9e404 mov rcx, rbx 
+01d9e407 movaps xmm6, xmmword ptr [rsp + 0x30] 
+01d9e40c add rsp, 0x40 
+01d9e410 pop rbx 
+01d9e411 jmp 0x1d9d5f0 ; Ene_Bos06::PatternMovePT7Change(System.Single)
+01d9e416 mov rcx, qword ptr [rbx + 0x2f0] 
+01d9e41d test rcx, rcx 
+01d9e420 je 0x1d9e50a 
+01d9e426 xor r8d, r8d 
+01d9e429 call 0x1d8a2e0 ; Ene_Bos06/CoreMovement::Progress(System.Single)
+01d9e42e mov rcx, qword ptr [rbx + 0x2f8] 
+01d9e435 test rcx, rcx 
+01d9e438 je 0x1d9e50a 
+01d9e43e movsd xmm0, qword ptr [rbx + 0x1f0] 
+01d9e446 lea r8, [rsp + 0x20] 
+01d9e44b mov eax, dword ptr [rbx + 0x1f8] 
+01d9e451 xor r9d, r9d 
+01d9e454 movaps xmm1, xmm6 
+01d9e457 movsd qword ptr [rsp + 0x20], xmm0 
+01d9e45d mov dword ptr [rsp + 0x28], eax 
+01d9e461 call 0x1d9fce0 ; Ene_Bos06/BatteryMovement::Progress(System.Single,UnityEngine.Vector3)
+01d9e466 mov rcx, qword ptr [rbx + 0x300] 
+01d9e46d test rcx, rcx 
+01d9e470 je 0x1d9e50a 
+01d9e476 movsd xmm0, qword ptr [rbx + 0x1f0] 
+01d9e47e lea r8, [rsp + 0x20] 
+01d9e483 mov eax, dword ptr [rbx + 0x1f8] 
+01d9e489 xor r9d, r9d 
+01d9e48c movaps xmm1, xmm6 
+01d9e48f movsd qword ptr [rsp + 0x20], xmm0 
+01d9e495 mov dword ptr [rsp + 0x28], eax 
+01d9e499 call 0x1d9fce0 ; Ene_Bos06/BatteryMovement::Progress(System.Single,UnityEngine.Vector3)
+01d9e49e cmp dword ptr [rbx + 0x1ec], 0 
+01d9e4a5 jne 0x1d9e4ff 
+01d9e4a7 mov rcx, qword ptr [rbx + 0x2f8] 
+01d9e4ae test rcx, rcx 
+01d9e4b1 je 0x1d9e50a 
+01d9e4b3 xor r8d, r8d 
+01d9e4b6 xorps xmm1, xmm1 
+01d9e4b9 call 0x1d9f990 ; Ene_Bos06/BatteryMovement::Attack(System.Single)
+01d9e4be mov rcx, qword ptr [rbx + 0x300] 
+01d9e4c5 test rcx, rcx 
+01d9e4c8 je 0x1d9e50a 
+01d9e4ca movss xmm1, dword ptr [rip + 0x174e4c6] ; rva=34ec998 f=1.5
+01d9e4d2 xor r8d, r8d 
+01d9e4d5 call 0x1d9f990 ; Ene_Bos06/BatteryMovement::Attack(System.Single)
+01d9e4da mov dword ptr [rbx + 0x1ec], 1 
+01d9e4e4 movaps xmm6, xmmword ptr [rsp + 0x30] 
+01d9e4e9 add rsp, 0x40 
+01d9e4ed pop rbx 
+01d9e4ee ret 
+01d9e4ef cmp ecx, 0x64 
+01d9e4f2 jne 0x1d9e4ff 
+01d9e4f4 xor r8d, r8d 
+01d9e4f7 mov rcx, rbx 
+01d9e4fa call 0x1d9b650 ; Ene_Bos06::PatternMoveDestruction(System.Single)
+01d9e4ff movaps xmm6, xmmword ptr [rsp + 0x30] 
+01d9e504 add rsp, 0x40 
+01d9e508 pop rbx 
+01d9e509 ret 
+01d9e50a call 0x4e0d00 
+01d9e50f int3 
+01d9e510 jmp rsp 
+01d9e512 fld dword ptr [rcx] 
+01d9e514 lodsd eax, dword ptr [rsi] 
+01d9e515 jrcxz 0x1d9e4f0 
+01d9e517 add edx, eax 
+01d9e519 jrcxz 0x1d9e4f4 
+01d9e51b add edi, edx 
+01d9e51d jrcxz 0x1d9e4f8 
+01d9e51f add esp, ebp 
+01d9e521 jrcxz 0x1d9e4fc 
+01d9e523 add dword ptr [rcx], eax 
+01d9e525 in al, 0xd9 
+01d9e527 add dword ptr [rsi], edx 
+01d9e529 in al, 0xd9 
+01d9e52b add esp, ecx 
+01d9e52d int3 
+01d9e52e int3 
+01d9e52f int3 

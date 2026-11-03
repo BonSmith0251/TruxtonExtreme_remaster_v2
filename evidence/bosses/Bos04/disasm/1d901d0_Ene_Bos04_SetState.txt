@@ -1,0 +1,35 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04::SetState(InGame.Kernel.Enemy.Ene_Bos04/Boss04State) RVA 1d901d0 len 9d
+01d901d0 mov        qword ptr [rsp + 8], rbx
+01d901d5 push       rdi
+01d901d6 sub        rsp, 0x20
+01d901da cmp        byte ptr [rip + 0x28d35cd], 0 ; [.data 46637ae]
+01d901e1 mov        edi, edx
+01d901e3 mov        rbx, rcx
+01d901e6 jne        0x1d901fb
+01d901e8 lea        rcx, [rip + 0x2612179] ; [.data 43a2368] TypeInfo#45781
+01d901ef call       0x4e0a50
+01d901f4 mov        byte ptr [rip + 0x28d35b3], 1 ; [.data 46637ae]
+01d901fb cmp        edi, dword ptr [rbx + 0x2c8] ; ~_bos04state
+01d90201 je         0x1d90213
+01d90203 mov        dword ptr [rbx + 0x2c8], edi ; ~_bos04state
+01d90209 mov        dword ptr [rbx + 0x1ec], 0 ; ~_patternMode
+01d90213 cmp        dword ptr [rbx + 0x2d4], -1 ; ~_rollSEId
+01d9021a je         0x1d9024a
+01d9021c mov        rcx, qword ptr [rip + 0x2612145] ; [.data 43a2368] TypeInfo#45781
+01d90223 mov        edi, dword ptr [rbx + 0x2d4] ; ~_rollSEId
+01d90229 cmp        dword ptr [rcx + 0xe4], 0
+01d90230 jne        0x1d90237
+01d90232 call       0x4e0d90
+01d90237 xor        edx, edx
+01d90239 mov        ecx, edi
+01d9023b call       0x2725560 ; TXEKernel.Sound.SoundUtility::StopCh(System.Int32)
+01d90240 mov        dword ptr [rbx + 0x2d4], 0xffffffff ; ~_rollSEId
+01d9024a mov        rax, qword ptr [rbx + 0xb8] ; ~_mover
+01d90251 test       rax, rax
+01d90254 je         0x1d90268
+01d90256 mov        rbx, qword ptr [rsp + 0x30]
+01d9025b mov        byte ptr [rax + 0x1d4], 0 ; ~_repeatPassed
+01d90262 add        rsp, 0x20
+01d90266 pop        rdi
+01d90267 ret        
+01d90268 call       0x4e0d00

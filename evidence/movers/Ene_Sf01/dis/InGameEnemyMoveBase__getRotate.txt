@@ -1,0 +1,187 @@
+#### InGame.Kernel.InGameEnemyMoveBase::_getRotate(UnityEngine.Splines.Spline,System.Single,System.Single,System.Single) RVA 1cdc830 len 35d
+01cdc830  mov      rax, rsp
+01cdc833  mov      qword ptr [rax + 0x10], rbx   ; ev.eventType
+01cdc837  mov      qword ptr [rax + 0x18], rbp   ; ev.repeatDelay
+01cdc83b  mov      qword ptr [rax + 0x20], rsi   ; ev.value0
+01cdc83f  push     rdi
+01cdc840  sub      rsp, 0xa0
+01cdc847  movaps   xmmword ptr [rax - 0x18], xmm6
+01cdc84b  mov      rbp, r8
+01cdc84e  movaps   xmmword ptr [rax - 0x28], xmm7
+01cdc852  mov      rbx, rdx
+01cdc855  mov      eax, dword ptr [rdx + 0x1ac]   ; ._lookAtType
+01cdc85b  movaps   xmm7, xmm3
+01cdc85e  mov      rdi, rcx
+01cdc861  cmp      eax, 0x1e
+01cdc864  jl       0x1cdc914
+01cdc86a  cmp      eax, 0x20
+01cdc86d  jg       0x1cdc914
+01cdc873  movaps   xmmword ptr [rsp + 0x70], xmm8   ; ._transformCache
+01cdc879  xorps    xmm2, xmm2
+01cdc87c  movss    xmm8, dword ptr [rsp + 0xd0]   ; .isEntryedArea
+01cdc886  xor      esi, esi
+01cdc888  comiss   xmm8, xmm2
+01cdc88c  jbe      0x1cdc8dd
+01cdc88e  test     r8, r8
+01cdc891  je       0x1cdc8dd
+01cdc893  mov      r8, qword ptr [rdx + 0xe8]   ; ._spline
+01cdc89a  lea      rcx, [rsp + 0x50]   ; ._animatorsPlay
+01cdc89f  mov      qword ptr [rsp + 0x20], rsi   ; ev.value0
+01cdc8a4  call     0x1cd9880   ; InGameEnemyMoveBase::EvalCachedPosition(UnityEngine.Splines.Spline,System.Single)
+01cdc8a9  mov      r8, qword ptr [rbx + 0xe8]   ; ._spline
+01cdc8b0  addss    xmm7, xmm8
+01cdc8b5  mov      rdx, rbx
+01cdc8b8  mov      qword ptr [rsp + 0x20], rsi   ; ev.value0
+01cdc8bd  lea      rcx, [rsp + 0x50]   ; ._animatorsPlay
+01cdc8c2  movsd    xmm6, qword ptr [rax]
+01cdc8c6  mov      eax, dword ptr [rax + 8]
+01cdc8c9  movaps   xmm3, xmm7
+01cdc8cc  mov      dword ptr [rsp + 0x58], eax   ; ._particleSpeed
+01cdc8d0  call     0x1cd9880   ; InGameEnemyMoveBase::EvalCachedPosition(UnityEngine.Splines.Spline,System.Single)
+01cdc8d5  movss    xmm2, dword ptr [rax]
+01cdc8d9  subss    xmm2, xmm6
+01cdc8dd  movss    xmm0, dword ptr [rsp + 0xd8]   ; ._moveValue
+01cdc8e6  lea      rcx, [rsp + 0x60]   ; ._psystemCount
+01cdc8eb  movss    xmm3, dword ptr [rip + 0x19162ad]   ; rdata 35f2ba0 f=0.2,0.6,6,7 d=9.765628745e-05
+01cdc8f3  mov      rdx, rbx
+01cdc8f6  mov      qword ptr [rsp + 0x28], rsi   ; ev.vectorValue
+01cdc8fb  movss    dword ptr [rsp + 0x20], xmm0   ; ev.value0
+01cdc901  call     0x1cdb930   ; InGameEnemyMoveBase::_AddDriftAngle(System.Single,System.Single,System.Single)
+01cdc906  movaps   xmm8, xmmword ptr [rsp + 0x70]   ; ._transformCache
+01cdc90c  movups   xmm0, xmmword ptr [rax]
+01cdc90f  jmp      0x1cdcb64
+01cdc914  cmp      eax, 0
+01cdc917  je       0x1cdcb37
+01cdc91d  test     rbp, rbp
+01cdc920  je       0x1cdcb37
+01cdc926  movss    xmm6, dword ptr [rip + 0x180429e]   ; rdata 34e0bcc f=1,3.141593,4,10 d=50.12387842
+01cdc92e  comiss   xmm7, xmm6
+01cdc931  jae      0x1cdcb2b
+01cdc937  mov      qword ptr [rsp + 0xb0], r14   ; ._translateToken
+01cdc93f  movsd    xmm0, qword ptr [rdx + 0x134]   ; ._currentDirection
+01cdc947  lea      rcx, [rsp + 0x50]   ; ._animatorsPlay
+01cdc94c  mov      eax, dword ptr [rdx + 0x13c]
+01cdc952  xor      esi, esi
+01cdc954  movsd    qword ptr [rdx + 0x128], xmm0   ; ._beforeDirection
+01cdc95c  mov      dword ptr [rdx + 0x130], eax
+01cdc962  mov      qword ptr [rsp + 0x20], rsi   ; ev.value0
+01cdc967  call     0x1cd99e0   ; InGameEnemyMoveBase::EvalCachedTangent(UnityEngine.Splines.Spline,System.Single)
+01cdc96c  mov      ecx, dword ptr [rax + 8]
+01cdc96f  cmp      byte ptr [rbx + 0x190], sil   ; ._isSmooth
+01cdc976  je       0x1cdc9f7
+01cdc978  xorps    xmm0, xmm0
+01cdc97b  comiss   xmm7, xmm0
+01cdc97e  jbe      0x1cdc9f7
+01cdc980  comiss   xmm6, xmm7
+01cdc983  jbe      0x1cdc9f7
+01cdc985  movsd    xmm0, qword ptr [rax]
+01cdc989  mov      eax, dword ptr [rbx + 0x130]
+01cdc98f  movss    xmm6, dword ptr [rbx + 0x1d8]   ; ._smoothRotateValue
+01cdc997  movsd    qword ptr [rsp + 0x40], xmm0   ; ._animators
+01cdc99d  movsd    xmm0, qword ptr [rbx + 0x128]   ; ._beforeDirection
+01cdc9a5  mov      dword ptr [rsp + 0x48], ecx   ; .GameObjectCache
+01cdc9a9  xor      ecx, ecx
+01cdc9ab  movsd    qword ptr [rsp + 0x50], xmm0   ; ._animatorsPlay
+01cdc9b1  mov      dword ptr [rsp + 0x58], eax   ; ._particleSpeed
+01cdc9b5  call     0x308b0e0   ; Time::get_deltaTime()
+01cdc9ba  mov      qword ptr [rsp + 0x38], rsi   ; ._psystems
+01cdc9bf  lea      r9, [rbx + 0x134]   ; ._currentDirection
+01cdc9c6  movss    dword ptr [rsp + 0x30], xmm0   ; ._entryFlag
+01cdc9cc  lea      r8, [rsp + 0x40]   ; ._animators
+01cdc9d1  movss    xmm0, dword ptr [rip + 0x180ff43]   ; rdata 34ec91c f=inf,nan,nan,nan d=nan
+01cdc9d9  lea      rdx, [rsp + 0x50]   ; ._animatorsPlay
+01cdc9de  movss    dword ptr [rsp + 0x28], xmm0   ; ev.vectorValue
+01cdc9e4  lea      rcx, [rsp + 0x60]   ; ._psystemCount
+01cdc9e9  movss    dword ptr [rsp + 0x20], xmm6   ; ev.value0
+01cdc9ef  call     0x3052a10   ; Vector3::SmoothDamp(UnityEngine.Vector3&,UnityEngine.Vector3&,UnityEngine.Vector3&,System.Single,System.Single,System.Single)
+01cdc9f4  mov      ecx, dword ptr [rax + 8]
+01cdc9f7  movsd    xmm0, qword ptr [rax]
+01cdc9fb  movsd    qword ptr [rbx + 0x134], xmm0   ; ._currentDirection
+01cdca03  mov      dword ptr [rbx + 0x13c], ecx
+01cdca09  cmp      byte ptr [rip + 0x297fb01], sil   ; [465c511] bss
+01cdca10  mov      r14d, ecx
+01cdca13  movsd    xmm6, qword ptr [rbx + 0x134]   ; ._currentDirection
+01cdca1b  jne      0x1cdca30
+01cdca1d  lea      rcx, [rip + 0x26e4cb4]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01cdca24  call     0x4e0a50
+01cdca29  mov      byte ptr [rip + 0x297fae1], 1   ; [465c511] bss
+01cdca30  mov      r8, qword ptr [rip + 0x26e4ca1]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01cdca37  mov      r9d, dword ptr [rbx + 0x1ac]   ; ._lookAtType
+01cdca3e  mov      rax, qword ptr [r8 + 0xb8]   ; statics
+01cdca45  lea      ecx, [r9 - 2]
+01cdca49  movsd    xmm0, qword ptr [rax + 0x18]   ; S:Vector3.upVector
+01cdca4e  mov      edx, dword ptr [rax + 0x20]   ; ev.value0
+01cdca51  test     ecx, ecx
+01cdca53  je       0x1cdcab9
+01cdca55  sub      ecx, 1
+01cdca58  je       0x1cdcaeb
+01cdca5e  sub      ecx, 1
+01cdca61  je       0x1cdcaeb
+01cdca67  sub      ecx, 1
+01cdca6a  je       0x1cdca98
+01cdca6c  cmp      ecx, 1
+01cdca6f  je       0x1cdca98
+01cdca71  cmp      r9d, 0x14
+01cdca75  jne      0x1cdcaeb
+01cdca77  movaps   xmm3, xmm7
+01cdca7a  mov      qword ptr [rsp + 0x20], rsi   ; ev.value0
+01cdca7f  mov      r8, rbp
+01cdca82  lea      rcx, [rsp + 0x60]   ; ._psystemCount
+01cdca87  mov      rdx, rbx
+01cdca8a  call     0x1cdce50   ; InGameEnemyMoveBase::_rollForwardMove(UnityEngine.Splines.Spline,System.Single)
+01cdca8f  movsd    xmm0, qword ptr [rax]   ; S:Vector3.zeroVector
+01cdca93  mov      edx, dword ptr [rax + 8]
+01cdca96  jmp      0x1cdcaeb
+01cdca98  movaps   xmm3, xmm7
+01cdca9b  mov      qword ptr [rsp + 0x20], rsi   ; ev.value0
+01cdcaa0  mov      r8, rbp
+01cdcaa3  lea      rcx, [rsp + 0x60]   ; ._psystemCount
+01cdcaa8  mov      rdx, rbx
+01cdcaab  call     0x1cd9bc0   ; InGameEnemyMoveBase::EvalCachedUpVector(UnityEngine.Splines.Spline,System.Single)
+01cdcab0  movsd    xmm0, qword ptr [rax]   ; S:Vector3.zeroVector
+01cdcab4  mov      edx, dword ptr [rax + 8]
+01cdcab7  jmp      0x1cdcaeb
+01cdcab9  cmp      byte ptr [rip + 0x2986824], sil   ; [46632e4] bss
+01cdcac0  jne      0x1cdcadc
+01cdcac2  lea      rcx, [rip + 0x26e4c0f]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01cdcac9  call     0x4e0a50
+01cdcace  mov      r8, qword ptr [rip + 0x26e4c03]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01cdcad5  mov      byte ptr [rip + 0x2986808], 1   ; [46632e4] bss
+01cdcadc  mov      rax, qword ptr [r8 + 0xb8]   ; statics
+01cdcae3  movsd    xmm0, qword ptr [rax + 0x24]   ; S:Vector3.downVector
+01cdcae8  mov      edx, dword ptr [rax + 0x2c]
+01cdcaeb  mov      dword ptr [rsp + 0x58], edx   ; ._particleSpeed
+01cdcaef  lea      r8, [rsp + 0x50]   ; ._animatorsPlay
+01cdcaf4  lea      rdx, [rsp + 0x40]   ; ._animators
+01cdcaf9  movsd    qword ptr [rsp + 0x50], xmm0   ; ._animatorsPlay
+01cdcaff  xor      r9d, r9d
+01cdcb02  movsd    qword ptr [rsp + 0x40], xmm6   ; ._animators
+01cdcb08  lea      rcx, [rsp + 0x60]   ; ._psystemCount
+01cdcb0d  mov      dword ptr [rsp + 0x48], r14d   ; .GameObjectCache
+01cdcb12  call     0x304db80   ; Quaternion::Internal_LookRotation(UnityEngine.Vector3&,UnityEngine.Vector3&)
+01cdcb17  mov      r14, qword ptr [rsp + 0xb0]   ; ._translateToken
+01cdcb1f  movups   xmm0, xmmword ptr [rax]   ; S:Vector3.zeroVector
+01cdcb22  movups   xmmword ptr [rbx + 0x180], xmm0   ; ._lastDir
+01cdcb29  jmp      0x1cdcb64
+01cdcb2b  movups   xmm0, xmmword ptr [rdx + 0x180]   ; ._lastDir
+01cdcb32  movups   xmmword ptr [rcx], xmm0
+01cdcb35  jmp      0x1cdcb67
+01cdcb37  cmp      byte ptr [rip + 0x297f923], 0   ; [465c461] bss
+01cdcb3e  jne      0x1cdcb53
+01cdcb40  lea      rcx, [rip + 0x26aee11]   ; [438b958] TypeInfo UnityEngine.Quaternion
+01cdcb47  call     0x4e0a50
+01cdcb4c  mov      byte ptr [rip + 0x297f90e], 1   ; [465c461] bss
+01cdcb53  mov      rax, qword ptr [rip + 0x26aedfe]   ; [438b958] TypeInfo UnityEngine.Quaternion
+01cdcb5a  mov      rcx, qword ptr [rax + 0xb8]   ; statics
+01cdcb61  movups   xmm0, xmmword ptr [rcx]   ; S:Quaternion.identityQuaternion
+01cdcb64  movups   xmmword ptr [rdi], xmm0
+01cdcb67  lea      r11, [rsp + 0xa0]   ; ._rotateToken
+01cdcb6f  mov      rax, rdi
+01cdcb72  mov      rbx, qword ptr [r11 + 0x18]   ; ev.repeatDelay
+01cdcb76  mov      rbp, qword ptr [r11 + 0x20]   ; ev.value0
+01cdcb7a  mov      rsi, qword ptr [r11 + 0x28]   ; ev.vectorValue
+01cdcb7e  movaps   xmm6, xmmword ptr [r11 - 0x10]
+01cdcb83  movaps   xmm7, xmmword ptr [r11 - 0x20]
+01cdcb88  mov      rsp, r11
+01cdcb8b  pop      rdi
+01cdcb8c  ret      

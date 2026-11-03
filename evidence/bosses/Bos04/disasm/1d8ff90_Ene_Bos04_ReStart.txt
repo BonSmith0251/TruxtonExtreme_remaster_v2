@@ -1,0 +1,102 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04::ReStart(System.Boolean) RVA 1d8ff90 len 1d9
+01d8ff90 mov        qword ptr [rsp + 0x18], rbx
+01d8ff95 mov        qword ptr [rsp + 0x20], rdi
+01d8ff9a push       r14
+01d8ff9c sub        rsp, 0x50
+01d8ffa0 cmp        byte ptr [rip + 0x28d3802], 0 ; [.data 46637a9]
+01d8ffa7 movzx      edi, dl
+01d8ffaa mov        rbx, rcx
+01d8ffad jne        0x1d8ffce
+01d8ffaf lea        rcx, [rip + 0x2621842] ; [.data 43b17f8] TypeInfo#37303
+01d8ffb6 call       0x4e0a50
+01d8ffbb lea        rcx, [rip + 0x262da46] ; [.data 43bda08] MethodRef#201294
+01d8ffc2 call       0x4e0a50
+01d8ffc7 mov        byte ptr [rip + 0x28d37db], 1 ; [.data 46637a9]
+01d8ffce mov        qword ptr [rsp + 0x60], rbp
+01d8ffd3 xor        r8d, r8d
+01d8ffd6 movzx      edx, dil
+01d8ffda mov        qword ptr [rsp + 0x68], rsi
+01d8ffdf mov        rcx, rbx
+01d8ffe2 call       0x1dba390 ; InGame.Kernel.Enemy.Ene_BosBase::ReStart(System.Boolean)
+01d8ffe7 xor        r8d, r8d
+01d8ffea xor        edx, edx
+01d8ffec mov        rcx, rbx
+01d8ffef call       0x1d901d0 ; InGame.Kernel.Enemy.Ene_Bos04::SetState(InGame.Kernel.Enemy.Ene_Bos04/Boss04State)
+01d8fff4 xor        edx, edx
+01d8fff6 mov        rcx, rbx
+01d8fff9 call       0x1d0d1b0 ; InGame.Kernel.Enemy.PawnEnemy::CreateToken()
+01d8fffe mov        rax, qword ptr [rbx + 0xb8] ; ~_mover
+01d90005 xor        r14d, r14d
+01d90008 mov        dword ptr [rbx + 0x2d0], r14d ; ~_sgCounter
+01d9000f test       rax, rax
+01d90012 je         0x1d9015e
+01d90018 mov        byte ptr [rax + 0x191], 1
+01d9001f mov        edi, r14d
+01d90022 mov        esi, 0x20
+01d90027 nop        word ptr [rax + rax]
+01d90030 mov        rax, qword ptr [rip + 0x26217c1] ; [.data 43b17f8] TypeInfo#37303
+01d90037 cmp        dword ptr [rax + 0xe4], r14d
+01d9003e jne        0x1d9004f
+01d90040 mov        rcx, rax
+01d90043 call       0x4e0d90
+01d90048 mov        rax, qword ptr [rip + 0x26217a9] ; [.data 43b17f8] TypeInfo#37303
+01d9004f mov        rax, qword ptr [rax + 0xb8] ; ~_mover
+01d90056 cmp        edi, dword ptr [rax + 0x20]
+01d90059 jge        0x1d900bc
+01d9005b mov        rax, qword ptr [rbx + 0x280] ; ~_wings
+01d90062 test       rax, rax
+01d90065 je         0x1d9015e
+01d9006b cmp        edi, dword ptr [rax + 0x18]
+01d9006e jae        0x1d90164
+01d90074 mov        rbp, qword ptr [rsi + rax]
+01d90078 lea        rcx, [rsp + 0x40]
+01d9007d xorps      xmm3, xmm3
+01d90080 mov        qword ptr [rsp + 0x20], r14
+01d90085 mov        r8d, edi
+01d90088 mov        rdx, rbx
+01d9008b call       0x1d8c500 ; InGame.Kernel.Enemy.Ene_Bos04::GetWingRotate(System.Int32,System.Single)
+01d90090 test       rbp, rbp
+01d90093 je         0x1d9015e
+01d90099 movups     xmm0, xmmword ptr [rax]
+01d9009c xor        r8d, r8d
+01d9009f lea        rdx, [rsp + 0x30]
+01d900a4 mov        rcx, rbp
+01d900a7 movaps     xmmword ptr [rsp + 0x30], xmm0
+01d900ac call       0x3094650 ; UnityEngine.Transform::set_localRotation(UnityEngine.Quaternion)
+01d900b1 inc        edi
+01d900b3 add        rsi, 8
+01d900b7 jmp        0x1d90030
+01d900bc mov        rcx, qword ptr [rbx + 0x2e8] ; ~_guardianList
+01d900c3 test       rcx, rcx
+01d900c6 je         0x1d9015e
+01d900cc mov        r8d, dword ptr [rcx + 0x18]
+01d900d0 inc        dword ptr [rcx + 0x1c]
+01d900d3 mov        dword ptr [rcx + 0x18], r14d
+01d900d7 test       r8d, r8d
+01d900da jle        0x1d900ea
+01d900dc mov        rcx, qword ptr [rcx + 0x10]
+01d900e0 xor        r9d, r9d
+01d900e3 xor        edx, edx
+01d900e5 call       0x203d380 ; System.Array::Clear(System.Array,System.Int32,System.Int32)
+01d900ea mov        rsi, qword ptr [rsp + 0x68]
+01d900ef mov        rbp, qword ptr [rsp + 0x60]
+01d900f4 mov        rdi, qword ptr [rsp + 0x78]
+01d900f9 mov        dword ptr [rbx + 0x2f0], r14d ; ~_pattern1LoopCount
+01d90100 mov        word ptr [rbx + 0x2f4], r14w ; ~_pattern1IsFirst
+01d90108 mov        dword ptr [rbx + 0x2f8], 0xffffffff ; ~_targetPlayer
+01d90112 mov        byte ptr [rbx + 0x2fc], r14b ; ~_isFireReady
+01d90119 mov        qword ptr [rbx + 0x300], r14 ; ~_lastFireAngle
+01d90120 mov        qword ptr [rbx + 0x308], r14 ; ~_destroyedPositionRate
+01d90127 mov        byte ptr [rbx + 0x310], r14b ; ~_pattern5First
+01d9012e mov        dword ptr [rbx + 0x314], r14d ; ~_wingRotation
+01d90135 mov        dword ptr [rbx + 0x2cc], r14d ; ~_localTime
+01d9013c mov        dword ptr [rbx + 0x2d8], r14d ; ~_destroyWingCount
+01d90143 mov        qword ptr [rbx + 0x2dc], r14 ; ~_isGuardianLeft
+01d9014a mov        word ptr [rbx + 0x318], r14w ; ~_patternOpenWingCollitionFlag
+01d90152 mov        rbx, qword ptr [rsp + 0x70]
+01d90157 add        rsp, 0x50
+01d9015b pop        r14
+01d9015d ret        
+01d9015e call       0x4e0d00
+01d90163 int3       
+01d90164 call       0x4e0cf0

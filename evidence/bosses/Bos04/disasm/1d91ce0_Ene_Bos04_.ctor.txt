@@ -1,0 +1,47 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04::.ctor() RVA 1d91ce0 len d4
+01d91ce0 mov        qword ptr [rsp + 8], rbx
+01d91ce5 push       rdi
+01d91ce6 sub        rsp, 0x20
+01d91cea cmp        byte ptr [rip + 0x28d1ad5], 0 ; [.data 46637c6]
+01d91cf1 mov        rdi, rcx
+01d91cf4 jne        0x1d91d15
+01d91cf6 lea        rcx, [rip + 0x2624f73] ; [.data 43b6c70] Il2CppType#53897
+01d91cfd call       0x4e0a50
+01d91d02 lea        rcx, [rip + 0x262013f] ; [.data 43b1e48] TypeInfo#37321
+01d91d09 call       0x4e0a50
+01d91d0e mov        byte ptr [rip + 0x28d1ab1], 1 ; [.data 46637c6]
+01d91d15 mov        rcx, qword ptr [rip + 0x28e6234] ; [.data 4677f50]
+01d91d1c mov        rbx, qword ptr [rip + 0x2624f4d] ; [.data 43b6c70] Il2CppType#53897
+01d91d23 cmp        dword ptr [rcx + 0xe4], 0
+01d91d2a jne        0x1d91d31
+01d91d2c call       0x4e0d90
+01d91d31 xor        edx, edx
+01d91d33 mov        rcx, rbx
+01d91d36 call       0x2051bf0 ; System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)
+01d91d3b mov        rcx, qword ptr [rip + 0x28e61c6] ; [.data 4677f08]
+01d91d42 mov        rbx, rax
+01d91d45 cmp        dword ptr [rcx + 0xe4], 0
+01d91d4c jne        0x1d91d53
+01d91d4e call       0x4e0d90
+01d91d53 xor        edx, edx
+01d91d55 mov        rcx, rbx
+01d91d58 call       0x2064b50 ; System.Enum::GetValues(System.Type)
+01d91d5d test       rax, rax
+01d91d60 je         0x1d91daf
+01d91d62 xor        edx, edx
+01d91d64 mov        rcx, rax
+01d91d67 call       0x203fd00 ; System.Array::System.Collections.ICollection.get_Count() || System.Array::InternalArray__ICollection_get_Count() || System.Array::InternalArray__IReadOnlyCollection_get_Count()
+01d91d6c mov        dword ptr [rdi + 0x270], eax ; ~_MuzzleCount
+01d91d72 mov        dword ptr [rdi + 0x2d4], 0xffffffff ; ~_rollSEId
+01d91d7c mov        dword ptr [rdi + 0x2f8], 0xffffffff ; ~_targetPlayer
+01d91d86 mov        rcx, qword ptr [rip + 0x26200bb] ; [.data 43b1e48] TypeInfo#37321
+01d91d8d cmp        dword ptr [rcx + 0xe4], 0
+01d91d94 jne        0x1d91d9b
+01d91d96 call       0x4e0d90
+01d91d9b xor        edx, edx
+01d91d9d mov        rcx, rdi
+01d91da0 mov        rbx, qword ptr [rsp + 0x30]
+01d91da5 add        rsp, 0x20
+01d91da9 pop        rdi
+01d91daa jmp        0x1dbb0b0 ; InGame.Kernel.Enemy.Ene_BosBase::.ctor()
+01d91daf call       0x4e0d00

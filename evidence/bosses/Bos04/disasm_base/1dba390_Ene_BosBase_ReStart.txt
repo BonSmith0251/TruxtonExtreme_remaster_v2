@@ -1,0 +1,34 @@
+== System.Void InGame.Kernel.Enemy.Ene_BosBase::ReStart(System.Boolean) RVA 1dba390 len 99
+01dba390 mov        qword ptr [rsp + 8], rbx
+01dba395 mov        qword ptr [rsp + 0x10], rsi
+01dba39a push       rdi
+01dba39b sub        rsp, 0x30
+01dba39f xor        esi, esi
+01dba3a1 mov        dword ptr [rcx + 0x1b0], 0 ; ~_isBossDead
+01dba3ab movzx      edi, dl
+01dba3ae mov        dword ptr [rcx + 0x1ec], esi ; ~_patternMode
+01dba3b4 mov        rdx, qword ptr [rcx + 0x50]
+01dba3b8 mov        rbx, rcx
+01dba3bb mov        qword ptr [rcx + 0x21c], rsi ; ~_hpState
+01dba3c2 mov        dword ptr [rcx + 0x1bc], esi ; ~_bossAliveTime
+01dba3c8 mov        byte ptr [rcx + 0x1b4], sil ; ~_isDirectionPause
+01dba3cf test       rdx, rdx
+01dba3d2 je         0x1dba424
+01dba3d4 xor        r8d, r8d
+01dba3d7 lea        rcx, [rsp + 0x20]
+01dba3dc call       0x3093700 ; UnityEngine.Transform::get_localPosition()
+01dba3e1 xor        r8d, r8d
+01dba3e4 movzx      edx, dil
+01dba3e8 mov        ecx, dword ptr [rax + 8]
+01dba3eb movsd      xmm0, qword ptr [rax]
+01dba3ef movsd      qword ptr [rbx + 0x228], xmm0 ; ~_startInGamePosition
+01dba3f7 mov        dword ptr [rbx + 0x230], ecx
+01dba3fd mov        rcx, rbx
+01dba400 mov        dword ptr [rbx + 0x224], esi ; ~_currentActStep
+01dba406 mov        dword ptr [rbx + 0x1c0], 0x41200000 ; ~_bossActionUpTime
+01dba410 mov        rbx, qword ptr [rsp + 0x40]
+01dba415 mov        rsi, qword ptr [rsp + 0x48]
+01dba41a add        rsp, 0x30
+01dba41e pop        rdi
+01dba41f jmp        0x1d0f040 ; InGame.Kernel.Enemy.PawnEnemy::ReStart(System.Boolean)
+01dba424 call       0x4e0d00

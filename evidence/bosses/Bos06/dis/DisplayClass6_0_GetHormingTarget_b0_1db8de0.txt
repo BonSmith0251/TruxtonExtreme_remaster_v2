@@ -1,0 +1,41 @@
+01db8de0 sub rsp, 0x28 
+01db8de4 mov rax, qword ptr [rcx + 0x10] 
+01db8de8 test rax, rax 
+01db8deb je 0x1db8e41 
+01db8ded cmp dword ptr [rax + 0x2b0], 3 
+01db8df4 je 0x1db8e31 
+01db8df6 mov r8d, dword ptr [rcx + 0x18] 
+01db8dfa mov eax, 0x55555556 
+01db8dff imul r8d 
+01db8e02 mov eax, edx 
+01db8e04 shr eax, 0x1f 
+01db8e07 add edx, eax 
+01db8e09 lea eax, [rdx + rdx*2] 
+01db8e0c sub r8d, eax 
+01db8e0f jne 0x1db8e1b 
+01db8e11 mov eax, 3 
+01db8e16 add rsp, 0x28 
+01db8e1a ret 
+01db8e1b cmp r8d, 1 
+01db8e1f mov eax, 4 
+01db8e24 mov ecx, 2 
+01db8e29 cmove eax, ecx 
+01db8e2c add rsp, 0x28 
+01db8e30 ret 
+01db8e31 mov eax, dword ptr [rcx + 0x18] 
+01db8e34 not eax 
+01db8e36 and eax, 1 
+01db8e39 or eax, 2 
+01db8e3c add rsp, 0x28 
+01db8e40 ret 
+01db8e41 call 0x4e0d00 
+01db8e46 int3 
+01db8e47 int3 
+01db8e48 int3 
+01db8e49 int3 
+01db8e4a int3 
+01db8e4b int3 
+01db8e4c int3 
+01db8e4d int3 
+01db8e4e int3 
+01db8e4f int3 

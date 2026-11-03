@@ -1,0 +1,30 @@
+01d9ae40 push rbx 
+01d9ae42 sub rsp, 0x20 
+01d9ae46 xor edx, edx 
+01d9ae48 mov rbx, rcx 
+01d9ae4b call 0x1d0cc00 ; PawnEnemy::CallDisabled()
+01d9ae50 mov rcx, qword ptr [rbx + 0xb8] 
+01d9ae57 test rcx, rcx 
+01d9ae5a je 0x1d9ae6b 
+01d9ae5c xor r8d, r8d 
+01d9ae5f mov dl, 1 
+01d9ae61 add rsp, 0x20 
+01d9ae65 pop rbx 
+01d9ae66 jmp 0x1d1d5a0 ; InGameObjectBase::StopAnime(System.Boolean)
+01d9ae6b call 0x4e0d00 
+01d9ae70 int3 
+01d9ae71 int3 
+01d9ae72 int3 
+01d9ae73 int3 
+01d9ae74 int3 
+01d9ae75 int3 
+01d9ae76 int3 
+01d9ae77 int3 
+01d9ae78 int3 
+01d9ae79 int3 
+01d9ae7a int3 
+01d9ae7b int3 
+01d9ae7c int3 
+01d9ae7d int3 
+01d9ae7e int3 
+01d9ae7f int3 

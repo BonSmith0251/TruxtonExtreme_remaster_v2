@@ -1,0 +1,67 @@
+01d8a1a0 mov qword ptr [rsp + 8], rbx 
+01d8a1a5 mov qword ptr [rsp + 0x10], rbp 
+01d8a1aa mov qword ptr [rsp + 0x18], rsi 
+01d8a1af push rdi 
+01d8a1b0 sub rsp, 0x20 
+01d8a1b4 cmp byte ptr [rip + 0x28d9647], 0 ; rva=4663802
+01d8a1bb mov rsi, r9 
+01d8a1be mov rbp, r8 
+01d8a1c1 mov rbx, rdx 
+01d8a1c4 mov rdi, rcx 
+01d8a1c7 jne 0x1d8a1e8 
+01d8a1c9 lea rcx, [rip + 0x260b5f8] ; rva=43957c8
+01d8a1d0 call 0x4e0a50 
+01d8a1d5 lea rcx, [rip + 0x25de3bc] ; rva=4368598
+01d8a1dc call 0x4e0a50 
+01d8a1e1 mov byte ptr [rip + 0x28d961a], 1 ; rva=4663802
+01d8a1e8 lea rcx, [rdi + 0x30] 
+01d8a1ec mov qword ptr [rdi + 0x30], rbp 
+01d8a1f0 mov rdx, rbp 
+01d8a1f3 call 0x4dfd80 
+01d8a1f8 lea rcx, [rdi + 0x38] 
+01d8a1fc mov qword ptr [rdi + 0x38], rsi 
+01d8a200 mov rdx, rsi 
+01d8a203 call 0x4dfd80 
+01d8a208 mov dword ptr [rdi + 0x10], 0 
+01d8a20f mov edx, 1 
+01d8a214 mov rcx, qword ptr [rip + 0x25de37d] ; rva=4368598
+01d8a21b call 0x4dfe00 
+01d8a220 mov rsi, rax 
+01d8a223 test rax, rax 
+01d8a226 je 0x1d8a2b4 
+01d8a22c cmp dword ptr [rax + 0x18], 0 
+01d8a230 jbe 0x1d8a2ba 
+01d8a236 lea rcx, [rax + 0x20] 
+01d8a23a mov qword ptr [rax + 0x20], rbx 
+01d8a23e xor edx, edx 
+01d8a240 call 0x4dfd80 
+01d8a245 mov rcx, qword ptr [rip + 0x260b57c] ; rva=43957c8
+01d8a24c cmp dword ptr [rcx + 0xe4], 0 
+01d8a253 jne 0x1d8a25a 
+01d8a255 call 0x4e0d90 
+01d8a25a xor edx, edx 
+01d8a25c mov rcx, rsi 
+01d8a25f call 0x20947c0 ; CancellationTokenSource::CreateLinkedTokenSource(System.Threading.CancellationToken[])
+01d8a264 lea rcx, [rdi + 0x40] 
+01d8a268 mov qword ptr [rdi + 0x40], rax 
+01d8a26c mov rdx, rax 
+01d8a26f call 0x4dfd80 
+01d8a274 mov rdx, qword ptr [rsp + 0x50] 
+01d8a279 lea rcx, [rdi + 0x48] 
+01d8a27d mov qword ptr [rdi + 0x48], rdx 
+01d8a281 call 0x4dfd80 
+01d8a286 mov rdx, qword ptr [rsp + 0x58] 
+01d8a28b lea rcx, [rdi + 0x50] 
+01d8a28f mov qword ptr [rdi + 0x50], rdx 
+01d8a293 call 0x4dfd80 
+01d8a298 mov rbx, qword ptr [rsp + 0x30] 
+01d8a29d mov rbp, qword ptr [rsp + 0x38] 
+01d8a2a2 mov rsi, qword ptr [rsp + 0x40] 
+01d8a2a7 mov dword ptr [rdi + 0x28], 2 
+01d8a2ae add rsp, 0x20 
+01d8a2b2 pop rdi 
+01d8a2b3 ret 
+01d8a2b4 call 0x4e0d00 
+01d8a2b9 int3 
+01d8a2ba call 0x4e0cf0 
+01d8a2bf int3 

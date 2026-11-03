@@ -1,0 +1,333 @@
+{
+ "start": {
+  "x": 0.0,
+  "y": 0.0,
+  "z": 100.0
+ },
+ "initialSpeed": 40.0,
+ "cruiseSpeed": 11.5,
+ "slowSeconds": 2.0,
+ "duration": 20.0,
+ "health": 1,
+ "events": [
+  {
+   "time": 2.0,
+   "kind": 9,
+   "source": "SpeedUp 上",
+   "offset": {
+    "x": -120.0,
+    "y": 2.0,
+    "z": 5.0
+   },
+   "table": false
+  },
+  {
+   "time": 2.0,
+   "kind": 0,
+   "source": "PowerUp 上",
+   "offset": {
+    "x": 120.0,
+    "y": 2.0,
+    "z": 5.0
+   },
+   "table": false
+  },
+  {
+   "time": 16.0,
+   "kind": 13,
+   "source": "ローカルテーブル 上",
+   "offset": {
+    "x": -25.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 16.0,
+   "kind": 16,
+   "source": "ローカルテーブル 上",
+   "offset": {
+    "x": 25.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 18.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": -50.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 18.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": 50.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 32.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": -80.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 60.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": 50.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 80.0,
+   "kind": 13,
+   "source": "ローカルテーブル 上",
+   "offset": {
+    "x": 0.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 105.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": 80.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 120.0,
+   "kind": 16,
+   "source": "ローカルテーブル 上",
+   "offset": {
+    "x": 0.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 150.0,
+   "kind": 11,
+   "source": "ローカルテーブル 上",
+   "offset": {
+    "x": -25.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 150.0,
+   "kind": 15,
+   "source": "ローカルテーブル 上",
+   "offset": {
+    "x": 25.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 152.0,
+   "kind": 13,
+   "source": "ローカルテーブル 上",
+   "offset": {
+    "x": -50.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 152.0,
+   "kind": 14,
+   "source": "ローカルテーブル 上",
+   "offset": {
+    "x": 50.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 180.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": -50.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 188.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": 50.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 197.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": 50.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 205.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": -50.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 322.0,
+   "kind": 11,
+   "source": "ローカルテーブル 上",
+   "offset": {
+    "x": -100.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 322.0,
+   "kind": 10,
+   "source": "ローカルテーブル 上",
+   "offset": {
+    "x": 100.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 424.0,
+   "kind": 11,
+   "source": "ローカルテーブル 上",
+   "offset": {
+    "x": -18.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 424.0,
+   "kind": 14,
+   "source": "ローカルテーブル 上",
+   "offset": {
+    "x": 16.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 425.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": -56.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 425.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": 56.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 426.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": -86.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 426.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": 86.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 427.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": -120.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 427.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": 120.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  }
+ ]
+}

@@ -1,0 +1,370 @@
+== InGame.Kernel.Enemy.Ene_Bos08A base= InGame.Kernel.Enemy.Ene_BosBase
+   S ActiveArmCount : System.Int32 =4
+   S ReverseArmBaseIndex : System.Int32 =2
+   S TotalMuzzleCount : System.Int32 
+   S ArmIdleStateHash : System.Int32 
+   S ArmAttackStateHash : System.Int32 
+   S BulletTemplateNames : System.String[] 
+   S ArmIndexFrontLeft : System.Int32 =0
+   S ArmIndexFrontRight : System.Int32 =1
+   S ArmIndexMidLeft : System.Int32 =2
+   S ArmIndexMidRight : System.Int32 =3
+   S ArmIndexBackLeft : System.Int32 =4
+   S ArmIndexBackRight : System.Int32 =5
+   S ArmPartOrder : InGame.Kernel.Enemy.Ene_Bos08A/BossPartId[] 
+   S CoverPartIds : InGame.Kernel.Enemy.Ene_Bos08A/BossPartId[] 
+   S ArmMuzzleOrder : InGame.Kernel.Enemy.Ene_Bos08A/BossMuzzleId[] 
+   S ChildEnemyDefinitions : InGame.Kernel.Enemy.PawnEnemy/EnemyChildData[] 
+   S BossClipNames : System.String[] 
+   S BossRouteNames : System.String[] 
+     _currentState : InGame.Kernel.Enemy.Ene_Bos08A/BossState 
+     _stateTimer : System.Single 
+     _isReversed : System.Boolean 
+     _leavingEffectFlag : InGame.Kernel.Enemy.Ene_Bos08A/LeavingEffectFlag 
+     _muzzlePoints : UnityEngine.Transform[] 
+     _arms : InGame.Kernel.Enemy.Ene_Bos08A/BossArm[] 
+     _armPatternIndex : System.Int32 
+     _isArmPatternLooped : System.Boolean 
+     _backCoverShotIndex : System.Int32 
+     _coverShotTimer : System.Single 
+     _armAnimes : UnityEngine.Animator[] 
+     _coreAnime : UnityEngine.Animator 
+     _bodyTop : UnityEngine.GameObject 
+   S _armAttackDurationSeconds : System.Single 
+   S _armAttackCooldownSeconds : System.Single 
+   S _frontCoverShotIntervalSeconds : System.Single 
+   S _backCoverShotIntervalSeconds : System.Single 
+   S _armFirstShotDelaySeconds : System.Single 
+   S _armShotIntervalSeconds : System.Single 
+   S _armRotationAmplitudeDeg : System.Single 
+   S _armRotationFrequencyHz : System.Single 
+   S _armAttackAnimationWait : System.Single 
+   S FA1 : System.Int32 
+   S FA2 : System.Int32 
+   S FA3 : System.Int32 
+   S FA4 : System.Int32 
+   S FrontArmAttackSequence : System.Int32[][] 
+   S BA1 : System.Int32 
+   S BA2 : System.Int32 
+   S BA3 : System.Int32 
+   S BA4 : System.Int32 
+   S BackArmAttackSequence : System.Int32[][] 
+   S FrontCoverPartOrder : InGame.Kernel.Enemy.Ene_Bos08A/BossPartId[] 
+   S BackCoverPartOrder : InGame.Kernel.Enemy.Ene_Bos08A/BossPartId[] 
+   S FrontCoverMuzzleOrder : InGame.Kernel.Enemy.Ene_Bos08A/BossMuzzleId[][] 
+   S BackCoverMuzzleOrder : InGame.Kernel.Enemy.Ene_Bos08A/BossMuzzleId[][] 
+   S FrontCoverConfig : InGame.Kernel.Enemy.Ene_Bos08A/CoverSideConfig 
+   S BackCoverConfig : InGame.Kernel.Enemy.Ene_Bos08A/CoverSideConfig 
+   S CorePurgeAnimeHash : System.Int32 
+== InGame.Kernel.Enemy.Ene_Bos08A/BossState base= System.Enum
+     value__ : System.Int32 
+   S EntryWait : InGame.Kernel.Enemy.Ene_Bos08A/BossState =0
+   S PT2 : InGame.Kernel.Enemy.Ene_Bos08A/BossState =1
+   S Turn : InGame.Kernel.Enemy.Ene_Bos08A/BossState =2
+   S Destruction : InGame.Kernel.Enemy.Ene_Bos08A/BossState =100
+== InGame.Kernel.Enemy.Ene_Bos08A/LeavingEffectFlag base= System.Enum
+     value__ : System.Int32 
+   S None : InGame.Kernel.Enemy.Ene_Bos08A/LeavingEffectFlag =0
+   S SE0 : InGame.Kernel.Enemy.Ene_Bos08A/LeavingEffectFlag =1
+   S SE1 : InGame.Kernel.Enemy.Ene_Bos08A/LeavingEffectFlag =2
+   S SE2 : InGame.Kernel.Enemy.Ene_Bos08A/LeavingEffectFlag =4
+   S Out : InGame.Kernel.Enemy.Ene_Bos08A/LeavingEffectFlag =65536
+== InGame.Kernel.Enemy.Ene_Bos08A/BossMuzzleId base= System.Enum
+     value__ : System.Int32 
+   S muzzle_arm_pos01 : InGame.Kernel.Enemy.Ene_Bos08A/BossMuzzleId =0
+   S muzzle_arm_pos03 : InGame.Kernel.Enemy.Ene_Bos08A/BossMuzzleId =1
+   S muzzle_arm_pos04 : InGame.Kernel.Enemy.Ene_Bos08A/BossMuzzleId =2
+   S muzzle_arm_pos06 : InGame.Kernel.Enemy.Ene_Bos08A/BossMuzzleId =3
+   S muzzle_arm_pos07 : InGame.Kernel.Enemy.Ene_Bos08A/BossMuzzleId =4
+   S muzzle_arm_pos09 : InGame.Kernel.Enemy.Ene_Bos08A/BossMuzzleId =5
+   S muzzle_cover_01_1 : InGame.Kernel.Enemy.Ene_Bos08A/BossMuzzleId =6
+   S muzzle_cover_01_2 : InGame.Kernel.Enemy.Ene_Bos08A/BossMuzzleId =7
+   S muzzle_cover_03_1 : InGame.Kernel.Enemy.Ene_Bos08A/BossMuzzleId =8
+   S muzzle_cover_03_2 : InGame.Kernel.Enemy.Ene_Bos08A/BossMuzzleId =9
+   S muzzle_cover_07_1 : InGame.Kernel.Enemy.Ene_Bos08A/BossMuzzleId =10
+   S muzzle_cover_07_2 : InGame.Kernel.Enemy.Ene_Bos08A/BossMuzzleId =11
+   S muzzle_cover_09_1 : InGame.Kernel.Enemy.Ene_Bos08A/BossMuzzleId =12
+   S muzzle_cover_09_2 : InGame.Kernel.Enemy.Ene_Bos08A/BossMuzzleId =13
+   S muzzle_cover_center : InGame.Kernel.Enemy.Ene_Bos08A/BossMuzzleId =14
+== InGame.Kernel.Enemy.Ene_Bos08A/BossPartId base= System.Enum
+     value__ : System.Int32 
+   S Cover01 : InGame.Kernel.Enemy.Ene_Bos08A/BossPartId =0
+   S Cover03 : InGame.Kernel.Enemy.Ene_Bos08A/BossPartId =1
+   S Cover07 : InGame.Kernel.Enemy.Ene_Bos08A/BossPartId =2
+   S Cover09 : InGame.Kernel.Enemy.Ene_Bos08A/BossPartId =3
+   S Arm1 : InGame.Kernel.Enemy.Ene_Bos08A/BossPartId =4
+   S Arm3 : InGame.Kernel.Enemy.Ene_Bos08A/BossPartId =5
+   S Arm4 : InGame.Kernel.Enemy.Ene_Bos08A/BossPartId =6
+   S Arm6 : InGame.Kernel.Enemy.Ene_Bos08A/BossPartId =7
+   S Arm7 : InGame.Kernel.Enemy.Ene_Bos08A/BossPartId =8
+   S Arm9 : InGame.Kernel.Enemy.Ene_Bos08A/BossPartId =9
+   S Core : InGame.Kernel.Enemy.Ene_Bos08A/BossPartId =10
+== InGame.Kernel.Enemy.Ene_Bos08A/BossBulletTemplate base= System.Enum
+     value__ : System.Int32 
+   S Arm : InGame.Kernel.Enemy.Ene_Bos08A/BossBulletTemplate =0
+   S Cover : InGame.Kernel.Enemy.Ene_Bos08A/BossBulletTemplate =1
+   S CoverBroken : InGame.Kernel.Enemy.Ene_Bos08A/BossBulletTemplate =2
+== InGame.Kernel.Enemy.Ene_Bos08A/CoverSideConfig base= System.ValueType
+     PartIds : InGame.Kernel.Enemy.Ene_Bos08A/BossPartId[] 
+     MuzzleGroups : InGame.Kernel.Enemy.Ene_Bos08A/BossMuzzleId[][] 
+== InGame.Kernel.Enemy.Ene_Bos08A/BossArm base= System.Object
+     _owner : InGame.Kernel.Enemy.Ene_Bos08A 
+     _partId : InGame.Kernel.Enemy.Ene_Bos08A/BossPartId 
+     _muzzleId : InGame.Kernel.Enemy.Ene_Bos08A/BossMuzzleId 
+     _animator : UnityEngine.Animator 
+     _isActive : System.Boolean 
+== InGame.Kernel.Enemy.Ene_Bos08A/BossArm/<ExecuteRoutineAsync>d__12 base= System.ValueType
+     <>1__state : System.Int32 
+     <>t__builder : Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder 
+     <>4__this : InGame.Kernel.Enemy.Ene_Bos08A/BossArm 
+     startDelay : System.Single 
+     attackDuration : System.Single 
+     firstShotDelay : System.Single 
+     rotationAmplitude : System.Single 
+     rotationFrequency : System.Single 
+     rotationDirectionSign : System.Single 
+     <parts>5__2 : InGame.Kernel.Enemy.EnePartsGroup 
+     <muzzle>5__3 : UnityEngine.Transform 
+     <bulletTemplate>5__4 : InGame.Kernel.Enemy.BulletTemplate 
+     <totalDuration>5__5 : System.Single 
+     <elapsed>5__6 : System.Single 
+     <>u__1 : Cysharp.Threading.Tasks.UniTask/Awaiter 
+     <wait>5__7 : System.Single 
+== InGame.Kernel.Enemy.Ene_Bos08A/<>c__DisplayClass49_0 base= System.Object
+     <>4__this : InGame.Kernel.Enemy.Ene_Bos08A 
+     armTop : UnityEngine.Transform 
+     <>9__0 : System.Action 
+== InGame.Kernel.Enemy.Ene_Bos08B base= InGame.Kernel.Enemy.Ene_BosBase
+   S _EntryNoHitTime : System.Single 
+   S InvalidSeChannelId : System.Int32 =-1
+   S DefaultDeadExplosionEffect : System.String =pf_eff_explposion06
+   S BossDeadExplosionEffect : System.String =pf_eff_explposion_boss
+   S EntryAnimationHash : System.Int32 
+   S BossBulletTemplateNames : System.String[] 
+   S Boss08CEnemyNames : System.String[] 
+   S HomePosition : UnityEngine.Vector3 
+   S Boss3CPosition : UnityEngine.Vector3 
+   S Boss3COffset : UnityEngine.Vector3 
+   S InfinityPathWidth : System.Single =60
+   S InfinityPathHeight : System.Single =10
+   S OneRoundSecond : System.Single =12
+   S Pattern1LoopCount : System.Int32 =1
+   S PhaseTwoPreWaitSeconds : System.Single =1
+   S PhaseTwoPostWaitSeconds : System.Single =1
+   S PhaseTwoAccelerationDuration : System.Single =0.5
+   S PhaseTwoDecelerationDuration : System.Single =0.2
+   S PhaseTwoMaxSpeed : System.Single =150
+   S PhaseTwoBrakeDistance : System.Single =15
+   S PhaseTwoArrivalThreshold : System.Single =0.1
+   S PhaseTwoReturnDuration : System.Single =2
+   S BowWaveBezierControlPoints : UnityEngine.Vector3[] 
+   S LeftBowOffset : UnityEngine.Vector3 
+   S RightBowOffset : UnityEngine.Vector3 
+   S BowWaveSpawnCount : System.Single =20
+   S BowWaveSpawnSeconds : System.Single =1
+   S BowWaveSpawnInterval : System.Single =0.05
+   S BowWaveInnerAngle : System.Single =-20
+   S BowWaveOuterAngle : System.Single =30
+   S BowWaveFireDelay : System.Single =2
+   S BowCircleSpawnSeconds : System.Single =0
+   S BowCircleCount : System.Single =60
+   S BowCircleSpawnInterval : System.Single =0
+   S BowCircleArc : System.Single =6
+   S BowCircleArcRadius : System.Single =30
+   S BowCircleFireCount : System.Int32 =10
+   S BowCircleFireInterval : System.Single =0.5
+   S BowCircleFireDelay : System.Single =0
+   S BowCircleCenterOffset : UnityEngine.Vector3 
+   S HoverAmplitude : System.Single =5
+   S HoverFrequency : System.Single =0.5
+   S HoverApplyTime : System.Single =1
+   S WingBaseRotations : UnityEngine.Quaternion[] 
+   S WingCount : System.Int32 
+   S MuzzleCount : System.Int32 
+     _wingTransforms : UnityEngine.Transform[] 
+     _hologramEffect : UnityEngine.ParticleSystem 
+     _currentState : InGame.Kernel.Enemy.Ene_Bos08B/Boss08State 
+     _entrySeChannelId : System.Int32 
+     _flyingSeChannelId : System.Int32 
+     _patternLoopCount : System.Int32 
+     _stateTimer : System.Single 
+     _modeTimer : System.Single 
+     _bowArcAngle : System.Single 
+     _nextBowIsWave : System.Boolean 
+     _legsOpened : System.Boolean 
+     _isMagicCirclePlaying : System.Boolean 
+     _hasLegCloseSequenceStarted : System.Boolean 
+     _hasLegOpenSequenceStarted : System.Boolean 
+     _wingRotation : UnityEngine.Quaternion 
+     _wingOpenRatio : System.Single 
+     _currentLoopTime : System.Single 
+     _muzzleTransforms : UnityEngine.Transform[] 
+     _phaseTwoTargetPosition : UnityEngine.Vector3 
+     _phaseTwoMoveStage : System.Int32 
+     _phaseTwoStageElapsed : System.Single 
+     _phaseTwoCurrentSpeed : System.Single 
+     _phaseTwoDecelerationStartSpeed : System.Single 
+     _phaseTwoReturnStartPosition : UnityEngine.Vector3 
+     _phaseTwoReturnElapsed : System.Single 
+     _hoverEnable : System.Boolean 
+     _hoverTimer : System.Single 
+     _hoverBasePosition : UnityEngine.Vector3 
+     _hoverApplyRate : System.Single 
+     _hoverAlignPending : System.Boolean 
+     _rightBowBullets : System.Collections.Generic.List`1<InGame.Kernel.InGameBulletInterface> 
+     _leftBowBullets : System.Collections.Generic.List`1<InGame.Kernel.InGameBulletInterface> 
+     _bowFollowerOffsets : System.Collections.Generic.Dictionary`2<InGame.Kernel.InGameBulletBow,UnityEngine.Vector3> 
+     _bowFollowersToRemove : System.Collections.Generic.List`1<InGame.Kernel.InGameBulletBow> 
+     _EntryCollisionFlag : System.Boolean 
+     _EntrySEFlag : System.Boolean 
+== InGame.Kernel.Enemy.Ene_Bos08B/Boss08State base= System.Enum
+     value__ : System.Int32 
+   S EntryWait : InGame.Kernel.Enemy.Ene_Bos08B/Boss08State =0
+   S PT1 : InGame.Kernel.Enemy.Ene_Bos08B/Boss08State =1
+   S PT2 : InGame.Kernel.Enemy.Ene_Bos08B/Boss08State =2
+   S PTBowWave : InGame.Kernel.Enemy.Ene_Bos08B/Boss08State =3
+   S PTBowCircle : InGame.Kernel.Enemy.Ene_Bos08B/Boss08State =4
+   S Destruction : InGame.Kernel.Enemy.Ene_Bos08B/Boss08State =100
+== InGame.Kernel.Enemy.Ene_Bos08B/Boss08BMZ base= System.Enum
+     value__ : System.Int32 
+   S muzzle_top01 : InGame.Kernel.Enemy.Ene_Bos08B/Boss08BMZ =0
+== InGame.Kernel.Enemy.Ene_Bos08B/Boss08BT base= System.Enum
+     value__ : System.Int32 
+   S pat1A : InGame.Kernel.Enemy.Ene_Bos08B/Boss08BT =0
+   S pat2A : InGame.Kernel.Enemy.Ene_Bos08B/Boss08BT =1
+   S pat2B : InGame.Kernel.Enemy.Ene_Bos08B/Boss08BT =2
+   S Bow : InGame.Kernel.Enemy.Ene_Bos08B/Boss08BT =3
+== InGame.Kernel.Enemy.Ene_Bos08B/Winds base= System.Enum
+     value__ : System.Int32 
+   S P0 : InGame.Kernel.Enemy.Ene_Bos08B/Winds =0
+   S P1 : InGame.Kernel.Enemy.Ene_Bos08B/Winds =1
+   S P2 : InGame.Kernel.Enemy.Ene_Bos08B/Winds =2
+   S P3 : InGame.Kernel.Enemy.Ene_Bos08B/Winds =3
+   S P4 : InGame.Kernel.Enemy.Ene_Bos08B/Winds =4
+   S P5 : InGame.Kernel.Enemy.Ene_Bos08B/Winds =5
+== InGame.Kernel.Enemy.Ene_Bos08B/PartsKind base= System.Enum
+     value__ : System.Int32 
+   S Core : InGame.Kernel.Enemy.Ene_Bos08B/PartsKind =0
+   S Wings : InGame.Kernel.Enemy.Ene_Bos08B/PartsKind =1
+== InGame.Kernel.Enemy.Ene_Bos08B/<>c base= System.Object
+   S <>9 : InGame.Kernel.Enemy.Ene_Bos08B/<>c 
+   S <>9__129_0 : System.Predicate`1<InGame.Kernel.InGameBulletInterface> 
+   S <>9__129_1 : System.Predicate`1<InGame.Kernel.InGameBulletInterface> 
+== InGame.Kernel.Enemy.Ene_Bos08B/<>c__DisplayClass126_0 base= System.ValueType
+     <>4__this : InGame.Kernel.Enemy.Ene_Bos08B 
+     deltaTime : System.Single 
+== InGame.Kernel.Enemy.Ene_Bos08C base= InGame.Kernel.Enemy.Ene_BosBase
+   S _homePosition : UnityEngine.Vector3 
+   S _homeStartRotate : UnityEngine.Quaternion 
+   S _bulletTemplateNames : System.String[] 
+   S _muzzleNodeNames : System.String[] 
+   S _arcAngles : System.Single[] 
+   S MuzzleCount : System.Int32 
+   S PhaseOneMoveAmplitude : System.Single =60
+   S PhaseOneMoveCycleSeconds : System.Single =12
+   S PhaseOneMovementEaseDuration : System.Single =1.2
+   S PhaseOneMaxYawSpeed : System.Single =90
+   S PhaseOneLaserIdleSecondsNormal : System.Single =3
+   S PhaseOneLaserIdleSecondsHard : System.Single =0.5
+   S PhaseOneLaserChargeSeconds : System.Single =1
+   S PhaseOneLaserFadeSeconds : System.Single =0.5
+   S PhaseOneHomingDelaySeconds : System.Single =1
+   S PhaseOneHomingHardIntervalBaseSeconds : System.Single =1.5
+   S PhaseOneEightWayBaseIntervalSeconds : System.Single =0.5
+   S PhaseOneEightWayMinIntervalSeconds : System.Single =0.1
+   S PhaseOneEightWayBurstDurationSeconds : System.Single =3
+   S PhaseOneBowSpawnOffsetDistance : System.Single =20
+   S PhaseOneBowFollowDuration : System.Single =2
+   S PhaseOneBowFireDelay : System.Single =0
+   S PhaseOneBowDirectionCount : System.Int32 =8
+   S PhaseOneBowSpreadAngle : System.Single =360
+     _currentState : InGame.Kernel.Enemy.Ene_Bos08C/Boss08State 
+     _muzzles : UnityEngine.Transform[] 
+     _localTime : System.Single 
+     _laserSeId : System.Int32 
+     _phaseOneMovePhase : System.Single 
+     _phaseOneEaseTimer : System.Single 
+     _phaseOneYaw : System.Single 
+     _phaseOneHomingTimer : System.Single 
+     _phaseOneLaserTimer : System.Single 
+     _phaseOnePendingHoming : System.Boolean 
+     _phaseOneNextHoming : System.Boolean 
+     _phaseOneEightWayTimer : System.Single 
+     _phaseOneEightWayInterval : System.Single 
+     _phaseOneEightWayBurstActive : System.Boolean 
+     _phaseOneEightWayBurstRemain : System.Single 
+     _isLaserFiring : System.Boolean 
+     _isHighDifficulty : System.Boolean 
+     _bowFollowers : System.Collections.Generic.List`1<InGame.Kernel.Enemy.Ene_Bos08C/BowFollowerInfo> 
+== InGame.Kernel.Enemy.Ene_Bos08C/Boss08State base= System.Enum
+     value__ : System.Int32 
+   S EntryWait : InGame.Kernel.Enemy.Ene_Bos08C/Boss08State =0
+   S PT1 : InGame.Kernel.Enemy.Ene_Bos08C/Boss08State =1
+   S Destruction : InGame.Kernel.Enemy.Ene_Bos08C/Boss08State =100
+== InGame.Kernel.Enemy.Ene_Bos08C/Boss08Muzzle base= System.Enum
+     value__ : System.Int32 
+   S MuzzleTop : InGame.Kernel.Enemy.Ene_Bos08C/Boss08Muzzle =0
+   S MuzzleFront : InGame.Kernel.Enemy.Ene_Bos08C/Boss08Muzzle =1
+   S FrontEdge : InGame.Kernel.Enemy.Ene_Bos08C/Boss08Muzzle =2
+   S MuzzleBack : InGame.Kernel.Enemy.Ene_Bos08C/Boss08Muzzle =3
+   S BackEdge : InGame.Kernel.Enemy.Ene_Bos08C/Boss08Muzzle =4
+== InGame.Kernel.Enemy.Ene_Bos08C/Boss08BulletType base= System.Enum
+     value__ : System.Int32 
+   S StraightFront : InGame.Kernel.Enemy.Ene_Bos08C/Boss08BulletType =0
+   S ArcSide : InGame.Kernel.Enemy.Ene_Bos08C/Boss08BulletType =1
+   S CoreWay : InGame.Kernel.Enemy.Ene_Bos08C/Boss08BulletType =2
+   S Bow : InGame.Kernel.Enemy.Ene_Bos08C/Boss08BulletType =3
+== InGame.Kernel.Enemy.Ene_Bos08C/PartsKind base= System.Enum
+     value__ : System.Int32 
+   S Core : InGame.Kernel.Enemy.Ene_Bos08C/PartsKind =0
+== InGame.Kernel.Enemy.Ene_Bos08C/BowFollowerInfo base= System.Object
+     Bullet : InGame.Kernel.InGameBulletBow 
+     RemainingFollowTime : System.Single 
+     AngleOffset : System.Single 
+     TargetPlayerIndex : System.Int32 
+     HasFired : System.Boolean 
+== InGame.Kernel.Enemy.Ene_Bos08C/<>c__DisplayClass76_0 base= System.Object
+     capturedPosition : UnityEngine.Vector3 
+     capturedDirection : UnityEngine.Vector3 
+     follower : InGame.Kernel.Enemy.Ene_Bos08C/BowFollowerInfo 
+     <>4__this : InGame.Kernel.Enemy.Ene_Bos08C 
+== InGame.Kernel.Enemy.Ene_BosBase base= InGame.Kernel.Enemy.PawnEnemy
+     _isBossDead : System.Boolean 
+     _isDamageTurned : System.Boolean 
+     _isBossTimeStart : System.Boolean 
+     _isDeadEffectCalled : System.Boolean 
+     _isDirectionPause : System.Boolean 
+     _isPlayerSideLeft : System.Boolean 
+     _isPlayerSideDown : System.Boolean 
+     _isPlayerSideCenter : System.Boolean 
+     _isPlayerSideBottom : System.Boolean 
+     _bossAliveTime : System.Single 
+     _bossActionUpTime : System.Single 
+     _directionTimeTotal : System.Single 
+     _directionTimePassed : System.Single 
+     _directionTimeScale : System.Single 
+     _repeatTimer : System.Single 
+     _repeatPassed : System.Single 
+     _repeatTimes : System.Int32 
+     _repeatLaped : System.Boolean 
+     _smallBombBaseSecond : System.Single 
+     _smallBombCurrent : System.Single 
+     _attackLoopCount : System.Int32 
+     _patternMode : System.Int32 
+     _baseTargetPlayer : UnityEngine.Vector3 
+     <_enemyDataCount>k__BackingField : System.Int32 
+     _enemyDatas : InGame.Kernel.Timeline.EnemyData[] 
+     btemplates : InGame.Kernel.Enemy.BulletTemplate[] 
+     _currentPlayMode : TXEKernel.PlayMode 
+     _currentActor : TXEKernel.PlayActor 
+     _isTraining : System.Boolean 
+   S hpRateRanges : System.Single[] 
+   S hpRateRangeCount : System.Int32 
+     _hpState : InGame.Kernel.Enemy.Ene_BosBase/HitPState 
+     _hpOldState : InGame.Kernel.Enemy.Ene_BosBase/HitPState 
+     _currentActStep : InGame.Kernel.Enemy.Ene_BosBase/TimeSteps 
+     _startInGamePosition : UnityEngine.Vector3 
+     _startVector : UnityEngine.Vector3 
+     _targetVector : UnityEngine.Vector3 
+     _startAngle : UnityEngine.Quaternion 
+     _targetAngle : UnityEngine.Quaternion 

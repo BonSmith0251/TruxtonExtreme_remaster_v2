@@ -1,0 +1,79 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04::Pattern1Fire(System.Single) RVA 1d8cb30 len 151
+01d8cb30 mov        qword ptr [rsp + 8], rbx
+01d8cb35 mov        qword ptr [rsp + 0x10], rbp
+01d8cb3a mov        qword ptr [rsp + 0x18], rsi
+01d8cb3f mov        qword ptr [rsp + 0x20], rdi
+01d8cb44 push       r14
+01d8cb46 sub        rsp, 0x80
+01d8cb4d movaps     xmmword ptr [rsp + 0x70], xmm6
+01d8cb52 mov        rdi, rcx
+01d8cb55 movaps     xmm6, xmm1
+01d8cb58 xor        edx, edx
+01d8cb5a cmp        byte ptr [rcx + 0x1b5], dl ; ~_isPlayerSideLeft
+01d8cb60 setne      dl
+01d8cb63 xor        r8d, r8d
+01d8cb66 inc        edx
+01d8cb68 call       0x1db9840 ; InGame.Kernel.Enemy.Ene_BosBase::GetBT(System.Int32)
+01d8cb6d xor        ebx, ebx
+01d8cb6f mov        r14, rax
+01d8cb72 comiss     xmm6, dword ptr [rip + 0x17540af] ; [.rdata 34e0c28] f=0.44999998807907104 d=5.21380997e-315 v4=['0.45', '0', '0', '1.75']
+01d8cb79 jbe        0x1d8cb98
+01d8cb7b movss      xmm0, dword ptr [rip + 0x186627d] ; [.rdata 35f2e00] f=0.550000011920929 d=0.0015625006019035937 v4=['0.55', '0.85', '16.6667', '225']
+01d8cb83 comiss     xmm0, xmm6
+01d8cb86 jbe        0x1d8cb98
+01d8cb88 movzx      ecx, byte ptr [rdi + 0x2df] ; ~_isReverseMove
+01d8cb8f neg        cl
+01d8cb91 sbb        rbx, rbx
+01d8cb94 add        rbx, 2
+01d8cb98 xor        r8d, r8d
+01d8cb9b mov        edx, 9
+01d8cba0 mov        rcx, rdi
+01d8cba3 call       0x1db9fe0 ; InGame.Kernel.Enemy.Ene_BosBase::IsOverStep(InGame.Kernel.Enemy.Ene_BosBase/TimeSteps)
+01d8cba8 movzx      ebp, al
+01d8cbab mov        rsi, qword ptr [rdi + 0xb8] ; ~_mover
+01d8cbb2 xor        edx, edx
+01d8cbb4 mov        rcx, rdi
+01d8cbb7 call       0x1d11bc0 ; InGame.Kernel.Enemy.PawnEnemy::get_CToken()
+01d8cbbc mov        rcx, qword ptr [rdi + 0x278] ; ~_muzzles
+01d8cbc3 test       rcx, rcx
+01d8cbc6 je         0x1d8cc76
+01d8cbcc cmp        ebx, dword ptr [rcx + 0x18]
+01d8cbcf jae        0x1d8cc7c
+01d8cbd5 mov        rdx, qword ptr [rcx + rbx*8 + 0x20]
+01d8cbda test       rsi, rsi
+01d8cbdd je         0x1d8cc76
+01d8cbe3 mov        qword ptr [rsp + 0x58], 0
+01d8cbec mov        ecx, 6
+01d8cbf1 mov        qword ptr [rsp + 0x50], 0
+01d8cbfa mov        r8d, 3
+01d8cc00 xorps      xmm0, xmm0
+01d8cc03 test       bpl, bpl
+01d8cc06 mov        r9, r14
+01d8cc09 cmove      ecx, r8d
+01d8cc0d mov        r8, rax
+01d8cc10 mov        dword ptr [rsp + 0x48], ecx
+01d8cc14 lea        rcx, [rsp + 0x60]
+01d8cc19 movss      dword ptr [rsp + 0x40], xmm0
+01d8cc1f mov        qword ptr [rsp + 0x38], 0
+01d8cc28 mov        qword ptr [rsp + 0x30], rdx
+01d8cc2d mov        rdx, rsi
+01d8cc30 mov        byte ptr [rsp + 0x28], 0
+01d8cc35 mov        byte ptr [rsp + 0x20], 0
+01d8cc3a call       0x1cd8fe0 ; InGame.Kernel.InGameEnemyMoveBase::BulletFireAsync(System.Threading.CancellationToken,InGame.Kernel.Enemy.BulletTemplate,System.Boolean,System.Boolean,UnityEngine.Transform,UnityEngine.Transform,System.Single,System.Int32,System.Action`1<InGame.Kernel.InGameBulletInterface>)
+01d8cc3f xor        edx, edx
+01d8cc41 lea        rcx, [rsp + 0x60]
+01d8cc46 movups     xmm0, xmmword ptr [rax]
+01d8cc49 movaps     xmmword ptr [rsp + 0x60], xmm0
+01d8cc4e call       0x2742890 ; Cysharp.Threading.Tasks.UniTaskExtensions::Forget(Cysharp.Threading.Tasks.UniTask)
+01d8cc53 movaps     xmm6, xmmword ptr [rsp + 0x70]
+01d8cc58 lea        r11, [rsp + 0x80]
+01d8cc60 mov        rbx, qword ptr [r11 + 0x10]
+01d8cc64 mov        rbp, qword ptr [r11 + 0x18]
+01d8cc68 mov        rsi, qword ptr [r11 + 0x20]
+01d8cc6c mov        rdi, qword ptr [r11 + 0x28]
+01d8cc70 mov        rsp, r11
+01d8cc73 pop        r14
+01d8cc75 ret        
+01d8cc76 call       0x4e0d00
+01d8cc7b int3       
+01d8cc7c call       0x4e0cf0

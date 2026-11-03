@@ -1,0 +1,95 @@
+#### InGame.Kernel.InGameManager::IsInGameAreaWorld(UnityEngine.Vector3,System.Boolean,TXEKernel.Enemy.EnemySize) RVA 1ce7d40 len 1a4
+01ce7d40  mov      qword ptr [rsp + 8], rbx
+01ce7d45  mov      qword ptr [rsp + 0x10], rbp   ; ev.eventType
+01ce7d4a  mov      qword ptr [rsp + 0x18], rsi   ; ev.repeatDelay
+01ce7d4f  push     rdi
+01ce7d50  sub      rsp, 0x50
+01ce7d54  cmp      byte ptr [rip + 0x297b5b7], 0   ; [4663312] bss
+01ce7d5b  movzx    esi, r8b
+01ce7d5f  movsxd   rbx, r9d
+01ce7d62  mov      rbp, rdx
+01ce7d65  mov      rdi, rcx
+01ce7d68  jne      0x1ce7d89
+01ce7d6a  lea      rcx, [rip + 0x26f19a7]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01ce7d71  call     0x4e0a50
+01ce7d76  lea      rcx, [rip + 0x26a77db]   ; [438f558] TypeInfo UnityEngine.Rect
+01ce7d7d  call     0x4e0a50
+01ce7d82  mov      byte ptr [rip + 0x297b589], 1   ; [4663312] bss
+01ce7d89  mov      rcx, qword ptr [rdi + 0x130]
+01ce7d90  test     rcx, rcx
+01ce7d93  je       0x1ce7ed9
+01ce7d99  xor      r8d, r8d
+01ce7d9c  movzx    edx, sil
+01ce7da0  call     0x1dda7e0   ; HybridCollisionManager::GetGameCamera(System.Boolean)
+01ce7da5  test     rax, rax
+01ce7da8  je       0x1ce7ed9
+01ce7dae  mov      ecx, dword ptr [rbp + 8]
+01ce7db1  lea      r8, [rsp + 0x20]   ; ev.value0
+01ce7db6  movsd    xmm0, qword ptr [rbp]
+01ce7dbb  xor      r9d, r9d
+01ce7dbe  mov      dword ptr [rsp + 0x28], ecx   ; ev.vectorValue
+01ce7dc2  mov      rdx, rax
+01ce7dc5  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01ce7dca  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01ce7dd0  call     0x2fd65a0   ; Camera::WorldToViewportPoint(UnityEngine.Vector3)
+01ce7dd5  movsd    xmm0, qword ptr [rax]
+01ce7dd9  mov      rax, qword ptr [rip + 0x26f1938]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01ce7de0  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01ce7de6  cmp      dword ptr [rax + 0xe4], 0
+01ce7ded  jne      0x1ce7dfe
+01ce7def  mov      rcx, rax
+01ce7df2  call     0x4e0d90
+01ce7df7  mov      rax, qword ptr [rip + 0x26f191a]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01ce7dfe  mov      rax, qword ptr [rax + 0xb8]   ; ._hormingToken
+01ce7e05  mov      rdi, qword ptr [rax + 0x68]   ; ev.flag0/._flagStateFuture
+01ce7e09  test     rdi, rdi
+01ce7e0c  je       0x1ce7ed9
+01ce7e12  mov      rcx, qword ptr [rip + 0x26a773f]   ; [438f558] TypeInfo UnityEngine.Rect
+01ce7e19  cmp      dword ptr [rcx + 0xe4], 0
+01ce7e20  jne      0x1ce7e27
+01ce7e22  call     0x4e0d90
+01ce7e27  cmp      ebx, dword ptr [rdi + 0x18]   ; ev.repeatDelay
+01ce7e2a  jae      0x1ce7edf
+01ce7e30  add      rbx, 2
+01ce7e34  movaps   xmmword ptr [rsp + 0x40], xmm6   ; ev.intValue1/._animators
+01ce7e39  shl      rbx, 4
+01ce7e3d  add      rbx, rdi
+01ce7e40  cmp      byte ptr [rip + 0x297b548], 0   ; [466338f] bss
+01ce7e47  jne      0x1ce7e5c
+01ce7e49  lea      rcx, [rip + 0x26a7708]   ; [438f558] TypeInfo UnityEngine.Rect
+01ce7e50  call     0x4e0a50
+01ce7e55  mov      byte ptr [rip + 0x297b533], 1   ; [466338f] bss
+01ce7e5c  movss    xmm6, dword ptr [rsp + 0x20]   ; ev.value0
+01ce7e62  comiss   xmm6, dword ptr [rbx]
+01ce7e65  jb       0x1ce7ebd
+01ce7e67  mov      rcx, qword ptr [rip + 0x26a76ea]   ; [438f558] TypeInfo UnityEngine.Rect
+01ce7e6e  cmp      dword ptr [rcx + 0xe4], 0
+01ce7e75  jne      0x1ce7e7c
+01ce7e77  call     0x4e0d90
+01ce7e7c  movss    xmm0, dword ptr [rbx + 8]
+01ce7e81  addss    xmm0, dword ptr [rbx]
+01ce7e85  comiss   xmm0, xmm6
+01ce7e88  jbe      0x1ce7ebd
+01ce7e8a  movss    xmm6, dword ptr [rsp + 0x24]   ; ev.value1
+01ce7e90  comiss   xmm6, dword ptr [rbx + 4]
+01ce7e94  jb       0x1ce7ebd
+01ce7e96  mov      rcx, qword ptr [rip + 0x26a76bb]   ; [438f558] TypeInfo UnityEngine.Rect
+01ce7e9d  cmp      dword ptr [rcx + 0xe4], 0
+01ce7ea4  jne      0x1ce7eab
+01ce7ea6  call     0x4e0d90
+01ce7eab  movss    xmm0, dword ptr [rbx + 0xc]
+01ce7eb0  addss    xmm0, dword ptr [rbx + 4]
+01ce7eb5  comiss   xmm0, xmm6
+01ce7eb8  seta     al
+01ce7ebb  jmp      0x1ce7ebf
+01ce7ebd  xor      eax, eax
+01ce7ebf  movaps   xmm6, xmmword ptr [rsp + 0x40]   ; ev.intValue1/._animators
+01ce7ec4  mov      rbx, qword ptr [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01ce7ec9  mov      rbp, qword ptr [rsp + 0x68]   ; ev.flag0/._flagStateFuture
+01ce7ece  mov      rsi, qword ptr [rsp + 0x70]   ; ._transformCache
+01ce7ed3  add      rsp, 0x50
+01ce7ed7  pop      rdi
+01ce7ed8  ret      
+01ce7ed9  call     0x4e0d00
+01ce7ede  int3     
+01ce7edf  call     0x4e0cf0

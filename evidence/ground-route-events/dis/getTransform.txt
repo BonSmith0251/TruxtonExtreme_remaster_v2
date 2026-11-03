@@ -1,0 +1,36 @@
+01d1e960  mov      qword ptr [rsp + 8], rbx
+01d1e965  push     rdi
+01d1e966  sub      rsp, 0x20
+01d1e96a  cmp      byte ptr [rip + 0x2944b5a], 0   ; [46634cb] bss
+01d1e971  mov      rdi, rdx
+01d1e974  mov      rbx, rcx
+01d1e977  jne      0x1d1e98c
+01d1e979  lea      rcx, [rip + 0x266dee0]   ; [438c860] MethodRef System.Collections.Generic.Dictionary`2<prime,UnityEngine.Transform>::TryGetValue
+01d1e980  call     0x4e0a50
+01d1e985  mov      byte ptr [rip + 0x2944b3f], 1   ; [46634cb] bss
+01d1e98c  xor      edx, edx
+01d1e98e  mov      qword ptr [rsp + 0x38], 0   ; ev.stringValue/._psystems
+01d1e997  mov      rcx, rdi
+01d1e99a  call     0x1e83800   ; String::IsNullOrEmpty(System.String)
+01d1e99f  test     al, al
+01d1e9a1  jne      0x1d1e9d7
+01d1e9a3  mov      rcx, qword ptr [rbx + 0x80]   ; ._transformCaches
+01d1e9aa  test     rcx, rcx
+01d1e9ad  je       0x1d1e9e6
+01d1e9af  mov      r9, qword ptr [rip + 0x266deaa]   ; [438c860] MethodRef System.Collections.Generic.Dictionary`2<prime,UnityEngine.Transform>::TryGetValue
+01d1e9b6  lea      r8, [rsp + 0x38]   ; ev.stringValue/._psystems
+01d1e9bb  mov      rdx, rdi
+01d1e9be  call     0x18afa30
+01d1e9c3  test     al, al
+01d1e9c5  je       0x1d1e9d7
+01d1e9c7  mov      rax, qword ptr [rsp + 0x38]   ; ev.stringValue/._psystems
+01d1e9cc  mov      rbx, qword ptr [rsp + 0x30]   ; ._entryFlag
+01d1e9d1  add      rsp, 0x20
+01d1e9d5  pop      rdi
+01d1e9d6  ret      
+01d1e9d7  mov      rax, qword ptr [rbx + 0x70]   ; ._transformCache
+01d1e9db  mov      rbx, qword ptr [rsp + 0x30]   ; ._entryFlag
+01d1e9e0  add      rsp, 0x20
+01d1e9e4  pop      rdi
+01d1e9e5  ret      
+01d1e9e6  call     0x4e0d00

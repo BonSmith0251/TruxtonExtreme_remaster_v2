@@ -1,0 +1,236 @@
+01cdb150  mov      rax, rsp
+01cdb153  mov      qword ptr [rax + 8], rbx
+01cdb157  mov      qword ptr [rax + 0x10], rdi   ; ev.eventType
+01cdb15b  push     rbp
+01cdb15c  lea      rbp, [rax - 0x5f]
+01cdb160  sub      rsp, 0xc0
+01cdb167  movaps   xmmword ptr [rax - 0x18], xmm6
+01cdb16b  mov      rbx, rcx
+01cdb16e  movaps   xmmword ptr [rax - 0x28], xmm7
+01cdb172  movaps   xmmword ptr [rax - 0x38], xmm8
+01cdb177  movaps   xmmword ptr [rax - 0x48], xmm9
+01cdb17c  movaps   xmmword ptr [rax - 0x58], xmm10
+01cdb181  movaps   xmmword ptr [rax - 0x68], xmm11
+01cdb186  movaps   xmmword ptr [rax - 0x78], xmm12
+01cdb18b  movups   xmm0, xmmword ptr [rdx]
+01cdb18e  movups   xmmword ptr [rcx + 0x170], xmm0   ; ._firstRotate
+01cdb195  add      r8d, -2
+01cdb199  je       0x1cdb1c3
+01cdb19b  sub      r8d, 1
+01cdb19f  je       0x1cdb509
+01cdb1a5  sub      r8d, 1
+01cdb1a9  je       0x1cdb394
+01cdb1af  sub      r8d, 1
+01cdb1b3  je       0x1cdb35c
+01cdb1b9  cmp      r8d, 1
+01cdb1bd  jne      0x1cdb35c
+01cdb1c3  cmp      byte ptr [rip + 0x29835d3], 0   ; [465e79d] bss
+01cdb1ca  movups   xmm12, xmm0
+01cdb1ce  jne      0x1cdb1e3
+01cdb1d0  lea      rcx, [rip + 0x26e6501]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01cdb1d7  call     0x4e0a50
+01cdb1dc  mov      byte ptr [rip + 0x29835ba], 1   ; [465e79d] bss
+01cdb1e3  cmp      byte ptr [rip + 0x29880f6], 0   ; [46632e0] bss
+01cdb1ea  mov      rcx, qword ptr [rip + 0x26e64e7]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01cdb1f1  mov      rax, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cdb1f8  movsd    xmm6, qword ptr [rax + 0x48]   ; ev.intValue3/.GameObjectCache
+01cdb1fd  mov      edi, dword ptr [rax + 0x50]   ; ev.randomFire/._animatorsPlay
+01cdb200  jne      0x1cdb21c
+01cdb202  lea      rcx, [rip + 0x26e64cf]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01cdb209  call     0x4e0a50
+01cdb20e  mov      rcx, qword ptr [rip + 0x26e64c3]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01cdb215  mov      byte ptr [rip + 0x29880c4], 1   ; [46632e0] bss
+01cdb21c  mov      rax, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cdb223  lea      r8, [rbp - 0x39]
+01cdb227  xor      r9d, r9d
+01cdb22a  movsd    qword ptr [rbp - 0x49], xmm6
+01cdb22f  lea      rdx, [rbp - 0x49]
+01cdb233  mov      dword ptr [rbp - 0x41], edi
+01cdb236  lea      rcx, [rbp - 0x29]
+01cdb23a  movsd    xmm0, qword ptr [rax + 0x54]   ; ev.randomWait/._particleTimeScale
+01cdb23f  mov      eax, dword ptr [rax + 0x5c]   ; ._animatorsCount
+01cdb242  movsd    qword ptr [rbp - 0x39], xmm0
+01cdb247  mov      dword ptr [rbp - 0x31], eax
+01cdb24a  call     0x304d940   ; Quaternion::Internal_FromToRotation(UnityEngine.Vector3&,UnityEngine.Vector3&)
+01cdb24f  movaps   xmm11, xmm12
+01cdb253  movaps   xmm10, xmm12
+01cdb257  shufps   xmm10, xmm12, 0xff
+01cdb25c  movaps   xmm6, xmm12
+01cdb260  shufps   xmm6, xmm12, 0x55
+01cdb265  movaps   xmm4, xmm12
+01cdb269  movups   xmm9, xmmword ptr [rax]
+01cdb26d  shufps   xmm4, xmm12, 0xaa
+01cdb272  movaps   xmm5, xmm6
+01cdb275  movaps   xmm0, xmm9
+01cdb279  movaps   xmm8, xmm9
+01cdb27d  mulss    xmm0, xmm10
+01cdb282  movaps   xmm1, xmm9
+01cdb286  shufps   xmm8, xmm9, 0xff
+01cdb28b  movaps   xmm7, xmm9
+01cdb28f  mulss    xmm11, xmm8
+01cdb294  movaps   xmm3, xmm9
+01cdb298  shufps   xmm7, xmm9, 0xaa
+01cdb29d  movaps   xmm2, xmm4
+01cdb2a0  shufps   xmm3, xmm9, 0x55
+01cdb2a5  addss    xmm11, xmm0
+01cdb2aa  mulss    xmm1, xmm4
+01cdb2ae  mulss    xmm5, xmm8
+01cdb2b3  movaps   xmm0, xmm6
+01cdb2b6  mulss    xmm0, xmm7
+01cdb2ba  mulss    xmm2, xmm8
+01cdb2bf  addss    xmm11, xmm0
+01cdb2c4  movaps   xmm0, xmm3
+01cdb2c7  mulss    xmm0, xmm4
+01cdb2cb  mulss    xmm4, xmm7
+01cdb2cf  subss    xmm11, xmm0
+01cdb2d4  movaps   xmm0, xmm3
+01cdb2d7  mulss    xmm0, xmm10
+01cdb2dc  addss    xmm5, xmm0
+01cdb2e0  shufps   xmm11, xmm11, 0xe1
+01cdb2e5  movaps   xmm0, xmm12
+01cdb2e9  mulss    xmm0, xmm7
+01cdb2ed  addss    xmm5, xmm1
+01cdb2f1  movaps   xmm1, xmm3
+01cdb2f4  mulss    xmm3, xmm6
+01cdb2f8  mulss    xmm1, xmm12
+01cdb2fd  subss    xmm5, xmm0
+01cdb301  movaps   xmm0, xmm10
+01cdb305  mulss    xmm0, xmm7
+01cdb309  mulss    xmm10, xmm8
+01cdb30e  addss    xmm2, xmm0
+01cdb312  movss    xmm11, xmm5
+01cdb317  movaps   xmm0, xmm9
+01cdb31b  mulss    xmm9, xmm12
+01cdb320  mulss    xmm0, xmm6
+01cdb324  subss    xmm10, xmm9
+01cdb329  subss    xmm10, xmm3
+01cdb32e  subss    xmm10, xmm4
+01cdb333  shufps   xmm11, xmm11, 0xc6
+01cdb338  addss    xmm2, xmm1
+01cdb33c  subss    xmm2, xmm0
+01cdb340  movss    xmm11, xmm2
+01cdb345  shufps   xmm11, xmm11, 0x27
+01cdb34a  movss    xmm11, xmm10
+01cdb34f  shufps   xmm11, xmm11, 0x39
+01cdb354  movups   xmmword ptr [rbx + 0x170], xmm11   ; ._firstRotate
+01cdb35c  lea      r11, [rsp + 0xc0]   ; ._speedToken
+01cdb364  mov      rbx, qword ptr [r11 + 0x10]   ; ev.eventType
+01cdb368  mov      rdi, qword ptr [r11 + 0x18]   ; ev.repeatDelay
+01cdb36c  movaps   xmm6, xmmword ptr [r11 - 0x10]
+01cdb371  movaps   xmm7, xmmword ptr [r11 - 0x20]
+01cdb376  movaps   xmm8, xmmword ptr [r11 - 0x30]
+01cdb37b  movaps   xmm9, xmmword ptr [r11 - 0x40]
+01cdb380  movaps   xmm10, xmmword ptr [r11 - 0x50]
+01cdb385  movaps   xmm11, xmmword ptr [r11 - 0x60]
+01cdb38a  movaps   xmm12, xmmword ptr [r11 - 0x70]
+01cdb38f  mov      rsp, r11
+01cdb392  pop      rbp
+01cdb393  ret      
+01cdb394  cmp      byte ptr [rip + 0x2983402], 0   ; [465e79d] bss
+01cdb39b  movups   xmm12, xmm0
+01cdb39f  jne      0x1cdb3b4
+01cdb3a1  lea      rcx, [rip + 0x26e6330]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01cdb3a8  call     0x4e0a50
+01cdb3ad  mov      byte ptr [rip + 0x29833e9], 1   ; [465e79d] bss
+01cdb3b4  cmp      byte ptr [rip + 0x2987f27], 0   ; [46632e2] bss
+01cdb3bb  mov      rcx, qword ptr [rip + 0x26e6316]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01cdb3c2  mov      rax, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cdb3c9  movsd    xmm6, qword ptr [rax + 0x48]   ; ev.intValue3/.GameObjectCache
+01cdb3ce  mov      edi, dword ptr [rax + 0x50]   ; ev.randomFire/._animatorsPlay
+01cdb3d1  jne      0x1cdb3ed
+01cdb3d3  lea      rcx, [rip + 0x26e62fe]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01cdb3da  call     0x4e0a50
+01cdb3df  mov      rcx, qword ptr [rip + 0x26e62f2]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01cdb3e6  mov      byte ptr [rip + 0x2987ef5], 1   ; [46632e2] bss
+01cdb3ed  mov      rax, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cdb3f4  lea      r8, [rbp - 0x49]
+01cdb3f8  movsd    qword ptr [rbp - 0x39], xmm6
+01cdb3fd  lea      rdx, [rbp - 0x39]
+01cdb401  mov      dword ptr [rbp - 0x31], edi
+01cdb404  movsd    xmm0, qword ptr [rax + 0x3c]
+01cdb409  mov      eax, dword ptr [rax + 0x44]   ; ev.intValue2
+01cdb40c  movsd    qword ptr [rbp - 0x49], xmm0
+01cdb411  mov      dword ptr [rbp - 0x41], eax
+01cdb414  xor      r9d, r9d
+01cdb417  lea      rcx, [rbp - 0x29]
+01cdb41b  call     0x304d940   ; Quaternion::Internal_FromToRotation(UnityEngine.Vector3&,UnityEngine.Vector3&)
+01cdb420  movaps   xmm11, xmm12
+01cdb424  movaps   xmm10, xmm12
+01cdb428  shufps   xmm10, xmm12, 0xff
+01cdb42d  movaps   xmm7, xmm12
+01cdb431  movaps   xmm0, xmm10
+01cdb435  shufps   xmm7, xmm12, 0x55
+01cdb43a  movups   xmm9, xmmword ptr [rax]
+01cdb43e  movaps   xmm5, xmm12
+01cdb442  movaps   xmm4, xmm7
+01cdb445  mulss    xmm0, xmm9
+01cdb44a  movaps   xmm8, xmm9
+01cdb44e  shufps   xmm5, xmm12, 0xaa
+01cdb453  movaps   xmm6, xmm9
+01cdb457  shufps   xmm8, xmm9, 0xff
+01cdb45c  movaps   xmm1, xmm5
+01cdb45f  mulss    xmm11, xmm8
+01cdb464  movaps   xmm2, xmm5
+01cdb467  shufps   xmm6, xmm9, 0xaa
+01cdb46c  movaps   xmm3, xmm9
+01cdb470  shufps   xmm3, xmm9, 0x55
+01cdb475  addss    xmm11, xmm0
+01cdb47a  mulss    xmm4, xmm8
+01cdb47f  movaps   xmm0, xmm7
+01cdb482  mulss    xmm1, xmm9
+01cdb487  mulss    xmm0, xmm6
+01cdb48b  mulss    xmm2, xmm8
+01cdb490  addss    xmm11, xmm0
+01cdb495  movaps   xmm0, xmm5
+01cdb498  mulss    xmm0, xmm3
+01cdb49c  mulss    xmm5, xmm6
+01cdb4a0  subss    xmm11, xmm0
+01cdb4a5  movaps   xmm0, xmm10
+01cdb4a9  mulss    xmm0, xmm3
+01cdb4ad  addss    xmm4, xmm0
+01cdb4b1  shufps   xmm11, xmm11, 0xe1
+01cdb4b6  movaps   xmm0, xmm12
+01cdb4ba  mulss    xmm0, xmm6
+01cdb4be  addss    xmm4, xmm1
+01cdb4c2  movaps   xmm1, xmm12
+01cdb4c6  mulss    xmm12, xmm9
+01cdb4cb  mulss    xmm1, xmm3
+01cdb4cf  subss    xmm4, xmm0
+01cdb4d3  movaps   xmm0, xmm10
+01cdb4d7  mulss    xmm0, xmm6
+01cdb4db  mulss    xmm10, xmm8
+01cdb4e0  addss    xmm2, xmm0
+01cdb4e4  movss    xmm11, xmm4
+01cdb4e9  movaps   xmm0, xmm7
+01cdb4ec  mulss    xmm7, xmm3
+01cdb4f0  subss    xmm10, xmm12
+01cdb4f5  mulss    xmm0, xmm9
+01cdb4fa  subss    xmm10, xmm7
+01cdb4ff  subss    xmm10, xmm5
+01cdb504  jmp      0x1cdb333
+01cdb509  cmp      byte ptr [rip + 0x298328d], 0   ; [465e79d] bss
+01cdb510  movups   xmm12, xmm0
+01cdb514  jne      0x1cdb529
+01cdb516  lea      rcx, [rip + 0x26e61bb]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01cdb51d  call     0x4e0a50
+01cdb522  mov      byte ptr [rip + 0x2983274], 1   ; [465e79d] bss
+01cdb529  cmp      byte ptr [rip + 0x2987db1], 0   ; [46632e1] bss
+01cdb530  mov      rcx, qword ptr [rip + 0x26e61a1]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01cdb537  mov      rax, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cdb53e  movsd    xmm6, qword ptr [rax + 0x48]   ; ev.intValue3/.GameObjectCache
+01cdb543  mov      edi, dword ptr [rax + 0x50]   ; ev.randomFire/._animatorsPlay
+01cdb546  jne      0x1cdb562
+01cdb548  lea      rcx, [rip + 0x26e6189]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01cdb54f  call     0x4e0a50
+01cdb554  mov      rcx, qword ptr [rip + 0x26e617d]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01cdb55b  mov      byte ptr [rip + 0x2987d7f], 1   ; [46632e1] bss
+01cdb562  mov      rax, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cdb569  lea      r8, [rbp - 0x39]
+01cdb56d  movsd    qword ptr [rbp - 0x49], xmm6
+01cdb572  lea      rdx, [rbp - 0x49]
+01cdb576  mov      dword ptr [rbp - 0x41], edi
+01cdb579  movsd    xmm0, qword ptr [rax + 0x30]   ; ._entryFlag
+01cdb57e  mov      eax, dword ptr [rax + 0x38]   ; ev.stringValue/._psystems
+01cdb581  movsd    qword ptr [rbp - 0x39], xmm0
+01cdb586  mov      dword ptr [rbp - 0x31], eax
+01cdb589  jmp      0x1cdb414

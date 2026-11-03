@@ -1,0 +1,10 @@
+#### InGame.Kernel.InGameEnemyMoveBase::isAreaoutEnd() RVA 1cdd600 len 20
+01cdd600  cmp      dword ptr [rcx + 0xd4], 3   ; ._moveType
+01cdd607  je       0x1cdd61d
+01cdd609  cmp      dword ptr [rcx + 0xd4], 4   ; ._moveType
+01cdd610  je       0x1cdd61d
+01cdd612  cmp      dword ptr [rcx + 0xd4], 2   ; ._moveType
+01cdd619  sete     al
+01cdd61c  ret      
+01cdd61d  mov      al, 1
+01cdd61f  ret      

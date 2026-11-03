@@ -1,0 +1,9 @@
+01cdb120  sub      rsp, 0x38
+01cdb124  movups   xmm0, xmmword ptr [rdx]
+01cdb127  mov      r8d, dword ptr [rcx + 0x1ac]   ; ._lookAtType
+01cdb12e  lea      rdx, [rsp + 0x20]   ; ev.value0
+01cdb133  xor      r9d, r9d
+01cdb136  movaps   xmmword ptr [rsp + 0x20], xmm0   ; ev.value0
+01cdb13b  call     0x1cdb150   ; InGameEnemyMoveBase::SetRotate(UnityEngine.Quaternion,InGame.Kernel.Timeline.LookAtType)
+01cdb140  add      rsp, 0x38
+01cdb144  ret      

@@ -1,0 +1,13 @@
+== System.Single InGame.Kernel.Enemy.Ene_BosBase::GetRepeatRate() RVA 1db9a60 len 2d
+01db9a60 movss      xmm0, dword ptr [rcx + 0x1d4] ; ~_repeatPassed
+01db9a68 xorps      xmm1, xmm1
+01db9a6b divss      xmm0, dword ptr [rcx + 0x1d0] ; ~_repeatTimer
+01db9a73 comiss     xmm1, xmm0
+01db9a76 ja         0x1db9a89
+01db9a78 movss      xmm1, dword ptr [rip + 0x172714c] ; [.rdata 34e0bcc] f=1.0 d=50.12387841939926 v4=['1', '3.14159', '4', '10']
+01db9a80 comiss     xmm0, xmm1
+01db9a83 jbe        0x1db9a8c
+01db9a85 movaps     xmm0, xmm1
+01db9a88 ret        
+01db9a89 xorps      xmm0, xmm0
+01db9a8c ret        

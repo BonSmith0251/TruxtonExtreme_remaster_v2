@@ -1,0 +1,376 @@
+#### InGame.Kernel.Player.WeaponBombCollision::OnHitProgress(KANAI.HybridCollision.HybridCollisionManager/CollisionOrder) RVA 1d57f70 len ac
+01d57f70  mov      qword ptr [rsp + 8], rbx
+01d57f75  push     rdi
+01d57f76  sub      rsp, 0x30
+01d57f7a  cmp      byte ptr [rip + 0x290b6e8], 0   ; [4663669] bss
+01d57f81  mov      rbx, rdx
+01d57f84  mov      rdi, rcx
+01d57f87  jne      0x1d57f9c
+01d57f89  lea      rcx, [rip + 0x2673ae8]   ; [43cba78] TypeInfo InGame.Kernel.Enemy.IDamagedObject
+01d57f90  call     0x4e0a50
+01d57f95  mov      byte ptr [rip + 0x290b6cd], 1   ; [4663669] bss
+01d57f9c  mov      r8, qword ptr [rbx]
+01d57f9f  lea      r9, [rsp + 0x48]   ; ._hitIndex
+01d57fa4  xor      eax, eax
+01d57fa6  mov      dl, 1
+01d57fa8  mov      rcx, rdi
+01d57fab  mov      qword ptr [rsp + 0x48], rax   ; ._hitIndex
+01d57fb0  mov      qword ptr [rsp + 0x20], rax   ; .trot
+01d57fb5  call     0x1d57d40   ; WeaponBombCollision::IsHitBomb(System.Boolean,KANAI.HybridCollision.HybridCollisionBridge,InGame.Kernel.Enemy.IDamagedObject&)
+01d57fba  test     al, al
+01d57fbc  je       0x1d5800c
+01d57fbe  mov      rbx, qword ptr [rbx]
+01d57fc1  test     rbx, rbx
+01d57fc4  je       0x1d58017
+01d57fc6  mov      rdx, qword ptr [rdi]
+01d57fc9  mov      rcx, rdi
+01d57fcc  mov      rbx, qword ptr [rbx + 0x28]   ; .isDark
+01d57fd0  mov      rax, qword ptr [rdx + 0x458]   ; vcall InGame.Kernel.Player.WeaponBombCollision::FirstDamage
+01d57fd7  mov      rdx, qword ptr [rdx + 0x460]   ; vcall InGame.Kernel.Player.WeaponBombCollision::FirstDamage
+01d57fde  call     rax
+01d57fe0  xor      r9d, r9d
+01d57fe3  movaps   xmm2, xmm0
+01d57fe6  mov      rdx, rbx
+01d57fe9  mov      rcx, rdi
+01d57fec  call     0x1d58d60   ; WeaponCollisionBase::_damageToEnemy(KANAI.HybridCollision.HybridCollisionModel,System.Single)
+01d57ff1  mov      r8, qword ptr [rsp + 0x48]   ; ._hitIndex
+01d57ff6  test     r8, r8
+01d57ff9  je       0x1d58017
+01d57ffb  mov      rdx, qword ptr [rip + 0x2673a76]   ; [43cba78] TypeInfo InGame.Kernel.Enemy.IDamagedObject
+01d58002  mov      ecx, 4
+01d58007  call     0x22b0
+01d5800c  mov      rbx, qword ptr [rsp + 0x40]   ; .<tpassed>5__2
+01d58011  add      rsp, 0x30
+01d58015  pop      rdi
+01d58016  ret      
+01d58017  call     0x4e0d00
+#### InGame.Kernel.Player.WeaponBombCollision::OnStayProgress(KANAI.HybridCollision.HybridCollisionManager/CollisionOrder) RVA 1d58290 len ac
+01d58290  mov      qword ptr [rsp + 8], rbx
+01d58295  push     rdi
+01d58296  sub      rsp, 0x30
+01d5829a  cmp      byte ptr [rip + 0x290b3c9], 0   ; [466366a] bss
+01d582a1  mov      rbx, rdx
+01d582a4  mov      rdi, rcx
+01d582a7  jne      0x1d582bc
+01d582a9  lea      rcx, [rip + 0x26737c8]   ; [43cba78] TypeInfo InGame.Kernel.Enemy.IDamagedObject
+01d582b0  call     0x4e0a50
+01d582b5  mov      byte ptr [rip + 0x290b3ae], 1   ; [466366a] bss
+01d582bc  mov      r8, qword ptr [rbx]
+01d582bf  lea      r9, [rsp + 0x48]   ; ._hitIndex
+01d582c4  xor      eax, eax
+01d582c6  xor      edx, edx
+01d582c8  mov      rcx, rdi
+01d582cb  mov      qword ptr [rsp + 0x48], rax   ; ._hitIndex
+01d582d0  mov      qword ptr [rsp + 0x20], rax   ; .trot
+01d582d5  call     0x1d57d40   ; WeaponBombCollision::IsHitBomb(System.Boolean,KANAI.HybridCollision.HybridCollisionBridge,InGame.Kernel.Enemy.IDamagedObject&)
+01d582da  test     al, al
+01d582dc  je       0x1d5832c
+01d582de  mov      rbx, qword ptr [rbx]
+01d582e1  test     rbx, rbx
+01d582e4  je       0x1d58337
+01d582e6  mov      rdx, qword ptr [rdi]
+01d582e9  mov      rcx, rdi
+01d582ec  mov      rbx, qword ptr [rbx + 0x28]   ; .isDark
+01d582f0  mov      rax, qword ptr [rdx + 0x468]   ; vcall InGame.Kernel.Player.WeaponBombCollision::ContiniousDamage
+01d582f7  mov      rdx, qword ptr [rdx + 0x470]   ; vcall InGame.Kernel.Player.WeaponBombCollision::ContiniousDamage
+01d582fe  call     rax
+01d58300  xor      r9d, r9d
+01d58303  movaps   xmm2, xmm0
+01d58306  mov      rdx, rbx
+01d58309  mov      rcx, rdi
+01d5830c  call     0x1d58d60   ; WeaponCollisionBase::_damageToEnemy(KANAI.HybridCollision.HybridCollisionModel,System.Single)
+01d58311  mov      r8, qword ptr [rsp + 0x48]   ; ._hitIndex
+01d58316  test     r8, r8
+01d58319  je       0x1d58337
+01d5831b  mov      rdx, qword ptr [rip + 0x2673756]   ; [43cba78] TypeInfo InGame.Kernel.Enemy.IDamagedObject
+01d58322  mov      ecx, 4
+01d58327  call     0x22b0
+01d5832c  mov      rbx, qword ptr [rsp + 0x40]   ; .<tpassed>5__2
+01d58331  add      rsp, 0x30
+01d58335  pop      rdi
+01d58336  ret      
+01d58337  call     0x4e0d00
+#### InGame.Kernel.Player.WeaponBombCollision::OnMultiProgress(KANAI.HybridCollision.HybridCollisionManager/CollisionOrder,System.Boolean) RVA 1d58020 len 264
+01d58020  mov      qword ptr [rsp + 0x18], rbx
+01d58025  push     rbp
+01d58026  push     rsi
+01d58027  push     rdi
+01d58028  sub      rsp, 0x50
+01d5802c  cmp      byte ptr [rip + 0x290b638], 0   ; [466366b] bss
+01d58033  movzx    ebp, r8b
+01d58037  mov      rsi, rdx
+01d5803a  mov      rdi, rcx
+01d5803d  jne      0x1d58082
+01d5803f  lea      rcx, [rip + 0x265b3ca]   ; [43b3410] TypeInfo InGame.Kernel.Enemy.EnemyCollisionModel
+01d58046  call     0x4e0a50
+01d5804b  lea      rcx, [rip + 0x2673a26]   ; [43cba78] TypeInfo InGame.Kernel.Enemy.IDamagedObject
+01d58052  call     0x4e0a50
+01d58057  lea      rcx, [rip + 0x268199a]   ; [43d99f8] TypeInfo InGame.Kernel.InGameParameter
+01d5805e  call     0x4e0a50
+01d58063  lea      rcx, [rip + 0x265ff96]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d5806a  call     0x4e0a50
+01d5806f  lea      rcx, [rip + 0x2625e2a]   ; [437dea0] TypeInfo UnityEngine.Object
+01d58076  call     0x4e0a50
+01d5807b  mov      byte ptr [rip + 0x290b5e9], 1   ; [466366b] bss
+01d58082  mov      r8, qword ptr [rsi]
+01d58085  lea      r9, [rsp + 0x78]   ; ._basePosition
+01d5808a  xor      ebx, ebx
+01d5808c  movzx    edx, bpl
+01d58090  mov      rcx, rdi
+01d58093  mov      qword ptr [rsp + 0x78], rbx   ; ._basePosition
+01d58098  mov      qword ptr [rsp + 0x20], rbx   ; .trot
+01d5809d  call     0x1d57d40   ; WeaponBombCollision::IsHitBomb(System.Boolean,KANAI.HybridCollision.HybridCollisionBridge,InGame.Kernel.Enemy.IDamagedObject&)
+01d580a2  test     al, al
+01d580a4  je       0x1d5826f
+01d580aa  mov      rdx, qword ptr [rsi]
+01d580ad  mov      qword ptr [rsp + 0x70], r14
+01d580b2  movaps   xmmword ptr [rsp + 0x40], xmm6   ; .<tpassed>5__2
+01d580b7  movaps   xmmword ptr [rsp + 0x30], xmm7   ; .tsecond
+01d580bc  test     rdx, rdx
+01d580bf  je       0x1d5827f
+01d580c5  mov      rdx, qword ptr [rdx + 0x28]   ; .isDark
+01d580c9  test     rdx, rdx
+01d580cc  je       0x1d58107
+01d580ce  mov      r8, qword ptr [rip + 0x265b33b]   ; [43b3410] TypeInfo InGame.Kernel.Enemy.EnemyCollisionModel
+01d580d5  mov      r9, qword ptr [rdx]
+01d580d8  movzx    eax, byte ptr [r8 + 0x130]   ; ._causeOfDeath
+01d580e0  cmp      byte ptr [r9 + 0x130], al   ; ._causeOfDeath
+01d580e7  jb       0x1d580ff
+01d580e9  movzx    ecx, al
+01d580ec  mov      rax, qword ptr [r9 + 0xc8]   ; ._burnShakeSpeed
+01d580f3  cmp      qword ptr [rax + rcx*8 - 8], r8
+01d580f8  mov      eax, 1
+01d580fd  je       0x1d58101
+01d580ff  mov      eax, ebx
+01d58101  test     eax, eax
+01d58103  cmovne   rbx, rdx
+01d58107  mov      rcx, qword ptr [rip + 0x2625d92]   ; [437dea0] TypeInfo UnityEngine.Object
+01d5810e  cmp      dword ptr [rcx + 0xe4], 0
+01d58115  jne      0x1d5811c
+01d58117  call     0x4e0d90
+01d5811c  xor      r8d, r8d
+01d5811f  xor      edx, edx
+01d58121  mov      rcx, rbx
+01d58124  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01d58129  test     al, al
+01d5812b  je       0x1d58260
+01d58131  mov      rdx, qword ptr [rdi]
+01d58134  mov      rcx, rdi
+01d58137  test     bpl, bpl
+01d5813a  je       0x1d5814c
+01d5813c  mov      rax, qword ptr [rdx + 0x458]   ; vcall InGame.Kernel.Player.WeaponBombCollision::FirstDamage
+01d58143  mov      rdx, qword ptr [rdx + 0x460]   ; vcall InGame.Kernel.Player.WeaponBombCollision::FirstDamage
+01d5814a  jmp      0x1d5815a
+01d5814c  mov      rax, qword ptr [rdx + 0x468]
+01d58153  mov      rdx, qword ptr [rdx + 0x470]
+01d5815a  call     rax
+01d5815c  movaps   xmm7, xmm0
+01d5815f  mov      rcx, qword ptr [rip + 0x265fe9a]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d58166  mov      ebp, dword ptr [rdi + 0xb0]   ; ._updateEventCount
+01d5816c  call     0x27540
+01d58171  mov      rdi, rax
+01d58174  test     rax, rax
+01d58177  je       0x1d5827f
+01d5817d  xor      r8d, r8d
+01d58180  mov      edx, ebp
+01d58182  mov      rcx, rax
+01d58185  call     0x1ce5a30   ; InGameManager::GetPlayerControll(System.Int32)
+01d5818a  mov      r8, qword ptr [rsp + 0x78]   ; ._basePosition
+01d5818f  mov      rsi, rax
+01d58192  test     r8, r8
+01d58195  je       0x1d5827f
+01d5819b  mov      rdx, qword ptr [rip + 0x26738d6]   ; [43cba78] TypeInfo InGame.Kernel.Enemy.IDamagedObject
+01d581a2  mov      ecx, 5
+01d581a7  mov      r9d, 0x64
+01d581ad  call     0x4560
+01d581b2  mov      r14d, eax
+01d581b5  test     rsi, rsi
+01d581b8  je       0x1d5827f
+01d581be  test     dword ptr [rsi + 0x218], 0x800   ; ._isTraining
+01d581c8  jbe      0x1d581cf
+01d581ca  xorps    xmm6, xmm6
+01d581cd  jmp      0x1d581f6
+01d581cf  mov      rcx, qword ptr [rip + 0x2681822]   ; [43d99f8] TypeInfo InGame.Kernel.InGameParameter
+01d581d6  cmp      dword ptr [rcx + 0xe4], 0
+01d581dd  jne      0x1d581e4
+01d581df  call     0x4e0d90
+01d581e4  xor      edx, edx
+01d581e6  mov      ecx, r14d
+01d581e9  call     0x1d1ecc0   ; InGameParameter::GetDamageRate(TXEKernel.TXEKernelHybridCollisions/toleType)
+01d581ee  movaps   xmm6, xmm0
+01d581f1  mulss    xmm6, dword ptr [rdi + 0x60]   ; ._currentPosition
+01d581f6  test     rbx, rbx
+01d581f9  je       0x1d5827f
+01d581ff  mov      rdx, qword ptr [rbx]
+01d58202  mov      rcx, rbx
+01d58205  mov      rax, qword ptr [rdx + 0x358]   ; vcall KANAI.HybridCollision.HybridCollisions::get_IsPrgoressMove
+01d5820c  mov      rdx, qword ptr [rdx + 0x360]   ; vcall KANAI.HybridCollision.HybridCollisions::get_IsPrgoressMove
+01d58213  call     rax
+01d58215  test     al, al
+01d58217  jne      0x1d58238
+01d58219  mov      r8, qword ptr [rsp + 0x78]   ; ._basePosition
+01d5821e  test     r8, r8
+01d58221  je       0x1d5827f
+01d58223  mov      rdx, qword ptr [rip + 0x267384e]   ; [43cba78] TypeInfo InGame.Kernel.Enemy.IDamagedObject
+01d5822a  mov      ecx, 3
+01d5822f  call     0x22b0
+01d58234  test     al, al
+01d58236  jne      0x1d58260
+01d58238  mov      rax, qword ptr [rbx]
+01d5823b  xor      r9d, r9d
+01d5823e  mulss    xmm6, xmm7
+01d58242  mov      r8d, ebp
+01d58245  mov      rcx, rbx
+01d58248  mov      rdx, qword ptr [rax + 0x258]   ; vcall KANAI.HybridCollision.HybridCollisions::_getCurrentPosition
+01d5824f  mov      rax, qword ptr [rax + 0x260]   ; vcall KANAI.HybridCollision.HybridCollisions::_getCurrentPosition
+01d58256  movaps   xmm1, xmm6
+01d58259  mov      qword ptr [rsp + 0x20], rax   ; .trot
+01d5825e  call     rdx
+01d58260  movaps   xmm6, xmmword ptr [rsp + 0x40]   ; .<tpassed>5__2
+01d58265  mov      r14, qword ptr [rsp + 0x70]
+01d5826a  movaps   xmm7, xmmword ptr [rsp + 0x30]   ; .tsecond
+01d5826f  mov      rbx, qword ptr [rsp + 0x80]
+01d58277  add      rsp, 0x50
+01d5827b  pop      rdi
+01d5827c  pop      rsi
+01d5827d  pop      rbp
+01d5827e  ret      
+01d5827f  call     0x4e0d00
+#### InGame.Kernel.Player.WeaponBombCollision::StartBomb(UnityEngine.Vector3,System.Int32) RVA 1d58460 len 28a
+01d58460  mov      qword ptr [rsp + 0x10], rbx
+01d58465  mov      qword ptr [rsp + 0x18], rsi
+01d5846a  push     rdi
+01d5846b  sub      rsp, 0x30
+01d5846f  cmp      byte ptr [rip + 0x290b1ee], 0   ; [4663664] bss
+01d58476  mov      esi, r8d
+01d58479  mov      rdi, rdx
+01d5847c  mov      rbx, rcx
+01d5847f  jne      0x1d584a0
+01d58481  lea      rcx, [rip + 0x2625a18]   ; [437dea0] TypeInfo UnityEngine.Object
+01d58488  call     0x4e0a50
+01d5848d  lea      rcx, [rip + 0x266d464]   ; [43c58f8] TypeInfo InGame.Kernel.Player.WeaponBombCollision
+01d58494  call     0x4e0a50
+01d58499  mov      byte ptr [rip + 0x290b1c4], 1   ; [4663664] bss
+01d584a0  mov      rcx, qword ptr [rbx + 0x50]   ; .<>u__2
+01d584a4  mov      qword ptr [rsp + 0x40], rbp   ; .<tpassed>5__2
+01d584a9  mov      dword ptr [rbx + 0xb8], 0   ; ._bombTime
+01d584b3  mov      dword ptr [rbx + 0xbc], esi   ; ._bombLevel
+01d584b9  test     rcx, rcx
+01d584bc  je       0x1d586df
+01d584c2  movsd    xmm0, qword ptr [rdi]
+01d584c6  lea      rdx, [rsp + 0x20]   ; .trot
+01d584cb  mov      eax, dword ptr [rdi + 8]
+01d584ce  xor      r8d, r8d
+01d584d1  movsd    qword ptr [rsp + 0x20], xmm0   ; .trot
+01d584d7  mov      dword ptr [rsp + 0x28], eax   ; .isDark
+01d584db  call     0x3094570   ; Transform::set_localPosition(UnityEngine.Vector3)
+01d584e0  cmp      byte ptr [rip + 0x2903f77], 0   ; [465c45e] bss
+01d584e7  mov      rsi, qword ptr [rbx + 0x50]   ; .<>u__2
+01d584eb  jne      0x1d58500
+01d584ed  lea      rcx, [rip + 0x26691e4]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01d584f4  call     0x4e0a50
+01d584f9  mov      byte ptr [rip + 0x2903f5e], 1   ; [465c45e] bss
+01d58500  mov      rax, qword ptr [rip + 0x26691d1]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01d58507  mov      rcx, qword ptr [rax + 0xb8]
+01d5850e  mov      rax, qword ptr [rip + 0x266d3e3]   ; [43c58f8] TypeInfo InGame.Kernel.Player.WeaponBombCollision
+01d58515  movsd    xmm0, qword ptr [rcx + 0xc]   ; static Vector3+c
+01d5851a  cmp      dword ptr [rax + 0xe4], 0
+01d58521  mov      ebp, dword ptr [rcx + 0x14]   ; static Vector3+14
+01d58524  movsd    qword ptr [rsp + 0x20], xmm0   ; .trot
+01d5852a  jne      0x1d5853b
+01d5852c  mov      rcx, rax
+01d5852f  call     0x4e0d90
+01d58534  mov      rax, qword ptr [rip + 0x266d3bd]   ; [43c58f8] TypeInfo InGame.Kernel.Player.WeaponBombCollision
+01d5853b  mov      rax, qword ptr [rax + 0xb8]
+01d58542  mov      rcx, qword ptr [rax + 0x10]   ; static WeaponBombCollision._endScaleSizes
+01d58546  test     rcx, rcx
+01d58549  je       0x1d586df
+01d5854f  movsxd   rax, dword ptr [rbx + 0xbc]   ; ._bombLevel
+01d58556  cmp      eax, dword ptr [rcx + 0x18]
+01d58559  jae      0x1d586e5
+01d5855f  movss    xmm1, dword ptr [rcx + rax*4 + 0x20]   ; .trot
+01d58565  movd     xmm0, ebp
+01d58569  movaps   xmm2, xmm1
+01d5856c  mulss    xmm2, dword ptr [rsp + 0x20]   ; .trot
+01d58572  movaps   xmm3, xmm1
+01d58575  mulss    xmm3, dword ptr [rsp + 0x24]   ; .tsecond
+01d5857b  mulss    xmm1, xmm0
+01d5857f  test     rsi, rsi
+01d58582  je       0x1d586df
+01d58588  unpcklps xmm2, xmm3
+01d5858b  lea      rdx, [rsp + 0x20]   ; .trot
+01d58590  xor      r8d, r8d
+01d58593  movsd    qword ptr [rsp + 0x20], xmm2   ; .trot
+01d58599  mov      rcx, rsi
+01d5859c  movss    dword ptr [rsp + 0x28], xmm1   ; .isDark
+01d585a2  call     0x3094730   ; Transform::set_localScale(UnityEngine.Vector3)
+01d585a7  movsd    xmm0, qword ptr [rdi]
+01d585ab  mov      eax, dword ptr [rdi + 8]
+01d585ae  mov      rdi, qword ptr [rbx + 0x88]   ; ._objectInfo
+01d585b5  movsd    qword ptr [rbx + 0x60], xmm0   ; ._currentPosition
+01d585ba  mov      dword ptr [rbx + 0x68], eax
+01d585bd  mov      rcx, qword ptr [rip + 0x26258dc]   ; [437dea0] TypeInfo UnityEngine.Object
+01d585c4  cmp      dword ptr [rcx + 0xe4], 0
+01d585cb  jne      0x1d585d2
+01d585cd  call     0x4e0d90
+01d585d2  xor      r8d, r8d
+01d585d5  xor      edx, edx
+01d585d7  mov      rcx, rdi
+01d585da  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01d585df  test     al, al
+01d585e1  je       0x1d58683
+01d585e7  mov      rax, qword ptr [rip + 0x266d30a]   ; [43c58f8] TypeInfo InGame.Kernel.Player.WeaponBombCollision
+01d585ee  mov      rdi, qword ptr [rbx + 0x88]   ; ._objectInfo
+01d585f5  cmp      dword ptr [rax + 0xe4], 0
+01d585fc  jne      0x1d5860d
+01d585fe  mov      rcx, rax
+01d58601  call     0x4e0d90
+01d58606  mov      rax, qword ptr [rip + 0x266d2eb]   ; [43c58f8] TypeInfo InGame.Kernel.Player.WeaponBombCollision
+01d5860d  mov      rax, qword ptr [rax + 0xb8]
+01d58614  mov      rcx, qword ptr [rax + 0x20]   ; static WeaponBombCollision._timeScales
+01d58618  test     rcx, rcx
+01d5861b  je       0x1d586df
+01d58621  movsxd   rax, dword ptr [rbx + 0xbc]   ; ._bombLevel
+01d58628  cmp      eax, dword ptr [rcx + 0x18]
+01d5862b  jae      0x1d586e5
+01d58631  test     rdi, rdi
+01d58634  je       0x1d586df
+01d5863a  mov      ecx, dword ptr [rcx + rax*4 + 0x20]   ; .trot
+01d5863e  mov      dword ptr [rdi + 0x54], ecx   ; .<nrot>5__4
+01d58641  mov      rcx, qword ptr [rbx + 0x88]   ; ._objectInfo
+01d58648  test     rcx, rcx
+01d5864b  je       0x1d586df
+01d58651  mov      rdx, qword ptr [rcx]
+01d58654  mov      rax, qword ptr [rdx + 0x1a8]   ; vcall KANAI.HybridCollision.HybridCollisions::GetStart
+01d5865b  mov      rdx, qword ptr [rdx + 0x1b0]   ; vcall KANAI.HybridCollision.HybridCollisions::GetStart
+01d58662  call     rax
+01d58664  mov      rcx, qword ptr [rbx + 0x88]   ; ._objectInfo
+01d5866b  test     rcx, rcx
+01d5866e  je       0x1d586df
+01d58670  mov      rdx, qword ptr [rcx]
+01d58673  mov      rax, qword ptr [rdx + 0x1c8]   ; vcall KANAI.HybridCollision.HybridCollisions::IsAliveDamaged
+01d5867a  mov      rdx, qword ptr [rdx + 0x1d0]   ; vcall KANAI.HybridCollision.HybridCollisions::IsAliveDamaged
+01d58681  call     rax
+01d58683  mov      rax, qword ptr [rip + 0x266d26e]   ; [43c58f8] TypeInfo InGame.Kernel.Player.WeaponBombCollision
+01d5868a  cmp      dword ptr [rax + 0xe4], 0
+01d58691  jne      0x1d586a2
+01d58693  mov      rcx, rax
+01d58696  call     0x4e0d90
+01d5869b  mov      rax, qword ptr [rip + 0x266d256]   ; [43c58f8] TypeInfo InGame.Kernel.Player.WeaponBombCollision
+01d586a2  mov      rax, qword ptr [rax + 0xb8]
+01d586a9  mov      dl, 1
+01d586ab  mov      r8, qword ptr [rbx]
+01d586ae  mov      ecx, dword ptr [rax + 4]   ; static WeaponBombCollision._startScaleSize
+01d586b1  mov      dword ptr [rbx + 0x84], ecx   ; ._collisionScale
+01d586b7  mov      rcx, rbx
+01d586ba  mov      rax, qword ptr [r8 + 0x198]   ; vcall KANAI.HybridCollision.HybridCollisions::ReStart
+01d586c1  mov      r8, qword ptr [r8 + 0x1a0]   ; vcall KANAI.HybridCollision.HybridCollisions::ReStart
+01d586c8  mov      rbp, qword ptr [rsp + 0x40]   ; .<tpassed>5__2
+01d586cd  mov      rbx, qword ptr [rsp + 0x48]   ; ._hitIndex
+01d586d2  mov      rsi, qword ptr [rsp + 0x50]   ; .<>u__2
+01d586d7  add      rsp, 0x30
+01d586db  pop      rdi
+01d586dc  jmp      rax
+01d586df  call     0x4e0d00
+01d586e4  int3     
+01d586e5  call     0x4e0cf0

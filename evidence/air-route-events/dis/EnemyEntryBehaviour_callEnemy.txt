@@ -1,0 +1,246 @@
+#### InGame.Kernel.Timeline.EnemyEntryBehaviour::_callEnemy(InGame.Kernel.InGameManager&) RVA 1d342b0 len 464
+01d342b0  mov      rax, rsp
+01d342b3  mov      qword ptr [rax + 0x10], rbx   ; ev.eventType
+01d342b7  mov      qword ptr [rax + 0x18], rsi   ; ev.repeatDelay
+01d342bb  mov      qword ptr [rax + 8], rcx
+01d342bf  push     rdi
+01d342c0  sub      rsp, 0xb0
+01d342c7  movaps   xmmword ptr [rax - 0x18], xmm6
+01d342cb  mov      rbx, rdx
+01d342ce  mov      rdi, rcx
+01d342d1  cmp      byte ptr [rip + 0x292f2df], 0   ; [46635b7] bss
+01d342d8  jne      0x1d34329
+01d342da  lea      rcx, [rip + 0x2686dff]   ; [43bb0e0] MethodRef .Enumerator<InGame.Kernel.Enemy.PawnEnemy>::Dispose
+01d342e1  call     0x4e0a50
+01d342e6  lea      rcx, [rip + 0x2686eab]   ; [43bb198] MethodRef .Enumerator<InGame.Kernel.Enemy.PawnEnemy>::MoveNext
+01d342ed  call     0x4e0a50
+01d342f2  lea      rcx, [rip + 0x2686f57]   ; [43bb250] MethodRef .Enumerator<InGame.Kernel.Enemy.PawnEnemy>::get_Current
+01d342f9  call     0x4e0a50
+01d342fe  lea      rcx, [rip + 0x262eafb]   ; [4362e00] MethodRef System.Collections.Generic.List`1<InGame.Kernel.Enemy.PawnEnemy>::GetEnumerator
+01d34305  call     0x4e0a50
+01d3430a  lea      rcx, [rip + 0x2649b8f]   ; [437dea0] TypeInfo UnityEngine.Object
+01d34311  call     0x4e0a50
+01d34316  lea      rcx, [rip + 0x268e0ab]   ; [43c23c8] TypeInfo KANAI.Kernel.VectorUtility
+01d3431d  call     0x4e0a50
+01d34322  mov      byte ptr [rip + 0x292f28e], 1   ; [46635b7] bss
+01d34329  xorps    xmm0, xmm0
+01d3432c  xor      eax, eax
+01d3432e  movups   xmmword ptr [rsp + 0x80], xmm0   ; ._transformCaches
+01d34336  mov      qword ptr [rsp + 0x90], rax   ; ._destroyedToken
+01d3433e  mov      rsi, qword ptr [rdi + 0x10]   ; ev.eventType
+01d34342  mov      rcx, qword ptr [rip + 0x2649b57]   ; [437dea0] TypeInfo UnityEngine.Object
+01d34349  cmp      dword ptr [rcx + 0xe4], eax
+01d3434f  jne      0x1d34356
+01d34351  call     0x4e0d90
+01d34356  xor      r8d, r8d
+01d34359  xor      edx, edx
+01d3435b  mov      rcx, rsi
+01d3435e  call     0x306d270   ; Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+01d34363  test     al, al
+01d34365  jne      0x1d346d2
+01d3436b  mov      rcx, qword ptr [rbx]
+01d3436e  test     rcx, rcx
+01d34371  je       0x1d3470f
+01d34377  xor      edx, edx
+01d34379  call     0x1cf2b80   ; InGameManager::get_IsEnemyCallPhase()
+01d3437e  test     al, al
+01d34380  je       0x1d346d2
+01d34386  mov      byte ptr [rdi + 0x31], 0
+01d3438a  cmp      byte ptr [rdi + 0x32], 0
+01d3438e  je       0x1d34398
+01d34390  mov      r8d, 1
+01d34396  jmp      0x1d343a7
+01d34398  xor      r8d, r8d
+01d3439b  cmp      byte ptr [rdi + 0x33], r8b
+01d3439f  setne    r8b
+01d343a3  add      r8d, 2
+01d343a7  mov      r10, qword ptr [rbx]
+01d343aa  movsd    xmm0, qword ptr [rdi + 0x38]   ; ev.stringValue/._psystems
+01d343af  mov      ecx, dword ptr [rdi + 0x40]   ; ev.intValue1/._animators
+01d343b2  cmp      dword ptr [rdi + 0x70], 0   ; ._transformCache
+01d343b6  jle      0x1d3442c
+01d343b8  cmp      dword ptr [rdi + 0x6c], 0   ; ._flagStateNow
+01d343bc  jle      0x1d3442c
+01d343be  mov      r9, qword ptr [rdi + 0x48]   ; ev.intValue3/.GameObjectCache
+01d343c2  mov      eax, dword ptr [rdi + 0x6c]   ; ._flagStateNow
+01d343c5  test     r9, r9
+01d343c8  je       0x1d3470f
+01d343ce  dec      eax
+01d343d0  cdq      
+01d343d1  idiv     dword ptr [rdi + 0x70]   ; ._transformCache
+01d343d4  cmp      edx, dword ptr [r9 + 0x18]   ; ev.repeatDelay
+01d343d8  jae      0x1d346ec
+01d343de  movsxd   rax, edx
+01d343e1  lea      rcx, [rax + rax*2]
+01d343e5  movsd    xmm0, qword ptr [r9 + rcx*4 + 0x20]
+01d343ec  movsd    xmm1, qword ptr [rdi + 0x38]   ; ev.stringValue/._psystems
+01d343f1  movaps   xmm4, xmm0
+01d343f4  addss    xmm4, xmm1
+01d343f8  movaps   xmm3, xmm0
+01d343fb  shufps   xmm3, xmm3, 0x55
+01d343ff  movsd    qword ptr [rsp + 0x50], xmm0   ; ev.randomFire/._animatorsPlay
+01d34405  movaps   xmm0, xmm1
+01d34408  shufps   xmm0, xmm0, 0x55
+01d3440c  movsd    qword ptr [rsp + 0x50], xmm1   ; ev.randomFire/._animatorsPlay
+01d34412  addss    xmm3, xmm0
+01d34416  movss    xmm2, dword ptr [r9 + rcx*4 + 0x28]
+01d3441d  addss    xmm2, dword ptr [rdi + 0x40]   ; ev.intValue1/._animators
+01d34422  movaps   xmm0, xmm4
+01d34425  unpcklps xmm0, xmm3
+01d34428  movd     ecx, xmm2
+01d3442c  mov      eax, 0x60
+01d34431  mov      edx, 0x64
+01d34436  cmp      dword ptr [rdi + 0x6c], 0   ; ._flagStateNow
+01d3443a  cmovg    eax, edx
+01d3443d  movss    xmm1, dword ptr [rax + rdi]
+01d34442  mov      eax, dword ptr [rdi + 0x68]   ; ev.flag0/._flagStateFuture
+01d34445  test     r10, r10
+01d34448  je       0x1d3470f
+01d3444e  movsd    qword ptr [rsp + 0x50], xmm0   ; ev.randomFire/._animatorsPlay
+01d34454  mov      dword ptr [rsp + 0x58], ecx   ; ev.nameValue/._particleSpeed
+01d34458  mov      qword ptr [rsp + 0x38], 0   ; ev.stringValue/._psystems
+01d34461  mov      dword ptr [rsp + 0x30], eax   ; ._entryFlag
+01d34465  movss    dword ptr [rsp + 0x28], xmm1   ; ev.vectorValue
+01d3446b  mov      dword ptr [rsp + 0x20], r8d   ; ev.value0
+01d34470  lea      r9, [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01d34475  mov      r8, qword ptr [rdi + 0x20]   ; ev.value0
+01d34479  mov      rdx, qword ptr [rdi + 0x10]   ; ev.eventType
+01d3447d  mov      rcx, r10
+01d34480  call     0x1ce3a00   ; InGameManager::EntryEnemy(InGame.Kernel.Timeline.EnemyData,UnityEngine.Transform,UnityEngine.Vector3,InGame.Kernel.Enemy.PawnEnemy/Division,System.Single,System.Int32)
+01d34485  mov      qword ptr [rdi + 0x78], rax   ; ._transformNameCache
+01d34489  lea      rcx, [rdi + 0x78]   ; ._transformNameCache
+01d3448d  mov      rdx, rax
+01d34490  call     0x4dfd80
+01d34495  inc      dword ptr [rdi + 0x6c]   ; ._flagStateNow
+01d34498  cmp      dword ptr [rdi + 0x5c], 0   ; ._animatorsCount
+01d3449c  je       0x1d34579
+01d344a2  mov      rdx, qword ptr [rdi + 0x78]   ; ._transformNameCache
+01d344a6  test     rdx, rdx
+01d344a9  je       0x1d3470f
+01d344af  mov      r8, qword ptr [rip + 0x262e94a]   ; [4362e00] MethodRef System.Collections.Generic.List`1<InGame.Kernel.Enemy.PawnEnemy>::GetEnumerator
+01d344b6  lea      rcx, [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01d344bb  call     0xb11790
+01d344c0  movups   xmm0, xmmword ptr [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01d344c5  movups   xmmword ptr [rsp + 0x80], xmm0   ; ._transformCaches
+01d344cd  movsd    xmm1, qword ptr [rsp + 0x70]   ; ._transformCache
+01d344d3  movsd    qword ptr [rsp + 0x90], xmm1   ; ._destroyedToken
+01d344dc  mov      qword ptr [rsp + 0x50], 0   ; ev.randomFire/._animatorsPlay
+01d344e5  lea      rbx, [rsp + 0x80]   ; ._transformCaches
+01d344ed  mov      qword ptr [rsp + 0x58], rbx   ; ev.nameValue/._particleSpeed
+01d344f2  nop      dword ptr [rax]
+01d344f6  nop      word ptr [rax + rax]
+01d34500  mov      rdx, qword ptr [rip + 0x2686c91]   ; [43bb198] MethodRef .Enumerator<InGame.Kernel.Enemy.PawnEnemy>::MoveNext
+01d34507  lea      rcx, [rsp + 0x80]   ; ._transformCaches
+01d3450f  call     0x198e510
+01d34514  test     al, al
+01d34516  je       0x1d34541
+01d34518  mov      rcx, qword ptr [rsp + 0x90]   ; ._destroyedToken
+01d34520  test     rcx, rcx
+01d34523  je       0x1d346f2
+01d34529  mov      r8, qword ptr [rcx]
+01d3452c  mov      rax, qword ptr [r8 + 0x628]
+01d34533  mov      r8, qword ptr [r8 + 0x630]
+01d3453a  mov      edx, dword ptr [rdi + 0x5c]   ; ._animatorsCount
+01d3453d  call     rax
+01d3453f  jmp      0x1d34500
+01d34541  mov      rdx, qword ptr [rip + 0x2686b98]   ; [43bb0e0] MethodRef .Enumerator<InGame.Kernel.Enemy.PawnEnemy>::Dispose
+01d34548  mov      rcx, rbx
+01d3454b  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01d34550  jmp      0x1d34579
+01d34552  mov      rdx, qword ptr [rip + 0x2686b87]   ; [43bb0e0] MethodRef .Enumerator<InGame.Kernel.Enemy.PawnEnemy>::Dispose
+01d34559  mov      rcx, qword ptr [rsp + 0x58]   ; ev.nameValue/._particleSpeed
+01d3455e  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01d34563  mov      rcx, qword ptr [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01d34568  test     rcx, rcx
+01d3456b  jne      0x1d346f8
+01d34571  mov      rdi, qword ptr [rsp + 0xc0]   ; ._speedToken
+01d34579  movsd    xmm6, qword ptr [rdi + 0x50]   ; ev.randomFire/._animatorsPlay
+01d3457e  mov      ebx, dword ptr [rdi + 0x58]   ; ev.nameValue/._particleSpeed
+01d34581  mov      rcx, qword ptr [rip + 0x268de40]   ; [43c23c8] TypeInfo KANAI.Kernel.VectorUtility
+01d34588  cmp      dword ptr [rcx + 0xe4], 0
+01d3458f  jne      0x1d34596
+01d34591  call     0x4e0d90
+01d34596  movsd    qword ptr [rsp + 0x50], xmm6   ; ev.randomFire/._animatorsPlay
+01d3459c  mov      dword ptr [rsp + 0x58], ebx   ; ev.nameValue/._particleSpeed
+01d345a0  xor      edx, edx
+01d345a2  lea      rcx, [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01d345a7  call     0x1df7e70   ; VectorUtility::IsZero(UnityEngine.Vector3)
+01d345ac  test     al, al
+01d345ae  jne      0x1d346d2
+01d345b4  movsd    xmm0, qword ptr [rdi + 0x50]   ; ev.randomFire/._animatorsPlay
+01d345b9  movaps   xmm4, xmm0
+01d345bc  movss    xmm2, dword ptr [rip + 0x17ac5fc]   ; rdata 34e0bc0 f=0.01745329,0.05,0.5,1 d=2.046363552e-13
+01d345c4  mulss    xmm4, xmm2
+01d345c8  movaps   xmm3, xmm0
+01d345cb  shufps   xmm3, xmm3, 0x55
+01d345cf  movsd    qword ptr [rsp + 0x50], xmm0   ; ev.randomFire/._animatorsPlay
+01d345d5  mulss    xmm3, xmm2
+01d345d9  movss    xmm1, dword ptr [rdi + 0x58]   ; ev.nameValue/._particleSpeed
+01d345de  mulss    xmm1, xmm2
+01d345e2  unpcklps xmm4, xmm3
+01d345e5  movsd    qword ptr [rsp + 0x50], xmm4   ; ev.randomFire/._animatorsPlay
+01d345eb  movss    dword ptr [rsp + 0x58], xmm1   ; ev.nameValue/._particleSpeed
+01d345f1  xor      r8d, r8d
+01d345f4  lea      rdx, [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01d345f9  lea      rcx, [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01d345fe  call     0x304d890   ; Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01d34603  movups   xmm6, xmmword ptr [rax]
+01d34606  mov      rdx, qword ptr [rdi + 0x78]   ; ._transformNameCache
+01d3460a  test     rdx, rdx
+01d3460d  je       0x1d3470f
+01d34613  mov      r8, qword ptr [rip + 0x262e7e6]   ; [4362e00] MethodRef System.Collections.Generic.List`1<InGame.Kernel.Enemy.PawnEnemy>::GetEnumerator
+01d3461a  lea      rcx, [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01d3461f  call     0xb11790
+01d34624  movups   xmm0, xmmword ptr [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01d34629  movups   xmmword ptr [rsp + 0x80], xmm0   ; ._transformCaches
+01d34631  movsd    xmm1, qword ptr [rsp + 0x70]   ; ._transformCache
+01d34637  movsd    qword ptr [rsp + 0x90], xmm1   ; ._destroyedToken
+01d34640  mov      qword ptr [rsp + 0x50], 0   ; ev.randomFire/._animatorsPlay
+01d34649  lea      rbx, [rsp + 0x80]   ; ._transformCaches
+01d34651  mov      qword ptr [rsp + 0x58], rbx   ; ev.nameValue/._particleSpeed
+01d34656  nop      word ptr [rax + rax]
+01d34660  mov      rdx, qword ptr [rip + 0x2686b31]   ; [43bb198] MethodRef .Enumerator<InGame.Kernel.Enemy.PawnEnemy>::MoveNext
+01d34667  lea      rcx, [rsp + 0x80]   ; ._transformCaches
+01d3466f  call     0x198e510
+01d34674  test     al, al
+01d34676  je       0x1d346a6
+01d34678  mov      rax, qword ptr [rsp + 0x90]   ; ._destroyedToken
+01d34680  test     rax, rax
+01d34683  je       0x1d34703
+01d34685  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01d3468c  test     rcx, rcx
+01d3468f  je       0x1d346fe
+01d34691  movdqa   xmmword ptr [rsp + 0x60], xmm6   ; ev.subnameValue/._psystemCount
+01d34697  xor      r8d, r8d
+01d3469a  lea      rdx, [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01d3469f  call     0x1cdaf80   ; InGameEnemyMoveBase::SetRotateUpdate(UnityEngine.Quaternion)
+01d346a4  jmp      0x1d34660
+01d346a6  mov      rdx, qword ptr [rip + 0x2686a33]   ; [43bb0e0] MethodRef .Enumerator<InGame.Kernel.Enemy.PawnEnemy>::Dispose
+01d346ad  mov      rcx, rbx
+01d346b0  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01d346b5  jmp      0x1d346d2
+01d346b7  mov      rdx, qword ptr [rip + 0x2686a22]   ; [43bb0e0] MethodRef .Enumerator<InGame.Kernel.Enemy.PawnEnemy>::Dispose
+01d346be  mov      rcx, qword ptr [rsp + 0x58]   ; ev.nameValue/._particleSpeed
+01d346c3  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01d346c8  mov      rcx, qword ptr [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01d346cd  test     rcx, rcx
+01d346d0  jne      0x1d34709
+01d346d2  lea      r11, [rsp + 0xb0]   ; ._translateToken
+01d346da  mov      rbx, qword ptr [r11 + 0x18]   ; ev.repeatDelay
+01d346de  mov      rsi, qword ptr [r11 + 0x20]   ; ev.value0
+01d346e2  movaps   xmm6, xmmword ptr [r11 - 0x10]
+01d346e7  mov      rsp, r11
+01d346ea  pop      rdi
+01d346eb  ret      
+01d346ec  call     0x4e0cf0
+01d346f1  nop      
+01d346f2  call     0x4e0d00
+01d346f7  nop      
+01d346f8  call     0x4dc9e0
+01d346fd  nop      
+01d346fe  call     0x4e0d00
+01d34703  call     0x4e0d00
+01d34708  nop      
+01d34709  call     0x4dc9e0
+01d3470e  int3     
+01d3470f  call     0x4e0d00

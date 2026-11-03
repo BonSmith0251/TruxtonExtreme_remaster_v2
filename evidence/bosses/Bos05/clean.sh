@@ -1,0 +1,2 @@
+source /d/games/TruxtonExRecon/evidence/bosses/Bos05/show.sh
+clean(){ show "$1" | grep -v 'bss\[\|call     0x4e0a50\|call     0x4e0d90\|0xe4\], \|mov      rcx, rax$\|mov      rcx, rdx$' | grep -v 'TypeInfo InGame.Kernel.Enemy.Ene_Bos05$' | grep -v 'qword ptr \[rsp + 0x[0-9a-f]*\], r[0-9a-z]*$\|xmmword ptr \[rsp + 0x[0-9a-f]*\], xmm[0-9]*$\|, xmmword ptr \[rsp + 0x[0-9a-f]*\]$\|mov      r[0-9a-z]*, qword ptr \[rsp + 0x[0-9a-f]*\]$' | cut -c1-165; }

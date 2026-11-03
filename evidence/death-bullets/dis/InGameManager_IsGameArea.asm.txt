@@ -1,0 +1,78 @@
+01ce7580  mov      qword ptr [rsp + 8], rbx
+01ce7585  push     rdi
+01ce7586  sub      rsp, 0x50
+01ce758a  cmp      byte ptr [rip + 0x297bd82], 0   ; [4663313] bss
+01ce7591  mov      rdi, rdx
+01ce7594  mov      rbx, rcx
+01ce7597  jne      0x1ce75b8
+01ce7599  lea      rcx, [rip + 0x26f2178]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01ce75a0  call     0x4e0a50
+01ce75a5  lea      rcx, [rip + 0x26a7fac]   ; [438f558] TypeInfo UnityEngine.Rect
+01ce75ac  call     0x4e0a50
+01ce75b1  mov      byte ptr [rip + 0x297bd5b], 1   ; [4663313] bss
+01ce75b8  mov      rax, qword ptr [rbx + 0x130]   ; ._collisionManager
+01ce75bf  test     rax, rax
+01ce75c2  je       0x1ce76de
+01ce75c8  mov      rdx, qword ptr [rax + 0x70]   ; ._stageTimeline
+01ce75cc  test     rdx, rdx
+01ce75cf  je       0x1ce76de
+01ce75d5  movsd    xmm0, qword ptr [rdi]
+01ce75d9  lea      r8, [rsp + 0x20]   ; ._baseTimeFactor
+01ce75de  mov      eax, dword ptr [rdi + 8]
+01ce75e1  lea      rcx, [rsp + 0x30]   ; ._effectTimeFactor
+01ce75e6  xor      r9d, r9d
+01ce75e9  movsd    qword ptr [rsp + 0x20], xmm0   ; ._baseTimeFactor
+01ce75ef  movaps   xmmword ptr [rsp + 0x40], xmm6   ; ._bgSlideRate
+01ce75f4  mov      dword ptr [rsp + 0x28], eax   ; ._playTimeFactor
+01ce75f8  call     0x2fd65a0   ; Camera::WorldToViewportPoint(UnityEngine.Vector3)
+01ce75fd  mov      rcx, qword ptr [rip + 0x26f2114]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01ce7604  movsd    xmm0, qword ptr [rax]
+01ce7608  cmp      dword ptr [rcx + 0xe4], 0
+01ce760f  movsd    qword ptr [rsp + 0x20], xmm0   ; ._baseTimeFactor
+01ce7615  jne      0x1ce761c
+01ce7617  call     0x4e0d90
+01ce761c  mov      rcx, qword ptr [rip + 0x26a7f35]   ; [438f558] TypeInfo UnityEngine.Rect
+01ce7623  cmp      dword ptr [rcx + 0xe4], 0
+01ce762a  jne      0x1ce7631
+01ce762c  call     0x4e0d90
+01ce7631  cmp      byte ptr [rip + 0x297bd57], 0   ; [466338f] bss
+01ce7638  mov      rax, qword ptr [rip + 0x26f20d9]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01ce763f  mov      rbx, qword ptr [rax + 0xb8]
+01ce7646  jne      0x1ce765b
+01ce7648  lea      rcx, [rip + 0x26a7f09]   ; [438f558] TypeInfo UnityEngine.Rect
+01ce764f  call     0x4e0a50
+01ce7654  mov      byte ptr [rip + 0x297bd34], 1   ; [466338f] bss
+01ce765b  movss    xmm6, dword ptr [rsp + 0x20]   ; ._baseTimeFactor
+01ce7661  comiss   xmm6, dword ptr [rbx + 0x28]   ; ._playTimeFactor
+01ce7665  jb       0x1ce76cc
+01ce7667  mov      rcx, qword ptr [rip + 0x26a7eea]   ; [438f558] TypeInfo UnityEngine.Rect
+01ce766e  cmp      dword ptr [rcx + 0xe4], 0
+01ce7675  jne      0x1ce767c
+01ce7677  call     0x4e0d90
+01ce767c  movss    xmm0, dword ptr [rbx + 0x30]   ; ._effectTimeFactor
+01ce7681  addss    xmm0, dword ptr [rbx + 0x28]   ; ._playTimeFactor
+01ce7686  comiss   xmm0, xmm6
+01ce7689  jbe      0x1ce76cc
+01ce768b  movss    xmm6, dword ptr [rsp + 0x24]   ; .tsec
+01ce7691  comiss   xmm6, dword ptr [rbx + 0x2c]   ; .areaIndex
+01ce7695  jb       0x1ce76cc
+01ce7697  mov      rcx, qword ptr [rip + 0x26a7eba]   ; [438f558] TypeInfo UnityEngine.Rect
+01ce769e  cmp      dword ptr [rcx + 0xe4], 0
+01ce76a5  jne      0x1ce76ac
+01ce76a7  call     0x4e0d90
+01ce76ac  movss    xmm0, dword ptr [rbx + 0x34]   ; .<tstep>5__4
+01ce76b1  addss    xmm0, dword ptr [rbx + 0x2c]   ; .areaIndex
+01ce76b6  comiss   xmm0, xmm6
+01ce76b9  movaps   xmm6, xmmword ptr [rsp + 0x40]   ; ._bgSlideRate
+01ce76be  seta     al
+01ce76c1  mov      rbx, qword ptr [rsp + 0x60]   ; ._damageMag
+01ce76c6  add      rsp, 0x50
+01ce76ca  pop      rdi
+01ce76cb  ret      
+01ce76cc  xor      eax, eax
+01ce76ce  movaps   xmm6, xmmword ptr [rsp + 0x40]   ; ._bgSlideRate
+01ce76d3  mov      rbx, qword ptr [rsp + 0x60]   ; ._damageMag
+01ce76d8  add      rsp, 0x50
+01ce76dc  pop      rdi
+01ce76dd  ret      
+01ce76de  call     0x4e0d00

@@ -1,0 +1,37 @@
+01cda6c0  mov      qword ptr [rsp + 8], rbx
+01cda6c5  push     rdi
+01cda6c6  sub      rsp, 0x20
+01cda6ca  mov      rbx, rdx
+01cda6cd  mov      rdi, rcx
+01cda6d0  mov      rdx, qword ptr [rcx]
+01cda6d3  mov      rax, qword ptr [rdx + 0x2b8]   ; ._isFinishDelay
+01cda6da  mov      rdx, qword ptr [rdx + 0x2c0]   ; ._turrets
+01cda6e1  call     rax
+01cda6e3  test     al, al
+01cda6e5  jne      0x1cda72a
+01cda6e7  xor      ecx, ecx
+01cda6e9  call     0x1df1220   ; RandomUtility::Make01()
+01cda6ee  test     rbx, rbx
+01cda6f1  je       0x1cda737
+01cda6f3  mulss    xmm0, dword ptr [rip + 0x19184c5]   ; rdata 35f2bc0 f=99.9,160,-100,-1000 d=2.251800374e+15
+01cda6fb  movss    xmm1, dword ptr [rbx + 0x50]   ; ev.randomFire/._animatorsPlay
+01cda700  comiss   xmm1, xmm0
+01cda703  ja       0x1cda71d
+01cda705  xor      r8d, r8d
+01cda708  mov      rdx, rbx
+01cda70b  mov      rcx, rdi
+01cda70e  mov      rbx, qword ptr [rsp + 0x30]   ; ._entryFlag
+01cda713  add      rsp, 0x20
+01cda717  pop      rdi
+01cda718  jmp      0x1cda7e0   ; InGameEnemyMoveBase::IsEntryFireArea(InGame.Kernel.Timeline.RouteEvent)
+01cda71d  xor      al, al
+01cda71f  mov      rbx, qword ptr [rsp + 0x30]   ; ._entryFlag
+01cda724  add      rsp, 0x20
+01cda728  pop      rdi
+01cda729  ret      
+01cda72a  mov      rbx, qword ptr [rsp + 0x30]   ; ._entryFlag
+01cda72f  mov      al, 1
+01cda731  add      rsp, 0x20
+01cda735  pop      rdi
+01cda736  ret      
+01cda737  call     0x4e0d00

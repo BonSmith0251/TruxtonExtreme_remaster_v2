@@ -1,0 +1,35 @@
+//////////////////////////////////////////
+//
+// NOTE: This is *not* a valid shader file
+//
+///////////////////////////////////////////
+Shader "TATSUJIN/SpriteBillbordAnime" {
+Properties {
+
+_TintColor ("Tint Color", Color) = (0.5,0.5,0.5,0.5)
+
+_MainTex ("Texture", 2D) = "white" { }
+
+_InvFade ("Soft Particles Factor", Range(0.01, 3)) = 1.0
+
+_DividedH ("DividedH", Float) = 1.0
+
+_DividedV ("DividedV", Float) = 1.0
+
+_AIndex ("AIndex", Float) = 0.0
+
+_RotateSpeed ("Z-RotateSpeed", Float) = 0.0
+
+[KeywordEnum(OFF,ON)] _USEFOG ("USE Fog", Float) = 0.0
+
+}
+SubShader {
+ Tags { "IGNOREPROJECTOR" = "true" "PreviewType" = "Plane" "QUEUE" = "Transparent" "RenderType" = "Transparent" }
+ Pass {
+  Tags { "IGNOREPROJECTOR" = "true" "PreviewType" = "Plane" "QUEUE" = "Transparent" "RenderType" = "Transparent" }
+ ZTest Always
+ ZWrite Off
+  GpuProgramID 29285
+}
+}
+}

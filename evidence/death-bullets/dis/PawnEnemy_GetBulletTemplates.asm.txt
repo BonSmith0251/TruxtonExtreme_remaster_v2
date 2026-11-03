@@ -1,0 +1,66 @@
+#### InGame.Kernel.Enemy.PawnEnemy::GetBulletTemplates() RVA 1d0d650 len 11f
+01d0d650  mov      qword ptr [rsp + 8], rbx
+01d0d655  push     rdi
+01d0d656  sub      rsp, 0x20
+01d0d65a  cmp      byte ptr [rip + 0x2955dbe], 0   ; [466341f] bss
+01d0d661  mov      rdi, rcx
+01d0d664  jne      0x1d0d6b5
+01d0d666  lea      rcx, [rip + 0x2667e0b]   ; [4375478] MethodRef System.Collections.Generic.List`1<prime>::AddRange
+01d0d66d  call     0x4e0a50
+01d0d672  lea      rcx, [rip + 0x2667d47]   ; [43753c0] MethodRef System.Collections.Generic.List`1<prime>::Add
+01d0d679  call     0x4e0a50
+01d0d67e  lea      rcx, [rip + 0x2667b13]   ; [4375198] MethodRef System.Collections.Generic.List`1<prime>::.ctor
+01d0d685  call     0x4e0a50
+01d0d68a  lea      rcx, [rip + 0x26a64ff]   ; [43b3b90] TypeInfo G<System.Collections.Generic.List`1>
+01d0d691  call     0x4e0a50
+01d0d696  lea      rcx, [rip + 0x26aac33]   ; [43b82d0] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameResident>::IsInstanceNull
+01d0d69d  call     0x4e0a50
+01d0d6a2  lea      rcx, [rip + 0x26aacd7]   ; [43b8380] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameResident>::get_GetInstance
+01d0d6a9  call     0x4e0a50
+01d0d6ae  mov      byte ptr [rip + 0x2955d6a], 1   ; [466341f] bss
+01d0d6b5  mov      rcx, qword ptr [rip + 0x26a64d4]   ; [43b3b90] TypeInfo G<System.Collections.Generic.List`1>
+01d0d6bc  call     0x4e0cb0
+01d0d6c1  mov      rdx, qword ptr [rip + 0x2667ad0]   ; [4375198] MethodRef System.Collections.Generic.List`1<prime>::.ctor
+01d0d6c8  mov      rcx, rax
+01d0d6cb  mov      rbx, rax
+01d0d6ce  call     0xb16050   ; List`1::.ctor() | LowLevelList`1::.ctor()
+01d0d6d3  mov      rcx, qword ptr [rdi + 0xf8]   ; ._deadBulletSelecter
+01d0d6da  xor      edx, edx
+01d0d6dc  call     0x1e83800   ; String::IsNullOrEmpty(System.String)
+01d0d6e1  test     al, al
+01d0d6e3  jne      0x1d0d72f
+01d0d6e5  mov      rcx, qword ptr [rip + 0x26aabe4]   ; [43b82d0] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameResident>::IsInstanceNull
+01d0d6ec  call     0xd102f0   ; MonoBehaviourSingleton`1::IsInstanceNull() | SimpleSingleton`1::IsInstanceNull()
+01d0d6f1  test     al, al
+01d0d6f3  jne      0x1d0d72f
+01d0d6f5  mov      rcx, qword ptr [rip + 0x26aac84]   ; [43b8380] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameResident>::get_GetInstance
+01d0d6fc  call     0x27540
+01d0d701  test     rax, rax
+01d0d704  je       0x1d0d76a
+01d0d706  mov      rdx, qword ptr [rdi + 0xf8]   ; ._deadBulletSelecter
+01d0d70d  xor      r8d, r8d
+01d0d710  mov      rcx, rax
+01d0d713  call     0x1d21b20   ; InGameResident::GetBulletTemplates(System.String)
+01d0d718  test     rbx, rbx
+01d0d71b  je       0x1d0d76a
+01d0d71d  mov      r8, qword ptr [rip + 0x2667d54]   ; [4375478] MethodRef System.Collections.Generic.List`1<prime>::AddRange
+01d0d724  mov      rdx, rax
+01d0d727  mov      rcx, rbx
+01d0d72a  call     0xbc80e0
+01d0d72f  mov      rcx, qword ptr [rdi + 0xf0]   ; ._deadBullet
+01d0d736  xor      edx, edx
+01d0d738  call     0x1e83800   ; String::IsNullOrEmpty(System.String)
+01d0d73d  test     al, al
+01d0d73f  jne      0x1d0d75c
+01d0d741  test     rbx, rbx
+01d0d744  je       0x1d0d76a
+01d0d746  mov      r8, qword ptr [rip + 0x2667c73]   ; [43753c0] MethodRef System.Collections.Generic.List`1<prime>::Add
+01d0d74d  mov      rcx, rbx
+01d0d750  mov      rdx, qword ptr [rdi + 0xf0]   ; ._deadBullet
+01d0d757  call     0x2500
+01d0d75c  mov      rax, rbx
+01d0d75f  mov      rbx, qword ptr [rsp + 0x30]   ; .tsecond
+01d0d764  add      rsp, 0x20
+01d0d768  pop      rdi
+01d0d769  ret      
+01d0d76a  call     0x4e0d00

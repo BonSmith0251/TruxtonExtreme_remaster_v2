@@ -1,0 +1,27 @@
+== System.Void InGame.Kernel.Enemy.Ene_BosBase::UpdatePlayerPositionFlag(UnityEngine.Vector3) RVA 1dbae10 len 71
+01dbae10 movsd      xmm0, qword ptr [rdx]
+01dbae14 mov        eax, dword ptr [rdx + 8]
+01dbae17 movsd      qword ptr [rcx + 0x1f0], xmm0 ; ~_baseTargetPlayer
+01dbae1f xorps      xmm0, xmm0
+01dbae22 comiss     xmm0, dword ptr [rdx]
+01dbae25 mov        dword ptr [rcx + 0x1f8], eax
+01dbae2b seta       al
+01dbae2e comiss     xmm0, dword ptr [rdx + 8]
+01dbae32 mov        byte ptr [rcx + 0x1b5], al ; ~_isPlayerSideLeft
+01dbae38 movss      xmm0, dword ptr [rip + 0x1837dd8] ; [.rdata 35f2c18] f=-20.0 d=-206158529344.0 v4=['-20', '-50', '-200', '0']
+01dbae40 seta       al
+01dbae43 comiss     xmm0, dword ptr [rdx + 8]
+01dbae47 mov        byte ptr [rcx + 0x1b6], al ; ~_isPlayerSideDown
+01dbae4d movss      xmm0, dword ptr [rdx]
+01dbae51 seta       al
+01dbae54 comiss     xmm0, dword ptr [rip + 0x1837d6d] ; [.rdata 35f2bc8] f=-100.0 d=-7.673848961291161e+21 v4=['-100', '-1000', '0.5', '0.5']
+01dbae5b mov        byte ptr [rcx + 0x1b8], al ; ~_isPlayerSideBottom
+01dbae61 ja         0x1dbae6c
+01dbae63 xor        eax, eax
+01dbae65 mov        byte ptr [rcx + 0x1b7], al ; ~_isPlayerSideCenter
+01dbae6b ret        
+01dbae6c movss      xmm0, dword ptr [rip + 0x1725d70] ; [.rdata 34e0be4] f=100.0 d=5629500654616576.0 v4=['100', '180', '2000', '-0.0001']
+01dbae74 comiss     xmm0, dword ptr [rdx]
+01dbae77 seta       al
+01dbae7a mov        byte ptr [rcx + 0x1b7], al ; ~_isPlayerSideCenter
+01dbae80 ret        

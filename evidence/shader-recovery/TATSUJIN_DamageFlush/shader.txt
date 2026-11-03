@@ -1,0 +1,22 @@
+//////////////////////////////////////////
+//
+// NOTE: This is *not* a valid shader file
+//
+///////////////////////////////////////////
+Shader "TATSUJIN/DamageFlush" {
+Properties {
+
+_Color ("Color", Color) = (1,1,1,0)
+
+}
+SubShader {
+ LOD 200
+ Tags { "IGNOREPROJECTOR" = "true" "RenderType" = "Transparent" }
+ Pass {
+  LOD 200
+  Tags { "IGNOREPROJECTOR" = "true" "RenderType" = "Transparent" }
+ ZWrite Off
+  GpuProgramID 4273
+}
+}
+}

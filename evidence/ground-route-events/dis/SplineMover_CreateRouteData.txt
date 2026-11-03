@@ -1,0 +1,104 @@
+01d43970  mov      qword ptr [rsp + 0x18], rbx   ; ev.repeatDelay
+01d43975  mov      qword ptr [rsp + 0x20], rbp   ; ev.value0
+01d4397a  push     rdi
+01d4397b  sub      rsp, 0x40
+01d4397f  cmp      byte ptr [rip + 0x291fbde], 0   ; [4663564] bss
+01d43986  mov      rdi, r8
+01d43989  mov      rbp, rdx
+01d4398c  mov      rbx, rcx
+01d4398f  jne      0x1d439a4
+01d43991  lea      rcx, [rip + 0x263a508]   ; [437dea0] TypeInfo UnityEngine.Object
+01d43998  call     0x4e0a50
+01d4399d  mov      byte ptr [rip + 0x291fbc0], 1   ; [4663564] bss
+01d439a4  xor      edx, edx
+01d439a6  mov      rcx, rbx
+01d439a9  call     0x1cd97c0   ; InGameEnemyMoveBase::CreateRouteToken()
+01d439ae  mov      rcx, qword ptr [rip + 0x263a4eb]   ; [437dea0] TypeInfo UnityEngine.Object
+01d439b5  cmp      dword ptr [rcx + 0xe4], 0
+01d439bc  jne      0x1d439c3
+01d439be  call     0x4e0d90
+01d439c3  mov      qword ptr [rsp + 0x50], rsi   ; ev.randomFire/.offsetAngle
+01d439c8  xor      r8d, r8d
+01d439cb  xor      edx, edx
+01d439cd  mov      qword ptr [rsp + 0x58], r14   ; ev.nameValue/.<>u__1
+01d439d2  mov      rcx, rbp
+01d439d5  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01d439da  test     al, al
+01d439dc  jne      0x1d43a56
+01d439de  movsd    xmm0, qword ptr [rdi]
+01d439e2  mov      rcx, qword ptr [rbx + 0x70]   ; .<selfArc>5__5
+01d439e6  mov      eax, dword ptr [rdi + 8]
+01d439e9  movsd    qword ptr [rbx + 0x224], xmm0   ; ._startPosition
+01d439f1  mov      dword ptr [rbx + 0x22c], eax
+01d439f7  test     rcx, rcx
+01d439fa  je       0x1d43b27
+01d43a00  xor      r8d, r8d
+01d43a03  movsd    qword ptr [rsp + 0x30], xmm0   ; .<>u__1
+01d43a09  lea      rdx, [rsp + 0x30]   ; .<>u__1
+01d43a0e  mov      dword ptr [rsp + 0x38], eax   ; ev.stringValue/.isSelfDir
+01d43a12  cmp      byte ptr [rbx + 0x52], r8b   ; ._isEntryGround
+01d43a16  je       0x1d43a1f
+01d43a18  call     0x3094950   ; Transform::set_position(UnityEngine.Vector3)
+01d43a1d  jmp      0x1d43a24
+01d43a1f  call     0x3094570   ; Transform::set_localPosition(UnityEngine.Vector3)
+01d43a24  xor      esi, esi
+01d43a26  mov      dword ptr [rbx + 0x15c], 0x4479c000   ; ._durationTime
+01d43a30  mov      dword ptr [rbx + 0x1ac], esi   ; ._lookAtType
+01d43a36  mov      dword ptr [rbx + 0x164], esi   ; ._currentSpeed
+01d43a3c  mov      r14, qword ptr [rsp + 0x58]   ; ev.nameValue/.<>u__1
+01d43a41  mov      rsi, qword ptr [rsp + 0x50]   ; ev.randomFire/.offsetAngle
+01d43a46  mov      rbx, qword ptr [rsp + 0x60]   ; ev.subnameValue/.<gm>5__2
+01d43a4b  mov      rbp, qword ptr [rsp + 0x68]   ; ev.flag0/.<loopcount>5__3
+01d43a50  add      rsp, 0x40
+01d43a54  pop      rdi
+01d43a55  ret      
+01d43a56  test     rbp, rbp
+01d43a59  je       0x1d43b27
+01d43a5f  mov      rsi, qword ptr [rbp + 0x28]   ; ev.vectorValue
+01d43a63  lea      rcx, [rbx + 0x1e8]   ; ._routes
+01d43a6a  mov      r14d, dword ptr [rbp + 0x1c]   ; ev.awakeRate
+01d43a6e  mov      rdx, rsi
+01d43a71  mov      qword ptr [rbx + 0x1e8], rsi   ; ._routes
+01d43a78  call     0x4dfd80
+01d43a7d  test     rsi, rsi
+01d43a80  je       0x1d43b27
+01d43a86  mov      eax, dword ptr [rsi + 0x18]   ; ev.repeatDelay
+01d43a89  xor      esi, esi
+01d43a8b  movsd    xmm0, qword ptr [rdi]
+01d43a8f  mov      rcx, qword ptr [rbx + 0x70]   ; .<selfArc>5__5
+01d43a93  mov      dword ptr [rbx + 0x1f4], eax   ; ._routesIndexMax
+01d43a99  mov      eax, dword ptr [rdi + 8]
+01d43a9c  movsd    qword ptr [rbx + 0x224], xmm0   ; ._startPosition
+01d43aa4  mov      dword ptr [rbx + 0x1f0], esi   ; ._routesIndex
+01d43aaa  mov      dword ptr [rbx + 0x22c], eax
+01d43ab0  test     rcx, rcx
+01d43ab3  je       0x1d43b27
+01d43ab5  xor      r8d, r8d
+01d43ab8  movsd    qword ptr [rsp + 0x30], xmm0   ; .<>u__1
+01d43abe  lea      rdx, [rsp + 0x30]   ; .<>u__1
+01d43ac3  mov      dword ptr [rsp + 0x38], eax   ; ev.stringValue/.isSelfDir
+01d43ac7  cmp      byte ptr [rbx + 0x52], sil   ; ._isEntryGround
+01d43acb  je       0x1d43ad4
+01d43acd  call     0x3094950   ; Transform::set_position(UnityEngine.Vector3)
+01d43ad2  jmp      0x1d43ad9
+01d43ad4  call     0x3094570   ; Transform::set_localPosition(UnityEngine.Vector3)
+01d43ad9  xor      r8d, r8d
+01d43adc  xorps    xmm1, xmm1
+01d43adf  mov      rcx, rbx
+01d43ae2  call     0x1d452d0   ; SplineMover::updateRouteData(System.Single)
+01d43ae7  mov      rdx, qword ptr [rbp + 0x58]   ; ev.nameValue/.<>u__1
+01d43aeb  mov      r9d, r14d
+01d43aee  mov      r8d, r14d
+01d43af1  shr      r9d, 5
+01d43af5  shr      r8d, 4
+01d43af9  and      r9b, 1
+01d43afd  and      r8b, 1
+01d43b01  mov      qword ptr [rsp + 0x20], rsi   ; ev.value0
+01d43b06  mov      rcx, rbx
+01d43b09  call     0x1d44240   ; SplineMover::SetEventData(InGame.Kernel.Timeline.RouteEvent[],System.Boolean,System.Boolean)
+01d43b0e  mov      eax, dword ptr [rbp + 0x34]   ; .<>u__1
+01d43b11  and      r14b, 1
+01d43b15  mov      byte ptr [rbx + 0x190], r14b   ; ._isSmooth
+01d43b1c  mov      dword ptr [rbx + 0x15c], eax   ; ._durationTime
+01d43b22  jmp      0x1d43a3c
+01d43b27  call     0x4e0d00

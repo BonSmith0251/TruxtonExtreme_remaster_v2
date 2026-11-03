@@ -1,0 +1,272 @@
+01d6ced0  push     rsi
+01d6ced2  sub      rsp, 0x80
+01d6ced9  cmp      byte ptr [rip + 0x28f6850], 0   ; [4663730] bss
+01d6cee0  mov      rsi, rcx
+01d6cee3  movaps   xmmword ptr [rsp + 0x50], xmm6   ; ev.randomFire/.offsetAngle
+01d6cee8  movaps   xmm6, xmm1
+01d6ceeb  jne      0x1d6cf54
+01d6ceed  lea      rcx, [rip + 0x25ff904]   ; [436c7f8] MethodRef System.Collections.Generic.Dictionary`2<prim8,prim8>::Add
+01d6cef4  call     0x4e0a50
+01d6cef9  lea      rcx, [rip + 0x25ffa68]   ; [436c968] MethodRef System.Collections.Generic.Dictionary`2<prim8,prim8>::ContainsKey
+01d6cf00  call     0x4e0a50
+01d6cf05  lea      rcx, [rip + 0x25ffbc4]   ; [436cad0] MethodRef System.Collections.Generic.Dictionary`2<prim8,prim8>::Remove
+01d6cf0c  call     0x4e0a50
+01d6cf11  lea      rcx, [rip + 0x25ffde0]   ; [436ccf8] MethodRef System.Collections.Generic.Dictionary`2<prim8,prim8>::get_Item
+01d6cf18  call     0x4e0a50
+01d6cf1d  lea      rcx, [rip + 0x25ffe8c]   ; [436cdb0] MethodRef System.Collections.Generic.Dictionary`2<prim8,prim8>::set_Item
+01d6cf24  call     0x4e0a50
+01d6cf29  lea      rcx, [rip + 0x26013d8]   ; [436e308] MethodRef System.Collections.Generic.List`1<InGame.Kernel.Timeline.RouteEvent>::get_Count
+01d6cf30  call     0x4e0a50
+01d6cf35  lea      rcx, [rip + 0x2601484]   ; [436e3c0] MethodRef System.Collections.Generic.List`1<InGame.Kernel.Timeline.RouteEvent>::get_Item
+01d6cf3c  call     0x4e0a50
+01d6cf41  lea      rcx, [rip + 0x2610f58]   ; [437dea0] TypeInfo UnityEngine.Object
+01d6cf48  call     0x4e0a50
+01d6cf4d  mov      byte ptr [rip + 0x28f67dc], 1   ; [4663730] bss
+01d6cf54  xor      r8d, r8d
+01d6cf57  mov      byte ptr [rsp + 0x98], 0   ; ._animationToken
+01d6cf5f  movaps   xmm1, xmm6
+01d6cf62  mov      rcx, rsi
+01d6cf65  call     0x1d6d3d0   ; EnemyMover::_isExecStackEvent(System.Single)
+01d6cf6a  test     al, al
+01d6cf6c  je       0x1d6d3b8
+01d6cf72  mov      rcx, qword ptr [rip + 0x2610f27]   ; [437dea0] TypeInfo UnityEngine.Object
+01d6cf79  mov      qword ptr [rsp + 0x90], rbx   ; ._destroyedToken
+01d6cf81  mov      rbx, qword ptr [rsi + 0x2b0]   ; ._baseEnemyData
+01d6cf88  cmp      dword ptr [rcx + 0xe4], 0
+01d6cf8f  jne      0x1d6cf96
+01d6cf91  call     0x4e0d90
+01d6cf96  xor      r8d, r8d
+01d6cf99  xor      edx, edx
+01d6cf9b  mov      rcx, rbx
+01d6cf9e  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01d6cfa3  test     al, al
+01d6cfa5  je       0x1d6d3b0
+01d6cfab  mov      rax, qword ptr [rsi + 0x88]   ; .<>u__1
+01d6cfb2  mov      qword ptr [rsp + 0xa0], rbp   ; ._rotateToken
+01d6cfba  mov      qword ptr [rsp + 0xa8], rdi   ; ._scaleToken
+01d6cfc2  mov      qword ptr [rsp + 0x78], r12   ; .<speedRate>5__7
+01d6cfc7  mov      qword ptr [rsp + 0x70], r13   ; .<selfArc>5__5
+01d6cfcc  mov      qword ptr [rsp + 0x68], r14   ; ev.flag0/.<loopcount>5__3
+01d6cfd1  mov      qword ptr [rsp + 0x60], r15   ; ev.subnameValue/.<gm>5__2
+01d6cfd6  movaps   xmmword ptr [rsp + 0x40], xmm7   ; ev.intValue1/.muzzleTransform
+01d6cfdb  movaps   xmmword ptr [rsp + 0x30], xmm8   ; .<>u__1
+01d6cfe1  test     rax, rax
+01d6cfe4  je       0x1d6d3c6
+01d6cfea  mov      r15d, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01d6cfee  xor      r13d, r13d
+01d6cff1  movss    xmm8, dword ptr [rip + 0x1773bea]   ; rdata 34e0be4 f=100,180,2000,-0.0001 d=5.629500655e+15
+01d6cffa  mov      r12d, r13d
+01d6cffd  xorps    xmm7, xmm7
+01d6d000  cmp      dword ptr [rsi + 0x2a4], r15d   ; ._eventStackIndex
+01d6d007  jge      0x1d6d356
+01d6d00d  mov      rax, qword ptr [rsi + 0x88]   ; .<>u__1
+01d6d014  test     rax, rax
+01d6d017  je       0x1d6d3c6
+01d6d01d  cmp      dword ptr [rax + 0x18], r13d   ; ev.repeatDelay
+01d6d021  jle      0x1d6d34d
+01d6d027  mov      r8, qword ptr [rip + 0x2601392]   ; [436e3c0] MethodRef System.Collections.Generic.List`1<InGame.Kernel.Timeline.RouteEvent>::get_Item
+01d6d02e  mov      rcx, rax
+01d6d031  mov      edx, dword ptr [rsi + 0x2a4]   ; ._eventStackIndex
+01d6d037  call     0xb16860
+01d6d03c  mov      rbp, rax
+01d6d03f  test     rax, rax
+01d6d042  je       0x1d6d3c6
+01d6d048  mov      eax, dword ptr [rax + 0x10]   ; ev.eventType
+01d6d04b  cmp      eax, 0x50
+01d6d04e  jle      0x1d6d1db
+01d6d054  cmp      eax, 0x64
+01d6d057  jle      0x1d6d194
+01d6d05d  cmp      eax, 0x65
+01d6d060  jne      0x1d6d13c
+01d6d066  mov      rcx, qword ptr [rsi + 0x2a8]   ; ._loopCounters
+01d6d06d  test     rcx, rcx
+01d6d070  je       0x1d6d3c6
+01d6d076  mov      r8, qword ptr [rip + 0x25ff8eb]   ; [436c968] MethodRef System.Collections.Generic.Dictionary`2<prim8,prim8>::ContainsKey
+01d6d07d  mov      edx, dword ptr [rsi + 0x2a4]   ; ._eventStackIndex
+01d6d083  call     0x1834fb0
+01d6d088  test     al, al
+01d6d08a  jne      0x1d6d0b2
+01d6d08c  mov      rcx, qword ptr [rsi + 0x2a8]   ; ._loopCounters
+01d6d093  test     rcx, rcx
+01d6d096  je       0x1d6d3c6
+01d6d09c  mov      r9, qword ptr [rip + 0x25ff755]   ; [436c7f8] MethodRef System.Collections.Generic.Dictionary`2<prim8,prim8>::Add
+01d6d0a3  mov      r8d, dword ptr [rbp + 0x40]   ; ev.intValue1/.muzzleTransform
+01d6d0a7  mov      edx, dword ptr [rsi + 0x2a4]   ; ._eventStackIndex
+01d6d0ad  call     0x1834f20
+01d6d0b2  mov      r14, qword ptr [rsi + 0x2a8]   ; ._loopCounters
+01d6d0b9  test     r14, r14
+01d6d0bc  je       0x1d6d3c6
+01d6d0c2  mov      edi, dword ptr [rsi + 0x2a4]   ; ._eventStackIndex
+01d6d0c8  mov      rcx, r14
+01d6d0cb  mov      r8, qword ptr [rip + 0x25ffc26]   ; [436ccf8] MethodRef System.Collections.Generic.Dictionary`2<prim8,prim8>::get_Item
+01d6d0d2  mov      edx, edi
+01d6d0d4  call     0x1843c30
+01d6d0d9  mov      r9, qword ptr [rip + 0x25ffcd0]   ; [436cdb0] MethodRef System.Collections.Generic.Dictionary`2<prim8,prim8>::set_Item
+01d6d0e0  mov      edx, edi
+01d6d0e2  mov      rcx, r14
+01d6d0e5  lea      ebx, [rax - 1]
+01d6d0e8  mov      r8d, ebx
+01d6d0eb  call     0x1843e20
+01d6d0f0  test     ebx, ebx
+01d6d0f2  js       0x1d6d118
+01d6d0f4  mov      rcx, qword ptr [rsi + 0x2b0]   ; ._baseEnemyData
+01d6d0fb  test     rcx, rcx
+01d6d0fe  je       0x1d6d3c6
+01d6d104  mov      rdx, qword ptr [rbp + 0x38]   ; ev.stringValue/.isSelfDir
+01d6d108  xor      r8d, r8d
+01d6d10b  call     0x1d32c90   ; EnemyData::GetLabelIndex(System.String)
+01d6d110  mov      dword ptr [rsi + 0x2a4], eax   ; ._eventStackIndex
+01d6d116  jmp      0x1d6d17f
+01d6d118  mov      rcx, qword ptr [rsi + 0x2a8]   ; ._loopCounters
+01d6d11f  test     rcx, rcx
+01d6d122  je       0x1d6d3c6
+01d6d128  mov      r8, qword ptr [rip + 0x25ff9a1]   ; [436cad0] MethodRef System.Collections.Generic.Dictionary`2<prim8,prim8>::Remove
+01d6d12f  mov      edx, dword ptr [rsi + 0x2a4]   ; ._eventStackIndex
+01d6d135  call     0x1839710
+01d6d13a  jmp      0x1d6d179
+01d6d13c  cmp      eax, 0x3e8
+01d6d141  je       0x1d6d322
+01d6d147  cmp      eax, 0x3e9
+01d6d14c  je       0x1d6d319
+01d6d152  xor      edx, edx
+01d6d154  mov      rcx, rsi
+01d6d157  call     0x1cdd580   ; InGameEnemyMoveBase::get_RouteToken()
+01d6d15c  mov      r9, qword ptr [rsi]
+01d6d15f  mov      r8, rax
+01d6d162  mov      rdx, rbp
+01d6d165  mov      rcx, rsi
+01d6d168  mov      r10, qword ptr [r9 + 0x2c8]
+01d6d16f  mov      r9, qword ptr [r9 + 0x2d0]
+01d6d176  call     r10
+01d6d179  inc      dword ptr [rsi + 0x2a4]   ; ._eventStackIndex
+01d6d17f  inc      r12d
+01d6d182  cmp      r12d, 0x3e8
+01d6d189  jle      0x1d6d000
+01d6d18f  jmp      0x1d6d34d
+01d6d194  cmp      eax, 0x51
+01d6d197  jne      0x1d6d1b5
+01d6d199  mov      edx, r13d
+01d6d19c  cmp      dword ptr [rbp + 0x40], r13d   ; ev.intValue1/.muzzleTransform
+01d6d1a0  je       0x1d6d1a5
+01d6d1a2  mov      edx, dword ptr [rbp + 0x40]   ; ev.intValue1/.muzzleTransform
+01d6d1a5  xor      r8d, r8d
+01d6d1a8  mov      rcx, rsi
+01d6d1ab  call     0x1d1d970   ; InGameObjectWithEvent::ClearTaskFlag(InGame.Kernel.InGameObjectWithEvent/TaskFlags)
+01d6d1b0  jmp      0x1d6d300
+01d6d1b5  cmp      eax, 0x64
+01d6d1b8  jne      0x1d6d152
+01d6d1ba  cmp      dword ptr [rbp + 0x40], eax   ; ev.intValue1/.muzzleTransform
+01d6d1bd  jge      0x1d6d179
+01d6d1bf  mov      ebx, dword ptr [rbp + 0x40]   ; ev.intValue1/.muzzleTransform
+01d6d1c2  xor      ecx, ecx
+01d6d1c4  call     0x1df1220   ; RandomUtility::Make01()
+01d6d1c9  mulss    xmm0, xmm8
+01d6d1ce  cvttss2si eax, xmm0
+01d6d1d2  cmp      ebx, eax
+01d6d1d4  jg       0x1d6d179
+01d6d1d6  jmp      0x1d6d0f4
+01d6d1db  cmp      eax, 5
+01d6d1de  jle      0x1d6d252
+01d6d1e0  cmp      eax, 0x14
+01d6d1e3  jne      0x1d6d223
+01d6d1e5  movss    xmm0, dword ptr [rbp + 0x4c]   ; ev.dotime/.postWait
+01d6d1ea  movss    xmm1, dword ptr [rbp + 0x20]   ; ev.value0
+01d6d1ef  movss    dword ptr [rsi + 0x2a0], xmm0   ; ._eventStackDelay
+01d6d1f7  cmp      byte ptr [rbp + 0x68], r13b   ; ev.flag0/.<loopcount>5__3
+01d6d1fb  je       0x1d6d2e5
+01d6d201  subss    xmm1, dword ptr [rsi + 0x158]   ; ._wakeAfterSecond
+01d6d209  comiss   xmm7, xmm1
+01d6d20c  jbe      0x1d6d2e5
+01d6d212  addss    xmm0, xmm1
+01d6d216  movss    dword ptr [rsi + 0x2a0], xmm0   ; ._eventStackDelay
+01d6d21e  jmp      0x1d6d2e5
+01d6d223  cmp      eax, 0x50
+01d6d226  jne      0x1d6d152
+01d6d22c  mov      eax, 0x7fffffff
+01d6d231  cmp      dword ptr [rbp + 0x40], r13d   ; ev.intValue1/.muzzleTransform
+01d6d235  je       0x1d6d23a
+01d6d237  mov      eax, dword ptr [rbp + 0x40]   ; ev.intValue1/.muzzleTransform
+01d6d23a  test     dword ptr [rsi + 0xc8], eax   ; ._taskFlag
+01d6d240  jne      0x1d6d34d
+01d6d246  mov      dword ptr [rsi + 0x2a0], r13d   ; ._eventStackDelay
+01d6d24d  jmp      0x1d6d300
+01d6d252  cmp      eax, 1
+01d6d255  jne      0x1d6d2f7
+01d6d25b  movss    xmm0, dword ptr [rbp + 0x4c]   ; ev.dotime/.postWait
+01d6d260  movss    xmm6, dword ptr [rbp + 0x20]   ; ev.value0
+01d6d265  movss    dword ptr [rsi + 0x2a0], xmm0   ; ._eventStackDelay
+01d6d26d  cmp      byte ptr [rbp + 0x68], r13b   ; ev.flag0/.<loopcount>5__3
+01d6d271  je       0x1d6d28c
+01d6d273  subss    xmm6, dword ptr [rsi + 0x158]   ; ._wakeAfterSecond
+01d6d27b  comiss   xmm7, xmm6
+01d6d27e  jbe      0x1d6d28c
+01d6d280  addss    xmm0, xmm6
+01d6d284  movss    dword ptr [rsi + 0x2a0], xmm0   ; ._eventStackDelay
+01d6d28c  movss    xmm0, dword ptr [rsi + 0x2a0]   ; ._eventStackDelay
+01d6d294  comiss   xmm0, xmm7
+01d6d297  jbe      0x1d6d2e5
+01d6d299  movss    xmm0, dword ptr [rbp + 0x20]   ; ev.value0
+01d6d29e  comiss   xmm0, xmm7
+01d6d2a1  jbe      0x1d6d2e5
+01d6d2a3  xor      edx, edx
+01d6d2a5  mov      rcx, rsi
+01d6d2a8  call     0x1cdd580   ; InGameEnemyMoveBase::get_RouteToken()
+01d6d2ad  movss    xmm2, dword ptr [rsi + 0x2a0]   ; ._eventStackDelay
+01d6d2b5  movaps   xmm3, xmm6
+01d6d2b8  mov      rdx, rax
+01d6d2bb  mov      qword ptr [rsp + 0x20], r13   ; ev.value0
+01d6d2c0  mov      rcx, rsi
+01d6d2c3  call     0x1d1e1a0   ; InGameObjectWithEvent::_delayPlayPause(System.Threading.CancellationToken,System.Single,System.Single)
+01d6d2c8  xor      edx, edx
+01d6d2ca  mov      byte ptr [rsp + 0x98], al   ; ._animationToken
+01d6d2d1  lea      rcx, [rsp + 0x98]   ; ._animationToken
+01d6d2d9  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01d6d2de  mov      dword ptr [rsi + 0x2a0], r13d   ; ._eventStackDelay
+01d6d2e5  comiss   xmm7, dword ptr [rsi + 0x2a0]   ; ._eventStackDelay
+01d6d2ec  setae    al
+01d6d2ef  inc      dword ptr [rsi + 0x2a4]   ; ._eventStackIndex
+01d6d2f5  jmp      0x1d6d310
+01d6d2f7  cmp      eax, 5
+01d6d2fa  jne      0x1d6d152
+01d6d300  inc      dword ptr [rsi + 0x2a4]   ; ._eventStackIndex
+01d6d306  cmp      dword ptr [rsi + 0x2a4], r15d   ; ._eventStackIndex
+01d6d30d  setl     al
+01d6d310  test     al, al
+01d6d312  je       0x1d6d34d
+01d6d314  jmp      0x1d6d17f
+01d6d319  mov      byte ptr [rsi + 0x2b8], 1   ; ._isFinishDelay
+01d6d320  jmp      0x1d6d34d
+01d6d322  test     dword ptr [rsi + 0xc8], 0x214   ; ._taskFlag
+01d6d32c  je       0x1d6d337
+01d6d32e  mov      dword ptr [rsi + 0x2a4], r15d   ; ._eventStackIndex
+01d6d335  jmp      0x1d6d34d
+01d6d337  mov      rdx, qword ptr [rsi]
+01d6d33a  mov      rcx, rsi
+01d6d33d  mov      rax, qword ptr [rdx + 0x278]
+01d6d344  mov      rdx, qword ptr [rdx + 0x280]   ; ._eventIndex
+01d6d34b  call     rax
+01d6d34d  cmp      dword ptr [rsi + 0x2a4], r15d   ; ._eventStackIndex
+01d6d354  jl       0x1d6d381
+01d6d356  test     dword ptr [rsi + 0xc8], 0x214   ; ._taskFlag
+01d6d360  jne      0x1d6d381
+01d6d362  cmp      byte ptr [rsi + 0x291], r13b   ; ._isInGamePlayArea
+01d6d369  jne      0x1d6d381
+01d6d36b  mov      rdx, qword ptr [rsi]
+01d6d36e  mov      rcx, rsi
+01d6d371  mov      rax, qword ptr [rdx + 0x278]
+01d6d378  mov      rdx, qword ptr [rdx + 0x280]   ; ._eventIndex
+01d6d37f  call     rax
+01d6d381  movaps   xmm7, xmmword ptr [rsp + 0x40]   ; ev.intValue1/.muzzleTransform
+01d6d386  mov      r15, qword ptr [rsp + 0x60]   ; ev.subnameValue/.<gm>5__2
+01d6d38b  mov      r14, qword ptr [rsp + 0x68]   ; ev.flag0/.<loopcount>5__3
+01d6d390  mov      r13, qword ptr [rsp + 0x70]   ; .<selfArc>5__5
+01d6d395  mov      r12, qword ptr [rsp + 0x78]   ; .<speedRate>5__7
+01d6d39a  mov      rdi, qword ptr [rsp + 0xa8]   ; ._scaleToken
+01d6d3a2  mov      rbp, qword ptr [rsp + 0xa0]   ; ._rotateToken
+01d6d3aa  movaps   xmm8, xmmword ptr [rsp + 0x30]   ; .<>u__1
+01d6d3b0  mov      rbx, qword ptr [rsp + 0x90]   ; ._destroyedToken
+01d6d3b8  movaps   xmm6, xmmword ptr [rsp + 0x50]   ; ev.randomFire/.offsetAngle
+01d6d3bd  add      rsp, 0x80
+01d6d3c4  pop      rsi
+01d6d3c5  ret      
+01d6d3c6  call     0x4e0d00

@@ -1,0 +1,128 @@
+#### InGame.Kernel.Enemy.Ene_Sm01::ReStart(System.Boolean) RVA 1d02230 len 274
+01d02230  push     rbx
+01d02232  push     r12
+01d02234  push     r13
+01d02236  push     r14
+01d02238  sub      rsp, 0x98
+01d0223f  cmp      byte ptr [rip + 0x2961183], 0   ; [46633c9] bss
+01d02246  movzx    ebx, dl
+01d02249  mov      r12, rcx
+01d0224c  jne      0x1d02261
+01d0224e  lea      rcx, [rip + 0x26b0c1b]   ; [43b2e70] TypeInfo InGame.Kernel.Enemy.Ene_Sm01
+01d02255  call     0x4e0a50
+01d0225a  mov      byte ptr [rip + 0x2961168], 1   ; [46633c9] bss
+01d02261  mov      qword ptr [rsp + 0xc0], rbp   ; ._speedToken
+01d02269  xor      r8d, r8d
+01d0226c  mov      qword ptr [rsp + 0xc8], rsi   ; ._taskFlag
+01d02274  movzx    edx, bl
+01d02277  mov      qword ptr [rsp + 0xd0], rdi   ; .isEntryedArea
+01d0227f  mov      rcx, r12
+01d02282  mov      qword ptr [rsp + 0x90], r15   ; ._destroyedToken
+01d0228a  movaps   xmmword ptr [rsp + 0x80], xmm6   ; ._transformCaches
+01d02292  movaps   xmmword ptr [rsp + 0x70], xmm7   ; ._transformCache
+01d02297  movaps   xmmword ptr [rsp + 0x60], xmm8   ; ev.subnameValue/._psystemCount
+01d0229d  movaps   xmmword ptr [rsp + 0x50], xmm9   ; ev.randomFire/._animatorsPlay
+01d022a3  movaps   xmmword ptr [rsp + 0x40], xmm10   ; ev.intValue1/._animators
+01d022a9  call     0x1d0f040   ; PawnEnemy::ReStart(System.Boolean)
+01d022ae  mov      r13, qword ptr [r12 + 0x1a0]   ; ._nextLookAtRotate
+01d022b6  xor      eax, eax
+01d022b8  xor      r14d, r14d
+01d022bb  test     r13, r13
+01d022be  je       0x1d02499
+01d022c4  movss    xmm10, dword ptr [rip + 0x17de90b]   ; rdata 34e0bd8 f=10,20,57.29578,100 d=134217760.6
+01d022cd  lea      r15, [r13 + 0x20]   ; ev.value0
+01d022d1  cmp      eax, dword ptr [r13 + 0x18]   ; ev.repeatDelay
+01d022d5  jge      0x1d023ef
+01d022db  cmp      r14d, dword ptr [r13 + 0x18]   ; ev.repeatDelay
+01d022df  jae      0x1d0249f
+01d022e5  mov      rbp, qword ptr [r15]
+01d022e8  nop      dword ptr [rax + rax]
+01d022f0  xor      ebx, ebx
+01d022f2  mov      esi, 0x20
+01d022f7  test     rbp, rbp
+01d022fa  je       0x1d02499
+01d02300  mov      rax, qword ptr [rbp + 0x18]   ; ev.repeatDelay
+01d02304  test     rax, rax
+01d02307  je       0x1d02499
+01d0230d  cmp      ebx, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01d02310  jge      0x1d023e0
+01d02316  xor      ecx, ecx
+01d02318  call     0x1df1220   ; RandomUtility::Make01()
+01d0231d  xor      ecx, ecx
+01d0231f  movaps   xmm6, xmm0
+01d02322  call     0x1df1220   ; RandomUtility::Make01()
+01d02327  movaps   xmm7, xmm0
+01d0232a  mulss    xmm6, xmm10
+01d0232f  xor      ecx, ecx
+01d02331  mulss    xmm7, xmm10
+01d02336  call     0x1df1220   ; RandomUtility::Make01()
+01d0233b  movaps   xmm8, xmm0
+01d0233f  xor      ecx, ecx
+01d02341  mulss    xmm8, xmm10
+01d02346  call     0x1df1220   ; RandomUtility::Make01()
+01d0234b  mov      rdi, qword ptr [rbp + 0x18]   ; ev.repeatDelay
+01d0234f  movaps   xmm9, xmm0
+01d02353  mulss    xmm9, xmm10
+01d02358  test     rdi, rdi
+01d0235b  je       0x1d02499
+01d02361  cmp      ebx, dword ptr [rdi + 0x18]   ; ev.repeatDelay
+01d02364  jae      0x1d0249f
+01d0236a  mov      rdx, qword ptr [rip + 0x26b0aff]   ; [43b2e70] TypeInfo InGame.Kernel.Enemy.Ene_Sm01
+01d02371  mov      rdi, qword ptr [rsi + rdi]
+01d02375  cmp      dword ptr [rdx + 0xe4], 0
+01d0237c  jne      0x1d0238d
+01d0237e  mov      rcx, rdx
+01d02381  call     0x4e0d90
+01d02386  mov      rdx, qword ptr [rip + 0x26b0ae3]   ; [43b2e70] TypeInfo InGame.Kernel.Enemy.Ene_Sm01
+01d0238d  movss    dword ptr [rsp + 0x20], xmm6   ; ev.value0
+01d02393  movss    dword ptr [rsp + 0x24], xmm7   ; ev.value1
+01d02399  movss    dword ptr [rsp + 0x28], xmm8   ; ev.vectorValue
+01d023a0  movss    dword ptr [rsp + 0x2c], xmm9
+01d023a7  test     rdi, rdi
+01d023aa  je       0x1d02499
+01d023b0  mov      rdx, qword ptr [rdx + 0xb8]   ; ._hormingToken
+01d023b7  lea      r8, [rsp + 0x30]   ; ._entryFlag
+01d023bc  movups   xmm0, xmmword ptr [rsp + 0x20]   ; ev.value0
+01d023c1  xor      r9d, r9d
+01d023c4  mov      rcx, rdi
+01d023c7  mov      edx, dword ptr [rdx + 8]
+01d023ca  movdqa   xmmword ptr [rsp + 0x30], xmm0   ; ._entryFlag
+01d023d0  call     0x300d060   ; Material::SetVector(System.Int32,UnityEngine.Vector4)
+01d023d5  inc      ebx
+01d023d7  add      rsi, 8
+01d023db  jmp      0x1d02300
+01d023e0  inc      r14d
+01d023e3  add      r15, 8
+01d023e7  mov      eax, r14d
+01d023ea  jmp      0x1d022d1
+01d023ef  mov      dword ptr [r12 + 0x1b0], 0   ; ._moverState
+01d023fb  cmp      byte ptr [rip + 0x2960ede], 0   ; [46632e0] bss
+01d02402  jne      0x1d02417
+01d02404  lea      rcx, [rip + 0x26bf2cd]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01d0240b  call     0x4e0a50
+01d02410  mov      byte ptr [rip + 0x2960ec9], 1   ; [46632e0] bss
+01d02417  mov      rax, qword ptr [rip + 0x26bf2ba]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01d0241e  movaps   xmm10, xmmword ptr [rsp + 0x40]   ; ev.intValue1/._animators
+01d02424  movaps   xmm9, xmmword ptr [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01d0242a  movaps   xmm8, xmmword ptr [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01d02430  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01d02437  movaps   xmm7, xmmword ptr [rsp + 0x70]   ; ._transformCache
+01d0243c  movaps   xmm6, xmmword ptr [rsp + 0x80]   ; ._transformCaches
+01d02444  mov      r15, qword ptr [rsp + 0x90]   ; ._destroyedToken
+01d0244c  movsd    xmm0, qword ptr [rcx + 0x54]   ; ev.randomWait/._particleTimeScale
+01d02451  mov      eax, dword ptr [rcx + 0x5c]   ; ._animatorsCount
+01d02454  mov      rdi, qword ptr [rsp + 0xd0]   ; .isEntryedArea
+01d0245c  mov      rsi, qword ptr [rsp + 0xc8]   ; ._taskFlag
+01d02464  mov      rbp, qword ptr [rsp + 0xc0]   ; ._speedToken
+01d0246c  movsd    qword ptr [r12 + 0x1c0], xmm0   ; ._reveToken
+01d02476  mov      dword ptr [r12 + 0x1c8], eax   ; ._masterEnemy
+01d0247e  mov      qword ptr [r12 + 0x1e8], 0   ; ._routes
+01d0248a  add      rsp, 0x98
+01d02491  pop      r14
+01d02493  pop      r13
+01d02495  pop      r12
+01d02497  pop      rbx
+01d02498  ret      
+01d02499  call     0x4e0d00
+01d0249e  int3     
+01d0249f  call     0x4e0cf0

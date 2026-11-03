@@ -1,0 +1,168 @@
+== InGame.Kernel.Enemy.PawnEnemy/EnemyChildData[] InGame.Kernel.Enemy.Ene_BosBase::SubEnemys() RVA 1dba8a0 len 316
+01dba8a0 push       rbx
+01dba8a2 push       rdi
+01dba8a3 sub        rsp, 0xa8
+01dba8aa cmp        byte ptr [rip + 0x28a8fc5], 0 ; [.data 4663876]
+01dba8b1 mov        rdi, rcx
+01dba8b4 jne        0x1dba911
+01dba8b6 lea        rcx, [rip + 0x25d712b] ; [.data 43919e8] MethodRef#205594
+01dba8bd call       0x4e0a50
+01dba8c2 lea        rcx, [rip + 0x25e8d57] ; [.data 43a3620] MethodRef#91905
+01dba8c9 call       0x4e0a50
+01dba8ce lea        rcx, [rip + 0x25e8c93] ; [.data 43a3568] MethodRef#91903
+01dba8d5 call       0x4e0a50
+01dba8da lea        rcx, [rip + 0x25e8def] ; [.data 43a36d0] MethodRef#91955
+01dba8e1 call       0x4e0a50
+01dba8e6 lea        rcx, [rip + 0x25e8bcb] ; [.data 43a34b8] MethodRef#91900
+01dba8ed call       0x4e0a50
+01dba8f2 lea        rcx, [rip + 0x2601957] ; [.data 43bc250] TypeInfo#67450
+01dba8f9 call       0x4e0a50
+01dba8fe lea        rcx, [rip + 0x25fd6fb] ; [.data 43b8000] MethodRef#202981
+01dba905 call       0x4e0a50
+01dba90a mov        byte ptr [rip + 0x28a8f65], 1 ; [.data 4663876]
+01dba911 xor        edx, edx
+01dba913 mov        rcx, rdi
+01dba916 call       0x79b610 ; InGame.Kernel.InGameDestuctible::GetDamageScore() || InGame.Kernel.InGameDestuctible::GetDeathScore() || InGame.Kernel.InGameDestuctible::GetTolerance(TXEKernel.TXEKernelHybridCollisions/attackType)
+01dba91b mov        rdx, qword ptr [rdi]
+01dba91e mov        rcx, rdi
+01dba921 mov        rbx, rax
+01dba924 mov        r8, qword ptr [rdx + 0x6b8]
+01dba92b mov        rdx, qword ptr [rdx + 0x6c0]
+01dba932 call       r8
+01dba935 mov        qword ptr [rsp + 0x30], rax
+01dba93a mov        rdi, rax
+01dba93d test       rax, rax
+01dba940 je         0x1dbab98
+01dba946 mov        rdx, qword ptr [rip + 0x25d709b] ; [.data 43919e8] MethodRef#205594
+01dba94d mov        rcx, rax
+01dba950 call       0x7d5180 ; System.Linq.Enumerable::Any(System.Collections.Generic.IEnumerable`1<TSource>)
+01dba955 test       al, al
+01dba957 je         0x1dbab98
+01dba95d mov        qword ptr [rsp + 0x80], r15
+01dba965 mov        qword ptr [rsp + 0xc8], rbp ; ~_burnShakeSpeed
+01dba96d mov        qword ptr [rsp + 0xa0], rsi ; ~PoolEvent
+01dba975 mov        qword ptr [rsp + 0x98], r12 ; ~_invincibleTime
+01dba97d mov        qword ptr [rsp + 0x90], r13 ; ~_priority
+01dba985 mov        qword ptr [rsp + 0x88], r14 ; ~_objectInfo
+01dba98d mov        rcx, qword ptr [rip + 0x26018bc] ; [.data 43bc250] TypeInfo#67450
+01dba994 call       0x4e0cb0
+01dba999 mov        rdx, qword ptr [rip + 0x25e8b18] ; [.data 43a34b8] MethodRef#91900
+01dba9a0 mov        rcx, rax
+01dba9a3 mov        r15, rax
+01dba9a6 call       0xb16050 ; System.Collections.Generic.List`1::.ctor() || System.Collections.Generic.LowLevelList`1::.ctor()
+01dba9ab test       rbx, rbx
+01dba9ae je         0x1dba9cb
+01dba9b0 test       r15, r15
+01dba9b3 je         0x1dbabb1
+01dba9b9 mov        r8, qword ptr [rip + 0x25e8c60] ; [.data 43a3620] MethodRef#91905
+01dba9c0 mov        rdx, rbx
+01dba9c3 mov        rcx, r15
+01dba9c6 call       0xc8d890
+01dba9cb mov        rcx, qword ptr [rip + 0x25fd62e] ; [.data 43b8000] MethodRef#202981
+01dba9d2 call       0x27540
+01dba9d7 test       rax, rax
+01dba9da je         0x1dbabb1
+01dba9e0 mov        rcx, qword ptr [rax + 0x138] ; ~_lastHit
+01dba9e7 xor        r13d, r13d
+01dba9ea movsxd     rax, dword ptr [rdi + 0x18]
+01dba9ee mov        qword ptr [rsp + 0x38], rcx
+01dba9f3 test       eax, eax
+01dba9f5 jle        0x1dbab4b
+01dba9fb mov        qword ptr [rsp + 0xd8], rax ; ~_DamageScored
+01dbaa03 lea        rax, [rdi + 0x20]
+01dbaa07 mov        qword ptr [rsp + 0xd0], rax ; ~_startDelayTime
+01dbaa0f mov        qword ptr [rsp + 0xc0], r13 ; ~_burnShake
+01dbaa17 nop        word ptr [rax + rax]
+01dbaa20 cmp        r13d, dword ptr [rdi + 0x18]
+01dbaa24 jae        0x1dbabab
+01dbaa2a test       rcx, rcx
+01dbaa2d je         0x1dbabb1
+01dbaa33 mov        rdx, qword ptr [rax]
+01dbaa36 xor        r8d, r8d
+01dbaa39 call       0x1cd2f00 ; InGame.Kernel.InGameEnemyClipsManager::GetData(System.String)
+01dbaa3e mov        rbp, rax
+01dbaa41 test       rax, rax
+01dbaa44 je         0x1dbabb1
+01dbaa4a xor        edx, edx
+01dbaa4c mov        rcx, rax
+01dbaa4f call       0x1d33100 ; InGame.Kernel.Timeline.EnemyData::get_RepeatDataSum()
+01dbaa54 mov        rsi, qword ptr [rbp + 0x50]
+01dbaa58 mov        r12d, eax
+01dbaa5b nop        dword ptr [rax + rax]
+01dbaa60 xor        edi, edi
+01dbaa62 lea        r14, [rsi + 0x20]
+01dbaa66 test       rsi, rsi
+01dbaa69 je         0x1dbabb1
+01dbaa6f nop        
+01dbaa70 cmp        edi, dword ptr [rsi + 0x18]
+01dbaa73 jge        0x1dbab08
+01dbaa79 jae        0x1dbabab
+01dbaa7f mov        rbx, qword ptr [r14]
+01dbaa82 test       rbx, rbx
+01dbaa85 je         0x1dbabb1
+01dbaa8b mov        rcx, qword ptr [rbx + 0x10]
+01dbaa8f xor        edx, edx
+01dbaa91 call       0x1e83800 ; System.String::IsNullOrEmpty(System.String)
+01dbaa96 test       al, al
+01dbaa98 je         0x1dbaaa0
+01dbaa9a mov        rdx, qword ptr [rbp + 0x20]
+01dbaa9e jmp        0x1dbaaa4
+01dbaaa0 mov        rdx, qword ptr [rbx + 0x10]
+01dbaaa4 xor        eax, eax
+01dbaaa6 lea        r9d, [r12 + 1]
+01dbaaab xorps      xmm0, xmm0
+01dbaaae mov        qword ptr [rsp + 0x50], rax
+01dbaab3 xor        r8d, r8d
+01dbaab6 mov        qword ptr [rsp + 0x20], rax
+01dbaabb lea        rcx, [rsp + 0x40]
+01dbaac0 movups     xmmword ptr [rsp + 0x40], xmm0
+01dbaac5 call       0x1311700 ; InGame.Kernel.Enemy.PawnEnemy/EnemyChildData::.ctor(System.String,UnityEngine.Transform,System.Int32)
+01dbaaca test       r15, r15
+01dbaacd je         0x1dbaba5
+01dbaad3 movups     xmm0, xmmword ptr [rsp + 0x40]
+01dbaad8 lea        rdx, [rsp + 0x60]
+01dbaadd mov        r8, qword ptr [rip + 0x25e8a84] ; [.data 43a3568] MethodRef#91903
+01dbaae4 movsd      xmm1, qword ptr [rsp + 0x50]
+01dbaaea mov        rcx, r15
+01dbaaed movaps     xmmword ptr [rsp + 0x60], xmm0
+01dbaaf2 movsd      qword ptr [rsp + 0x70], xmm1
+01dbaaf8 call       0x19f90
+01dbaafd inc        edi
+01dbaaff add        r14, 8
+01dbab03 jmp        0x1dbaa70
+01dbab08 mov        rbx, qword ptr [rsp + 0xc0] ; ~_burnShake
+01dbab10 inc        r13d
+01dbab13 mov        rax, qword ptr [rsp + 0xd0] ; ~_startDelayTime
+01dbab1b inc        rbx
+01dbab1e add        rax, 8
+01dbab22 mov        qword ptr [rsp + 0xc0], rbx ; ~_burnShake
+01dbab2a mov        qword ptr [rsp + 0xd0], rax ; ~_startDelayTime
+01dbab32 cmp        rbx, qword ptr [rsp + 0xd8] ; ~_DamageScored
+01dbab3a jge        0x1dbab4b
+01dbab3c mov        rdi, qword ptr [rsp + 0x30]
+01dbab41 mov        rcx, qword ptr [rsp + 0x38]
+01dbab46 jmp        0x1dbaa20
+01dbab4b test       r15, r15
+01dbab4e je         0x1dbabb1
+01dbab50 mov        rdx, qword ptr [rip + 0x25e8b79] ; [.data 43a36d0] MethodRef#91955
+01dbab57 mov        rcx, r15
+01dbab5a mov        r14, qword ptr [rsp + 0x88] ; ~_objectInfo
+01dbab62 mov        r13, qword ptr [rsp + 0x90] ; ~_priority
+01dbab6a mov        r12, qword ptr [rsp + 0x98] ; ~_invincibleTime
+01dbab72 mov        rsi, qword ptr [rsp + 0xa0] ; ~PoolEvent
+01dbab7a mov        rbp, qword ptr [rsp + 0xc8] ; ~_burnShakeSpeed
+01dbab82 mov        r15, qword ptr [rsp + 0x80]
+01dbab8a add        rsp, 0xa8
+01dbab91 pop        rdi
+01dbab92 pop        rbx
+01dbab93 jmp        0xb15e40 ; System.Collections.Generic.List`1::ToArray()
+01dbab98 mov        rax, rbx
+01dbab9b add        rsp, 0xa8
+01dbaba2 pop        rdi
+01dbaba3 pop        rbx
+01dbaba4 ret        
+01dbaba5 call       0x4e0d00
+01dbabaa int3       
+01dbabab call       0x4e0cf0
+01dbabb0 int3       
+01dbabb1 call       0x4e0d00

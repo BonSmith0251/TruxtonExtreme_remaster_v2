@@ -1,0 +1,46 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04::UpdateWingRotation(System.Single) RVA 1d90fd0 len bd
+01d90fd0 push       rbx
+01d90fd2 sub        rsp, 0x60
+01d90fd6 movaps     xmmword ptr [rsp + 0x50], xmm6
+01d90fdb mov        rbx, rcx
+01d90fde movaps     xmm6, xmm1
+01d90fe1 movaps     xmmword ptr [rsp + 0x40], xmm7
+01d90fe6 addss      xmm6, dword ptr [rcx + 0x314] ; ~_wingRotation
+01d90fee movss      xmm7, dword ptr [rip + 0x175b922] ; [.rdata 34ec918] f=360.0 d=1.4044481158322838e+306 v4=['360', 'inf', 'nan', 'nan']
+01d90ff6 movaps     xmm0, xmm6
+01d90ff9 divss      xmm0, xmm7
+01d90ffd call       0x578740
+01d91002 mulss      xmm0, xmm7
+01d91006 subss      xmm6, xmm0
+01d9100a xorps      xmm0, xmm0
+01d9100d comiss     xmm0, xmm6
+01d91010 ja         0x1d9101c
+01d91012 comiss     xmm6, xmm7
+01d91015 jbe        0x1d9101f
+01d91017 movaps     xmm6, xmm7
+01d9101a jmp        0x1d9101f
+01d9101c xorps      xmm6, xmm6
+01d9101f movss      dword ptr [rbx + 0x314], xmm6 ; ~_wingRotation
+01d91027 lea        rdx, [rsp + 0x20]
+01d9102c mulss      xmm6, dword ptr [rip + 0x174fb8c] ; [.rdata 34e0bc0] f=0.01745329238474369 d=2.0463635523047694e-13 v4=['0.0174533', '0.05', '0.5', '1']
+01d91034 lea        rcx, [rsp + 0x30]
+01d91039 mov        rbx, qword ptr [rbx + 0x50]
+01d9103d xor        r8d, r8d
+01d91040 mov        dword ptr [rsp + 0x20], 0
+01d91048 mov        dword ptr [rsp + 0x28], 0
+01d91050 movss      dword ptr [rsp + 0x24], xmm6
+01d91056 call       0x304d890 ; UnityEngine.Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01d9105b test       rbx, rbx
+01d9105e je         0x1d91088
+01d91060 movups     xmm0, xmmword ptr [rax]
+01d91063 xor        r8d, r8d
+01d91066 lea        rdx, [rsp + 0x20]
+01d9106b mov        rcx, rbx
+01d9106e movaps     xmmword ptr [rsp + 0x20], xmm0
+01d91073 call       0x3094650 ; UnityEngine.Transform::set_localRotation(UnityEngine.Quaternion)
+01d91078 movaps     xmm6, xmmword ptr [rsp + 0x50]
+01d9107d movaps     xmm7, xmmword ptr [rsp + 0x40]
+01d91082 add        rsp, 0x60
+01d91086 pop        rbx
+01d91087 ret        
+01d91088 call       0x4e0d00

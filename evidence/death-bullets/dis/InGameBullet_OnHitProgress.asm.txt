@@ -1,0 +1,152 @@
+#### InGame.Kernel.InGameBullet::OnHitProgress(KANAI.HybridCollision.HybridCollisionManager/CollisionOrder) RVA 1cce460 len 27a
+01cce460  mov      qword ptr [rsp + 0x18], rbx
+01cce465  push     rdi
+01cce466  sub      rsp, 0x30
+01cce46a  cmp      byte ptr [rip + 0x2994db0], 0   ; [4663221] bss
+01cce471  mov      rbx, rdx
+01cce474  mov      rdi, rcx
+01cce477  jne      0x1cce4a4
+01cce479  lea      rcx, [rip + 0x26fd5f8]   ; [43cba78] TypeInfo InGame.Kernel.Enemy.IDamagedObject
+01cce480  call     0x4e0a50
+01cce485  lea      rcx, [rip + 0x270a714]   ; [43d8ba0] TypeInfo InGame.Kernel.InGameBullet
+01cce48c  call     0x4e0a50
+01cce491  lea      rcx, [rip + 0x26afa08]   ; [437dea0] TypeInfo UnityEngine.Object
+01cce498  call     0x4e0a50
+01cce49d  mov      byte ptr [rip + 0x2994d7d], 1   ; [4663221] bss
+01cce4a4  mov      rdx, qword ptr [rdi]
+01cce4a7  mov      rcx, rdi
+01cce4aa  mov      rax, qword ptr [rdx + 0x1b8]   ; vcall KANAI.HybridCollision.HybridCollisions::IsAlive
+01cce4b1  mov      rdx, qword ptr [rdx + 0x1c0]   ; vcall KANAI.HybridCollision.HybridCollisions::IsAlive
+01cce4b8  call     rax
+01cce4ba  test     al, al
+01cce4bc  je       0x1cce6ca
+01cce4c2  mov      rax, qword ptr [rbx]
+01cce4c5  mov      qword ptr [rsp + 0x40], rsi   ; ._hitOrders
+01cce4ca  test     rax, rax
+01cce4cd  je       0x1cce6d5
+01cce4d3  mov      rsi, qword ptr [rax + 0x28]   ; ._HitPoint
+01cce4d7  test     rsi, rsi
+01cce4da  je       0x1cce6d5
+01cce4e0  mov      rcx, qword ptr [rip + 0x26af9b9]   ; [437dea0] TypeInfo UnityEngine.Object
+01cce4e7  mov      rbx, qword ptr [rsi + 0x48]   ; ._hitIndex
+01cce4eb  cmp      dword ptr [rcx + 0xe4], 0   ; ._deathByPno
+01cce4f2  jne      0x1cce4f9
+01cce4f4  call     0x4e0d90
+01cce4f9  xor      r8d, r8d
+01cce4fc  xor      edx, edx
+01cce4fe  mov      rcx, rbx
+01cce501  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01cce506  test     al, al
+01cce508  je       0x1cce6af
+01cce50e  test     rbx, rbx
+01cce511  je       0x1cce6d5
+01cce517  mov      rdx, qword ptr [rbx]
+01cce51a  mov      rcx, rbx
+01cce51d  mov      rax, qword ptr [rdx + 0x1b8]   ; vcall KANAI.HybridCollision.HybridCollisions::IsAlive
+01cce524  mov      rdx, qword ptr [rdx + 0x1c0]   ; vcall KANAI.HybridCollision.HybridCollisions::IsAlive
+01cce52b  call     rax
+01cce52d  test     al, al
+01cce52f  je       0x1cce6af
+01cce535  mov      rdx, qword ptr [rip + 0x26fd53c]   ; [43cba78] TypeInfo InGame.Kernel.Enemy.IDamagedObject
+01cce53c  mov      rcx, rbx
+01cce53f  mov      qword ptr [rsp + 0x48], r14   ; ._hitIndex
+01cce544  call     0x4dfda0
+01cce549  mov      r14, rax
+01cce54c  test     rax, rax
+01cce54f  je       0x1cce5a8
+01cce551  mov      r10, qword ptr [rax]
+01cce554  xor      ecx, ecx
+01cce556  mov      r9, qword ptr [rip + 0x26fd51b]   ; [43cba78] TypeInfo InGame.Kernel.Enemy.IDamagedObject
+01cce55d  movzx    edx, word ptr [r10 + 0x12e]
+01cce565  cmp      cx, dx
+01cce568  jae      0x1cce585
+01cce56a  mov      r8, qword ptr [r10 + 0xb0]
+01cce571  movzx    eax, cx
+01cce574  add      rax, rax
+01cce577  cmp      qword ptr [r8 + rax*8], r9
+01cce57b  je       0x1cce5d8
+01cce57d  inc      cx
+01cce580  cmp      cx, dx
+01cce583  jb       0x1cce571
+01cce585  mov      r8d, 6
+01cce58b  mov      rdx, r9
+01cce58e  mov      rcx, r14
+01cce591  call     0x4ddae0
+01cce596  mov      r9, qword ptr [rax]
+01cce599  mov      edx, 0xffffffff
+01cce59e  mov      r8, qword ptr [rax + 8]
+01cce5a2  mov      rcx, r14
+01cce5a5  call     r9
+01cce5a8  mov      eax, dword ptr [rdi + 0xd0]   ; ._colorType
+01cce5ae  mov      rcx, rbx
+01cce5b1  mov      r14, qword ptr [rsp + 0x48]   ; ._hitIndex
+01cce5b6  cmp      eax, 0x64
+01cce5b9  jne      0x1cce5f7
+01cce5bb  mov      r8, qword ptr [rbx]
+01cce5be  movss    xmm1, dword ptr [rdi + 0x28]   ; ._HitPoint
+01cce5c3  mov      rax, qword ptr [r8 + 0x2d8]   ; vcall KANAI.HybridCollision.HybridCollisions::AddEnergyOwner
+01cce5ca  mov      r8, qword ptr [r8 + 0x2e0]   ; vcall KANAI.HybridCollision.HybridCollisions::AddEnergyOwner
+01cce5d1  call     rax
+01cce5d3  jmp      0x1cce6af
+01cce5d8  movzx    ecx, cx
+01cce5db  add      rcx, rcx
+01cce5de  mov      eax, dword ptr [r8 + rcx*8 + 8]
+01cce5e3  add      eax, 6
+01cce5e6  cdqe     
+01cce5e8  shl      rax, 4
+01cce5ec  add      rax, 0x138
+01cce5f2  add      rax, r10
+01cce5f5  jmp      0x1cce596
+01cce5f7  mov      rdx, qword ptr [rbx]
+01cce5fa  cmp      eax, 0x6e
+01cce5fd  jne      0x1cce632
+01cce5ff  mov      rax, qword ptr [rdx + 0x2e8]   ; vcall KANAI.HybridCollision.HybridCollisions::AddScoreOwner
+01cce606  mov      r8, qword ptr [rdx + 0x2f0]   ; vcall KANAI.HybridCollision.HybridCollisions::AddScoreOwner
+01cce60d  movss    xmm1, dword ptr [rdi + 0x28]   ; ._HitPoint
+01cce612  call     rax
+01cce614  mov      r8, qword ptr [rbx]
+01cce617  xorps    xmm1, xmm1
+01cce61a  mov      rcx, rbx
+01cce61d  mov      rax, qword ptr [r8 + 0x2d8]   ; vcall KANAI.HybridCollision.HybridCollisions::AddEnergyOwner
+01cce624  mov      r8, qword ptr [r8 + 0x2e0]   ; vcall KANAI.HybridCollision.HybridCollisions::AddEnergyOwner
+01cce62b  call     rax
+01cce62d  jmp      0x1cce6af
+01cce632  mov      rax, qword ptr [rdx + 0x1d8]
+01cce639  mov      rdx, qword ptr [rdx + 0x1e0]
+01cce640  call     rax
+01cce642  test     al, al
+01cce644  je       0x1cce6af
+01cce646  mov      rdx, qword ptr [rbx]
+01cce649  mov      rcx, rbx
+01cce64c  mov      rax, qword ptr [rdx + 0x1e8]   ; vcall InGame.Kernel.InGameCollisionBase::IsNoDamaged
+01cce653  mov      rdx, qword ptr [rdx + 0x1f0]   ; vcall InGame.Kernel.InGameCollisionBase::IsNoDamaged
+01cce65a  call     rax
+01cce65c  test     al, al
+01cce65e  jne      0x1cce6af
+01cce660  mov      rdx, qword ptr [rip + 0x270a539]   ; [43d8ba0] TypeInfo InGame.Kernel.InGameBullet
+01cce667  cmp      dword ptr [rdx + 0xe4], 0   ; ._deathByPno
+01cce66e  jne      0x1cce67f
+01cce670  mov      rcx, rdx
+01cce673  call     0x4e0d90
+01cce678  mov      rdx, qword ptr [rip + 0x270a521]   ; [43d8ba0] TypeInfo InGame.Kernel.InGameBullet
+01cce67f  mov      rax, qword ptr [rsi]
+01cce682  xor      r9d, r9d
+01cce685  mov      rdx, qword ptr [rdx + 0xb8]
+01cce68c  mov      r8d, 0xffffffff
+01cce692  mov      rcx, rsi
+01cce695  mov      r10, qword ptr [rax + 0x258]   ; vcall InGame.Kernel.InGameBullet::_getCurrentPosition
+01cce69c  mov      rax, qword ptr [rax + 0x260]   ; vcall InGame.Kernel.InGameBullet::_getCurrentPosition
+01cce6a3  movss    xmm1, dword ptr [rdx]   ; static InGameBullet.BulletDamage
+01cce6a7  mov      qword ptr [rsp + 0x20], rax   ; ._collisions
+01cce6ac  call     r10
+01cce6af  mov      rdx, qword ptr [rdi]
+01cce6b2  mov      rcx, rdi
+01cce6b5  mov      rax, qword ptr [rdx + 0x2f8]   ; vcall KANAI.HybridCollision.HybridCollisions::AddDead
+01cce6bc  mov      rdx, qword ptr [rdx + 0x300]   ; vcall KANAI.HybridCollision.HybridCollisions::AddDead
+01cce6c3  call     rax
+01cce6c5  mov      rsi, qword ptr [rsp + 0x40]   ; ._hitOrders
+01cce6ca  mov      rbx, qword ptr [rsp + 0x50]   ; ._transformCache
+01cce6cf  add      rsp, 0x30
+01cce6d3  pop      rdi
+01cce6d4  ret      
+01cce6d5  call     0x4e0d00

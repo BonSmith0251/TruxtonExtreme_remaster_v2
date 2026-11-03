@@ -1,0 +1,315 @@
+01d9ec90 push rbx 
+01d9ec92 sub rsp, 0x50 
+01d9ec96 cmp byte ptr [rip + 0x28c4b63], 0 ; rva=4663800
+01d9ec9d jne 0x1d9ed6a 
+01d9eca3 lea rcx, [rip + 0x2618136] ; rva=43b6de0
+01d9ecaa call 0x4e0a50 
+01d9ecaf lea rcx, [rip + 0x2612e12] ; rva=43b1ac8
+01d9ecb6 call 0x4e0a50 
+01d9ecbb lea rcx, [rip + 0x25d36e6] ; rva=43723a8
+01d9ecc2 call 0x4e0a50 
+01d9ecc7 lea rcx, [rip + 0x25d48b2] ; rva=4373580
+01d9ecce call 0x4e0a50 
+01d9ecd3 lea rcx, [rip + 0x263262e] ; rva=43d1308
+01d9ecda call 0x4e0a50 
+01d9ecdf lea rcx, [rip + 0x263284a] ; rva=43d1530
+01d9ece6 call 0x4e0a50 
+01d9eceb lea rcx, [rip + 0x2632336] ; rva=43d1028
+01d9ecf2 call 0x4e0a50 
+01d9ecf7 lea rcx, [rip + 0x263277a] ; rva=43d1478
+01d9ecfe call 0x4e0a50 
+01d9ed03 lea rcx, [rip + 0x26320f6] ; rva=43d0e00
+01d9ed0a call 0x4e0a50 
+01d9ed0f lea rcx, [rip + 0x2632482] ; rva=43d1198
+01d9ed16 call 0x4e0a50 
+01d9ed1b lea rcx, [rip + 0x260fce6] ; rva=43aea08
+01d9ed22 call 0x4e0a50 
+01d9ed27 lea rcx, [rip + 0x2632242] ; rva=43d0f70
+01d9ed2e call 0x4e0a50 
+01d9ed33 lea rcx, [rip + 0x2632516] ; rva=43d1250
+01d9ed3a call 0x4e0a50 
+01d9ed3f lea rcx, [rip + 0x2632172] ; rva=43d0eb8
+01d9ed46 call 0x4e0a50 
+01d9ed4b lea rcx, [rip + 0x263266e] ; rva=43d13c0
+01d9ed52 call 0x4e0a50 
+01d9ed57 lea rcx, [rip + 0x2632382] ; rva=43d10e0
+01d9ed5e call 0x4e0a50 
+01d9ed63 mov byte ptr [rip + 0x28c4a96], 1 ; rva=4663800
+01d9ed6a mov rcx, qword ptr [rip + 0x25d480f] ; rva=4373580
+01d9ed71 mov edx, 0xb 
+01d9ed76 movaps xmmword ptr [rsp + 0x40], xmm6 
+01d9ed7b call 0x4dfe00 
+01d9ed80 mov rbx, rax 
+01d9ed83 test rax, rax 
+01d9ed86 je 0x1d9f337 
+01d9ed8c cmp dword ptr [rax + 0x18], 0 
+01d9ed90 mov rdx, qword ptr [rip + 0x2632799] ; rva=43d1530
+01d9ed97 jbe 0x1d9f33d 
+01d9ed9d lea rcx, [rax + 0x20] 
+01d9eda1 mov qword ptr [rax + 0x20], rdx 
+01d9eda5 call 0x4dfd80 
+01d9edaa cmp dword ptr [rbx + 0x18], 1 
+01d9edae mov rdx, qword ptr [rip + 0x26326c3] ; rva=43d1478
+01d9edb5 jbe 0x1d9f33d 
+01d9edbb lea rcx, [rbx + 0x28] 
+01d9edbf mov qword ptr [rbx + 0x28], rdx 
+01d9edc3 call 0x4dfd80 
+01d9edc8 cmp dword ptr [rbx + 0x18], 2 
+01d9edcc mov rdx, qword ptr [rip + 0x26320e5] ; rva=43d0eb8
+01d9edd3 jbe 0x1d9f33d 
+01d9edd9 lea rcx, [rbx + 0x30] 
+01d9eddd mov qword ptr [rbx + 0x30], rdx 
+01d9ede1 call 0x4dfd80 
+01d9ede6 cmp dword ptr [rbx + 0x18], 3 
+01d9edea mov rdx, qword ptr [rip + 0x263217f] ; rva=43d0f70
+01d9edf1 jbe 0x1d9f33d 
+01d9edf7 lea rcx, [rbx + 0x38] 
+01d9edfb mov qword ptr [rbx + 0x38], rdx 
+01d9edff call 0x4dfd80 
+01d9ee04 cmp dword ptr [rbx + 0x18], 4 
+01d9ee08 mov rdx, qword ptr [rip + 0x26322d1] ; rva=43d10e0
+01d9ee0f jbe 0x1d9f33d 
+01d9ee15 lea rcx, [rbx + 0x40] 
+01d9ee19 mov qword ptr [rbx + 0x40], rdx 
+01d9ee1d call 0x4dfd80 
+01d9ee22 cmp dword ptr [rbx + 0x18], 5 
+01d9ee26 mov rdx, qword ptr [rip + 0x263236b] ; rva=43d1198
+01d9ee2d jbe 0x1d9f33d 
+01d9ee33 lea rcx, [rbx + 0x48] 
+01d9ee37 mov qword ptr [rbx + 0x48], rdx 
+01d9ee3b call 0x4dfd80 
+01d9ee40 cmp dword ptr [rbx + 0x18], 6 
+01d9ee44 mov rdx, qword ptr [rip + 0x2632405] ; rva=43d1250
+01d9ee4b jbe 0x1d9f33d 
+01d9ee51 lea rcx, [rbx + 0x50] 
+01d9ee55 mov qword ptr [rbx + 0x50], rdx 
+01d9ee59 call 0x4dfd80 
+01d9ee5e cmp dword ptr [rbx + 0x18], 7 
+01d9ee62 mov rdx, qword ptr [rip + 0x2631f97] ; rva=43d0e00
+01d9ee69 jbe 0x1d9f33d 
+01d9ee6f lea rcx, [rbx + 0x58] 
+01d9ee73 mov qword ptr [rbx + 0x58], rdx 
+01d9ee77 call 0x4dfd80 
+01d9ee7c cmp dword ptr [rbx + 0x18], 8 
+01d9ee80 mov rdx, qword ptr [rip + 0x26321a1] ; rva=43d1028
+01d9ee87 jbe 0x1d9f33d 
+01d9ee8d lea rcx, [rbx + 0x60] 
+01d9ee91 mov qword ptr [rbx + 0x60], rdx 
+01d9ee95 call 0x4dfd80 
+01d9ee9a cmp dword ptr [rbx + 0x18], 9 
+01d9ee9e mov rdx, qword ptr [rip + 0x2632463] ; rva=43d1308
+01d9eea5 jbe 0x1d9f33d 
+01d9eeab lea rcx, [rbx + 0x68] 
+01d9eeaf mov qword ptr [rbx + 0x68], rdx 
+01d9eeb3 call 0x4dfd80 
+01d9eeb8 cmp dword ptr [rbx + 0x18], 0xa 
+01d9eebc mov rdx, qword ptr [rip + 0x26324fd] ; rva=43d13c0
+01d9eec3 jbe 0x1d9f33d 
+01d9eec9 lea rcx, [rbx + 0x70] 
+01d9eecd mov qword ptr [rbx + 0x70], rdx 
+01d9eed1 call 0x4dfd80 
+01d9eed6 mov rax, qword ptr [rip + 0x2612beb] ; rva=43b1ac8
+01d9eedd mov rdx, rbx 
+01d9eee0 mov rcx, qword ptr [rax + 0xb8] 
+01d9eee7 mov qword ptr [rcx], rbx 
+01d9eeea mov rcx, qword ptr [rip + 0x2612bd7] ; rva=43b1ac8
+01d9eef1 mov rcx, qword ptr [rcx + 0xb8] 
+01d9eef8 call 0x4dfd80 
+01d9eefd mov rcx, qword ptr [rip + 0x28d904c] ; rva=4677f50
+01d9ef04 mov rbx, qword ptr [rip + 0x2617ed5] ; rva=43b6de0
+01d9ef0b cmp dword ptr [rcx + 0xe4], 0 
+01d9ef12 jne 0x1d9ef19 
+01d9ef14 call 0x4e0d90 
+01d9ef19 xor edx, edx 
+01d9ef1b mov rcx, rbx 
+01d9ef1e call 0x2051bf0 ; Type::GetTypeFromHandle(System.RuntimeTypeHandle)
+01d9ef23 mov rcx, qword ptr [rip + 0x28d8fde] ; rva=4677f08
+01d9ef2a mov rbx, rax 
+01d9ef2d cmp dword ptr [rcx + 0xe4], 0 
+01d9ef34 jne 0x1d9ef3b 
+01d9ef36 call 0x4e0d90 
+01d9ef3b xor edx, edx 
+01d9ef3d mov rcx, rbx 
+01d9ef40 call 0x2064b50 ; Enum::GetValues(System.Type)
+01d9ef45 test rax, rax 
+01d9ef48 je 0x1d9f337 
+01d9ef4e xor edx, edx 
+01d9ef50 mov rcx, rax 
+01d9ef53 call 0x203fd00 ; Array::System.Collections.ICollection.get_Count()
+01d9ef58 mov rcx, qword ptr [rip + 0x2612b69] ; rva=43b1ac8
+01d9ef5f xorps xmm0, xmm0 
+01d9ef62 movss xmm2, dword ptr [rip + 0x1853eaa] ; rva=35f2e14 f=-5
+01d9ef6a xorps xmm6, xmm6 
+01d9ef6d movss xmm1, dword ptr [rip + 0x1853ca7] ; rva=35f2c1c f=-50
+01d9ef75 xor r8d, r8d 
+01d9ef78 unpcklps xmm0, xmm6 
+01d9ef7b mov rdx, qword ptr [rcx + 0xb8] 
+01d9ef82 mov dword ptr [rsp + 0x20], 0 
+01d9ef8a mov dword ptr [rsp + 0x24], 0xbf490fdb 
+01d9ef92 mov dword ptr [rsp + 0x28], 0x3fc90fdb 
+01d9ef9a mov dword ptr [rdx + 8], eax 
+01d9ef9d lea rdx, [rsp + 0x20] 
+01d9efa2 mov rax, qword ptr [rip + 0x2612b1f] ; rva=43b1ac8
+01d9efa9 mov rcx, qword ptr [rax + 0xb8] 
+01d9efb0 movsd qword ptr [rcx + 0xc], xmm0 
+01d9efb5 xorps xmm0, xmm0 
+01d9efb8 movss dword ptr [rcx + 0x14], xmm2 
+01d9efbd mov rax, qword ptr [rip + 0x2612b04] ; rva=43b1ac8
+01d9efc4 movss xmm2, dword ptr [rip + 0x1853e18] ; rva=35f2de4 f=-30
+01d9efcc unpcklps xmm0, xmm6 
+01d9efcf mov rcx, qword ptr [rax + 0xb8] 
+01d9efd6 movsd qword ptr [rcx + 0x18], xmm0 
+01d9efdb xorps xmm0, xmm0 
+01d9efde movss dword ptr [rcx + 0x20], xmm2 
+01d9efe3 mov rax, qword ptr [rip + 0x2612ade] ; rva=43b1ac8
+01d9efea movss xmm2, dword ptr [rip + 0x1853c26] ; rva=35f2c18 f=-20
+01d9eff2 unpcklps xmm0, xmm1 
+01d9eff5 mov rcx, qword ptr [rax + 0xb8] 
+01d9effc movsd qword ptr [rcx + 0x24], xmm0 
+01d9f001 movss dword ptr [rcx + 0x2c], xmm2 
+01d9f006 lea rcx, [rsp + 0x30] 
+01d9f00b call 0x304d890 ; Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01d9f010 xor r8d, r8d 
+01d9f013 lea rdx, [rsp + 0x20] 
+01d9f018 movups xmm0, xmmword ptr [rax] 
+01d9f01b mov rax, qword ptr [rip + 0x2612aa6] ; rva=43b1ac8
+01d9f022 mov dword ptr [rsp + 0x20], 0 
+01d9f02a mov dword ptr [rsp + 0x24], 0x3f490fdb 
+01d9f032 mov dword ptr [rsp + 0x28], 0xbfc90fdb 
+01d9f03a mov rcx, qword ptr [rax + 0xb8] 
+01d9f041 movups xmmword ptr [rcx + 0x30], xmm0 
+01d9f045 lea rcx, [rsp + 0x30] 
+01d9f04a call 0x304d890 ; Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01d9f04f xor edx, edx 
+01d9f051 movups xmm0, xmmword ptr [rax] 
+01d9f054 mov rax, qword ptr [rip + 0x2612a6d] ; rva=43b1ac8
+01d9f05b mov rcx, qword ptr [rax + 0xb8] 
+01d9f062 movups xmmword ptr [rcx + 0x40], xmm0 
+01d9f066 mov rcx, qword ptr [rip + 0x260f99b] ; rva=43aea08
+01d9f06d call 0x2fbd660 ; Animator::StringToHash(System.String)
+01d9f072 mov rcx, qword ptr [rip + 0x2612a4f] ; rva=43b1ac8
+01d9f079 mov rdx, qword ptr [rcx + 0xb8] 
+01d9f080 mov dword ptr [rdx + 0x50], eax 
+01d9f083 mov rax, qword ptr [rip + 0x2612a3e] ; rva=43b1ac8
+01d9f08a mov rcx, qword ptr [rax + 0xb8] 
+01d9f091 mov dword ptr [rcx + 0x54], 0x404ccccd 
+01d9f098 mov rax, qword ptr [rip + 0x2612a29] ; rva=43b1ac8
+01d9f09f mov rcx, qword ptr [rax + 0xb8] 
+01d9f0a6 mov dword ptr [rcx + 0x58], 0x40a00000 
+01d9f0ad mov rax, qword ptr [rip + 0x2612a14] ; rva=43b1ac8
+01d9f0b4 mov rcx, qword ptr [rax + 0xb8] 
+01d9f0bb mov dword ptr [rcx + 0x5c], 0x40000000 
+01d9f0c2 mov rdx, qword ptr [rip + 0x26129ff] ; rva=43b1ac8
+01d9f0c9 mov rax, qword ptr [rdx + 0xb8] 
+01d9f0d0 movss xmm0, dword ptr [rax + 0x5c] 
+01d9f0d5 addss xmm0, dword ptr [rax + 0x58] 
+01d9f0da movss dword ptr [rax + 0x60], xmm0 
+01d9f0df mov rax, qword ptr [rip + 0x26129e2] ; rva=43b1ac8
+01d9f0e6 mov rcx, qword ptr [rax + 0xb8] 
+01d9f0ed mov dword ptr [rcx + 0x64], 0x3f800000 
+01d9f0f4 mov rax, qword ptr [rip + 0x26129cd] ; rva=43b1ac8
+01d9f0fb mov rcx, qword ptr [rax + 0xb8] 
+01d9f102 mov dword ptr [rcx + 0x68], 2 
+01d9f109 mov rax, qword ptr [rip + 0x26129b8] ; rva=43b1ac8
+01d9f110 mov rcx, qword ptr [rax + 0xb8] 
+01d9f117 mov dword ptr [rcx + 0x6c], 0x41a00000 
+01d9f11e mov rax, qword ptr [rip + 0x26129a3] ; rva=43b1ac8
+01d9f125 mov rcx, qword ptr [rax + 0xb8] 
+01d9f12c mov edx, 3 
+01d9f131 movss xmm0, dword ptr [rip + 0x1853cb7] ; rva=35f2df0 f=-60
+01d9f139 unpcklps xmm0, xmm6 
+01d9f13c mov dword ptr [rcx + 0x70], 0x41200000 
+01d9f143 mov rax, qword ptr [rip + 0x261297e] ; rva=43b1ac8
+01d9f14a mov rcx, qword ptr [rax + 0xb8] 
+01d9f151 movsd qword ptr [rcx + 0x74], xmm0 
+01d9f156 movss xmm0, dword ptr [rip + 0x1853b82] ; rva=35f2ce0 f=60
+01d9f15e movss dword ptr [rcx + 0x7c], xmm6 
+01d9f163 mov rax, qword ptr [rip + 0x261295e] ; rva=43b1ac8
+01d9f16a unpcklps xmm0, xmm6 
+01d9f16d mov rcx, qword ptr [rax + 0xb8] 
+01d9f174 movsd qword ptr [rcx + 0x80], xmm0 
+01d9f17c movss dword ptr [rcx + 0x88], xmm6 
+01d9f184 mov rax, qword ptr [rip + 0x261293d] ; rva=43b1ac8
+01d9f18b mov rcx, qword ptr [rax + 0xb8] 
+01d9f192 mov dword ptr [rcx + 0x8c], 0x3ca3d70a 
+01d9f19c mov rax, qword ptr [rip + 0x2612925] ; rva=43b1ac8
+01d9f1a3 mov rcx, qword ptr [rax + 0xb8] 
+01d9f1aa mov dword ptr [rcx + 0x90], 0x40800000 
+01d9f1b4 mov rax, qword ptr [rip + 0x261290d] ; rva=43b1ac8
+01d9f1bb mov rcx, qword ptr [rax + 0xb8] 
+01d9f1c2 mov dword ptr [rcx + 0x94], 3 
+01d9f1cc mov rcx, qword ptr [rip + 0x25d31d5] ; rva=43723a8
+01d9f1d3 call 0x4dfe00 
+01d9f1d8 mov r8, rax 
+01d9f1db test rax, rax 
+01d9f1de je 0x1d9f337 
+01d9f1e4 cmp dword ptr [rax + 0x18], 0 
+01d9f1e8 jbe 0x1d9f33d 
+01d9f1ee mov dword ptr [rax + 0x20], 0x42b40000 
+01d9f1f5 cmp dword ptr [rax + 0x18], 1 
+01d9f1f9 jbe 0x1d9f33d 
+01d9f1ff mov dword ptr [rax + 0x24], 0x42340000 
+01d9f206 mov rcx, qword ptr [rip + 0x26128bb] ; rva=43b1ac8
+01d9f20d mov rdx, qword ptr [rcx + 0xb8] 
+01d9f214 mov qword ptr [rdx + 0x98], rax 
+01d9f21b mov rdx, r8 
+01d9f21e mov rax, qword ptr [rip + 0x26128a3] ; rva=43b1ac8
+01d9f225 mov rcx, qword ptr [rax + 0xb8] 
+01d9f22c add rcx, 0x98 
+01d9f233 call 0x4dfd80 
+01d9f238 mov rax, qword ptr [rip + 0x2612889] ; rva=43b1ac8
+01d9f23f lea rdx, [rsp + 0x20] 
+01d9f244 xor r8d, r8d 
+01d9f247 mov dword ptr [rsp + 0x20], 0xbf860a92 
+01d9f24f mov qword ptr [rsp + 0x24], 0 
+01d9f258 mov rcx, qword ptr [rax + 0xb8] 
+01d9f25f mov dword ptr [rcx + 0xa0], 0x41f00000 
+01d9f269 mov rax, qword ptr [rip + 0x2612858] ; rva=43b1ac8
+01d9f270 mov rcx, qword ptr [rax + 0xb8] 
+01d9f277 mov dword ptr [rcx + 0xa4], 0x40a00000 
+01d9f281 mov rax, qword ptr [rip + 0x2612840] ; rva=43b1ac8
+01d9f288 mov rcx, qword ptr [rax + 0xb8] 
+01d9f28f mov dword ptr [rcx + 0xa8], 0x42dc0000 
+01d9f299 mov rcx, qword ptr [rip + 0x2612828] ; rva=43b1ac8
+01d9f2a0 mov rax, qword ptr [rcx + 0xb8] 
+01d9f2a7 movss xmm0, dword ptr [rax + 0xa8] 
+01d9f2af unpcklps xmm0, xmm6 
+01d9f2b2 movsd qword ptr [rax + 0xac], xmm0 
+01d9f2ba movss dword ptr [rax + 0xb4], xmm6 
+01d9f2c2 mov rcx, qword ptr [rip + 0x26127ff] ; rva=43b1ac8
+01d9f2c9 mov rax, qword ptr [rcx + 0xb8] 
+01d9f2d0 movss xmm0, dword ptr [rax + 0xa8] 
+01d9f2d8 xorps xmm0, xmmword ptr [rip + 0x1741931] ; rva=34e0c10 f=-0
+01d9f2df unpcklps xmm0, xmm6 
+01d9f2e2 movsd qword ptr [rax + 0xb8], xmm0 
+01d9f2ea movss dword ptr [rax + 0xc0], xmm6 
+01d9f2f2 mov rax, qword ptr [rip + 0x26127cf] ; rva=43b1ac8
+01d9f2f9 mov rcx, qword ptr [rax + 0xb8] 
+01d9f300 mov dword ptr [rcx + 0xc4], 0x42200000 
+01d9f30a lea rcx, [rsp + 0x30] 
+01d9f30f call 0x304d890 ; Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01d9f314 movaps xmm6, xmmword ptr [rsp + 0x40] 
+01d9f319 movups xmm0, xmmword ptr [rax] 
+01d9f31c mov rax, qword ptr [rip + 0x26127a5] ; rva=43b1ac8
+01d9f323 mov rcx, qword ptr [rax + 0xb8] 
+01d9f32a movups xmmword ptr [rcx + 0xc8], xmm0 
+01d9f331 add rsp, 0x50 
+01d9f335 pop rbx 
+01d9f336 ret 
+01d9f337 call 0x4e0d00 
+01d9f33c int3 
+01d9f33d call 0x4e0cf0 
+01d9f342 int3 
+01d9f343 int3 
+01d9f344 int3 
+01d9f345 int3 
+01d9f346 int3 
+01d9f347 int3 
+01d9f348 int3 
+01d9f349 int3 
+01d9f34a int3 
+01d9f34b int3 
+01d9f34c int3 
+01d9f34d int3 
+01d9f34e int3 
+01d9f34f int3 

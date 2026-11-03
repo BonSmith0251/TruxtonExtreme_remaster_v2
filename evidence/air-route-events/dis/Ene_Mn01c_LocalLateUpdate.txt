@@ -1,0 +1,12 @@
+#### InGame.Kernel.Enemy.Ene_Mn01c::LocalLateUpdate(System.Single) RVA 1cfa560 len 38
+01cfa560  push     rbx
+01cfa562  sub      rsp, 0x30
+01cfa566  cmp      dword ptr [rcx + 0x1bc], 0
+01cfa56d  mov      rbx, rcx
+01cfa570  movaps   xmmword ptr [rsp + 0x20], xmm6   ; ev.value0
+01cfa575  movaps   xmm6, xmm1
+01cfa578  je       0x1cfa67f
+01cfa57e  movsxd   rax, dword ptr [rcx + 0x1bc]
+01cfa585  cmp      eax, 5
+01cfa588  ja       0x1cfa636
+01cfa58e  lea      rcx, [rip - 0x1cfa595]

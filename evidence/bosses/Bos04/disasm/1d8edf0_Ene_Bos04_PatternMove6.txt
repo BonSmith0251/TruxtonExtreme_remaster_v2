@@ -1,0 +1,190 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04::PatternMove6(System.Single) RVA 1d8edf0 len 3cf
+01d8edf0 mov        qword ptr [rsp + 0x18], rbx
+01d8edf5 push       rbp
+01d8edf6 sub        rsp, 0xa0
+01d8edfd cmp        byte ptr [rip + 0x28d49be], 0 ; [.data 46637c2]
+01d8ee04 mov        rbx, rcx
+01d8ee07 movaps     xmmword ptr [rsp + 0x90], xmm6 ; ~_priority
+01d8ee0f movaps     xmm6, xmm1
+01d8ee12 jne        0x1d8ee27
+01d8ee14 lea        rcx, [rip + 0x26229dd] ; [.data 43b17f8] TypeInfo#37303
+01d8ee1b call       0x4e0a50
+01d8ee20 mov        byte ptr [rip + 0x28d499b], 1 ; [.data 46637c2]
+01d8ee27 xor        ebp, ebp
+01d8ee29 mov        qword ptr [rsp + 0xb0], rsi ; ~_updateEventCount
+01d8ee31 mov        rdx, rbx
+01d8ee34 mov        qword ptr [rsp + 0x68], rbp
+01d8ee39 lea        rcx, [rsp + 0x60]
+01d8ee3e mov        qword ptr [rsp + 0xb8], rdi ; ~_mover
+01d8ee46 mov        qword ptr [rsp + 0x60], rbx
+01d8ee4b call       0x4dfd80
+01d8ee50 mov        eax, dword ptr [rbx + 0x1ec] ; ~_patternMode
+01d8ee56 movss      dword ptr [rsp + 0x68], xmm6
+01d8ee5c test       eax, eax
+01d8ee5e jne        0x1d8eef5
+01d8ee64 mov        rax, qword ptr [rbx + 0xb8] ; ~_mover
+01d8ee6b test       rax, rax
+01d8ee6e je         0x1d8f1ba
+01d8ee74 mov        byte ptr [rax + 0x1d4], bpl ; ~_repeatPassed
+01d8ee7b mov        byte ptr [rbx + 0x1b4], bpl ; ~_isDirectionPause
+01d8ee82 mov        rax, qword ptr [rip + 0x262296f] ; [.data 43b17f8] TypeInfo#37303
+01d8ee89 cmp        dword ptr [rax + 0xe4], ebp
+01d8ee8f jne        0x1d8eea0
+01d8ee91 mov        rcx, rax
+01d8ee94 call       0x4e0d90
+01d8ee99 mov        rax, qword ptr [rip + 0x2622958] ; [.data 43b17f8] TypeInfo#37303
+01d8eea0 mov        rax, qword ptr [rax + 0xb8] ; ~_mover
+01d8eea7 xor        r9d, r9d
+01d8eeaa movss      xmm2, dword ptr [rip + 0x1751d1a] ; [.rdata 34e0bcc] f=1.0 d=50.12387841939926 v4=['1', '3.14159', '4', '10']
+01d8eeb2 mov        rcx, rbx
+01d8eeb5 movss      xmm1, dword ptr [rax + 0xd8] ; ~_DamageScored
+01d8eebd call       0x1dba4d0 ; InGame.Kernel.Enemy.Ene_BosBase::SetDirectionTime(System.Single,System.Single)
+01d8eec2 mov        byte ptr [rbx + 0x2df], bpl ; ~_isReverseMove
+01d8eec9 mov        dword ptr [rbx + 0x2cc], ebp ; ~_localTime
+01d8eecf mov        rax, qword ptr [rip + 0x2622922] ; [.data 43b17f8] TypeInfo#37303
+01d8eed6 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d8eedd mov        eax, dword ptr [rcx + 0xe4]
+01d8eee3 mov        dword ptr [rbx + 0x2e0], eax ; ~_laserCount
+01d8eee9 mov        dword ptr [rbx + 0x1ec], 0xa ; ~_patternMode
+01d8eef3 jmp        0x1d8eefe
+01d8eef5 cmp        eax, 0xa
+01d8eef8 jne        0x1d8f18b
+01d8eefe xor        edx, edx
+01d8ef00 movaps     xmmword ptr [rsp + 0x80], xmm8
+01d8ef09 mov        rcx, rbx
+01d8ef0c call       0x1db9a20 ; InGame.Kernel.Enemy.Ene_BosBase::GetDirectionRate()
+01d8ef11 movss      xmm1, dword ptr [rsp + 0x68]
+01d8ef17 mov        rcx, rbx
+01d8ef1a movzx      eax, byte ptr [rbx + 0x2df] ; ~_isReverseMove
+01d8ef21 movaps     xmm8, xmm0
+01d8ef25 movss      xmm3, dword ptr [rip + 0x1751caf] ; [.rdata 34e0bdc] f=20.0 d=727846620416.0 v4=['20', '57.2958', '100', '180']
+01d8ef2d movss      xmm2, dword ptr [rip + 0x1863dab] ; [.rdata 35f2ce0] f=60.0 d=281475046375424.0 v4=['60', '120', '300', '720']
+01d8ef35 mov        qword ptr [rsp + 0x30], rbp
+01d8ef3a mov        byte ptr [rsp + 0x28], al
+01d8ef3e movss      dword ptr [rsp + 0x20], xmm1
+01d8ef44 movaps     xmm1, xmm0
+01d8ef47 call       0x1d92aa0 ; InGame.Kernel.Enemy.Ene_Bos04::infinityMove(System.Single,System.Single,System.Single,System.Single,System.Boolean)
+01d8ef4c mov        rax, qword ptr [rip + 0x26228a5] ; [.data 43b17f8] TypeInfo#37303
+01d8ef53 movss      xmm6, dword ptr [rsp + 0x68]
+01d8ef59 cmp        dword ptr [rax + 0xe4], ebp
+01d8ef5f jne        0x1d8ef70
+01d8ef61 mov        rcx, rax
+01d8ef64 call       0x4e0d90
+01d8ef69 mov        rax, qword ptr [rip + 0x2622888] ; [.data 43b17f8] TypeInfo#37303
+01d8ef70 mov        rax, qword ptr [rax + 0xb8] ; ~_mover
+01d8ef77 xor        r8d, r8d
+01d8ef7a mov        rcx, rbx
+01d8ef7d mulss      xmm6, dword ptr [rax + 0xdc]
+01d8ef85 movaps     xmm1, xmm6
+01d8ef88 call       0x1d90fd0 ; InGame.Kernel.Enemy.Ene_Bos04::UpdateWingRotation(System.Single)
+01d8ef8d comiss     xmm8, dword ptr [rip + 0x1751c37] ; [.rdata 34e0bcc] f=1.0 d=50.12387841939926 v4=['1', '3.14159', '4', '10']
+01d8ef95 movaps     xmm8, xmmword ptr [rsp + 0x80]
+01d8ef9e jb         0x1d8f010
+01d8efa0 mov        rax, qword ptr [rip + 0x2622851] ; [.data 43b17f8] TypeInfo#37303
+01d8efa7 cmp        dword ptr [rax + 0xe4], ebp
+01d8efad jne        0x1d8efbe
+01d8efaf mov        rcx, rax
+01d8efb2 call       0x4e0d90
+01d8efb7 mov        rax, qword ptr [rip + 0x262283a] ; [.data 43b17f8] TypeInfo#37303
+01d8efbe mov        rax, qword ptr [rax + 0xb8] ; ~_mover
+01d8efc5 xor        r9d, r9d
+01d8efc8 movss      xmm2, dword ptr [rip + 0x1751bfc] ; [.rdata 34e0bcc] f=1.0 d=50.12387841939926 v4=['1', '3.14159', '4', '10']
+01d8efd0 mov        rcx, rbx
+01d8efd3 movss      xmm1, dword ptr [rax + 0xd8] ; ~_DamageScored
+01d8efdb call       0x1dba4d0 ; InGame.Kernel.Enemy.Ene_BosBase::SetDirectionTime(System.Single,System.Single)
+01d8efe0 cmp        byte ptr [rbx + 0x2df], bpl ; ~_isReverseMove
+01d8efe7 sete       al
+01d8efea mov        byte ptr [rbx + 0x2df], al ; ~_isReverseMove
+01d8eff0 mov        rax, qword ptr [rip + 0x2622801] ; [.data 43b17f8] TypeInfo#37303
+01d8eff7 mov        rdx, qword ptr [rax + 0xb8] ; ~_mover
+01d8effe mov        eax, dword ptr [rdx + 0xe4]
+01d8f004 mov        dword ptr [rbx + 0x2e0], eax ; ~_laserCount
+01d8f00a mov        dword ptr [rbx + 0x2cc], ebp ; ~_localTime
+01d8f010 cmp        byte ptr [rip + 0x28d47b2], bpl ; [.data 46637c9]
+01d8f017 jne        0x1d8f038
+01d8f019 lea        rcx, [rip + 0x26227d8] ; [.data 43b17f8] TypeInfo#37303
+01d8f020 call       0x4e0a50
+01d8f025 lea        rcx, [rip + 0x261333c] ; [.data 43a2368] TypeInfo#45781
+01d8f02c call       0x4e0a50
+01d8f031 mov        byte ptr [rip + 0x28d4791], 1 ; [.data 46637c9]
+01d8f038 movss      xmm0, dword ptr [rbx + 0x2cc] ; ~_localTime
+01d8f040 xorps      xmm6, xmm6
+01d8f043 subss      xmm0, dword ptr [rsp + 0x68]
+01d8f049 comiss     xmm6, xmm0
+01d8f04c movss      dword ptr [rbx + 0x2cc], xmm0 ; ~_localTime
+01d8f054 jb         0x1d8f18b
+01d8f05a mov        rcx, rbx
+01d8f05d cmp        dword ptr [rbx + 0x2e0], ebp ; ~_laserCount
+01d8f063 jg         0x1d8f14d
+01d8f069 xor        r8d, r8d
+01d8f06c mov        edx, 7
+01d8f071 call       0x1db9840 ; InGame.Kernel.Enemy.Ene_BosBase::GetBT(System.Int32)
+01d8f076 mov        rcx, qword ptr [rip + 0x26132eb] ; [.data 43a2368] TypeInfo#45781
+01d8f07d mov        rsi, rax
+01d8f080 cmp        dword ptr [rcx + 0xe4], ebp
+01d8f086 jne        0x1d8f08d
+01d8f088 call       0x4e0d90
+01d8f08d xor        edx, edx
+01d8f08f mov        ecx, 0x63
+01d8f094 call       0x2723de0 ; TXEKernel.Sound.SoundUtility::PlayQue(TXEKernel.Sound.SoundUtility/ID)
+01d8f099 mov        rdi, qword ptr [rbx + 0xb8] ; ~_mover
+01d8f0a0 xor        edx, edx
+01d8f0a2 mov        rcx, rbx
+01d8f0a5 call       0x1d11bc0 ; InGame.Kernel.Enemy.PawnEnemy::get_CToken()
+01d8f0aa mov        rcx, qword ptr [rbx + 0x278] ; ~_muzzles
+01d8f0b1 test       rcx, rcx
+01d8f0b4 je         0x1d8f1ba
+01d8f0ba cmp        dword ptr [rcx + 0x18], 7
+01d8f0be jbe        0x1d8f1b4
+01d8f0c4 test       rdi, rdi
+01d8f0c7 je         0x1d8f1ba
+01d8f0cd mov        rcx, qword ptr [rcx + 0x58]
+01d8f0d1 mov        r9, rsi
+01d8f0d4 mov        qword ptr [rsp + 0x58], rbp
+01d8f0d9 mov        r8, rax
+01d8f0dc mov        qword ptr [rsp + 0x50], rbp
+01d8f0e1 mov        rdx, rdi
+01d8f0e4 mov        dword ptr [rsp + 0x48], ebp
+01d8f0e8 movss      dword ptr [rsp + 0x40], xmm6
+01d8f0ee mov        qword ptr [rsp + 0x38], rbp
+01d8f0f3 mov        qword ptr [rsp + 0x30], rcx
+01d8f0f8 lea        rcx, [rsp + 0x70]
+01d8f0fd mov        byte ptr [rsp + 0x28], bpl
+01d8f102 mov        byte ptr [rsp + 0x20], bpl
+01d8f107 call       0x1cd8fe0 ; InGame.Kernel.InGameEnemyMoveBase::BulletFireAsync(System.Threading.CancellationToken,InGame.Kernel.Enemy.BulletTemplate,System.Boolean,System.Boolean,UnityEngine.Transform,UnityEngine.Transform,System.Single,System.Int32,System.Action`1<InGame.Kernel.InGameBulletInterface>)
+01d8f10c xor        edx, edx
+01d8f10e lea        rcx, [rsp + 0x70]
+01d8f113 movups     xmm0, xmmword ptr [rax]
+01d8f116 movaps     xmmword ptr [rsp + 0x70], xmm0
+01d8f11b call       0x2742890 ; Cysharp.Threading.Tasks.UniTaskExtensions::Forget(Cysharp.Threading.Tasks.UniTask)
+01d8f120 mov        rax, qword ptr [rip + 0x26226d1] ; [.data 43b17f8] TypeInfo#37303
+01d8f127 cmp        dword ptr [rax + 0xe4], ebp
+01d8f12d jne        0x1d8f13e
+01d8f12f mov        rcx, rax
+01d8f132 call       0x4e0d90
+01d8f137 mov        rax, qword ptr [rip + 0x26226ba] ; [.data 43b17f8] TypeInfo#37303
+01d8f13e mov        rax, qword ptr [rax + 0xb8] ; ~_mover
+01d8f145 mov        ecx, dword ptr [rax + 0xec]
+01d8f14b jmp        0x1d8f185
+01d8f14d xor        edx, edx
+01d8f14f call       0x1d91dc0 ; InGame.Kernel.Enemy.Ene_Bos04::coreLongLaser()
+01d8f154 mov        rax, qword ptr [rip + 0x262269d] ; [.data 43b17f8] TypeInfo#37303
+01d8f15b cmp        dword ptr [rax + 0xe4], ebp
+01d8f161 jne        0x1d8f172
+01d8f163 mov        rcx, rax
+01d8f166 call       0x4e0d90
+01d8f16b mov        rax, qword ptr [rip + 0x2622686] ; [.data 43b17f8] TypeInfo#37303
+01d8f172 mov        rax, qword ptr [rax + 0xb8] ; ~_mover
+01d8f179 mov        ecx, dword ptr [rax + 0xe8] ; ~_deadExplosionHash
+01d8f17f dec        dword ptr [rbx + 0x2e0] ; ~_laserCount
+01d8f185 mov        dword ptr [rbx + 0x2cc], ecx ; ~_localTime
+01d8f18b mov        rdi, qword ptr [rsp + 0xb8] ; ~_mover
+01d8f193 mov        rsi, qword ptr [rsp + 0xb0] ; ~_updateEventCount
+01d8f19b mov        rbx, qword ptr [rsp + 0xc0] ; ~_burnShake
+01d8f1a3 movaps     xmm6, xmmword ptr [rsp + 0x90] ; ~_priority
+01d8f1ab add        rsp, 0xa0
+01d8f1b2 pop        rbp
+01d8f1b3 ret        
+01d8f1b4 call       0x4e0cf0
+01d8f1b9 int3       
+01d8f1ba call       0x4e0d00

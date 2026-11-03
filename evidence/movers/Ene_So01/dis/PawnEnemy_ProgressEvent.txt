@@ -1,0 +1,86 @@
+01d0eed0  mov      qword ptr [rsp + 0x18], rbx
+01d0eed5  mov      qword ptr [rsp + 0x20], rdi   ; ._collisions
+01d0eeda  push     r12
+01d0eedc  push     r14
+01d0eede  push     r15
+01d0eee0  sub      rsp, 0x30
+01d0eee4  cmp      byte ptr [rip + 0x2954525], 0   ; [4663410] bss
+01d0eeeb  mov      r14, rcx
+01d0eeee  movaps   xmmword ptr [rsp + 0x20], xmm6   ; ._collisions
+01d0eef3  movaps   xmm6, xmm1
+01d0eef6  movsxd   rbx, r8d
+01d0eef9  jne      0x1d0ef0e
+01d0eefb  lea      rcx, [rip + 0x26be8ee]   ; [43cd7f0] TypeInfo InGame.Kernel.Enemy.IEnemyUpdater
+01d0ef02  call     0x4e0a50
+01d0ef07  mov      byte ptr [rip + 0x2954502], 1   ; [4663410] bss
+01d0ef0e  xor      r12d, r12d
+01d0ef11  movaps   xmm0, xmm6
+01d0ef14  mov      edi, r12d
+01d0ef17  mov      r15, rbx
+01d0ef1a  addss    xmm0, dword ptr [r14 + 0xcc]   ; ._aliveTime
+01d0ef23  movss    dword ptr [r14 + 0xcc], xmm0   ; ._aliveTime
+01d0ef2c  test     ebx, ebx
+01d0ef2e  jle      0x1d0eff0
+01d0ef34  mov      qword ptr [rsp + 0x50], rbp   ; ._transformCache
+01d0ef39  mov      ebp, r12d
+01d0ef3c  mov      qword ptr [rsp + 0x58], rsi   ; ._gameObjectCache
+01d0ef41  mov      esi, 0x20
+01d0ef46  nop      word ptr [rax + rax]
+01d0ef50  mov      rax, qword ptr [r14 + 0xa8]   ; ._updateEvents
+01d0ef57  test     rax, rax
+01d0ef5a  je       0x1d0f029
+01d0ef60  cmp      edi, dword ptr [rax + 0x18]
+01d0ef63  jae      0x1d0f02f
+01d0ef69  mov      rbx, qword ptr [rsi + rax]
+01d0ef6d  test     rbx, rbx
+01d0ef70  je       0x1d0f029
+01d0ef76  mov      r10, qword ptr [rbx]
+01d0ef79  movzx    ecx, r12w
+01d0ef7d  mov      r9, qword ptr [rip + 0x26be86c]   ; [43cd7f0] TypeInfo InGame.Kernel.Enemy.IEnemyUpdater
+01d0ef84  movzx    edx, word ptr [r10 + 0x12e]
+01d0ef8c  cmp      r12w, dx
+01d0ef90  jae      0x1d0efb4
+01d0ef92  mov      r8, qword ptr [r10 + 0xb0]   ; ._updateEventCount
+01d0ef99  nop      dword ptr [rax]
+01d0efa0  movzx    eax, cx
+01d0efa3  add      rax, rax
+01d0efa6  cmp      qword ptr [r8 + rax*8], r9
+01d0efaa  je       0x1d0f00a
+01d0efac  inc      cx
+01d0efaf  cmp      cx, dx
+01d0efb2  jb       0x1d0efa0
+01d0efb4  mov      r8d, 3
+01d0efba  mov      rdx, r9
+01d0efbd  mov      rcx, rbx
+01d0efc0  call     0x4ddae0
+01d0efc5  mov      rdx, qword ptr [rax]
+01d0efc8  movaps   xmm1, xmm6
+01d0efcb  mov      r8, qword ptr [rax + 8]
+01d0efcf  mov      rcx, rbx
+01d0efd2  call     rdx
+01d0efd4  inc      edi
+01d0efd6  inc      rbp
+01d0efd9  add      rsi, 8
+01d0efdd  cmp      rbp, r15
+01d0efe0  jl       0x1d0ef50
+01d0efe6  mov      rbp, qword ptr [rsp + 0x50]   ; ._transformCache
+01d0efeb  mov      rsi, qword ptr [rsp + 0x58]   ; ._gameObjectCache
+01d0eff0  mov      rbx, qword ptr [rsp + 0x60]   ; ._currentPosition
+01d0eff5  mov      rdi, qword ptr [rsp + 0x68]
+01d0effa  movaps   xmm6, xmmword ptr [rsp + 0x20]   ; ._collisions
+01d0efff  add      rsp, 0x30
+01d0f003  pop      r15
+01d0f005  pop      r14
+01d0f007  pop      r12
+01d0f009  ret      
+01d0f00a  movzx    ecx, cx
+01d0f00d  add      rcx, rcx
+01d0f010  mov      eax, dword ptr [r8 + rcx*8 + 8]
+01d0f015  add      eax, 3
+01d0f018  cdqe     
+01d0f01a  shl      rax, 4
+01d0f01e  add      rax, 0x138
+01d0f024  add      rax, r10
+01d0f027  jmp      0x1d0efc5
+01d0f029  call     0x4e0d00
+01d0f02e  int3     

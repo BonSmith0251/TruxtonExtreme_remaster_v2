@@ -1,0 +1,121 @@
+#### InGame.Kernel.Enemy.Ene_Mp02::CreateRouteData(InGame.Kernel.Timeline.EnemyData,UnityEngine.Vector3) RVA 1cfd8c0 len 20b
+01cfd8c0  push     rbx
+01cfd8c2  push     rdi
+01cfd8c3  push     r13
+01cfd8c5  sub      rsp, 0x40
+01cfd8c9  cmp      byte ptr [rip + 0x2965adc], 0   ; [46633ac] bss
+01cfd8d0  mov      r13, r8
+01cfd8d3  mov      rbx, rdx
+01cfd8d6  mov      rdi, rcx
+01cfd8d9  jne      0x1cfd8ee
+01cfd8db  lea      rcx, [rip + 0x2675c9e]   ; [4373580] TypeInfo prime[]
+01cfd8e2  call     0x4e0a50
+01cfd8e7  mov      byte ptr [rip + 0x2965abe], 1   ; [46633ac] bss
+01cfd8ee  mov      qword ptr [rsp + 0x60], rbp   ; ev.subnameValue/._psystemCount
+01cfd8f3  mov      qword ptr [rsp + 0x68], rsi   ; ev.flag0/._flagStateFuture
+01cfd8f8  mov      qword ptr [rsp + 0x70], r12   ; ._transformCache
+01cfd8fd  mov      qword ptr [rsp + 0x38], r14   ; ev.stringValue/._psystems
+01cfd902  mov      qword ptr [rsp + 0x30], r15   ; ._entryFlag
+01cfd907  test     rbx, rbx
+01cfd90a  je       0x1cfdac0
+01cfd910  xor      edx, edx
+01cfd912  mov      rcx, rbx
+01cfd915  call     0x1d32ec0   ; EnemyData::ShallowCopy()
+01cfd91a  lea      rcx, [rdi + 0x1b8]   ; ._muzzlePacks
+01cfd921  mov      qword ptr [rdi + 0x1b8], rax   ; ._muzzlePacks
+01cfd928  mov      rdx, rax
+01cfd92b  call     0x4dfd80
+01cfd930  mov      rcx, qword ptr [rdi + 0x1c0]   ; ._reveToken
+01cfd937  movsxd   rbp, dword ptr [rdi + 0x94]
+01cfd93e  test     rcx, rcx
+01cfd941  je       0x1cfdac0
+01cfd947  cmp      ebp, dword ptr [rcx + 0x18]   ; ev.repeatDelay
+01cfd94a  jae      0x1cfdac6
+01cfd950  mov      rcx, qword ptr [rcx + rbp*8 + 0x20]
+01cfd955  test     rcx, rcx
+01cfd958  je       0x1cfdac0
+01cfd95e  mov      rax, qword ptr [rcx + 0x10]   ; ev.eventType
+01cfd962  test     rax, rax
+01cfd965  je       0x1cfdac0
+01cfd96b  movsxd   rsi, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01cfd96f  mov      rcx, qword ptr [rip + 0x2675c0a]   ; [4373580] TypeInfo prime[]
+01cfd976  mov      edx, esi
+01cfd978  mov      rbx, qword ptr [rdi + 0x1b8]   ; ._muzzlePacks
+01cfd97f  call     0x4dfe00
+01cfd984  test     rbx, rbx
+01cfd987  je       0x1cfdac0
+01cfd98d  lea      rcx, [rbx + 0x28]   ; ev.vectorValue
+01cfd991  mov      qword ptr [rbx + 0x28], rax   ; ev.vectorValue
+01cfd995  mov      rdx, rax
+01cfd998  call     0x4dfd80
+01cfd99d  xor      ebx, ebx
+01cfd99f  mov      r15, rsi
+01cfd9a2  test     esi, esi
+01cfd9a4  jle      0x1cfda4c
+01cfd9aa  mov      r14d, ebx
+01cfd9ad  lea      r12, [rbp*8 + 0x20]
+01cfd9b5  mov      esi, 0x20
+01cfd9ba  nop      word ptr [rax + rax]
+01cfd9c0  mov      rcx, qword ptr [rdi + 0x1b8]   ; ._muzzlePacks
+01cfd9c7  test     rcx, rcx
+01cfd9ca  je       0x1cfdac0
+01cfd9d0  mov      rax, qword ptr [rdi + 0x1c0]   ; ._reveToken
+01cfd9d7  test     rax, rax
+01cfd9da  je       0x1cfdac0
+01cfd9e0  cmp      ebp, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01cfd9e3  jae      0x1cfdac6
+01cfd9e9  mov      rax, qword ptr [r12 + rax]
+01cfd9ed  test     rax, rax
+01cfd9f0  je       0x1cfdac0
+01cfd9f6  mov      rax, qword ptr [rax + 0x10]   ; ev.eventType
+01cfd9fa  test     rax, rax
+01cfd9fd  je       0x1cfdac0
+01cfda03  cmp      ebx, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01cfda06  jae      0x1cfdac6
+01cfda0c  mov      rcx, qword ptr [rcx + 0x28]   ; ev.vectorValue
+01cfda10  mov      rdx, qword ptr [rsi + rax]
+01cfda14  test     rcx, rcx
+01cfda17  je       0x1cfdac0
+01cfda1d  cmp      ebx, dword ptr [rcx + 0x18]   ; ev.repeatDelay
+01cfda20  jae      0x1cfdac6
+01cfda26  mov      qword ptr [rsi + rcx], rdx
+01cfda2a  movsxd   rax, ebx
+01cfda2d  lea      rcx, [rcx + rax*8]
+01cfda31  add      rcx, 0x20
+01cfda35  call     0x4dfd80
+01cfda3a  inc      ebx
+01cfda3c  inc      r14
+01cfda3f  add      rsi, 8
+01cfda43  cmp      r14, r15
+01cfda46  jl       0x1cfd9c0
+01cfda4c  mov      rcx, qword ptr [rdi + 0x1b8]   ; ._muzzlePacks
+01cfda53  test     rcx, rcx
+01cfda56  je       0x1cfdac0
+01cfda58  xor      edx, edx
+01cfda5a  call     0x1d321e0   ; EnemyData::Coordinate()
+01cfda5f  mov      rcx, qword ptr [rdi + 0xb8]   ; ._hormingToken
+01cfda66  test     rcx, rcx
+01cfda69  je       0x1cfda9e
+01cfda6b  mov      r9, qword ptr [rcx]
+01cfda6e  lea      r8, [rsp + 0x20]   ; ev.value0
+01cfda73  mov      eax, dword ptr [r13 + 8]
+01cfda77  movsd    xmm0, qword ptr [r13]
+01cfda7d  mov      rdx, qword ptr [rdi + 0x1b8]   ; ._muzzlePacks
+01cfda84  mov      dword ptr [rsp + 0x28], eax   ; ev.vectorValue
+01cfda88  mov      rax, qword ptr [r9 + 0x288]   ; ._callToken
+01cfda8f  mov      r9, qword ptr [r9 + 0x290]   ; ._isRangeFireLimit
+01cfda96  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01cfda9c  call     rax
+01cfda9e  mov      r15, qword ptr [rsp + 0x30]   ; ._entryFlag
+01cfdaa3  mov      r14, qword ptr [rsp + 0x38]   ; ev.stringValue/._psystems
+01cfdaa8  mov      r12, qword ptr [rsp + 0x70]   ; ._transformCache
+01cfdaad  mov      rsi, qword ptr [rsp + 0x68]   ; ev.flag0/._flagStateFuture
+01cfdab2  mov      rbp, qword ptr [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01cfdab7  add      rsp, 0x40
+01cfdabb  pop      r13
+01cfdabd  pop      rdi
+01cfdabe  pop      rbx
+01cfdabf  ret      
+01cfdac0  call     0x4e0d00
+01cfdac5  int3     
+01cfdac6  call     0x4e0cf0

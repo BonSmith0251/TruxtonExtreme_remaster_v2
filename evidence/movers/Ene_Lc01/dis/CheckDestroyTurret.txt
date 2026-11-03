@@ -1,0 +1,76 @@
+#### InGame.Kernel.Enemy.Ene_Lc01::CheckDestroyTurret(InGame.Kernel.InGameManager) RVA 1dbce60 len 133
+01dbce60  mov      qword ptr [rsp + 0x20], rbx   ; ev.value0
+01dbce65  push     rbp
+01dbce66  sub      rsp, 0x50
+01dbce6a  cmp      byte ptr [rcx + 0x258], 0
+01dbce71  mov      rbp, rdx
+01dbce74  mov      rbx, rcx
+01dbce77  jne      0x1dbcf7d
+01dbce7d  mov      rax, qword ptr [rbx + 0x278]
+01dbce84  mov      qword ptr [rsp + 0x68], rdi   ; ev.flag0/._flagStateFuture
+01dbce89  mov      qword ptr [rsp + 0x70], r14   ; ._transformCache
+01dbce8e  xor      r14d, r14d
+01dbce91  mov      qword ptr [rsp + 0x60], rsi   ; ev.subnameValue/._psystemCount
+01dbce96  mov      edi, r14d
+01dbce99  mov      ecx, r14d
+01dbce9c  test     rax, rax
+01dbce9f  je       0x1dbcf88
+01dbcea5  mov      esi, 0x20
+01dbceaa  nop      word ptr [rax + rax]
+01dbceb0  cmp      ecx, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01dbceb3  jge      0x1dbcf6e
+01dbceb9  mov      rax, qword ptr [rbx + 0x220]
+01dbcec0  test     rax, rax
+01dbcec3  je       0x1dbcf88
+01dbcec9  cmp      edi, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01dbcecc  jae      0x1dbcf8e
+01dbced2  mov      rax, qword ptr [rsi + rax]
+01dbced6  test     rax, rax
+01dbced9  je       0x1dbcf88
+01dbcedf  cmp      byte ptr [rax + 0x40], r14b   ; ev.intValue1/._animators
+01dbcee3  jne      0x1dbcf55
+01dbcee5  mov      rcx, qword ptr [rax + 0x18]   ; ev.repeatDelay
+01dbcee9  test     rcx, rcx
+01dbceec  je       0x1dbcf88
+01dbcef2  cmp      byte ptr [rcx + 0x9a], r14b
+01dbcef9  je       0x1dbcf55
+01dbcefb  mov      byte ptr [rax + 0x40], 1   ; ev.intValue1/._animators
+01dbceff  mov      ecx, dword ptr [rbx + 0x25c]
+01dbcf05  dec      ecx
+01dbcf07  mov      dword ptr [rbx + 0x25c], ecx
+01dbcf0d  test     ecx, ecx
+01dbcf0f  jg       0x1dbcf55
+01dbcf11  mov      rdx, qword ptr [rax + 0x10]   ; ev.eventType
+01dbcf15  test     rdx, rdx
+01dbcf18  je       0x1dbcf88
+01dbcf1a  xor      r8d, r8d
+01dbcf1d  lea      rcx, [rsp + 0x40]   ; ev.intValue1/._animators
+01dbcf22  call     0x3093ba0   ; Transform::get_position()
+01dbcf27  test     rbp, rbp
+01dbcf2a  je       0x1dbcf88
+01dbcf2c  movsd    xmm0, qword ptr [rax]
+01dbcf30  lea      rdx, [rsp + 0x30]   ; ._entryFlag
+01dbcf35  mov      eax, dword ptr [rax + 8]
+01dbcf38  mov      r9b, 1
+01dbcf3b  xor      r8d, r8d
+01dbcf3e  movsd    qword ptr [rsp + 0x30], xmm0   ; ._entryFlag
+01dbcf44  mov      rcx, rbp
+01dbcf47  mov      dword ptr [rsp + 0x38], eax   ; ev.stringValue/._psystems
+01dbcf4b  mov      qword ptr [rsp + 0x20], r14   ; ev.value0
+01dbcf50  call     0x1ce3f10   ; InGameManager::Get5000(UnityEngine.Vector3,System.Int32,System.Boolean)
+01dbcf55  mov      rax, qword ptr [rbx + 0x278]
+01dbcf5c  inc      edi
+01dbcf5e  add      rsi, 8
+01dbcf62  mov      ecx, edi
+01dbcf64  test     rax, rax
+01dbcf67  je       0x1dbcf88
+01dbcf69  jmp      0x1dbceb0
+01dbcf6e  mov      rsi, qword ptr [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01dbcf73  mov      rdi, qword ptr [rsp + 0x68]   ; ev.flag0/._flagStateFuture
+01dbcf78  mov      r14, qword ptr [rsp + 0x70]   ; ._transformCache
+01dbcf7d  mov      rbx, qword ptr [rsp + 0x78]   ; ._transformNameCache
+01dbcf82  add      rsp, 0x50
+01dbcf86  pop      rbp
+01dbcf87  ret      
+01dbcf88  call     0x4e0d00
+01dbcf8e  call     0x4e0cf0

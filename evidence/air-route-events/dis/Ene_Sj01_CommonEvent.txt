@@ -1,0 +1,21 @@
+#### InGame.Kernel.Enemy.Ene_Sj01::CommonEvent(System.Int32) RVA 1d01430 len 5e
+01d01430  test     edx, edx
+01d01432  jne      0x1d0146b
+01d01434  cmp      dword ptr [rcx + 0x130], -1
+01d0143b  jne      0x1d01457
+01d0143d  mov      dword ptr [rcx + 0x130], 0x6f
+01d01447  mov      dword ptr [rcx + 0x134], 0xffffffff   ; ._currentDirection
+01d01451  mov      byte ptr [rcx + 0x13f], dl
+01d01457  mov      rdx, qword ptr [rcx]
+01d0145a  mov      rax, qword ptr [rdx + 0x2f8]
+01d01461  mov      rdx, qword ptr [rdx + 0x300]
+01d01468  jmp      rax
+01d0146b  cmp      edx, 1
+01d0146e  jne      0x1d01477
+01d01470  mov      dword ptr [rcx + 0x1b0], edx   ; ._moverState
+01d01476  ret      
+01d01477  cmp      edx, 2
+01d0147a  jne      0x1d0148d
+01d0147c  mov      dword ptr [rcx + 0x1c8], 0x40000000   ; ._masterEnemy
+01d01486  mov      byte ptr [rcx + 0x1cc], 1
+01d0148d  ret      

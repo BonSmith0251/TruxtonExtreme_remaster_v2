@@ -1,0 +1,54 @@
+#### KANAI.HybridCollision.HybridCollisions::AddDamageOwner(System.Single) RVA 1ddf0d0 len ba
+01ddf0d0  push     rbx
+01ddf0d2  sub      rsp, 0x30
+01ddf0d6  mov      rdx, qword ptr [rcx]
+01ddf0d9  mov      rbx, rcx
+01ddf0dc  movaps   xmmword ptr [rsp + 0x20], xmm6   ; ._collisions
+01ddf0e1  movaps   xmm6, xmm1
+01ddf0e4  mov      rax, qword ptr [rdx + 0x1b8]   ; vcall KANAI.HybridCollision.HybridCollisions::IsAlive
+01ddf0eb  mov      rdx, qword ptr [rdx + 0x1c0]   ; vcall KANAI.HybridCollision.HybridCollisions::IsAlive
+01ddf0f2  call     rax
+01ddf0f4  test     al, al
+01ddf0f6  je       0x1ddf17d
+01ddf0fc  mov      rdx, qword ptr [rbx]
+01ddf0ff  mov      rcx, rbx
+01ddf102  mov      rax, qword ptr [rdx + 0x1e8]   ; vcall KANAI.HybridCollision.HybridCollisions::IsNoDamaged
+01ddf109  mov      rdx, qword ptr [rdx + 0x1f0]   ; vcall KANAI.HybridCollision.HybridCollisions::IsNoDamaged
+01ddf110  call     rax
+01ddf112  test     al, al
+01ddf114  jne      0x1ddf17d
+01ddf116  addss    xmm6, dword ptr [rbx + 0x30]   ; ._Damage
+01ddf11b  xorps    xmm0, xmm0
+01ddf11e  comiss   xmm0, xmm6
+01ddf121  ja       0x1ddf132
+01ddf123  movss    xmm0, dword ptr [rbx + 0x28]   ; ._HitPoint
+01ddf128  comiss   xmm6, xmm0
+01ddf12b  jbe      0x1ddf135
+01ddf12d  movaps   xmm6, xmm0
+01ddf130  jmp      0x1ddf135
+01ddf132  xorps    xmm6, xmm6
+01ddf135  mov      rdx, qword ptr [rbx]
+01ddf138  mov      rcx, rbx
+01ddf13b  movss    dword ptr [rbx + 0x30], xmm6   ; ._Damage
+01ddf140  mov      rax, qword ptr [rdx + 0x1b8]   ; vcall KANAI.HybridCollision.HybridCollisions::IsAlive
+01ddf147  mov      rdx, qword ptr [rdx + 0x1c0]   ; vcall KANAI.HybridCollision.HybridCollisions::IsAlive
+01ddf14e  call     rax
+01ddf150  test     al, al
+01ddf152  jne      0x1ddf17d
+01ddf154  mov      rdx, qword ptr [rbx]
+01ddf157  mov      rcx, rbx
+01ddf15a  mov      eax, dword ptr [rbx + 0x28]   ; ._HitPoint
+01ddf15d  mov      dword ptr [rbx + 0x30], eax   ; ._Damage
+01ddf160  mov      rax, qword ptr [rdx + 0x318]   ; vcall enc 1
+01ddf167  mov      rdx, qword ptr [rdx + 0x320]   ; vcall enc 1
+01ddf16e  call     rax
+01ddf170  mov      al, 1
+01ddf172  movaps   xmm6, xmmword ptr [rsp + 0x20]   ; ._collisions
+01ddf177  add      rsp, 0x30
+01ddf17b  pop      rbx
+01ddf17c  ret      
+01ddf17d  movaps   xmm6, xmmword ptr [rsp + 0x20]   ; ._collisions
+01ddf182  xor      al, al
+01ddf184  add      rsp, 0x30
+01ddf188  pop      rbx
+01ddf189  ret      

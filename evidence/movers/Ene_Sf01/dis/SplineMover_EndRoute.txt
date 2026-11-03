@@ -1,0 +1,40 @@
+#### InGame.Kernel.SplineMover::SetEndRouteKeep(System.Boolean) RVA 1d44230 len 7
+01d44230  mov      byte ptr [rcx + 0x1f8], dl   ; ._isEndRouteKeep
+01d44236  ret      
+#### InGame.Kernel.SplineMover::EndRoute() RVA 1d43b30 len a3
+01d43b30  push     rbx
+01d43b32  sub      rsp, 0x20
+01d43b36  cmp      dword ptr [rcx + 0x1b0], 3   ; ._moverState
+01d43b3d  mov      rbx, rcx
+01d43b40  je       0x1d43bcd
+01d43b46  xor      edx, edx
+01d43b48  mov      qword ptr [rsp + 0x30], rdi   ; ._entryFlag
+01d43b4d  call     0x1d1d4e0   ; InGameObjectBase::StopAll()
+01d43b52  xor      edx, edx
+01d43b54  mov      rcx, rbx
+01d43b57  call     0x1d1cec0   ; InGameObjectBase::RemoveInGame()
+01d43b5c  mov      rdi, qword ptr [rbx + 0x200]   ; ._endCallback
+01d43b63  lea      rcx, [rbx + 0x200]   ; ._endCallback
+01d43b6a  xor      edx, edx
+01d43b6c  mov      qword ptr [rbx + 0x200], 0   ; ._endCallback
+01d43b77  call     0x4dfd80
+01d43b7c  test     rdi, rdi
+01d43b7f  je       0x1d43b8f
+01d43b81  mov      rax, qword ptr [rdi + 0x18]   ; ev.repeatDelay
+01d43b85  mov      rdx, qword ptr [rdi + 0x28]   ; ev.vectorValue
+01d43b89  mov      rcx, qword ptr [rdi + 0x40]   ; ._animators
+01d43b8d  call     rax
+01d43b8f  lea      rcx, [rbx + 0xe8]   ; ._spline
+01d43b96  mov      qword ptr [rbx + 0xe8], 0   ; ._spline
+01d43ba1  xor      edx, edx
+01d43ba3  call     0x4dfd80
+01d43ba8  mov      rdx, qword ptr [rbx]
+01d43bab  mov      rcx, rbx
+01d43bae  mov      rax, qword ptr [rdx + 0x298]   ; mv._inAreaDelay
+01d43bb5  mov      rdx, qword ptr [rdx + 0x2a0]   ; mv._eventStackDelay
+01d43bbc  call     rax
+01d43bbe  mov      rdi, qword ptr [rsp + 0x30]   ; ._entryFlag
+01d43bc3  mov      dword ptr [rbx + 0x1b0], 3   ; ._moverState
+01d43bcd  add      rsp, 0x20
+01d43bd1  pop      rbx
+01d43bd2  ret      

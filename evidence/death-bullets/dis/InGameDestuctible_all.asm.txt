@@ -1,0 +1,297 @@
+#### InGame.Kernel.InGameDestuctible::Initialize() RVA 1ccf730 len 159
+01ccf730  push     rdi
+01ccf732  sub      rsp, 0x20
+01ccf736  cmp      byte ptr [rip + 0x2993b1e], 0   ; [466325b] bss
+01ccf73d  mov      rdi, rcx
+01ccf740  jne      0x1ccf755
+01ccf742  lea      rcx, [rip + 0x26e88b7]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01ccf749  call     0x4e0a50
+01ccf74e  mov      byte ptr [rip + 0x2993b06], 1   ; [466325b] bss
+01ccf755  xor      edx, edx
+01ccf757  mov      rcx, rdi
+01ccf75a  call     0x1cce1c0   ; InGameBullet::Initialize()
+01ccf75f  mov      rcx, qword ptr [rdi + 0xf0]   ; ._deadBullet
+01ccf766  xor      edx, edx
+01ccf768  call     0x1e83800   ; String::IsNullOrEmpty(System.String)
+01ccf76d  test     al, al
+01ccf76f  jne      0x1ccf878
+01ccf775  mov      rax, qword ptr [rip + 0x26e8884]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01ccf77c  mov      rax, qword ptr [rax + 0x20]   ; ._collisions
+01ccf780  test     byte ptr [rax + 0x135], 1
+01ccf787  jne      0x1ccf791
+01ccf789  mov      rcx, rax
+01ccf78c  call     0x4de1e0
+01ccf791  mov      rax, qword ptr [rax + 0xc0]   ; ._poolAction
+01ccf798  mov      rax, qword ptr [rax + 0x10]
+01ccf79c  test     byte ptr [rax + 0x135], 1
+01ccf7a3  jne      0x1ccf7ad
+01ccf7a5  mov      rcx, rax
+01ccf7a8  call     0x4de1e0
+01ccf7ad  mov      rax, qword ptr [rax + 0xb8]   ; ._bornPassed
+01ccf7b4  mov      qword ptr [rsp + 0x38], rbx   ; .onDisableEvent
+01ccf7b9  mov      qword ptr [rsp + 0x40], rsi   ; ._hitOrders
+01ccf7be  mov      rcx, qword ptr [rax]
+01ccf7c1  test     rcx, rcx
+01ccf7c4  je       0x1ccf87e
+01ccf7ca  mov      rbx, qword ptr [rcx + 0xf0]   ; ._deadBullet
+01ccf7d1  mov      rsi, qword ptr [rdi + 0xf0]   ; ._deadBullet
+01ccf7d8  test     rbx, rbx
+01ccf7db  je       0x1ccf87e
+01ccf7e1  cmp      byte ptr [rip + 0x2993a55], 0   ; [466323d] bss
+01ccf7e8  jne      0x1ccf809
+01ccf7ea  lea      rcx, [rip + 0x26b4d7f]   ; [4384570] MethodRef System.Collections.Generic.Dictionary`2<prime,InGame.Kernel.Enemy.BulletTemplate>::TryGetValue
+01ccf7f1  call     0x4e0a50
+01ccf7f6  lea      rcx, [rip + 0x26a4bc3]   ; [43743c0] MethodRef UnityEngine.ScriptableObject::CreateInstance<InGame.Kernel.Enemy.BulletTemplate>
+01ccf7fd  call     0x4e0a50
+01ccf802  mov      byte ptr [rip + 0x2993a34], 1   ; [466323d] bss
+01ccf809  mov      rcx, qword ptr [rbx + 0x38]   ; .onDisableEvent
+01ccf80d  mov      qword ptr [rsp + 0x30], 0   ; ._Damage
+01ccf816  test     rcx, rcx
+01ccf819  je       0x1ccf884
+01ccf81b  mov      r9, qword ptr [rip + 0x26b4d4e]   ; [4384570] MethodRef System.Collections.Generic.Dictionary`2<prime,InGame.Kernel.Enemy.BulletTemplate>::TryGetValue
+01ccf822  lea      r8, [rsp + 0x30]   ; ._Damage
+01ccf827  mov      rdx, rsi
+01ccf82a  call     0x18afa30
+01ccf82f  test     al, al
+01ccf831  jne      0x1ccf853
+01ccf833  mov      rcx, qword ptr [rip + 0x26a4b86]   ; [43743c0] MethodRef UnityEngine.ScriptableObject::CreateInstance<InGame.Kernel.Enemy.BulletTemplate>
+01ccf83a  call     0x8efbc0   ; ScriptableObject::CreateInstance()
+01ccf83f  mov      rbx, rax
+01ccf842  test     rax, rax
+01ccf845  je       0x1ccf884
+01ccf847  xor      edx, edx
+01ccf849  mov      rcx, rax
+01ccf84c  call     0x1d616d0   ; BulletTemplate::SetDefault()
+01ccf851  jmp      0x1ccf858
+01ccf853  mov      rbx, qword ptr [rsp + 0x30]   ; ._Damage
+01ccf858  lea      rcx, [rdi + 0xf8]   ; ._bt
+01ccf85f  mov      qword ptr [rdi + 0xf8], rbx   ; ._bt
+01ccf866  mov      rdx, rbx
+01ccf869  call     0x4dfd80
+01ccf86e  mov      rbx, qword ptr [rsp + 0x38]   ; .onDisableEvent
+01ccf873  mov      rsi, qword ptr [rsp + 0x40]   ; ._hitOrders
+01ccf878  add      rsp, 0x20
+01ccf87c  pop      rdi
+01ccf87d  ret      
+01ccf87e  call     0x4e0d00
+01ccf883  int3     
+01ccf884  call     0x4e0d00
+#### InGame.Kernel.InGameDestuctible::IsHitEnable() RVA 1ccf8b0 len 77
+01ccf8b0  push     rbx
+01ccf8b2  sub      rsp, 0x30
+01ccf8b6  mov      rdx, qword ptr [rcx]
+01ccf8b9  mov      rbx, rcx
+01ccf8bc  movaps   xmmword ptr [rsp + 0x20], xmm6   ; ._collisions
+01ccf8c1  mov      rax, qword ptr [rdx + 0x1b8]   ; vcall KANAI.HybridCollision.HybridCollisions::IsAlive
+01ccf8c8  mov      rdx, qword ptr [rdx + 0x1c0]   ; vcall KANAI.HybridCollision.HybridCollisions::IsAlive
+01ccf8cf  call     rax
+01ccf8d1  test     al, al
+01ccf8d3  je       0x1ccf91a
+01ccf8d5  movss    xmm0, dword ptr [rbx + 0x98]   ; ._invincibleTime
+01ccf8dd  xorps    xmm6, xmm6
+01ccf8e0  comiss   xmm0, xmm6
+01ccf8e3  ja       0x1ccf91a
+01ccf8e5  xor      r8d, r8d
+01ccf8e8  mov      edx, 1
+01ccf8ed  mov      rcx, rbx
+01ccf8f0  call     0x1ccf350   ; InGameCollisionBase::IsObjectFlag(InGame.Kernel.InGameObject/InGameObjectFlag)
+01ccf8f5  test     al, al
+01ccf8f7  jne      0x1ccf91a
+01ccf8f9  movss    xmm0, dword ptr [rbx + 0x98]   ; ._invincibleTime
+01ccf901  comiss   xmm0, xmm6
+01ccf904  ja       0x1ccf91a
+01ccf906  xor      edx, edx
+01ccf908  mov      rcx, rbx
+01ccf90b  movaps   xmm6, xmmword ptr [rsp + 0x20]   ; ._collisions
+01ccf910  add      rsp, 0x30
+01ccf914  pop      rbx
+01ccf915  jmp      0x60a0d0   ; DllCheck::Test() | InGameDestuctible::IsBomberRange()
+01ccf91a  movaps   xmm6, xmmword ptr [rsp + 0x20]   ; ._collisions
+01ccf91f  xor      al, al
+01ccf921  add      rsp, 0x30
+01ccf925  pop      rbx
+01ccf926  ret      
+#### InGame.Kernel.InGameDestuctible::IsBomberRange() RVA 60a0d0 len 3
+0060a0d0  mov      al, 1
+0060a0d2  ret      
+#### InGame.Kernel.InGameDestuctible::SetCauseOfDeath(System.Int32,TXEKernel.TXEKernelHybridCollisions/attackType,System.Boolean) RVA 1ccf930 len 18b
+01ccf930  push     rbx
+01ccf932  push     rsi
+01ccf933  push     rdi
+01ccf934  sub      rsp, 0x70
+01ccf938  cmp      byte ptr [rip + 0x299391d], 0   ; [466325c] bss
+01ccf93f  mov      edi, r8d
+01ccf942  mov      esi, edx
+01ccf944  mov      rbx, rcx
+01ccf947  jne      0x1ccf974
+01ccf949  lea      rcx, [rip + 0x26f7308]   ; [43c6c58] TypeInfo G<System.Action`1>
+01ccf950  call     0x4e0a50
+01ccf955  lea      rcx, [rip + 0x26913dc]   ; [4360d38] MethodDef InGame.Kernel.InGameDestuctible::<SetCauseOfDeath>g___generateCallback|3_0
+01ccf95c  call     0x4e0a50
+01ccf961  lea      rcx, [rip + 0x26e8698]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01ccf968  call     0x4e0a50
+01ccf96d  mov      byte ptr [rip + 0x29938e8], 1   ; [466325c] bss
+01ccf974  cmp      dword ptr [rbx + 0xe0], -1   ; ._causeOfDeath
+01ccf97b  mov      qword ptr [rsp + 0x98], rbp   ; ._invincibleTime
+01ccf983  mov      qword ptr [rsp + 0xa0], r12   ; ._simpleMove
+01ccf98b  mov      qword ptr [rsp + 0x68], r14
+01ccf990  mov      qword ptr [rsp + 0x60], r15   ; ._currentPosition
+01ccf995  movaps   xmmword ptr [rsp + 0x50], xmm6   ; ._transformCache
+01ccf99a  mov      byte ptr [rsp + 0x90], 0   ; ._priority
+01ccf9a2  jne      0x1ccfa8f
+01ccf9a8  cmp      edi, 0x64
+01ccf9ab  je       0x1ccfa7a
+01ccf9b1  cmp      edi, -1
+01ccf9b4  je       0x1ccfa7a
+01ccf9ba  cmp      edi, 0x6e
+01ccf9bd  je       0x1ccfa7a
+01ccf9c3  mov      rdx, qword ptr [rbx + 0x50]   ; ._transformCache
+01ccf9c7  test     rdx, rdx
+01ccf9ca  je       0x1ccfab6
+01ccf9d0  xor      r8d, r8d
+01ccf9d3  lea      rcx, [rsp + 0x40]   ; ._hitOrders
+01ccf9d8  call     0x3093700   ; Transform::get_localPosition()
+01ccf9dd  mov      rcx, qword ptr [rip + 0x26e861c]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01ccf9e4  movsd    xmm6, qword ptr [rax]
+01ccf9e8  mov      r15d, dword ptr [rax + 8]
+01ccf9ec  call     0x27540
+01ccf9f1  mov      rcx, qword ptr [rip + 0x26f7260]   ; [43c6c58] TypeInfo G<System.Action`1>
+01ccf9f8  mov      rbp, rax
+01ccf9fb  mov      r12, qword ptr [rbx + 0xf8]   ; ._bt
+01ccfa02  call     0x4e0cb0
+01ccfa07  mov      r8, qword ptr [rip + 0x269132a]   ; [4360d38] MethodDef InGame.Kernel.InGameDestuctible::<SetCauseOfDeath>g___generateCallback|3_0
+01ccfa0e  xor      r9d, r9d
+01ccfa11  xor      edx, edx
+01ccfa13  mov      rcx, rax
+01ccfa16  mov      r14, rax
+01ccfa19  call     0x1c4a150   ; IOAsyncCallback::.ctor(System.Object,System.IntPtr) | ICameraHistoryReadAccess/HistoryRequestDelegate::.ctor(System.Object,System.IntPtr)
+01ccfa1e  test     rbp, rbp
+01ccfa21  je       0x1ccfab6
+01ccfa27  movss    xmm0, dword ptr [rip + 0x181119d]   ; rdata 34e0bcc f=1,3.141593,4,10 d=50.12387842
+01ccfa2f  lea      r8, [rsp + 0x40]   ; ._hitOrders
+01ccfa34  xor      eax, eax
+01ccfa36  movsd    qword ptr [rsp + 0x40], xmm6   ; ._hitOrders
+01ccfa3c  mov      qword ptr [rsp + 0x38], rax   ; .onDisableEvent
+01ccfa41  xor      r9d, r9d
+01ccfa44  movss    dword ptr [rsp + 0x30], xmm0   ; ._Damage
+01ccfa4a  mov      rdx, r12
+01ccfa4d  mov      qword ptr [rsp + 0x28], r14   ; ._HitPoint
+01ccfa52  mov      rcx, rbp
+01ccfa55  mov      qword ptr [rsp + 0x20], rax   ; ._collisions
+01ccfa5a  mov      dword ptr [rsp + 0x48], r15d   ; ._hitIndex
+01ccfa5f  call     0x1ce2600   ; InGameManager::BulletFireAsync(InGame.Kernel.Enemy.BulletTemplate,UnityEngine.Vector3,UnityEngine.Transform,System.Threading.CancellationTokenSource,System.Action`1<InGame.Kernel.InGameBulletInterface>,System.Single)
+01ccfa64  xor      edx, edx
+01ccfa66  mov      byte ptr [rsp + 0x90], al   ; ._priority
+01ccfa6d  lea      rcx, [rsp + 0x90]   ; ._priority
+01ccfa75  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01ccfa7a  cmp      dword ptr [rbx + 0xe0], -1   ; ._causeOfDeath
+01ccfa81  jne      0x1ccfa8f
+01ccfa83  mov      dword ptr [rbx + 0xe0], edi   ; ._causeOfDeath
+01ccfa89  mov      dword ptr [rbx + 0xe4], esi   ; ._deathByPno
+01ccfa8f  movaps   xmm6, xmmword ptr [rsp + 0x50]   ; ._transformCache
+01ccfa94  mov      r15, qword ptr [rsp + 0x60]   ; ._currentPosition
+01ccfa99  mov      r14, qword ptr [rsp + 0x68]
+01ccfa9e  mov      r12, qword ptr [rsp + 0xa0]   ; ._simpleMove
+01ccfaa6  mov      rbp, qword ptr [rsp + 0x98]   ; ._invincibleTime
+01ccfaae  add      rsp, 0x70
+01ccfab2  pop      rdi
+01ccfab3  pop      rsi
+01ccfab4  pop      rbx
+01ccfab5  ret      
+01ccfab6  call     0x4e0d00
+#### InGame.Kernel.InGameDestuctible::GetDamageScore() RVA 79b610 len 3
+0079b610  xor      eax, eax
+0079b612  ret      
+#### InGame.Kernel.InGameDestuctible::GetDeathScore() RVA 79b610 len 3
+0079b610  xor      eax, eax
+0079b612  ret      
+#### InGame.Kernel.InGameDestuctible::IsBombered() RVA 7aa370 len 3
+007aa370  xor      al, al
+007aa372  ret      
+#### InGame.Kernel.InGameDestuctible::SetBombered() RVA 5bcdb0 len 3
+005bcdb0  ret      0
+#### InGame.Kernel.InGameDestuctible::GetTolerance(TXEKernel.TXEKernelHybridCollisions/attackType) RVA 79b610 len 3
+0079b610  xor      eax, eax
+0079b612  ret      
+#### InGame.Kernel.InGameDestuctible::HitBlink(TXEKernel.TXEKernelHybridCollisions/attackType) RVA 5bcdb0 len 3
+005bcdb0  ret      0
+#### InGame.Kernel.InGameDestuctible::IsDividedCause(TXEKernel.TXEKernelHybridCollisions/attackType) RVA 1ccf890 len 14
+01ccf890  cmp      edx, 0x64
+01ccf893  je       0x1ccf8a1
+01ccf895  cmp      edx, -1
+01ccf898  je       0x1ccf8a1
+01ccf89a  cmp      edx, 0x6e
+01ccf89d  setne    al
+01ccf8a0  ret      
+01ccf8a1  xor      al, al
+01ccf8a3  ret      
+#### InGame.Kernel.InGameDestuctible::.ctor() RVA 1ccfb80 len 6d
+01ccfb80  push     rbx
+01ccfb82  sub      rsp, 0x20
+01ccfb86  cmp      byte ptr [rip + 0x29936d0], 0   ; [466325d] bss
+01ccfb8d  mov      rbx, rcx
+01ccfb90  jne      0x1ccfba5
+01ccfb92  lea      rcx, [rip + 0x2709007]   ; [43d8ba0] TypeInfo InGame.Kernel.InGameBullet
+01ccfb99  call     0x4e0a50
+01ccfb9e  mov      byte ptr [rip + 0x29936b8], 1   ; [466325d] bss
+01ccfba5  mov      rax, qword ptr [rip + 0x29a8354]   ; [4677f00] bss
+01ccfbac  lea      rcx, [rbx + 0xf0]   ; ._deadBullet
+01ccfbb3  mov      rdx, qword ptr [rax + 0xb8]   ; ._bornPassed
+01ccfbba  mov      rdx, qword ptr [rdx]
+01ccfbbd  mov      qword ptr [rbx + 0xf0], rdx   ; ._deadBullet
+01ccfbc4  call     0x4dfd80
+01ccfbc9  mov      rcx, qword ptr [rip + 0x2708fd0]   ; [43d8ba0] TypeInfo InGame.Kernel.InGameBullet
+01ccfbd0  cmp      dword ptr [rcx + 0xe4], 0   ; ._deathByPno
+01ccfbd7  jne      0x1ccfbde
+01ccfbd9  call     0x4e0d90
+01ccfbde  xor      edx, edx
+01ccfbe0  mov      rcx, rbx
+01ccfbe3  add      rsp, 0x20
+01ccfbe7  pop      rbx
+01ccfbe8  jmp      0x1ccede0   ; InGameBullet::.ctor()
+#### InGame.Kernel.InGameDestuctible::<SetCauseOfDeath>g___generateCallback|3_0(InGame.Kernel.InGameBulletInterface) RVA 1ccfac0 len b9
+01ccfac0  mov      qword ptr [rsp + 8], rbx
+01ccfac5  push     rdi
+01ccfac6  sub      rsp, 0x20
+01ccfaca  cmp      byte ptr [rip + 0x299378d], 0   ; [466325e] bss
+01ccfad1  mov      rdi, rcx
+01ccfad4  jne      0x1ccfaf5
+01ccfad6  lea      rcx, [rip + 0x270967b]   ; [43d9158] TypeInfo InGame.Kernel.InGameDestuctible
+01ccfadd  call     0x4e0a50
+01ccfae2  lea      rcx, [rip + 0x26ae3b7]   ; [437dea0] TypeInfo UnityEngine.Object
+01ccfae9  call     0x4e0a50
+01ccfaee  mov      byte ptr [rip + 0x2993769], 1   ; [466325e] bss
+01ccfaf5  xor      ebx, ebx
+01ccfaf7  test     rdi, rdi
+01ccfafa  je       0x1ccfb34
+01ccfafc  mov      rdx, qword ptr [rip + 0x2709655]   ; [43d9158] TypeInfo InGame.Kernel.InGameDestuctible
+01ccfb03  mov      r8, qword ptr [rdi]
+01ccfb06  movzx    eax, byte ptr [rdx + 0x130]
+01ccfb0d  cmp      byte ptr [r8 + 0x130], al
+01ccfb14  jb       0x1ccfb2c
+01ccfb16  movzx    ecx, al
+01ccfb19  mov      rax, qword ptr [r8 + 0xc8]   ; ._poolIndex
+01ccfb20  cmp      qword ptr [rax + rcx*8 - 8], rdx
+01ccfb25  mov      eax, 1
+01ccfb2a  je       0x1ccfb2e
+01ccfb2c  mov      eax, ebx
+01ccfb2e  test     eax, eax
+01ccfb30  cmovne   rbx, rdi
+01ccfb34  mov      rcx, qword ptr [rip + 0x26ae365]   ; [437dea0] TypeInfo UnityEngine.Object
+01ccfb3b  cmp      dword ptr [rcx + 0xe4], 0   ; ._deathByPno
+01ccfb42  jne      0x1ccfb49
+01ccfb44  call     0x4e0d90
+01ccfb49  xor      r8d, r8d
+01ccfb4c  xor      edx, edx
+01ccfb4e  mov      rcx, rbx
+01ccfb51  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01ccfb56  test     al, al
+01ccfb58  je       0x1ccfb69
+01ccfb5a  test     rbx, rbx
+01ccfb5d  je       0x1ccfb74
+01ccfb5f  mov      dword ptr [rbx + 0x98], 0x3f000000   ; ._invincibleTime
+01ccfb69  mov      rbx, qword ptr [rsp + 0x30]   ; ._Damage
+01ccfb6e  add      rsp, 0x20
+01ccfb72  pop      rdi
+01ccfb73  ret      
+01ccfb74  call     0x4e0d00

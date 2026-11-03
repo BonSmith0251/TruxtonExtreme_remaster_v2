@@ -1,0 +1,102 @@
+01cfa560  push     rbx
+01cfa562  sub      rsp, 0x30
+01cfa566  cmp      dword ptr [rcx + 0x1bc], 0   ; ._state
+01cfa56d  mov      rbx, rcx
+01cfa570  movaps   xmmword ptr [rsp + 0x20], xmm6   ; ev.value0
+01cfa575  movaps   xmm6, xmm1
+01cfa578  je       0x1cfa67f
+01cfa57e  movsxd   rax, dword ptr [rcx + 0x1bc]   ; ._state
+01cfa585  cmp      eax, 5
+01cfa588  ja       0x1cfa636
+01cfa58e  lea      rcx, [rip - 0x1cfa595]
+01cfa595  mov      edx, dword ptr [rcx + rax*4 + 0x1cfa68c]
+01cfa59c  add      rdx, rcx
+01cfa59f  jmp      rdx
+01cfa5a1  xor      r8d, r8d
+01cfa5a4  mov      rcx, rbx
+01cfa5a7  call     0x1cfb470   ; Ene_Mn01c::_shieldModeState(System.Single)
+01cfa5ac  jmp      0x1cfa636
+01cfa5b1  xor      r8d, r8d
+01cfa5b4  mov      rcx, rbx
+01cfa5b7  call     0x1cfac50   ; Ene_Mn01c::_awayModeState(System.Single)
+01cfa5bc  mov      rdx, qword ptr [rbx]
+01cfa5bf  mov      rcx, rbx
+01cfa5c2  mov      rax, qword ptr [rdx + 0x228]
+01cfa5c9  mov      rdx, qword ptr [rdx + 0x230]   ; mv._splineRotate
+01cfa5d0  call     rax
+01cfa5d2  jmp      0x1cfa60c
+01cfa5d4  xor      r8d, r8d
+01cfa5d7  mov      rcx, rbx
+01cfa5da  call     0x1cfb130   ; Ene_Mn01c::_gatherModeState(System.Single)
+01cfa5df  jmp      0x1cfa636
+01cfa5e1  xor      r8d, r8d
+01cfa5e4  mov      rcx, rbx
+01cfa5e7  call     0x1cfb470   ; Ene_Mn01c::_shieldModeState(System.Single)
+01cfa5ec  mov      rax, qword ptr [rbx]
+01cfa5ef  mov      r8, qword ptr [rax + 0x228]
+01cfa5f6  mov      rdx, qword ptr [rax + 0x230]   ; mv._splineRotate
+01cfa5fd  cmp      byte ptr [rbx + 0x1d1], 0   ; ._isRanged
+01cfa604  mov      rcx, rbx
+01cfa607  je       0x1cfa628
+01cfa609  call     r8
+01cfa60c  test     al, al
+01cfa60e  jne      0x1cfa636
+01cfa610  mov      rdx, qword ptr [rbx]
+01cfa613  mov      rcx, rbx
+01cfa616  mov      rax, qword ptr [rdx + 0x308]
+01cfa61d  mov      rdx, qword ptr [rdx + 0x310]
+01cfa624  call     rax
+01cfa626  jmp      0x1cfa636
+01cfa628  call     r8
+01cfa62b  test     al, al
+01cfa62d  je       0x1cfa636
+01cfa62f  mov      byte ptr [rbx + 0x1d1], 1   ; ._isRanged
+01cfa636  movss    xmm0, dword ptr [rbx + 0x1cc]   ; ._sepaTimer
+01cfa63e  xorps    xmm1, xmm1
+01cfa641  comiss   xmm0, xmm1
+01cfa644  jbe      0x1cfa671
+01cfa646  subss    xmm0, xmm6
+01cfa64a  comiss   xmm1, xmm0
+01cfa64d  movss    dword ptr [rbx + 0x1cc], xmm0   ; ._sepaTimer
+01cfa655  jb       0x1cfa671
+01cfa657  cmp      byte ptr [rbx + 0x1d0], 0   ; ._sepaDone/mv._division
+01cfa65e  jne      0x1cfa671
+01cfa660  xor      edx, edx
+01cfa662  mov      byte ptr [rbx + 0x1d0], 1   ; ._sepaDone/mv._division
+01cfa669  mov      rcx, rbx
+01cfa66c  call     0x1cfa9c0   ; Ene_Mn01c::ToSeparate()
+01cfa671  xor      r8d, r8d
+01cfa674  movaps   xmm1, xmm6
+01cfa677  mov      rcx, rbx
+01cfa67a  call     0x1d0e790   ; PawnEnemy::LocalLateUpdate(System.Single)
+01cfa67f  movaps   xmm6, xmmword ptr [rsp + 0x20]   ; ev.value0
+01cfa684  add      rsp, 0x30
+01cfa688  pop      rbx
+01cfa689  ret      
+01cfa68a  nop      
+01cfa68c  cmpsb    byte ptr ss:[rsi], byte ptr [rdi]
+01cfa68e  iretd    
+01cfa68f  add      dword ptr [rsi], esi
+01cfa691  cmpsb    byte ptr [rsi], byte ptr [rdi]
+01cfa692  iretd    
+01cfa693  add      dword ptr [rcx - 0x4efe305b], esp
+01cfa699  movsd    dword ptr [rdi], dword ptr [rsi]
+01cfa69a  iretd    
+01cfa69b  add      esp, edx
+01cfa69d  movsd    dword ptr [rdi], dword ptr [rsi]
+01cfa69e  iretd    
+01cfa69f  add      ecx, esp
+01cfa6a1  movsd    dword ptr [rdi], dword ptr [rsi]
+01cfa6a2  iretd    
+01cfa6a3  add      esp, ecx
+01cfa6a5  int3     
+01cfa6a6  int3     
+01cfa6a7  int3     
+01cfa6a8  int3     
+01cfa6a9  int3     
+01cfa6aa  int3     
+01cfa6ab  int3     
+01cfa6ac  int3     
+01cfa6ad  int3     
+01cfa6ae  int3     
+01cfa6af  int3     

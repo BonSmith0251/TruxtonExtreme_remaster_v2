@@ -1,0 +1,9 @@
+#### InGame.Kernel.Enemy.PawnEnemy::EndRoute() RVA 1d0d620 len 21
+01d0d620  mov      rcx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01d0d627  test     rcx, rcx
+01d0d62a  je       0x1d0d640
+01d0d62c  mov      rdx, qword ptr [rcx]
+01d0d62f  mov      rax, qword ptr [rdx + 0x278]
+01d0d636  mov      rdx, qword ptr [rdx + 0x280]   ; ._eventIndex
+01d0d63d  jmp      rax
+01d0d640  ret      

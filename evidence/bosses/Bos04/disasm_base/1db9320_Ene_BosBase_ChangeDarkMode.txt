@@ -1,0 +1,43 @@
+== System.Void InGame.Kernel.Enemy.Ene_BosBase::ChangeDarkMode(System.Boolean,System.Single,System.Single) RVA 1db9320 len c8
+01db9320 mov        qword ptr [rsp + 8], rbx
+01db9325 push       rdi
+01db9326 sub        rsp, 0x80
+01db932d cmp        byte ptr [rip + 0x28aa550], 0 ; [.data 4663884]
+01db9334 movzx      ebx, dl
+01db9337 movaps     xmmword ptr [rsp + 0x70], xmm6
+01db933c mov        rdi, rcx
+01db933f movaps     xmmword ptr [rsp + 0x60], xmm7
+01db9344 movaps     xmm6, xmm3
+01db9347 movaps     xmm7, xmm2
+01db934a jne        0x1db935f
+01db934c lea        rcx, [rip + 0x25c960d] ; [.data 4382960] TypeInfo#43058
+01db9353 call       0x4e0a50
+01db9358 mov        byte ptr [rip + 0x28aa525], 1 ; [.data 4663884]
+01db935f mov        rax, qword ptr [rip + 0x25c95fa] ; [.data 4382960] TypeInfo#43058
+01db9366 cmp        dword ptr [rax + 0xe4], 0
+01db936d jne        0x1db937e
+01db936f mov        rcx, rax
+01db9372 call       0x4e0d90
+01db9377 mov        rax, qword ptr [rip + 0x25c95e2] ; [.data 4382960] TypeInfo#43058
+01db937e mov        rax, qword ptr [rax + 0xb8] ; ~_mover
+01db9385 lea        r9, [rsp + 0x40]
+01db938a mov        qword ptr [rsp + 0x30], 0
+01db9393 lea        rcx, [rsp + 0x50]
+01db9398 movss      dword ptr [rsp + 0x28], xmm6
+01db939e movzx      r8d, bl
+01db93a2 mov        rdx, rdi
+01db93a5 movss      dword ptr [rsp + 0x20], xmm7
+01db93ab movups     xmm0, xmmword ptr [rax + 0x20]
+01db93af movaps     xmmword ptr [rsp + 0x40], xmm0
+01db93b4 call       0x1db91a0 ; InGame.Kernel.Enemy.Ene_BosBase::ChangeBaseColor(System.Boolean,UnityEngine.Color,System.Single,System.Single)
+01db93b9 xor        edx, edx
+01db93bb lea        rcx, [rsp + 0x40]
+01db93c0 movups     xmm0, xmmword ptr [rax]
+01db93c3 movaps     xmmword ptr [rsp + 0x40], xmm0
+01db93c8 call       0x2742890 ; Cysharp.Threading.Tasks.UniTaskExtensions::Forget(Cysharp.Threading.Tasks.UniTask)
+01db93cd mov        rbx, qword ptr [rsp + 0x90] ; ~_priority
+01db93d5 movaps     xmm6, xmmword ptr [rsp + 0x70]
+01db93da movaps     xmm7, xmmword ptr [rsp + 0x60]
+01db93df add        rsp, 0x80
+01db93e6 pop        rdi
+01db93e7 ret        

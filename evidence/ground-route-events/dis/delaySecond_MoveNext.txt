@@ -1,0 +1,131 @@
+01d2d7c0  mov      qword ptr [rsp + 0x10], rbx   ; ev.eventType
+01d2d7c5  mov      qword ptr [rsp + 0x20], rsi   ; sm.token/ev.value0
+01d2d7ca  mov      qword ptr [rsp + 8], rcx   ; sm.<>t__builder
+01d2d7cf  push     rdi
+01d2d7d0  sub      rsp, 0x50
+01d2d7d4  movaps   xmmword ptr [rsp + 0x40], xmm6   ; ev.intValue1/._animators
+01d2d7d9  mov      rdi, rcx
+01d2d7dc  cmp      byte ptr [rip + 0x2935cf0], 0   ; [46634d3] bss
+01d2d7e3  jne      0x1d2d810
+01d2d7e5  lea      rcx, [rip + 0x2674f44]   ; [43a2730] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::AwaitUnsafeOnCompleted<.Awaiter,.<_delaySecond>d__7>
+01d2d7ec  call     0x4e0a50
+01d2d7f1  lea      rcx, [rip + 0x26abf20]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01d2d7f8  call     0x4e0a50
+01d2d7fd  lea      rcx, [rip + 0x268eacc]   ; [43bc2d0] TypeInfo Cysharp.Threading.Tasks.UniTask
+01d2d804  call     0x4e0a50
+01d2d809  mov      byte ptr [rip + 0x2935cc3], 1   ; [46634d3] bss
+01d2d810  mov      eax, dword ptr [rdi]   ; sm.<>1__state
+01d2d812  test     eax, eax
+01d2d814  jne      0x1d2d831
+01d2d816  movups   xmm0, xmmword ptr [rdi + 0x28]   ; sm.<>u__1/ev.vectorValue
+01d2d81a  movaps   xmmword ptr [rsp + 0x30], xmm0   ; ._entryFlag
+01d2d81f  xorps    xmm1, xmm1
+01d2d822  movups   xmmword ptr [rdi + 0x28], xmm1   ; sm.<>u__1/ev.vectorValue
+01d2d826  mov      dword ptr [rdi], 0xffffffff   ; sm.<>1__state
+01d2d82c  jmp      0x1d2d8b6
+01d2d831  movss    xmm1, dword ptr [rdi + 0x18]   ; sm.s/ev.repeatDelay
+01d2d836  xorps    xmm0, xmm0
+01d2d839  comiss   xmm1, xmm0
+01d2d83c  jbe      0x1d2d8c3
+01d2d842  mov      rbx, qword ptr [rdi + 0x20]   ; sm.token/ev.value0
+01d2d846  movaps   xmm6, xmm1
+01d2d849  mov      rcx, qword ptr [rip + 0x26abec8]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01d2d850  cmp      dword ptr [rcx + 0xe4], 0
+01d2d857  jne      0x1d2d85e
+01d2d859  call     0x4e0d90
+01d2d85e  xor      r9d, r9d
+01d2d861  movaps   xmm2, xmm6
+01d2d864  mov      rdx, rbx
+01d2d867  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01d2d86c  call     0x1ce3290   ; InGameManager::DelaySecond(System.Threading.CancellationToken,System.Single)
+01d2d871  movups   xmm6, xmmword ptr [rax]   ; sm.<>1__state
+01d2d874  mov      rcx, qword ptr [rip + 0x268ea55]   ; [43bc2d0] TypeInfo Cysharp.Threading.Tasks.UniTask
+01d2d87b  cmp      dword ptr [rcx + 0xe4], 0
+01d2d882  jne      0x1d2d889
+01d2d884  call     0x4e0d90
+01d2d889  movdqa   xmmword ptr [rsp + 0x30], xmm6   ; ._entryFlag
+01d2d88f  xor      edx, edx
+01d2d891  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01d2d896  call     0x4dfd80
+01d2d89b  movaps   xmm0, xmmword ptr [rsp + 0x30]   ; ._entryFlag
+01d2d8a0  movdqa   xmmword ptr [rsp + 0x30], xmm0   ; ._entryFlag
+01d2d8a6  xor      edx, edx
+01d2d8a8  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01d2d8ad  call     0xa55c00
+01d2d8b2  test     al, al
+01d2d8b4  je       0x1d2d916
+01d2d8b6  xor      edx, edx
+01d2d8b8  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01d2d8bd  call     0xa55b40
+01d2d8c2  nop      
+01d2d8c3  mov      dword ptr [rdi], 0xfffffffe   ; sm.<>1__state
+01d2d8c9  cmp      byte ptr [rip + 0x2933054], 0   ; [4660924] bss
+01d2d8d0  jne      0x1d2d8e5
+01d2d8d2  lea      rcx, [rip + 0x26a7b6f]   ; [43d5448] TypeInfo Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise
+01d2d8d9  call     0x4e0a50
+01d2d8de  mov      byte ptr [rip + 0x293303f], 1   ; [4660924] bss
+01d2d8e5  cmp      qword ptr [rdi + 8], 0   ; sm.<>t__builder
+01d2d8ea  je       0x1d2d901
+01d2d8ec  mov      ecx, 2
+01d2d8f1  mov      r8, qword ptr [rdi + 8]   ; sm.<>t__builder
+01d2d8f5  mov      rdx, qword ptr [rip + 0x26a7b4c]   ; [43d5448] TypeInfo Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise
+01d2d8fc  call     0x22b0
+01d2d901  mov      rbx, qword ptr [rsp + 0x68]   ; ev.flag0/._flagStateFuture
+01d2d906  mov      rsi, qword ptr [rsp + 0x78]   ; ._transformNameCache
+01d2d90b  movaps   xmm6, xmmword ptr [rsp + 0x40]   ; ev.intValue1/._animators
+01d2d910  add      rsp, 0x50
+01d2d914  pop      rdi
+01d2d915  ret      
+01d2d916  mov      dword ptr [rdi], 0   ; sm.<>1__state
+01d2d91c  movaps   xmm0, xmmword ptr [rsp + 0x30]   ; ._entryFlag
+01d2d921  movups   xmmword ptr [rdi + 0x28], xmm0   ; sm.<>u__1/ev.vectorValue
+01d2d925  lea      rcx, [rdi + 0x28]   ; sm.<>u__1/ev.vectorValue
+01d2d929  xor      edx, edx
+01d2d92b  call     0x4dfd80
+01d2d930  mov      rbx, qword ptr [rip + 0x2674df9]   ; [43a2730] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::AwaitUnsafeOnCompleted<.Awaiter,.<_delaySecond>d__7>
+01d2d937  cmp      qword ptr [rbx + 0x38], 0   ; ev.stringValue/._psystems
+01d2d93c  jne      0x1d2d959
+01d2d93e  lea      rcx, [rip + 0x26a7b03]   ; [43d5448] TypeInfo Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise
+01d2d945  call     0x4e0a50
+01d2d94a  cmp      qword ptr [rbx + 0x38], 0   ; ev.stringValue/._psystems
+01d2d94f  jne      0x1d2d959
+01d2d951  mov      rcx, rbx
+01d2d954  call     0x4de260
+01d2d959  cmp      qword ptr [rdi + 8], 0   ; sm.<>t__builder
+01d2d95e  jne      0x1d2d99e
+01d2d960  mov      rax, qword ptr [rbx + 0x38]   ; ev.stringValue/._psystems
+01d2d964  mov      rax, qword ptr [rax + 0x10]   ; ev.eventType
+01d2d968  test     byte ptr [rax + 0x135], 1
+01d2d96f  jne      0x1d2d979
+01d2d971  mov      rcx, rax
+01d2d974  call     0x4de1e0
+01d2d979  cmp      dword ptr [rax + 0xe4], 0
+01d2d980  jne      0x1d2d98a
+01d2d982  mov      rcx, rax
+01d2d985  call     0x4e0d90
+01d2d98a  mov      r8, qword ptr [rbx + 0x38]   ; ev.stringValue/._psystems
+01d2d98e  mov      r8, qword ptr [r8 + 8]   ; sm.<>t__builder
+01d2d992  lea      rdx, [rdi + 8]   ; sm.<>t__builder
+01d2d996  mov      rcx, rdi
+01d2d999  call     0x1390200
+01d2d99e  mov      r8, qword ptr [rdi + 8]   ; sm.<>t__builder
+01d2d9a2  test     r8, r8
+01d2d9a5  je       0x1d2d9f1
+01d2d9a7  xor      ecx, ecx
+01d2d9a9  mov      rdx, qword ptr [rip + 0x26a7a98]   ; [43d5448] TypeInfo Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise
+01d2d9b0  call     0x22b0
+01d2d9b5  mov      r8, qword ptr [rbx + 0x38]   ; ev.stringValue/._psystems
+01d2d9b9  mov      r8, qword ptr [r8 + 0x28]   ; sm.<>u__1/ev.vectorValue
+01d2d9bd  mov      rdx, rax
+01d2d9c0  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01d2d9c5  call     0x692590
+01d2d9ca  nop      
+01d2d9cb  jmp      0x1d2d901
+01d2d9d0  mov      rcx, qword ptr [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01d2d9d5  mov      dword ptr [rcx], 0xfffffffe   ; sm.<>1__state
+01d2d9db  add      rcx, 8
+01d2d9df  xor      r8d, r8d
+01d2d9e2  mov      rdx, qword ptr [rsp + 0x70]   ; ._transformCache
+01d2d9e7  call     0x1132bc0
+01d2d9ec  jmp      0x1d2d901
+01d2d9f1  call     0x4e0d00

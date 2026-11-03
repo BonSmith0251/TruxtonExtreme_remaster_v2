@@ -1,0 +1,7 @@
+01d1d970  test     edx, edx
+01d1d972  je       0x1d1d97d
+01d1d974  not      edx
+01d1d976  and      dword ptr [rcx + 0xc8], edx   ; ._taskFlag
+01d1d97c  ret      
+01d1d97d  mov      dword ptr [rcx + 0xc8], 0   ; ._taskFlag
+01d1d987  ret      

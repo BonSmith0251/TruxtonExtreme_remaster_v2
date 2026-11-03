@@ -1,0 +1,265 @@
+01d58d60  push     r13
+01d58d62  push     r14
+01d58d64  sub      rsp, 0x68
+01d58d68  cmp      byte ptr [rip + 0x290a900], 0   ; [466366f] bss
+01d58d6f  mov      r14, rdx
+01d58d72  movaps   xmmword ptr [rsp + 0x40], xmm6   ; .<tpassed>5__2
+01d58d77  mov      r13, rcx
+01d58d7a  movaps   xmmword ptr [rsp + 0x30], xmm7   ; .tsecond
+01d58d7f  movaps   xmm6, xmm2
+01d58d82  jne      0x1d58daf
+01d58d84  lea      rcx, [rip + 0x2672ced]   ; [43cba78] TypeInfo InGame.Kernel.Enemy.IDamagedObject
+01d58d8b  call     0x4e0a50
+01d58d90  lea      rcx, [rip + 0x2680c61]   ; [43d99f8] TypeInfo InGame.Kernel.InGameParameter
+01d58d97  call     0x4e0a50
+01d58d9c  lea      rcx, [rip + 0x265f25d]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d58da3  call     0x4e0a50
+01d58da8  mov      byte ptr [rip + 0x290a8c0], 1   ; [466366f] bss
+01d58daf  xorps    xmm7, xmm7
+01d58db2  comiss   xmm6, xmm7
+01d58db5  jbe      0x1d590f4
+01d58dbb  mov      qword ptr [rsp + 0x80], rbx
+01d58dc3  mov      qword ptr [rsp + 0x90], rsi   ; ._priority
+01d58dcb  mov      qword ptr [rsp + 0x60], rdi   ; ._currentPosition
+01d58dd0  mov      qword ptr [rsp + 0x58], r12   ; ._gameObjectCache
+01d58dd5  mov      qword ptr [rsp + 0x50], r15   ; .<>u__2
+01d58dda  test     r14, r14
+01d58ddd  je       0x1d59129
+01d58de3  mov      rdx, qword ptr [r14]
+01d58de6  mov      rcx, r14
+01d58de9  mov      rax, qword ptr [rdx + 0x2b8]   ; vcall KANAI.HybridCollision.HybridCollisions::AddDamageParts
+01d58df0  mov      rdx, qword ptr [rdx + 0x2c0]   ; vcall KANAI.HybridCollision.HybridCollisions::AddDamageParts
+01d58df7  call     rax
+01d58df9  test     al, al
+01d58dfb  je       0x1d590d5
+01d58e01  mov      rdx, qword ptr [rip + 0x2672c70]   ; [43cba78] TypeInfo InGame.Kernel.Enemy.IDamagedObject
+01d58e08  mov      rcx, qword ptr [r14 + 0x48]   ; ._hitIndex
+01d58e0c  call     0x4dfda0
+01d58e11  mov      r12d, dword ptr [r13 + 0xb0]   ; ._indexNumber
+01d58e18  mov      rdi, rax
+01d58e1b  test     rax, rax
+01d58e1e  je       0x1d590d5
+01d58e24  mov      rdx, qword ptr [rip + 0x2672c4d]   ; [43cba78] TypeInfo InGame.Kernel.Enemy.IDamagedObject
+01d58e2b  xor      ecx, ecx
+01d58e2d  mov      r8, rax
+01d58e30  call     0x22b0
+01d58e35  test     al, al
+01d58e37  je       0x1d590d5
+01d58e3d  mov      rcx, qword ptr [rip + 0x265f1bc]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d58e44  call     0x27540
+01d58e49  mov      r15, rax
+01d58e4c  test     rax, rax
+01d58e4f  je       0x1d59129
+01d58e55  xor      r8d, r8d
+01d58e58  mov      edx, r12d
+01d58e5b  mov      rcx, rax
+01d58e5e  call     0x1ce5a30   ; InGameManager::GetPlayerControll(System.Int32)
+01d58e63  mov      r9d, dword ptr [r13 + 0xa0]   ; ._attackType
+01d58e6a  mov      ecx, 5
+01d58e6f  mov      rdx, qword ptr [rip + 0x2672c02]   ; [43cba78] TypeInfo InGame.Kernel.Enemy.IDamagedObject
+01d58e76  mov      r8, rdi
+01d58e79  mov      rbx, rax
+01d58e7c  call     0x4560
+01d58e81  mov      esi, eax
+01d58e83  test     rbx, rbx
+01d58e86  je       0x1d59129
+01d58e8c  test     dword ptr [rbx + 0x218], 0x800   ; ._isTraining
+01d58e96  mov      qword ptr [rsp + 0x88], rbp   ; ._objectInfo
+01d58e9e  ja       0x1d58ede
+01d58ea0  mov      rdx, qword ptr [rip + 0x2672bd1]   ; [43cba78] TypeInfo InGame.Kernel.Enemy.IDamagedObject
+01d58ea7  mov      ecx, 1
+01d58eac  mov      r8, rdi
+01d58eaf  call     0x22b0
+01d58eb4  test     al, al
+01d58eb6  jne      0x1d58ede
+01d58eb8  mov      rcx, qword ptr [rip + 0x2680b39]   ; [43d99f8] TypeInfo InGame.Kernel.InGameParameter
+01d58ebf  cmp      dword ptr [rcx + 0xe4], 0
+01d58ec6  jne      0x1d58ecd
+01d58ec8  call     0x4e0d90
+01d58ecd  xor      edx, edx
+01d58ecf  mov      ecx, esi
+01d58ed1  call     0x1d1ecc0   ; InGameParameter::GetDamageRate(TXEKernel.TXEKernelHybridCollisions/toleType)
+01d58ed6  mulss    xmm0, dword ptr [r15 + 0x60]   ; ._currentPosition
+01d58edc  jmp      0x1d58ee1
+01d58ede  xorps    xmm0, xmm0
+01d58ee1  mov      r10, qword ptr [rdi]
+01d58ee4  xor      ebx, ebx
+01d58ee6  mov      r9, qword ptr [rip + 0x2672b8b]   ; [43cba78] TypeInfo InGame.Kernel.Enemy.IDamagedObject
+01d58eed  movzx    ecx, bx
+01d58ef0  mulss    xmm6, xmm0
+01d58ef4  movzx    edx, word ptr [r10 + 0x12e]
+01d58efc  cmp      bx, dx
+01d58eff  jae      0x1d58f28
+01d58f01  mov      r8, qword ptr [r10 + 0xb0]   ; ._indexNumber
+01d58f08  nop      dword ptr [rax + rax]
+01d58f10  movzx    eax, cx
+01d58f13  add      rax, rax
+01d58f16  cmp      qword ptr [r8 + rax*8], r9
+01d58f1a  je       0x1d58fc3
+01d58f20  inc      cx
+01d58f23  cmp      cx, dx
+01d58f26  jb       0x1d58f10
+01d58f28  mov      r8d, 2
+01d58f2e  mov      rdx, r9
+01d58f31  mov      rcx, rdi
+01d58f34  call     0x4ddae0
+01d58f39  mov      rdx, qword ptr [rax]
+01d58f3c  movaps   xmm1, xmm6
+01d58f3f  mov      r8, qword ptr [rax + 8]
+01d58f43  mov      rcx, rdi
+01d58f46  call     rdx
+01d58f48  mov      r9, qword ptr [rdi]
+01d58f4b  mov      ebp, dword ptr [r13 + 0xa0]   ; ._attackType
+01d58f52  mov      rdx, qword ptr [rip + 0x2672b1f]   ; [43cba78] TypeInfo InGame.Kernel.Enemy.IDamagedObject
+01d58f59  movzx    ecx, word ptr [r9 + 0x12e]
+01d58f61  test     al, al
+01d58f63  jne      0x1d59004
+01d58f69  movzx    esi, byte ptr [r13 + 0xac]   ; ._isExboost
+01d58f71  cmp      bx, cx
+01d58f74  jae      0x1d58f94
+01d58f76  mov      r8, qword ptr [r9 + 0xb0]   ; ._indexNumber
+01d58f7d  nop      dword ptr [rax]
+01d58f80  movzx    eax, bx
+01d58f83  add      rax, rax
+01d58f86  cmp      qword ptr [r8 + rax*8], rdx
+01d58f8a  je       0x1d58fe5
+01d58f8c  inc      bx
+01d58f8f  cmp      bx, cx
+01d58f92  jb       0x1d58f80
+01d58f94  mov      r8d, 7
+01d58f9a  mov      rcx, rdi
+01d58f9d  call     0x4ddae0
+01d58fa2  mov      r10, qword ptr [rax]
+01d58fa5  movzx    r9d, sil
+01d58fa9  mov      rax, qword ptr [rax + 8]
+01d58fad  mov      r8d, ebp
+01d58fb0  mov      edx, r12d
+01d58fb3  mov      qword ptr [rsp + 0x20], rax   ; .trot
+01d58fb8  mov      rcx, rdi
+01d58fbb  call     r10
+01d58fbe  jmp      0x1d59045
+01d58fc3  movzx    ecx, cx
+01d58fc6  add      rcx, rcx
+01d58fc9  mov      eax, dword ptr [r8 + rcx*8 + 8]
+01d58fce  add      eax, 2
+01d58fd1  cdqe     
+01d58fd3  shl      rax, 4
+01d58fd7  add      rax, 0x138
+01d58fdd  add      rax, r10
+01d58fe0  jmp      0x1d58f39
+01d58fe5  movzx    ecx, bx
+01d58fe8  add      rcx, rcx
+01d58feb  mov      eax, dword ptr [r8 + rcx*8 + 8]
+01d58ff0  add      eax, 7
+01d58ff3  cdqe     
+01d58ff5  shl      rax, 4
+01d58ff9  add      rax, 0x138
+01d58fff  add      rax, r9
+01d59002  jmp      0x1d58fa2
+01d59004  cmp      bx, cx
+01d59007  jae      0x1d59028
+01d59009  mov      r8, qword ptr [r9 + 0xb0]   ; ._indexNumber
+01d59010  movzx    eax, bx
+01d59013  add      rax, rax
+01d59016  cmp      qword ptr [r8 + rax*8], rdx
+01d5901a  je       0x1d59107
+01d59020  inc      bx
+01d59023  cmp      bx, cx
+01d59026  jb       0x1d59010
+01d59028  mov      r8d, 6
+01d5902e  mov      rcx, rdi
+01d59031  call     0x4ddae0
+01d59036  mov      r9, qword ptr [rax]
+01d59039  mov      edx, ebp
+01d5903b  mov      r8, qword ptr [rax + 8]
+01d5903f  mov      rcx, rdi
+01d59042  call     r9
+01d59045  comiss   xmm6, xmm7
+01d59048  mov      rbp, qword ptr [rsp + 0x88]   ; ._objectInfo
+01d59050  jbe      0x1d590d5
+01d59056  mov      rax, qword ptr [r14]
+01d59059  mov      r8d, r12d
+01d5905c  movzx    r9d, byte ptr [r13 + 0xac]   ; ._isExboost
+01d59064  movaps   xmm1, xmm6
+01d59067  mov      rcx, r14
+01d5906a  mov      rdx, qword ptr [rax + 0x258]   ; vcall KANAI.HybridCollision.HybridCollisions::_getCurrentPosition
+01d59071  mov      rax, qword ptr [rax + 0x260]   ; vcall KANAI.HybridCollision.HybridCollisions::_getCurrentPosition
+01d59078  mov      qword ptr [rsp + 0x20], rax   ; .trot
+01d5907d  call     rdx
+01d5907f  mov      rdx, qword ptr [rip + 0x26729f2]   ; [43cba78] TypeInfo InGame.Kernel.Enemy.IDamagedObject
+01d59086  mov      ecx, 8
+01d5908b  mov      r8, rdi
+01d5908e  call     0x22b0
+01d59093  mov      rdx, qword ptr [rip + 0x26729de]   ; [43cba78] TypeInfo InGame.Kernel.Enemy.IDamagedObject
+01d5909a  xor      ecx, ecx
+01d5909c  mov      r8, rdi
+01d5909f  mov      ebx, eax
+01d590a1  call     0x22b0
+01d590a6  test     al, al
+01d590a8  jne      0x1d590c0
+01d590aa  mov      rdx, qword ptr [rip + 0x26729c7]   ; [43cba78] TypeInfo InGame.Kernel.Enemy.IDamagedObject
+01d590b1  mov      ecx, 9
+01d590b6  mov      r8, rdi
+01d590b9  call     0x22b0
+01d590be  add      ebx, eax
+01d590c0  test     r12d, r12d
+01d590c3  movsxd   rdx, ebx
+01d590c6  mov      rcx, r15
+01d590c9  sete     r8b
+01d590cd  xor      r9d, r9d
+01d590d0  call     0x1ce2500   ; InGameManager::AddScore(System.Int64,System.Boolean)
+01d590d5  mov      r12, qword ptr [rsp + 0x58]   ; ._gameObjectCache
+01d590da  mov      rdi, qword ptr [rsp + 0x60]   ; ._currentPosition
+01d590df  mov      rsi, qword ptr [rsp + 0x90]   ; ._priority
+01d590e7  mov      rbx, qword ptr [rsp + 0x80]
+01d590ef  mov      r15, qword ptr [rsp + 0x50]   ; .<>u__2
+01d590f4  movaps   xmm6, xmmword ptr [rsp + 0x40]   ; .<tpassed>5__2
+01d590f9  movaps   xmm7, xmmword ptr [rsp + 0x30]   ; .tsecond
+01d590fe  add      rsp, 0x68
+01d59102  pop      r14
+01d59104  pop      r13
+01d59106  ret      
+01d59107  movzx    ecx, bx
+01d5910a  add      rcx, rcx
+01d5910d  mov      eax, dword ptr [r8 + rcx*8 + 8]
+01d59112  add      eax, 6
+01d59115  cdqe     
+01d59117  shl      rax, 4
+01d5911b  add      rax, 0x138
+01d59121  add      rax, r9
+01d59124  jmp      0x1d59036
+01d59129  call     0x4e0d00
+01d5912e  int3     
+01d5912f  int3     
+01d59130  mov      eax, dword ptr [rcx + 0xa0]   ; ._attackType
+01d59136  ret      
+01d59137  int3     
+01d59138  int3     
+01d59139  int3     
+01d5913a  int3     
+01d5913b  int3     
+01d5913c  int3     
+01d5913d  int3     
+01d5913e  int3     
+01d5913f  int3     
+01d59140  mov      eax, dword ptr [rcx + 0xb0]   ; ._indexNumber
+01d59146  ret      
+01d59147  int3     
+01d59148  int3     
+01d59149  int3     
+01d5914a  int3     
+01d5914b  int3     
+01d5914c  int3     
+01d5914d  int3     
+01d5914e  int3     
+01d5914f  int3     
+01d59150  movzx    eax, byte ptr [rcx + 0xac]   ; ._isExboost
+01d59157  ret      
+01d59158  int3     
+01d59159  int3     
+01d5915a  int3     
+01d5915b  int3     
+01d5915c  int3     
+01d5915d  int3     
+01d5915e  int3     
+01d5915f  int3     

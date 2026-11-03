@@ -1,0 +1,94 @@
+#### InGame.Kernel.Enemy.PawnEnemy::ToDestroid() RVA 1d108c0 len 18f
+01d108c0  push     rbx
+01d108c2  sub      rsp, 0x20
+01d108c6  mov      rax, qword ptr [rcx + 0xb8]   ; ._mover
+01d108cd  mov      rbx, rcx
+01d108d0  test     rax, rax
+01d108d3  je       0x1d108dc
+01d108d5  mov      byte ptr [rax + 0x1d4], 1   ; ._repeatPassed
+01d108dc  mov      rdx, qword ptr [rcx]
+01d108df  mov      rax, qword ptr [rdx + 0x588]   ; vcall InGame.Kernel.Enemy.PawnEnemy::_callDeadEffect
+01d108e6  mov      rdx, qword ptr [rdx + 0x590]   ; vcall InGame.Kernel.Enemy.PawnEnemy::_callDeadEffect
+01d108ed  call     rax
+01d108ef  mov      rdx, qword ptr [rbx]
+01d108f2  mov      rcx, rbx
+01d108f5  mov      rax, qword ptr [rdx + 0x308]   ; vcall InGame.Kernel.Enemy.PawnEnemy::CallDisabled
+01d108fc  mov      rdx, qword ptr [rdx + 0x310]   ; vcall InGame.Kernel.Enemy.PawnEnemy::CallDisabled
+01d10903  call     rax
+01d10905  cmp      byte ptr [rip + 0x2952b0c], 0   ; [4663418] bss
+01d1090c  jne      0x1d10921
+01d1090e  lea      rcx, [rip + 0x26bcedb]   ; [43cd7f0] TypeInfo InGame.Kernel.Enemy.IEnemyUpdater
+01d10915  call     0x4e0a50
+01d1091a  mov      byte ptr [rip + 0x2952af7], 1   ; [4663418] bss
+01d10921  cmp      byte ptr [rbx + 0x142], 0   ; ._isEventEnd
+01d10928  jne      0x1d10a1f
+01d1092e  mov      rcx, qword ptr [rbx + 0xb8]   ; ._mover
+01d10935  mov      qword ptr [rsp + 0x30], rbp   ; .tsecond
+01d1093a  mov      qword ptr [rsp + 0x38], rsi   ; ._callback
+01d1093f  test     rcx, rcx
+01d10942  je       0x1d1094b
+01d10944  xor      edx, edx
+01d10946  call     0x1cdb7d0   ; InGameEnemyMoveBase::TokenCancel()
+01d1094b  xor      ebp, ebp
+01d1094d  mov      qword ptr [rsp + 0x40], rdi   ; .<tpassed>5__2
+01d10952  mov      esi, ebp
+01d10954  mov      qword ptr [rsp + 0x48], r14   ; ._hitIndex
+01d10959  cmp      dword ptr [rbx + 0xb0], ebp   ; ._updateEventCount
+01d1095f  jle      0x1d10a04
+01d10965  mov      r14d, 0x20
+01d1096b  nop      dword ptr [rax + rax]
+01d10970  mov      rax, qword ptr [rbx + 0xa8]   ; ._updateEvents
+01d10977  test     rax, rax
+01d1097a  je       0x1d10a44
+01d10980  cmp      esi, dword ptr [rax + 0x18]
+01d10983  jae      0x1d10a4a
+01d10989  mov      rdi, qword ptr [r14 + rax]
+01d1098d  test     rdi, rdi
+01d10990  je       0x1d10a44
+01d10996  mov      r10, qword ptr [rdi]
+01d10999  movzx    eax, bp
+01d1099c  mov      r9, qword ptr [rip + 0x26bce4d]   ; [43cd7f0] TypeInfo InGame.Kernel.Enemy.IEnemyUpdater
+01d109a3  movzx    edx, word ptr [r10 + 0x12e]
+01d109ab  cmp      bp, dx
+01d109ae  jae      0x1d109d4
+01d109b0  mov      r8, qword ptr [r10 + 0xb0]   ; ._updateEventCount
+01d109b7  nop      word ptr [rax + rax]
+01d109c0  movzx    ecx, ax
+01d109c3  add      rcx, rcx
+01d109c6  cmp      qword ptr [r8 + rcx*8], r9
+01d109ca  je       0x1d10a25
+01d109cc  inc      ax
+01d109cf  cmp      ax, dx
+01d109d2  jb       0x1d109c0
+01d109d4  mov      r8d, 5
+01d109da  mov      rdx, r9
+01d109dd  mov      rcx, rdi
+01d109e0  call     0x4ddae0
+01d109e5  mov      r8, qword ptr [rax]
+01d109e8  mov      rcx, rdi
+01d109eb  mov      rdx, qword ptr [rax + 8]
+01d109ef  call     r8
+01d109f2  inc      esi
+01d109f4  add      r14, 8
+01d109f8  cmp      esi, dword ptr [rbx + 0xb0]   ; ._updateEventCount
+01d109fe  jl       0x1d10970
+01d10a04  mov      rdi, qword ptr [rsp + 0x40]   ; .<tpassed>5__2
+01d10a09  mov      r14, qword ptr [rsp + 0x48]   ; ._hitIndex
+01d10a0e  mov      rbp, qword ptr [rsp + 0x30]   ; .tsecond
+01d10a13  mov      rsi, qword ptr [rsp + 0x38]   ; ._callback
+01d10a18  mov      byte ptr [rbx + 0x142], 1   ; ._isEventEnd
+01d10a1f  add      rsp, 0x20
+01d10a23  pop      rbx
+01d10a24  ret      
+01d10a25  movzx    ecx, ax
+01d10a28  add      rcx, rcx
+01d10a2b  mov      eax, dword ptr [r8 + rcx*8 + 8]
+01d10a30  add      eax, 5
+01d10a33  cdqe     
+01d10a35  shl      rax, 4
+01d10a39  add      rax, 0x138
+01d10a3f  add      rax, r10
+01d10a42  jmp      0x1d109e5
+01d10a44  call     0x4e0d00
+01d10a49  int3     
+01d10a4a  call     0x4e0cf0

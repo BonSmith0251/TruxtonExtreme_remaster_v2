@@ -1,0 +1,58 @@
+01d1dc60  mov      qword ptr [rsp + 8], rbx
+01d1dc65  mov      qword ptr [rsp + 0x10], rbp   ; ev.eventType
+01d1dc6a  mov      qword ptr [rsp + 0x18], rsi   ; ev.repeatDelay
+01d1dc6f  push     rdi
+01d1dc70  sub      rsp, 0x70
+01d1dc74  cmp      byte ptr [rip + 0x294584c], 0   ; [46634c7] bss
+01d1dc7b  mov      ebp, r9d
+01d1dc7e  mov      rbx, r8
+01d1dc81  mov      rsi, rdx
+01d1dc84  mov      rdi, rcx
+01d1dc87  jne      0x1d1dc9c
+01d1dc89  lea      rcx, [rip + 0x26876e0]   ; [43a5370] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::Start<.<DelayRotate>d__12>
+01d1dc90  call     0x4e0a50
+01d1dc95  mov      byte ptr [rip + 0x294582b], 1   ; [46634c7] bss
+01d1dc9c  xor      eax, eax
+01d1dc9e  lea      rcx, [rsp + 0x38]   ; ev.stringValue/._psystems
+01d1dca3  xorps    xmm0, xmm0
+01d1dca6  mov      qword ptr [rsp + 0x30], rax   ; ._entryFlag
+01d1dcab  xorps    xmm1, xmm1
+01d1dcae  mov      qword ptr [rsp + 0x48], rax   ; ev.intValue3/.GameObjectCache
+01d1dcb3  xor      edx, edx
+01d1dcb5  movdqa   xmmword ptr [rsp + 0x50], xmm0   ; ev.randomFire/._animatorsPlay
+01d1dcbb  movdqa   xmmword ptr [rsp + 0x60], xmm1   ; ev.subnameValue/._psystemCount
+01d1dcc1  movups   xmmword ptr [rsp + 0x38], xmm0   ; ev.stringValue/._psystems
+01d1dcc6  call     0x4dfd80
+01d1dccb  mov      rdx, rsi
+01d1dcce  mov      qword ptr [rsp + 0x50], rsi   ; ev.randomFire/._animatorsPlay
+01d1dcd3  lea      rcx, [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01d1dcd8  call     0x4dfd80
+01d1dcdd  mov      rdx, rbx
+01d1dce0  mov      qword ptr [rsp + 0x48], rbx   ; ev.intValue3/.GameObjectCache
+01d1dce5  lea      rcx, [rsp + 0x48]   ; ev.intValue3/.GameObjectCache
+01d1dcea  call     0x4dfd80
+01d1dcef  mov      rbx, qword ptr [rip + 0x268767a]   ; [43a5370] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::Start<.<DelayRotate>d__12>
+01d1dcf6  mov      dword ptr [rsp + 0x58], ebp   ; ev.nameValue/._particleSpeed
+01d1dcfa  mov      dword ptr [rsp + 0x30], 0xffffffff   ; ._entryFlag
+01d1dd02  cmp      qword ptr [rbx + 0x38], 0   ; ev.stringValue/._psystems
+01d1dd07  jne      0x1d1dd11
+01d1dd09  mov      rcx, rbx
+01d1dd0c  call     0x4de260
+01d1dd11  mov      rdx, qword ptr [rbx + 0x38]   ; ev.stringValue/._psystems
+01d1dd15  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01d1dd1a  mov      rdx, qword ptr [rdx + 0x10]   ; ev.eventType
+01d1dd1e  call     0x1d26710   ; InGameObjectWithEvent/<DelayRotate>d__12::MoveNext()
+01d1dd23  xor      r8d, r8d
+01d1dd26  lea      rdx, [rsp + 0x38]   ; ev.stringValue/._psystems
+01d1dd2b  lea      rcx, [rsp + 0x20]   ; ev.value0
+01d1dd30  call     0x71b540
+01d1dd35  lea      r11, [rsp + 0x70]   ; ._transformCache
+01d1dd3a  mov      rbx, qword ptr [r11 + 0x10]   ; ev.eventType
+01d1dd3e  mov      rbp, qword ptr [r11 + 0x18]   ; ev.repeatDelay
+01d1dd42  movups   xmm0, xmmword ptr [rax]
+01d1dd45  mov      rsi, qword ptr [r11 + 0x20]   ; ev.value0
+01d1dd49  mov      rax, rdi
+01d1dd4c  movups   xmmword ptr [rdi], xmm0
+01d1dd4f  mov      rsp, r11
+01d1dd52  pop      rdi
+01d1dd53  ret      

@@ -1,0 +1,47 @@
+#### InGame.Kernel.InGameManager::GetGameRootPosition(UnityEngine.Vector3,System.Boolean) RVA 1ce4580 len b5
+01ce4580  mov      qword ptr [rsp + 8], rbx
+01ce4585  mov      qword ptr [rsp + 0x10], rsi   ; ev.eventType
+01ce458a  push     rdi
+01ce458b  sub      rsp, 0x40
+01ce458f  mov      rdi, r8
+01ce4592  mov      rbx, rdx
+01ce4595  mov      rsi, rcx
+01ce4598  test     r9b, r9b
+01ce459b  je       0x1ce45e0
+01ce459d  mov      rdx, qword ptr [rdx + 0x130]
+01ce45a4  test     rdx, rdx
+01ce45a7  je       0x1ce4630
+01ce45ad  movsd    xmm0, qword ptr [r8]
+01ce45b2  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01ce45b7  mov      eax, dword ptr [r8 + 8]
+01ce45bb  xor      r9d, r9d
+01ce45be  lea      r8, [rsp + 0x20]   ; ev.value0
+01ce45c3  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01ce45c9  mov      dword ptr [rsp + 0x28], eax   ; ev.vectorValue
+01ce45cd  call     0x1ddaff0   ; HybridCollisionManager::GroundToWorld(UnityEngine.Vector3)
+01ce45d2  movsd    xmm0, qword ptr [rax]
+01ce45d6  mov      eax, dword ptr [rax + 8]
+01ce45d9  movsd    qword ptr [rdi], xmm0
+01ce45dd  mov      dword ptr [rdi + 8], eax
+01ce45e0  mov      rdx, qword ptr [rbx + 0x88]   ; ._eventDatas
+01ce45e7  test     rdx, rdx
+01ce45ea  je       0x1ce4630
+01ce45ec  movsd    xmm0, qword ptr [rdi]
+01ce45f0  lea      r8, [rsp + 0x20]   ; ev.value0
+01ce45f5  mov      eax, dword ptr [rdi + 8]
+01ce45f8  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01ce45fd  xor      r9d, r9d
+01ce4600  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01ce4606  mov      dword ptr [rsp + 0x28], eax   ; ev.vectorValue
+01ce460a  call     0x308ea00   ; Transform::InverseTransformPoint(UnityEngine.Vector3)
+01ce460f  mov      rbx, qword ptr [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01ce4614  movsd    xmm0, qword ptr [rax]
+01ce4618  mov      eax, dword ptr [rax + 8]
+01ce461b  movsd    qword ptr [rsi], xmm0
+01ce461f  mov      dword ptr [rsi + 8], eax
+01ce4622  mov      rax, rsi
+01ce4625  mov      rsi, qword ptr [rsp + 0x58]   ; ev.nameValue/._particleSpeed
+01ce462a  add      rsp, 0x40
+01ce462e  pop      rdi
+01ce462f  ret      
+01ce4630  call     0x4e0d00

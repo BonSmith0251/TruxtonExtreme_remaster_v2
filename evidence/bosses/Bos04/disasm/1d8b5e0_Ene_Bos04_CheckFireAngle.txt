@@ -1,0 +1,132 @@
+== System.Boolean InGame.Kernel.Enemy.Ene_Bos04::CheckFireAngle() RVA 1d8b5e0 len 25f
+01d8b5e0 mov        rax, rsp
+01d8b5e3 push       rbx
+01d8b5e4 sub        rsp, 0xe0
+01d8b5eb movaps     xmmword ptr [rax - 0x18], xmm6
+01d8b5ef movaps     xmmword ptr [rax - 0x28], xmm7
+01d8b5f3 movaps     xmmword ptr [rax - 0x38], xmm8
+01d8b5f8 movaps     xmmword ptr [rax - 0x48], xmm9
+01d8b5fd movaps     xmmword ptr [rax - 0x58], xmm10
+01d8b602 movaps     xmmword ptr [rax - 0x68], xmm11
+01d8b607 movaps     xmmword ptr [rax - 0x78], xmm12
+01d8b60c movaps     xmmword ptr [rsp + 0x60], xmm13
+01d8b612 mov        rbx, rcx
+01d8b615 cmp        byte ptr [rip + 0x28d81a4], 0 ; [.data 46637c0]
+01d8b61c jne        0x1d8b661
+01d8b61e lea        rcx, [rip + 0x26261d3] ; [.data 43b17f8] TypeInfo#37303
+01d8b625 call       0x4e0a50
+01d8b62a lea        rcx, [rip + 0x2634c8f] ; [.data 43c02c0] MethodRef#46028
+01d8b631 call       0x4e0a50
+01d8b636 lea        rcx, [rip + 0x2634d3b] ; [.data 43c0378] MethodRef#46029
+01d8b63d call       0x4e0a50
+01d8b642 lea        rcx, [rip + 0x2634de7] ; [.data 43c0430] MethodRef#46033
+01d8b649 call       0x4e0a50
+01d8b64e lea        rcx, [rip + 0x25e7a33] ; [.data 4373088] MethodRef#87135
+01d8b655 call       0x4e0a50
+01d8b65a mov        byte ptr [rip + 0x28d815f], 1 ; [.data 46637c0]
+01d8b661 xorps      xmm0, xmm0
+01d8b664 xor        eax, eax
+01d8b666 movups     xmmword ptr [rsp + 0x40], xmm0
+01d8b66b mov        qword ptr [rsp + 0x50], rax
+01d8b670 xor        edx, edx
+01d8b672 mov        rcx, rbx
+01d8b675 call       0x1d8c260 ; InGame.Kernel.Enemy.Ene_Bos04::GetRelativeAngle()
+01d8b67a movaps     xmm8, xmm0
+01d8b67e movss      xmm10, dword ptr [rbx + 0x300] ; ~_lastFireAngle
+01d8b687 movss      dword ptr [rbx + 0x300], xmm8 ; ~_lastFireAngle
+01d8b690 mov        rax, qword ptr [rip + 0x2626161] ; [.data 43b17f8] TypeInfo#37303
+01d8b697 cmp        dword ptr [rax + 0xe4], 0
+01d8b69e jne        0x1d8b6af
+01d8b6a0 mov        rcx, rax
+01d8b6a3 call       0x4e0d90
+01d8b6a8 mov        rax, qword ptr [rip + 0x2626149] ; [.data 43b17f8] TypeInfo#37303
+01d8b6af mov        rax, qword ptr [rax + 0xb8] ; ~_mover
+01d8b6b6 mov        rdx, qword ptr [rax + 0xd0] ; ~_startDelayTime
+01d8b6bd test       rdx, rdx
+01d8b6c0 je         0x1d8b834
+01d8b6c6 mov        r8, qword ptr [rip + 0x25e79bb] ; [.data 4373088] MethodRef#87135
+01d8b6cd lea        rcx, [rsp + 0x28]
+01d8b6d2 call       0xb7f010
+01d8b6d7 movups     xmm0, xmmword ptr [rsp + 0x28]
+01d8b6dc movups     xmmword ptr [rsp + 0x40], xmm0
+01d8b6e1 movsd      xmm1, qword ptr [rsp + 0x38]
+01d8b6e7 movsd      qword ptr [rsp + 0x50], xmm1
+01d8b6ed mov        qword ptr [rsp + 0x28], 0
+01d8b6f6 lea        rbx, [rsp + 0x40]
+01d8b6fb mov        qword ptr [rsp + 0x30], rbx
+01d8b700 movdqa     xmm12, xmmword ptr [rip + 0x1761217] ; [.rdata 34ec920] f=nan d=nan v4=['nan', 'nan', 'nan', 'nan']
+01d8b709 movss      xmm7, dword ptr [rip + 0x1761207] ; [.rdata 34ec918] f=360.0 d=1.4044481158322838e+306 v4=['360', 'inf', 'nan', 'nan']
+01d8b711 xorps      xmm9, xmm9
+01d8b715 movss      xmm11, dword ptr [rip + 0x17554ca] ; [.rdata 34e0be8] f=180.0 d=1.964504759529741e+24 v4=['180', '2000', '-0.0001', '-1']
+01d8b71e movss      xmm13, dword ptr [rip + 0x1755495] ; [.rdata 34e0bbc] f=0.009999999776482582 d=5.3737179290461957e-17 v4=['0.01', '0.0174533', '0.05', '0.5']
+01d8b727 nop        word ptr [rax + rax]
+01d8b730 mov        rdx, qword ptr [rip + 0x2634c41] ; [.data 43c0378] MethodRef#46029
+01d8b737 lea        rcx, [rsp + 0x40]
+01d8b73c call       0x195e160
+01d8b741 test       al, al
+01d8b743 je         0x1d8b804
+01d8b749 movaps     xmm6, xmm8
+01d8b74d subss      xmm6, xmm10
+01d8b752 movaps     xmm0, xmm6
+01d8b755 divss      xmm0, xmm7
+01d8b759 call       0x578740
+01d8b75e mulss      xmm0, xmm7
+01d8b762 subss      xmm6, xmm0
+01d8b766 comiss     xmm9, xmm6
+01d8b76a ja         0x1d8b776
+01d8b76c comiss     xmm6, xmm7
+01d8b76f jbe        0x1d8b77a
+01d8b771 movaps     xmm6, xmm7
+01d8b774 jmp        0x1d8b77a
+01d8b776 movaps     xmm6, xmm9
+01d8b77a comiss     xmm6, xmm11
+01d8b77e jbe        0x1d8b784
+01d8b780 subss      xmm6, xmm7
+01d8b784 movaps     xmm0, xmm6
+01d8b787 andps      xmm0, xmm12
+01d8b78b comiss     xmm13, xmm0
+01d8b78f ja         0x1d8b730
+01d8b791 movss      xmm0, dword ptr [rsp + 0x50]
+01d8b797 comiss     xmm6, xmm9
+01d8b79b ja         0x1d8b7a9
+01d8b79d comiss     xmm10, xmm0
+01d8b7a1 jbe        0x1d8b730
+01d8b7a3 comiss     xmm0, xmm8
+01d8b7a7 jmp        0x1d8b7b3
+01d8b7a9 comiss     xmm0, xmm10
+01d8b7ad jbe        0x1d8b730
+01d8b7af comiss     xmm8, xmm0
+01d8b7b3 setae      al
+01d8b7b6 test       al, al
+01d8b7b8 je         0x1d8b730
+01d8b7be mov        rdx, qword ptr [rip + 0x2634afb] ; [.data 43c02c0] MethodRef#46028
+01d8b7c5 mov        rcx, rbx
+01d8b7c8 call       0x5bcdb0 ; AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose()
+01d8b7cd mov        al, 1
+01d8b7cf lea        r11, [rsp + 0xe0] ; ~_deadExplosion
+01d8b7d7 movaps     xmm6, xmmword ptr [r11 - 0x10]
+01d8b7dc movaps     xmm7, xmmword ptr [r11 - 0x20]
+01d8b7e1 movaps     xmm8, xmmword ptr [r11 - 0x30]
+01d8b7e6 movaps     xmm9, xmmword ptr [r11 - 0x40]
+01d8b7eb movaps     xmm10, xmmword ptr [r11 - 0x50]
+01d8b7f0 movaps     xmm11, xmmword ptr [r11 - 0x60]
+01d8b7f5 movaps     xmm12, xmmword ptr [r11 - 0x70]
+01d8b7fa movaps     xmm13, xmmword ptr [r11 - 0x80]
+01d8b7ff mov        rsp, r11
+01d8b802 pop        rbx
+01d8b803 ret        
+01d8b804 mov        rdx, qword ptr [rip + 0x2634ab5] ; [.data 43c02c0] MethodRef#46028
+01d8b80b mov        rcx, rbx
+01d8b80e call       0x5bcdb0 ; AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose()
+01d8b813 jmp        0x1d8b830
+01d8b815 mov        rdx, qword ptr [rip + 0x2634aa4] ; [.data 43c02c0] MethodRef#46028
+01d8b81c mov        rcx, qword ptr [rsp + 0x30]
+01d8b821 call       0x5bcdb0 ; AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose()
+01d8b826 mov        rcx, qword ptr [rsp + 0x28]
+01d8b82b test       rcx, rcx
+01d8b82e jne        0x1d8b83a
+01d8b830 xor        al, al
+01d8b832 jmp        0x1d8b7cf
+01d8b834 call       0x4e0d00
+01d8b839 int3       
+01d8b83a call       0x4dc9e0

@@ -1,0 +1,220 @@
+01d9d5f0 push rdi 
+01d9d5f2 sub rsp, 0x90 
+01d9d5f9 cmp byte ptr [rip + 0x28c61fd], 0 ; rva=46637fd
+01d9d600 mov rdi, rcx 
+01d9d603 movaps xmmword ptr [rsp + 0x80], xmm6 
+01d9d60b movaps xmm6, xmm1 
+01d9d60e jne 0x1d9d62f 
+01d9d610 lea rcx, [rip + 0x26144b1] ; rva=43b1ac8
+01d9d617 call 0x4e0a50 
+01d9d61c lea rcx, [rip + 0x2604d45] ; rva=43a2368
+01d9d623 call 0x4e0a50 
+01d9d628 mov byte ptr [rip + 0x28c61ce], 1 ; rva=46637fd
+01d9d62f mov rcx, qword ptr [rdi + 0x2f0] 
+01d9d636 mov qword ptr [rsp + 0xa0], rbx 
+01d9d63e mov qword ptr [rsp + 0xa8], rbp 
+01d9d646 mov qword ptr [rsp + 0xb0], rsi 
+01d9d64e mov qword ptr [rsp + 0xb8], r14 
+01d9d656 test rcx, rcx 
+01d9d659 je 0x1d9d9e0 
+01d9d65f xor r8d, r8d 
+01d9d662 movaps xmm1, xmm6 
+01d9d665 call 0x1d8a2e0 ; Ene_Bos06/CoreMovement::Progress(System.Single)
+01d9d66a mov eax, dword ptr [rdi + 0x1ec] 
+01d9d670 xor r14d, r14d 
+01d9d673 test eax, eax 
+01d9d675 jne 0x1d9d834 
+01d9d67b mov rsi, qword ptr [rdi + 0x2f0] 
+01d9d682 test rsi, rsi 
+01d9d685 je 0x1d9d9e0 
+01d9d68b cmp byte ptr [rip + 0x28c6171], r14b ; rva=4663803
+01d9d692 jne 0x1d9d6b3 
+01d9d694 lea rcx, [rip + 0x261442d] ; rva=43b1ac8
+01d9d69b call 0x4e0a50 
+01d9d6a0 lea rcx, [rip + 0x25e52b9] ; rva=4382960
+01d9d6a7 call 0x4e0a50 
+01d9d6ac mov byte ptr [rip + 0x28c6150], 1 ; rva=4663803
+01d9d6b3 mov rcx, qword ptr [rsi + 0x40] 
+01d9d6b7 mov rbp, qword ptr [rsi + 0x50] 
+01d9d6bb test rcx, rcx 
+01d9d6be je 0x1d9d9e0 
+01d9d6c4 xor edx, edx 
+01d9d6c6 call 0x2095a70 ; CancellationTokenSource::get_Token()
+01d9d6cb mov rbx, rax 
+01d9d6ce mov rax, qword ptr [rip + 0x26143f3] ; rva=43b1ac8
+01d9d6d5 cmp dword ptr [rax + 0xe4], r14d 
+01d9d6dc jne 0x1d9d6ed 
+01d9d6de mov rcx, rax 
+01d9d6e1 call 0x4e0d90 
+01d9d6e6 mov rax, qword ptr [rip + 0x26143db] ; rva=43b1ac8
+01d9d6ed mov rax, qword ptr [rax + 0xb8] 
+01d9d6f4 mov ecx, dword ptr [rax + 0x50] 
+01d9d6f7 test rbp, rbp 
+01d9d6fa je 0x1d9d9e0 
+01d9d700 mov qword ptr [rsp + 0x30], r14 
+01d9d705 xorps xmm0, xmm0 
+01d9d708 mov dword ptr [rsp + 0x28], ecx 
+01d9d70c mov r9, rbx 
+01d9d70f lea rcx, [rsp + 0x50] 
+01d9d714 movss dword ptr [rsp + 0x20], xmm0 
+01d9d71a mov r8d, 1 
+01d9d720 mov rdx, rbp 
+01d9d723 call 0x1d1db40 ; InGameObjectWithEvent::DelayAnimationTask(System.Int32,System.Threading.CancellationToken,System.Single,System.Int32)
+01d9d728 xor edx, edx 
+01d9d72a lea rcx, [rsp + 0x40] 
+01d9d72f movups xmm0, xmmword ptr [rax] 
+01d9d732 movaps xmmword ptr [rsp + 0x40], xmm0 
+01d9d737 call 0x2742890 ; UniTaskExtensions::Forget(Cysharp.Threading.Tasks.UniTask)
+01d9d73c mov rcx, qword ptr [rsi + 0x40] 
+01d9d740 mov rbp, qword ptr [rsi + 0x38] 
+01d9d744 test rcx, rcx 
+01d9d747 je 0x1d9d9e0 
+01d9d74d xor edx, edx 
+01d9d74f call 0x2095a70 ; CancellationTokenSource::get_Token()
+01d9d754 mov rbx, rax 
+01d9d757 mov rax, qword ptr [rip + 0x25e5202] ; rva=4382960
+01d9d75e cmp dword ptr [rax + 0xe4], r14d 
+01d9d765 jne 0x1d9d776 
+01d9d767 mov rcx, rax 
+01d9d76a call 0x4e0d90 
+01d9d76f mov rax, qword ptr [rip + 0x25e51ea] ; rva=4382960
+01d9d776 mov rcx, qword ptr [rax + 0xb8] 
+01d9d77d test rbp, rbp 
+01d9d780 je 0x1d9d9e0 
+01d9d786 movups xmm0, xmmword ptr [rcx + 0x20] 
+01d9d78a lea r8, [rsp + 0x40] 
+01d9d78f mov qword ptr [rsp + 0x28], r14 
+01d9d794 movss xmm3, dword ptr [rip + 0x174342c] ; rva=34e0bc8 f=0.5 d=0.007812501834
+01d9d79c mov rdx, rbx 
+01d9d79f mov rcx, rbp 
+01d9d7a2 movaps xmmword ptr [rsp + 0x40], xmm0 
+01d9d7a7 mov byte ptr [rsp + 0x20], 1 
+01d9d7ac call 0x1d61cb0 ; EnePartsGroup::ChangeColorTask(System.Threading.CancellationToken,UnityEngine.Color,System.Single,System.Boolean)
+01d9d7b1 mov rcx, qword ptr [rsi + 0x38] 
+01d9d7b5 test rcx, rcx 
+01d9d7b8 je 0x1d9d9e0 
+01d9d7be xor edx, edx 
+01d9d7c0 call 0x1d63240 ; EnePartsGroup::Wakeup()
+01d9d7c5 movss xmm0, dword ptr [rsi + 0x18] 
+01d9d7ca xor r8d, r8d 
+01d9d7cd subss xmm0, dword ptr [rip + 0x1743413] ; rva=34e0be8 f=180
+01d9d7d5 mov dl, 1 
+01d9d7d7 mov qword ptr [rsi + 0x10], 4 
+01d9d7df mov rcx, rdi 
+01d9d7e2 movss dword ptr [rsi + 0x18], xmm0 
+01d9d7e7 call 0x1d9b220 ; Ene_Bos06::CoverPartsHitType(System.Boolean)
+01d9d7ec mov rcx, qword ptr [rip + 0x2604b75] ; rva=43a2368
+01d9d7f3 cmp dword ptr [rcx + 0xe4], r14d 
+01d9d7fa jne 0x1d9d801 
+01d9d7fc call 0x4e0d90 
+01d9d801 xor edx, edx 
+01d9d803 mov ecx, 0x56 
+01d9d808 call 0x2723de0 ; SoundUtility::PlayQue(TXEKernel.Sound.SoundUtility/ID)
+01d9d80d movss xmm2, dword ptr [rip + 0x17433b7] ; rva=34e0bcc f=1 d=50.12387842
+01d9d815 xor r9d, r9d 
+01d9d818 movss xmm1, dword ptr [rip + 0x174f1ec] ; rva=34eca0c f=2
+01d9d820 mov rcx, rdi 
+01d9d823 call 0x1dba4d0 ; Ene_BosBase::SetDirectionTime(System.Single,System.Single)
+01d9d828 mov dword ptr [rdi + 0x1ec], 1 
+01d9d832 jmp 0x1d9d83d 
+01d9d834 cmp eax, 1 
+01d9d837 jne 0x1d9d9af 
+01d9d83d xor edx, edx 
+01d9d83f movaps xmmword ptr [rsp + 0x70], xmm7 
+01d9d844 mov rcx, rdi 
+01d9d847 call 0x1db9a20 ; Ene_BosBase::GetDirectionRate()
+01d9d84c xor edx, edx 
+01d9d84e call 0x1de8b70 ; EasingUtility::OutQuad01(System.Single)
+01d9d853 cmp byte ptr [rip + 0x28bec07], r14b ; rva=465c461
+01d9d85a movaps xmm6, xmm0 
+01d9d85d mov rbx, qword ptr [rdi + 0x288] 
+01d9d864 jne 0x1d9d879 
+01d9d866 lea rcx, [rip + 0x25ee0eb] ; rva=438b958
+01d9d86d call 0x4e0a50 
+01d9d872 mov byte ptr [rip + 0x28bebe8], 1 ; rva=465c461
+01d9d879 mov rax, qword ptr [rip + 0x25ee0d8] ; rva=438b958
+01d9d880 mov rcx, qword ptr [rax + 0xb8] 
+01d9d887 mov rax, qword ptr [rip + 0x261423a] ; rva=43b1ac8
+01d9d88e movups xmm7, xmmword ptr [rcx] 
+01d9d891 cmp dword ptr [rax + 0xe4], r14d 
+01d9d898 jne 0x1d9d8a9 
+01d9d89a mov rcx, rax 
+01d9d89d call 0x4e0d90 
+01d9d8a2 mov rax, qword ptr [rip + 0x261421f] ; rva=43b1ac8
+01d9d8a9 mov rax, qword ptr [rax + 0xb8] 
+01d9d8b0 lea r8, [rsp + 0x40] 
+01d9d8b5 movaps xmm3, xmm6 
+01d9d8b8 movdqa xmmword ptr [rsp + 0x50], xmm7 
+01d9d8be lea rdx, [rsp + 0x50] 
+01d9d8c3 mov qword ptr [rsp + 0x20], r14 
+01d9d8c8 lea rcx, [rsp + 0x60] 
+01d9d8cd movups xmm0, xmmword ptr [rax + 0x30] 
+01d9d8d1 movaps xmmword ptr [rsp + 0x40], xmm0 
+01d9d8d6 call 0x304ddc0 ; Quaternion::Internal_Slerp(UnityEngine.Quaternion&,UnityEngine.Quaternion&,System.Single)
+01d9d8db movaps xmm7, xmmword ptr [rsp + 0x70] 
+01d9d8e0 test rbx, rbx 
+01d9d8e3 je 0x1d9d9e0 
+01d9d8e9 movups xmm0, xmmword ptr [rax] 
+01d9d8ec xor r8d, r8d 
+01d9d8ef lea rdx, [rsp + 0x50] 
+01d9d8f4 mov rcx, rbx 
+01d9d8f7 movaps xmmword ptr [rsp + 0x50], xmm0 
+01d9d8fc call 0x3094650 ; Transform::set_localRotation(UnityEngine.Quaternion)
+01d9d901 cmp byte ptr [rip + 0x28beb59], r14b ; rva=465c461
+01d9d908 mov rbx, qword ptr [rdi + 0x290] 
+01d9d90f jne 0x1d9d924 
+01d9d911 lea rcx, [rip + 0x25ee040] ; rva=438b958
+01d9d918 call 0x4e0a50 
+01d9d91d mov byte ptr [rip + 0x28beb3d], 1 ; rva=465c461
+01d9d924 mov rax, qword ptr [rip + 0x261419d] ; rva=43b1ac8
+01d9d92b lea r8, [rsp + 0x50] 
+01d9d930 movaps xmm3, xmm6 
+01d9d933 mov qword ptr [rsp + 0x20], r14 
+01d9d938 lea rdx, [rsp + 0x40] 
+01d9d93d mov rcx, qword ptr [rax + 0xb8] 
+01d9d944 mov rax, qword ptr [rip + 0x25ee00d] ; rva=438b958
+01d9d94b movups xmm0, xmmword ptr [rcx + 0x40] 
+01d9d94f mov rcx, qword ptr [rax + 0xb8] 
+01d9d956 movaps xmmword ptr [rsp + 0x50], xmm0 
+01d9d95b movups xmm0, xmmword ptr [rcx] 
+01d9d95e lea rcx, [rsp + 0x60] 
+01d9d963 movaps xmmword ptr [rsp + 0x40], xmm0 
+01d9d968 call 0x304ddc0 ; Quaternion::Internal_Slerp(UnityEngine.Quaternion&,UnityEngine.Quaternion&,System.Single)
+01d9d96d test rbx, rbx 
+01d9d970 je 0x1d9d9e0 
+01d9d972 movups xmm0, xmmword ptr [rax] 
+01d9d975 xor r8d, r8d 
+01d9d978 lea rdx, [rsp + 0x50] 
+01d9d97d mov rcx, rbx 
+01d9d980 movaps xmmword ptr [rsp + 0x50], xmm0 
+01d9d985 call 0x3094650 ; Transform::set_localRotation(UnityEngine.Quaternion)
+01d9d98a comiss xmm6, dword ptr [rip + 0x174323b] ; rva=34e0bcc f=1 d=50.12387842
+01d9d991 jb 0x1d9d9af 
+01d9d993 mov rax, qword ptr [rdi + 0x2f0] 
+01d9d99a test rax, rax 
+01d9d99d je 0x1d9d9e0 
+01d9d99f cmp dword ptr [rax + 0x10], 5 
+01d9d9a3 jne 0x1d9d9af 
+01d9d9a5 xor edx, edx 
+01d9d9a7 mov rcx, rdi 
+01d9d9aa call 0x1d9b050 ; Ene_Bos06::CheckNextState()
+01d9d9af mov r14, qword ptr [rsp + 0xb8] 
+01d9d9b7 mov rsi, qword ptr [rsp + 0xb0] 
+01d9d9bf mov rbp, qword ptr [rsp + 0xa8] 
+01d9d9c7 mov rbx, qword ptr [rsp + 0xa0] 
+01d9d9cf movaps xmm6, xmmword ptr [rsp + 0x80] 
+01d9d9d7 add rsp, 0x90 
+01d9d9de pop rdi 
+01d9d9df ret 
+01d9d9e0 call 0x4e0d00 
+01d9d9e5 int3 
+01d9d9e6 int3 
+01d9d9e7 int3 
+01d9d9e8 int3 
+01d9d9e9 int3 
+01d9d9ea int3 
+01d9d9eb int3 
+01d9d9ec int3 
+01d9d9ed int3 
+01d9d9ee int3 
+01d9d9ef int3 

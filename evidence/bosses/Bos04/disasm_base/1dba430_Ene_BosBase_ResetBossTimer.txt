@@ -1,0 +1,24 @@
+== System.Void InGame.Kernel.Enemy.Ene_BosBase::ResetBossTimer(System.Boolean) RVA 1dba430 len 76
+01dba430 push       rbx
+01dba432 sub        rsp, 0x30
+01dba436 mov        byte ptr [rcx + 0x1b2], dl ; ~_isBossTimeStart
+01dba43c mov        rbx, rcx
+01dba43f mov        rdx, qword ptr [rcx + 0x50]
+01dba443 mov        dword ptr [rcx + 0x1bc], 0 ; ~_bossAliveTime
+01dba44d mov        word ptr [rcx + 0x1b3], 0 ; ~_isDeadEffectCalled
+01dba456 mov        dword ptr [rcx + 0x21c], 0 ; ~_hpState
+01dba460 test       rdx, rdx
+01dba463 je         0x1dba4a1
+01dba465 xor        r8d, r8d
+01dba468 lea        rcx, [rsp + 0x20]
+01dba46d call       0x3093700 ; UnityEngine.Transform::get_localPosition()
+01dba472 movsd      xmm0, qword ptr [rax]
+01dba476 mov        ecx, dword ptr [rax + 8]
+01dba479 movsd      qword ptr [rbx + 0x228], xmm0 ; ~_startInGamePosition
+01dba481 mov        dword ptr [rbx + 0x230], ecx
+01dba487 mov        dword ptr [rbx + 0x224], 0 ; ~_currentActStep
+01dba491 mov        dword ptr [rbx + 0x1c0], 0x41200000 ; ~_bossActionUpTime
+01dba49b add        rsp, 0x30
+01dba49f pop        rbx
+01dba4a0 ret        
+01dba4a1 call       0x4e0d00

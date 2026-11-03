@@ -1,0 +1,20 @@
+#### InGame.Kernel.InGameManager::GetPlayerPosition(System.Int32) RVA 1ce5b70 len 48
+01ce5b70  sub      rsp, 0x28
+01ce5b74  mov      r9, qword ptr [rdx + 0x170]   ; ._firstRotate
+01ce5b7b  mov      r10, rcx
+01ce5b7e  test     r9, r9
+01ce5b81  je       0x1ce5bad
+01ce5b83  cmp      r8d, dword ptr [r9 + 0x18]   ; ev.repeatDelay
+01ce5b87  jae      0x1ce5bb3
+01ce5b89  movsxd   rax, r8d
+01ce5b8c  lea      rcx, [rax + rax*2]
+01ce5b90  mov      eax, dword ptr [r9 + rcx*4 + 0x28]
+01ce5b95  movsd    xmm0, qword ptr [r9 + rcx*4 + 0x20]
+01ce5b9c  movsd    qword ptr [r10], xmm0
+01ce5ba1  mov      dword ptr [r10 + 8], eax
+01ce5ba5  mov      rax, r10
+01ce5ba8  add      rsp, 0x28
+01ce5bac  ret      
+01ce5bad  call     0x4e0d00
+01ce5bb2  int3     
+01ce5bb3  call     0x4e0cf0

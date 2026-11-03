@@ -1,0 +1,201 @@
+#### InGame.Kernel.Enemy.BulletTemplateSelecter::GetBT(System.Single) RVA 1d61030 len 1cd
+01d61030  mov      qword ptr [rsp + 0x10], rbx
+01d61035  mov      qword ptr [rsp + 0x18], rsi
+01d6103a  push     rdi
+01d6103b  sub      rsp, 0x80
+01d61042  movaps   xmmword ptr [rsp + 0x70], xmm6
+01d61047  movaps   xmmword ptr [rsp + 0x60], xmm7   ; ._currentPosition
+01d6104c  movaps   xmm6, xmm1
+01d6104f  mov      rbx, rcx
+01d61052  cmp      byte ptr [rip + 0x290269f], 0   ; [46636f8] bss
+01d61059  jne      0x1d6109e
+01d6105b  lea      rcx, [rip + 0x266894e]   ; [43c99b0] MethodRef .Enumerator<.Sheet>::Dispose
+01d61062  call     0x4e0a50
+01d61067  lea      rcx, [rip + 0x26689fa]   ; [43c9a68] MethodRef .Enumerator<.Sheet>::MoveNext
+01d6106e  call     0x4e0a50
+01d61073  lea      rcx, [rip + 0x2668aa6]   ; [43c9b20] MethodRef .Enumerator<.Sheet>::get_Current
+01d6107a  call     0x4e0a50
+01d6107f  lea      rcx, [rip + 0x2633202]   ; [4394288] MethodRef System.Collections.Generic.List`1<.Sheet>::GetEnumerator
+01d61086  call     0x4e0a50
+01d6108b  lea      rcx, [rip + 0x263336e]   ; [4394400] MethodRef System.Collections.Generic.List`1<.Sheet>::get_Item
+01d61092  call     0x4e0a50
+01d61097  mov      byte ptr [rip + 0x290265a], 1   ; [46636f8] bss
+01d6109e  xorps    xmm0, xmm0
+01d610a1  xor      eax, eax
+01d610a3  movups   xmmword ptr [rsp + 0x40], xmm0   ; .<tpassed>5__2
+01d610a8  mov      qword ptr [rsp + 0x50], rax   ; .<>u__2
+01d610ad  cmp      qword ptr [rbx + 0x28], rax   ; ._currentSheets
+01d610b1  je       0x1d611bc
+01d610b7  mov      rsi, qword ptr [rbx + 0x28]   ; ._currentSheets
+01d610bb  mov      qword ptr [rsp + 0xa8], rsi   ; ._updateEvents
+01d610c3  xor      edi, edi
+01d610c5  mov      dword ptr [rsp + 0x90], edi   ; ._priority
+01d610cc  mov      r8, qword ptr [rip + 0x26331b5]   ; [4394288] MethodRef System.Collections.Generic.List`1<.Sheet>::GetEnumerator
+01d610d3  mov      rdx, rsi
+01d610d6  lea      rcx, [rsp + 0x28]   ; ._currentSheets
+01d610db  call     0xb11790
+01d610e0  movups   xmm0, xmmword ptr [rsp + 0x28]   ; ._currentSheets
+01d610e5  movups   xmmword ptr [rsp + 0x40], xmm0   ; .<tpassed>5__2
+01d610ea  movsd    xmm1, qword ptr [rsp + 0x38]   ; ._callback
+01d610f0  movsd    qword ptr [rsp + 0x50], xmm1   ; .<>u__2
+01d610f6  mov      qword ptr [rsp + 0x28], rdi   ; ._currentSheets
+01d610fb  lea      rbx, [rsp + 0x40]   ; .<tpassed>5__2
+01d61100  mov      qword ptr [rsp + 0x30], rbx   ; .tsecond
+01d61105  xorps    xmm7, xmm7
+01d61108  nop      dword ptr [rax + rax]
+01d61110  mov      rdx, qword ptr [rip + 0x2668951]   ; [43c9a68] MethodRef .Enumerator<.Sheet>::MoveNext
+01d61117  lea      rcx, [rsp + 0x40]   ; .<tpassed>5__2
+01d6111c  call     0x198e510
+01d61121  test     al, al
+01d61123  je       0x1d61160
+01d61125  mov      rax, qword ptr [rsp + 0x50]   ; .<>u__2
+01d6112a  test     rax, rax
+01d6112d  je       0x1d611ec
+01d61133  subss    xmm6, dword ptr [rax + 0x20]   ; ._currentMode
+01d61138  comiss   xmm7, xmm6
+01d6113b  jae      0x1d61148
+01d6113d  inc      edi
+01d6113f  mov      dword ptr [rsp + 0x90], edi   ; ._priority
+01d61146  jmp      0x1d61110
+01d61148  mov      rdi, qword ptr [rax + 0x18]
+01d6114c  mov      rdx, qword ptr [rip + 0x266885d]   ; [43c99b0] MethodRef .Enumerator<.Sheet>::Dispose
+01d61153  mov      rcx, rbx
+01d61156  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01d6115b  mov      rax, rdi
+01d6115e  jmp      0x1d611cd
+01d61160  mov      rdx, qword ptr [rip + 0x2668849]   ; [43c99b0] MethodRef .Enumerator<.Sheet>::Dispose
+01d61167  mov      rcx, rbx
+01d6116a  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01d6116f  jmp      0x1d6119b
+01d61171  mov      rdx, qword ptr [rip + 0x2668838]   ; [43c99b0] MethodRef .Enumerator<.Sheet>::Dispose
+01d61178  mov      rcx, qword ptr [rsp + 0x30]   ; .tsecond
+01d6117d  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01d61182  mov      rcx, qword ptr [rsp + 0x28]   ; ._currentSheets
+01d61187  test     rcx, rcx
+01d6118a  jne      0x1d611f2
+01d6118c  mov      rsi, qword ptr [rsp + 0xa8]   ; ._updateEvents
+01d61194  mov      edi, dword ptr [rsp + 0x90]   ; ._priority
+01d6119b  cmp      edi, 1
+01d6119e  jne      0x1d611bc
+01d611a0  mov      r8, qword ptr [rip + 0x2633259]   ; [4394400] MethodRef System.Collections.Generic.List`1<.Sheet>::get_Item
+01d611a7  xor      edx, edx
+01d611a9  mov      rcx, rsi
+01d611ac  call     0xb16860
+01d611b1  test     rax, rax
+01d611b4  je       0x1d611f8
+01d611b6  mov      rax, qword ptr [rax + 0x18]
+01d611ba  jmp      0x1d611cd
+01d611bc  mov      rax, qword ptr [rip + 0x2916d3d]   ; [4677f00] bss
+01d611c3  mov      rax, qword ptr [rax + 0xb8]   ; ._mover
+01d611ca  mov      rax, qword ptr [rax]
+01d611cd  lea      r11, [rsp + 0x80]
+01d611d5  mov      rbx, qword ptr [r11 + 0x18]
+01d611d9  mov      rsi, qword ptr [r11 + 0x20]   ; ._currentMode
+01d611dd  movaps   xmm6, xmmword ptr [rsp + 0x70]
+01d611e2  movaps   xmm7, xmmword ptr [rsp + 0x60]   ; ._currentPosition
+01d611e7  mov      rsp, r11
+01d611ea  pop      rdi
+01d611eb  ret      
+01d611ec  call     0x4e0d00
+01d611f1  nop      
+01d611f2  call     0x4dc9e0
+01d611f7  int3     
+01d611f8  call     0x4e0d00
+#### InGame.Kernel.Enemy.BulletTemplateSelecter::GetBTS() RVA 1d60e70 len 1bb
+01d60e70  mov      qword ptr [rsp + 0x10], rbx
+01d60e75  mov      qword ptr [rsp + 0x18], rsi
+01d60e7a  push     rdi
+01d60e7b  sub      rsp, 0x60
+01d60e7f  mov      rbx, rcx
+01d60e82  cmp      byte ptr [rip + 0x2902870], 0   ; [46636f9] bss
+01d60e89  jne      0x1d60ef2
+01d60e8b  lea      rcx, [rip + 0x2668b1e]   ; [43c99b0] MethodRef .Enumerator<.Sheet>::Dispose
+01d60e92  call     0x4e0a50
+01d60e97  lea      rcx, [rip + 0x2668bca]   ; [43c9a68] MethodRef .Enumerator<.Sheet>::MoveNext
+01d60e9e  call     0x4e0a50
+01d60ea3  lea      rcx, [rip + 0x2668c76]   ; [43c9b20] MethodRef .Enumerator<.Sheet>::get_Current
+01d60eaa  call     0x4e0a50
+01d60eaf  lea      rcx, [rip + 0x261450a]   ; [43753c0] MethodRef System.Collections.Generic.List`1<prime>::Add
+01d60eb6  call     0x4e0a50
+01d60ebb  lea      rcx, [rip + 0x26333c6]   ; [4394288] MethodRef System.Collections.Generic.List`1<.Sheet>::GetEnumerator
+01d60ec2  call     0x4e0a50
+01d60ec7  lea      rcx, [rip + 0x2614ab2]   ; [4375980] MethodRef System.Collections.Generic.List`1<prime>::ToArray
+01d60ece  call     0x4e0a50
+01d60ed3  lea      rcx, [rip + 0x26142be]   ; [4375198] MethodRef System.Collections.Generic.List`1<prime>::.ctor
+01d60eda  call     0x4e0a50
+01d60edf  lea      rcx, [rip + 0x2652caa]   ; [43b3b90] TypeInfo G<System.Collections.Generic.List`1>
+01d60ee6  call     0x4e0a50
+01d60eeb  mov      byte ptr [rip + 0x2902807], 1   ; [46636f9] bss
+01d60ef2  xorps    xmm0, xmm0
+01d60ef5  xor      eax, eax
+01d60ef7  movups   xmmword ptr [rsp + 0x40], xmm0   ; .<tpassed>5__2
+01d60efc  mov      qword ptr [rsp + 0x50], rax   ; .<>u__2
+01d60f01  mov      rcx, qword ptr [rip + 0x2652c88]   ; [43b3b90] TypeInfo G<System.Collections.Generic.List`1>
+01d60f08  call     0x4e0cb0
+01d60f0d  mov      rsi, rax
+01d60f10  mov      rdx, qword ptr [rip + 0x2614281]   ; [4375198] MethodRef System.Collections.Generic.List`1<prime>::.ctor
+01d60f17  mov      rcx, rax
+01d60f1a  call     0xb16050   ; List`1::.ctor() | LowLevelList`1::.ctor()
+01d60f1f  mov      qword ptr [rsp + 0x70], rsi
+01d60f24  cmp      qword ptr [rbx + 0x28], 0   ; ._currentSheets
+01d60f29  je       0x1d60fed
+01d60f2f  mov      r8, qword ptr [rip + 0x2633352]   ; [4394288] MethodRef System.Collections.Generic.List`1<.Sheet>::GetEnumerator
+01d60f36  mov      rdx, qword ptr [rbx + 0x28]   ; ._currentSheets
+01d60f3a  lea      rcx, [rsp + 0x28]   ; ._currentSheets
+01d60f3f  call     0xb11790
+01d60f44  movups   xmm0, xmmword ptr [rsp + 0x28]   ; ._currentSheets
+01d60f49  movups   xmmword ptr [rsp + 0x40], xmm0   ; .<tpassed>5__2
+01d60f4e  movsd    xmm1, qword ptr [rsp + 0x38]   ; ._callback
+01d60f54  movsd    qword ptr [rsp + 0x50], xmm1   ; .<>u__2
+01d60f5a  mov      qword ptr [rsp + 0x28], 0   ; ._currentSheets
+01d60f63  lea      rbx, [rsp + 0x40]   ; .<tpassed>5__2
+01d60f68  mov      qword ptr [rsp + 0x30], rbx   ; .tsecond
+01d60f6d  nop      dword ptr [rax]
+01d60f70  mov      rdx, qword ptr [rip + 0x2668af1]   ; [43c9a68] MethodRef .Enumerator<.Sheet>::MoveNext
+01d60f77  lea      rcx, [rsp + 0x40]   ; .<tpassed>5__2
+01d60f7c  call     0x198e510
+01d60f81  test     al, al
+01d60f83  je       0x1d60fbc
+01d60f85  mov      rdi, qword ptr [rsp + 0x50]   ; .<>u__2
+01d60f8a  test     rdi, rdi
+01d60f8d  je       0x1d61020
+01d60f93  xor      edx, edx
+01d60f95  mov      rcx, qword ptr [rdi + 0x18]
+01d60f99  call     0x1e83800   ; String::IsNullOrEmpty(System.String)
+01d60f9e  test     al, al
+01d60fa0  jne      0x1d60f70
+01d60fa2  test     rsi, rsi
+01d60fa5  je       0x1d6101a
+01d60fa7  mov      r8, qword ptr [rip + 0x2614412]   ; [43753c0] MethodRef System.Collections.Generic.List`1<prime>::Add
+01d60fae  mov      rdx, qword ptr [rdi + 0x18]
+01d60fb2  mov      rcx, rsi
+01d60fb5  call     0x2500
+01d60fba  jmp      0x1d60f70
+01d60fbc  mov      rdx, qword ptr [rip + 0x26689ed]   ; [43c99b0] MethodRef .Enumerator<.Sheet>::Dispose
+01d60fc3  mov      rcx, rbx
+01d60fc6  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01d60fcb  jmp      0x1d60fed
+01d60fcd  mov      rdx, qword ptr [rip + 0x26689dc]   ; [43c99b0] MethodRef .Enumerator<.Sheet>::Dispose
+01d60fd4  mov      rcx, qword ptr [rsp + 0x30]   ; .tsecond
+01d60fd9  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01d60fde  mov      rcx, qword ptr [rsp + 0x28]   ; ._currentSheets
+01d60fe3  test     rcx, rcx
+01d60fe6  jne      0x1d61026
+01d60fe8  mov      rsi, qword ptr [rsp + 0x70]
+01d60fed  test     rsi, rsi
+01d60ff0  je       0x1d61014
+01d60ff2  mov      rdx, qword ptr [rip + 0x2614987]   ; [4375980] MethodRef System.Collections.Generic.List`1<prime>::ToArray
+01d60ff9  mov      rcx, rsi
+01d60ffc  call     0xb15e40   ; List`1::ToArray()
+01d61001  mov      rbx, qword ptr [rsp + 0x78]   ; ._basePosition
+01d61006  mov      rsi, qword ptr [rsp + 0x80]
+01d6100e  add      rsp, 0x60
+01d61012  pop      rdi
+01d61013  ret      
+01d61014  call     0x4e0d00
+01d61019  nop      
+01d6101a  call     0x4e0d00
+01d6101f  nop      
+01d61020  call     0x4e0d00
+01d61025  nop      
+01d61026  call     0x4dc9e0

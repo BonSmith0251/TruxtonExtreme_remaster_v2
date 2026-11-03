@@ -1,0 +1,127 @@
+{
+  "project": "D:\\Games\\TruxtonExRecon\\Reconstructed",
+  "unityExe": "C:\\Program Files\\Unity 2023.2.22f1\\Editor\\Unity.exe",
+  "version": "2023.2.22f1",
+  "revision": "reconstruction-2023.2.22f1-native-assets-v4",
+  "editorOwnership": "No task-owned editor/player running; all work and diagnostic restoration complete",
+  "defaultEntry": "Assets/Reconstruction/Hub.unity",
+  "supplementalPlayableEntry": "Assets/TruxtonImported/Scenes/Round1.unity",
+  "originalBootScenes": [
+    "Assets/OriginalRecovered/Scenes/Boot.unity",
+    "Assets/OriginalRecovered/Scenes/BootTXE.unity"
+  ],
+  "derivedStageInspectionScenes": "Assets/Reconstruction/StageInspection/StageInspection_BG01.unity through BG08 (original prefab instances, zero local structural mismatches; not original source.unity assets or playable original stages)",
+  "counts": {
+    "prefabs": 2150,
+    "prefabGameObjects": 77535,
+    "prefabComponents": 168720,
+    "prefabMissingScripts": 0,
+    "prefabsUnloadable": 0,
+    "originalAssetFiles": 11578,
+    "missingMainAssetTypes": 0,
+    "allScenes": 14,
+    "allSceneMissingScripts": 0,
+    "allSceneMissingReferences": 0,
+    "renderingAssetsWithPropertyDump": 14,
+    "materialApproximations": 182,
+    "sharedComicBlankImages": 1,
+    "excludedSourceComicAudioObjects": 173
+  },
+  "sourceDenominator": {
+    "allInventoriedObjects": 270371,
+    "userExcludedComicAudio": 173,
+    "remainingPopulation": 270198,
+    "opaqueComicBundles": 81,
+    "note": "Object counts are source inventory, not a blanket target gameplay fidelity claim"
+  },
+  "build": {
+    "exe": "D:\\Games\\TruxtonExRecon\\Build\\TruxtonExRecon.exe",
+    "backend": "Windows64 Mono, departure from original IL2CPP",
+    "result": {
+      "result": "Succeeded",
+      "errors": 0,
+      "warnings": 8,
+      "bytes": 1470828786
+    },
+    "allStreamingPayloadsHashVerified": 99,
+    "nativeOriginalMoviesHashVerified": 98,
+    "rerunCommand": "python D:/Games/TruxtonExRecon/tools/build_reconstruction.py",
+    "workaround": "Repro helper holds target StreamingAssets outside Assets for BuildPipeline and restores in finally, then independently copies/verifies all99 payloads. Two prior Bee zero-byte copies preserved; actual cause unknown.",
+    "observedWarningCategories": [
+      "OutGame unused coroutine field types require UnityEngine.AsyncInstantiateOperation<T> absent in2023; recorded by code expert, not deleted",
+      "Original camera renderer indices1/4 fall back to active supplemental Round1 renderer during source scene teardown",
+      "Round1URP main object name differs from filename",
+      "RecoveredStub TMP shader fallback missing; original shader behavior remains unrecovered"
+    ],
+    "warningBoundary": "Summary reports8warnings; listed categories are observed log messages, not a claim of1:1 warning-count attribution",
+    "summaryWarnings": 8
+  },
+  "runtimeProof": {
+    "unity": "2023.2.22f1",
+    "scene": "Assets/TruxtonImported/Scenes/Round1.unity",
+    "graphics": "NVIDIA RTX PRO 5000 Blackwell",
+    "api": "Direct3D11",
+    "frames": 47303,
+    "stageStart": 0.0,
+    "stageEnd": 1.0998034477233887,
+    "cameraStart": {
+      "x": 0.0,
+      "y": 315.0,
+      "z": 80.0
+    },
+    "cameraEnd": {
+      "x": 0.0,
+      "y": 315.0,
+      "z": 115.02499389648438
+    },
+    "cameraClipLegacy": false,
+    "cameraAnimatorPresent": true
+  },
+  "validationBoundary": {
+    "normalV1Hub": "valid visible Hub capture retained; old unsupported callback console then repaired",
+    "normalV1Button": "actualbutton loaded Round1, exposing nonLegacy camera sampling error; failure preserved, repaired with actualAnimator host",
+    "repairedCaptureMode": "exit0, no previous callback/sampling errors; camera moved between recorded stage times;12sblackintroimage is insufficient gameplay visual evidence",
+    "pending": "None for integrator authorized work. Whole original gameplay/rendering fidelity remains explicitly incomplete as listed in remainingGaps.",
+    "normalFinal": "PASS normal visible startup, waited9s cleanHub plus separate actualHubbutton?25s postintro gameplay capture, no captureflag or playerlogicchange; exactPID/HWND inputonly",
+    "normalEvidence": [
+      "normal-hub-clean-verified.png",
+      "normal-hub-proof.json",
+      "normal-round1-gameplay.png",
+      "normal-entry-final.json",
+      "normal-player-final.log"
+    ],
+    "independentPlayTwice": "PASS both ordinary editor cycles withzeroerrors; gameplay-readiness wait>=25seconds/introinactive/stage>=8",
+    "nativeStageGraphics": "GPU BG01/BG03 underRound1 andsource-derivedTXE pipelines; sourcepipeline0errors, onlylimitedstaticgeometry, not fullnative-stage presentation/fidelity",
+    "pipelineProbeRestoration": "Exact SHA-matched preprobe GraphicsSettings and QualitySettings bytes restored by verifier; all other frozen files matched"
+  },
+  "preservation": {
+    "originalInstallation": "Never written or hardlinked; project movies are independent verified copies",
+    "nativePayloadLinks": "2473 initial immutable exported texture/audio/font payloads joined recovery target to pristine-export baseline only; no links to installed game. Some173Comic audio payload links later quarantined outside Assets. .meta/YAML/scripts copied independently. Do not pixel-edit shared baseline-linked payloads in place; copy the target asset first.",
+    "originalFinalRehash": "Coordinator independently rehashed275original files at2026-10-31T14:04:13Z: allunchanged,noadditions"
+  },
+  "ledgers": [
+    "scene-work/original-native-copy-ledger.json",
+    "scene-work/supplement-copy-ledger.json",
+    "scene-work/package-script-remap.json",
+    "scene-work/additional-package-script-remap.json",
+    "scene-work/remaining-package-port.json",
+    "scene-work/shader-compatibility-map.json",
+    "evidence/scene-integration/material-and-comic-compatibility.json",
+    "scene-work/project-settings-port.json",
+    "scene-work/input-backend-migration.json",
+    "scene-work/native-simple-method-integration.json",
+    "scene-work/unitask-compatibility-integration.json",
+    "scene-work/comic-exclusion-ledger.json",
+    "evidence/scene-integration/player-streaming-hashes.json",
+    "evidence/scene-integration/build-reproduction-result.json",
+    "evidence/scene-integration/freeze-manifest.json"
+  ],
+  "remainingGaps": [
+    "Most original gameplay/native methods remain metadata stubs;91simplemethods and Boot recovery are separately evidenced",
+    "258exporter dummy shaders retained explicitly;93standardshaderGUIDs map to actualtargetpackage shaders;182materials use documented approximations; customrenderpass/VFX/ShaderGraph authoring and visual fidelity are incomplete",
+    "Addressables original keys/catalogs are evidence; rebuilt target catalogs and complete native loading flow are not verified",
+    "Original PlayerSettings schema remains incomplete; supported native settings ported and targetBoth input/backend choices documented",
+    "Independent structural checks do not establish whole-game behavior or original rendering parity"
+  ],
+  "freezeManifestSHA256": "a4addaf382b3296745a1da8c15d8aa8d5fd230af1d50d080508df91b36730c7a"
+}

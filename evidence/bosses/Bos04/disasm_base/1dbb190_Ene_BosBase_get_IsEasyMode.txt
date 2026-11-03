@@ -1,0 +1,8 @@
+== System.Boolean InGame.Kernel.Enemy.Ene_BosBase::get_IsEasyMode() RVA 1dbb190 len 17
+01dbb190 cmp        dword ptr [rcx + 0x210], 1 ; ~_currentPlayMode
+01dbb197 jne        0x1dbb19c
+01dbb199 mov        al, 1
+01dbb19b ret        
+01dbb19c cmp        dword ptr [rcx + 0x210], 0x64 ; ~_currentPlayMode
+01dbb1a3 sete       al
+01dbb1a6 ret        

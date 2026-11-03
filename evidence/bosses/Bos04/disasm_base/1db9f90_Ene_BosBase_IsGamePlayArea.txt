@@ -1,0 +1,9 @@
+== System.Boolean InGame.Kernel.Enemy.Ene_BosBase::IsGamePlayArea() RVA 1db9f90 len 20
+01db9f90 cmp        byte ptr [rcx + 0x1b0], 0 ; ~_isBossDead
+01db9f97 je         0x1db9fad
+01db9f99 mov        rdx, qword ptr [rcx]
+01db9f9c mov        rax, qword ptr [rdx + 0x1b8] ; ~_isPlayerSideBottom
+01db9fa3 mov        rdx, qword ptr [rdx + 0x1c0] ; ~_bossActionUpTime
+01db9faa jmp        rax
+01db9fad mov        al, 1
+01db9faf ret        

@@ -1,0 +1,76 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04::CheckNextState() RVA 1d8bc40 len fd
+01d8bc40 push       rbx
+01d8bc42 sub        rsp, 0x20
+01d8bc46 cmp        dword ptr [rcx + 0x2c8], 0x64 ; ~_bos04state
+01d8bc4d mov        rbx, rcx
+01d8bc50 je         0x1d8bc90
+01d8bc52 cmp        dword ptr [rcx + 0x2c8], 0xa ; ~_bos04state
+01d8bc59 je         0x1d8bc90
+01d8bc5b cmp        byte ptr [rcx + 0x2de], 0 ; ~_isOpenWing
+01d8bc62 jne        0x1d8bc90
+01d8bc64 xor        r9d, r9d
+01d8bc67 mov        edx, 3
+01d8bc6c mov        r8d, 9
+01d8bc72 call       0x1db9fb0 ; InGame.Kernel.Enemy.Ene_BosBase::IsOverAorB(InGame.Kernel.Enemy.Ene_BosBase/HitPState,InGame.Kernel.Enemy.Ene_BosBase/TimeSteps)
+01d8bc77 test       al, al
+01d8bc79 je         0x1d8bc90
+01d8bc7b mov        edx, 0xa
+01d8bc80 xor        r8d, r8d
+01d8bc83 mov        rcx, rbx
+01d8bc86 add        rsp, 0x20
+01d8bc8a pop        rbx
+01d8bc8b jmp        0x1d901d0 ; InGame.Kernel.Enemy.Ene_Bos04::SetState(InGame.Kernel.Enemy.Ene_Bos04/Boss04State)
+01d8bc90 cmp        byte ptr [rbx + 0x2de], 0 ; ~_isOpenWing
+01d8bc97 mov        ecx, dword ptr [rbx + 0x2c8] ; ~_bos04state
+01d8bc9d jne        0x1d8bd03
+01d8bc9f test       ecx, ecx
+01d8bca1 je         0x1d8bcee
+01d8bca3 sub        ecx, 1
+01d8bca6 je         0x1d8bcd9
+01d8bca8 sub        ecx, 1
+01d8bcab je         0x1d8bcc4
+01d8bcad cmp        ecx, 1
+01d8bcb0 je         0x1d8bcee
+01d8bcb2 xor        edx, edx
+01d8bcb4 xor        r8d, r8d
+01d8bcb7 mov        rcx, rbx
+01d8bcba add        rsp, 0x20
+01d8bcbe pop        rbx
+01d8bcbf jmp        0x1d901d0 ; InGame.Kernel.Enemy.Ene_Bos04::SetState(InGame.Kernel.Enemy.Ene_Bos04/Boss04State)
+01d8bcc4 mov        edx, 3
+01d8bcc9 xor        r8d, r8d
+01d8bccc mov        rcx, rbx
+01d8bccf add        rsp, 0x20
+01d8bcd3 pop        rbx
+01d8bcd4 jmp        0x1d901d0 ; InGame.Kernel.Enemy.Ene_Bos04::SetState(InGame.Kernel.Enemy.Ene_Bos04/Boss04State)
+01d8bcd9 mov        edx, 2
+01d8bcde xor        r8d, r8d
+01d8bce1 mov        rcx, rbx
+01d8bce4 add        rsp, 0x20
+01d8bce8 pop        rbx
+01d8bce9 jmp        0x1d901d0 ; InGame.Kernel.Enemy.Ene_Bos04::SetState(InGame.Kernel.Enemy.Ene_Bos04/Boss04State)
+01d8bcee mov        edx, 1
+01d8bcf3 xor        r8d, r8d
+01d8bcf6 mov        rcx, rbx
+01d8bcf9 add        rsp, 0x20
+01d8bcfd pop        rbx
+01d8bcfe jmp        0x1d901d0 ; InGame.Kernel.Enemy.Ene_Bos04::SetState(InGame.Kernel.Enemy.Ene_Bos04/Boss04State)
+01d8bd03 cmp        ecx, 4
+01d8bd06 jne        0x1d8bd1d
+01d8bd08 mov        edx, 5
+01d8bd0d xor        r8d, r8d
+01d8bd10 mov        rcx, rbx
+01d8bd13 add        rsp, 0x20
+01d8bd17 pop        rbx
+01d8bd18 jmp        0x1d901d0 ; InGame.Kernel.Enemy.Ene_Bos04::SetState(InGame.Kernel.Enemy.Ene_Bos04/Boss04State)
+01d8bd1d cmp        ecx, 0xa
+01d8bd20 jne        0x1d8bd37
+01d8bd22 mov        edx, 4
+01d8bd27 xor        r8d, r8d
+01d8bd2a mov        rcx, rbx
+01d8bd2d add        rsp, 0x20
+01d8bd31 pop        rbx
+01d8bd32 jmp        0x1d901d0 ; InGame.Kernel.Enemy.Ene_Bos04::SetState(InGame.Kernel.Enemy.Ene_Bos04/Boss04State)
+01d8bd37 add        rsp, 0x20
+01d8bd3b pop        rbx
+01d8bd3c ret        

@@ -1,0 +1,66 @@
+01ce6750  mov      qword ptr [rsp + 8], rbx
+01ce6755  mov      qword ptr [rsp + 0x10], rbp
+01ce675a  mov      qword ptr [rsp + 0x18], rsi
+01ce675f  push     rdi
+01ce6760  sub      rsp, 0x40
+01ce6764  xor      eax, eax
+01ce6766  mov      rbx, rcx
+01ce6769  mov      qword ptr [rcx], rax
+01ce676c  movzx    edi, r9b
+01ce6770  mov      dword ptr [rcx + 8], eax
+01ce6773  mov      rbp, r8
+01ce6776  mov      rcx, qword ptr [rdx + 0x130]   ; ._collisionManager
+01ce677d  mov      rsi, rdx
+01ce6780  test     rcx, rcx
+01ce6783  je       0x1ce6854
+01ce6789  xor      r8d, r8d
+01ce678c  movzx    edx, r9b
+01ce6790  call     0x1dda7e0   ; HybridCollisionManager::GetGameCamera(System.Boolean)
+01ce6795  test     rax, rax
+01ce6798  je       0x1ce6854
+01ce679e  mov      ecx, dword ptr [rbp + 8]
+01ce67a1  lea      r8, [rsp + 0x20]   ; ._baseTimeFactor
+01ce67a6  movsd    xmm0, qword ptr [rbp]
+01ce67ab  xor      r9d, r9d
+01ce67ae  mov      dword ptr [rsp + 0x28], ecx   ; ._playTimeFactor
+01ce67b2  mov      rdx, rax
+01ce67b5  lea      rcx, [rsp + 0x30]   ; ._effectTimeFactor
+01ce67ba  movsd    qword ptr [rsp + 0x20], xmm0   ; ._baseTimeFactor
+01ce67c0  call     0x2fd65a0   ; Camera::WorldToViewportPoint(UnityEngine.Vector3)
+01ce67c5  xor      r9d, r9d
+01ce67c8  lea      r8, [rsp + 0x20]   ; ._baseTimeFactor
+01ce67cd  mov      rdx, rsi
+01ce67d0  lea      rcx, [rsp + 0x30]   ; ._effectTimeFactor
+01ce67d5  movsd    xmm0, qword ptr [rax]
+01ce67d9  mov      eax, dword ptr [rax + 8]
+01ce67dc  movsd    qword ptr [rsp + 0x20], xmm0   ; ._baseTimeFactor
+01ce67e2  mov      dword ptr [rsp + 0x28], eax   ; ._playTimeFactor
+01ce67e6  call     0x1cee670   ; InGameManager::ViewportToPlanePos(UnityEngine.Vector3)
+01ce67eb  movsd    xmm0, qword ptr [rax]
+01ce67ef  mov      eax, dword ptr [rax + 8]
+01ce67f2  movsd    qword ptr [rbx], xmm0
+01ce67f6  mov      dword ptr [rbx + 8], eax
+01ce67f9  movss    xmm0, dword ptr [rbx + 4]
+01ce67fe  test     dil, dil
+01ce6801  jne      0x1ce681a
+01ce6803  movss    xmm1, dword ptr [rip + 0x190c405]   ; rdata 35f2c10 f=-3,-7,-20,-50 d=-32768.02347
+01ce680b  comiss   xmm1, xmm0
+01ce680e  ja       0x1ce6834
+01ce6810  movss    xmm1, dword ptr [rip + 0x18060fc]   ; rdata 34ec914 f=3,360,inf,nan d=1.441152157e+18
+01ce6818  jmp      0x1ce682f
+01ce681a  movss    xmm1, dword ptr [rip + 0x1806206]   ; rdata 34eca28 f=-10,0,3.370281e+12,2.142699 d=1.60082202e-314
+01ce6822  comiss   xmm1, xmm0
+01ce6825  ja       0x1ce6834
+01ce6827  movss    xmm1, dword ptr [rip + 0x17fa3a9]   ; rdata 34e0bd8 f=10,20,57.29578,100 d=134217760.6
+01ce682f  comiss   xmm0, xmm1
+01ce6832  jbe      0x1ce6837
+01ce6834  movaps   xmm0, xmm1
+01ce6837  movss    dword ptr [rbx + 4], xmm0
+01ce683c  mov      rbp, qword ptr [rsp + 0x58]   ; ._isManualQuit
+01ce6841  mov      rax, rbx
+01ce6844  mov      rbx, qword ptr [rsp + 0x50]   ; ._isStopStage
+01ce6849  mov      rsi, qword ptr [rsp + 0x60]   ; ._damageMag
+01ce684e  add      rsp, 0x40
+01ce6852  pop      rdi
+01ce6853  ret      
+01ce6854  call     0x4e0d00

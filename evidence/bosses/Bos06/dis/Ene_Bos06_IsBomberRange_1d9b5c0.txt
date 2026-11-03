@@ -1,0 +1,12 @@
+01d9b5c0 cmp dword ptr [rcx + 0x2b0], 2 
+01d9b5c7 je 0x1d9b5d9 
+01d9b5c9 cmp dword ptr [rcx + 0x2b0], 3 
+01d9b5d0 je 0x1d9b5d9 
+01d9b5d2 xor edx, edx 
+01d9b5d4 jmp 0x1ccf150 ; InGameCollisionBase::IsBomberRange()
+01d9b5d9 xor al, al 
+01d9b5db ret 
+01d9b5dc int3 
+01d9b5dd int3 
+01d9b5de int3 
+01d9b5df int3 

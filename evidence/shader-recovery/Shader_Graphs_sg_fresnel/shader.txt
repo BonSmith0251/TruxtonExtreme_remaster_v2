@@ -1,0 +1,80 @@
+//////////////////////////////////////////
+//
+// NOTE: This is *not* a valid shader file
+//
+///////////////////////////////////////////
+Shader "Shader Graphs/sg_fresnel" {
+Properties {
+
+_Tx_Albedo ("Tx_Albedo", 2D) = "white" { }
+
+_Tx_MetallicI ("Tx_MetallicI", 2D) = "white" { }
+
+_Smoothness ("Smoothness", Range(0, 1)) = 0.0
+
+_Tx_Normal ("Tx_Normal", 2D) = "white" { }
+
+_EmissionColor ("EmissionColor", Color) = (10.5319,6.4392,0.645822,0)
+
+_Tx_Emission ("Tx_Emission", 2D) = "white" { }
+
+_FresnelIntensity ("FresnelIntensity", Float) = 3.0
+
+_FresnelEdgeColor ("FresnelEdgeColor", Color) = (5.58431,0.501961,0.501961,0)
+
+_FresnelColor ("FresnelColor", Color) = (0.216981,0.0747152,0.0747152,0)
+
+_Tx_Occlusion ("Tx_Occlusion", 2D) = "white" { }
+
+_QueueOffset ("_QueueOffset", Float) = 0.0
+
+_QueueControl ("_QueueControl", Float) = -1.0
+
+unity_Lightmaps ("unity_Lightmaps", 2DArray) = "" { }
+
+unity_LightmapsInd ("unity_LightmapsInd", 2DArray) = "" { }
+
+unity_ShadowMasks ("unity_ShadowMasks", 2DArray) = "" { }
+
+}
+SubShader {
+ Tags { "DisableBatching" = "False" "QUEUE" = "Geometry" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Opaque" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalLitSubTarget" "UniversalMaterialType" = "Lit" }
+ Pass {
+ Name "Universal Forward"
+  Tags { "DisableBatching" = "False" "LIGHTMODE" = "UniversalForward" "QUEUE" = "Geometry" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Opaque" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalLitSubTarget" "UniversalMaterialType" = "Lit" }
+  GpuProgramID 26759
+}
+ Pass {
+ Name "GBuffer"
+  Tags { "DisableBatching" = "False" "LIGHTMODE" = "UniversalGBuffer" "QUEUE" = "Geometry" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Opaque" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalLitSubTarget" "UniversalMaterialType" = "Lit" }
+  GpuProgramID 107468
+}
+ Pass {
+ Name "ShadowCaster"
+  Tags { "DisableBatching" = "False" "LIGHTMODE" = "SHADOWCASTER" "QUEUE" = "Geometry" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Opaque" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalLitSubTarget" "UniversalMaterialType" = "Lit" }
+  GpuProgramID 190494
+}
+ Pass {
+ Name "MotionVectors"
+  Tags { "DisableBatching" = "False" "LIGHTMODE" = "MOTIONVECTORS" "QUEUE" = "Geometry" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Opaque" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalLitSubTarget" "UniversalMaterialType" = "Lit" }
+  GpuProgramID 197123
+}
+ Pass {
+ Name "DepthOnly"
+  Tags { "DisableBatching" = "False" "LIGHTMODE" = "DepthOnly" "QUEUE" = "Geometry" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Opaque" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalLitSubTarget" "UniversalMaterialType" = "Lit" }
+  GpuProgramID 300636
+}
+ Pass {
+ Name "DepthNormals"
+  Tags { "DisableBatching" = "False" "LIGHTMODE" = "DepthNormals" "QUEUE" = "Geometry" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Opaque" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalLitSubTarget" "UniversalMaterialType" = "Lit" }
+  GpuProgramID 336685
+}
+ Pass {
+ Name "Universal 2D"
+  Tags { "DisableBatching" = "False" "LIGHTMODE" = "Universal2D" "QUEUE" = "Geometry" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Opaque" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalLitSubTarget" "UniversalMaterialType" = "Lit" }
+  GpuProgramID 647077
+}
+}
+Fall back "Hidden/Shader Graph/FallbackError"
+CustomEditor "UnityEditor.ShaderGraph.GenericShaderGraphMaterialGUI"
+}

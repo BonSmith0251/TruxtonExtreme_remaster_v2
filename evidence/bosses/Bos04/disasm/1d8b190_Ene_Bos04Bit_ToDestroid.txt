@@ -1,0 +1,55 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04Bit::ToDestroid() RVA 1d8b190 len f2
+01d8b190 mov        qword ptr [rsp + 8], rbx
+01d8b195 push       rdi
+01d8b196 sub        rsp, 0x20
+01d8b19a cmp        byte ptr [rip + 0x28d862d], 0 ; [.data 46637ce]
+01d8b1a1 mov        rbx, rcx
+01d8b1a4 jne        0x1d8b1b9
+01d8b1a6 lea        rcx, [rip + 0x25f2cf3] ; [.data 437dea0] TypeInfo#42619
+01d8b1ad call       0x4e0a50
+01d8b1b2 mov        byte ptr [rip + 0x28d8615], 1 ; [.data 46637ce]
+01d8b1b9 mov        rcx, qword ptr [rip + 0x25f2ce0] ; [.data 437dea0] TypeInfo#42619
+01d8b1c0 mov        rdi, qword ptr [rbx + 0x1b0] ; ~_isBossDead
+01d8b1c7 cmp        dword ptr [rcx + 0xe4], 0
+01d8b1ce jne        0x1d8b1d5
+01d8b1d0 call       0x4e0d90
+01d8b1d5 xor        r8d, r8d
+01d8b1d8 xor        edx, edx
+01d8b1da mov        rcx, rdi
+01d8b1dd call       0x306d400 ; UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01d8b1e2 test       al, al
+01d8b1e4 je         0x1d8b250
+01d8b1e6 mov        rcx, qword ptr [rbx + 0x1b0] ; ~_isBossDead
+01d8b1ed test       rcx, rcx
+01d8b1f0 je         0x1d8b27d
+01d8b1f6 mov        rdx, qword ptr [rcx]
+01d8b1f9 mov        rax, qword ptr [rdx + 0x1b8] ; ~_isPlayerSideBottom
+01d8b200 mov        rdx, qword ptr [rdx + 0x1c0] ; ~_bossActionUpTime
+01d8b207 call       rax
+01d8b209 test       al, al
+01d8b20b je         0x1d8b250
+01d8b20d mov        rdi, qword ptr [rbx + 0x1b0] ; ~_isBossDead
+01d8b214 test       rdi, rdi
+01d8b217 je         0x1d8b27d
+01d8b219 cmp        byte ptr [rip + 0x28d8594], 0 ; [.data 46637b4]
+01d8b220 jne        0x1d8b235
+01d8b222 lea        rcx, [rip + 0x263294f] ; [.data 43bdb78] MethodRef#201296
+01d8b229 call       0x4e0a50
+01d8b22e mov        byte ptr [rip + 0x28d857f], 1 ; [.data 46637b4]
+01d8b235 mov        rcx, qword ptr [rdi + 0x2e8] ; ~_guardianList
+01d8b23c test       rcx, rcx
+01d8b23f je         0x1d8b27d
+01d8b241 mov        r8, qword ptr [rip + 0x2632930] ; [.data 43bdb78] MethodRef#201296
+01d8b248 mov        rdx, rbx
+01d8b24b call       0xbcf710
+01d8b250 lea        rcx, [rbx + 0x1b0] ; ~_isBossDead
+01d8b257 mov        qword ptr [rbx + 0x1b0], 0 ; ~_isBossDead
+01d8b262 xor        edx, edx
+01d8b264 call       0x4dfd80
+01d8b269 xor        edx, edx
+01d8b26b mov        rcx, rbx
+01d8b26e mov        rbx, qword ptr [rsp + 0x30]
+01d8b273 add        rsp, 0x20
+01d8b277 pop        rdi
+01d8b278 jmp        0x1d108c0 ; InGame.Kernel.Enemy.PawnEnemy::ToDestroid()
+01d8b27d call       0x4e0d00

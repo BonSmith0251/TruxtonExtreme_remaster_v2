@@ -1,0 +1,111 @@
+== System.Void InGame.Kernel.Enemy.Ene_BosBase::LocalLateUpdate(System.Single) RVA 1db9ff0 len 1df
+01db9ff0 mov        qword ptr [rsp + 0x10], rbx
+01db9ff5 push       rdi
+01db9ff6 sub        rsp, 0x60
+01db9ffa cmp        byte ptr [rip + 0x28a9878], 0 ; [.data 4663879]
+01dba001 mov        rbx, rcx
+01dba004 movaps     xmmword ptr [rsp + 0x50], xmm6
+01dba009 movaps     xmm6, xmm1
+01dba00c movaps     xmmword ptr [rsp + 0x40], xmm7
+01dba011 jne        0x1dba026
+01dba013 lea        rcx, [rip + 0x25fdfe6] ; [.data 43b8000] MethodRef#202981
+01dba01a call       0x4e0a50
+01dba01f mov        byte ptr [rip + 0x28a9853], 1 ; [.data 4663879]
+01dba026 mov        rax, qword ptr [rip + 0x25fdfd3] ; [.data 43b8000] MethodRef#202981
+01dba02d mov        rax, qword ptr [rax + 0x20]
+01dba031 test       byte ptr [rax + 0x135], 1
+01dba038 jne        0x1dba042
+01dba03a mov        rcx, rax
+01dba03d call       0x4de1e0
+01dba042 mov        rax, qword ptr [rax + 0xc0] ; ~_burnShake
+01dba049 mov        rax, qword ptr [rax + 0x10]
+01dba04d test       byte ptr [rax + 0x135], 1
+01dba054 jne        0x1dba05e
+01dba056 mov        rcx, rax
+01dba059 call       0x4de1e0
+01dba05e mov        rax, qword ptr [rax + 0xb8] ; ~_mover
+01dba065 xorps      xmm7, xmm7
+01dba068 comiss     xmm6, xmm7
+01dba06b mov        qword ptr [rsp + 0x70], rsi
+01dba070 mov        rdi, qword ptr [rax]
+01dba073 movaps     xmmword ptr [rsp + 0x30], xmm8
+01dba079 jbe        0x1dba19d
+01dba07f mov        rdx, qword ptr [rbx]
+01dba082 mov        rcx, rbx
+01dba085 mov        rax, qword ptr [rdx + 0x368]
+01dba08c mov        rdx, qword ptr [rdx + 0x370]
+01dba093 call       rax
+01dba095 test       al, al
+01dba097 je         0x1dba19d
+01dba09d mov        rdx, qword ptr [rbx + 0x50]
+01dba0a1 test       rdx, rdx
+01dba0a4 je         0x1dba1ca
+01dba0aa xor        r8d, r8d
+01dba0ad lea        rcx, [rsp + 0x20]
+01dba0b2 call       0x3093ba0 ; UnityEngine.Transform::get_position()
+01dba0b7 mov        rdx, qword ptr [rbx]
+01dba0ba mov        rcx, rbx
+01dba0bd movsd      xmm8, qword ptr [rax]
+01dba0c2 mov        esi, dword ptr [rax + 8]
+01dba0c5 mov        rax, qword ptr [rdx + 0x238]
+01dba0cc mov        rdx, qword ptr [rdx + 0x240] ; ~_targetVector
+01dba0d3 call       rax
+01dba0d5 test       rdi, rdi
+01dba0d8 je         0x1dba1ca
+01dba0de xor        r9d, r9d
+01dba0e1 movsd      qword ptr [rsp + 0x20], xmm8
+01dba0e8 movzx      r8d, al
+01dba0ec mov        dword ptr [rsp + 0x28], esi
+01dba0f0 lea        rdx, [rsp + 0x20]
+01dba0f5 mov        rcx, rdi
+01dba0f8 call       0x1ce4c30 ; InGame.Kernel.InGameManager::GetNearestPlayerIndexInWorld(UnityEngine.Vector3,System.Boolean)
+01dba0fd xor        r9d, r9d
+01dba100 lea        rcx, [rsp + 0x20]
+01dba105 mov        r8d, eax
+01dba108 mov        rdx, rdi
+01dba10b call       0x1ce5c90 ; InGame.Kernel.InGameManager::GetPlayerSkyPosition(System.Int32)
+01dba110 movss      xmm0, dword ptr [rip + 0x1838b00] ; [.rdata 35f2c18] f=-20.0 d=-206158529344.0 v4=['-20', '-50', '-200', '0']
+01dba118 movsd      xmm2, qword ptr [rax]
+01dba11c mov        edx, dword ptr [rax + 8]
+01dba11f comiss     xmm7, xmm2
+01dba122 movd       xmm1, edx
+01dba126 movsd      qword ptr [rbx + 0x1f0], xmm2 ; ~_baseTargetPlayer
+01dba12e seta       al
+01dba131 mov        dword ptr [rbx + 0x1f8], edx
+01dba137 comiss     xmm7, xmm1
+01dba13a mov        byte ptr [rbx + 0x1b5], al ; ~_isPlayerSideLeft
+01dba140 seta       al
+01dba143 comiss     xmm0, xmm1
+01dba146 mov        byte ptr [rbx + 0x1b6], al ; ~_isPlayerSideDown
+01dba14c seta       al
+01dba14f comiss     xmm2, dword ptr [rip + 0x1838a72] ; [.rdata 35f2bc8] f=-100.0 d=-7.673848961291161e+21 v4=['-100', '-1000', '0.5', '0.5']
+01dba156 mov        byte ptr [rbx + 0x1b8], al ; ~_isPlayerSideBottom
+01dba15c ja         0x1dba162
+01dba15e xor        eax, eax
+01dba160 jmp        0x1dba170
+01dba162 movss      xmm0, dword ptr [rip + 0x1726a7a] ; [.rdata 34e0be4] f=100.0 d=5629500654616576.0 v4=['100', '180', '2000', '-0.0001']
+01dba16a comiss     xmm0, xmm2
+01dba16d seta       al
+01dba170 xor        r8d, r8d
+01dba173 mov        byte ptr [rbx + 0x1b7], al ; ~_isPlayerSideCenter
+01dba179 movaps     xmm1, xmm6
+01dba17c mov        rcx, rbx
+01dba17f call       0x1dba1d0 ; InGame.Kernel.Enemy.Ene_BosBase::ProgressBossTimer(System.Single)
+01dba184 mov        r8, qword ptr [rbx]
+01dba187 movaps     xmm1, xmm6
+01dba18a mov        rcx, rbx
+01dba18d mov        rax, qword ptr [r8 + 0x688]
+01dba194 mov        r8, qword ptr [r8 + 0x690]
+01dba19b call       rax
+01dba19d xor        r8d, r8d
+01dba1a0 movaps     xmm1, xmm6
+01dba1a3 mov        rcx, rbx
+01dba1a6 movaps     xmm8, xmmword ptr [rsp + 0x30]
+01dba1ac mov        rsi, qword ptr [rsp + 0x70]
+01dba1b1 mov        rbx, qword ptr [rsp + 0x78]
+01dba1b6 movaps     xmm6, xmmword ptr [rsp + 0x50]
+01dba1bb movaps     xmm7, xmmword ptr [rsp + 0x40]
+01dba1c0 add        rsp, 0x60
+01dba1c4 pop        rdi
+01dba1c5 jmp        0x1d0e790 ; InGame.Kernel.Enemy.PawnEnemy::LocalLateUpdate(System.Single)
+01dba1ca call       0x4e0d00

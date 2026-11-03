@@ -1,0 +1,87 @@
+#### InGame.Kernel.InGameManager::GetNearestPlayerIndex(UnityEngine.Vector2) RVA 1ce4cb0 len 188
+01ce4cb0  mov      qword ptr [rsp + 0x18], rbx   ; ev.repeatDelay
+01ce4cb5  push     rbp
+01ce4cb6  push     rdi
+01ce4cb7  push     r14
+01ce4cb9  sub      rsp, 0x60
+01ce4cbd  cmp      byte ptr [rip + 0x297e647], 0   ; [466330b] bss
+01ce4cc4  mov      r14, rcx
+01ce4cc7  movaps   xmmword ptr [rsp + 0x50], xmm6   ; ev.randomFire/._animatorsPlay
+01ce4ccc  movaps   xmmword ptr [rsp + 0x40], xmm7   ; ev.intValue1/._animators
+01ce4cd1  movaps   xmmword ptr [rsp + 0x30], xmm8   ; ._entryFlag
+01ce4cd7  mov      qword ptr [rsp + 0x20], rdx   ; ev.value0
+01ce4cdc  jne      0x1ce4cf1
+01ce4cde  lea      rcx, [rip + 0x26f4a33]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01ce4ce5  call     0x4e0a50
+01ce4cea  mov      byte ptr [rip + 0x297e61a], 1   ; [466330b] bss
+01ce4cf1  movss    xmm6, dword ptr [rip + 0x190df13]   ; rdata 35f2c0c f=3.402823e+38,-3,-7,-20 d=-32.0000152
+01ce4cf9  xor      ebp, ebp
+01ce4cfb  movss    xmm7, dword ptr [rsp + 0x24]   ; ev.value1
+01ce4d01  mov      ebx, ebp
+01ce4d03  movss    xmm8, dword ptr [rsp + 0x20]   ; ev.value0
+01ce4d0a  mov      edi, 0x20
+01ce4d0f  mov      qword ptr [rsp + 0x80], rsi   ; ._transformCaches
+01ce4d17  nop      word ptr [rax + rax]
+01ce4d20  mov      rax, qword ptr [rip + 0x26f49f1]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01ce4d27  cmp      dword ptr [rax + 0xe4], 0
+01ce4d2e  jne      0x1ce4d3f
+01ce4d30  mov      rcx, rax
+01ce4d33  call     0x4e0d90
+01ce4d38  mov      rax, qword ptr [rip + 0x26f49d9]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01ce4d3f  mov      rax, qword ptr [rax + 0xb8]   ; ._hormingToken
+01ce4d46  cmp      ebx, dword ptr [rax + 0xd0]   ; .isEntryedArea
+01ce4d4c  jge      0x1ce4e02
+01ce4d52  cmp      byte ptr [rip + 0x297e622], 0   ; [466337b] bss
+01ce4d59  jne      0x1ce4d6e
+01ce4d5b  lea      rcx, [rip + 0x269913e]   ; [437dea0] TypeInfo UnityEngine.Object
+01ce4d62  call     0x4e0a50
+01ce4d67  mov      byte ptr [rip + 0x297e60d], 1   ; [466337b] bss
+01ce4d6e  mov      rax, qword ptr [r14 + 0x150]   ; ._localDuration
+01ce4d75  test     rax, rax
+01ce4d78  je       0x1ce4e2d
+01ce4d7e  cmp      ebx, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01ce4d81  jae      0x1ce4e33
+01ce4d87  mov      rcx, qword ptr [rip + 0x2699112]   ; [437dea0] TypeInfo UnityEngine.Object
+01ce4d8e  mov      rsi, qword ptr [rdi + rax]
+01ce4d92  cmp      dword ptr [rcx + 0xe4], 0
+01ce4d99  jne      0x1ce4da0
+01ce4d9b  call     0x4e0d90
+01ce4da0  xor      r8d, r8d
+01ce4da3  xor      edx, edx
+01ce4da5  mov      rcx, rsi
+01ce4da8  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01ce4dad  test     al, al
+01ce4daf  je       0x1ce4df7
+01ce4db1  xor      r8d, r8d
+01ce4db4  mov      edx, ebx
+01ce4db6  mov      rcx, r14
+01ce4db9  call     0x1ce5bc0   ; InGameManager::GetPlayerScreenPosition(System.Int32)
+01ce4dbe  mov      qword ptr [rsp + 0x98], rax   ; ._animationToken
+01ce4dc6  movss    xmm0, dword ptr [rsp + 0x98]   ; ._animationToken
+01ce4dcf  movss    xmm1, dword ptr [rsp + 0x9c]
+01ce4dd8  subss    xmm0, xmm8
+01ce4ddd  subss    xmm1, xmm7
+01ce4de1  mulss    xmm0, xmm0
+01ce4de5  mulss    xmm1, xmm1
+01ce4de9  addss    xmm1, xmm0
+01ce4ded  comiss   xmm6, xmm1
+01ce4df0  jbe      0x1ce4df7
+01ce4df2  movaps   xmm6, xmm1
+01ce4df5  mov      ebp, ebx
+01ce4df7  inc      ebx
+01ce4df9  add      rdi, 8
+01ce4dfd  jmp      0x1ce4d20
+01ce4e02  mov      rsi, qword ptr [rsp + 0x80]   ; ._transformCaches
+01ce4e0a  mov      eax, ebp
+01ce4e0c  mov      rbx, qword ptr [rsp + 0x90]   ; ._destroyedToken
+01ce4e14  movaps   xmm6, xmmword ptr [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01ce4e19  movaps   xmm7, xmmword ptr [rsp + 0x40]   ; ev.intValue1/._animators
+01ce4e1e  movaps   xmm8, xmmword ptr [rsp + 0x30]   ; ._entryFlag
+01ce4e24  add      rsp, 0x60
+01ce4e28  pop      r14
+01ce4e2a  pop      rdi
+01ce4e2b  pop      rbp
+01ce4e2c  ret      
+01ce4e2d  call     0x4e0d00
+01ce4e32  int3     
+01ce4e33  call     0x4e0cf0

@@ -1,0 +1,24 @@
+01de8650 movss xmm3, dword ptr [rip + 0x16f8570] ; rva=34e0bc8 f=0.5 d=0.007812501834
+01de8658 movaps xmm2, xmm0 
+01de865b comiss xmm3, xmm2 
+01de865e ja 0x1de8680 
+01de8660 movss xmm0, dword ptr [rip + 0x16f8564] ; rva=34e0bcc f=1 d=50.12387842
+01de8668 movaps xmm1, xmm0 
+01de866b subss xmm1, xmm2 
+01de866f addss xmm1, xmm1 
+01de8673 mulss xmm1, xmm1 
+01de8677 mulss xmm1, xmm3 
+01de867b subss xmm0, xmm1 
+01de867f ret 
+01de8680 addss xmm2, xmm2 
+01de8684 mulss xmm2, xmm2 
+01de8688 mulss xmm2, xmm3 
+01de868c movaps xmm0, xmm2 
+01de868f ret 
+01de8690 movss xmm3, dword ptr [rip + 0x16f8530] ; rva=34e0bc8 f=0.5 d=0.007812501834
+01de8698 movaps xmm1, xmm0 
+01de869b comiss xmm3, xmm1 
+01de869e ja 0x1de86cb 
+01de86a0 movss xmm0, dword ptr [rip + 0x16f8524] ; rva=34e0bcc f=1 d=50.12387842
+01de86a8 movaps xmm2, xmm0 
+01de86ab subss xmm2, xmm1 

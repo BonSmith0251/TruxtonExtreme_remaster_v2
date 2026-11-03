@@ -1,0 +1,62 @@
+== Cysharp.Threading.Tasks.UniTask InGame.Kernel.Enemy.Ene_BosBase::ChangeBaseColor(System.Boolean,UnityEngine.Color,System.Single,System.Single) RVA 1db91a0 len 118
+01db91a0 mov        qword ptr [rsp + 8], rbx
+01db91a5 mov        qword ptr [rsp + 0x10], rbp
+01db91aa mov        qword ptr [rsp + 0x18], rsi
+01db91af push       rdi
+01db91b0 sub        rsp, 0x90
+01db91b7 cmp        byte ptr [rip + 0x28aa6c5], 0 ; [.data 4663883]
+01db91be mov        rsi, r9
+01db91c1 movzx      ebp, r8b
+01db91c5 mov        rbx, rdx
+01db91c8 mov        rdi, rcx
+01db91cb jne        0x1db91e0
+01db91cd lea        rcx, [rip + 0x25eb7c4] ; [.data 43a4998] MethodRef#179826
+01db91d4 call       0x4e0a50
+01db91d9 mov        byte ptr [rip + 0x28aa6a3], 1 ; [.data 4663883]
+01db91e0 xorps      xmm0, xmm0
+01db91e3 lea        rcx, [rsp + 0x38]
+01db91e8 xor        eax, eax
+01db91ea xor        edx, edx
+01db91ec movups     xmmword ptr [rsp + 0x30], xmm0
+01db91f1 mov        qword ptr [rsp + 0x80], rax
+01db91f9 movups     xmmword ptr [rsp + 0x40], xmm0
+01db91fe movups     xmmword ptr [rsp + 0x38], xmm0
+01db9203 movups     xmmword ptr [rsp + 0x50], xmm0
+01db9208 movups     xmmword ptr [rsp + 0x60], xmm0
+01db920d movups     xmmword ptr [rsp + 0x70], xmm0
+01db9212 call       0x4dfd80
+01db9217 mov        rdx, rbx
+01db921a mov        qword ptr [rsp + 0x48], rbx
+01db921f lea        rcx, [rsp + 0x48]
+01db9224 call       0x4dfd80
+01db9229 movups     xmm0, xmmword ptr [rsi]
+01db922c mov        rbx, qword ptr [rip + 0x25eb765] ; [.data 43a4998] MethodRef#179826
+01db9233 movss      xmm1, dword ptr [rsp + 0xc0] ; ~_burnShake
+01db923c movups     xmmword ptr [rsp + 0x5c], xmm0
+01db9241 mov        byte ptr [rsp + 0x58], bpl
+01db9246 movss      xmm0, dword ptr [rsp + 0xc8] ; ~_burnShakeSpeed
+01db924f movss      dword ptr [rsp + 0x50], xmm0
+01db9255 movss      dword ptr [rsp + 0x54], xmm1
+01db925b mov        dword ptr [rsp + 0x30], 0xffffffff
+01db9263 cmp        qword ptr [rbx + 0x38], 0
+01db9268 jne        0x1db9272
+01db926a mov        rcx, rbx
+01db926d call       0x4de260
+01db9272 mov        rdx, qword ptr [rbx + 0x38]
+01db9276 lea        rcx, [rsp + 0x30]
+01db927b mov        rdx, qword ptr [rdx + 0x10]
+01db927f call       0x1dd0930 ; InGame.Kernel.Enemy.Ene_BosBase/<ChangeBaseColor>d__47::MoveNext()
+01db9284 xor        r8d, r8d
+01db9287 lea        rdx, [rsp + 0x38]
+01db928c lea        rcx, [rsp + 0x20]
+01db9291 call       0x71b540
+01db9296 lea        r11, [rsp + 0x90] ; ~_priority
+01db929e mov        rbx, qword ptr [r11 + 0x10]
+01db92a2 mov        rbp, qword ptr [r11 + 0x18]
+01db92a6 movups     xmm0, xmmword ptr [rax]
+01db92a9 mov        rsi, qword ptr [r11 + 0x20]
+01db92ad mov        rax, rdi
+01db92b0 movups     xmmword ptr [rdi], xmm0
+01db92b3 mov        rsp, r11
+01db92b6 pop        rdi
+01db92b7 ret        

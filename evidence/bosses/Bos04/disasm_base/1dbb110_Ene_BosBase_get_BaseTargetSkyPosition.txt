@@ -1,0 +1,7 @@
+== UnityEngine.Vector3 InGame.Kernel.Enemy.Ene_BosBase::get_BaseTargetSkyPosition() RVA 1dbb110 len 19
+01dbb110 mov        eax, dword ptr [rdx + 0x1f8]
+01dbb116 movsd      xmm0, qword ptr [rdx + 0x1f0] ; ~_baseTargetPlayer
+01dbb11e movsd      qword ptr [rcx], xmm0
+01dbb122 mov        dword ptr [rcx + 8], eax
+01dbb125 mov        rax, rcx
+01dbb128 ret        

@@ -1,0 +1,105 @@
+01dba1d0 push rbx 
+01dba1d2 sub rsp, 0x60 
+01dba1d6 cmp byte ptr [rcx + 0x1b2], 0 
+01dba1dd mov rbx, rcx 
+01dba1e0 movaps xmmword ptr [rsp + 0x50], xmm6 
+01dba1e5 movaps xmm6, xmm1 
+01dba1e8 movaps xmmword ptr [rsp + 0x40], xmm7 
+01dba1ed movaps xmmword ptr [rsp + 0x30], xmm8 
+01dba1f3 xorps xmm8, xmm8 
+01dba1f7 movaps xmmword ptr [rsp + 0x20], xmm9 
+01dba1fd movss xmm9, dword ptr [rip + 0x1838c9e] ; rva=35f2ea4 f=86400
+01dba206 je 0x1dba2cf 
+01dba20c movaps xmm7, xmm1 
+01dba20f addss xmm7, dword ptr [rcx + 0x1bc] 
+01dba217 comiss xmm8, xmm7 
+01dba21b ja 0x1dba229 
+01dba21d comiss xmm7, xmm9 
+01dba221 jbe 0x1dba22c 
+01dba223 movaps xmm7, xmm9 
+01dba227 jmp 0x1dba22c 
+01dba229 xorps xmm7, xmm7 
+01dba22c cmp dword ptr [rcx + 0x224], 0x12 
+01dba233 movss dword ptr [rcx + 0x1bc], xmm7 
+01dba23b je 0x1dba2b9 
+01dba23d mov rdx, qword ptr [rcx] 
+01dba240 mov rax, qword ptr [rdx + 0x698] 
+01dba247 mov rdx, qword ptr [rdx + 0x6a0] 
+01dba24e call rax 
+01dba250 comiss xmm7, xmm0 
+01dba253 jae 0x1dba290 
+01dba255 movss xmm0, dword ptr [rbx + 0x1c0] 
+01dba25d subss xmm0, xmm6 
+01dba261 comiss xmm8, xmm0 
+01dba265 movss dword ptr [rbx + 0x1c0], xmm0 
+01dba26d jb 0x1dba29a 
+01dba26f cmp dword ptr [rbx + 0x224], 0x12 
+01dba276 jge 0x1dba2a1 
+01dba278 addss xmm0, dword ptr [rip + 0x1726958] ; rva=34e0bd8 f=10
+01dba280 inc dword ptr [rbx + 0x224] 
+01dba286 movss dword ptr [rbx + 0x1c0], xmm0 
+01dba28e jmp 0x1dba29a 
+01dba290 mov dword ptr [rbx + 0x224], 0x12 
+01dba29a cmp dword ptr [rbx + 0x224], 0x12 
+01dba2a1 jne 0x1dba2b9 
+01dba2a3 mov rdx, qword ptr [rbx] 
+01dba2a6 mov rcx, rbx 
+01dba2a9 mov rax, qword ptr [rdx + 0x6d8] 
+01dba2b0 mov rdx, qword ptr [rdx + 0x6e0] 
+01dba2b7 call rax 
+01dba2b9 mov rdx, qword ptr [rbx] 
+01dba2bc mov rcx, rbx 
+01dba2bf mov rax, qword ptr [rdx + 0x6c8] 
+01dba2c6 mov rdx, qword ptr [rdx + 0x6d0] 
+01dba2cd call rax 
+01dba2cf cmp byte ptr [rbx + 0x1b4], 0 
+01dba2d6 jne 0x1dba308 
+01dba2d8 movaps xmm0, xmm6 
+01dba2db mulss xmm0, dword ptr [rbx + 0x1cc] 
+01dba2e3 addss xmm0, dword ptr [rbx + 0x1c8] 
+01dba2eb comiss xmm8, xmm0 
+01dba2ef ja 0x1dba2fd 
+01dba2f1 comiss xmm0, xmm9 
+01dba2f5 jbe 0x1dba300 
+01dba2f7 movaps xmm0, xmm9 
+01dba2fb jmp 0x1dba300 
+01dba2fd xorps xmm0, xmm0 
+01dba300 movss dword ptr [rbx + 0x1c8], xmm0 
+01dba308 movss xmm0, dword ptr [rbx + 0x1d0] 
+01dba310 comiss xmm0, xmm8 
+01dba314 movaps xmm9, xmmword ptr [rsp + 0x20] 
+01dba31a jbe 0x1dba374 
+01dba31c addss xmm6, dword ptr [rbx + 0x1d4] 
+01dba324 comiss xmm6, xmm0 
+01dba327 movss dword ptr [rbx + 0x1d4], xmm6 
+01dba32f setae al 
+01dba332 mov byte ptr [rbx + 0x1dc], al 
+01dba338 test al, al 
+01dba33a je 0x1dba374 
+01dba33c movaps xmm7, xmm0 
+01dba33f movaps xmm0, xmm6 
+01dba342 divss xmm0, xmm7 
+01dba346 call 0x578740 
+01dba34b mulss xmm0, xmm7 
+01dba34f subss xmm6, xmm0 
+01dba353 comiss xmm8, xmm6 
+01dba357 ja 0x1dba363 
+01dba359 comiss xmm6, xmm7 
+01dba35c jbe 0x1dba366 
+01dba35e movaps xmm6, xmm7 
+01dba361 jmp 0x1dba366 
+01dba363 xorps xmm6, xmm6 
+01dba366 inc dword ptr [rbx + 0x1d8] 
+01dba36c movss dword ptr [rbx + 0x1d4], xmm6 
+01dba374 movaps xmm6, xmmword ptr [rsp + 0x50] 
+01dba379 movaps xmm7, xmmword ptr [rsp + 0x40] 
+01dba37e movaps xmm8, xmmword ptr [rsp + 0x30] 
+01dba384 add rsp, 0x60 
+01dba388 pop rbx 
+01dba389 ret 
+01dba38a int3 
+01dba38b int3 
+01dba38c int3 
+01dba38d int3 
+01dba38e int3 
+01dba38f int3 

@@ -1,0 +1,104 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04::coreShortLaser() RVA 1d91ff0 len 1d4
+01d91ff0 push       rbx
+01d91ff2 push       rsi
+01d91ff3 push       r13
+01d91ff5 sub        rsp, 0x80
+01d91ffc cmp        byte ptr [rip + 0x28d17c1], 0 ; [.data 46637c4]
+01d92003 mov        rsi, rcx
+01d92006 jne        0x1d92033
+01d92008 lea        rcx, [rip + 0x25ee531] ; [.data 4380540] MethodRef#202245
+01d9200f call       0x4e0a50
+01d92014 lea        rcx, [rip + 0x25d3eed] ; [.data 4365f08] STR "target"
+01d9201b call       0x4e0a50
+01d92020 lea        rcx, [rip + 0x25e94c9] ; [.data 437b4f0] STR "upper"
+01d92027 call       0x4e0a50
+01d9202c mov        byte ptr [rip + 0x28d1791], 1 ; [.data 46637c4]
+01d92033 mov        qword ptr [rsp + 0xa8], rbp ; ~_updateEvents
+01d9203b mov        qword ptr [rsp + 0xb0], rdi ; ~_updateEventCount
+01d92043 mov        qword ptr [rsp + 0xb8], r12 ; ~_mover
+01d9204b mov        qword ptr [rsp + 0x78], r14
+01d92050 mov        qword ptr [rsp + 0x70], r15
+01d92055 xor        r8d, r8d
+01d92058 mov        edx, 9
+01d9205d mov        rcx, rsi
+01d92060 call       0x1db9fe0 ; InGame.Kernel.Enemy.Ene_BosBase::IsOverStep(InGame.Kernel.Enemy.Ene_BosBase/TimeSteps)
+01d92065 mov        rcx, qword ptr [rsi + 0xb8] ; ~_mover
+01d9206c test       al, al
+01d9206e mov        ebx, 4
+01d92073 mov        r13d, 7
+01d92079 cmove      r13d, ebx
+01d9207d test       rcx, rcx
+01d92080 je         0x1d921bf
+01d92086 mov        rdx, qword ptr [rip + 0x25e9463] ; [.data 437b4f0] STR "upper"
+01d9208d xor        r8d, r8d
+01d92090 call       0x1cda270 ; InGame.Kernel.InGameEnemyMoveBase::GetMuzzlePack(System.String)
+01d92095 mov        rcx, qword ptr [rsi + 0xb8] ; ~_mover
+01d9209c mov        rbp, rax
+01d9209f test       rcx, rcx
+01d920a2 je         0x1d921bf
+01d920a8 mov        rdx, qword ptr [rip + 0x25d3e59] ; [.data 4365f08] STR "target"
+01d920af xor        r8d, r8d
+01d920b2 call       0x1cda270 ; InGame.Kernel.InGameEnemyMoveBase::GetMuzzlePack(System.String)
+01d920b7 xor        r8d, r8d
+01d920ba mov        edx, ebx
+01d920bc mov        rcx, rsi
+01d920bf mov        rdi, rax
+01d920c2 call       0x1db9840 ; InGame.Kernel.Enemy.Ene_BosBase::GetBT(System.Int32)
+01d920c7 mov        qword ptr [rsp + 0xa0], rax ; ~PoolEvent
+01d920cf nop        
+01d920d0 xor        ebx, ebx
+01d920d2 test       rbp, rbp
+01d920d5 je         0x1d921bf
+01d920db nop        dword ptr [rax + rax]
+01d920e0 mov        rcx, qword ptr [rbp + 0x18]
+01d920e4 test       rcx, rcx
+01d920e7 je         0x1d921bf
+01d920ed mov        r8, qword ptr [rip + 0x25ee44c] ; [.data 4380540] MethodRef#202245
+01d920f4 mov        edx, ebx
+01d920f6 call       0xb16860
+01d920fb mov        r15, rax
+01d920fe test       rdi, rdi
+01d92101 je         0x1d921bf
+01d92107 mov        rcx, qword ptr [rdi + 0x18]
+01d9210b test       rcx, rcx
+01d9210e je         0x1d921bf
+01d92114 mov        r8, qword ptr [rip + 0x25ee425] ; [.data 4380540] MethodRef#202245
+01d9211b mov        edx, ebx
+01d9211d call       0xb16860
+01d92122 mov        r14, qword ptr [rsi + 0xb8] ; ~_mover
+01d92129 xor        edx, edx
+01d9212b mov        rcx, rsi
+01d9212e mov        r12, rax
+01d92131 call       0x1d11bc0 ; InGame.Kernel.Enemy.PawnEnemy::get_CToken()
+01d92136 test       r14, r14
+01d92139 je         0x1d921bf
+01d9213f mov        r9, qword ptr [rsp + 0xa0] ; ~PoolEvent
+01d92147 xor        ecx, ecx
+01d92149 mov        qword ptr [rsp + 0x40], rcx
+01d9214e mov        r8, rax
+01d92151 mov        qword ptr [rsp + 0x38], rcx
+01d92156 mov        rdx, r14
+01d92159 mov        dword ptr [rsp + 0x30], r13d
+01d9215e lea        rcx, [rsp + 0x60]
+01d92163 mov        qword ptr [rsp + 0x28], r12
+01d92168 mov        qword ptr [rsp + 0x20], r15
+01d9216d call       0x1cd8bf0 ; InGame.Kernel.InGameEnemyMoveBase::BulletDirFireAsync(System.Threading.CancellationToken,InGame.Kernel.Enemy.BulletTemplate,UnityEngine.Transform,UnityEngine.Transform,System.Int32,System.Action`1<InGame.Kernel.InGameBulletInterface>)
+01d92172 xor        edx, edx
+01d92174 lea        rcx, [rsp + 0x50]
+01d92179 movups     xmm0, xmmword ptr [rax]
+01d9217c movaps     xmmword ptr [rsp + 0x50], xmm0
+01d92181 call       0x2742890 ; Cysharp.Threading.Tasks.UniTaskExtensions::Forget(Cysharp.Threading.Tasks.UniTask)
+01d92186 inc        ebx
+01d92188 cmp        ebx, 4
+01d9218b jl         0x1d920e0
+01d92191 mov        r15, qword ptr [rsp + 0x70]
+01d92196 mov        r14, qword ptr [rsp + 0x78]
+01d9219b mov        r12, qword ptr [rsp + 0xb8] ; ~_mover
+01d921a3 mov        rdi, qword ptr [rsp + 0xb0] ; ~_updateEventCount
+01d921ab mov        rbp, qword ptr [rsp + 0xa8] ; ~_updateEvents
+01d921b3 add        rsp, 0x80
+01d921ba pop        r13
+01d921bc pop        rsi
+01d921bd pop        rbx
+01d921be ret        
+01d921bf call       0x4e0d00

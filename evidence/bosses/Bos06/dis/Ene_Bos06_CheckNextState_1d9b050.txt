@@ -1,0 +1,43 @@
+01d9b050 sub rsp, 0x28 
+01d9b054 cmp dword ptr [rcx + 0x2b0], 0x64 
+01d9b05b je 0x1d9b0a2 
+01d9b05d mov edx, dword ptr [rcx + 0x2b0] 
+01d9b063 test edx, edx 
+01d9b065 je 0x1d9b0e6 
+01d9b067 sub edx, 1 
+01d9b06a je 0x1d9b0d1 
+01d9b06c sub edx, 1 
+01d9b06f je 0x1d9b0bc 
+01d9b071 sub edx, 1 
+01d9b074 je 0x1d9b0a7 
+01d9b076 cmp edx, 1 
+01d9b079 jne 0x1d9b0a2 
+01d9b07b mov dword ptr [rcx + 0x2b0], 5 
+01d9b085 mov dword ptr [rcx + 0x1ec], 0 
+01d9b08f mov rax, qword ptr [rcx + 0xb8] 
+01d9b096 test rax, rax 
+01d9b099 je 0x1d9b0f7 
+01d9b09b mov byte ptr [rax + 0x1d4], 0 
+01d9b0a2 add rsp, 0x28 
+01d9b0a6 ret 
+01d9b0a7 cmp dword ptr [rcx + 0x2b0], 4 
+01d9b0ae je 0x1d9b08f 
+01d9b0b0 mov dword ptr [rcx + 0x2b0], 4 
+01d9b0ba jmp 0x1d9b085 
+01d9b0bc cmp dword ptr [rcx + 0x2b0], 3 
+01d9b0c3 je 0x1d9b08f 
+01d9b0c5 mov dword ptr [rcx + 0x2b0], 3 
+01d9b0cf jmp 0x1d9b085 
+01d9b0d1 cmp dword ptr [rcx + 0x2b0], 2 
+01d9b0d8 je 0x1d9b08f 
+01d9b0da mov dword ptr [rcx + 0x2b0], 2 
+01d9b0e4 jmp 0x1d9b085 
+01d9b0e6 cmp edx, 1 
+01d9b0e9 je 0x1d9b08f 
+01d9b0eb mov dword ptr [rcx + 0x2b0], 1 
+01d9b0f5 jmp 0x1d9b085 
+01d9b0f7 call 0x4e0d00 
+01d9b0fc int3 
+01d9b0fd int3 
+01d9b0fe int3 
+01d9b0ff int3 

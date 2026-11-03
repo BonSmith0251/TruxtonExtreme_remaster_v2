@@ -1,0 +1,95 @@
+01d9e8f0 mov qword ptr [rsp + 8], rbx 
+01d9e8f5 mov qword ptr [rsp + 0x10], rbp 
+01d9e8fa mov qword ptr [rsp + 0x18], rsi 
+01d9e8ff push rdi 
+01d9e900 sub rsp, 0x80 
+01d9e907 cmp byte ptr [rip + 0x28c4ee9], 0 ; rva=46637f7
+01d9e90e mov edi, edx 
+01d9e910 movaps xmmword ptr [rsp + 0x70], xmm6 
+01d9e915 mov rbx, rcx 
+01d9e918 movaps xmm6, xmm3 
+01d9e91b movsxd rsi, r8d 
+01d9e91e jne 0x1d9e93f 
+01d9e920 lea rcx, [rip + 0x25f6ea1] ; rva=43957c8
+01d9e927 call 0x4e0a50 
+01d9e92c lea rcx, [rip + 0x25c9c65] ; rva=4368598
+01d9e933 call 0x4e0a50 
+01d9e938 mov byte ptr [rip + 0x28c4eb8], 1 ; rva=46637f7
+01d9e93f xor r8d, r8d 
+01d9e942 mov edx, edi 
+01d9e944 mov rcx, rbx 
+01d9e947 call 0x1db9840 ; Ene_BosBase::GetBT(System.Int32)
+01d9e94c cmp qword ptr [rbx + 0x2d0], 0 
+01d9e954 mov rbp, rax 
+01d9e957 jne 0x1d9e9ce 
+01d9e959 mov rcx, qword ptr [rip + 0x25c9c38] ; rva=4368598
+01d9e960 mov edx, 1 
+01d9e965 call 0x4dfe00 
+01d9e96a xor edx, edx 
+01d9e96c mov rcx, rbx 
+01d9e96f mov rdi, rax 
+01d9e972 call 0x1d11bc0 ; PawnEnemy::get_CToken()
+01d9e977 test rdi, rdi 
+01d9e97a je 0x1d9ea74 
+01d9e980 cmp dword ptr [rdi + 0x18], 0 
+01d9e984 jbe 0x1d9ea7a 
+01d9e98a lea rcx, [rdi + 0x20] 
+01d9e98e mov qword ptr [rdi + 0x20], rax 
+01d9e992 xor edx, edx 
+01d9e994 call 0x4dfd80 
+01d9e999 mov rcx, qword ptr [rip + 0x25f6e28] ; rva=43957c8
+01d9e9a0 cmp dword ptr [rcx + 0xe4], 0 
+01d9e9a7 jne 0x1d9e9ae 
+01d9e9a9 call 0x4e0d90 
+01d9e9ae xor edx, edx 
+01d9e9b0 mov rcx, rdi 
+01d9e9b3 call 0x20947c0 ; CancellationTokenSource::CreateLinkedTokenSource(System.Threading.CancellationToken[])
+01d9e9b8 lea rcx, [rbx + 0x2d0] 
+01d9e9bf mov qword ptr [rbx + 0x2d0], rax 
+01d9e9c6 mov rdx, rax 
+01d9e9c9 call 0x4dfd80 
+01d9e9ce mov rcx, qword ptr [rbx + 0x2d0] 
+01d9e9d5 mov rdi, qword ptr [rbx + 0xb8] 
+01d9e9dc test rcx, rcx 
+01d9e9df je 0x1d9ea74 
+01d9e9e5 xor edx, edx 
+01d9e9e7 call 0x2095a70 ; CancellationTokenSource::get_Token()
+01d9e9ec mov rdx, qword ptr [rbx + 0x270] 
+01d9e9f3 test rdx, rdx 
+01d9e9f6 je 0x1d9ea74 
+01d9e9f8 cmp esi, dword ptr [rdx + 0x18] 
+01d9e9fb jae 0x1d9ea7a 
+01d9e9fd mov r8, qword ptr [rdx + rsi*8 + 0x20] 
+01d9ea02 test rdi, rdi 
+01d9ea05 je 0x1d9ea74 
+01d9ea07 xor ecx, ecx 
+01d9ea09 mov r9, rbp 
+01d9ea0c mov qword ptr [rsp + 0x58], rcx 
+01d9ea11 mov rdx, rdi 
+01d9ea14 mov qword ptr [rsp + 0x50], rcx 
+01d9ea19 mov dword ptr [rsp + 0x48], ecx 
+01d9ea1d movss dword ptr [rsp + 0x40], xmm6 
+01d9ea23 mov qword ptr [rsp + 0x38], rcx 
+01d9ea28 mov qword ptr [rsp + 0x30], r8 
+01d9ea2d mov r8, rax 
+01d9ea30 mov byte ptr [rsp + 0x28], cl 
+01d9ea34 mov byte ptr [rsp + 0x20], cl 
+01d9ea38 lea rcx, [rsp + 0x60] 
+01d9ea3d call 0x1cd8fe0 ; InGameEnemyMoveBase::BulletFireAsync(System.Threading.CancellationToken,InGame.Kernel.Enemy.BulletTemplate,System.Boolean,System.Boolean,UnityEngine.Transform,UnityEngine.Transform,System.Single,System.Int32,System.Action`1<InGame.Kernel.InGameBulletInterface>)
+01d9ea42 xor edx, edx 
+01d9ea44 lea rcx, [rsp + 0x60] 
+01d9ea49 movups xmm0, xmmword ptr [rax] 
+01d9ea4c movaps xmmword ptr [rsp + 0x60], xmm0 
+01d9ea51 call 0x2742890 ; UniTaskExtensions::Forget(Cysharp.Threading.Tasks.UniTask)
+01d9ea56 movaps xmm6, xmmword ptr [rsp + 0x70] 
+01d9ea5b lea r11, [rsp + 0x80] 
+01d9ea63 mov rbx, qword ptr [r11 + 0x10] 
+01d9ea67 mov rbp, qword ptr [r11 + 0x18] 
+01d9ea6b mov rsi, qword ptr [r11 + 0x20] 
+01d9ea6f mov rsp, r11 
+01d9ea72 pop rdi 
+01d9ea73 ret 
+01d9ea74 call 0x4e0d00 
+01d9ea79 int3 
+01d9ea7a call 0x4e0cf0 
+01d9ea7f int3 

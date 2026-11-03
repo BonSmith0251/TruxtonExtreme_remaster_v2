@@ -1,0 +1,257 @@
+01dcc770  push     rdi
+01dcc772  sub      rsp, 0xc0
+01dcc779  cmp      byte ptr [rip + 0x289716c], 0   ; [46638ec] bss
+01dcc780  mov      rdi, rcx
+01dcc783  jne      0x1dcc798
+01dcc785  lea      rcx, [rip + 0x25b1714]   ; [437dea0] TypeInfo UnityEngine.Object
+01dcc78c  call     0x4e0a50
+01dcc791  mov      byte ptr [rip + 0x2897154], 1   ; [46638ec] bss
+01dcc798  mov      rdx, qword ptr [rdi + 0x50]   ; ._transformCache
+01dcc79c  mov      qword ptr [rsp + 0xd0], rbx   ; ._startDelayTime
+01dcc7a4  mov      qword ptr [rsp + 0xd8], rbp   ; ._DamageScored
+01dcc7ac  mov      qword ptr [rsp + 0xe0], rsi   ; ._deadExplosion
+01dcc7b4  mov      qword ptr [rsp + 0xe8], r14   ; ._deadExplosionHash
+01dcc7bc  movaps   xmmword ptr [rsp + 0xb0], xmm6   ; ._updateEventCount
+01dcc7c4  movaps   xmmword ptr [rsp + 0xa0], xmm7   ; .PoolEvent
+01dcc7cc  movaps   xmmword ptr [rsp + 0x90], xmm8   ; ._priority
+01dcc7d5  movaps   xmmword ptr [rsp + 0x80], xmm9
+01dcc7de  movaps   xmmword ptr [rsp + 0x70], xmm10
+01dcc7e4  test     rdx, rdx
+01dcc7e7  je       0x1dcca12
+01dcc7ed  xor      r8d, r8d
+01dcc7f0  lea      rcx, [rsp + 0x30]   ; ._Damage
+01dcc7f5  call     0x3093700   ; Transform::get_localPosition()
+01dcc7fa  xor      ebx, ebx
+01dcc7fc  mov      ebp, 0xffffffff
+01dcc801  mov      ecx, ebx
+01dcc803  movsd    xmm0, qword ptr [rax]
+01dcc807  mov      eax, dword ptr [rax + 8]
+01dcc80a  mov      dword ptr [rsp + 0x28], eax   ; ev.vectorValue
+01dcc80e  mov      rax, qword ptr [rdi + 0x1b8]   ; ._childList
+01dcc815  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01dcc81b  test     rax, rax
+01dcc81e  je       0x1dcca12
+01dcc824  movss    xmm7, dword ptr [rsp + 0x28]   ; ev.vectorValue
+01dcc82a  mov      esi, 0x20
+01dcc82f  movss    xmm8, dword ptr [rsp + 0x24]   ; ev.value1
+01dcc836  movss    xmm9, dword ptr [rsp + 0x20]   ; ev.value0
+01dcc83d  movdqa   xmm6, xmmword ptr [rip + 0x17200db]   ; rdata 34ec920 f=nan,nan,nan,nan d=nan
+01dcc845  movss    xmm10, dword ptr [rip + 0x18263be]   ; rdata 35f2c0c f=3.402823e+38,-3,-7,-20 d=-32.0000152
+01dcc84e  nop      
+01dcc850  cmp      ecx, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01dcc853  jge      0x1dcc9b3
+01dcc859  mov      rax, qword ptr [rdi + 0x1b8]   ; ._childList
+01dcc860  test     rax, rax
+01dcc863  je       0x1dcca12
+01dcc869  cmp      ebx, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01dcc86c  jae      0x1dcca0c
+01dcc872  mov      rcx, qword ptr [rip + 0x25b1627]   ; [437dea0] TypeInfo UnityEngine.Object
+01dcc879  mov      r14, qword ptr [rsi + rax]
+01dcc87d  cmp      dword ptr [rcx + 0xe4], 0
+01dcc884  jne      0x1dcc88b
+01dcc886  call     0x4e0d90
+01dcc88b  xor      r8d, r8d
+01dcc88e  xor      edx, edx
+01dcc890  mov      rcx, r14
+01dcc893  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01dcc898  test     al, al
+01dcc89a  je       0x1dcc99a
+01dcc8a0  mov      rax, qword ptr [rdi + 0x1b8]   ; ._childList
+01dcc8a7  test     rax, rax
+01dcc8aa  je       0x1dcca12
+01dcc8b0  cmp      ebx, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01dcc8b3  jae      0x1dcca0c
+01dcc8b9  mov      rcx, qword ptr [rsi + rax]
+01dcc8bd  test     rcx, rcx
+01dcc8c0  je       0x1dcca12
+01dcc8c6  xor      edx, edx
+01dcc8c8  call     0x3059180   ; Component::get_transform()
+01dcc8cd  test     rax, rax
+01dcc8d0  je       0x1dcca12
+01dcc8d6  xor      r8d, r8d
+01dcc8d9  lea      rcx, [rsp + 0x40]   ; ._hitOrders
+01dcc8de  mov      rdx, rax
+01dcc8e1  call     0x3093700   ; Transform::get_localPosition()
+01dcc8e6  xor      edx, edx
+01dcc8e8  lea      rcx, [rsp + 0x20]   ; ev.value0
+01dcc8ed  movsd    xmm3, qword ptr [rax]
+01dcc8f1  movss    xmm2, dword ptr [rax + 4]
+01dcc8f6  subss    xmm3, xmm9
+01dcc8fb  movss    xmm1, dword ptr [rax + 8]
+01dcc900  subss    xmm2, xmm8
+01dcc905  subss    xmm1, xmm7
+01dcc909  unpcklps xmm3, xmm2
+01dcc90c  movsd    qword ptr [rsp + 0x20], xmm3   ; ev.value0
+01dcc912  movss    dword ptr [rsp + 0x28], xmm1   ; ev.vectorValue
+01dcc918  call     0x5d2df0
+01dcc91d  comiss   xmm10, xmm0
+01dcc921  jbe      0x1dcc99a
+01dcc923  mov      rax, qword ptr [rdi + 0x1b8]   ; ._childList
+01dcc92a  test     rax, rax
+01dcc92d  je       0x1dcca12
+01dcc933  cmp      ebx, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01dcc936  jae      0x1dcca0c
+01dcc93c  mov      rcx, qword ptr [rsi + rax]
+01dcc940  test     rcx, rcx
+01dcc943  je       0x1dcca12
+01dcc949  xor      edx, edx
+01dcc94b  call     0x3059180   ; Component::get_transform()
+01dcc950  test     rax, rax
+01dcc953  je       0x1dcca12
+01dcc959  xor      r8d, r8d
+01dcc95c  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01dcc961  mov      rdx, rax
+01dcc964  call     0x3093700   ; Transform::get_localPosition()
+01dcc969  movss    xmm0, dword ptr [rdi + 0x220]   ; ._searchLimitX
+01dcc971  movsd    xmm1, qword ptr [rax]
+01dcc975  movsd    qword ptr [rsp + 0x30], xmm1   ; ._Damage
+01dcc97b  andps    xmm1, xmm6
+01dcc97e  comiss   xmm0, xmm1
+01dcc981  jbe      0x1dcc99a
+01dcc983  movss    xmm1, dword ptr [rsp + 0x34]   ; ._isInitialized
+01dcc989  movss    xmm0, dword ptr [rdi + 0x224]   ; ._searchLimitY
+01dcc991  andps    xmm1, xmm6
+01dcc994  comiss   xmm0, xmm1
+01dcc997  cmova    ebp, ebx
+01dcc99a  mov      rax, qword ptr [rdi + 0x1b8]   ; ._childList
+01dcc9a1  inc      ebx
+01dcc9a3  add      rsi, 8
+01dcc9a7  mov      ecx, ebx
+01dcc9a9  test     rax, rax
+01dcc9ac  je       0x1dcca12
+01dcc9ae  jmp      0x1dcc850
+01dcc9b3  movaps   xmm10, xmmword ptr [rsp + 0x70]
+01dcc9b9  mov      eax, ebp
+01dcc9bb  movaps   xmm9, xmmword ptr [rsp + 0x80]
+01dcc9c4  movaps   xmm8, xmmword ptr [rsp + 0x90]   ; ._priority
+01dcc9cd  movaps   xmm7, xmmword ptr [rsp + 0xa0]   ; .PoolEvent
+01dcc9d5  movaps   xmm6, xmmword ptr [rsp + 0xb0]   ; ._updateEventCount
+01dcc9dd  mov      r14, qword ptr [rsp + 0xe8]   ; ._deadExplosionHash
+01dcc9e5  mov      rsi, qword ptr [rsp + 0xe0]   ; ._deadExplosion
+01dcc9ed  mov      rbx, qword ptr [rsp + 0xd0]   ; ._startDelayTime
+01dcc9f5  mov      dword ptr [rdi + 0x1c0], ebp   ; ._target
+01dcc9fb  mov      rbp, qword ptr [rsp + 0xd8]   ; ._DamageScored
+01dcca03  add      rsp, 0xc0
+01dcca0a  pop      rdi
+01dcca0b  ret      
+01dcca0c  call     0x4e0cf0
+01dcca11  int3     
+01dcca12  call     0x4e0d00
+
+01dcaa20  push     rsi
+01dcaa22  sub      rsp, 0x80
+01dcaa29  cmp      byte ptr [rip + 0x2898eb9], 0   ; [46638e9] bss
+01dcaa30  mov      rsi, rcx
+01dcaa33  movaps   xmmword ptr [rsp + 0x70], xmm6
+01dcaa38  movaps   xmm6, xmm1
+01dcaa3b  jne      0x1dcaa50
+01dcaa3d  lea      rcx, [rip + 0x25b345c]   ; [437dea0] TypeInfo UnityEngine.Object
+01dcaa44  call     0x4e0a50
+01dcaa49  mov      byte ptr [rip + 0x2898e99], 1   ; [46638e9] bss
+01dcaa50  mov      rdx, qword ptr [rsi + 0x50]   ; ._transformCache
+01dcaa54  mov      qword ptr [rsp + 0x90], rbx   ; ._priority
+01dcaa5c  mov      qword ptr [rsp + 0x98], rbp   ; ._invincibleTime
+01dcaa64  mov      qword ptr [rsp + 0xa0], rdi   ; .PoolEvent
+01dcaa6c  movaps   xmmword ptr [rsp + 0x60], xmm7   ; ._currentPosition
+01dcaa71  movaps   xmmword ptr [rsp + 0x50], xmm8   ; ._transformCache
+01dcaa77  movaps   xmmword ptr [rsp + 0x40], xmm9   ; ._hitOrders
+01dcaa7d  test     rdx, rdx
+01dcaa80  je       0x1dcac1f
+01dcaa86  xor      r8d, r8d
+01dcaa89  lea      rcx, [rsp + 0x30]   ; ._Damage
+01dcaa8e  call     0x3093700   ; Transform::get_localPosition()
+01dcaa93  xor      ebx, ebx
+01dcaa95  mulss    xmm6, xmm6
+01dcaa99  mov      ecx, ebx
+01dcaa9b  movsd    xmm0, qword ptr [rax]
+01dcaa9f  mov      eax, dword ptr [rax + 8]
+01dcaaa2  mov      dword ptr [rsp + 0x28], eax   ; ev.vectorValue
+01dcaaa6  mov      rax, qword ptr [rsi + 0x1b8]   ; ._childList
+01dcaaad  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01dcaab3  test     rax, rax
+01dcaab6  je       0x1dcac1f
+01dcaabc  movss    xmm7, dword ptr [rsp + 0x28]   ; ev.vectorValue
+01dcaac2  mov      edi, 0x20
+01dcaac7  movss    xmm8, dword ptr [rsp + 0x24]   ; ev.value1
+01dcaace  movss    xmm9, dword ptr [rsp + 0x20]   ; ev.value0
+01dcaad5  cmp      ecx, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01dcaad8  jge      0x1dcabe8
+01dcaade  mov      rax, qword ptr [rsi + 0x1b8]   ; ._childList
+01dcaae5  test     rax, rax
+01dcaae8  je       0x1dcac1f
+01dcaaee  cmp      ebx, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01dcaaf1  jae      0x1dcac25
+01dcaaf7  mov      rcx, qword ptr [rip + 0x25b33a2]   ; [437dea0] TypeInfo UnityEngine.Object
+01dcaafe  mov      rbp, qword ptr [rdi + rax]
+01dcab02  cmp      dword ptr [rcx + 0xe4], 0
+01dcab09  jne      0x1dcab10
+01dcab0b  call     0x4e0d90
+01dcab10  xor      r8d, r8d
+01dcab13  xor      edx, edx
+01dcab15  mov      rcx, rbp
+01dcab18  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01dcab1d  test     al, al
+01dcab1f  je       0x1dcabcf
+01dcab25  mov      rax, qword ptr [rsi + 0x1b8]   ; ._childList
+01dcab2c  test     rax, rax
+01dcab2f  je       0x1dcac1f
+01dcab35  cmp      ebx, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01dcab38  jae      0x1dcac25
+01dcab3e  mov      rcx, qword ptr [rdi + rax]
+01dcab42  test     rcx, rcx
+01dcab45  je       0x1dcac1f
+01dcab4b  xor      edx, edx
+01dcab4d  call     0x3059180   ; Component::get_transform()
+01dcab52  test     rax, rax
+01dcab55  je       0x1dcac1f
+01dcab5b  xor      r8d, r8d
+01dcab5e  lea      rcx, [rsp + 0x30]   ; ._Damage
+01dcab63  mov      rdx, rax
+01dcab66  call     0x3093700   ; Transform::get_localPosition()
+01dcab6b  movsd    xmm1, qword ptr [rax]
+01dcab6f  movss    xmm2, dword ptr [rax + 4]
+01dcab74  subss    xmm1, xmm9
+01dcab79  movss    xmm0, dword ptr [rax + 8]
+01dcab7e  subss    xmm2, xmm8
+01dcab83  subss    xmm0, xmm7
+01dcab87  mulss    xmm1, xmm1
+01dcab8b  mulss    xmm2, xmm2
+01dcab8f  mulss    xmm0, xmm0
+01dcab93  addss    xmm2, xmm1
+01dcab97  addss    xmm2, xmm0
+01dcab9b  comiss   xmm6, xmm2
+01dcab9e  jb       0x1dcabcf
+01dcaba0  mov      rax, qword ptr [rsi + 0x1b8]   ; ._childList
+01dcaba7  test     rax, rax
+01dcabaa  je       0x1dcac1f
+01dcabac  cmp      ebx, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01dcabaf  jae      0x1dcac25
+01dcabb1  mov      rcx, qword ptr [rdi + rax]
+01dcabb5  test     rcx, rcx
+01dcabb8  je       0x1dcac1f
+01dcabba  mov      r8, qword ptr [rcx]
+01dcabbd  xor      edx, edx
+01dcabbf  mov      rax, qword ptr [r8 + 0x638]
+01dcabc6  mov      r8, qword ptr [r8 + 0x640]
+01dcabcd  call     rax
+01dcabcf  mov      rax, qword ptr [rsi + 0x1b8]   ; ._childList
+01dcabd6  inc      ebx
+01dcabd8  add      rdi, 8
+01dcabdc  mov      ecx, ebx
+01dcabde  test     rax, rax
+01dcabe1  je       0x1dcac1f
+01dcabe3  jmp      0x1dcaad5
+01dcabe8  movaps   xmm9, xmmword ptr [rsp + 0x40]   ; ._hitOrders
+01dcabee  movaps   xmm8, xmmword ptr [rsp + 0x50]   ; ._transformCache
+01dcabf4  movaps   xmm7, xmmword ptr [rsp + 0x60]   ; ._currentPosition
+01dcabf9  mov      rdi, qword ptr [rsp + 0xa0]   ; .PoolEvent
+01dcac01  mov      rbp, qword ptr [rsp + 0x98]   ; ._invincibleTime
+01dcac09  mov      rbx, qword ptr [rsp + 0x90]   ; ._priority
+01dcac11  movaps   xmm6, xmmword ptr [rsp + 0x70]
+01dcac16  add      rsp, 0x80
+01dcac1d  pop      rsi
+01dcac1e  ret      
+01dcac1f  call     0x4e0d00
+01dcac24  int3     
+01dcac25  call     0x4e0cf0
+

@@ -1,0 +1,226 @@
+01db9a90 push rsi 
+01db9a92 push r12 
+01db9a94 push r13 
+01db9a96 push r14 
+01db9a98 push r15 
+01db9a9a sub rsp, 0x20 
+01db9a9e cmp byte ptr [rip + 0x28a9dd2], 0 ; rva=4663877
+01db9aa5 mov r14, rcx 
+01db9aa8 jne 0x1db9af9 
+01db9aaa lea rcx, [rip + 0x25ae24f] ; rva=4367d00
+01db9ab1 call 0x4e0a50 
+01db9ab6 lea rcx, [rip + 0x25b0c9b] ; rva=436a758
+01db9abd call 0x4e0a50 
+01db9ac2 lea rcx, [rip + 0x25d7f1f] ; rva=43919e8
+01db9ac9 call 0x4e0a50 
+01db9ace lea rcx, [rip + 0x25fe7fb] ; rva=43b82d0
+01db9ad5 call 0x4e0a50 
+01db9ada lea rcx, [rip + 0x25fe89f] ; rva=43b8380
+01db9ae1 call 0x4e0a50 
+01db9ae6 lea rcx, [rip + 0x25fe513] ; rva=43b8000
+01db9aed call 0x4e0a50 
+01db9af2 mov byte ptr [rip + 0x28a9d7e], 1 ; rva=4663877
+01db9af9 mov rax, qword ptr [rip + 0x25fe500] ; rva=43b8000
+01db9b00 mov rax, qword ptr [rax + 0x20] 
+01db9b04 test byte ptr [rax + 0x135], 1 
+01db9b0b jne 0x1db9b15 
+01db9b0d mov rcx, rax 
+01db9b10 call 0x4de1e0 
+01db9b15 mov rax, qword ptr [rax + 0xc0] 
+01db9b1c mov rax, qword ptr [rax + 0x10] 
+01db9b20 test byte ptr [rax + 0x135], 1 
+01db9b27 jne 0x1db9b31 
+01db9b29 mov rcx, rax 
+01db9b2c call 0x4de1e0 
+01db9b31 mov rax, qword ptr [rax + 0xb8] 
+01db9b38 mov rcx, r14 
+01db9b3b mov rdx, qword ptr [r14] 
+01db9b3e mov qword ptr [rsp + 0x50], rbx 
+01db9b43 mov qword ptr [rsp + 0x58], rbp 
+01db9b48 mov r13, qword ptr [rax] 
+01db9b4b mov rax, qword ptr [rdx + 0x6a8] 
+01db9b52 mov rdx, qword ptr [rdx + 0x6b0] 
+01db9b59 mov qword ptr [rsp + 0x60], rdi 
+01db9b5e call rax 
+01db9b60 xor esi, esi 
+01db9b62 mov r12, rax 
+01db9b65 mov r15d, 0x20 
+01db9b6b test rax, rax 
+01db9b6e je 0x1db9c97 
+01db9b74 mov rdx, qword ptr [rip + 0x25d7e6d] ; rva=43919e8
+01db9b7b mov rcx, rax 
+01db9b7e call 0x7d5180 ; Enumerable::Any(System.Collections.Generic.IEnumerable`1<TSource>)
+01db9b83 test al, al 
+01db9b85 je 0x1db9c97 
+01db9b8b mov edx, dword ptr [r12 + 0x18] 
+01db9b90 mov ebx, esi 
+01db9b92 mov rcx, qword ptr [rip + 0x25ae167] ; rva=4367d00
+01db9b99 call 0x4dfe00 
+01db9b9e lea rcx, [r14 + 0x208] 
+01db9ba5 mov qword ptr [r14 + 0x208], rax 
+01db9bac mov rdx, rax 
+01db9baf call 0x4dfd80 
+01db9bb4 mov eax, esi 
+01db9bb6 nop word ptr [rax + rax] 
+01db9bc0 cmp eax, dword ptr [r12 + 0x18] 
+01db9bc5 jge 0x1db9c91 
+01db9bcb cmp ebx, dword ptr [r12 + 0x18] 
+01db9bd0 jae 0x1db9e57 
+01db9bd6 mov rdi, qword ptr [r14 + 0x208] 
+01db9bdd test r13, r13 
+01db9be0 je 0x1db9e31 
+01db9be6 mov rcx, qword ptr [r13 + 0xf0] 
+01db9bed test rcx, rcx 
+01db9bf0 je 0x1db9e31 
+01db9bf6 mov rdx, qword ptr [r12 + r15] 
+01db9bfa xor r8d, r8d 
+01db9bfd call 0x1ccb7b0 ; InGameBulletManager::GetTemplate(System.String)
+01db9c02 mov rbp, rax 
+01db9c05 test rdi, rdi 
+01db9c08 je 0x1db9e31 
+01db9c0e test rax, rax 
+01db9c11 je 0x1db9c2b 
+01db9c13 mov rdx, qword ptr [rdi] 
+01db9c16 mov rcx, rax 
+01db9c19 mov rdx, qword ptr [rdx + 0x40] 
+01db9c1d call 0x4dfda0 
+01db9c22 test rax, rax 
+01db9c25 je 0x1db9e37 
+01db9c2b cmp ebx, dword ptr [rdi + 0x18] 
+01db9c2e jae 0x1db9e57 
+01db9c34 movsxd rax, ebx 
+01db9c37 mov rdx, rbp 
+01db9c3a add rax, 4 
+01db9c3e mov qword ptr [r15 + rdi], rbp 
+01db9c42 lea rcx, [rdi + rax*8] 
+01db9c46 call 0x4dfd80 
+01db9c4b mov rax, qword ptr [r14 + 0x208] 
+01db9c52 test rax, rax 
+01db9c55 je 0x1db9e31 
+01db9c5b cmp ebx, dword ptr [rax + 0x18] 
+01db9c5e jae 0x1db9e57 
+01db9c64 mov rcx, qword ptr [r15 + rax] 
+01db9c68 test rcx, rcx 
+01db9c6b je 0x1db9e31 
+01db9c71 xor r9d, r9d 
+01db9c74 mov edx, 4 
+01db9c79 mov r8d, 0x6a 
+01db9c7f call 0x1d614a0 ; BulletTemplate::ChangeSE(InGame.Kernel.BulletKind,TXEKernel.Sound.SoundUtility/ID)
+01db9c84 inc ebx 
+01db9c86 add r15, 8 
+01db9c8a mov eax, ebx 
+01db9c8c jmp 0x1db9bc0 
+01db9c91 mov r15d, 0x20 
+01db9c97 mov rdx, qword ptr [r14] 
+01db9c9a mov rcx, r14 
+01db9c9d mov rax, qword ptr [rdx + 0x6b8] 
+01db9ca4 mov rdx, qword ptr [rdx + 0x6c0] 
+01db9cab call rax 
+01db9cad mov rbp, rax 
+01db9cb0 test rax, rax 
+01db9cb3 je 0x1db9d92 
+01db9cb9 mov rdx, qword ptr [rip + 0x25d7d28] ; rva=43919e8
+01db9cc0 mov rcx, rax 
+01db9cc3 call 0x7d5180 ; Enumerable::Any(System.Collections.Generic.IEnumerable`1<TSource>)
+01db9cc8 test al, al 
+01db9cca je 0x1db9d92 
+01db9cd0 mov edx, dword ptr [rbp + 0x18] 
+01db9cd3 mov dword ptr [r14 + 0x1fc], edx 
+01db9cda mov rcx, qword ptr [rip + 0x25b0a77] ; rva=436a758
+01db9ce1 call 0x4dfe00 
+01db9ce6 lea rcx, [r14 + 0x200] 
+01db9ced mov qword ptr [r14 + 0x200], rax 
+01db9cf4 mov rdx, rax 
+01db9cf7 call 0x4dfd80 
+01db9cfc mov eax, esi 
+01db9cfe nop 
+01db9d00 cmp eax, dword ptr [rbp + 0x18] 
+01db9d03 jge 0x1db9d92 
+01db9d09 cmp esi, dword ptr [rbp + 0x18] 
+01db9d0c jae 0x1db9e57 
+01db9d12 mov rbx, qword ptr [r14 + 0x200] 
+01db9d19 test r13, r13 
+01db9d1c je 0x1db9e31 
+01db9d22 mov rcx, qword ptr [r13 + 0x138] 
+01db9d29 test rcx, rcx 
+01db9d2c je 0x1db9e31 
+01db9d32 mov rdx, qword ptr [r15 + rbp] 
+01db9d36 xor r8d, r8d 
+01db9d39 call 0x1cd2f00 ; InGameEnemyClipsManager::GetData(System.String)
+01db9d3e mov rdi, rax 
+01db9d41 test rbx, rbx 
+01db9d44 je 0x1db9e31 
+01db9d4a test rax, rax 
+01db9d4d je 0x1db9d67 
+01db9d4f mov rdx, qword ptr [rbx] 
+01db9d52 mov rcx, rax 
+01db9d55 mov rdx, qword ptr [rdx + 0x40] 
+01db9d59 call 0x4dfda0 
+01db9d5e test rax, rax 
+01db9d61 je 0x1db9e47 
+01db9d67 cmp esi, dword ptr [rbx + 0x18] 
+01db9d6a jae 0x1db9e57 
+01db9d70 movsxd rax, esi 
+01db9d73 mov rdx, rdi 
+01db9d76 add rax, 4 
+01db9d7a mov qword ptr [rbx + r15], rdi 
+01db9d7e lea rcx, [rbx + rax*8] 
+01db9d82 call 0x4dfd80 
+01db9d87 inc esi 
+01db9d89 add r15, 8 
+01db9d8d jmp 0x1db9cfc 
+01db9d92 mov rcx, qword ptr [rip + 0x25fe537] ; rva=43b82d0
+01db9d99 call 0xd102f0 ; MonoBehaviourSingleton`1::IsInstanceNull()
+01db9d9e test al, al 
+01db9da0 jne 0x1db9e0b 
+01db9da2 mov rax, qword ptr [rip + 0x25fe5d7] ; rva=43b8380
+01db9da9 mov rax, qword ptr [rax + 0x20] 
+01db9dad test byte ptr [rax + 0x135], 1 
+01db9db4 jne 0x1db9dbe 
+01db9db6 mov rcx, rax 
+01db9db9 call 0x4de1e0 
+01db9dbe mov rax, qword ptr [rax + 0xc0] 
+01db9dc5 mov rax, qword ptr [rax + 0x10] 
+01db9dc9 test byte ptr [rax + 0x135], 1 
+01db9dd0 jne 0x1db9dda 
+01db9dd2 mov rcx, rax 
+01db9dd5 call 0x4de1e0 
+01db9dda mov rax, qword ptr [rax + 0xb8] 
+01db9de1 mov rcx, qword ptr [rax] 
+01db9de4 test rcx, rcx 
+01db9de7 je 0x1db9e31 
+01db9de9 mov eax, dword ptr [rcx + 0x28] 
+01db9dec mov dword ptr [r14 + 0x210], eax 
+01db9df3 mov eax, dword ptr [rcx + 0x2c] 
+01db9df6 mov dword ptr [r14 + 0x214], eax 
+01db9dfd movzx eax, byte ptr [rcx + 0xc8] 
+01db9e04 mov byte ptr [r14 + 0x218], al 
+01db9e0b xor edx, edx 
+01db9e0d mov rcx, r14 
+01db9e10 mov rdi, qword ptr [rsp + 0x60] 
+01db9e15 mov rbp, qword ptr [rsp + 0x58] 
+01db9e1a mov rbx, qword ptr [rsp + 0x50] 
+01db9e1f add rsp, 0x20 
+01db9e23 pop r15 
+01db9e25 pop r14 
+01db9e27 pop r13 
+01db9e29 pop r12 
+01db9e2b pop rsi 
+01db9e2c jmp 0x1d0de30 ; PawnEnemy::InitializeToPlay()
+01db9e31 call 0x4e0d00 
+01db9e36 int3 
+01db9e37 call 0x4e0670 
+01db9e3c mov rcx, rax 
+01db9e3f xor edx, edx 
+01db9e41 call 0x4e0cc0 
+01db9e46 int3 
+01db9e47 call 0x4e0670 
+01db9e4c mov rcx, rax 
+01db9e4f xor edx, edx 
+01db9e51 call 0x4e0cc0 
+01db9e56 int3 
+01db9e57 call 0x4e0cf0 
+01db9e5c int3 
+01db9e5d int3 
+01db9e5e int3 
+01db9e5f int3 

@@ -1,0 +1,17 @@
+#### InGame.Kernel.SplineMover::IsPlaying() RVA 1d43d30 len 2b
+01d43d30  push     rbx
+01d43d32  sub      rsp, 0x20
+01d43d36  xor      edx, edx
+01d43d38  mov      rbx, rcx
+01d43d3b  call     0x1cdaa20   ; InGameEnemyMoveBase::IsPlayStart()
+01d43d40  test     al, al
+01d43d42  jne      0x1d43d53
+01d43d44  xor      edx, edx
+01d43d46  mov      rcx, rbx
+01d43d49  add      rsp, 0x20
+01d43d4d  pop      rbx
+01d43d4e  jmp      0x1cdaa40   ; InGameEnemyMoveBase::IsPlaying()
+01d43d53  mov      al, 1
+01d43d55  add      rsp, 0x20
+01d43d59  pop      rbx
+01d43d5a  ret      

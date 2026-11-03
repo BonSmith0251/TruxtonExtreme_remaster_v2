@@ -1,0 +1,59 @@
+== UnityEngine.Vector3 InGame.Kernel.Enemy.Ene_BosBase::CurrentTargetVector(System.Single,KANAI.Kernel.EasingUtility/EasingType) RVA 1db9630 len ed
+01db9630 mov        qword ptr [rsp + 8], rbx
+01db9635 mov        qword ptr [rsp + 0x10], rsi
+01db963a push       rdi
+01db963b sub        rsp, 0x60
+01db963f movaps     xmmword ptr [rsp + 0x50], xmm6
+01db9644 mov        rbx, rcx
+01db9647 movss      xmm6, dword ptr [rip + 0x172757d] ; [.rdata 34e0bcc] f=1.0 d=50.12387841939926 v4=['1', '3.14159', '4', '10']
+01db964f movaps     xmmword ptr [rsp + 0x40], xmm7
+01db9654 xorps      xmm7, xmm7
+01db9657 comiss     xmm7, xmm2
+01db965a ja         0x1db9666
+01db965c comiss     xmm2, xmm6
+01db965f jbe        0x1db9669
+01db9661 movaps     xmm2, xmm6
+01db9664 jmp        0x1db9669
+01db9666 xorps      xmm2, xmm2
+01db9669 movsd      xmm1, qword ptr [rdx + 0x240] ; ~_targetVector
+01db9671 xor        r8d, r8d
+01db9674 mov        edi, dword ptr [rdx + 0x248]
+01db967a movaps     xmm0, xmm2
+01db967d mov        esi, dword ptr [rdx + 0x23c]
+01db9683 movsd      qword ptr [rsp + 0x20], xmm1
+01db9689 movsd      xmm1, qword ptr [rdx + 0x234] ; ~_startVector
+01db9691 mov        edx, r9d
+01db9694 movsd      qword ptr [rsp + 0x30], xmm1
+01db969a call       0x1de8100 ; KANAI.Kernel.EasingUtility::Easing01(System.Single,KANAI.Kernel.EasingUtility/EasingType)
+01db969f comiss     xmm7, xmm0
+01db96a2 movaps     xmm4, xmm0
+01db96a5 ja         0x1db96b1
+01db96a7 comiss     xmm0, xmm6
+01db96aa jbe        0x1db96b4
+01db96ac movaps     xmm4, xmm6
+01db96af jmp        0x1db96b4
+01db96b1 xorps      xmm4, xmm4
+01db96b4 movss      xmm3, dword ptr [rsp + 0x20]
+01db96ba subss      xmm3, dword ptr [rsp + 0x30]
+01db96c0 movss      xmm1, dword ptr [rsp + 0x24]
+01db96c6 subss      xmm1, dword ptr [rsp + 0x34]
+01db96cc movd       xmm0, esi
+01db96d0 movd       xmm2, edi
+01db96d4 subss      xmm2, xmm0
+01db96d8 mulss      xmm3, xmm4
+01db96dc mulss      xmm1, xmm4
+01db96e0 addss      xmm3, dword ptr [rsp + 0x30]
+01db96e6 mulss      xmm2, xmm4
+01db96ea addss      xmm1, dword ptr [rsp + 0x34]
+01db96f0 addss      xmm2, xmm0
+01db96f4 mov        rsi, qword ptr [rsp + 0x78]
+01db96f9 mov        rax, rbx
+01db96fc movaps     xmm6, xmmword ptr [rsp + 0x50]
+01db9701 movaps     xmm7, xmmword ptr [rsp + 0x40]
+01db9706 unpcklps   xmm3, xmm1
+01db9709 movsd      qword ptr [rbx], xmm3
+01db970d movss      dword ptr [rbx + 8], xmm2
+01db9712 mov        rbx, qword ptr [rsp + 0x70]
+01db9717 add        rsp, 0x60
+01db971b pop        rdi
+01db971c ret        

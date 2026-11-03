@@ -1,0 +1,37 @@
+01d9b5e0 mov qword ptr [rsp + 8], rbx 
+01d9b5e5 push rdi 
+01d9b5e6 sub rsp, 0x20 
+01d9b5ea xor r8d, r8d 
+01d9b5ed mov edi, edx 
+01d9b5ef mov rbx, rcx 
+01d9b5f2 call 0x5bcdb0 ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose()
+01d9b5f7 cmp edi, 2 
+01d9b5fa jne 0x1d9b62c 
+01d9b5fc cmp byte ptr [rbx + 0x2e8], 0 
+01d9b603 jne 0x1d9b621 
+01d9b605 mov byte ptr [rbx + 0x2e8], 1 
+01d9b60c mov rcx, qword ptr [rbx + 0x2f0] 
+01d9b613 test rcx, rcx 
+01d9b616 je 0x1d9b643 
+01d9b618 cmp dword ptr [rcx + 0x28], 4 
+01d9b61c jge 0x1d9b621 
+01d9b61e inc dword ptr [rcx + 0x28] 
+01d9b621 mov rbx, qword ptr [rsp + 0x30] 
+01d9b626 add rsp, 0x20 
+01d9b62a pop rdi 
+01d9b62b ret 
+01d9b62c cmp edi, 3 
+01d9b62f jne 0x1d9b621 
+01d9b631 cmp byte ptr [rbx + 0x2e9], 0 
+01d9b638 jne 0x1d9b621 
+01d9b63a mov byte ptr [rbx + 0x2e9], 1 
+01d9b641 jmp 0x1d9b60c 
+01d9b643 call 0x4e0d00 
+01d9b648 int3 
+01d9b649 int3 
+01d9b64a int3 
+01d9b64b int3 
+01d9b64c int3 
+01d9b64d int3 
+01d9b64e int3 
+01d9b64f int3 

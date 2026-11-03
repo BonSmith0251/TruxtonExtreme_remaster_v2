@@ -1,0 +1,4 @@
+== System.Boolean InGame.Kernel.Enemy.Ene_BosBase::IsOverHP(InGame.Kernel.Enemy.Ene_BosBase/HitPState) RVA 1db9fd0 len a
+01db9fd0 cmp        dword ptr [rcx + 0x21c], edx ; ~_hpState
+01db9fd6 setge      al
+01db9fd9 ret        

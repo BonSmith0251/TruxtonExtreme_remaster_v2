@@ -1,0 +1,19 @@
+01d9e070 sub rsp, 0x28 
+01d9e074 cmp edx, dword ptr [rcx + 0x2b0] 
+01d9e07a je 0x1d9e08c 
+01d9e07c mov dword ptr [rcx + 0x2b0], edx 
+01d9e082 mov dword ptr [rcx + 0x1ec], 0 
+01d9e08c mov rax, qword ptr [rcx + 0xb8] 
+01d9e093 test rax, rax 
+01d9e096 je 0x1d9e0a4 
+01d9e098 mov byte ptr [rax + 0x1d4], 0 
+01d9e09f add rsp, 0x28 
+01d9e0a3 ret 
+01d9e0a4 call 0x4e0d00 
+01d9e0a9 int3 
+01d9e0aa int3 
+01d9e0ab int3 
+01d9e0ac int3 
+01d9e0ad int3 
+01d9e0ae int3 
+01d9e0af int3 

@@ -1,0 +1,161 @@
+#### InGame.Kernel.InGameManager::DirectBulletFire(InGame.Kernel.Enemy.BulletTemplate,UnityEngine.Vector3) RVA 1ce34c0 len 316
+01ce34c0  push     rbx
+01ce34c2  push     rbp
+01ce34c3  push     rsi
+01ce34c4  sub      rsp, 0xa0
+01ce34cb  cmp      byte ptr [rip + 0x297fe5e], 0   ; [4663330] bss
+01ce34d2  mov      rbp, r8
+01ce34d5  mov      rsi, rdx
+01ce34d8  mov      rbx, rcx
+01ce34db  jne      0x1ce34f0
+01ce34dd  lea      rcx, [rip + 0x26f5a4c]   ; [43d8f30] TypeInfo InGame.Kernel.InGameBulletManager
+01ce34e4  call     0x4e0a50
+01ce34e9  mov      byte ptr [rip + 0x297fe40], 1   ; [4663330] bss
+01ce34f0  cmp      qword ptr [rbx + 0xf0], 0   ; ._bulletManager
+01ce34f8  je       0x1ce37c0
+01ce34fe  cmp      dword ptr [rbx + 0x25c], 2   ; ._playPhase
+01ce3505  je       0x1ce37c0
+01ce350b  cmp      dword ptr [rbx + 0x25c], 1   ; ._playPhase
+01ce3512  je       0x1ce37c0
+01ce3518  cmp      dword ptr [rbx + 0x25c], 4   ; ._playPhase
+01ce351f  je       0x1ce37c0
+01ce3525  cmp      dword ptr [rbx + 0x25c], 6   ; ._playPhase
+01ce352c  je       0x1ce37c0
+01ce3532  cmp      dword ptr [rbx + 0x25c], 7   ; ._playPhase
+01ce3539  mov      qword ptr [rsp + 0xc0], rdi   ; ._collisionArea
+01ce3541  je       0x1ce3563
+01ce3543  cmp      dword ptr [rbx + 0x25c], 0xa   ; ._playPhase
+01ce354a  je       0x1ce3563
+01ce354c  cmp      dword ptr [rbx + 0x25c], 8   ; ._playPhase
+01ce3553  je       0x1ce3563
+01ce3555  xor      edi, edi
+01ce3557  cmp      dword ptr [rbx + 0x25c], 9   ; ._playPhase
+01ce355e  setne    al
+01ce3561  jmp      0x1ce3567
+01ce3563  xor      edi, edi
+01ce3565  mov      eax, edi
+01ce3567  test     al, al
+01ce3569  je       0x1ce37b8
+01ce356f  mov      qword ptr [rsp + 0xc8], r14   ; ._pauseLabel
+01ce3577  xorps    xmm0, xmm0
+01ce357a  test     rsi, rsi
+01ce357d  je       0x1ce37cb
+01ce3583  cmp      byte ptr [rsi + 0x7c], 0
+01ce3587  je       0x1ce372d
+01ce358d  cmp      dword ptr [rbx + 0x25c], 3   ; ._playPhase
+01ce3594  je       0x1ce35a3
+01ce3596  cmp      dword ptr [rbx + 0x25c], 0xb   ; ._playPhase
+01ce359d  jne      0x1ce372d
+01ce35a3  mov      rdx, qword ptr [rbx + 0x130]   ; ._collisionManager
+01ce35aa  test     rdx, rdx
+01ce35ad  je       0x1ce37cb
+01ce35b3  movsd    xmm0, qword ptr [rbp]
+01ce35b8  lea      r8, [rsp + 0x70]   ; ._stageTimeline
+01ce35bd  mov      eax, dword ptr [rbp + 8]
+01ce35c0  lea      rcx, [rsp + 0x80]   ; ._systemRoot
+01ce35c8  xor      r9d, r9d
+01ce35cb  movsd    qword ptr [rsp + 0x70], xmm0   ; ._stageTimeline
+01ce35d1  mov      qword ptr [rsp + 0xd0], r15   ; ._gameoverLabel
+01ce35d9  mov      dword ptr [rsp + 0x78], eax   ; ._stageOrder
+01ce35dd  call     0x1ddb650   ; HybridCollisionManager::LocalToScreen(UnityEngine.Vector3)
+01ce35e2  xor      r8d, r8d
+01ce35e5  mov      rcx, rbx
+01ce35e8  movsd    xmm0, qword ptr [rax]
+01ce35ec  mov      eax, dword ptr [rax + 8]
+01ce35ef  movaps   xmm1, xmm0
+01ce35f2  shufps   xmm1, xmm1, 0x55
+01ce35f6  movsd    qword ptr [rsp + 0x80], xmm0   ; ._systemRoot
+01ce35ff  unpcklps xmm0, xmm1
+01ce3602  movq     rdx, xmm0
+01ce3607  mov      dword ptr [rsp + 0x88], eax   ; ._inGameRoot
+01ce360e  call     0x1ce4cb0   ; InGameManager::GetNearestPlayerIndex(UnityEngine.Vector2)
+01ce3613  cmp      byte ptr [rip + 0x297fcf2], 0   ; [466330c] bss
+01ce361a  mov      r15d, eax
+01ce361d  jne      0x1ce363e
+01ce361f  lea      rcx, [rip + 0x26f60f2]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01ce3626  call     0x4e0a50
+01ce362b  lea      rcx, [rip + 0x268f596]   ; [4372bc8] TypeInfo System.Math
+01ce3632  call     0x4e0a50
+01ce3637  mov      byte ptr [rip + 0x297fcce], 1   ; [466330c] bss
+01ce363e  mov      rax, qword ptr [rip + 0x26f60d3]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01ce3645  cmp      dword ptr [rax + 0xe4], 0
+01ce364c  jne      0x1ce365d
+01ce364e  mov      rcx, rax
+01ce3651  call     0x4e0d90
+01ce3656  mov      rax, qword ptr [rip + 0x26f60bb]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01ce365d  mov      rcx, qword ptr [rip + 0x268f564]   ; [4372bc8] TypeInfo System.Math
+01ce3664  mov      rax, qword ptr [rax + 0xb8]
+01ce366b  cmp      dword ptr [rcx + 0xe4], 0
+01ce3672  mov      r14d, dword ptr [rax + 0xd0]   ; static InGameManager.PlayerMax
+01ce3679  jne      0x1ce3680
+01ce367b  call     0x4e0d90
+01ce3680  xor      r9d, r9d
+01ce3683  mov      r8d, r14d
+01ce3686  xor      edx, edx
+01ce3688  mov      ecx, r15d
+01ce368b  call     0xe2d700
+01ce3690  mov      rdx, qword ptr [rbx + 0x160]   ; ._playerSkyPosition
+01ce3697  mov      r15, qword ptr [rsp + 0xd0]   ; ._gameoverLabel
+01ce369f  test     rdx, rdx
+01ce36a2  je       0x1ce37cb
+01ce36a8  cmp      eax, dword ptr [rdx + 0x18]
+01ce36ab  jae      0x1ce37d1
+01ce36b1  cdqe     
+01ce36b3  movaps   xmmword ptr [rsp + 0x90], xmm6   ; ._inGameEnemyRootObject
+01ce36bb  lea      rcx, [rax + rax*2]
+01ce36bf  movsd    xmm6, qword ptr [rdx + rcx*4 + 0x20]   ; ._baseTimeFactor
+01ce36c5  mov      r14d, dword ptr [rdx + rcx*4 + 0x28]   ; ._playTimeFactor
+01ce36ca  mov      rcx, qword ptr [rip + 0x26f585f]   ; [43d8f30] TypeInfo InGame.Kernel.InGameBulletManager
+01ce36d1  cmp      dword ptr [rcx + 0xe4], 0
+01ce36d8  jne      0x1ce36df
+01ce36da  call     0x4e0d90
+01ce36df  movsd    xmm0, qword ptr [rbp]
+01ce36e4  lea      rdx, [rsp + 0x70]   ; ._stageTimeline
+01ce36e9  mov      eax, dword ptr [rbp + 8]
+01ce36ec  lea      rcx, [rsp + 0x80]   ; ._systemRoot
+01ce36f4  xor      r8d, r8d
+01ce36f7  movsd    qword ptr [rsp + 0x80], xmm0   ; ._systemRoot
+01ce3700  movsd    qword ptr [rsp + 0x70], xmm6   ; ._stageTimeline
+01ce3706  mov      dword ptr [rsp + 0x78], r14d   ; ._stageOrder
+01ce370b  mov      dword ptr [rsp + 0x88], eax   ; ._inGameRoot
+01ce3712  call     0x1ccb620   ; InGameBulletManager::GetTargetBulletArc(UnityEngine.Vector3,UnityEngine.Vector3)
+01ce3717  xor      r8d, r8d
+01ce371a  movaps   xmm1, xmm0
+01ce371d  mov      rcx, rsi
+01ce3720  call     0x1d614b0   ; BulletTemplate::GetLimitArc(System.Single)
+01ce3725  movaps   xmm6, xmmword ptr [rsp + 0x90]   ; ._inGameEnemyRootObject
+01ce372d  mov      rcx, qword ptr [rbx + 0xf0]   ; ._bulletManager
+01ce3734  test     rcx, rcx
+01ce3737  je       0x1ce37cb
+01ce373d  movsd    xmm1, qword ptr [rbp]
+01ce3742  mov      r9, rsi
+01ce3745  mov      eax, dword ptr [rbp + 8]
+01ce3748  xor      r8d, r8d
+01ce374b  mov      qword ptr [rsp + 0x68], rdi   ; ._bulletDistanceMax
+01ce3750  mov      rdx, rbx
+01ce3753  mov      qword ptr [rsp + 0x60], rdi   ; ._damageMag
+01ce3758  movsd    qword ptr [rsp + 0x80], xmm1   ; ._systemRoot
+01ce3761  movss    xmm1, dword ptr [rsi + 0x30]   ; ._effectTimeFactor
+01ce3766  subss    xmm1, xmm0
+01ce376a  mov      dword ptr [rsp + 0x88], eax   ; ._inGameRoot
+01ce3771  movss    xmm0, dword ptr [rip + 0x17fd453]   ; rdata 34e0bcc f=1,3.141593,4,10 d=50.12387842
+01ce3779  lea      rax, [rsp + 0x80]   ; ._systemRoot
+01ce3781  movss    dword ptr [rsp + 0x58], xmm0   ; ._isManualQuit
+01ce3787  movss    dword ptr [rsp + 0x50], xmm0   ; ._isStopStage
+01ce378d  movss    dword ptr [rsp + 0x48], xmm1   ; ._pauseReqPadNo
+01ce3793  mov      qword ptr [rsp + 0x40], rdi   ; ._bgSlideRate
+01ce3798  mov      qword ptr [rsp + 0x38], rdi   ; ._lapedDeltaTime
+01ce379d  mov      qword ptr [rsp + 0x30], rdi   ; ._effectTimeFactor
+01ce37a2  mov      dword ptr [rsp + 0x28], edi   ; ._playTimeFactor
+01ce37a6  mov      qword ptr [rsp + 0x20], rax   ; ._baseTimeFactor
+01ce37ab  call     0x1ccaa40   ; InGameBulletManager::BulletFire(InGame.Kernel.InGameManager,System.Collections.Generic.List`1<InGame.Kernel.InGameBulletInterface>,InGame.Kernel.Enemy.BulletTemplate,UnityEngine.Vector3,System.Int32,UnityEngine.Transform,UnityEngine.Transform,InGame.Kernel.InGameEnemyMoveBase,System.Single,System.Single,System.Single,System.Action`1<InGame.Kernel.InGameBulletInterface>)
+01ce37b0  mov      r14, qword ptr [rsp + 0xc8]   ; ._pauseLabel
+01ce37b8  mov      rdi, qword ptr [rsp + 0xc0]   ; ._collisionArea
+01ce37c0  add      rsp, 0xa0
+01ce37c7  pop      rsi
+01ce37c8  pop      rbp
+01ce37c9  pop      rbx
+01ce37ca  ret      
+01ce37cb  call     0x4e0d00
+01ce37d0  int3     
+01ce37d1  call     0x4e0cf0

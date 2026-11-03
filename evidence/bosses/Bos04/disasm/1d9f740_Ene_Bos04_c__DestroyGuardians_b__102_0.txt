@@ -1,0 +1,21 @@
+== System.Boolean InGame.Kernel.Enemy.Ene_Bos04/<>c::<DestroyGuardians>b__102_0(InGame.Kernel.Enemy.PawnEnemy) RVA 1d9f740 len 50
+01d9f740 push       rbx
+01d9f742 sub        rsp, 0x20
+01d9f746 cmp        byte ptr [rip + 0x28c407e], 0 ; [.data 46637cb]
+01d9f74d mov        rbx, rdx
+01d9f750 jne        0x1d9f765
+01d9f752 lea        rcx, [rip + 0x2620def] ; [.data 43c0548] STR "Pf_Ene_Bos04_bit"
+01d9f759 call       0x4e0a50
+01d9f75e mov        byte ptr [rip + 0x28c4066], 1 ; [.data 46637cb]
+01d9f765 test       rbx, rbx
+01d9f768 je         0x1d9f78b
+01d9f76a xor        edx, edx
+01d9f76c mov        rcx, rbx
+01d9f76f call       0x306d260 ; UnityEngine.Object::get_name()
+01d9f774 mov        rdx, qword ptr [rip + 0x2620dcd] ; [.data 43c0548] STR "Pf_Ene_Bos04_bit"
+01d9f77b xor        r8d, r8d
+01d9f77e mov        rcx, rax
+01d9f781 add        rsp, 0x20
+01d9f785 pop        rbx
+01d9f786 jmp        0x1e80f20 ; System.String::Equals(System.String,System.String) || System.String::op_Equality(System.String,System.String)
+01d9f78b call       0x4e0d00

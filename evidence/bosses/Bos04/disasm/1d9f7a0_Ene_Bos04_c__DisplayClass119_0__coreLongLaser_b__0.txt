@@ -1,0 +1,37 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04/<>c__DisplayClass119_0::<coreLongLaser>b__0(InGame.Kernel.InGameBulletInterface) RVA 1d9f7a0 len 8e
+01d9f7a0 mov        qword ptr [rsp + 8], rbx
+01d9f7a5 push       rdi
+01d9f7a6 sub        rsp, 0x20
+01d9f7aa cmp        byte ptr [rip + 0x28c401b], 0 ; [.data 46637cc]
+01d9f7b1 mov        rdi, rdx
+01d9f7b4 mov        rbx, rcx
+01d9f7b7 jne        0x1d9f7cc
+01d9f7b9 lea        rcx, [rip + 0x2613e68] ; [.data 43b3628] TypeInfo#37392
+01d9f7c0 call       0x4e0a50
+01d9f7c5 mov        byte ptr [rip + 0x28c4000], 1 ; [.data 46637cc]
+01d9f7cc cmp        byte ptr [rbx + 0x10], 0
+01d9f7d0 jne        0x1d9f81f
+01d9f7d2 test       rdi, rdi
+01d9f7d5 je         0x1d9f823
+01d9f7d7 mov        rdx, qword ptr [rip + 0x2613e4a] ; [.data 43b3628] TypeInfo#37392
+01d9f7de mov        r8, qword ptr [rdi]
+01d9f7e1 movzx      eax, byte ptr [rdx + 0x130] ; ~_causeOfDeath
+01d9f7e8 cmp        byte ptr [r8 + 0x130], al ; ~_causeOfDeath
+01d9f7ef jb         0x1d9f823
+01d9f7f1 movzx      ecx, al
+01d9f7f4 mov        rax, qword ptr [r8 + 0xc8] ; ~_burnShakeSpeed
+01d9f7fb cmp        qword ptr [rax + rcx*8 - 8], rdx
+01d9f800 jne        0x1d9f823
+01d9f802 mov        edx, 0xffffffff
+01d9f807 xor        r9d, r9d
+01d9f80a mov        r8d, edx
+01d9f80d mov        rcx, rdi
+01d9f810 mov        rbx, qword ptr [rsp + 0x30]
+01d9f815 add        rsp, 0x20
+01d9f819 pop        rdi
+01d9f81a jmp        0x1d687e0 ; InGame.Kernel.Enemy.EnemyLaserCollision::SetSoundId(TXEKernel.Sound.SoundUtility/ID,TXEKernel.Sound.SoundUtility/ID)
+01d9f81f mov        byte ptr [rbx + 0x10], 0
+01d9f823 mov        rbx, qword ptr [rsp + 0x30]
+01d9f828 add        rsp, 0x20
+01d9f82c pop        rdi
+01d9f82d ret        

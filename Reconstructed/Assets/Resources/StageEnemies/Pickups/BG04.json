@@ -1,0 +1,663 @@
+{
+ "start": {
+  "x": 0.0,
+  "y": 0.0,
+  "z": 100.0
+ },
+ "initialSpeed": 40.0,
+ "cruiseSpeed": 11.5,
+ "slowSeconds": 2.0,
+ "duration": 20.0,
+ "health": 1,
+ "events": [
+  {
+   "time": 0.5,
+   "kind": 13,
+   "source": "ローカルテーブル 上",
+   "offset": {
+    "x": -25.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 0.5,
+   "kind": 11,
+   "source": "ローカルテーブル 上",
+   "offset": {
+    "x": 25.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 1.0,
+   "kind": 16,
+   "source": "ローカルテーブル 上",
+   "offset": {
+    "x": 0.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 2.0,
+   "kind": 9,
+   "source": "SpeedUp 上",
+   "offset": {
+    "x": -120.0,
+    "y": 2.0,
+    "z": 5.0
+   },
+   "table": false
+  },
+  {
+   "time": 2.0,
+   "kind": 0,
+   "source": "PowerUp 上",
+   "offset": {
+    "x": 120.0,
+    "y": 2.0,
+    "z": 5.0
+   },
+   "table": false
+  },
+  {
+   "time": 32.0,
+   "kind": 14,
+   "source": "ローカルテーブル 上",
+   "offset": {
+    "x": -50.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 32.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": 50.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 37.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": -100.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 37.0,
+   "kind": 16,
+   "source": "ローカルテーブル 上",
+   "offset": {
+    "x": 100.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 45.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": 0.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 47.0,
+   "kind": 10,
+   "source": "ローカルテーブル 上",
+   "offset": {
+    "x": 0.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 49.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": 0.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 78.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": -50.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 78.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": 0.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 78.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": 50.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 80.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": -25.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 80.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": 25.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 82.0,
+   "kind": 15,
+   "source": "ローカルテーブル 上",
+   "offset": {
+    "x": 0.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 122.0,
+   "kind": 15,
+   "source": "ArmNormal 上",
+   "offset": {
+    "x": -60.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 122.0,
+   "kind": 15,
+   "source": "ArmNormal 上",
+   "offset": {
+    "x": 60.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 124.0,
+   "kind": 12,
+   "source": "ArmGold 上",
+   "offset": {
+    "x": -40.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 124.0,
+   "kind": 10,
+   "source": "ArmBlack 上",
+   "offset": {
+    "x": 40.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 126.0,
+   "kind": 14,
+   "source": "ArmGlow 上",
+   "offset": {
+    "x": -80.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 126.0,
+   "kind": 13,
+   "source": "ArmBeam 上",
+   "offset": {
+    "x": -20.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 126.0,
+   "kind": 11,
+   "source": "ArmLaser 上",
+   "offset": {
+    "x": 20.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 126.0,
+   "kind": 16,
+   "source": "ArmHorming 上",
+   "offset": {
+    "x": 80.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 128.0,
+   "kind": 0,
+   "source": "PowerUp 上",
+   "offset": {
+    "x": -100.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 128.0,
+   "kind": 15,
+   "source": "ArmNormal 上",
+   "offset": {
+    "x": -60.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 128.0,
+   "kind": 7,
+   "source": "BombStock 上",
+   "offset": {
+    "x": 0.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 128.0,
+   "kind": 15,
+   "source": "ArmNormal 上",
+   "offset": {
+    "x": 60.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 128.0,
+   "kind": 0,
+   "source": "PowerUp 上",
+   "offset": {
+    "x": 100.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 130.0,
+   "kind": 13,
+   "source": "ArmBeam 上",
+   "offset": {
+    "x": -80.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 130.0,
+   "kind": 11,
+   "source": "ArmLaser 上",
+   "offset": {
+    "x": -20.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 130.0,
+   "kind": 13,
+   "source": "ArmBeam 上",
+   "offset": {
+    "x": 20.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 130.0,
+   "kind": 11,
+   "source": "ArmLaser 上",
+   "offset": {
+    "x": 80.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 132.0,
+   "kind": 9,
+   "source": "SpeedUp 上",
+   "offset": {
+    "x": -40.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 132.0,
+   "kind": 9,
+   "source": "SpeedUp 上",
+   "offset": {
+    "x": 40.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 134.0,
+   "kind": 14,
+   "source": "ArmGlow 上",
+   "offset": {
+    "x": -80.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 134.0,
+   "kind": 12,
+   "source": "ArmGold 上",
+   "offset": {
+    "x": -20.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 134.0,
+   "kind": 10,
+   "source": "ArmBlack 上",
+   "offset": {
+    "x": 20.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 134.0,
+   "kind": 16,
+   "source": "ArmHorming 上",
+   "offset": {
+    "x": 80.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 136.0,
+   "kind": 0,
+   "source": "PowerUp 上",
+   "offset": {
+    "x": -100.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 136.0,
+   "kind": 15,
+   "source": "ArmNormal 上",
+   "offset": {
+    "x": -60.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 136.0,
+   "kind": 7,
+   "source": "BombStock 上",
+   "offset": {
+    "x": 0.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 136.0,
+   "kind": 15,
+   "source": "ArmNormal 上",
+   "offset": {
+    "x": 60.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 136.0,
+   "kind": 0,
+   "source": "PowerUp 上",
+   "offset": {
+    "x": 100.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 138.0,
+   "kind": 11,
+   "source": "ArmLaser 上",
+   "offset": {
+    "x": -80.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 138.0,
+   "kind": 13,
+   "source": "ArmBeam 上",
+   "offset": {
+    "x": -20.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 138.0,
+   "kind": 11,
+   "source": "ArmLaser 上",
+   "offset": {
+    "x": 20.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 138.0,
+   "kind": 13,
+   "source": "ArmBeam 上",
+   "offset": {
+    "x": 80.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 140.0,
+   "kind": 12,
+   "source": "ArmGold 上",
+   "offset": {
+    "x": -40.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 140.0,
+   "kind": 10,
+   "source": "ArmBlack 上",
+   "offset": {
+    "x": 40.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 142.0,
+   "kind": 15,
+   "source": "ArmNormal 上",
+   "offset": {
+    "x": -60.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 142.0,
+   "kind": 15,
+   "source": "ArmNormal 上",
+   "offset": {
+    "x": 60.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 412.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": -50.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 412.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": 50.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 414.0,
+   "kind": 0,
+   "source": "ReferenceTable 上",
+   "offset": {
+    "x": 0.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": true
+  },
+  {
+   "time": 416.0,
+   "kind": 12,
+   "source": "ローカルテーブル 上",
+   "offset": {
+    "x": -80.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  },
+  {
+   "time": 416.0,
+   "kind": 10,
+   "source": "ローカルテーブル 上",
+   "offset": {
+    "x": 80.0,
+    "y": 2.0,
+    "z": 0.0
+   },
+   "table": false
+  }
+ ]
+}

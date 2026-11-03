@@ -1,0 +1,574 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04::.cctor() RVA 1d91090 len c41
+01d91090 mov        qword ptr [rsp + 8], rbx
+01d91095 push       rbp
+01d91096 mov        rbp, rsp
+01d91099 sub        rsp, 0x80
+01d910a0 cmp        byte ptr [rip + 0x28d2720], 0 ; [.data 46637c7]
+01d910a7 jne        0x1d911d4
+01d910ad lea        rcx, [rip + 0x2620744] ; [.data 43b17f8] TypeInfo#37303
+01d910b4 call       0x4e0a50
+01d910b9 lea        rcx, [rip + 0x25eaa70] ; [.data 437bb30] TypeInfo#32525
+01d910c0 call       0x4e0a50
+01d910c5 lea        rcx, [rip + 0x25e1e4c] ; [.data 4372f18] MethodRef#87114
+01d910cc call       0x4e0a50
+01d910d1 lea        rcx, [rip + 0x25e1cd0] ; [.data 4372da8] MethodRef#87111
+01d910d8 call       0x4e0a50
+01d910dd lea        rcx, [rip + 0x26223a4] ; [.data 43b3488] TypeInfo#21960
+01d910e4 call       0x4e0a50
+01d910e9 lea        rcx, [rip + 0x25df820] ; [.data 4370910] TypeInfo#72329
+01d910f0 call       0x4e0a50
+01d910f5 lea        rcx, [rip + 0x25e2484] ; [.data 4373580] TypeInfo#32047
+01d910fc call       0x4e0a50
+01d91101 lea        rcx, [rip + 0x263ef50] ; [.data 43d0058] STR "Boss04/bos04bit0"
+01d91108 call       0x4e0a50
+01d9110d lea        rcx, [rip + 0x262ac2c] ; [.data 43bbd40] STR "bos04_bitR"
+01d91114 call       0x4e0a50
+01d91119 lea        rcx, [rip + 0x262ae48] ; [.data 43bbf68] STR "bos04_sg00R"
+01d91120 call       0x4e0a50
+01d91125 lea        rcx, [rip + 0x262b064] ; [.data 43bc190] STR "boss/boss04sgR"
+01d9112c call       0x4e0a50
+01d91131 lea        rcx, [rip + 0x262f410] ; [.data 43c0548] STR "Pf_Ene_Bos04_bit"
+01d91138 call       0x4e0a50
+01d9113d lea        rcx, [rip + 0x262ad6c] ; [.data 43bbeb0] STR "bos04_sg00L"
+01d91144 call       0x4e0a50
+01d91149 lea        rcx, [rip + 0x263f410] ; [.data 43d0560] STR "Boss04/bos04p6sl"
+01d91150 call       0x4e0a50
+01d91155 lea        rcx, [rip + 0x263efb4] ; [.data 43d0110] STR "Boss04/bos04laser"
+01d9115c call       0x4e0a50
+01d91161 lea        rcx, [rip + 0x263f288] ; [.data 43d03f0] STR "Boss04/bos04p5way3s"
+01d91168 call       0x4e0a50
+01d9116d lea        rcx, [rip + 0x263f1c4] ; [.data 43d0338] STR "Boss04/bos04p5way3"
+01d91174 call       0x4e0a50
+01d91179 lea        rcx, [rip + 0x263f100] ; [.data 43d0280] STR "Boss04/bos04p1way3r"
+01d91180 call       0x4e0a50
+01d91185 lea        rcx, [rip + 0x262af4c] ; [.data 43bc0d8] STR "boss/boss04sgL"
+01d9118c call       0x4e0a50
+01d91191 lea        rcx, [rip + 0x262f520] ; [.data 43c06b8] STR "Pf_Ene_Sg01"
+01d91198 call       0x4e0a50
+01d9119d lea        rcx, [rip + 0x263f304] ; [.data 43d04a8] STR "Boss04/bos04p6rs"
+01d911a4 call       0x4e0a50
+01d911a9 lea        rcx, [rip + 0x262aad8] ; [.data 43bbc88] STR "bos04_bitL"
+01d911b0 call       0x4e0a50
+01d911b5 lea        rcx, [rip + 0x262ac3c] ; [.data 43bbdf8] STR "bos04_sg00C"
+01d911bc call       0x4e0a50
+01d911c1 lea        rcx, [rip + 0x263f000] ; [.data 43d01c8] STR "Boss04/bos04p1way3l"
+01d911c8 call       0x4e0a50
+01d911cd mov        byte ptr [rip + 0x28d25f3], 1 ; [.data 46637c7]
+01d911d4 mov        rcx, qword ptr [rip + 0x25ea955] ; [.data 437bb30] TypeInfo#32525
+01d911db mov        edx, 2
+01d911e0 call       0x4dfe00
+01d911e5 mov        rdx, qword ptr [rip + 0x262f4cc] ; [.data 43c06b8] STR "Pf_Ene_Sg01"
+01d911ec lea        rcx, [rbp - 0x30]
+01d911f0 mov        rbx, rax
+01d911f3 xorps      xmm0, xmm0
+01d911f6 xor        eax, eax
+01d911f8 mov        r9d, 0x64
+01d911fe xor        r8d, r8d
+01d91201 mov        qword ptr [rbp - 0x20], rax
+01d91205 mov        qword ptr [rsp + 0x20], rax
+01d9120a movups     xmmword ptr [rbp - 0x30], xmm0
+01d9120e call       0x1311700 ; InGame.Kernel.Enemy.PawnEnemy/EnemyChildData::.ctor(System.String,UnityEngine.Transform,System.Int32)
+01d91213 test       rbx, rbx
+01d91216 je         0x1d91cc6
+01d9121c cmp        dword ptr [rbx + 0x18], 0
+01d91220 jbe        0x1d91ccc
+01d91226 movups     xmm0, xmmword ptr [rbp - 0x30]
+01d9122a lea        rcx, [rbx + 0x20]
+01d9122e xor        edx, edx
+01d91230 movups     xmmword ptr [rbx + 0x20], xmm0
+01d91234 movsd      xmm1, qword ptr [rbp - 0x20]
+01d91239 movsd      qword ptr [rbx + 0x30], xmm1
+01d9123e call       0x4dfd80
+01d91243 mov        rdx, qword ptr [rip + 0x262f2fe] ; [.data 43c0548] STR "Pf_Ene_Bos04_bit"
+01d9124a lea        rcx, [rbp - 0x18]
+01d9124e xor        eax, eax
+01d91250 xorps      xmm0, xmm0
+01d91253 mov        r9d, 2
+01d91259 mov        qword ptr [rbp - 8], rax
+01d9125d xor        r8d, r8d
+01d91260 mov        qword ptr [rsp + 0x20], rax
+01d91265 movups     xmmword ptr [rbp - 0x18], xmm0
+01d91269 call       0x1311700 ; InGame.Kernel.Enemy.PawnEnemy/EnemyChildData::.ctor(System.String,UnityEngine.Transform,System.Int32)
+01d9126e cmp        dword ptr [rbx + 0x18], 1
+01d91272 jbe        0x1d91ccc
+01d91278 movups     xmm0, xmmword ptr [rbp - 0x18]
+01d9127c lea        rcx, [rbx + 0x38]
+01d91280 xor        edx, edx
+01d91282 movups     xmmword ptr [rbx + 0x38], xmm0
+01d91286 movsd      xmm1, qword ptr [rbp - 8]
+01d9128b movsd      qword ptr [rbx + 0x48], xmm1
+01d91290 call       0x4dfd80
+01d91295 mov        rax, qword ptr [rip + 0x262055c] ; [.data 43b17f8] TypeInfo#37303
+01d9129c mov        rdx, rbx
+01d9129f mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d912a6 mov        qword ptr [rcx], rbx
+01d912a9 mov        rcx, qword ptr [rip + 0x2620548] ; [.data 43b17f8] TypeInfo#37303
+01d912b0 mov        rcx, qword ptr [rcx + 0xb8] ; ~_mover
+01d912b7 call       0x4dfd80
+01d912bc mov        rcx, qword ptr [rip + 0x25e22bd] ; [.data 4373580] TypeInfo#32047
+01d912c3 mov        edx, 8
+01d912c8 call       0x4dfe00
+01d912cd mov        rbx, rax
+01d912d0 test       rax, rax
+01d912d3 je         0x1d91cc6
+01d912d9 cmp        dword ptr [rax + 0x18], 0
+01d912dd mov        rdx, qword ptr [rip + 0x263ed74] ; [.data 43d0058] STR "Boss04/bos04bit0"
+01d912e4 jbe        0x1d91ccc
+01d912ea lea        rcx, [rax + 0x20]
+01d912ee mov        qword ptr [rax + 0x20], rdx
+01d912f2 call       0x4dfd80
+01d912f7 cmp        dword ptr [rbx + 0x18], 1
+01d912fb mov        rdx, qword ptr [rip + 0x263eec6] ; [.data 43d01c8] STR "Boss04/bos04p1way3l"
+01d91302 jbe        0x1d91ccc
+01d91308 lea        rcx, [rbx + 0x28]
+01d9130c mov        qword ptr [rbx + 0x28], rdx
+01d91310 call       0x4dfd80
+01d91315 cmp        dword ptr [rbx + 0x18], 2
+01d91319 mov        rdx, qword ptr [rip + 0x263ef60] ; [.data 43d0280] STR "Boss04/bos04p1way3r"
+01d91320 jbe        0x1d91ccc
+01d91326 lea        rcx, [rbx + 0x30]
+01d9132a mov        qword ptr [rbx + 0x30], rdx
+01d9132e call       0x4dfd80
+01d91333 cmp        dword ptr [rbx + 0x18], 3
+01d91337 mov        rdx, qword ptr [rip + 0x263edd2] ; [.data 43d0110] STR "Boss04/bos04laser"
+01d9133e jbe        0x1d91ccc
+01d91344 lea        rcx, [rbx + 0x38]
+01d91348 mov        qword ptr [rbx + 0x38], rdx
+01d9134c call       0x4dfd80
+01d91351 cmp        dword ptr [rbx + 0x18], 4
+01d91355 mov        rdx, qword ptr [rip + 0x263f204] ; [.data 43d0560] STR "Boss04/bos04p6sl"
+01d9135c jbe        0x1d91ccc
+01d91362 lea        rcx, [rbx + 0x40]
+01d91366 mov        qword ptr [rbx + 0x40], rdx
+01d9136a call       0x4dfd80
+01d9136f cmp        dword ptr [rbx + 0x18], 5
+01d91373 mov        rdx, qword ptr [rip + 0x263f12e] ; [.data 43d04a8] STR "Boss04/bos04p6rs"
+01d9137a jbe        0x1d91ccc
+01d91380 lea        rcx, [rbx + 0x48]
+01d91384 mov        qword ptr [rbx + 0x48], rdx
+01d91388 call       0x4dfd80
+01d9138d cmp        dword ptr [rbx + 0x18], 6
+01d91391 mov        rdx, qword ptr [rip + 0x263efa0] ; [.data 43d0338] STR "Boss04/bos04p5way3"
+01d91398 jbe        0x1d91ccc
+01d9139e lea        rcx, [rbx + 0x50]
+01d913a2 mov        qword ptr [rbx + 0x50], rdx
+01d913a6 call       0x4dfd80
+01d913ab cmp        dword ptr [rbx + 0x18], 7
+01d913af mov        rdx, qword ptr [rip + 0x263f03a] ; [.data 43d03f0] STR "Boss04/bos04p5way3s"
+01d913b6 jbe        0x1d91ccc
+01d913bc lea        rcx, [rbx + 0x58]
+01d913c0 mov        qword ptr [rbx + 0x58], rdx
+01d913c4 call       0x4dfd80
+01d913c9 mov        rax, qword ptr [rip + 0x2620428] ; [.data 43b17f8] TypeInfo#37303
+01d913d0 mov        rdx, rbx
+01d913d3 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d913da mov        qword ptr [rcx + 8], rbx
+01d913de mov        rax, qword ptr [rip + 0x2620413] ; [.data 43b17f8] TypeInfo#37303
+01d913e5 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d913ec add        rcx, 8
+01d913f0 call       0x4dfd80
+01d913f5 mov        rcx, qword ptr [rip + 0x25e2184] ; [.data 4373580] TypeInfo#32047
+01d913fc mov        edx, 5
+01d91401 call       0x4dfe00
+01d91406 mov        rbx, rax
+01d91409 test       rax, rax
+01d9140c je         0x1d91cc6
+01d91412 cmp        dword ptr [rax + 0x18], 0
+01d91416 mov        rdx, qword ptr [rip + 0x262a86b] ; [.data 43bbc88] STR "bos04_bitL"
+01d9141d jbe        0x1d91ccc
+01d91423 lea        rcx, [rax + 0x20]
+01d91427 mov        qword ptr [rax + 0x20], rdx
+01d9142b call       0x4dfd80
+01d91430 cmp        dword ptr [rbx + 0x18], 1
+01d91434 mov        rdx, qword ptr [rip + 0x262a905] ; [.data 43bbd40] STR "bos04_bitR"
+01d9143b jbe        0x1d91ccc
+01d91441 lea        rcx, [rbx + 0x28]
+01d91445 mov        qword ptr [rbx + 0x28], rdx
+01d91449 call       0x4dfd80
+01d9144e cmp        dword ptr [rbx + 0x18], 2
+01d91452 mov        rdx, qword ptr [rip + 0x262aa57] ; [.data 43bbeb0] STR "bos04_sg00L"
+01d91459 jbe        0x1d91ccc
+01d9145f lea        rcx, [rbx + 0x30]
+01d91463 mov        qword ptr [rbx + 0x30], rdx
+01d91467 call       0x4dfd80
+01d9146c cmp        dword ptr [rbx + 0x18], 3
+01d91470 mov        rdx, qword ptr [rip + 0x262aaf1] ; [.data 43bbf68] STR "bos04_sg00R"
+01d91477 jbe        0x1d91ccc
+01d9147d lea        rcx, [rbx + 0x38]
+01d91481 mov        qword ptr [rbx + 0x38], rdx
+01d91485 call       0x4dfd80
+01d9148a cmp        dword ptr [rbx + 0x18], 4
+01d9148e mov        rdx, qword ptr [rip + 0x262a963] ; [.data 43bbdf8] STR "bos04_sg00C"
+01d91495 jbe        0x1d91ccc
+01d9149b lea        rcx, [rbx + 0x40]
+01d9149f mov        qword ptr [rbx + 0x40], rdx
+01d914a3 call       0x4dfd80
+01d914a8 mov        rax, qword ptr [rip + 0x2620349] ; [.data 43b17f8] TypeInfo#37303
+01d914af mov        rdx, rbx
+01d914b2 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d914b9 mov        qword ptr [rcx + 0x10], rbx
+01d914bd mov        rax, qword ptr [rip + 0x2620334] ; [.data 43b17f8] TypeInfo#37303
+01d914c4 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d914cb add        rcx, 0x10
+01d914cf call       0x4dfd80
+01d914d4 mov        rcx, qword ptr [rip + 0x25e20a5] ; [.data 4373580] TypeInfo#32047
+01d914db mov        edx, 2
+01d914e0 call       0x4dfe00
+01d914e5 mov        rbx, rax
+01d914e8 test       rax, rax
+01d914eb je         0x1d91cc6
+01d914f1 cmp        dword ptr [rax + 0x18], 0
+01d914f5 mov        rdx, qword ptr [rip + 0x262ac94] ; [.data 43bc190] STR "boss/boss04sgR"
+01d914fc jbe        0x1d91ccc
+01d91502 lea        rcx, [rax + 0x20]
+01d91506 mov        qword ptr [rax + 0x20], rdx
+01d9150a call       0x4dfd80
+01d9150f cmp        dword ptr [rbx + 0x18], 1
+01d91513 mov        rdx, qword ptr [rip + 0x262abbe] ; [.data 43bc0d8] STR "boss/boss04sgL"
+01d9151a jbe        0x1d91ccc
+01d91520 lea        rcx, [rbx + 0x28]
+01d91524 mov        qword ptr [rbx + 0x28], rdx
+01d91528 call       0x4dfd80
+01d9152d mov        rax, qword ptr [rip + 0x26202c4] ; [.data 43b17f8] TypeInfo#37303
+01d91534 mov        rdx, rbx
+01d91537 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d9153e mov        qword ptr [rcx + 0x18], rbx
+01d91542 mov        rax, qword ptr [rip + 0x26202af] ; [.data 43b17f8] TypeInfo#37303
+01d91549 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d91550 add        rcx, 0x18
+01d91554 call       0x4dfd80
+01d91559 mov        rax, qword ptr [rip + 0x2620298] ; [.data 43b17f8] TypeInfo#37303
+01d91560 xorps      xmm0, xmm0
+01d91563 movss      xmm2, dword ptr [rip + 0x1861649] ; [.rdata 35f2bb4] f=30.0 d=34359746808.0 v4=['30', '40', '50', '99.9']
+01d9156b xorps      xmm3, xmm3
+01d9156e movss      xmm1, dword ptr [rip + 0x1861882] ; [.rdata 35f2df8] f=-80.0 d=7.993609844134609e-16 v4=['-80', '0.025', '0.55', '0.85']
+01d91576 mov        edx, 8
+01d9157b unpcklps   xmm0, xmm1
+01d9157e mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d91585 mov        dword ptr [rcx + 0x20], 4
+01d9158c mov        rax, qword ptr [rip + 0x2620265] ; [.data 43b17f8] TypeInfo#37303
+01d91593 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d9159a movsd      qword ptr [rcx + 0x24], xmm0
+01d9159f xorps      xmm0, xmm0
+01d915a2 movss      dword ptr [rcx + 0x2c], xmm2
+01d915a7 mov        rax, qword ptr [rip + 0x262024a] ; [.data 43b17f8] TypeInfo#37303
+01d915ae movss      xmm2, dword ptr [rip + 0x174f626] ; [.rdata 34e0bdc] f=20.0 d=727846620416.0 v4=['20', '57.2958', '100', '180']
+01d915b6 unpcklps   xmm0, xmm3
+01d915b9 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d915c0 movsd      qword ptr [rcx + 0x30], xmm0
+01d915c5 movss      dword ptr [rcx + 0x38], xmm2
+01d915ca mov        rcx, qword ptr [rip + 0x25df33f] ; [.data 4370910] TypeInfo#72329
+01d915d1 call       0x4dfe00
+01d915d6 xor        r8d, r8d
+01d915d9 mov        qword ptr [rbp - 0x50], 0
+01d915e1 lea        rdx, [rbp - 0x50]
+01d915e5 mov        dword ptr [rbp - 0x48], 0
+01d915ec lea        rcx, [rbp - 0x40]
+01d915f0 mov        rbx, rax
+01d915f3 call       0x304d890 ; UnityEngine.Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01d915f8 test       rbx, rbx
+01d915fb je         0x1d91cc6
+01d91601 cmp        dword ptr [rbx + 0x18], 0
+01d91605 jbe        0x1d91ccc
+01d9160b movups     xmm0, xmmword ptr [rax]
+01d9160e xor        r8d, r8d
+01d91611 mov        qword ptr [rbp - 0x50], 0x3fc90fdb
+01d91619 lea        rdx, [rbp - 0x50]
+01d9161d mov        dword ptr [rbp - 0x48], 0
+01d91624 lea        rcx, [rbp - 0x40]
+01d91628 movups     xmmword ptr [rbx + 0x20], xmm0
+01d9162c call       0x304d890 ; UnityEngine.Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01d91631 cmp        dword ptr [rbx + 0x18], 1
+01d91635 jbe        0x1d91ccc
+01d9163b movups     xmm0, xmmword ptr [rax]
+01d9163e xor        r8d, r8d
+01d91641 mov        qword ptr [rbp - 0x50], 0
+01d91649 lea        rdx, [rbp - 0x50]
+01d9164d mov        dword ptr [rbp - 0x48], 0xbfc90fdb
+01d91654 lea        rcx, [rbp - 0x40]
+01d91658 movups     xmmword ptr [rbx + 0x30], xmm0
+01d9165c call       0x304d890 ; UnityEngine.Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01d91661 cmp        dword ptr [rbx + 0x18], 2
+01d91665 jbe        0x1d91ccc
+01d9166b movups     xmm0, xmmword ptr [rax]
+01d9166e xor        r8d, r8d
+01d91671 mov        dword ptr [rbp - 0x50], 0
+01d91678 lea        rdx, [rbp - 0x50]
+01d9167c mov        dword ptr [rbp - 0x4c], 0xbfc90fdb
+01d91683 lea        rcx, [rbp - 0x40]
+01d91687 mov        dword ptr [rbp - 0x48], 0xbfc90fdb
+01d9168e movups     xmmword ptr [rbx + 0x40], xmm0
+01d91692 call       0x304d890 ; UnityEngine.Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01d91697 cmp        dword ptr [rbx + 0x18], 3
+01d9169b jbe        0x1d91ccc
+01d916a1 movups     xmm0, xmmword ptr [rax]
+01d916a4 xor        r8d, r8d
+01d916a7 mov        qword ptr [rbp - 0x50], 0
+01d916af lea        rdx, [rbp - 0x50]
+01d916b3 mov        dword ptr [rbp - 0x48], 0x3fc90fdb
+01d916ba lea        rcx, [rbp - 0x40]
+01d916be movups     xmmword ptr [rbx + 0x50], xmm0
+01d916c2 call       0x304d890 ; UnityEngine.Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01d916c7 cmp        dword ptr [rbx + 0x18], 4
+01d916cb jbe        0x1d91ccc
+01d916d1 movups     xmm0, xmmword ptr [rax]
+01d916d4 xor        r8d, r8d
+01d916d7 mov        dword ptr [rbp - 0x50], 0
+01d916de lea        rdx, [rbp - 0x50]
+01d916e2 mov        dword ptr [rbp - 0x4c], 0x3fc90fdb
+01d916e9 lea        rcx, [rbp - 0x40]
+01d916ed mov        dword ptr [rbp - 0x48], 0x3fc90fdb
+01d916f4 movups     xmmword ptr [rbx + 0x60], xmm0
+01d916f8 call       0x304d890 ; UnityEngine.Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01d916fd cmp        dword ptr [rbx + 0x18], 5
+01d91701 jbe        0x1d91ccc
+01d91707 movups     xmm0, xmmword ptr [rax]
+01d9170a xor        r8d, r8d
+01d9170d mov        qword ptr [rbp - 0x50], 0
+01d91715 lea        rdx, [rbp - 0x50]
+01d91719 mov        dword ptr [rbp - 0x48], 0x40490fdb
+01d91720 lea        rcx, [rbp - 0x40]
+01d91724 movups     xmmword ptr [rbx + 0x70], xmm0
+01d91728 call       0x304d890 ; UnityEngine.Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01d9172d cmp        dword ptr [rbx + 0x18], 6
+01d91731 jbe        0x1d91ccc
+01d91737 movups     xmm0, xmmword ptr [rax]
+01d9173a xor        r8d, r8d
+01d9173d mov        dword ptr [rbp - 0x50], 0xbfc90fdb
+01d91744 lea        rdx, [rbp - 0x50]
+01d91748 mov        dword ptr [rbp - 0x4c], 0
+01d9174f lea        rcx, [rbp - 0x40]
+01d91753 mov        dword ptr [rbp - 0x48], 0x40490fdb
+01d9175a movups     xmmword ptr [rbx + 0x80], xmm0
+01d91761 call       0x304d890 ; UnityEngine.Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01d91766 cmp        dword ptr [rbx + 0x18], 7
+01d9176a jbe        0x1d91ccc
+01d91770 movups     xmm0, xmmword ptr [rax]
+01d91773 mov        rdx, rbx
+01d91776 movups     xmmword ptr [rbx + 0x90], xmm0 ; ~_priority
+01d9177d mov        rax, qword ptr [rip + 0x2620074] ; [.data 43b17f8] TypeInfo#37303
+01d91784 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d9178b mov        qword ptr [rcx + 0x40], rbx
+01d9178f mov        rax, qword ptr [rip + 0x2620062] ; [.data 43b17f8] TypeInfo#37303
+01d91796 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d9179d add        rcx, 0x40
+01d917a1 call       0x4dfd80
+01d917a6 xor        r8d, r8d
+01d917a9 mov        dword ptr [rbp - 0x50], 0
+01d917b0 lea        rdx, [rbp - 0x50]
+01d917b4 mov        qword ptr [rbp - 0x4c], 0x40490fdb
+01d917bc lea        rcx, [rbp - 0x40]
+01d917c0 call       0x304d890 ; UnityEngine.Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01d917c5 xor        r8d, r8d
+01d917c8 lea        rdx, [rbp - 0x50]
+01d917cc movups     xmm0, xmmword ptr [rax]
+01d917cf mov        rax, qword ptr [rip + 0x2620022] ; [.data 43b17f8] TypeInfo#37303
+01d917d6 mov        qword ptr [rbp - 0x50], 0x3fc90fdb
+01d917de mov        dword ptr [rbp - 0x48], 0
+01d917e5 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d917ec movups     xmmword ptr [rcx + 0x48], xmm0
+01d917f0 lea        rcx, [rbp - 0x40]
+01d917f4 call       0x304d890 ; UnityEngine.Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01d917f9 movups     xmm0, xmmword ptr [rax]
+01d917fc mov        rax, qword ptr [rip + 0x261fff5] ; [.data 43b17f8] TypeInfo#37303
+01d91803 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d9180a movups     xmmword ptr [rcx + 0x58], xmm0
+01d9180e mov        rax, qword ptr [rip + 0x261ffe3] ; [.data 43b17f8] TypeInfo#37303
+01d91815 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d9181c mov        dword ptr [rcx + 0x68], 0x402ccccd
+01d91823 mov        rax, qword ptr [rip + 0x261ffce] ; [.data 43b17f8] TypeInfo#37303
+01d9182a mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d91831 mov        dword ptr [rcx + 0x6c], 0x40a00000
+01d91838 mov        rax, qword ptr [rip + 0x261ffb9] ; [.data 43b17f8] TypeInfo#37303
+01d9183f mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d91846 mov        dword ptr [rcx + 0x70], 1
+01d9184d mov        rax, qword ptr [rip + 0x261ffa4] ; [.data 43b17f8] TypeInfo#37303
+01d91854 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d9185b mov        dword ptr [rcx + 0x74], 0x3f000000
+01d91862 mov        rax, qword ptr [rip + 0x261ff8f] ; [.data 43b17f8] TypeInfo#37303
+01d91869 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d91870 mov        dword ptr [rcx + 0x78], 0x40400000
+01d91877 mov        rax, qword ptr [rip + 0x261ff7a] ; [.data 43b17f8] TypeInfo#37303
+01d9187e mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d91885 mov        dword ptr [rcx + 0x7c], 0x40a00000
+01d9188c mov        rax, qword ptr [rip + 0x261ff65] ; [.data 43b17f8] TypeInfo#37303
+01d91893 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d9189a mov        dword ptr [rcx + 0x80], 0x3e99999a
+01d918a4 mov        rax, qword ptr [rip + 0x261ff4d] ; [.data 43b17f8] TypeInfo#37303
+01d918ab mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d918b2 mov        dword ptr [rcx + 0x84], 0x3e4ccccd
+01d918bc mov        rax, qword ptr [rip + 0x261ff35] ; [.data 43b17f8] TypeInfo#37303
+01d918c3 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d918ca mov        dword ptr [rcx + 0x88], 0x40c00000 ; ~_objectInfo
+01d918d4 mov        rax, qword ptr [rip + 0x261ff1d] ; [.data 43b17f8] TypeInfo#37303
+01d918db mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d918e2 mov        dword ptr [rcx + 0x8c], 0x3e99999a
+01d918ec mov        rax, qword ptr [rip + 0x261ff05] ; [.data 43b17f8] TypeInfo#37303
+01d918f3 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d918fa mov        dword ptr [rcx + 0x90], 0x3f800000 ; ~_priority
+01d91904 mov        rax, qword ptr [rip + 0x261feed] ; [.data 43b17f8] TypeInfo#37303
+01d9190b mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d91912 mov        dword ptr [rcx + 0x94], 0x41000000 ; ~_indexValue
+01d9191c mov        rax, qword ptr [rip + 0x261fed5] ; [.data 43b17f8] TypeInfo#37303
+01d91923 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d9192a mov        dword ptr [rcx + 0x98], 0x43160000 ; ~_invincibleTime
+01d91934 mov        rax, qword ptr [rip + 0x261febd] ; [.data 43b17f8] TypeInfo#37303
+01d9193b mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d91942 mov        dword ptr [rcx + 0x9c], 0x45340000 ; ~_nodamagedTime
+01d9194c mov        rax, qword ptr [rip + 0x261fea5] ; [.data 43b17f8] TypeInfo#37303
+01d91953 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d9195a mov        dword ptr [rcx + 0xa0], 0x41800000 ; ~PoolEvent
+01d91964 mov        rax, qword ptr [rip + 0x261fe8d] ; [.data 43b17f8] TypeInfo#37303
+01d9196b mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d91972 mov        dword ptr [rcx + 0xa4], 0x41800000
+01d9197c mov        rax, qword ptr [rip + 0x261fe75] ; [.data 43b17f8] TypeInfo#37303
+01d91983 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d9198a mov        dword ptr [rcx + 0xa8], 0x41600000 ; ~_updateEvents
+01d91994 mov        rax, qword ptr [rip + 0x261fe5d] ; [.data 43b17f8] TypeInfo#37303
+01d9199b mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d919a2 mov        dword ptr [rcx + 0xac], 0x42100000
+01d919ac mov        rax, qword ptr [rip + 0x261fe45] ; [.data 43b17f8] TypeInfo#37303
+01d919b3 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d919ba mov        dword ptr [rcx + 0xb0], 0x42b40000 ; ~_updateEventCount
+01d919c4 mov        rax, qword ptr [rip + 0x261fe2d] ; [.data 43b17f8] TypeInfo#37303
+01d919cb mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d919d2 mov        dword ptr [rcx + 0xb4], 0x40000000 ; ~_updateLateEventCount
+01d919dc mov        rax, qword ptr [rip + 0x261fe15] ; [.data 43b17f8] TypeInfo#37303
+01d919e3 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d919ea mov        dword ptr [rcx + 0xb8], 0x40800000 ; ~_mover
+01d919f4 mov        rax, qword ptr [rip + 0x261fdfd] ; [.data 43b17f8] TypeInfo#37303
+01d919fb mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d91a02 mov        dword ptr [rcx + 0xbc], 0x40400000
+01d91a0c mov        rax, qword ptr [rip + 0x261fde5] ; [.data 43b17f8] TypeInfo#37303
+01d91a13 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d91a1a mov        dword ptr [rcx + 0xc0], 0x40200000 ; ~_burnShake
+01d91a24 mov        rax, qword ptr [rip + 0x261fdcd] ; [.data 43b17f8] TypeInfo#37303
+01d91a2b mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d91a32 mov        dword ptr [rcx + 0xc4], 0x40000000 ; ~_burnShakePow
+01d91a3c mov        rax, qword ptr [rip + 0x261fdb5] ; [.data 43b17f8] TypeInfo#37303
+01d91a43 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d91a4a mov        dword ptr [rcx + 0xc8], 0x41600000 ; ~_burnShakeSpeed
+01d91a54 mov        rcx, qword ptr [rip + 0x2621a2d] ; [.data 43b3488] TypeInfo#21960
+01d91a5b call       0x4e0cb0
+01d91a60 mov        rdx, qword ptr [rip + 0x25e1341] ; [.data 4372da8] MethodRef#87111
+01d91a67 mov        rcx, rax
+01d91a6a mov        rbx, rax
+01d91a6d call       0xb16050 ; System.Collections.Generic.List`1::.ctor() || System.Collections.Generic.LowLevelList`1::.ctor()
+01d91a72 test       rbx, rbx
+01d91a75 je         0x1d91cc6
+01d91a7b mov        rax, qword ptr [rip + 0x25e1496] ; [.data 4372f18] MethodRef#87114
+01d91a82 inc        dword ptr [rbx + 0x1c]
+01d91a85 mov        rdx, qword ptr [rbx + 0x10]
+01d91a89 test       rdx, rdx
+01d91a8c je         0x1d91cc6
+01d91a92 movsxd     rcx, dword ptr [rbx + 0x18]
+01d91a96 cmp        ecx, dword ptr [rdx + 0x18]
+01d91a99 jb         0x1d91abc
+01d91a9b mov        rax, qword ptr [rax + 0x20]
+01d91a9f mov        rcx, rbx
+01d91aa2 movss      xmm1, dword ptr [rip + 0x1861232] ; [.rdata 35f2cdc] f=45.0 d=1099511898944.0 v4=['45', '60', '120', '300']
+01d91aaa mov        r8, qword ptr [rax + 0xc0] ; ~_burnShake
+01d91ab1 mov        r8, qword ptr [r8 + 0x70]
+01d91ab5 call       0xc1be40
+01d91aba jmp        0x1d91ad3
+01d91abc lea        eax, [rcx + 1]
+01d91abf mov        dword ptr [rbx + 0x18], eax
+01d91ac2 cmp        ecx, dword ptr [rdx + 0x18]
+01d91ac5 jae        0x1d91ccc
+01d91acb mov        dword ptr [rdx + rcx*4 + 0x20], 0x42340000
+01d91ad3 mov        r8, qword ptr [rip + 0x25e143e] ; [.data 4372f18] MethodRef#87114
+01d91ada inc        dword ptr [rbx + 0x1c]
+01d91add mov        rdx, qword ptr [rbx + 0x10]
+01d91ae1 test       rdx, rdx
+01d91ae4 je         0x1d91cc6
+01d91aea movsxd     rcx, dword ptr [rbx + 0x18]
+01d91aee cmp        ecx, dword ptr [rdx + 0x18]
+01d91af1 jb         0x1d91b14
+01d91af3 mov        rax, qword ptr [r8 + 0x20]
+01d91af7 mov        rcx, rbx
+01d91afa movss      xmm1, dword ptr [rip + 0x18612d2] ; [.rdata 35f2dd4] f=135.0 d=1548112653041664.0 v4=['135', '150', '-0', '-25']
+01d91b02 mov        r8, qword ptr [rax + 0xc0] ; ~_burnShake
+01d91b09 mov        r8, qword ptr [r8 + 0x70]
+01d91b0d call       0xc1be40
+01d91b12 jmp        0x1d91b2b
+01d91b14 lea        eax, [rcx + 1]
+01d91b17 mov        dword ptr [rbx + 0x18], eax
+01d91b1a cmp        ecx, dword ptr [rdx + 0x18]
+01d91b1d jae        0x1d91ccc
+01d91b23 mov        dword ptr [rdx + rcx*4 + 0x20], 0x43070000
+01d91b2b mov        r8, qword ptr [rip + 0x25e13e6] ; [.data 4372f18] MethodRef#87114
+01d91b32 inc        dword ptr [rbx + 0x1c]
+01d91b35 mov        rdx, qword ptr [rbx + 0x10]
+01d91b39 test       rdx, rdx
+01d91b3c je         0x1d91cc6
+01d91b42 movsxd     rcx, dword ptr [rbx + 0x18]
+01d91b46 cmp        ecx, dword ptr [rdx + 0x18]
+01d91b49 jb         0x1d91b6c
+01d91b4b mov        rax, qword ptr [r8 + 0x20]
+01d91b4f mov        rcx, rbx
+01d91b52 movss      xmm1, dword ptr [rip + 0x18612b2] ; [.rdata 35f2e0c] f=225.0 d=5.314248283772682e+17 v4=['225', '315', '-5', '1.84438e+28']
+01d91b5a mov        r8, qword ptr [rax + 0xc0] ; ~_burnShake
+01d91b61 mov        r8, qword ptr [r8 + 0x70]
+01d91b65 call       0xc1be40
+01d91b6a jmp        0x1d91b83
+01d91b6c lea        eax, [rcx + 1]
+01d91b6f mov        dword ptr [rbx + 0x18], eax
+01d91b72 cmp        ecx, dword ptr [rdx + 0x18]
+01d91b75 jae        0x1d91ccc
+01d91b7b mov        dword ptr [rdx + rcx*4 + 0x20], 0x43610000
+01d91b83 mov        r8, qword ptr [rip + 0x25e138e] ; [.data 4372f18] MethodRef#87114
+01d91b8a inc        dword ptr [rbx + 0x1c]
+01d91b8d mov        rdx, qword ptr [rbx + 0x10]
+01d91b91 test       rdx, rdx
+01d91b94 je         0x1d91cc6
+01d91b9a movsxd     rcx, dword ptr [rbx + 0x18]
+01d91b9e cmp        ecx, dword ptr [rdx + 0x18]
+01d91ba1 jb         0x1d91bc4
+01d91ba3 mov        rax, qword ptr [r8 + 0x20]
+01d91ba7 mov        rcx, rbx
+01d91baa movss      xmm1, dword ptr [rip + 0x186125e] ; [.rdata 35f2e10] f=315.0 d=-2048.0005158632994 v4=['315', '-5', '1.84438e+28', '3.10365e+27']
+01d91bb2 mov        r8, qword ptr [rax + 0xc0] ; ~_burnShake
+01d91bb9 mov        r8, qword ptr [r8 + 0x70]
+01d91bbd call       0xc1be40
+01d91bc2 jmp        0x1d91bdb
+01d91bc4 lea        eax, [rcx + 1]
+01d91bc7 mov        dword ptr [rbx + 0x18], eax
+01d91bca cmp        ecx, dword ptr [rdx + 0x18]
+01d91bcd jae        0x1d91ccc
+01d91bd3 mov        dword ptr [rdx + rcx*4 + 0x20], 0x439d8000
+01d91bdb mov        rax, qword ptr [rip + 0x261fc16] ; [.data 43b17f8] TypeInfo#37303
+01d91be2 mov        rdx, rbx
+01d91be5 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d91bec mov        qword ptr [rcx + 0xd0], rbx ; ~_startDelayTime
+01d91bf3 mov        rax, qword ptr [rip + 0x261fbfe] ; [.data 43b17f8] TypeInfo#37303
+01d91bfa mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d91c01 add        rcx, 0xd0
+01d91c08 call       0x4dfd80
+01d91c0d mov        rax, qword ptr [rip + 0x261fbe4] ; [.data 43b17f8] TypeInfo#37303
+01d91c14 mov        rbx, qword ptr [rsp + 0x90] ; ~_priority
+01d91c1c mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d91c23 mov        dword ptr [rcx + 0xd8], 0x41400000 ; ~_DamageScored
+01d91c2d mov        rax, qword ptr [rip + 0x261fbc4] ; [.data 43b17f8] TypeInfo#37303
+01d91c34 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d91c3b mov        dword ptr [rcx + 0xdc], 0x42100000
+01d91c45 mov        rax, qword ptr [rip + 0x261fbac] ; [.data 43b17f8] TypeInfo#37303
+01d91c4c mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d91c53 mov        dword ptr [rcx + 0xe0], 0x42700000 ; ~_deadExplosion
+01d91c5d mov        rax, qword ptr [rip + 0x261fb94] ; [.data 43b17f8] TypeInfo#37303
+01d91c64 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d91c6b mov        dword ptr [rcx + 0xe4], 3
+01d91c75 mov        rax, qword ptr [rip + 0x261fb7c] ; [.data 43b17f8] TypeInfo#37303
+01d91c7c mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d91c83 mov        dword ptr [rcx + 0xe8], 0x40200000 ; ~_deadExplosionHash
+01d91c8d mov        rax, qword ptr [rip + 0x261fb64] ; [.data 43b17f8] TypeInfo#37303
+01d91c94 mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d91c9b mov        dword ptr [rcx + 0xec], 0x42c60000
+01d91ca5 mov        rax, qword ptr [rip + 0x261fb4c] ; [.data 43b17f8] TypeInfo#37303
+01d91cac mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d91cb3 mov        dword ptr [rcx + 0xf0], 0xc3160000 ; ~_deadBullet
+01d91cbd add        rsp, 0x80
+01d91cc4 pop        rbp
+01d91cc5 ret        
+01d91cc6 call       0x4e0d00
+01d91ccb int3       
+01d91ccc call       0x4e0cf0

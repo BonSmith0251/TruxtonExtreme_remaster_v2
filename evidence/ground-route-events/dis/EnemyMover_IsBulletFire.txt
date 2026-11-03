@@ -1,0 +1,78 @@
+01d6c9a0  push     rbx
+01d6c9a2  push     rsi
+01d6c9a3  sub      rsp, 0x58
+01d6c9a7  cmp      byte ptr [rip + 0x28f6d80], 0   ; [466372e] bss
+01d6c9ae  mov      rsi, rdx
+01d6c9b1  mov      rbx, rcx
+01d6c9b4  jne      0x1d6c9c9
+01d6c9b6  lea      rcx, [rip + 0x264b643]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d6c9bd  call     0x4e0a50
+01d6c9c2  mov      byte ptr [rip + 0x28f6d65], 1   ; [466372e] bss
+01d6c9c9  cmp      byte ptr [rbx + 0x290], 0   ; ._isRangeFireLimit
+01d6c9d0  mov      qword ptr [rsp + 0x78], rbp   ; ._transformNameCache
+01d6c9d5  mov      qword ptr [rsp + 0x80], rdi   ; ._transformCaches
+01d6c9dd  mov      qword ptr [rsp + 0x50], r14   ; ev.randomFire/._animatorsPlay
+01d6c9e2  je       0x1d6cace
+01d6c9e8  mov      rax, qword ptr [rip + 0x264b611]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d6c9ef  mov      rax, qword ptr [rax + 0x20]   ; ev.value0
+01d6c9f3  test     byte ptr [rax + 0x135], 1
+01d6c9fa  jne      0x1d6ca04
+01d6c9fc  mov      rcx, rax
+01d6c9ff  call     0x4de1e0
+01d6ca04  mov      rax, qword ptr [rax + 0xc0]   ; ._speedToken
+01d6ca0b  mov      rax, qword ptr [rax + 0x10]   ; ev.eventType
+01d6ca0f  test     byte ptr [rax + 0x135], 1
+01d6ca16  jne      0x1d6ca20
+01d6ca18  mov      rcx, rax
+01d6ca1b  call     0x4de1e0
+01d6ca20  mov      rax, qword ptr [rax + 0xb8]   ; ._hormingToken
+01d6ca27  mov      rdi, qword ptr [rax]
+01d6ca2a  test     rdi, rdi
+01d6ca2d  je       0x1d6caf5
+01d6ca33  mov      rbp, qword ptr [rdi + 0x130]
+01d6ca3a  test     rsi, rsi
+01d6ca3d  je       0x1d6caf5
+01d6ca43  xor      r8d, r8d
+01d6ca46  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01d6ca4b  mov      rdx, rsi
+01d6ca4e  call     0x3093ba0   ; Transform::get_position()
+01d6ca53  xor      edx, edx
+01d6ca55  mov      rcx, rbx
+01d6ca58  movsd    xmm0, qword ptr [rax]
+01d6ca5c  mov      r14d, dword ptr [rax + 8]
+01d6ca60  movsd    qword ptr [rsp + 0x70], xmm0   ; ._transformCache
+01d6ca66  call     0x1cdd500   ; InGameEnemyMoveBase::get_IsGroundDivision()
+01d6ca6b  test     rbp, rbp
+01d6ca6e  je       0x1d6caf5
+01d6ca74  movsd    xmm0, qword ptr [rsp + 0x70]   ; ._transformCache
+01d6ca7a  lea      r8, [rsp + 0x30]   ; ._entryFlag
+01d6ca7f  mov      qword ptr [rsp + 0x28], 0   ; ev.vectorValue
+01d6ca88  lea      rcx, [rsp + 0x40]   ; ev.intValue1/._animators
+01d6ca8d  movzx    r9d, al
+01d6ca91  movsd    qword ptr [rsp + 0x30], xmm0   ; ._entryFlag
+01d6ca97  mov      rdx, rbp
+01d6ca9a  mov      dword ptr [rsp + 0x38], r14d   ; ev.stringValue/._psystems
+01d6ca9f  mov      byte ptr [rsp + 0x20], 0   ; ev.value0
+01d6caa4  call     0x1ddaa00   ; HybridCollisionManager::GetScreenPosition(UnityEngine.Vector3,System.Boolean,System.Boolean)
+01d6caa9  xor      r8d, r8d
+01d6caac  lea      rdx, [rsp + 0x30]   ; ._entryFlag
+01d6cab1  mov      rcx, rdi
+01d6cab4  movsd    xmm0, qword ptr [rax]
+01d6cab8  mov      eax, dword ptr [rax + 8]
+01d6cabb  movsd    qword ptr [rsp + 0x30], xmm0   ; ._entryFlag
+01d6cac1  mov      dword ptr [rsp + 0x38], eax   ; ev.stringValue/._psystems
+01d6cac5  call     0x1ce7300   ; InGameManager::IsFireDistance(UnityEngine.Vector3)
+01d6caca  test     al, al
+01d6cacc  je       0x1d6cadc
+01d6cace  xor      r8d, r8d
+01d6cad1  mov      rdx, rsi
+01d6cad4  mov      rcx, rbx
+01d6cad7  call     0x1cda6a0   ; InGameEnemyMoveBase::IsBulletFire(UnityEngine.Transform)
+01d6cadc  mov      r14, qword ptr [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01d6cae1  mov      rdi, qword ptr [rsp + 0x80]   ; ._transformCaches
+01d6cae9  mov      rbp, qword ptr [rsp + 0x78]   ; ._transformNameCache
+01d6caee  add      rsp, 0x58
+01d6caf2  pop      rsi
+01d6caf3  pop      rbx
+01d6caf4  ret      
+01d6caf5  call     0x4e0d00

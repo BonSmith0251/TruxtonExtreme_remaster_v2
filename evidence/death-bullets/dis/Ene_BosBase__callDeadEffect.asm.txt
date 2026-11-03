@@ -1,0 +1,65 @@
+#### InGame.Kernel.Enemy.Ene_BosBase::_callDeadEffect() RVA 1dbaeb0 len 134
+01dbaeb0  push     rbx
+01dbaeb2  sub      rsp, 0x30
+01dbaeb6  cmp      byte ptr [rip + 0x28a89c1], 0   ; [466387e] bss
+01dbaebd  mov      rbx, rcx
+01dbaec0  jne      0x1dbaee1
+01dbaec2  lea      rcx, [rip + 0x25fc6a7]   ; [43b7570] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.CinemachineMan>::get_GetInstance
+01dbaec9  call     0x4e0a50
+01dbaece  lea      rcx, [rip + 0x25fd12b]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01dbaed5  call     0x4e0a50
+01dbaeda  mov      byte ptr [rip + 0x28a899d], 1   ; [466387e] bss
+01dbaee1  cmp      byte ptr [rbx + 0x1b3], 0   ; ._isDeadEffectCalled
+01dbaee8  jne      0x1dbafd9
+01dbaeee  mov      rax, qword ptr [rip + 0x25fc67b]   ; [43b7570] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.CinemachineMan>::get_GetInstance
+01dbaef5  mov      rax, qword ptr [rax + 0x20]   ; .trot
+01dbaef9  test     byte ptr [rax + 0x135], 1
+01dbaf00  jne      0x1dbaf0a
+01dbaf02  mov      rcx, rax
+01dbaf05  call     0x4de1e0
+01dbaf0a  mov      rax, qword ptr [rax + 0xc0]   ; ._burnShake
+01dbaf11  mov      rax, qword ptr [rax + 0x10]
+01dbaf15  test     byte ptr [rax + 0x135], 1
+01dbaf1c  jne      0x1dbaf26
+01dbaf1e  mov      rcx, rax
+01dbaf21  call     0x4de1e0
+01dbaf26  mov      rax, qword ptr [rax + 0xb8]   ; ._mover
+01dbaf2d  mov      rcx, qword ptr [rax]
+01dbaf30  test     rcx, rcx
+01dbaf33  je       0x1dbaf56
+01dbaf35  movss    xmm1, dword ptr [rip + 0x1725c8f]   ; rdata 34e0bcc f=1,3.141593,4,10 d=50.12387842
+01dbaf3d  movss    xmm2, dword ptr [rip + 0x17319cf]   ; rdata 34ec914 f=3,360,inf,nan d=1.441152157e+18
+01dbaf45  movaps   xmm3, xmm1
+01dbaf48  mov      qword ptr [rsp + 0x20], 0   ; .trot
+01dbaf51  call     0x1cc6330   ; CinemachineMan::ShakeCamera(System.Single,System.Single,System.Single)
+01dbaf56  mov      rax, qword ptr [rip + 0x25fd0a3]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01dbaf5d  mov      rax, qword ptr [rax + 0x20]   ; .trot
+01dbaf61  test     byte ptr [rax + 0x135], 1
+01dbaf68  jne      0x1dbaf72
+01dbaf6a  mov      rcx, rax
+01dbaf6d  call     0x4de1e0
+01dbaf72  mov      rax, qword ptr [rax + 0xc0]   ; ._burnShake
+01dbaf79  mov      rax, qword ptr [rax + 0x10]
+01dbaf7d  test     byte ptr [rax + 0x135], 1
+01dbaf84  jne      0x1dbaf8e
+01dbaf86  mov      rcx, rax
+01dbaf89  call     0x4de1e0
+01dbaf8e  mov      rax, qword ptr [rax + 0xb8]   ; ._mover
+01dbaf95  mov      rcx, qword ptr [rax]
+01dbaf98  test     rcx, rcx
+01dbaf9b  je       0x1dbafdf
+01dbaf9d  movss    xmm3, dword ptr [rip + 0x1731a67]   ; rdata 34eca0c f=2,0,2,6.283185 d=5.304989477e-315
+01dbafa5  movss    xmm2, dword ptr [rip + 0x1837d1b]   ; rdata 35f2cc8 f=0.8,0.93,0.95,0.999999 d=0.003671875684
+01dbafad  movss    xmm1, dword ptr [rip + 0x1725c13]   ; rdata 34e0bc8 f=0.5,1,3.141593,4 d=0.007812501834
+01dbafb5  mov      qword ptr [rsp + 0x20], 0   ; .trot
+01dbafbe  call     0x1cee560   ; InGameManager::VibrationPlayer(System.Single,System.Single,System.Single)
+01dbafc3  xor      edx, edx
+01dbafc5  mov      byte ptr [rbx + 0x1b3], 1   ; ._isDeadEffectCalled
+01dbafcc  mov      rcx, rbx
+01dbafcf  add      rsp, 0x30
+01dbafd3  pop      rbx
+01dbafd4  jmp      0x1d10e20   ; PawnEnemy::_callDeadEffect()
+01dbafd9  add      rsp, 0x30
+01dbafdd  pop      rbx
+01dbafde  ret      
+01dbafdf  call     0x4e0d00

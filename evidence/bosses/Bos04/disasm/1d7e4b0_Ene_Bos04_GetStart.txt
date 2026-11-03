@@ -1,0 +1,12 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04::GetStart() RVA 1d7e4b0 len 25
+01d7e4b0 push       rbx
+01d7e4b2 sub        rsp, 0x20
+01d7e4b6 xor        edx, edx
+01d7e4b8 mov        rbx, rcx
+01d7e4bb call       0x1d0db40 ; InGame.Kernel.Enemy.PawnEnemy::GetStart()
+01d7e4c0 xor        r8d, r8d
+01d7e4c3 mov        edx, 1
+01d7e4c8 mov        rcx, rbx
+01d7e4cb add        rsp, 0x20
+01d7e4cf pop        rbx
+01d7e4d0 jmp        0x1ccf580 ; InGame.Kernel.InGameCollisionBase::SetObjectFlag(InGame.Kernel.InGameObject/InGameObjectFlag)

@@ -1,0 +1,123 @@
+01cf5650  mov      qword ptr [rsp + 8], rcx   ; sm.<>t__builder
+01cf5655  push     rbx
+01cf5656  push     rsi
+01cf5657  push     rdi
+01cf5658  sub      rsp, 0x50
+01cf565c  mov      rbx, rcx
+01cf565f  mov      qword ptr [rsp + 0x20], rcx   ; sm.tflag/ev.value0
+01cf5664  cmp      byte ptr [rip + 0x296dc7f], 0   ; [46632ea] bss
+01cf566b  jne      0x1cf5698
+01cf566d  lea      rcx, [rip + 0x26af054]   ; [43a46c8] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::AwaitUnsafeOnCompleted<.Awaiter,.<<_execEventWithRepeat>g__WaitTaskFlag|0>d>
+01cf5674  call     0x4e0a50
+01cf5679  lea      rcx, [rip + 0x269fd98]   ; [4395418] TypeInfo System.Threading.CancellationToken
+01cf5680  call     0x4e0a50
+01cf5685  lea      rcx, [rip + 0x26c6c44]   ; [43bc2d0] TypeInfo Cysharp.Threading.Tasks.UniTask
+01cf568c  call     0x4e0a50
+01cf5691  mov      byte ptr [rip + 0x296dc52], 1   ; [46632ea] bss
+01cf5698  xor      esi, esi
+01cf569a  mov      dword ptr [rsp + 0x80], esi   ; ._transformCaches
+01cf56a1  mov      dword ptr [rsp + 0x88], esi   ; ._eventDatas
+01cf56a8  mov      dword ptr [rsp + 0x40], esi   ; ev.intValue1/._animators
+01cf56ac  mov      eax, dword ptr [rbx]   ; sm.<>1__state
+01cf56ae  mov      rdi, qword ptr [rbx + 0x18]   ; sm.<>4__this/ev.repeatDelay
+01cf56b2  test     eax, eax
+01cf56b4  jne      0x1cf56d0
+01cf56b6  mov      eax, dword ptr [rbx + 0x24]   ; sm.<>u__1/ev.value1
+01cf56b9  mov      dword ptr [rsp + 0x80], eax   ; ._transformCaches
+01cf56c0  xor      eax, eax
+01cf56c2  mov      dword ptr [rbx + 0x24], eax   ; sm.<>u__1/ev.value1
+01cf56c5  mov      dword ptr [rbx], 0xffffffff   ; sm.<>1__state
+01cf56cb  jmp      0x1cf5793
+01cf56d0  test     rdi, rdi
+01cf56d3  je       0x1cf5859
+01cf56d9  mov      rax, qword ptr [rdi + 0x10]   ; ev.eventType
+01cf56dd  test     rax, rax
+01cf56e0  je       0x1cf5854
+01cf56e6  mov      eax, dword ptr [rax + 0xc8]   ; ._taskFlag
+01cf56ec  test     dword ptr [rbx + 0x20], eax   ; sm.tflag/ev.value0
+01cf56ef  je       0x1cf57d1
+01cf56f5  test     rdi, rdi
+01cf56f8  je       0x1cf584f
+01cf56fe  mov      rax, qword ptr [rdi + 0x10]   ; ev.eventType
+01cf5702  test     rax, rax
+01cf5705  je       0x1cf5849
+01cf570b  mov      eax, dword ptr [rax + 0xc8]   ; ._taskFlag
+01cf5711  test     dword ptr [rbx + 0x20], eax   ; sm.tflag/ev.value0
+01cf5714  je       0x1cf57d1
+01cf571a  mov      rcx, qword ptr [rip + 0x269fcf7]   ; [4395418] TypeInfo System.Threading.CancellationToken
+01cf5721  cmp      dword ptr [rcx + 0xe4], 0
+01cf5728  jne      0x1cf572f
+01cf572a  call     0x4e0d90
+01cf572f  lea      rcx, [rdi + 0x18]   ; sm.<>4__this/ev.repeatDelay
+01cf5733  xor      edx, edx
+01cf5735  call     0x2096440   ; CancellationToken::get_IsCancellationRequested()
+01cf573a  test     al, al
+01cf573c  jne      0x1cf57d1
+01cf5742  mov      rcx, qword ptr [rip + 0x26c6b87]   ; [43bc2d0] TypeInfo Cysharp.Threading.Tasks.UniTask
+01cf5749  cmp      dword ptr [rcx + 0xe4], 0
+01cf5750  jne      0x1cf5757
+01cf5752  call     0x4e0d90
+01cf5757  xor      edx, edx
+01cf5759  mov      ecx, 8
+01cf575e  call     0x604260   ; HAuthTicket::op_Explicit(System.UInt32) | HAuthTicket::op_Explicit(Steamworks.HAuthTicket)
+01cf5763  mov      dword ptr [rsp + 0x88], eax   ; ._eventDatas
+01cf576a  xor      edx, edx
+01cf576c  lea      rcx, [rsp + 0x88]   ; ._eventDatas
+01cf5774  call     0x607140   ; CSteamID::GetAccountID() | SafeModeReport::get_totMissingTargetOrFieldErrors()
+01cf5779  mov      dword ptr [rsp + 0x80], eax   ; ._transformCaches
+01cf5780  xor      edx, edx
+01cf5782  lea      rcx, [rsp + 0x80]   ; ._transformCaches
+01cf578a  call     0x7aa370   ; InGameBullet::IsLaser() | InGameBulletItem::IsLaser()
+01cf578f  test     al, al
+01cf5791  je       0x1cf57a7
+01cf5793  xor      edx, edx
+01cf5795  lea      rcx, [rsp + 0x80]   ; ._transformCaches
+01cf579d  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01cf57a2  jmp      0x1cf56f5
+01cf57a7  mov      dword ptr [rbx], esi   ; sm.<>1__state
+01cf57a9  mov      eax, dword ptr [rsp + 0x80]   ; ._transformCaches
+01cf57b0  mov      dword ptr [rbx + 0x24], eax   ; sm.<>u__1/ev.value1
+01cf57b3  lea      rcx, [rbx + 8]   ; sm.<>t__builder
+01cf57b7  mov      r9, qword ptr [rip + 0x26aef0a]   ; [43a46c8] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::AwaitUnsafeOnCompleted<.Awaiter,.<<_execEventWithRepeat>g__WaitTaskFlag|0>d>
+01cf57be  mov      r8, rbx
+01cf57c1  lea      rdx, [rsp + 0x80]   ; ._transformCaches
+01cf57c9  call     0x2ac30
+01cf57ce  nop      
+01cf57cf  jmp      0x1cf580f
+01cf57d1  mov      dword ptr [rbx], 0xfffffffe   ; sm.<>1__state
+01cf57d7  cmp      byte ptr [rip + 0x296b146], 0   ; [4660924] bss
+01cf57de  jne      0x1cf57f3
+01cf57e0  lea      rcx, [rip + 0x26dfc61]   ; [43d5448] TypeInfo Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise
+01cf57e7  call     0x4e0a50
+01cf57ec  mov      byte ptr [rip + 0x296b131], 1   ; [4660924] bss
+01cf57f3  cmp      qword ptr [rbx + 8], 0   ; sm.<>t__builder
+01cf57f8  je       0x1cf580f
+01cf57fa  mov      ecx, 2
+01cf57ff  mov      r8, qword ptr [rbx + 8]   ; sm.<>t__builder
+01cf5803  mov      rdx, qword ptr [rip + 0x26dfc3e]   ; [43d5448] TypeInfo Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise
+01cf580a  call     0x22b0
+01cf580f  add      rsp, 0x50
+01cf5813  pop      rdi
+01cf5814  pop      rsi
+01cf5815  pop      rbx
+01cf5816  ret      
+01cf5817  mov      rax, qword ptr [rsp + 0x20]   ; sm.tflag/ev.value0
+01cf581c  mov      dword ptr [rax], 0xfffffffe   ; sm.<>1__state
+01cf5822  mov      eax, dword ptr [rsp + 0x40]   ; ev.intValue1/._animators
+01cf5826  dec      eax
+01cf5828  movsxd   rdx, eax
+01cf582b  mov      rcx, qword ptr [rsp + 0x70]   ; ._transformCache
+01cf5830  add      rcx, 8
+01cf5834  xor      r8d, r8d
+01cf5837  mov      rdx, qword ptr [rsp + rdx*8 + 0x38]
+01cf583c  call     0x1132bc0
+01cf5841  add      rsp, 0x50
+01cf5845  pop      rdi
+01cf5846  pop      rsi
+01cf5847  pop      rbx
+01cf5848  ret      
+01cf5849  call     0x4e0d00
+01cf584e  nop      
+01cf584f  call     0x4e0d00
+01cf5854  call     0x4e0d00
+01cf5859  call     0x4e0d00

@@ -1,0 +1,39 @@
+#### KANAI.Kernel.EasingUtility::EaseIn(System.Single,System.Single,System.Single) RVA 1de8000 len 14
+01de8000  subss    xmm1, xmm0
+01de8004  mulss    xmm1, xmm2
+01de8008  mulss    xmm1, xmm2
+01de800c  addss    xmm1, xmm0
+01de8010  movaps   xmm0, xmm1
+01de8013  ret      
+#### KANAI.Kernel.EasingUtility::EaseOut(System.Single,System.Single,System.Single) RVA 1de80d0 len 23
+01de80d0  subss    xmm1, xmm0
+01de80d4  xorps    xmm1, xmmword ptr [rip + 0x16f8b35]   ; rdata 34e0c10 f=-0,-0,-0,-0 d=-1.060997895e-314
+01de80db  mulss    xmm1, xmm2
+01de80df  subss    xmm2, dword ptr [rip + 0x1704925]   ; rdata 34eca0c f=2,0,2,6.283185 d=5.304989477e-315
+01de80e7  mulss    xmm1, xmm2
+01de80eb  addss    xmm1, xmm0
+01de80ef  movaps   xmm0, xmm1
+01de80f2  ret      
+#### KANAI.Kernel.EasingUtility::EaseInOut(System.Single,System.Single,System.Single) RVA 1de7fa0 len 5f
+01de7fa0  movss    xmm4, dword ptr [rip + 0x16f8c24]   ; rdata 34e0bcc f=1,3.141593,4,10 d=50.12387842
+01de7fa8  addss    xmm2, xmm2
+01de7fac  movaps   xmm3, xmm0
+01de7faf  subss    xmm1, xmm3
+01de7fb3  comiss   xmm4, xmm2
+01de7fb6  ja       0x1de7fe7
+01de7fb8  xorps    xmm1, xmmword ptr [rip + 0x16f8c51]   ; rdata 34e0c10 f=-0,-0,-0,-0 d=-1.060997895e-314
+01de7fbf  subss    xmm2, xmm4
+01de7fc3  mulss    xmm1, dword ptr [rip + 0x16f8bfd]   ; rdata 34e0bc8 f=0.5,1,3.141593,4 d=0.007812501834
+01de7fcb  movaps   xmm0, xmm2
+01de7fce  subss    xmm0, dword ptr [rip + 0x1704a36]   ; rdata 34eca0c f=2,0,2,6.283185 d=5.304989477e-315
+01de7fd6  mulss    xmm0, xmm2
+01de7fda  subss    xmm0, xmm4
+01de7fde  mulss    xmm0, xmm1
+01de7fe2  addss    xmm0, xmm3
+01de7fe6  ret      
+01de7fe7  mulss    xmm1, dword ptr [rip + 0x16f8bd9]   ; rdata 34e0bc8 f=0.5,1,3.141593,4 d=0.007812501834
+01de7fef  mulss    xmm1, xmm2
+01de7ff3  mulss    xmm1, xmm2
+01de7ff7  addss    xmm1, xmm3
+01de7ffb  movaps   xmm0, xmm1
+01de7ffe  ret      

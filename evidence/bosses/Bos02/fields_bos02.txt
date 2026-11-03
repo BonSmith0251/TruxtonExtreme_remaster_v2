@@ -1,0 +1,165 @@
+== InGame.Kernel.Enemy.Ene_Bos02 base InGame.Kernel.Enemy.Ene_BosBase
+  - Private, Static, Literal, HasD System.Single _coreMuzzleArc -60
+  - Private, Static, Literal, HasD System.Single HorizontalLimitRange 80
+  - Private, Static, Literal, HasD System.Single MoveSpeedMax 20
+  - Private, Static, Literal, HasD System.Single MoveSpeedMin 10
+  - Private, Static, Literal, HasD System.Single MoveAcceleration 6
+  - Private, Static, Literal, HasD System.Single MoveDeceleration 4
+  - Private, Static, Literal, HasD System.Single PositionDeadZone 1.5
+  - Private, Static, Literal, HasD System.Single PositionSpeedRange 60
+  - Private, Static, Literal, HasD System.Single RollTargetScale 1.5
+  - Private, Static, Literal, HasD System.Single RollResponse 20
+  - Private, Static, Literal, HasD System.Single RollDamping 3
+  - Private, Static, Literal, HasD System.Single MaxRollAngle 4
+  - Private, Static, InitOnly      UnityEngine.Quaternion _coreRot 
+  - Private, Static, InitOnly      UnityEngine.Quaternion _modelTopRotateStart 
+  - Private, Static, InitOnly      System.Single[] _underLaserMuzzleDir 
+  - Private, Static, InitOnly      UnityEngine.Vector3 _callLSide 
+  - Private, Static, InitOnly      UnityEngine.Vector3 _callRSide 
+  - Private, Static, InitOnly      UnityEngine.Vector3 lastHomePosition 
+  - Private, Static, InitOnly      System.String[] btNames 
+  - Private, Static, InitOnly      System.String[] _boss02ClipDatas 
+  - Private, Static, InitOnly      System.Int32 MuzzleCount 
+  0x270 Private                        InGame.Kernel.Enemy.Ene_Bos02/Boss02State _bos02state 
+  0x274 Private                        UnityEngine.Vector3 _moveStep 
+  0x280 Private                        System.Single _localTime 
+  0x284 Private                        System.Single _moveSpeed 
+  0x288 Private                        System.Int32 _moveDirHold 
+  0x28C Private                        System.Single _rotateZ 
+  0x290 Private                        System.Boolean _backWingMode 
+  0x294 Private                        System.Single _rollSmoothAngle 
+  0x298 Private                        System.Single _lastTargetVelocity 
+  0x2A0 Private                        UnityEngine.Transform _bodyFront 
+  0x2A8 Private                        UnityEngine.Transform _backWingL 
+  0x2B0 Private                        UnityEngine.Transform _backWingR 
+  0x2B8 Private                        UnityEngine.Transform[] _backCores 
+  0x2C0 Private                        UnityEngine.Transform[] _muzzles 
+  - Private, Static, InitOnly      System.Single _EntryNoHitTime 
+  - Private, Static, Literal, HasD System.Single PatternAttackInitialDuration 5
+  - Private, Static, Literal, HasD System.Single PatternAttackDurationDecrement 1
+  - Private, Static, Literal, HasD System.Single PatternAttackMinimumDuration 1
+  - Private, Static, Literal, HasD System.Single PatternAttackCooldown 0.5
+  - Private, Static, Literal, HasD System.Single Pattern1FireInterval 0.2
+  - Private, Static, Literal, HasD System.Single Pattern2FireInterval 0.1
+  - Private, Static, Literal, HasD System.Single Pattern3FireInterval 0.05
+  - Private, Static, Literal, HasD System.Int32 PatrolStartIndex 0
+  - Private, Static, Literal, HasD System.Single PatrolArrivalRadius 5
+  - Private, Static, Literal, HasD System.Single PatrolMoveSpeedMax 20
+  - Private, Static, Literal, HasD System.Single PatrolMoveSpeedMin 10
+  - Private, Static, Literal, HasD System.Single PatrolOrbitSpeedMax 8
+  - Private, Static, Literal, HasD System.Single PatrolOrbitMinDuration 3
+  - Private, Static, Literal, HasD System.Single PatrolAccelerationDuration 3
+  - Private, Static, Literal, HasD System.Single PatrolDecelerationDuration 2
+  - Private, Static, Literal, HasD System.Single OrbitAlignmentThreshold 0.95
+  - Private, Static, Literal, HasD System.Single PatrolDistanceEpsilon 0.001
+  - Private, Static, Literal, HasD System.Single PatrolPostArrivalDelay 5
+  - Private, Static, Literal, HasD System.Single PatrolBackLine 50
+  - Private, Static, Literal, HasD System.Single PatrolFrontLine 30
+  - Private, Static, InitOnly      UnityEngine.Vector3[] PatrolPoints 
+  - Private, Static, InitOnly      System.Int32[] PatrolOrder 
+  - Private, Static, Literal, HasD System.Single Pattern5StartDelay 0
+  - Private, Static, Literal, HasD System.Single Pattern5PostFireDelay 5
+  - Private, Static, Literal, HasD System.Single Pattern5Interval 0
+  - Private, Static, Literal, HasD System.Single Pattern6StartDelay 5
+  - Private, Static, Literal, HasD System.Single Pattern6Interval 10
+  - Private, Static, Literal, HasD System.Single Pattern7StartDelay 1
+  - Private, Static, Literal, HasD System.Single Pattern7Interval 10
+  - Private, Static, Literal, HasD System.Single Pattern7FireInterval 0.1
+  - Private, Static, Literal, HasD System.Single Pattern7FireInitial 2
+  - Private, Static, Literal, HasD System.Single Pattern7FireMiddle 2
+  - Private, Static, Literal, HasD System.Single Pattern7FireFinal 1
+  - Private, Static, Literal, HasD System.Int32 Pattern7RollRange 25
+  - Private, Static, InitOnly      InGame.Kernel.Enemy.Ene_Bos02/Fire6Table[] _Pattern6TimeTable 
+  - Private, Static, InitOnly      InGame.Kernel.Enemy.Ene_Bos02/Fire7Table[] _Pattern7Table 
+  0x2C8 Private                        System.Int32 _turnCount 
+  0x2CC Private                        System.Single _attackDuration 
+  0x2D0 Private                        System.Single _cooldownTimer 
+  0x2D4 Private                        System.Single _fireTimer 
+  0x2D8 Private                        System.Boolean _fire1NextAimPlayer 
+  0x2DC Private                        System.Int32 _fire1Count 
+  0x2E0 Private                        InGame.Kernel.Enemy.Ene_Bos02/PatrolMovementController _patrolMovement 
+  0x2E8 Private                        InGame.Kernel.Enemy.Ene_Bos02/Fire5Controller _fire5Controller 
+  0x2F0 Private                        InGame.Kernel.Enemy.Ene_Bos02/Fire6Controller _fire6Controller 
+  0x2F8 Private                        InGame.Kernel.Enemy.Ene_Bos02/Fire7Controller _fire7Controller 
+== InGame.Kernel.Enemy.Ene_Bos02/PartsKind base System.Enum
+  0x0 Public, SpecialName, RTSpecial System.Int32 value__ 
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/PartsKind MainBody 0
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/PartsKind Upper06 1
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/PartsKind Upper04 2
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/PartsKind Under06 3
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/PartsKind Under04 4
+== InGame.Kernel.Enemy.Ene_Bos02/Boss02State base System.Enum
+  0x0 Public, SpecialName, RTSpecial System.Int32 value__ 
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/Boss02State EntryWait 0
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/Boss02State PT1 1
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/Boss02State PT2 2
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/Boss02State PT3 3
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/Boss02State PT5 4
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/Boss02State BackWingOpen 50
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/Boss02State Destruction 100
+== InGame.Kernel.Enemy.Ene_Bos02/Boss02MZ base System.Enum
+  0x0 Public, SpecialName, RTSpecial System.Int32 value__ 
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/Boss02MZ muzzle_body_front_laser 0
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/Boss02MZ muzzle_body_front_core 1
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/Boss02MZ muzzle_body_core 2
+== InGame.Kernel.Enemy.Ene_Bos02/Boss02BT base System.Enum
+  0x0 Public, SpecialName, RTSpecial System.Int32 value__ 
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/Boss02BT laser01 0
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/Boss02BT laser10 1
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/Boss02BT way8 2
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/Boss02BT b04x3 3
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/Boss02BT way16_1 4
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/Boss02BT way16_2 5
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/Boss02BT way5 6
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/Boss02BT way6_1 7
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/Boss02BT way6_2 8
+== InGame.Kernel.Enemy.Ene_Bos02/Fire6Table base System.ValueType
+  0x0 Public                         System.Single time 
+  0x4 Public                         System.Int32 battery 
+== InGame.Kernel.Enemy.Ene_Bos02/Fire7Table base System.ValueType
+  0x0 Public                         System.Int32 battery 
+  0x4 Public                         System.Single start 
+  0x8 Public                         System.Single move 
+== InGame.Kernel.Enemy.Ene_Bos02/PatrolMovementController base System.Object
+  0x10 Private, InitOnly              InGame.Kernel.Enemy.Ene_Bos02 _owner 
+  0x18 Private                        System.Boolean _initialized 
+  0x19 Private                        System.Boolean _hasReachedContact 
+  0x1A Private                        System.Boolean _orbitAdvanceRequested 
+  0x1C Private                        System.Int32 _sequenceIndex 
+  0x20 Private                        UnityEngine.Vector3 _linearPosition 
+  0x2C Private                        UnityEngine.Vector3 _velocity 
+  0x38 Private                        UnityEngine.Vector3 _currentStart 
+  0x44 Private                        UnityEngine.Vector3 _currentTarget 
+  0x50 Private                        System.Single _orbitAngle 
+  0x54 Private                        System.Single _orbitRadius 
+  0x58 Private                        System.Int32 _orbitDirection 
+  0x5C Private                        UnityEngine.Vector3 _contactPoint 
+  0x68 Private                        System.Single _contactAngle 
+  0x6C Private                        System.Single _orbitTimer 
+  0x70 Private                        System.Single _currentSpeed 
+  0x74 Private                        System.Single _constantSpeed 
+  0x78 Private                        System.Boolean _hasReachedCruiseSpeed 
+  0x7C Private                        System.Single _speedStart 
+  0x80 Private                        System.Single _speedTarget 
+  0x84 Private                        System.Single _speedTransitionTimer 
+  0x88 Private                        System.Single _speedTransitionDuration 
+  0x8C Private                        InGame.Kernel.Enemy.Ene_Bos02/PatrolMovementController/Phase _phase 
+== InGame.Kernel.Enemy.Ene_Bos02/PatrolMovementController/Phase base System.Enum
+  0x0 Public, SpecialName, RTSpecial System.Int32 value__ 
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/PatrolMovementController/Phase Straight 0
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/PatrolMovementController/Phase Orbit 1
+  - Public, Static, Literal, HasDe InGame.Kernel.Enemy.Ene_Bos02/PatrolMovementController/Phase Stop 2
+== InGame.Kernel.Enemy.Ene_Bos02/Fire5Controller base System.Object
+  0x10 Private                        System.Int32 _mode 
+  0x14 Private                        System.Single _waitTimer 
+  0x18 Private                        System.Single _fireTimer 
+  0x1C Private                        System.Boolean _trigger 
+== InGame.Kernel.Enemy.Ene_Bos02/Fire6Controller base System.Object
+  0x10 Private                        System.Int32 _mode 
+  0x14 Private                        System.Single _waitTimer 
+  0x18 Private                        System.Single _pattern6Timeline 
+== InGame.Kernel.Enemy.Ene_Bos02/Fire7Controller base System.Object
+  0x10 Private                        System.Int32 _mode 
+  0x14 Private                        System.Single _waitTimer 
+  0x18 Private                        System.Single _rollTimer 
+  0x1C Private                        System.Single _fireTimer 

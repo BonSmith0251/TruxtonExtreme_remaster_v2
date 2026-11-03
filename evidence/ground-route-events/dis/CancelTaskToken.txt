@@ -1,0 +1,74 @@
+01d1d820  mov      qword ptr [rsp + 8], rbx
+01d1d825  mov      qword ptr [rsp + 0x10], rsi   ; ev.eventType
+01d1d82a  push     rdi
+01d1d82b  sub      rsp, 0x20
+01d1d82f  xor      esi, esi
+01d1d831  mov      edi, edx
+01d1d833  mov      rbx, rcx
+01d1d836  cmp      qword ptr [rcx + 0xb0], rsi   ; ._translateToken
+01d1d83d  je       0x1d1d862
+01d1d83f  mov      rcx, qword ptr [rcx + 0xb0]   ; ._translateToken
+01d1d846  xor      edx, edx
+01d1d848  call     0x2094220   ; CancellationTokenSource::Cancel()
+01d1d84d  lea      rcx, [rbx + 0xb0]   ; ._translateToken
+01d1d854  mov      qword ptr [rbx + 0xb0], rsi   ; ._translateToken
+01d1d85b  xor      edx, edx
+01d1d85d  call     0x4dfd80
+01d1d862  cmp      qword ptr [rbx + 0xa0], rsi   ; ._rotateToken
+01d1d869  je       0x1d1d88e
+01d1d86b  mov      rcx, qword ptr [rbx + 0xa0]   ; ._rotateToken
+01d1d872  xor      edx, edx
+01d1d874  call     0x2094220   ; CancellationTokenSource::Cancel()
+01d1d879  lea      rcx, [rbx + 0xa0]   ; ._rotateToken
+01d1d880  mov      qword ptr [rbx + 0xa0], rsi   ; ._rotateToken
+01d1d887  xor      edx, edx
+01d1d889  call     0x4dfd80
+01d1d88e  test     dil, 0x10
+01d1d892  je       0x1d1d8c0
+01d1d894  cmp      qword ptr [rbx + 0x98], rsi   ; ._animationToken
+01d1d89b  je       0x1d1d8c0
+01d1d89d  mov      rcx, qword ptr [rbx + 0x98]   ; ._animationToken
+01d1d8a4  xor      edx, edx
+01d1d8a6  call     0x2094220   ; CancellationTokenSource::Cancel()
+01d1d8ab  lea      rcx, [rbx + 0x98]   ; ._animationToken
+01d1d8b2  mov      qword ptr [rbx + 0x98], rsi   ; ._animationToken
+01d1d8b9  xor      edx, edx
+01d1d8bb  call     0x4dfd80
+01d1d8c0  test     dil, 8
+01d1d8c4  je       0x1d1d8f2
+01d1d8c6  cmp      qword ptr [rbx + 0xa8], rsi   ; ._scaleToken
+01d1d8cd  je       0x1d1d8f2
+01d1d8cf  mov      rcx, qword ptr [rbx + 0xa8]   ; ._scaleToken
+01d1d8d6  xor      edx, edx
+01d1d8d8  call     0x2094220   ; CancellationTokenSource::Cancel()
+01d1d8dd  lea      rcx, [rbx + 0xa8]   ; ._scaleToken
+01d1d8e4  mov      qword ptr [rbx + 0xa8], rsi   ; ._scaleToken
+01d1d8eb  xor      edx, edx
+01d1d8ed  call     0x4dfd80
+01d1d8f2  bt       edi, 9
+01d1d8f6  jae      0x1d1d924
+01d1d8f8  cmp      qword ptr [rbx + 0xb8], rsi   ; ._hormingToken
+01d1d8ff  je       0x1d1d924
+01d1d901  mov      rcx, qword ptr [rbx + 0xb8]   ; ._hormingToken
+01d1d908  xor      edx, edx
+01d1d90a  call     0x2094220   ; CancellationTokenSource::Cancel()
+01d1d90f  lea      rcx, [rbx + 0xb8]   ; ._hormingToken
+01d1d916  mov      qword ptr [rbx + 0xb8], rsi   ; ._hormingToken
+01d1d91d  xor      edx, edx
+01d1d91f  call     0x4dfd80
+01d1d924  test     dil, 0x20
+01d1d928  je       0x1d1d956
+01d1d92a  cmp      qword ptr [rbx + 0xc0], rsi   ; ._speedToken
+01d1d931  je       0x1d1d956
+01d1d933  mov      rcx, qword ptr [rbx + 0xc0]   ; ._speedToken
+01d1d93a  xor      edx, edx
+01d1d93c  call     0x2094220   ; CancellationTokenSource::Cancel()
+01d1d941  lea      rcx, [rbx + 0xc0]   ; ._speedToken
+01d1d948  mov      qword ptr [rbx + 0xc0], rsi   ; ._speedToken
+01d1d94f  xor      edx, edx
+01d1d951  call     0x4dfd80
+01d1d956  mov      rbx, qword ptr [rsp + 0x30]   ; ._entryFlag
+01d1d95b  mov      rsi, qword ptr [rsp + 0x38]   ; ev.stringValue/._psystems
+01d1d960  add      rsp, 0x20
+01d1d964  pop      rdi
+01d1d965  ret      

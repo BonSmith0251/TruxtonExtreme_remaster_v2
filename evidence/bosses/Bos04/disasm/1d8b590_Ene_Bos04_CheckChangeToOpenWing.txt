@@ -1,0 +1,19 @@
+== System.Boolean InGame.Kernel.Enemy.Ene_Bos04::CheckChangeToOpenWing() RVA 1d8b590 len 43
+01d8b590 sub        rsp, 0x28
+01d8b594 cmp        dword ptr [rcx + 0x2c8], 0x64 ; ~_bos04state
+01d8b59b je         0x1d8b5cc
+01d8b59d cmp        dword ptr [rcx + 0x2c8], 0xa ; ~_bos04state
+01d8b5a4 je         0x1d8b5cc
+01d8b5a6 cmp        byte ptr [rcx + 0x2de], 0 ; ~_isOpenWing
+01d8b5ad jne        0x1d8b5cc
+01d8b5af xor        r9d, r9d
+01d8b5b2 mov        edx, 3
+01d8b5b7 mov        r8d, 9
+01d8b5bd call       0x1db9fb0 ; InGame.Kernel.Enemy.Ene_BosBase::IsOverAorB(InGame.Kernel.Enemy.Ene_BosBase/HitPState,InGame.Kernel.Enemy.Ene_BosBase/TimeSteps)
+01d8b5c2 test       al, al
+01d8b5c4 setne      al
+01d8b5c7 add        rsp, 0x28
+01d8b5cb ret        
+01d8b5cc xor        al, al
+01d8b5ce add        rsp, 0x28
+01d8b5d2 ret        

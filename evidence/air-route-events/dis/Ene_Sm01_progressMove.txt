@@ -1,0 +1,319 @@
+#### InGame.Kernel.Enemy.Ene_Sm01::_progressMove(System.Single) RVA 1d02b30 len 616
+01d02b30  mov      qword ptr [rsp + 0x10], rbx   ; ev.eventType
+01d02b35  push     rdi
+01d02b36  sub      rsp, 0xd0
+01d02b3d  cmp      byte ptr [rip + 0x2960886], 0   ; [46633ca] bss
+01d02b44  mov      rbx, rcx
+01d02b47  movaps   xmmword ptr [rsp + 0xb0], xmm7   ; ._translateToken
+01d02b4f  movaps   xmm7, xmm1
+01d02b52  jne      0x1d02b73
+01d02b54  lea      rcx, [rip + 0x26b0315]   ; [43b2e70] TypeInfo InGame.Kernel.Enemy.Ene_Sm01
+01d02b5b  call     0x4e0a50
+01d02b60  lea      rcx, [rip + 0x26b5499]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d02b67  call     0x4e0a50
+01d02b6c  mov      byte ptr [rip + 0x2960857], 1   ; [46633ca] bss
+01d02b73  mov      rax, qword ptr [rip + 0x26b5486]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d02b7a  mov      rax, qword ptr [rax + 0x20]   ; ev.value0
+01d02b7e  test     byte ptr [rax + 0x135], 1
+01d02b85  jne      0x1d02b8f
+01d02b87  mov      rcx, rax
+01d02b8a  call     0x4de1e0
+01d02b8f  mov      rax, qword ptr [rax + 0xc0]   ; ._speedToken
+01d02b96  mov      rax, qword ptr [rax + 0x10]   ; ev.eventType
+01d02b9a  test     byte ptr [rax + 0x135], 1
+01d02ba1  jne      0x1d02bab
+01d02ba3  mov      rcx, rax
+01d02ba6  call     0x4de1e0
+01d02bab  mov      rax, qword ptr [rax + 0xb8]   ; ._hormingToken
+01d02bb2  mov      ecx, dword ptr [rbx + 0x1b0]   ; ._moverState
+01d02bb8  movaps   xmmword ptr [rsp + 0xc0], xmm6   ; ._speedToken
+01d02bc0  movaps   xmmword ptr [rsp + 0xa0], xmm8   ; ._rotateToken
+01d02bc9  mov      rdi, qword ptr [rax]
+01d02bcc  movaps   xmmword ptr [rsp + 0x90], xmm9   ; ._destroyedToken
+01d02bd5  test     ecx, ecx
+01d02bd7  je       0x1d02db1
+01d02bdd  sub      ecx, 1
+01d02be0  je       0x1d02d6a
+01d02be6  sub      ecx, 1
+01d02be9  je       0x1d02c0f
+01d02beb  cmp      ecx, 1
+01d02bee  jne      0x1d02e88
+01d02bf4  mov      rdx, qword ptr [rbx]
+01d02bf7  mov      rcx, rbx
+01d02bfa  mov      rax, qword ptr [rdx + 0x308]
+01d02c01  mov      rdx, qword ptr [rdx + 0x310]
+01d02c08  call     rax
+01d02c0a  jmp      0x1d02e88
+01d02c0f  mov      rdx, qword ptr [rbx + 0x50]   ; ev.randomFire/._animatorsPlay
+01d02c13  test     rdx, rdx
+01d02c16  je       0x1d03141
+01d02c1c  xor      r8d, r8d
+01d02c1f  lea      rcx, [rsp + 0x40]   ; ev.intValue1/._animators
+01d02c24  call     0x3093ba0   ; Transform::get_position()
+01d02c29  test     rdi, rdi
+01d02c2c  je       0x1d03141
+01d02c32  movsd    xmm0, qword ptr [rax]
+01d02c36  lea      rdx, [rsp + 0x30]   ; ._entryFlag
+01d02c3b  mov      eax, dword ptr [rax + 8]
+01d02c3e  xor      r9d, r9d
+01d02c41  xor      r8d, r8d
+01d02c44  movsd    qword ptr [rsp + 0x30], xmm0   ; ._entryFlag
+01d02c4a  mov      rcx, rdi
+01d02c4d  mov      dword ptr [rsp + 0x38], eax   ; ev.stringValue/._psystems
+01d02c51  call     0x1ce4980   ; InGameManager::GetInGameScreenViewport(UnityEngine.Vector3,System.Boolean)
+01d02c56  movaps   xmm6, xmm7
+01d02c59  mov      qword ptr [rsp + 0xe0], rax
+01d02c61  addss    xmm6, dword ptr [rbx + 0x1ec]
+01d02c69  movss    dword ptr [rbx + 0x1ec], xmm6
+01d02c71  mov      rax, qword ptr [rip + 0x26b01f8]   ; [43b2e70] TypeInfo InGame.Kernel.Enemy.Ene_Sm01
+01d02c78  cmp      dword ptr [rax + 0xe4], 0
+01d02c7f  jne      0x1d02c90
+01d02c81  mov      rcx, rax
+01d02c84  call     0x4e0d90
+01d02c89  mov      rax, qword ptr [rip + 0x26b01e0]   ; [43b2e70] TypeInfo InGame.Kernel.Enemy.Ene_Sm01
+01d02c90  mov      rax, qword ptr [rax + 0xb8]   ; ._hormingToken
+01d02c97  xorps    xmm1, xmm1
+01d02c9a  movss    xmm2, dword ptr [rip + 0x17ddf6e]   ; rdata 34e0c10 f=-0,-0,-0,-0 d=-1.060997895e-314
+01d02ca2  movss    xmm5, dword ptr [rip + 0x17ddf22]   ; rdata 34e0bcc f=1,3.141593,4,10 d=50.12387842
+01d02caa  movss    xmm3, dword ptr [rsp + 0xe4]
+01d02cb3  movss    xmm0, dword ptr [rax]
+01d02cb7  comiss   xmm0, xmm6
+01d02cba  jbe      0x1d02cef
+01d02cbc  comiss   xmm3, xmm5
+01d02cbf  jb       0x1d02cce
+01d02cc1  movss    xmm0, dword ptr [rbx + 0x1c8]   ; ._masterEnemy
+01d02cc9  comiss   xmm0, xmm1
+01d02ccc  ja       0x1d02cdc
+01d02cce  comiss   xmm1, xmm3
+01d02cd1  jb       0x1d02cef
+01d02cd3  comiss   xmm1, dword ptr [rbx + 0x1c8]   ; ._masterEnemy
+01d02cda  jbe      0x1d02cef
+01d02cdc  movss    xmm0, dword ptr [rbx + 0x1c8]   ; ._masterEnemy
+01d02ce4  xorps    xmm0, xmm2
+01d02ce7  movss    dword ptr [rbx + 0x1c8], xmm0   ; ._masterEnemy
+01d02cef  movss    xmm4, dword ptr [rsp + 0xe0]
+01d02cf8  comiss   xmm4, xmm5
+01d02cfb  jb       0x1d02d0a
+01d02cfd  movss    xmm0, dword ptr [rbx + 0x1c0]   ; ._reveToken
+01d02d05  comiss   xmm0, xmm1
+01d02d08  ja       0x1d02d18
+01d02d0a  comiss   xmm1, xmm4
+01d02d0d  jb       0x1d02d2b
+01d02d0f  comiss   xmm1, dword ptr [rbx + 0x1c0]   ; ._reveToken
+01d02d16  jbe      0x1d02d2b
+01d02d18  movss    xmm0, dword ptr [rbx + 0x1c0]   ; ._reveToken
+01d02d20  xorps    xmm0, xmm2
+01d02d23  movss    dword ptr [rbx + 0x1c0], xmm0   ; ._reveToken
+01d02d2b  comiss   xmm1, xmm3
+01d02d2e  jb       0x1d02d4c
+01d02d30  comiss   xmm1, dword ptr [rbx + 0x1c8]   ; ._masterEnemy
+01d02d37  jbe      0x1d02d4c
+01d02d39  movss    xmm0, dword ptr [rbx + 0x1c8]   ; ._masterEnemy
+01d02d41  xorps    xmm0, xmm2
+01d02d44  movss    dword ptr [rbx + 0x1c8], xmm0   ; ._masterEnemy
+01d02d4c  mov      rax, qword ptr [rbx + 0xb8]   ; ._hormingToken
+01d02d53  test     rax, rax
+01d02d56  je       0x1d03141
+01d02d5c  cmp      byte ptr [rax + 0x291], 0   ; ._isInGamePlayArea
+01d02d63  je       0x1d02d93
+01d02d65  jmp      0x1d02e88
+01d02d6a  cmp      byte ptr [rbx + 0x1f0], 0   ; ._routesIndex
+01d02d71  jne      0x1d02da2
+01d02d73  movaps   xmm0, xmm7
+01d02d76  addss    xmm0, dword ptr [rbx + 0x1e8]   ; ._routes
+01d02d7e  comiss   xmm0, dword ptr [rip + 0x17de0e3]   ; rdata 34e0e68 f=5,1000,10,10 d=7.673846672e+21
+01d02d85  movss    dword ptr [rbx + 0x1e8], xmm0   ; ._routes
+01d02d8d  jb       0x1d02e88
+01d02d93  mov      dword ptr [rbx + 0x1b0], 3   ; ._moverState
+01d02d9d  jmp      0x1d02e88
+01d02da2  mov      dword ptr [rbx + 0x1b0], 2   ; ._moverState
+01d02dac  jmp      0x1d02e88
+01d02db1  xor      ecx, ecx
+01d02db3  call     0x1df12f0   ; RandomUtility::MakeSign()
+01d02db8  mov      rdx, qword ptr [rip + 0x26b00b1]   ; [43b2e70] TypeInfo InGame.Kernel.Enemy.Ene_Sm01
+01d02dbf  mov      edi, eax
+01d02dc1  cmp      dword ptr [rdx + 0xe4], 0
+01d02dc8  jne      0x1d02dd9
+01d02dca  mov      rcx, rdx
+01d02dcd  call     0x4e0d90
+01d02dd2  mov      rdx, qword ptr [rip + 0x26b0097]   ; [43b2e70] TypeInfo InGame.Kernel.Enemy.Ene_Sm01
+01d02dd9  mov      rcx, qword ptr [rdx + 0xb8]   ; ._hormingToken
+01d02de0  xor      r8d, r8d
+01d02de3  movss    xmm0, dword ptr [rcx + 4]
+01d02de8  xorps    xmm0, xmmword ptr [rip + 0x17dde21]   ; rdata 34e0c10 f=-0,-0,-0,-0 d=-1.060997895e-314
+01d02def  movss    xmm1, dword ptr [rcx + 4]
+01d02df4  call     0x1df1830   ; RandomUtility::Range(System.Single,System.Single)
+01d02df9  movaps   xmm6, xmm0
+01d02dfc  imul     eax, edi, 0x87
+01d02e02  movd     xmm1, eax
+01d02e06  cvtdq2ps xmm1, xmm1
+01d02e09  addss    xmm1, dword ptr [rip + 0x17e9b97]   ; rdata 34ec9a8 f=90,270,-1e-06,0 d=2.071656187e+17
+01d02e11  addss    xmm6, xmm1
+01d02e15  mulss    xmm6, dword ptr [rip + 0x17ddda3]   ; rdata 34e0bc0 f=0.01745329,0.05,0.5,1 d=2.046363552e-13
+01d02e1d  movaps   xmm0, xmm6
+01d02e20  call     0x576bf0
+01d02e25  movaps   xmm8, xmm0
+01d02e29  movaps   xmm0, xmm6
+01d02e2c  call     0x578040
+01d02e31  mov      rax, qword ptr [rbx + 0xb8]   ; ._hormingToken
+01d02e38  movaps   xmm4, xmm0
+01d02e3b  test     rax, rax
+01d02e3e  je       0x1d03141
+01d02e44  movss    xmm2, dword ptr [rax + 0x164]   ; ._currentSpeed
+01d02e4c  xorps    xmm1, xmm1
+01d02e4f  movaps   xmm3, xmm2
+01d02e52  mulss    xmm8, xmm2
+01d02e57  xor      edx, edx
+01d02e59  mov      rcx, rbx
+01d02e5c  mulss    xmm3, xmm1
+01d02e60  mulss    xmm4, xmm2
+01d02e64  unpcklps xmm8, xmm3
+01d02e68  movsd    qword ptr [rbx + 0x1c0], xmm8   ; ._reveToken
+01d02e71  movss    dword ptr [rbx + 0x1c8], xmm4   ; ._masterEnemy
+01d02e79  call     0x1d02780   ; Ene_Sm01::SetRandomMoveRotation()
+01d02e7e  mov      dword ptr [rbx + 0x1b0], 1   ; ._moverState
+01d02e88  cmp      dword ptr [rbx + 0x1b0], 1   ; ._moverState
+01d02e8f  je       0x1d02e9e
+01d02e91  cmp      dword ptr [rbx + 0x1b0], 2   ; ._moverState
+01d02e98  jne      0x1d0310e
+01d02e9e  movsd    xmm0, qword ptr [rbx + 0x1c0]   ; ._reveToken
+01d02ea6  mov      rdi, qword ptr [rbx + 0x50]   ; ev.randomFire/._animatorsPlay
+01d02eaa  movaps   xmm6, xmm0
+01d02ead  movss    xmm9, dword ptr [rbx + 0x1c8]   ; ._masterEnemy
+01d02eb6  movaps   xmm8, xmm0
+01d02eba  shufps   xmm6, xmm6, 0x55
+01d02ebe  mulss    xmm6, xmm7
+01d02ec2  mulss    xmm8, xmm7
+01d02ec7  movsd    qword ptr [rsp + 0x40], xmm0   ; ev.intValue1/._animators
+01d02ecd  mulss    xmm9, xmm7
+01d02ed2  test     rdi, rdi
+01d02ed5  je       0x1d03141
+01d02edb  xor      r8d, r8d
+01d02ede  lea      rcx, [rsp + 0x40]   ; ev.intValue1/._animators
+01d02ee3  mov      rdx, rdi
+01d02ee6  call     0x3093700   ; Transform::get_localPosition()
+01d02eeb  xor      r8d, r8d
+01d02eee  lea      rdx, [rsp + 0x30]   ; ._entryFlag
+01d02ef3  mov      rcx, rdi
+01d02ef6  movsd    xmm1, qword ptr [rax]
+01d02efa  addss    xmm9, dword ptr [rax + 8]
+01d02f00  movaps   xmm0, xmm1
+01d02f03  movsd    qword ptr [rsp + 0x30], xmm1   ; ._entryFlag
+01d02f09  shufps   xmm0, xmm0, 0x55
+01d02f0d  addss    xmm8, xmm1
+01d02f12  addss    xmm6, xmm0
+01d02f16  movss    dword ptr [rsp + 0x38], xmm9   ; ev.stringValue/._psystems
+01d02f1d  unpcklps xmm8, xmm6
+01d02f21  movsd    qword ptr [rsp + 0x30], xmm8   ; ._entryFlag
+01d02f28  call     0x3094570   ; Transform::set_localPosition(UnityEngine.Vector3)
+01d02f2d  mov      rcx, qword ptr [rbx + 0x1b8]   ; ._muzzlePacks
+01d02f34  test     rcx, rcx
+01d02f37  je       0x1d03141
+01d02f3d  xor      edx, edx
+01d02f3f  call     0x30651d0   ; GameObject::get_transform()
+01d02f44  mov      rdi, rax
+01d02f47  test     rax, rax
+01d02f4a  je       0x1d03141
+01d02f50  movaps   xmmword ptr [rsp + 0x80], xmm10   ; ._transformCaches
+01d02f59  lea      rcx, [rsp + 0x40]   ; ev.intValue1/._animators
+01d02f5e  movaps   xmmword ptr [rsp + 0x70], xmm11   ; ._transformCache
+01d02f64  xor      r8d, r8d
+01d02f67  mov      rdx, rax
+01d02f6a  movaps   xmmword ptr [rsp + 0x60], xmm12   ; ev.subnameValue/._psystemCount
+01d02f70  call     0x30937f0   ; Transform::get_localRotation()
+01d02f75  cmp      byte ptr [rip + 0x29594e5], 0   ; [465c461] bss
+01d02f7c  movups   xmm12, xmmword ptr [rax]
+01d02f80  jne      0x1d02f95
+01d02f82  lea      rcx, [rip + 0x26889cf]   ; [438b958] TypeInfo UnityEngine.Quaternion
+01d02f89  call     0x4e0a50
+01d02f8e  mov      byte ptr [rip + 0x29594cc], 1   ; [465c461] bss
+01d02f95  movups   xmm0, xmmword ptr [rbx + 0x1d8]   ; ._smoothRotateValue
+01d02f9c  mov      rax, qword ptr [rip + 0x26889b5]   ; [438b958] TypeInfo UnityEngine.Quaternion
+01d02fa3  lea      r8, [rsp + 0x40]   ; ev.intValue1/._animators
+01d02fa8  movaps   xmm3, xmm7
+01d02fab  mov      qword ptr [rsp + 0x20], 0   ; ev.value0
+01d02fb4  movaps   xmmword ptr [rsp + 0x40], xmm0   ; ev.intValue1/._animators
+01d02fb9  lea      rdx, [rsp + 0x30]   ; ._entryFlag
+01d02fbe  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01d02fc5  movups   xmm0, xmmword ptr [rcx]
+01d02fc8  lea      rcx, [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01d02fcd  movaps   xmmword ptr [rsp + 0x30], xmm0   ; ._entryFlag
+01d02fd2  call     0x304dab0   ; Quaternion::Internal_Lerp(UnityEngine.Quaternion&,UnityEngine.Quaternion&,System.Single)
+01d02fd7  movaps   xmm11, xmm12
+01d02fdb  lea      rdx, [rsp + 0x40]   ; ev.intValue1/._animators
+01d02fe0  movaps   xmm10, xmm12
+01d02fe4  movaps   xmm7, xmm12
+01d02fe8  shufps   xmm10, xmm12, 0xff
+01d02fed  movaps   xmm5, xmm12
+01d02ff1  movups   xmm9, xmmword ptr [rax]
+01d02ff5  xor      r8d, r8d
+01d02ff8  mov      rcx, rdi
+01d02ffb  movaps   xmm0, xmm10
+01d02fff  shufps   xmm7, xmm12, 0x55
+01d03004  mulss    xmm0, xmm9
+01d03009  movaps   xmm4, xmm7
+01d0300c  shufps   xmm5, xmm12, 0xaa
+01d03011  movaps   xmm8, xmm9
+01d03015  shufps   xmm8, xmm9, 0xff
+01d0301a  movaps   xmm1, xmm5
+01d0301d  mulss    xmm11, xmm8
+01d03022  movaps   xmm6, xmm9
+01d03026  shufps   xmm6, xmm9, 0xaa
+01d0302b  movaps   xmm2, xmm5
+01d0302e  mulss    xmm4, xmm8
+01d03033  movaps   xmm3, xmm9
+01d03037  addss    xmm11, xmm0
+01d0303c  shufps   xmm3, xmm9, 0x55
+01d03041  movaps   xmm0, xmm7
+01d03044  mulss    xmm1, xmm9
+01d03049  mulss    xmm0, xmm6
+01d0304d  mulss    xmm2, xmm8
+01d03052  addss    xmm11, xmm0
+01d03057  movaps   xmm0, xmm5
+01d0305a  mulss    xmm0, xmm3
+01d0305e  mulss    xmm5, xmm6
+01d03062  subss    xmm11, xmm0
+01d03067  movaps   xmm0, xmm10
+01d0306b  mulss    xmm0, xmm3
+01d0306f  addss    xmm4, xmm0
+01d03073  shufps   xmm11, xmm11, 0xe1
+01d03078  movaps   xmm0, xmm12
+01d0307c  mulss    xmm0, xmm6
+01d03080  addss    xmm4, xmm1
+01d03084  movaps   xmm1, xmm12
+01d03088  mulss    xmm12, xmm9
+01d0308d  mulss    xmm1, xmm3
+01d03091  subss    xmm4, xmm0
+01d03095  movaps   xmm0, xmm10
+01d03099  mulss    xmm0, xmm6
+01d0309d  mulss    xmm10, xmm8
+01d030a2  movss    xmm11, xmm4
+01d030a7  addss    xmm2, xmm0
+01d030ab  shufps   xmm11, xmm11, 0xc6
+01d030b0  movaps   xmm0, xmm7
+01d030b3  subss    xmm10, xmm12
+01d030b8  mulss    xmm7, xmm3
+01d030bc  mulss    xmm0, xmm9
+01d030c1  addss    xmm2, xmm1
+01d030c5  subss    xmm10, xmm7
+01d030ca  subss    xmm2, xmm0
+01d030ce  subss    xmm10, xmm5
+01d030d3  movss    xmm11, xmm2
+01d030d8  shufps   xmm11, xmm11, 0x27
+01d030dd  movss    xmm11, xmm10
+01d030e2  shufps   xmm11, xmm11, 0x39
+01d030e7  movups   xmmword ptr [rsp + 0x40], xmm11   ; ev.intValue1/._animators
+01d030ed  movdqa   xmmword ptr [rsp + 0x40], xmm11   ; ev.intValue1/._animators
+01d030f4  call     0x3094650   ; Transform::set_localRotation(UnityEngine.Quaternion)
+01d030f9  movaps   xmm12, xmmword ptr [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01d030ff  movaps   xmm11, xmmword ptr [rsp + 0x70]   ; ._transformCache
+01d03105  movaps   xmm10, xmmword ptr [rsp + 0x80]   ; ._transformCaches
+01d0310e  movaps   xmm9, xmmword ptr [rsp + 0x90]   ; ._destroyedToken
+01d03117  movaps   xmm8, xmmword ptr [rsp + 0xa0]   ; ._rotateToken
+01d03120  movaps   xmm6, xmmword ptr [rsp + 0xc0]   ; ._speedToken
+01d03128  mov      rbx, qword ptr [rsp + 0xe8]   ; ._spline
+01d03130  movaps   xmm7, xmmword ptr [rsp + 0xb0]   ; ._translateToken
+01d03138  add      rsp, 0xd0
+01d0313f  pop      rdi
+01d03140  ret      
+01d03141  call     0x4e0d00

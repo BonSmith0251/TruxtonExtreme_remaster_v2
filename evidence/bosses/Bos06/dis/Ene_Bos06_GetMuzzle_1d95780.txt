@@ -1,0 +1,15 @@
+01d95780 sub rsp, 0x28 
+01d95784 mov r8, qword ptr [rcx + 0x270] 
+01d9578b test r8, r8 
+01d9578e je 0x1d957a3 
+01d95790 cmp edx, dword ptr [r8 + 0x18] 
+01d95794 jae 0x1d957a9 
+01d95796 movsxd rax, edx 
+01d95799 mov rax, qword ptr [r8 + rax*8 + 0x20] 
+01d9579e add rsp, 0x28 
+01d957a2 ret 
+01d957a3 call 0x4e0d00 
+01d957a8 int3 
+01d957a9 call 0x4e0cf0 
+01d957ae int3 
+01d957af int3 

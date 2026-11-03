@@ -1,0 +1,90 @@
+== System.Collections.Generic.List`1<System.String> InGame.Kernel.Enemy.Ene_BosBase::GetBulletTemplates() RVA 1db98c0 len 15c
+01db98c0 mov        qword ptr [rsp + 0x20], rbx
+01db98c5 push       rsi
+01db98c6 sub        rsp, 0x20
+01db98ca cmp        byte ptr [rip + 0x28a9fa7], 0 ; [.data 4663878]
+01db98d1 mov        rbx, rcx
+01db98d4 jne        0x1db9901
+01db98d6 lea        rcx, [rip + 0x25d810b] ; [.data 43919e8] MethodRef#205594
+01db98dd call       0x4e0a50
+01db98e2 lea        rcx, [rip + 0x25bbb8f] ; [.data 4375478] MethodRef#202061
+01db98e9 call       0x4e0a50
+01db98ee lea        rcx, [rip + 0x25fe70b] ; [.data 43b8000] MethodRef#202981
+01db98f5 call       0x4e0a50
+01db98fa mov        byte ptr [rip + 0x28a9f77], 1 ; [.data 4663878]
+01db9901 mov        qword ptr [rsp + 0x30], rbp
+01db9906 xor        edx, edx
+01db9908 mov        qword ptr [rsp + 0x38], rdi
+01db990d mov        rcx, rbx
+01db9910 mov        qword ptr [rsp + 0x40], r14
+01db9915 call       0x1d0d650 ; InGame.Kernel.Enemy.PawnEnemy::GetBulletTemplates()
+01db991a mov        rdx, qword ptr [rbx]
+01db991d mov        rcx, rbx
+01db9920 mov        rsi, rax
+01db9923 mov        r8, qword ptr [rdx + 0x6a8]
+01db992a mov        rdx, qword ptr [rdx + 0x6b0]
+01db9931 call       r8
+01db9934 test       rax, rax
+01db9937 je         0x1db9954
+01db9939 test       rsi, rsi
+01db993c je         0x1db9a11
+01db9942 mov        r8, qword ptr [rip + 0x25bbb2f] ; [.data 4375478] MethodRef#202061
+01db9949 mov        rdx, rax
+01db994c mov        rcx, rsi
+01db994f call       0xbc80e0
+01db9954 mov        rdx, qword ptr [rbx]
+01db9957 mov        rcx, rbx
+01db995a mov        rax, qword ptr [rdx + 0x6b8]
+01db9961 mov        rdx, qword ptr [rdx + 0x6c0]
+01db9968 call       rax
+01db996a mov        rdi, rax
+01db996d test       rax, rax
+01db9970 je         0x1db99f4
+01db9976 mov        rdx, qword ptr [rip + 0x25d806b] ; [.data 43919e8] MethodRef#205594
+01db997d mov        rcx, rax
+01db9980 call       0x7d5180 ; System.Linq.Enumerable::Any(System.Collections.Generic.IEnumerable`1<TSource>)
+01db9985 test       al, al
+01db9987 je         0x1db99f4
+01db9989 mov        rcx, qword ptr [rip + 0x25fe670] ; [.data 43b8000] MethodRef#202981
+01db9990 call       0x27540
+01db9995 mov        rbp, rax
+01db9998 lea        r14, [rdi + 0x20]
+01db999c xor        ebx, ebx
+01db999e mov        ecx, ebx
+01db99a0 cmp        ebx, dword ptr [rdi + 0x18]
+01db99a3 jge        0x1db99f4
+01db99a5 cmp        ebx, dword ptr [rdi + 0x18]
+01db99a8 jae        0x1db9a17
+01db99aa test       rbp, rbp
+01db99ad je         0x1db9a11
+01db99af mov        rcx, qword ptr [rbp + 0x138] ; ~_lastHit
+01db99b6 test       rcx, rcx
+01db99b9 je         0x1db9a11
+01db99bb mov        rdx, qword ptr [r14]
+01db99be xor        r8d, r8d
+01db99c1 call       0x1cd2f00 ; InGame.Kernel.InGameEnemyClipsManager::GetData(System.String)
+01db99c6 test       rax, rax
+01db99c9 je         0x1db9a11
+01db99cb xor        edx, edx
+01db99cd mov        rcx, rax
+01db99d0 call       0x1d322f0 ; InGame.Kernel.Timeline.EnemyData::GetBulletTemplateNames()
+01db99d5 test       rsi, rsi
+01db99d8 je         0x1db9a11
+01db99da mov        r8, qword ptr [rip + 0x25bba97] ; [.data 4375478] MethodRef#202061
+01db99e1 mov        rdx, rax
+01db99e4 mov        rcx, rsi
+01db99e7 call       0xbc80e0
+01db99ec inc        ebx
+01db99ee add        r14, 8
+01db99f2 jmp        0x1db999e
+01db99f4 mov        r14, qword ptr [rsp + 0x40]
+01db99f9 mov        rax, rsi
+01db99fc mov        rdi, qword ptr [rsp + 0x38]
+01db9a01 mov        rbp, qword ptr [rsp + 0x30]
+01db9a06 mov        rbx, qword ptr [rsp + 0x48]
+01db9a0b add        rsp, 0x20
+01db9a0f pop        rsi
+01db9a10 ret        
+01db9a11 call       0x4e0d00
+01db9a16 int3       
+01db9a17 call       0x4e0cf0

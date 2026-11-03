@@ -1,0 +1,6 @@
+#### InGame.Kernel.Enemy.EnemyMover::StartRoute(System.Action) RVA 1d6cd90 len 17
+01d6cd90  nop      
+01d6cd92  xor      r8d, r8d
+01d6cd95  cmp      byte ptr [rcx + 0x293], r8b   ; ._inAreaStart
+01d6cd9c  jne      0x1d44210
+01d6cda2  jmp      0x1d44600   ; SplineMover::StartRoute(System.Action)

@@ -1,0 +1,62 @@
+#### InGame.Kernel.Enemy.Ene_Mi01::_callDeadEffect() RVA 1dc6b40 len 10d
+01dc6b40  push     rbx
+01dc6b42  sub      rsp, 0x50
+01dc6b46  cmp      byte ptr [rip + 0x289cd81], 0   ; [46638ce] bss
+01dc6b4d  mov      rbx, rcx
+01dc6b50  jne      0x1dc6b65
+01dc6b52  lea      rcx, [rip + 0x25f14a7]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01dc6b59  call     0x4e0a50
+01dc6b5e  mov      byte ptr [rip + 0x289cd69], 1   ; [46638ce] bss
+01dc6b65  xor      edx, edx
+01dc6b67  mov      rcx, rbx
+01dc6b6a  call     0x1d10e20   ; PawnEnemy::_callDeadEffect()
+01dc6b6f  cmp      dword ptr [rbx + 0x1b0], 0   ; ._item
+01dc6b76  je       0x1dc6c42
+01dc6b7c  mov      rax, qword ptr [rip + 0x25f147d]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01dc6b83  mov      qword ptr [rsp + 0x60], rdi   ; ._currentPosition
+01dc6b88  mov      rax, qword ptr [rax + 0x20]   ; .trot
+01dc6b8c  test     byte ptr [rax + 0x135], 1
+01dc6b93  jne      0x1dc6b9d
+01dc6b95  mov      rcx, rax
+01dc6b98  call     0x4de1e0
+01dc6b9d  mov      rax, qword ptr [rax + 0xc0]   ; ._burnShake
+01dc6ba4  mov      rax, qword ptr [rax + 0x10]
+01dc6ba8  test     byte ptr [rax + 0x135], 1
+01dc6baf  jne      0x1dc6bb9
+01dc6bb1  mov      rcx, rax
+01dc6bb4  call     0x4de1e0
+01dc6bb9  mov      rax, qword ptr [rax + 0xb8]   ; ._mover
+01dc6bc0  mov      rdx, qword ptr [rbx + 0x50]   ; .<>u__2
+01dc6bc4  mov      rdi, qword ptr [rax]
+01dc6bc7  test     rdx, rdx
+01dc6bca  je       0x1dc6c48
+01dc6bcc  xor      r8d, r8d
+01dc6bcf  lea      rcx, [rsp + 0x40]   ; .<tpassed>5__2
+01dc6bd4  call     0x3093ba0   ; Transform::get_position()
+01dc6bd9  test     rdi, rdi
+01dc6bdc  je       0x1dc6c48
+01dc6bde  movsd    xmm0, qword ptr [rax]
+01dc6be2  lea      r8, [rsp + 0x30]   ; .tsecond
+01dc6be7  mov      eax, dword ptr [rax + 8]
+01dc6bea  lea      rcx, [rsp + 0x40]   ; .<tpassed>5__2
+01dc6bef  xor      r9d, r9d
+01dc6bf2  movsd    qword ptr [rsp + 0x30], xmm0   ; .tsecond
+01dc6bf8  mov      rdx, rdi
+01dc6bfb  mov      dword ptr [rsp + 0x38], eax   ; ._callback
+01dc6bff  mov      qword ptr [rsp + 0x20], 0   ; .trot
+01dc6c08  call     0x1ce6750   ; InGameManager::GetSkyRootPosition(UnityEngine.Vector3,System.Boolean)
+01dc6c0d  mov      edx, dword ptr [rbx + 0x1b0]   ; ._item
+01dc6c13  lea      r8, [rsp + 0x30]   ; .tsecond
+01dc6c18  mov      r9b, 1
+01dc6c1b  mov      qword ptr [rsp + 0x20], 0   ; .trot
+01dc6c24  mov      rcx, rdi
+01dc6c27  movsd    xmm0, qword ptr [rax]
+01dc6c2b  mov      eax, dword ptr [rax + 8]
+01dc6c2e  movsd    qword ptr [rsp + 0x30], xmm0   ; .tsecond
+01dc6c34  mov      dword ptr [rsp + 0x38], eax   ; ._callback
+01dc6c38  call     0x1ce82e0   ; InGameManager::ItemDrop(InGame.Kernel.Item.ItemEffects/Kind,UnityEngine.Vector3,System.Boolean)
+01dc6c3d  mov      rdi, qword ptr [rsp + 0x60]   ; ._currentPosition
+01dc6c42  add      rsp, 0x50
+01dc6c46  pop      rbx
+01dc6c47  ret      
+01dc6c48  call     0x4e0d00

@@ -1,0 +1,45 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04::AddGuardian(InGame.Kernel.Enemy.Ene_Bos04Bit) RVA 1d8b3f0 len ac
+01d8b3f0 mov        qword ptr [rsp + 8], rbx
+01d8b3f5 push       rdi
+01d8b3f6 sub        rsp, 0x20
+01d8b3fa cmp        byte ptr [rip + 0x28d83b2], 0 ; [.data 46637b3]
+01d8b401 mov        rbx, rdx
+01d8b404 mov        rdi, rcx
+01d8b407 jne        0x1d8b41c
+01d8b409 lea        rcx, [rip + 0x2632540] ; [.data 43bd950] MethodRef#201293
+01d8b410 call       0x4e0a50
+01d8b415 mov        byte ptr [rip + 0x28d8397], 1 ; [.data 46637b3]
+01d8b41c mov        rcx, qword ptr [rdi + 0x2e8] ; ~_guardianList
+01d8b423 test       rcx, rcx
+01d8b426 je         0x1d8b491
+01d8b428 mov        r9, qword ptr [rip + 0x2632521] ; [.data 43bd950] MethodRef#201293
+01d8b42f inc        dword ptr [rcx + 0x1c]
+01d8b432 mov        r8, qword ptr [rcx + 0x10]
+01d8b436 test       r8, r8
+01d8b439 je         0x1d8b491
+01d8b43b movsxd     rdx, dword ptr [rcx + 0x18]
+01d8b43f cmp        edx, dword ptr [r8 + 0x18]
+01d8b443 jb         0x1d8b466
+01d8b445 mov        rax, qword ptr [r9 + 0x20]
+01d8b449 mov        rdx, rbx
+01d8b44c mov        r8, qword ptr [rax + 0xc0] ; ~_burnShake
+01d8b453 mov        r8, qword ptr [r8 + 0x70]
+01d8b457 mov        rbx, qword ptr [rsp + 0x30]
+01d8b45c add        rsp, 0x20
+01d8b460 pop        rdi
+01d8b461 jmp        0xbc8200
+01d8b466 lea        eax, [rdx + 1]
+01d8b469 mov        dword ptr [rcx + 0x18], eax
+01d8b46c cmp        edx, dword ptr [r8 + 0x18]
+01d8b470 jae        0x1d8b497
+01d8b472 mov        qword ptr [r8 + rdx*8 + 0x20], rbx
+01d8b477 add        r8, 0x20
+01d8b47b lea        rcx, [r8 + rdx*8]
+01d8b47f mov        rdx, rbx
+01d8b482 mov        rbx, qword ptr [rsp + 0x30]
+01d8b487 add        rsp, 0x20
+01d8b48b pop        rdi
+01d8b48c jmp        0x4dfd80
+01d8b491 call       0x4e0d00
+01d8b496 int3       
+01d8b497 call       0x4e0cf0

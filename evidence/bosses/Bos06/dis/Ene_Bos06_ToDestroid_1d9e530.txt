@@ -1,0 +1,106 @@
+01d9e530 push rbx 
+01d9e532 sub rsp, 0x20 
+01d9e536 cmp byte ptr [rip + 0x28c52b5], 0 ; rva=46637f2
+01d9e53d mov rbx, rcx 
+01d9e540 jne 0x1d9e555 
+01d9e542 lea rcx, [rip + 0x260ed57] ; rva=43ad2a0
+01d9e549 call 0x4e0a50 
+01d9e54e mov byte ptr [rip + 0x28c529d], 1 ; rva=46637f2
+01d9e555 xor edx, edx 
+01d9e557 mov rcx, rbx 
+01d9e55a call 0x1dbb280 ; Ene_BosBase::get_IsTrophy()
+01d9e55f test al, al 
+01d9e561 je 0x1d9e584 
+01d9e563 mov rcx, qword ptr [rip + 0x260ed36] ; rva=43ad2a0
+01d9e56a cmp dword ptr [rcx + 0xe4], 0 
+01d9e571 jne 0x1d9e578 
+01d9e573 call 0x4e0d90 
+01d9e578 xor edx, edx 
+01d9e57a mov ecx, 7 
+01d9e57f call 0x2717e50 ; TXEResident::SetTrophy(TXEKernel.TrophyManager/ID)
+01d9e584 mov qword ptr [rsp + 0x30], rsi 
+01d9e589 xor edx, edx 
+01d9e58b mov rcx, rbx 
+01d9e58e mov qword ptr [rsp + 0x38], rdi 
+01d9e593 call 0x1dba790 ; Ene_BosBase::StopBossTimer()
+01d9e598 mov rcx, qword ptr [rbx + 0xb8] 
+01d9e59f test rcx, rcx 
+01d9e5a2 je 0x1d9e6b0 
+01d9e5a8 xor edx, edx 
+01d9e5aa call 0x1cd9830 ; InGameEnemyMoveBase::DeleteRouteToken()
+01d9e5af mov rcx, qword ptr [rbx + 0x2d0] 
+01d9e5b6 test rcx, rcx 
+01d9e5b9 je 0x1d9e5c2 
+01d9e5bb xor edx, edx 
+01d9e5bd call 0x2094220 ; CancellationTokenSource::Cancel()
+01d9e5c2 xor esi, esi 
+01d9e5c4 lea rcx, [rbx + 0x2d0] 
+01d9e5cb xor edx, edx 
+01d9e5cd mov qword ptr [rbx + 0x2d0], rsi 
+01d9e5d4 call 0x4dfd80 
+01d9e5d9 xor edx, edx 
+01d9e5db mov rcx, rbx 
+01d9e5de call 0x1d0f520 ; PawnEnemy::ReleaseToken()
+01d9e5e3 mov rdi, qword ptr [rbx + 0x2f0] 
+01d9e5ea test rdi, rdi 
+01d9e5ed je 0x1d9e6b0 
+01d9e5f3 mov rcx, qword ptr [rdi + 0x40] 
+01d9e5f7 test rcx, rcx 
+01d9e5fa je 0x1d9e603 
+01d9e5fc xor edx, edx 
+01d9e5fe call 0x2094220 ; CancellationTokenSource::Cancel()
+01d9e603 lea rcx, [rdi + 0x40] 
+01d9e607 mov qword ptr [rdi + 0x40], rsi 
+01d9e60b xor edx, edx 
+01d9e60d call 0x4dfd80 
+01d9e612 lea rcx, [rdi + 0x30] 
+01d9e616 mov qword ptr [rdi + 0x30], rsi 
+01d9e61a xor edx, edx 
+01d9e61c call 0x4dfd80 
+01d9e621 lea rcx, [rdi + 0x38] 
+01d9e625 mov qword ptr [rdi + 0x38], rsi 
+01d9e629 xor edx, edx 
+01d9e62b call 0x4dfd80 
+01d9e630 lea rcx, [rdi + 0x48] 
+01d9e634 mov qword ptr [rdi + 0x48], rsi 
+01d9e638 xor edx, edx 
+01d9e63a call 0x4dfd80 
+01d9e63f lea rcx, [rdi + 0x50] 
+01d9e643 mov qword ptr [rdi + 0x50], rsi 
+01d9e647 xor edx, edx 
+01d9e649 call 0x4dfd80 
+01d9e64e mov rcx, qword ptr [rbx + 0x2f8] 
+01d9e655 test rcx, rcx 
+01d9e658 je 0x1d9e6b0 
+01d9e65a xor edx, edx 
+01d9e65c call 0x1da0350 ; Ene_Bos06/BatteryMovement::Terminate()
+01d9e661 mov rcx, qword ptr [rbx + 0x300] 
+01d9e668 test rcx, rcx 
+01d9e66b je 0x1d9e6b0 
+01d9e66d xor edx, edx 
+01d9e66f call 0x1da0350 ; Ene_Bos06/BatteryMovement::Terminate()
+01d9e674 cmp dword ptr [rbx + 0x2b0], 0x64 
+01d9e67b je 0x1d9e68d 
+01d9e67d mov dword ptr [rbx + 0x2b0], 0x64 
+01d9e687 mov dword ptr [rbx + 0x1ec], esi 
+01d9e68d mov rax, qword ptr [rbx + 0xb8] 
+01d9e694 test rax, rax 
+01d9e697 je 0x1d9e6b0 
+01d9e699 mov rdi, qword ptr [rsp + 0x38] 
+01d9e69e mov byte ptr [rax + 0x1d4], sil 
+01d9e6a5 mov rsi, qword ptr [rsp + 0x30] 
+01d9e6aa add rsp, 0x20 
+01d9e6ae pop rbx 
+01d9e6af ret 
+01d9e6b0 call 0x4e0d00 
+01d9e6b5 int3 
+01d9e6b6 int3 
+01d9e6b7 int3 
+01d9e6b8 int3 
+01d9e6b9 int3 
+01d9e6ba int3 
+01d9e6bb int3 
+01d9e6bc int3 
+01d9e6bd int3 
+01d9e6be int3 
+01d9e6bf int3 

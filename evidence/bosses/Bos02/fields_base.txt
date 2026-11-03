@@ -1,0 +1,125 @@
+== InGame.Kernel.Enemy.Ene_BosBase base InGame.Kernel.Enemy.PawnEnemy
+  0x1B0 Private                        System.Boolean _isBossDead 
+  0x1B1 Private                        System.Boolean _isDamageTurned 
+  0x1B2 Private                        System.Boolean _isBossTimeStart 
+  0x1B3 Private                        System.Boolean _isDeadEffectCalled 
+  0x1B4 Private                        System.Boolean _isDirectionPause 
+  0x1B5 Private                        System.Boolean _isPlayerSideLeft 
+  0x1B6 Private                        System.Boolean _isPlayerSideDown 
+  0x1B7 Private                        System.Boolean _isPlayerSideCenter 
+  0x1B8 Private                        System.Boolean _isPlayerSideBottom 
+  0x1BC Private                        System.Single _bossAliveTime 
+  0x1C0 Private                        System.Single _bossActionUpTime 
+  0x1C4 Private                        System.Single _directionTimeTotal 
+  0x1C8 Private                        System.Single _directionTimePassed 
+  0x1CC Private                        System.Single _directionTimeScale 
+  0x1D0 Private                        System.Single _repeatTimer 
+  0x1D4 Private                        System.Single _repeatPassed 
+  0x1D8 Private                        System.Int32 _repeatTimes 
+  0x1DC Private                        System.Boolean _repeatLaped 
+  0x1E0 Private                        System.Single _smallBombBaseSecond 
+  0x1E4 Private                        System.Single _smallBombCurrent 
+  0x1E8 Private                        System.Int32 _attackLoopCount 
+  0x1EC Family                         System.Int32 _patternMode 
+  0x1F0 Private                        UnityEngine.Vector3 _baseTargetPlayer 
+  0x1FC Private                        System.Int32 <_enemyDataCount>k__BackingField 
+  0x200 Family                         InGame.Kernel.Timeline.EnemyData[] _enemyDatas 
+  0x208 Family                         InGame.Kernel.Enemy.BulletTemplate[] btemplates 
+  0x210 Private                        TXEKernel.PlayMode _currentPlayMode 
+  0x214 Private                        TXEKernel.PlayActor _currentActor 
+  0x218 Private                        System.Boolean _isTraining 
+  - Private, Static, InitOnly      System.Single[] hpRateRanges 
+  - Private, Static, InitOnly      System.Int32 hpRateRangeCount 
+  0x21C Private                        InGame.Kernel.Enemy.Ene_BosBase/HitPState _hpState 
+  0x220 Private                        InGame.Kernel.Enemy.Ene_BosBase/HitPState _hpOldState 
+  0x224 Private                        InGame.Kernel.Enemy.Ene_BosBase/TimeSteps _currentActStep 
+  0x228 Family                         UnityEngine.Vector3 _startInGamePosition 
+  0x234 Family                         UnityEngine.Vector3 _startVector 
+  0x240 Family                         UnityEngine.Vector3 _targetVector 
+  0x24C Family                         UnityEngine.Quaternion _startAngle 
+  0x25C Family                         UnityEngine.Quaternion _targetAngle 
+== InGame.Kernel.Enemy.PawnEnemy base InGame.Kernel.InGameCollisionBase
+  0xA0 Private                        InGame.Kernel.Enemy.PawnEnemy/poolEventFunction PoolEvent 
+  0xA8 Private                        InGame.Kernel.Enemy.IEnemyUpdater[] _updateEvents 
+  0xB0 Private                        System.Int32 _updateEventCount 
+  0xB4 Private                        System.Int32 _updateLateEventCount 
+  0xB8 Family                         InGame.Kernel.Enemy.EnemyMover _mover 
+  0xC0 Private                        System.Single _burnShake 
+  0xC4 Private                        System.Single _burnShakePow 
+  0xC8 Private                        System.Single _burnShakeSpeed 
+  0xCC Private                        System.Single _aliveTime 
+  0xD0 Private                        System.Single _startDelayTime 
+  0xD4 Private                        System.Single _delayTime 
+  0xD8 Private                        System.Single _DamageScored 
+  0xE0 Private                        System.String _deadExplosion 
+  0xE8 Private                        System.Int32 _deadExplosionHash 
+  0xF0 Private                        System.String _deadBullet 
+  0xF8 Private                        System.String _deadBulletSelecter 
+  0x100 Private                        InGame.Kernel.Enemy.BulletTemplate _deadBulletCache 
+  0x108 Private                        TXEKernel.Sound.SoundUtility/ExpSound _overplayDeadSound 
+  0x10C Private                        System.Int32 _scorePoint 
+  0x110 Private                        System.Int32 _pipilCount 
+  0x114 Private                        System.Int32 _jewelCount 
+  0x118 Private                        System.Int32 _bornArea 
+  0x11C Private                        System.Int32 _poolIndex 
+  0x120 Family                         TXEKernel.Enemy.EnemySize _sizeType 
+  0x128 Family                         TXEKernel.Enemy.EnemyDataBaseRecords/Record _recordData 
+  0x130 Private                        TXEKernel.TXEKernelHybridCollisions/attackType _causeOfDeath 
+  0x134 Family                         System.Int32 _deathByPno 
+  0x138 Private                        TXEKernel.TXEKernelHybridCollisions/attackType _lastHit 
+  0x13C Private                        System.Boolean _isFirstFrame 
+  0x13D Family                         System.Boolean _isChildEnemy 
+  0x13E Private                        System.Boolean _isSkipDestroyCount 
+  0x13F Private                        System.Boolean _isExboostDead 
+  0x140 Private                        System.Boolean _isResultDone 
+  0x141 Private                        System.Boolean _isEventDone 
+  0x142 Private                        System.Boolean _isEventEnd 
+  0x144 Family                         UnityEngine.Vector3 _shakeBaseVector 
+  0x150 Private                        UnityEngine.Vector3 _shakeResultVector 
+  0x15C Family                         UnityEngine.Vector3 _explosionOffset 
+  0x168 Family                         UnityEngine.Transform _modelTop 
+  0x170 Private                        System.Single _targetY 
+  0x174 Private                        InGame.Kernel.Enemy.PawnEnemy/Division _division 
+  0x178 Private                        System.Threading.CancellationTokenSource _token 
+  0x180 Family                         InGame.Kernel.Enemy.EnePartsGroup[] PartsList 
+  0x188 Private                        System.Int32 _partsCount 
+  0x18C Private                        System.Boolean _isSimpleCalc 
+  0x190 Family                         InGame.Kernel.Enemy.PawnEnemy/DieCallback _dieCallback 
+  - Public, Static, InitOnly       System.Int32 _BaseColor 
+  - Public, Static, InitOnly       System.Int32 _FadeColor 
+  - Public, Static, InitOnly       System.Int32 _MaterialColor 
+  - Public, Static, InitOnly       System.Int32 _MaterialFactor 
+  - Public, Static, InitOnly       UnityEngine.Color DamagedColor 
+  - Family, Static, InitOnly       UnityEngine.Color DarkColor 
+  - Family, Static, InitOnly       UnityEngine.Color DeepDarkColor 
+  0x198 Private                        System.Int32 RenderDataCount 
+  0x1A0 Public                         InGame.Kernel.Enemy.PawnEnemy/RenderData[] RenderDatas 
+  0x1A8 Private                        System.Collections.Generic.Dictionary`2<UnityEngine.Renderer,InGame.Kernel.Enemy.PawnEnemy/RenderData> _rendererDictionary 
+== InGame.Kernel.InGameCollisionBase base TXEKernel.TXEKernelHybridCollisions
+  0x88 Family                         InGame.Kernel.InGameObject _objectInfo 
+  0x90 Private                        System.Int32 _priority 
+  0x94 Private                        System.Int32 _indexValue 
+  0x98 Private                        System.Single _invincibleTime 
+  0x9C Private                        System.Single _nodamagedTime 
+== TXEKernel.TXEKernelHybridCollisions base KANAI.HybridCollision.HybridCollisions
+== KANAI.HybridCollision.HybridCollisions base UnityEngine.MonoBehaviour
+  - Private, Static, InitOnly      UnityEngine.Vector3 _vectorOffset 
+  0x20 Private                        KANAI.HybridCollision.HybridCollisionModel[] _collisions 
+  0x28 Family                         System.Single _HitPoint 
+  0x2C Family                         System.Boolean _isLockonTarget 
+  0x2D Family                         System.Boolean _isLaserBlock 
+  0x30 Family                         System.Single _Damage 
+  0x34 Private                        System.Boolean _isInitialized 
+  0x35 Private                        System.Boolean _isPlaying 
+  0x36 Private                        System.Boolean _isGround 
+  0x37 Private                        System.Boolean _isUseLocal 
+  0x38 Private                        System.Action onDisableEvent 
+  0x40 Family                         System.Collections.Generic.List`1<KANAI.HybridCollision.HybridCollisionManager/CollisionOrder> _hitOrders 
+  0x48 Family                         System.Int32 _hitIndex 
+  0x4C Private                        System.Int32 _collisionsCount 
+  0x50 Family                         UnityEngine.Transform _transformCache 
+  0x58 Private                        UnityEngine.GameObject _gameObjectCache 
+  0x60 Family                         UnityEngine.Vector3 _currentPosition 
+  0x6C Family                         UnityEngine.Vector3 _beforePosition 
+  0x78 Family                         UnityEngine.Vector3 _basePosition 
+  0x84 Family                         System.Single _collisionScale 

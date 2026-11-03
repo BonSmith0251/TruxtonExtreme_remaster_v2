@@ -1,0 +1,106 @@
+{
+    "source":  "D:\\games\\Truxton Extreme",
+    "project":  "D:\\Games\\TruxtonExRecon\\Reconstructed",
+    "requested_editor":  "2023.2.22f1",
+    "source_editor":  "6000.3.7f1",
+    "migration_enabled":  true,
+    "source_mutation_allowed":  false,
+    "baseline_editor_tested":  "Not tested in source editor; source-version editor unavailable",
+    "target_editor_tested":  "2023.2.22f1",
+    "roles":  [
+                  {
+                      "role":  "coordinator",
+                      "requested_model":  "gpt-6-astra",
+                      "requested_effort":  "high",
+                      "actual_settings":  "main session; not independently exposed"
+                  },
+                  {
+                      "role":  "extraction",
+                      "requested_model":  "gpt-6.1-sol",
+                      "requested_effort":  "medium",
+                      "agent":  "/root/extraction",
+                      "request_accepted":  true,
+                      "actual_settings":  "not independently exposed"
+                  },
+                  {
+                      "role":  "code",
+                      "requested_model":  "gpt-6-astra",
+                      "requested_effort":  "high",
+                      "agent":  "/root/code",
+                      "request_accepted":  true,
+                      "actual_settings":  "not independently exposed"
+                  },
+                  {
+                      "role":  "migration",
+                      "requested_model":  "gpt-6-astra",
+                      "requested_effort":  "high",
+                      "agent":  "/root/migration",
+                      "request_accepted":  true,
+                      "actual_settings":  "not independently exposed"
+                  },
+                  {
+                      "role":  "scenes",
+                      "requested_model":  "gpt-6.1-sol",
+                      "requested_effort":  "high",
+                      "agent":  "/root/scenes",
+                      "request_accepted":  true,
+                      "actual_settings":  "not independently exposed"
+                  },
+                  {
+                      "role":  "verification",
+                      "requested_model":  "gpt-6-astra",
+                      "requested_effort":  "high",
+                      "agent":  "/root/verification",
+                      "request_accepted":  true,
+                      "actual_settings":  "not independently exposed"
+                  }
+              ],
+    "constraints":  [
+                        "Single integrator owns target Unity project",
+                        "Retain pristine export and original source fingerprints",
+                        "Differentiate raw,decoded,imported,attached,behavior verified",
+                        "Existing Round1 reimplementation is partial, reuse only with explicit provenance"
+                    ],
+    "initial_disk_free_bytes":  23152943104,
+    "validation":  {
+                       "source_preservation":  "PASS: final 275 SHA256 values unchanged; no added files",
+                       "source_inventory":  "270371 objects / 75 types; 270368 strict decoded; three remaining schema failures",
+                       "editor_compile":  "PASS: exact Unity 2023.2.22f1",
+                       "structure":  "PASS for audited attachments: 14 scenes, 2150 prefabs, 11578 main asset types. Full object/field/reference fidelity not established.",
+                       "behavior":  "PASS: supplemental Round1 ordinary Play twice, zero test errors; most original behavior remains unrecovered",
+                       "standalone":  "PASS: Windows x64 Mono Development build, eight build warnings; normal visible Hub/button/post-intro gameplay tested",
+                       "native_rendering":  "Recovered TXE pipeline static probe zero errors; limited geometry evidence only; full presentation/fidelity inconclusive",
+                       "final_project_integrity":  "PASS: all 27737 v4 files match after exact restoration of two diagnostic settings side effects"
+                   },
+    "started_utc":  "2026-10-31T12:26:08.911456+00:00",
+    "excluded_by_user":  {
+                             "Comic":  "81encoded bundles plus173native Comic audio clips and173seedduplicates excluded from target; one shared1x1transparent image. Source evidence remains preserved."
+                         },
+    "native_code_recovery":  {
+                                 "boot_coroutines":  3,
+                                 "simple_native_methods":  91,
+                                 "automatic_il_recovery":  0,
+                                 "simple_candidate_installed":  true
+                             },
+    "source_coverage_note":  "270371objects is the readable-container inventory population and includes173Comic AudioClip objects subsequently excluded by user; excluded encodedComic objects are outside this population.",
+    "finished_utc":  "2026-10-31T14:04:53.2526673Z",
+    "overall_result":  "Partial editable reconstruction delivered; complete original game not reconstructed",
+    "requested_scope_fully_achieved":  false,
+    "final_revision":  "reconstruction-2023.2.22f1-native-assets-v4",
+    "final_manifest_sha256":  "a4addaf382b3296745a1da8c15d8aa8d5fd230af1d50d080508df91b36730c7a",
+    "source_preservation_checked_utc":  "2026-10-31T14:04:13.520299+00:00",
+    "standalone_build":  "D:\\Games\\TruxtonExRecon\\Build\\TruxtonExRecon.exe",
+    "entry_scene":  "Assets/Reconstruction/Hub.unity",
+    "skill_updates_installed":  10,
+    "owned_validation_processes_running":  0,
+    "verification_report":  "verification/FINAL_VERIFICATION.json",
+    "coordinator_report":  "RECONSTRUCTION_REPORT.md",
+    "remaining_limits":  [
+                             "Most original IL2CPP executable behavior and original startup/menu/save/stage flows",
+                             "258 dummy shaders and 182 approximate material mappings; complete original rendering not verified",
+                             "Incomplete source-to-target nested-object mapping and full prefab/reference/field fidelity",
+                             "Three strict source schema failures",
+                             "Six OutGame fields across five state machines require Unity6 AsyncInstantiateOperation APIs absent in target",
+                             "Complete original-game playability and visual/behavioral parity not established"
+                         ]
+}

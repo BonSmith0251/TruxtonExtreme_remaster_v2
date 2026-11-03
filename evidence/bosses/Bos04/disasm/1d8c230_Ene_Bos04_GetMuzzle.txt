@@ -1,0 +1,14 @@
+== UnityEngine.Transform InGame.Kernel.Enemy.Ene_Bos04::GetMuzzle(InGame.Kernel.Enemy.Ene_Bos04/Boss04MZ) RVA 1d8c230 len 2e
+01d8c230 sub        rsp, 0x28
+01d8c234 mov        r8, qword ptr [rcx + 0x278] ; ~_muzzles
+01d8c23b test       r8, r8
+01d8c23e je         0x1d8c253
+01d8c240 cmp        edx, dword ptr [r8 + 0x18]
+01d8c244 jae        0x1d8c259
+01d8c246 movsxd     rax, edx
+01d8c249 mov        rax, qword ptr [r8 + rax*8 + 0x20]
+01d8c24e add        rsp, 0x28
+01d8c252 ret        
+01d8c253 call       0x4e0d00
+01d8c258 int3       
+01d8c259 call       0x4e0cf0

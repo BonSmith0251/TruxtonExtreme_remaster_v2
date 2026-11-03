@@ -1,0 +1,63 @@
+01cdc060  mov      qword ptr [rsp + 8], rbx
+01cdc065  mov      qword ptr [rsp + 0x10], rbp   ; ev.eventType
+01cdc06a  mov      qword ptr [rsp + 0x18], rsi   ; ev.repeatDelay
+01cdc06f  push     rdi
+01cdc070  sub      rsp, 0x80
+01cdc077  cmp      byte ptr [rip + 0x298725a], 0   ; [46632d8] bss
+01cdc07e  mov      rsi, r9
+01cdc081  mov      rbx, r8
+01cdc084  mov      rbp, rdx
+01cdc087  mov      rdi, rcx
+01cdc08a  jne      0x1cdc09f
+01cdc08c  lea      rcx, [rip + 0x26c8f5d]   ; [43a4ff0] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::Start<.<_changeSpeedAsync>d__74>
+01cdc093  call     0x4e0a50
+01cdc098  mov      byte ptr [rip + 0x2987239], 1   ; [46632d8] bss
+01cdc09f  xor      eax, eax
+01cdc0a1  lea      rcx, [rsp + 0x38]   ; ev.stringValue/._psystems
+01cdc0a6  xorps    xmm0, xmm0
+01cdc0a9  mov      qword ptr [rsp + 0x30], rax   ; ._entryFlag
+01cdc0ae  xorps    xmm1, xmm1
+01cdc0b1  mov      qword ptr [rsp + 0x48], rax   ; ev.intValue3/.GameObjectCache
+01cdc0b6  xor      edx, edx
+01cdc0b8  mov      qword ptr [rsp + 0x50], rax   ; ev.randomFire/._animatorsPlay
+01cdc0bd  mov      qword ptr [rsp + 0x58], rax   ; ev.nameValue/._particleSpeed
+01cdc0c2  movdqa   xmmword ptr [rsp + 0x60], xmm0   ; ev.subnameValue/._psystemCount
+01cdc0c8  mov      qword ptr [rsp + 0x70], rax   ; ._transformCache
+01cdc0cd  movups   xmmword ptr [rsp + 0x38], xmm1   ; ev.stringValue/._psystems
+01cdc0d2  call     0x4dfd80
+01cdc0d7  mov      rdx, rbp
+01cdc0da  mov      qword ptr [rsp + 0x48], rbp   ; ev.intValue3/.GameObjectCache
+01cdc0df  lea      rcx, [rsp + 0x48]   ; ev.intValue3/.GameObjectCache
+01cdc0e4  call     0x4dfd80
+01cdc0e9  xor      edx, edx
+01cdc0eb  mov      qword ptr [rsp + 0x58], rbx   ; ev.nameValue/._particleSpeed
+01cdc0f0  lea      rcx, [rsp + 0x58]   ; ev.nameValue/._particleSpeed
+01cdc0f5  call     0x4dfd80
+01cdc0fa  mov      rdx, rsi
+01cdc0fd  mov      qword ptr [rsp + 0x50], rsi   ; ev.randomFire/._animatorsPlay
+01cdc102  lea      rcx, [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01cdc107  call     0x4dfd80
+01cdc10c  mov      rbx, qword ptr [rip + 0x26c8edd]   ; [43a4ff0] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::Start<.<_changeSpeedAsync>d__74>
+01cdc113  mov      dword ptr [rsp + 0x30], 0xffffffff   ; ._entryFlag
+01cdc11b  cmp      qword ptr [rbx + 0x38], 0   ; ev.stringValue/._psystems
+01cdc120  jne      0x1cdc12a
+01cdc122  mov      rcx, rbx
+01cdc125  call     0x4de260
+01cdc12a  mov      rdx, qword ptr [rbx + 0x38]   ; ev.stringValue/._psystems
+01cdc12e  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01cdc133  mov      rdx, qword ptr [rdx + 0x10]   ; ev.eventType
+01cdc137  call     0x1cf6090   ; InGameEnemyMoveBase/<_changeSpeedAsync>d__74::MoveNext()
+01cdc13c  xor      r8d, r8d
+01cdc13f  lea      rdx, [rsp + 0x38]   ; ev.stringValue/._psystems
+01cdc144  lea      rcx, [rsp + 0x20]   ; ev.value0
+01cdc149  call     0x71b540
+01cdc14e  lea      r11, [rsp + 0x80]   ; ._transformCaches
+01cdc156  mov      rbx, qword ptr [r11 + 0x10]   ; ev.eventType
+01cdc15a  mov      rbp, qword ptr [r11 + 0x18]   ; ev.repeatDelay
+01cdc15e  movups   xmm0, xmmword ptr [rax]
+01cdc161  mov      rsi, qword ptr [r11 + 0x20]   ; ev.value0
+01cdc165  mov      rax, rdi
+01cdc168  movups   xmmword ptr [rdi], xmm0
+01cdc16b  mov      rsp, r11
+01cdc16e  pop      rdi
+01cdc16f  ret      

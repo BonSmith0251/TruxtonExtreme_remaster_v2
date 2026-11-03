@@ -1,0 +1,5 @@
+== System.Boolean InGame.Kernel.Enemy.Ene_BosBase::IsChangeHpState() RVA 1db9f80 len 10
+01db9f80 mov        eax, dword ptr [rcx + 0x21c] ; ~_hpState
+01db9f86 cmp        dword ptr [rcx + 0x220], eax ; ~_hpOldState
+01db9f8c setne      al
+01db9f8f ret        

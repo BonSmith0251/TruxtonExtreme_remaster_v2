@@ -1,0 +1,405 @@
+{
+ "reference": "Reconstructed/Assets/Resources/Truxton/round1-enemy-hitshapes.json",
+ "output": "Reconstructed/Assets/Resources/StageCombat/enemy-hitshapes.json",
+ "tolerance": 0.0015,
+ "summary": {
+  "referenceModels": 21,
+  "matched": 20,
+  "matchedWithShapeYawIgnored": 21,
+  "stageModels": 95,
+  "stageModelsResolved": 87,
+  "extractedModels": 89,
+  "unresolved": [
+   "Pf_EneObj_Bg08_ZoneA",
+   "Pf_EneObj_Bg08_ZoneB",
+   "Pf_EneObj_Bg08_ZoneC",
+   "Pf_EneObj_Bg08_ZoneD",
+   "Pf_EneObj_Bg08_ZoneE",
+   "Pf_EneObj_Bg08_ZoneF",
+   "Pf_EneObj_Bg08_ZoneG",
+   "Pf_EneObj_Bg08_ZonezBOSS"
+  ],
+  "modelsWithExtrapolatedRules": [
+   "Pf_Ene_BLa01",
+   "Pf_Ene_Bos01",
+   "Pf_Ene_Bos05",
+   "Pf_Ene_Bos06",
+   "Pf_Ene_Bos07",
+   "Pf_Ene_Bos08A",
+   "Pf_Ene_Mf01",
+   "Pf_Ene_Mm01",
+   "Pf_Ene_Mq01",
+   "Pf_Ene_Sg01",
+   "Pf_Ene_St01"
+  ]
+ },
+ "rules": {
+  "included": "EnemyCollisionModel entries of the root owner's (PawnEnemy subclass) _collisions, in list order; BulletBlockModel / InGameWallCollisionModel / other HybridCollisionModel classes excluded",
+  "Circle/CircleNR": "r = _points[0].x * max(lossyScale.x, lossyScale.z)",
+  "Capsule": "_points = half extents (x, y->z); circles of r = short along the long axis, centres evenly from -(long-short) to +(long-short), gaps = ceil(span / (1.5*short)); equal extents -> one circle",
+  "Box/BoxNR": "centres as capsule, r = sqrt(short^2 + (gap/2)^2); square -> one equal-area circle r = 2a/sqrt(pi)",
+  "Polygon": "bbox aspect <= 2: one circle at the vertex mean, r = 0.8 * farthest vertex (Md01); else slices along the long axis (count as box rule), each covered by its own circle (extrapolated)",
+  "simpleCalc": "PawnEnemy._isSimpleCalc: shape points x 1.61",
+  "transform": "position = Unity TRS composition of the chain below the prefab root, Y dropped; extents x lossy scale (x, z); shape turned by the projected yaw of its node (the reference ignored it)"
+ },
+ "models": [
+  {
+   "model": "Pf_EneObj_Meteo_La02",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_EneObj_Meteo_Ma02",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_EneObj_Meteo_Sa02",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_Lb01",
+   "match": false,
+   "circles": 34,
+   "maxAbsDiff": 6.588,
+   "differences": [
+    {
+     "index": 8,
+     "source": "Pf_Ene_Lb01/Collider/armL",
+     "reference": {
+      "x": -30.0,
+      "z": -0.5,
+      "r": 8.0
+     },
+     "extracted": {
+      "x": -36.588,
+      "z": 1.47,
+      "r": 8.0
+     }
+    },
+    {
+     "index": 10,
+     "source": "Pf_Ene_Lb01/Collider/armL",
+     "reference": {
+      "x": -30.0,
+      "z": 23.5,
+      "r": 8.0
+     },
+     "extracted": {
+      "x": -23.412,
+      "z": 21.53,
+      "r": 8.0
+     }
+    },
+    {
+     "index": 11,
+     "source": "Pf_Ene_Lb01/Collider/armR",
+     "reference": {
+      "x": 30.0,
+      "z": -0.5,
+      "r": 8.0
+     },
+     "extracted": {
+      "x": 36.588,
+      "z": 1.47,
+      "r": 8.0
+     }
+    },
+    {
+     "index": 13,
+     "source": "Pf_Ene_Lb01/Collider/armR",
+     "reference": {
+      "x": 30.0,
+      "z": 23.5,
+      "r": 8.0
+     },
+     "extracted": {
+      "x": 23.412,
+      "z": 21.53,
+      "r": 8.0
+     }
+    }
+   ]
+  },
+  {
+   "model": "Pf_Ene_Ma01",
+   "match": true,
+   "circles": 7,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_Md01",
+   "match": true,
+   "circles": 4,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_Me01",
+   "match": true,
+   "circles": 4,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_Mj01h",
+   "match": true,
+   "circles": 7,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_Sa01",
+   "match": true,
+   "circles": 2,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_Sd01",
+   "match": true,
+   "circles": 2,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_Se01",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_BGObj_ColorBox00_UN",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_BGObj_ColorBox01",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_BMa01",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_BSa01",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_BSb01",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_BSc01",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_Mx01",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Item_Box02",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Item_Box01",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_Mj01b",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  }
+ ],
+ "withShapeYawIgnored": [
+  {
+   "model": "Pf_EneObj_Meteo_La02",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_EneObj_Meteo_Ma02",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_EneObj_Meteo_Sa02",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_Lb01",
+   "match": true,
+   "circles": 34,
+   "maxAbsDiff": 0.001
+  },
+  {
+   "model": "Pf_Ene_Ma01",
+   "match": true,
+   "circles": 7,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_Md01",
+   "match": true,
+   "circles": 4,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_Me01",
+   "match": true,
+   "circles": 4,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_Mj01h",
+   "match": true,
+   "circles": 7,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_Sa01",
+   "match": true,
+   "circles": 2,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_Sd01",
+   "match": true,
+   "circles": 2,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_Se01",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_BGObj_ColorBox00_UN",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_BGObj_ColorBox01",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_BMa01",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_BSa01",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_BSb01",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_BSc01",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_Mx01",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Item_Box02",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Item_Box01",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  },
+  {
+   "model": "Pf_Ene_Mj01b",
+   "match": true,
+   "circles": 1,
+   "maxAbsDiff": 0.0
+  }
+ ],
+ "extrapolationWarnings": {
+  "Pf_Ene_Bos01": [
+   "Pf_Ene_Bos01/pf_bs01/body/wing60/shoulder_lwing: elongated polygon covered by slices (no reference sample)",
+   "Pf_Ene_Bos01/pf_bs01/body/wing40/shoulder_rwing: elongated polygon covered by slices (no reference sample)"
+  ],
+  "Pf_Ene_Mq01": [
+   "Pf_Ene_Mq01/collision1: compact polygon rule verified on a triangle only",
+   "Pf_Ene_Mq01/collisionLW: elongated polygon covered by slices (no reference sample)",
+   "Pf_Ene_Mq01/collisionRW: elongated polygon covered by slices (no reference sample)"
+  ],
+  "Pf_Ene_St01": [
+   "Pf_Ene_St01/collisions: simpleCalc Capsule points scaled by 1.61 (rule verified on circles only)"
+  ],
+  "Pf_Ene_Sg01": [
+   "Pf_Ene_Sg01/collisions: simpleCalc Capsule points scaled by 1.61 (rule verified on circles only)"
+  ],
+  "Pf_Ene_Bos05": [
+   "Pf_Ene_Bos05/pf_bs05/RotX-65_Scal0.85/arm40/arm40: non-yaw rotation in chain, shape oriented by its projected X axis",
+   "Pf_Ene_Bos05/pf_bs05/RotX-65_Scal0.85/arm60/arm60: non-yaw rotation in chain, shape oriented by its projected X axis"
+  ],
+  "Pf_Ene_Mm01": [
+   "Pf_Ene_Mm01/collisions_atttack1: elongated polygon covered by slices (no reference sample)",
+   "Pf_Ene_Mm01/collisions_atttack2: elongated polygon covered by slices (no reference sample)"
+  ],
+  "Pf_Ene_BLa01": [
+   "Pf_Ene_BLa01/collisions: compact polygon rule verified on a triangle only"
+  ],
+  "Pf_Ene_Bos07": [
+   "Pf_Ene_Bos07/pf_bs07/me_bs07/leg40/leg41/leg42/leg42: elongated polygon covered by slices (no reference sample)",
+   "Pf_Ene_Bos07/pf_bs07/me_bs07/leg60/leg61/leg62/leg62: elongated polygon covered by slices (no reference sample)"
+  ],
+  "Pf_Ene_Bos06": [
+   "Pf_Ene_Bos06/pf_bs06/bs06_body01_40/body40: elongated polygon covered by slices (no reference sample)",
+   "Pf_Ene_Bos06/pf_bs06/bs06_body01_60/body60: elongated polygon covered by slices (no reference sample)"
+  ],
+  "Pf_Ene_Mf01": [
+   "Pf_Ene_Mf01/pf_ene_mf01/Collisions/wingL: elongated polygon covered by slices (no reference sample)",
+   "Pf_Ene_Mf01/pf_ene_mf01/Collisions/wingR: elongated polygon covered by slices (no reference sample)"
+  ],
+  "Pf_Ene_Bos08A": [
+   "Pf_Ene_Bos08A/cover07: compact polygon rule verified on a triangle only",
+   "Pf_Ene_Bos08A/cover09: compact polygon rule verified on a triangle only",
+   "Pf_Ene_Bos08A/cover01: compact polygon rule verified on a triangle only",
+   "Pf_Ene_Bos08A/cover03: compact polygon rule verified on a triangle only"
+  ]
+ }
+}

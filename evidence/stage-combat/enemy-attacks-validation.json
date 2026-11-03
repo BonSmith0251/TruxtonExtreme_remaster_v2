@@ -1,0 +1,604 @@
+{
+ "reference": "Resources/Truxton/round1-enemy-attacks.json",
+ "ours": "Resources/StageCombat/enemy-attacks.json restricted to BG03 (build(stage_filter=\"BG03\"))",
+ "sections": {
+  "patterns": {
+   "summary": {
+    "match": 39,
+    "extra": 2
+   },
+   "items": [
+    {
+     "name": "bma01_fire",
+     "result": "match"
+    },
+    {
+     "name": "bma01_fired",
+     "result": "extra",
+     "ours": {
+      "name": "bma01_fired",
+      "dataVersion": 539103250,
+      "bulletName": "enemybullet009",
+      "bulletType": 1,
+      "nArc": 0.0,
+      "nStartArc": 270.0,
+      "nRandomArc": 0,
+      "nLimitArc": 3,
+      "btFlag": 0,
+      "nSpeed": 1.0,
+      "nIrradiation": 0.0,
+      "nTempValue0": 0.0,
+      "nRapidCount": 1,
+      "nSoundLap": 0,
+      "nRapidInflation": 0.0,
+      "nRapidDistance": 0.009999999776482582,
+      "nRapidRotation": 0.0,
+      "nRapidWaySwitch": 0,
+      "nRapidArcSwitch": 0.0,
+      "moveType": 0,
+      "curveType": 0,
+      "nCurveArc": 1.0,
+      "nCurveRange": 1.0,
+      "nFirePosRadius": 0.0,
+      "isTarget": 1,
+      "isRapidTarget": 0,
+      "isReverse": 0,
+      "isSelfDir": 0,
+      "isMuzzleEffect": 0,
+      "curveAnime": {
+       "m_Curve": [],
+       "m_PreInfinity": 2,
+       "m_PostInfinity": 2,
+       "m_RotationOrder": 4
+      }
+     },
+     "evidence": {
+      "sources": [
+       "X:bma01_fired_sel"
+      ]
+     }
+    },
+    {
+     "name": "bos03_7way",
+     "result": "match"
+    },
+    {
+     "name": "bos03_arm0",
+     "result": "match"
+    },
+    {
+     "name": "bos03_faceL1",
+     "result": "match"
+    },
+    {
+     "name": "bos03_faceL2",
+     "result": "match"
+    },
+    {
+     "name": "bos03_faceL3",
+     "result": "match"
+    },
+    {
+     "name": "bos03_faceR1",
+     "result": "match"
+    },
+    {
+     "name": "bos03_faceR2",
+     "result": "match"
+    },
+    {
+     "name": "bos03_faceR3",
+     "result": "match"
+    },
+    {
+     "name": "bos03_las00",
+     "result": "match"
+    },
+    {
+     "name": "bos03_rap3",
+     "result": "match"
+    },
+    {
+     "name": "bos03_sidewayL",
+     "result": "match"
+    },
+    {
+     "name": "bos03_sidewayR",
+     "result": "match"
+    },
+    {
+     "name": "bos03_turret0",
+     "result": "match"
+    },
+    {
+     "name": "bsa01_fire",
+     "result": "match"
+    },
+    {
+     "name": "bsb01_fire",
+     "result": "match"
+    },
+    {
+     "name": "bsc01_fire",
+     "result": "match"
+    },
+    {
+     "name": "bsc01_fire_easy",
+     "result": "match"
+    },
+    {
+     "name": "bsc01_fired",
+     "result": "extra",
+     "ours": {
+      "name": "bsc01_fired",
+      "dataVersion": 539103250,
+      "bulletName": "enemybullet009",
+      "bulletType": 1,
+      "nArc": 0.0,
+      "nStartArc": 270.0,
+      "nRandomArc": 0,
+      "nLimitArc": 3,
+      "btFlag": 0,
+      "nSpeed": 1.0,
+      "nIrradiation": 0.0,
+      "nTempValue0": 0.0,
+      "nRapidCount": 1,
+      "nSoundLap": 0,
+      "nRapidInflation": 0.0,
+      "nRapidDistance": 0.10000000149011612,
+      "nRapidRotation": 0.0,
+      "nRapidWaySwitch": 0,
+      "nRapidArcSwitch": 0.0,
+      "moveType": 0,
+      "curveType": 0,
+      "nCurveArc": 1.0,
+      "nCurveRange": 1.0,
+      "nFirePosRadius": 0.0,
+      "isTarget": 1,
+      "isRapidTarget": 0,
+      "isReverse": 0,
+      "isSelfDir": 0,
+      "isMuzzleEffect": 0,
+      "curveAnime": {
+       "m_Curve": [],
+       "m_PreInfinity": 2,
+       "m_PostInfinity": 2,
+       "m_RotationOrder": 4
+      }
+     },
+     "evidence": {
+      "sources": [
+       "X:bsc01_fired_sel"
+      ]
+     }
+    },
+    {
+     "name": "lb01_fire_head",
+     "result": "match"
+    },
+    {
+     "name": "lb01_fire_head_easy",
+     "result": "match"
+    },
+    {
+     "name": "lb01_fire_side_l",
+     "result": "match"
+    },
+    {
+     "name": "lb01_fire_side_l_easy",
+     "result": "match"
+    },
+    {
+     "name": "lb01_fire_side_r",
+     "result": "match"
+    },
+    {
+     "name": "lb01_fire_side_r_easy",
+     "result": "match"
+    },
+    {
+     "name": "ma01_fire1",
+     "result": "match"
+    },
+    {
+     "name": "ma01_fire1_easy",
+     "result": "match"
+    },
+    {
+     "name": "ma01_fire2",
+     "result": "match"
+    },
+    {
+     "name": "ma01_laser1",
+     "result": "match"
+    },
+    {
+     "name": "ma01_laser2",
+     "result": "match"
+    },
+    {
+     "name": "md01_fire1",
+     "result": "match"
+    },
+    {
+     "name": "md01_fire1_easy",
+     "result": "match"
+    },
+    {
+     "name": "md01_fire3",
+     "result": "match"
+    },
+    {
+     "name": "md01_fire3_easy",
+     "result": "match"
+    },
+    {
+     "name": "me01_fire1",
+     "result": "match"
+    },
+    {
+     "name": "me01_fire2",
+     "result": "match"
+    },
+    {
+     "name": "me01_fire3",
+     "result": "match"
+    },
+    {
+     "name": "me01_fire3b",
+     "result": "match"
+    },
+    {
+     "name": "sa01_fire1",
+     "result": "match"
+    },
+    {
+     "name": "se01_fire1",
+     "result": "match"
+    }
+   ],
+   "orderMatches": false
+  },
+  "selectors": {
+   "summary": {
+    "extra": 2,
+    "match": 10
+   },
+   "items": [
+    {
+     "name": "bma01_fired_sel",
+     "result": "extra",
+     "ours": {
+      "name": "bma01_fired_sel",
+      "choices": [
+       {
+        "pmode": 0,
+        "_btName": "",
+        "_rate": 0.0
+       },
+       {
+        "pmode": 3,
+        "_btName": "bma01_fired",
+        "_rate": 0.0
+       }
+      ]
+     },
+     "evidence": {
+      "sources": [
+       "P:Pf_Ene_BMa01._deadBulletSelecter"
+      ]
+     }
+    },
+    {
+     "name": "bsc01_fire_sel",
+     "result": "match"
+    },
+    {
+     "name": "bsc01_fired_sel",
+     "result": "extra",
+     "ours": {
+      "name": "bsc01_fired_sel",
+      "choices": [
+       {
+        "pmode": 0,
+        "_btName": "",
+        "_rate": 0.0
+       },
+       {
+        "pmode": 3,
+        "_btName": "bsc01_fired",
+        "_rate": 0.0
+       }
+      ]
+     },
+     "evidence": {
+      "sources": [
+       "P:Pf_Ene_BSc01._deadBulletSelecter"
+      ]
+     }
+    },
+    {
+     "name": "lb01_fire_head_sel",
+     "result": "match"
+    },
+    {
+     "name": "lb01_fire_side_l_sel",
+     "result": "match"
+    },
+    {
+     "name": "lb01_fire_side_r_sel",
+     "result": "match"
+    },
+    {
+     "name": "ma01_fire1_sel",
+     "result": "match"
+    },
+    {
+     "name": "ma01_fire2_sel",
+     "result": "match"
+    },
+    {
+     "name": "md01_fire1_sel",
+     "result": "match"
+    },
+    {
+     "name": "md01_fire3_sel",
+     "result": "match"
+    },
+    {
+     "name": "sa01_fire1_sel",
+     "result": "match"
+    },
+    {
+     "name": "se01_fire1_sel",
+     "result": "match"
+    }
+   ],
+   "orderMatches": false
+  },
+  "models": {
+   "summary": {
+    "match": 11
+   },
+   "items": [
+    {
+     "name": "Pf_EneObj_Meteo_La02",
+     "result": "match"
+    },
+    {
+     "name": "Pf_EneObj_Meteo_Ma02",
+     "result": "match"
+    },
+    {
+     "name": "Pf_EneObj_Meteo_Sa02",
+     "result": "match"
+    },
+    {
+     "name": "Pf_Ene_Lb01",
+     "result": "match"
+    },
+    {
+     "name": "Pf_Ene_Ma01",
+     "result": "match"
+    },
+    {
+     "name": "Pf_Ene_Md01",
+     "result": "match"
+    },
+    {
+     "name": "Pf_Ene_Me01",
+     "result": "match"
+    },
+    {
+     "name": "Pf_Ene_Mj01h",
+     "result": "match"
+    },
+    {
+     "name": "Pf_Ene_Sa01",
+     "result": "match"
+    },
+    {
+     "name": "Pf_Ene_Sd01",
+     "result": "match"
+    },
+    {
+     "name": "Pf_Ene_Se01",
+     "result": "match"
+    }
+   ],
+   "orderMatches": false
+  },
+  "lasers": {
+   "summary": {
+    "match": 1
+   },
+   "items": [
+    {
+     "name": "boss03laser000",
+     "result": "match"
+    }
+   ],
+   "orderMatches": true
+  },
+  "speeds": {
+   "summary": {
+    "match": 23
+   },
+   "items": [
+    {
+     "name": "boss03laser000",
+     "result": "match"
+    },
+    {
+     "name": "dropitem001",
+     "result": "match"
+    },
+    {
+     "name": "enemybullet001",
+     "result": "match"
+    },
+    {
+     "name": "enemybullet002",
+     "result": "match"
+    },
+    {
+     "name": "enemybullet003",
+     "result": "match"
+    },
+    {
+     "name": "enemybullet004",
+     "result": "match"
+    },
+    {
+     "name": "enemybullet005",
+     "result": "match"
+    },
+    {
+     "name": "enemybullet006",
+     "result": "match"
+    },
+    {
+     "name": "enemybullet007",
+     "result": "match"
+    },
+    {
+     "name": "enemybullet008",
+     "result": "match"
+    },
+    {
+     "name": "enemybullet009",
+     "result": "match"
+    },
+    {
+     "name": "enemybullet010",
+     "result": "match"
+    },
+    {
+     "name": "enemybullet011",
+     "result": "match"
+    },
+    {
+     "name": "enemybullet011s",
+     "result": "match"
+    },
+    {
+     "name": "enemybullet012",
+     "result": "match"
+    },
+    {
+     "name": "enemybullet013",
+     "result": "match"
+    },
+    {
+     "name": "enemybullet100",
+     "result": "match"
+    },
+    {
+     "name": "enemybullet101",
+     "result": "match"
+    },
+    {
+     "name": "enemylaser000",
+     "result": "match"
+    },
+    {
+     "name": "enemylaser001",
+     "result": "match"
+    },
+    {
+     "name": "enemylaser003",
+     "result": "match"
+    },
+    {
+     "name": "enemylaser010",
+     "result": "match"
+    },
+    {
+     "name": "enemylaser0a0",
+     "result": "match"
+    }
+   ],
+   "orderMatches": true
+  },
+  "version": {
+   "reference": 2,
+   "ours": 2,
+   "result": "match"
+  },
+  "laserCharge": {
+   "reference": 1.0,
+   "ours": 1.0,
+   "result": "match"
+  },
+  "laserWidth": {
+   "reference": 10.0,
+   "ours": 10.0,
+   "result": "match"
+  },
+  "laserCollisionWidth": {
+   "reference": 2.0,
+   "ours": 2.0,
+   "result": "match"
+  },
+  "laserDissolve": {
+   "reference": 0.30000001192092896,
+   "ours": 0.30000001192092896,
+   "result": "match"
+  },
+  "aimSteps": {
+   "reference": [
+    1.0,
+    90.0,
+    45.0,
+    22.5,
+    15.0,
+    11.25,
+    7.5,
+    5.625
+   ],
+   "ours": [
+    1.0,
+    90.0,
+    45.0,
+    22.5,
+    15.0,
+    11.25,
+    7.5,
+    5.625
+   ],
+   "result": "match"
+  },
+  "stage": {
+   "reference": "BG03",
+   "ours": "BG03",
+   "result": "match"
+  }
+ },
+ "verdict": {
+  "everyReferenceItemMatchesExactly": true,
+  "missingOrDiffering": [],
+  "extras": [
+   [
+    "patterns",
+    "bma01_fired"
+   ],
+   [
+    "patterns",
+    "bsc01_fired"
+   ],
+   [
+    "selectors",
+    "bma01_fired_sel"
+   ],
+   [
+    "selectors",
+    "bsc01_fired_sel"
+   ]
+  ],
+  "listOrder": "patterns/selectors/models are written sorted by name; the reference kept discovery order (order is not used: the consumer indexes them by name)"
+ },
+ "explanations": {
+  "bma01_fired_sel / bsc01_fired_sel (+ bma01_fired, bsc01_fired)": "Source P: Pf_Ene_BMa01 and Pf_Ene_BSc01 (ground enemies of BG03) serialize InGameEnemy._deadBulletSelecter = bma01_fired_sel / bsc01_fired_sel, the bullet fired when the enemy dies. The BG03 reference only took fire events and native literals, and the remaster implements no death bullets. Both selectors fire only for pmode 3 (pmode 0 -> \"\").",
+  "muzzleChecks": "436 fire events (schedule, prefab-named EnemyData, native-literal EnemyData) checked; every nameValue is a _muzzlePacks key or a transform path of its model prefab, every subnameValue a transform path, unless listed in the provenance unresolved list"
+ }
+}

@@ -1,0 +1,59 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04Bit::.cctor() RVA 1d8b290 len 10b
+01d8b290 push       rbx
+01d8b292 sub        rsp, 0x20
+01d8b296 cmp        byte ptr [rip + 0x28d8534], 0 ; [.data 46637d1]
+01d8b29d jne        0x1d8b2e2
+01d8b29f lea        rcx, [rip + 0x2626602] ; [.data 43b18a8] TypeInfo#37306
+01d8b2a6 call       0x4e0a50
+01d8b2ab lea        rcx, [rip + 0x25ea10e] ; [.data 43753c0] MethodRef#202060
+01d8b2b2 call       0x4e0a50
+01d8b2b7 lea        rcx, [rip + 0x25e9eda] ; [.data 4375198] MethodRef#202057
+01d8b2be call       0x4e0a50
+01d8b2c3 lea        rcx, [rip + 0x26288c6] ; [.data 43b3b90] TypeInfo#21977
+01d8b2ca call       0x4e0a50
+01d8b2cf lea        rcx, [rip + 0x2644d82] ; [.data 43d0058] STR "Boss04/bos04bit0"
+01d8b2d6 call       0x4e0a50
+01d8b2db mov        byte ptr [rip + 0x28d84ef], 1 ; [.data 46637d1]
+01d8b2e2 mov        rcx, qword ptr [rip + 0x26288a7] ; [.data 43b3b90] TypeInfo#21977
+01d8b2e9 call       0x4e0cb0
+01d8b2ee mov        rdx, qword ptr [rip + 0x25e9ea3] ; [.data 4375198] MethodRef#202057
+01d8b2f5 mov        rcx, rax
+01d8b2f8 mov        rbx, rax
+01d8b2fb call       0xb16050 ; System.Collections.Generic.List`1::.ctor() || System.Collections.Generic.LowLevelList`1::.ctor()
+01d8b300 test       rbx, rbx
+01d8b303 je         0x1d8b390
+01d8b309 mov        rax, qword ptr [rip + 0x25ea0b0] ; [.data 43753c0] MethodRef#202060
+01d8b310 mov        rdx, qword ptr [rip + 0x2644d41] ; [.data 43d0058] STR "Boss04/bos04bit0"
+01d8b317 inc        dword ptr [rbx + 0x1c]
+01d8b31a mov        r8, qword ptr [rbx + 0x10]
+01d8b31e test       r8, r8
+01d8b321 je         0x1d8b390
+01d8b323 movsxd     rcx, dword ptr [rbx + 0x18]
+01d8b327 cmp        ecx, dword ptr [r8 + 0x18]
+01d8b32b jb         0x1d8b346
+01d8b32d mov        rax, qword ptr [rax + 0x20]
+01d8b331 mov        rcx, rbx
+01d8b334 mov        r8, qword ptr [rax + 0xc0] ; ~_burnShake
+01d8b33b mov        r8, qword ptr [r8 + 0x70]
+01d8b33f call       0xbc8200
+01d8b344 jmp        0x1d8b364
+01d8b346 lea        eax, [rcx + 1]
+01d8b349 mov        dword ptr [rbx + 0x18], eax
+01d8b34c cmp        ecx, dword ptr [r8 + 0x18]
+01d8b350 jae        0x1d8b396
+01d8b352 mov        qword ptr [r8 + rcx*8 + 0x20], rdx
+01d8b357 add        r8, 0x20
+01d8b35b lea        rcx, [r8 + rcx*8]
+01d8b35f call       0x4dfd80
+01d8b364 mov        rax, qword ptr [rip + 0x262653d] ; [.data 43b18a8] TypeInfo#37306
+01d8b36b mov        rdx, rbx
+01d8b36e mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d8b375 mov        qword ptr [rcx], rbx
+01d8b378 mov        rcx, qword ptr [rip + 0x2626529] ; [.data 43b18a8] TypeInfo#37306
+01d8b37f mov        rcx, qword ptr [rcx + 0xb8] ; ~_mover
+01d8b386 add        rsp, 0x20
+01d8b38a pop        rbx
+01d8b38b jmp        0x4dfd80
+01d8b390 call       0x4e0d00
+01d8b395 int3       
+01d8b396 call       0x4e0cf0

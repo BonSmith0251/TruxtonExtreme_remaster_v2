@@ -1,0 +1,977 @@
+01db7920  mov      rax, rsp
+01db7923  mov      qword ptr [rax + 0x10], rbx
+01db7927  mov      qword ptr [rax + 8], rcx
+01db792b  push     rsi
+01db792c  push     rdi
+01db792d  push     r12
+01db792f  push     r14
+01db7931  push     r15
+01db7933  sub      rsp, 0x130
+01db793a  movaps   xmmword ptr [rax - 0x38], xmm6
+01db793e  movaps   xmmword ptr [rax - 0x48], xmm7
+01db7942  movaps   xmmword ptr [rax - 0x58], xmm8
+01db7947  movaps   xmmword ptr [rax - 0x68], xmm9
+01db794c  movaps   xmmword ptr [rax - 0x78], xmm10
+01db7951  mov      rdi, rcx
+01db7954  mov      r14, rcx
+01db7957  mov      qword ptr [rsp + 0x80], rcx
+01db795f  cmp      byte ptr [rip + 0x28abed3], 0   ; [4663839] bss
+01db7966  jne      0x1db79ab
+01db7968  lea      rcx, [rip + 0x25ebb11]   ; [43a3480] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::AwaitUnsafeOnCompleted<.Awaiter,.<Ex
+01db796f  call     0x4e0a50
+01db7974  lea      rcx, [rip + 0x25fa2b5]   ; [43b1c30] TypeInfo InGame.Kernel.Enemy.Ene_Bos08A
+01db797b  call     0x4e0a50
+01db7980  lea      rcx, [rip + 0x2621d91]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01db7987  call     0x4e0a50
+01db798c  lea      rcx, [rip + 0x25c650d]   ; [437dea0] TypeInfo UnityEngine.Object
+01db7993  call     0x4e0a50
+01db7998  lea      rcx, [rip + 0x2604931]   ; [43bc2d0] TypeInfo Cysharp.Threading.Tasks.UniTask
+01db799f  call     0x4e0a50
+01db79a4  mov      byte ptr [rip + 0x28abe8e], 1   ; [4663839] bss
+01db79ab  xor      esi, esi
+01db79ad  mov      dword ptr [rsp + 0x78], esi   ; ._basePosition
+01db79b1  mov      eax, dword ptr [rdi]
+01db79b3  mov      dword ptr [rsp + 0x170], eax   ; ._targetY
+01db79ba  mov      rax, qword ptr [rdi + 0x18]
+01db79be  mov      qword ptr [rsp + 0x178], rax   ; ._token
+01db79c6  cmp      dword ptr [rsp + 0x170], 6   ; ._targetY
+01db79ce  jbe      0x1db7a66
+01db79d4  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db79dc  test     rax, rax
+01db79df  je       0x1db8abc
+01db79e5  mov      rcx, qword ptr [rax + 0x10]
+01db79e9  test     rcx, rcx
+01db79ec  je       0x1db8ab7
+01db79f2  xor      r8d, r8d
+01db79f5  mov      edx, dword ptr [rax + 0x18]
+01db79f8  call     0x1d0da10   ; PawnEnemy::GetParts(System.Int32)
+01db79fd  mov      qword ptr [rdi + 0x38], rax   ; ._callback
+01db7a01  lea      rcx, [rdi + 0x38]   ; ._callback
+01db7a05  mov      rdx, rax
+01db7a08  call     0x4dfd80
+01db7a0d  cmp      qword ptr [rdi + 0x38], rsi   ; ._callback
+01db7a11  je       0x1db7ab2
+01db7a17  mov      rax, qword ptr [rdi + 0x38]   ; ._callback
+01db7a1b  cmp      byte ptr [rax + 0x9a], sil
+01db7a22  jne      0x1db7ab2
+01db7a28  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db7a30  test     rax, rax
+01db7a33  je       0x1db8ab2
+01db7a39  mov      rcx, qword ptr [rax + 0x10]
+01db7a3d  test     rcx, rcx
+01db7a40  je       0x1db8aad
+01db7a46  xor      edx, edx
+01db7a48  call     0x1d11c40   ; PawnEnemy::get_IsCancelToken()
+01db7a4d  test     al, al
+01db7a4f  jne      0x1db7ab2
+01db7a51  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db7a59  test     rax, rax
+01db7a5c  je       0x1db8aa7
+01db7a62  mov      byte ptr [rax + 0x28], 1   ; .isDark
+01db7a66  mov      qword ptr [rsp + 0x88], rsi   ; ._objectInfo
+01db7a6e  lea      r15, [rsp + 0x170]   ; ._targetY
+01db7a76  mov      qword ptr [rsp + 0x90], r15   ; ._priority
+01db7a7e  lea      r12, [rsp + 0x178]   ; ._token
+01db7a86  mov      qword ptr [rsp + 0x98], r12   ; ._invincibleTime
+01db7a8e  movsxd   rax, dword ptr [rsp + 0x170]   ; ._targetY
+01db7a96  cmp      eax, 6
+01db7a99  ja       0x1db7c06
+01db7a9f  lea      rdx, [rip - 0x1db7aa6]
+01db7aa6  mov      ecx, dword ptr [rdx + rax*4 + 0x1db8c10]
+01db7aad  add      rcx, rdx
+01db7ab0  jmp      rcx
+01db7ab2  jmp      0x1db89e5
+01db7ab7  movups   xmm0, xmmword ptr [rdi + 0x58]   ; ._gameObjectCache
+01db7abb  movaps   xmmword ptr [rsp + 0x60], xmm0   ; ._currentPosition
+01db7ac0  xorps    xmm1, xmm1
+01db7ac3  movups   xmmword ptr [rdi + 0x58], xmm1   ; ._gameObjectCache
+01db7ac7  mov      dword ptr [rsp + 0x170], 0xffffffff   ; ._targetY
+01db7ad2  mov      dword ptr [rdi], 0xffffffff
+01db7ad8  xorps    xmm7, xmm7
+01db7adb  jmp      0x1db7cb5
+01db7ae0  movups   xmm0, xmmword ptr [rdi + 0x58]   ; ._gameObjectCache
+01db7ae4  movaps   xmmword ptr [rsp + 0x60], xmm0   ; ._currentPosition
+01db7ae9  xorps    xmm1, xmm1
+01db7aec  movups   xmmword ptr [rdi + 0x58], xmm1   ; ._gameObjectCache
+01db7af0  mov      dword ptr [rsp + 0x170], 0xffffffff   ; ._targetY
+01db7afb  mov      dword ptr [rdi], 0xffffffff
+01db7b01  xorps    xmm7, xmm7
+01db7b04  jmp      0x1db7e50
+01db7b09  movups   xmm0, xmmword ptr [rdi + 0x58]   ; ._gameObjectCache
+01db7b0d  movaps   xmmword ptr [rsp + 0x60], xmm0   ; ._currentPosition
+01db7b12  xorps    xmm1, xmm1
+01db7b15  movups   xmmword ptr [rdi + 0x58], xmm1   ; ._gameObjectCache
+01db7b19  mov      dword ptr [rsp + 0x170], 0xffffffff   ; ._targetY
+01db7b24  mov      dword ptr [rdi], 0xffffffff
+01db7b2a  jmp      0x1db890a
+01db7b2f  movups   xmm0, xmmword ptr [rdi + 0x58]   ; ._gameObjectCache
+01db7b33  movaps   xmmword ptr [rsp + 0x60], xmm0   ; ._currentPosition
+01db7b38  xorps    xmm1, xmm1
+01db7b3b  movups   xmmword ptr [rdi + 0x58], xmm1   ; ._gameObjectCache
+01db7b3f  mov      dword ptr [rsp + 0x170], 0xffffffff   ; ._targetY
+01db7b4a  mov      dword ptr [rdi], 0xffffffff
+01db7b50  xorps    xmm7, xmm7
+01db7b53  jmp      0x1db80d3
+01db7b58  movups   xmm0, xmmword ptr [rdi + 0x58]   ; ._gameObjectCache
+01db7b5c  movaps   xmmword ptr [rsp + 0x60], xmm0   ; ._currentPosition
+01db7b61  xorps    xmm1, xmm1
+01db7b64  movups   xmmword ptr [rdi + 0x58], xmm1   ; ._gameObjectCache
+01db7b68  mov      dword ptr [rsp + 0x170], 0xffffffff   ; ._targetY
+01db7b73  mov      dword ptr [rdi], 0xffffffff
+01db7b79  xorps    xmm7, xmm7
+01db7b7c  movss    xmm8, dword ptr [rip + 0x1729047]   ; rdata 34e0bcc f=1,3.141593,4,10 d=50.12387842
+01db7b85  movss    xmm10, dword ptr [rip + 0x1734e8a]   ; rdata 34eca18 f=6.283185,7.5625,8,-0.5 d=73728.01582
+01db7b8e  movss    xmm9, dword ptr [rip + 0x1729031]   ; rdata 34e0bc8 f=0.5,1,3.141593,4 d=0.007812501834
+01db7b97  jmp      0x1db83fa
+01db7b9c  movups   xmm0, xmmword ptr [rdi + 0x58]   ; ._gameObjectCache
+01db7ba0  movaps   xmmword ptr [rsp + 0x60], xmm0   ; ._currentPosition
+01db7ba5  xorps    xmm1, xmm1
+01db7ba8  movups   xmmword ptr [rdi + 0x58], xmm1   ; ._gameObjectCache
+01db7bac  mov      dword ptr [rsp + 0x170], 0xffffffff   ; ._targetY
+01db7bb7  mov      dword ptr [rdi], 0xffffffff
+01db7bbd  xorps    xmm7, xmm7
+01db7bc0  movss    xmm8, dword ptr [rip + 0x1729003]   ; rdata 34e0bcc f=1,3.141593,4,10 d=50.12387842
+01db7bc9  movss    xmm10, dword ptr [rip + 0x1734e46]   ; rdata 34eca18 f=6.283185,7.5625,8,-0.5 d=73728.01582
+01db7bd2  movss    xmm9, dword ptr [rip + 0x1728fed]   ; rdata 34e0bc8 f=0.5,1,3.141593,4 d=0.007812501834
+01db7bdb  jmp      0x1db84fc
+01db7be0  movups   xmm0, xmmword ptr [rdi + 0x58]   ; ._gameObjectCache
+01db7be4  movaps   xmmword ptr [rsp + 0x60], xmm0   ; ._currentPosition
+01db7be9  xorps    xmm1, xmm1
+01db7bec  movups   xmmword ptr [rdi + 0x58], xmm1   ; ._gameObjectCache
+01db7bf0  mov      dword ptr [rsp + 0x170], 0xffffffff   ; ._targetY
+01db7bfb  mov      dword ptr [rdi], 0xffffffff
+01db7c01  jmp      0x1db87be
+01db7c06  movss    xmm0, dword ptr [rdi + 0x20]   ; .trot
+01db7c0b  xorps    xmm7, xmm7
+01db7c0e  comiss   xmm0, xmm7
+01db7c11  jbe      0x1db7d08
+01db7c17  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db7c1f  test     rax, rax
+01db7c22  je       0x1db8ae9
+01db7c28  mov      rcx, qword ptr [rax + 0x10]
+01db7c2c  test     rcx, rcx
+01db7c2f  je       0x1db8add
+01db7c35  xor      edx, edx
+01db7c37  call     0x1d11bc0   ; PawnEnemy::get_CToken()
+01db7c3c  mov      rbx, rax
+01db7c3f  movss    xmm6, dword ptr [rdi + 0x20]   ; .trot
+01db7c44  mov      rcx, qword ptr [rip + 0x2621acd]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01db7c52  jne      0x1db7c59
+01db7c59  xor      r9d, r9d
+01db7c5c  movaps   xmm2, xmm6
+01db7c5f  mov      rdx, rbx
+01db7c62  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01db7c67  call     0x1ce3290   ; InGameManager::DelaySecond(System.Threading.CancellationToken,System.Single)
+01db7c6c  movups   xmm6, xmmword ptr [rax]
+01db7c6f  mov      rcx, qword ptr [rip + 0x260465a]   ; [43bc2d0] TypeInfo Cysharp.Threading.Tasks.UniTask
+01db7c7d  jne      0x1db7c84
+01db7c84  movdqa   xmmword ptr [rsp + 0x60], xmm6   ; ._currentPosition
+01db7c8a  xor      edx, edx
+01db7c8c  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01db7c91  call     0x4dfd80
+01db7c96  movaps   xmm0, xmmword ptr [rsp + 0x60]   ; ._currentPosition
+01db7c9b  movdqa   xmmword ptr [rsp + 0x60], xmm0   ; ._currentPosition
+01db7ca1  xor      edx, edx
+01db7ca3  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01db7ca8  call     0xa55c00
+01db7cad  test     al, al
+01db7caf  je       0x1db7f07
+01db7cb5  xor      edx, edx
+01db7cb7  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01db7cbc  call     0xa55b40
+01db7cc1  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db7cc9  test     rax, rax
+01db7ccc  je       0x1db8ad8
+01db7cd2  mov      rcx, qword ptr [rax + 0x10]
+01db7cd6  test     rcx, rcx
+01db7cd9  je       0x1db8acc
+01db7cdf  xor      edx, edx
+01db7ce1  call     0x1d11c40   ; PawnEnemy::get_IsCancelToken()
+01db7ce6  test     al, al
+01db7ce8  jne      0x1db7ee3
+01db7cee  mov      rax, qword ptr [rdi + 0x38]   ; ._callback
+01db7cf2  test     rax, rax
+01db7cf5  je       0x1db8ac7
+01db7cfb  cmp      byte ptr [rax + 0x9a], 0
+01db7d02  jne      0x1db7ee3
+01db7d08  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db7d10  test     rax, rax
+01db7d13  je       0x1db8bfc
+01db7d19  mov      rbx, qword ptr [rax + 0x20]   ; .trot
+01db7d1d  mov      rcx, qword ptr [rip + 0x25c617c]   ; [437dea0] TypeInfo UnityEngine.Object
+01db7d2b  jne      0x1db7d32
+01db7d32  xor      r8d, r8d
+01db7d35  xor      edx, edx
+01db7d37  mov      rcx, rbx
+01db7d3a  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01db7d3f  test     al, al
+01db7d41  je       0x1db7ea3
+01db7d47  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db7d4f  test     rax, rax
+01db7d52  je       0x1db8b1a
+01db7d58  mov      rbx, qword ptr [rax + 0x20]   ; .trot
+01db7d5c  mov      rcx, qword ptr [rip + 0x25f9ecd]   ; [43b1c30] TypeInfo InGame.Kernel.Enemy.Ene_Bos08A
+01db7d6a  jne      0x1db7d78
+01db7d71  mov      rcx, qword ptr [rip + 0x25f9eb8]   ; [43b1c30] TypeInfo InGame.Kernel.Enemy.Ene_Bos08A
+01db7d78  mov      rax, qword ptr [rcx + 0xb8]
+01db7d7f  mov      edx, dword ptr [rax + 8]   ; static Ene_Bos08A+8
+01db7d82  test     rbx, rbx
+01db7d85  je       0x1db8b15
+01db7d8b  xor      r9d, r9d
+01db7d8e  movss    xmm2, dword ptr [rax + 0x68]   ; static Ene_Bos08A+68
+01db7d93  mov      rcx, rbx
+01db7d96  call     0x2fb5080   ; Animator::CrossFadeInFixedTime(System.Int32,System.Single)
+01db7d9b  mov      rax, qword ptr [rip + 0x25f9e8e]   ; [43b1c30] TypeInfo InGame.Kernel.Enemy.Ene_Bos08A
+01db7da2  mov      rcx, qword ptr [rax + 0xb8]
+01db7da9  movss    xmm6, dword ptr [rcx + 0x68]   ; static Ene_Bos08A+68
+01db7dae  comiss   xmm6, xmm7
+01db7db1  jbe      0x1db7ea3
+01db7db7  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db7dbf  test     rax, rax
+01db7dc2  je       0x1db8b10
+01db7dc8  mov      rcx, qword ptr [rax + 0x10]
+01db7dcc  test     rcx, rcx
+01db7dcf  je       0x1db8b04
+01db7dd5  xor      edx, edx
+01db7dd7  call     0x1d11bc0   ; PawnEnemy::get_CToken()
+01db7ddc  mov      rbx, rax
+01db7ddf  mov      rcx, qword ptr [rip + 0x2621932]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01db7ded  jne      0x1db7df4
+01db7df4  xor      r9d, r9d
+01db7df7  movaps   xmm2, xmm6
+01db7dfa  mov      rdx, rbx
+01db7dfd  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01db7e02  call     0x1ce3290   ; InGameManager::DelaySecond(System.Threading.CancellationToken,System.Single)
+01db7e07  movups   xmm6, xmmword ptr [rax]
+01db7e0a  mov      rcx, qword ptr [rip + 0x26044bf]   ; [43bc2d0] TypeInfo Cysharp.Threading.Tasks.UniTask
+01db7e18  jne      0x1db7e1f
+01db7e1f  movdqa   xmmword ptr [rsp + 0x60], xmm6   ; ._currentPosition
+01db7e25  xor      edx, edx
+01db7e27  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01db7e2c  call     0x4dfd80
+01db7e31  movaps   xmm0, xmmword ptr [rsp + 0x60]   ; ._currentPosition
+01db7e36  movdqa   xmmword ptr [rsp + 0x60], xmm0   ; ._currentPosition
+01db7e3c  xor      edx, edx
+01db7e3e  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01db7e43  call     0xa55c00
+01db7e48  test     al, al
+01db7e4a  je       0x1db7f85
+01db7e50  xor      edx, edx
+01db7e52  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01db7e57  call     0xa55b40
+01db7e5c  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db7e64  test     rax, rax
+01db7e67  je       0x1db8aff
+01db7e6d  mov      rcx, qword ptr [rax + 0x10]
+01db7e71  test     rcx, rcx
+01db7e74  je       0x1db8af3
+01db7e7a  xor      edx, edx
+01db7e7c  call     0x1d11c40   ; PawnEnemy::get_IsCancelToken()
+01db7e81  test     al, al
+01db7e83  jne      0x1db7f61
+01db7e89  mov      rax, qword ptr [rdi + 0x38]   ; ._callback
+01db7e8d  test     rax, rax
+01db7e90  je       0x1db8aee
+01db7e96  cmp      byte ptr [rax + 0x9a], 0
+01db7e9d  jne      0x1db7f61
+01db7ea3  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db7eab  test     rax, rax
+01db7eae  je       0x1db8bf7
+01db7eb4  mov      rdx, qword ptr [rax + 0x10]
+01db7eb8  movsxd   rcx, dword ptr [rax + 0x1c]
+01db7ebc  test     rdx, rdx
+01db7ebf  je       0x1db8bf2
+01db7ec5  mov      rdx, qword ptr [rdx + 0x280]
+01db7ecc  test     rdx, rdx
+01db7ecf  je       0x1db8bd5
+01db7ed5  cmp      ecx, dword ptr [rdx + 0x18]
+01db7ed8  jae      0x1db8ac2
+01db7ede  jmp      0x1db7fe7
+01db7ee3  cmp      dword ptr [rsp + 0x170], 0   ; ._targetY
+01db7eeb  jge      0x1db7f02
+01db7eed  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db7ef5  test     rax, rax
+01db7ef8  je       0x1db8ad2
+01db7efe  mov      byte ptr [rax + 0x28], 0   ; .isDark
+01db7f02  jmp      0x1db89e5
+01db7f07  mov      dword ptr [rsp + 0x170], esi   ; ._targetY
+01db7f0e  mov      dword ptr [rdi], esi
+01db7f10  movaps   xmm0, xmmword ptr [rsp + 0x60]   ; ._currentPosition
+01db7f15  movups   xmmword ptr [rdi + 0x58], xmm0   ; ._gameObjectCache
+01db7f19  lea      rcx, [rdi + 0x58]   ; ._gameObjectCache
+01db7f1d  xor      edx, edx
+01db7f1f  call     0x4dfd80
+01db7f24  lea      rcx, [rdi + 8]
+01db7f28  mov      r9, qword ptr [rip + 0x25eb551]   ; [43a3480] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::AwaitUnsafeOnCompleted<.Awa
+01db7f2f  mov      r8, rdi
+01db7f32  lea      rdx, [rsp + 0x60]   ; ._currentPosition
+01db7f37  call     0x739050
+01db7f3d  cmp      dword ptr [rsp + 0x170], 0   ; ._targetY
+01db7f45  jge      0x1db7f5c
+01db7f47  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db7f4f  test     rax, rax
+01db7f52  je       0x1db8ae3
+01db7f58  mov      byte ptr [rax + 0x28], 0   ; .isDark
+01db7f5c  jmp      0x1db8a33
+01db7f61  cmp      dword ptr [rsp + 0x170], 0   ; ._targetY
+01db7f69  jge      0x1db7f80
+01db7f6b  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db7f73  test     rax, rax
+01db7f76  je       0x1db8af9
+01db7f7c  mov      byte ptr [rax + 0x28], 0   ; .isDark
+01db7f80  jmp      0x1db89e5
+01db7f85  mov      dword ptr [rsp + 0x170], 1   ; ._targetY
+01db7f90  mov      dword ptr [rdi], 1
+01db7f96  movaps   xmm0, xmmword ptr [rsp + 0x60]   ; ._currentPosition
+01db7f9b  movups   xmmword ptr [rdi + 0x58], xmm0   ; ._gameObjectCache
+01db7f9f  lea      rcx, [rdi + 0x58]   ; ._gameObjectCache
+01db7fa3  xor      edx, edx
+01db7fa5  call     0x4dfd80
+01db7faa  lea      rcx, [rdi + 8]
+01db7fae  mov      r9, qword ptr [rip + 0x25eb4cb]   ; [43a3480] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::AwaitUnsafeOnCompleted<.Awa
+01db7fb5  mov      r8, rdi
+01db7fb8  lea      rdx, [rsp + 0x60]   ; ._currentPosition
+01db7fbd  call     0x739050
+01db7fc3  cmp      dword ptr [rsp + 0x170], 0   ; ._targetY
+01db7fcb  jge      0x1db7fe2
+01db7fcd  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db7fd5  test     rax, rax
+01db7fd8  je       0x1db8b0a
+01db7fde  mov      byte ptr [rax + 0x28], 0   ; .isDark
+01db7fe2  jmp      0x1db8a33
+01db7fe7  mov      rdx, qword ptr [rdx + rcx*8 + 0x20]   ; .trot
+01db7fec  mov      qword ptr [rdi + 0x40], rdx   ; .<tpassed>5__2
+01db7ff0  lea      rcx, [rdi + 0x40]   ; .<tpassed>5__2
+01db7ff4  call     0x4dfd80
+01db7ff9  mov      rbx, qword ptr [rdi + 0x40]   ; .<tpassed>5__2
+01db7ffd  mov      rcx, qword ptr [rip + 0x25c5e9c]   ; [437dea0] TypeInfo UnityEngine.Object
+01db800b  jne      0x1db8012
+01db8012  xor      r8d, r8d
+01db8015  xor      edx, edx
+01db8017  mov      rcx, rbx
+01db801a  call     0x306d270   ; Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+01db801f  test     al, al
+01db8021  jne      0x1db885f
+01db8027  movss    xmm0, dword ptr [rdi + 0x28]   ; .isDark
+01db802c  comiss   xmm0, xmm7
+01db802f  jbe      0x1db8126
+01db8035  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db803d  test     rax, rax
+01db8040  je       0x1db8b41
+01db8046  mov      rcx, qword ptr [rax + 0x10]
+01db804a  test     rcx, rcx
+01db804d  je       0x1db8b35
+01db8053  xor      edx, edx
+01db8055  call     0x1d11bc0   ; PawnEnemy::get_CToken()
+01db805a  mov      rbx, rax
+01db805d  movss    xmm6, dword ptr [rdi + 0x28]   ; .isDark
+01db8062  mov      rcx, qword ptr [rip + 0x26216af]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01db8070  jne      0x1db8077
+01db8077  xor      r9d, r9d
+01db807a  movaps   xmm2, xmm6
+01db807d  mov      rdx, rbx
+01db8080  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01db8085  call     0x1ce3290   ; InGameManager::DelaySecond(System.Threading.CancellationToken,System.Single)
+01db808a  movups   xmm6, xmmword ptr [rax]
+01db808d  mov      rcx, qword ptr [rip + 0x260423c]   ; [43bc2d0] TypeInfo Cysharp.Threading.Tasks.UniTask
+01db809b  jne      0x1db80a2
+01db80a2  movdqa   xmmword ptr [rsp + 0x60], xmm6   ; ._currentPosition
+01db80a8  xor      edx, edx
+01db80aa  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01db80af  call     0x4dfd80
+01db80b4  movaps   xmm0, xmmword ptr [rsp + 0x60]   ; ._currentPosition
+01db80b9  movdqa   xmmword ptr [rsp + 0x60], xmm0   ; ._currentPosition
+01db80bf  xor      edx, edx
+01db80c1  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01db80c6  call     0xa55c00
+01db80cb  test     al, al
+01db80cd  je       0x1db82a9
+01db80d3  xor      edx, edx
+01db80d5  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01db80da  call     0xa55b40
+01db80df  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db80e7  test     rax, rax
+01db80ea  je       0x1db8b30
+01db80f0  mov      rcx, qword ptr [rax + 0x10]
+01db80f4  test     rcx, rcx
+01db80f7  je       0x1db8b24
+01db80fd  xor      edx, edx
+01db80ff  call     0x1d11c40   ; PawnEnemy::get_IsCancelToken()
+01db8104  test     al, al
+01db8106  jne      0x1db8285
+01db810c  mov      rax, qword ptr [rdi + 0x38]   ; ._callback
+01db8110  test     rax, rax
+01db8113  je       0x1db8b1f
+01db8119  cmp      byte ptr [rax + 0x9a], 0
+01db8120  jne      0x1db8285
+01db8126  mov      rcx, qword ptr [rdi + 0x38]   ; ._callback
+01db812a  test     rcx, rcx
+01db812d  je       0x1db8bd0
+01db8133  xor      edx, edx
+01db8135  call     0x1d63240   ; EnePartsGroup::Wakeup()
+01db813a  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db8142  test     rax, rax
+01db8145  je       0x1db8bcb
+01db814b  mov      rcx, qword ptr [rax + 0x10]
+01db814f  test     rcx, rcx
+01db8152  je       0x1db8bc6
+01db8158  xor      r8d, r8d
+01db815b  xor      edx, edx
+01db815d  call     0x1db9840   ; Ene_BosBase::GetBT(System.Int32)
+01db8162  mov      qword ptr [rdi + 0x48], rax   ; ._hitIndex
+01db8166  lea      rcx, [rdi + 0x48]   ; ._hitIndex
+01db816a  mov      rdx, rax
+01db816d  call     0x4dfd80
+01db8172  movss    xmm0, dword ptr [rdi + 0x24]   ; .tsecond
+01db8177  comiss   xmm7, xmm0
+01db817a  jbe      0x1db817f
+01db817c  xorps    xmm0, xmm0
+01db817f  movss    dword ptr [rdi + 0x50], xmm0   ; .<>u__2
+01db8184  movss    xmm1, dword ptr [rdi + 0x28]   ; .isDark
+01db8189  comiss   xmm0, xmm1
+01db818c  ja       0x1db8191
+01db818e  movaps   xmm1, xmm0
+01db8191  movss    dword ptr [rdi + 0x54], xmm1   ; .<nrot>5__4
+01db8196  movss    xmm8, dword ptr [rip + 0x1728a2d]   ; rdata 34e0bcc f=1,3.141593,4,10 d=50.12387842
+01db819f  movss    xmm10, dword ptr [rip + 0x1734870]   ; rdata 34eca18 f=6.283185,7.5625,8,-0.5 d=73728.01582
+01db81a8  movss    xmm9, dword ptr [rip + 0x1728a17]   ; rdata 34e0bc8 f=0.5,1,3.141593,4 d=0.007812501834
+01db81b1  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db81b9  test     rax, rax
+01db81bc  je       0x1db8bc1
+01db81c2  mov      rcx, qword ptr [rax + 0x10]
+01db81c6  test     rcx, rcx
+01db81c9  je       0x1db8bbc
+01db81cf  xor      edx, edx
+01db81d1  call     0x1d11c40   ; PawnEnemy::get_IsCancelToken()
+01db81d6  test     al, al
+01db81d8  jne      0x1db8617
+01db81de  mov      rax, qword ptr [rdi + 0x38]   ; ._callback
+01db81e2  test     rax, rax
+01db81e5  je       0x1db8b7c
+01db81eb  cmp      byte ptr [rax + 0x9a], 0
+01db81f2  jne      0x1db8617
+01db81f8  movss    xmm0, dword ptr [rdi + 0x54]   ; .<nrot>5__4
+01db81fd  comiss   xmm0, dword ptr [rdi + 0x50]   ; .<>u__2
+01db8201  ja       0x1db8617
+01db8207  mov      rbx, qword ptr [rdi + 0x48]   ; ._hitIndex
+01db820b  mov      rcx, qword ptr [rip + 0x25c5c8e]   ; [437dea0] TypeInfo UnityEngine.Object
+01db8219  jne      0x1db8220
+01db8220  xor      r8d, r8d
+01db8223  xor      edx, edx
+01db8225  mov      rcx, rbx
+01db8228  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01db822d  test     al, al
+01db822f  je       0x1db8406
+01db8235  movaps   xmm6, xmm7
+01db8238  movss    xmm0, dword ptr [rdi + 0x2c]   ; .color
+01db823d  comiss   xmm0, xmm7
+01db8240  jbe      0x1db8336
+01db8246  movss    xmm0, dword ptr [rdi + 0x30]   ; .tsecond
+01db824b  comiss   xmm0, xmm7
+01db824e  jbe      0x1db8336
+01db8254  movss    xmm6, dword ptr [rdi + 0x54]   ; .<nrot>5__4
+01db8259  mulss    xmm6, xmm0
+01db825d  movaps   xmm0, xmm6
+01db8260  call     0x578740
+01db8265  subss    xmm6, xmm0
+01db8269  comiss   xmm7, xmm6
+01db826c  ja       0x1db830b
+01db8272  comiss   xmm6, xmm8
+01db8276  jbe      0x1db830e
+01db827c  movaps   xmm6, xmm8
+01db8280  jmp      0x1db830e
+01db8285  cmp      dword ptr [rsp + 0x170], 0   ; ._targetY
+01db828d  jge      0x1db82a4
+01db828f  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db8297  test     rax, rax
+01db829a  je       0x1db8b2a
+01db82a0  mov      byte ptr [rax + 0x28], 0   ; .isDark
+01db82a4  jmp      0x1db89e5
+01db82a9  mov      dword ptr [rsp + 0x170], 3   ; ._targetY
+01db82b4  mov      dword ptr [rdi], 3
+01db82ba  movaps   xmm0, xmmword ptr [rsp + 0x60]   ; ._currentPosition
+01db82bf  movups   xmmword ptr [rdi + 0x58], xmm0   ; ._gameObjectCache
+01db82c3  lea      rcx, [rdi + 0x58]   ; ._gameObjectCache
+01db82c7  xor      edx, edx
+01db82c9  call     0x4dfd80
+01db82ce  lea      rcx, [rdi + 8]
+01db82d2  mov      r9, qword ptr [rip + 0x25eb1a7]   ; [43a3480] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::AwaitUnsafeOnCompleted<.Awa
+01db82d9  mov      r8, rdi
+01db82dc  lea      rdx, [rsp + 0x60]   ; ._currentPosition
+01db82e1  call     0x739050
+01db82e7  cmp      dword ptr [rsp + 0x170], 0   ; ._targetY
+01db82ef  jge      0x1db8306
+01db82f1  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db82f9  test     rax, rax
+01db82fc  je       0x1db8b3b
+01db8302  mov      byte ptr [rax + 0x28], 0   ; .isDark
+01db8306  jmp      0x1db8a33
+01db830b  movaps   xmm6, xmm7
+01db830e  mulss    xmm6, xmm10
+01db8313  movaps   xmm0, xmm6
+01db8316  call     0x576bf0
+01db831b  mulss    xmm0, xmm9
+01db8320  movaps   xmm6, xmm9
+01db8324  subss    xmm6, xmm0
+01db8328  movss    xmm1, dword ptr [rdi + 0x34]   ; ._isInitialized
+01db832d  mulss    xmm1, dword ptr [rdi + 0x2c]   ; .color
+01db8332  mulss    xmm6, xmm1
+01db8336  mov      rcx, qword ptr [rsp + 0x178]   ; ._token
+01db833e  test     rcx, rcx
+01db8341  je       0x1db8b57
+01db8347  mov      rax, qword ptr [rcx + 0x10]
+01db834b  test     rax, rax
+01db834e  je       0x1db8b52
+01db8354  mov      rbx, qword ptr [rax + 0xb8]   ; ._mover
+01db835b  xor      edx, edx
+01db835d  mov      rcx, rax
+01db8360  call     0x1d11bc0   ; PawnEnemy::get_CToken()
+01db8365  mov      rcx, qword ptr [rdi + 0x40]   ; .<tpassed>5__2
+01db8369  test     rbx, rbx
+01db836c  je       0x1db8b46
+01db8372  mov      qword ptr [rsp + 0x58], rsi   ; ._gameObjectCache
+01db8377  mov      qword ptr [rsp + 0x50], rsi   ; .<>u__2
+01db837c  mov      dword ptr [rsp + 0x48], esi   ; ._hitIndex
+01db8380  movss    dword ptr [rsp + 0x40], xmm6   ; .<tpassed>5__2
+01db8386  mov      qword ptr [rsp + 0x38], rsi   ; ._callback
+01db838b  mov      qword ptr [rsp + 0x30], rcx   ; .tsecond
+01db8390  mov      byte ptr [rsp + 0x28], 0   ; .isDark
+01db8395  mov      byte ptr [rsp + 0x20], 0   ; .trot
+01db839a  mov      r9, qword ptr [rdi + 0x48]   ; ._hitIndex
+01db839e  mov      r8, rax
+01db83a1  mov      rdx, rbx
+01db83a4  lea      rcx, [rsp + 0xc8]   ; ._burnShakeSpeed
+01db83ac  call     0x1cd8fe0   ; InGameEnemyMoveBase::BulletFireAsync(System.Threading.CancellationToken,InGame.Kernel.Enemy.BulletTemplate,System.Boolean,System.Boolean,
+01db83b1  movups   xmm6, xmmword ptr [rax]
+01db83b4  mov      rcx, qword ptr [rip + 0x2603f15]   ; [43bc2d0] TypeInfo Cysharp.Threading.Tasks.UniTask
+01db83c2  jne      0x1db83c9
+01db83c9  movdqa   xmmword ptr [rsp + 0x60], xmm6   ; ._currentPosition
+01db83cf  xor      edx, edx
+01db83d1  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01db83d6  call     0x4dfd80
+01db83db  movaps   xmm0, xmmword ptr [rsp + 0x60]   ; ._currentPosition
+01db83e0  movdqa   xmmword ptr [rsp + 0x60], xmm0   ; ._currentPosition
+01db83e6  xor      edx, edx
+01db83e8  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01db83ed  call     0xa55c00
+01db83f2  test     al, al
+01db83f4  je       0x1db8563
+01db83fa  xor      edx, edx
+01db83fc  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01db8401  call     0xa55b40
+01db8406  comiss   xmm7, dword ptr [rdi + 0x50]   ; .<>u__2
+01db840a  jae      0x1db8617
+01db8410  movss    xmm6, dword ptr [rdi + 0x50]   ; .<>u__2
+01db8415  subss    xmm6, dword ptr [rdi + 0x54]   ; .<nrot>5__4
+01db841a  comiss   xmm7, xmm6
+01db841d  jae      0x1db8617
+01db8423  mov      rax, qword ptr [rip + 0x25f9806]   ; [43b1c30] TypeInfo InGame.Kernel.Enemy.Ene_Bos08A
+01db8431  jne      0x1db8442
+01db8433  mov      rcx, rax
+01db843b  mov      rax, qword ptr [rip + 0x25f97ee]   ; [43b1c30] TypeInfo InGame.Kernel.Enemy.Ene_Bos08A
+01db8442  mov      rax, qword ptr [rax + 0xb8]
+01db8449  movss    xmm0, dword ptr [rax + 0x5c]   ; static Ene_Bos08A+5c
+01db844e  comiss   xmm6, xmm0
+01db8451  ja       0x1db8456
+01db8453  movaps   xmm0, xmm6
+01db8456  movss    dword ptr [rdi + 0x68], xmm0
+01db845b  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db8463  test     rax, rax
+01db8466  je       0x1db8b77
+01db846c  mov      rcx, qword ptr [rax + 0x10]
+01db8470  test     rcx, rcx
+01db8473  je       0x1db8b6b
+01db8479  xor      edx, edx
+01db847b  call     0x1d11bc0   ; PawnEnemy::get_CToken()
+01db8480  mov      rbx, rax
+01db8483  movss    xmm6, dword ptr [rdi + 0x68]
+01db8488  mov      rcx, qword ptr [rip + 0x2621289]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01db8496  jne      0x1db849d
+01db849d  xor      r9d, r9d
+01db84a0  movaps   xmm2, xmm6
+01db84a3  mov      rdx, rbx
+01db84a6  lea      rcx, [rsp + 0xa8]   ; ._updateEvents
+01db84ae  call     0x1ce3290   ; InGameManager::DelaySecond(System.Threading.CancellationToken,System.Single)
+01db84b3  movups   xmm6, xmmword ptr [rax]
+01db84b6  mov      rcx, qword ptr [rip + 0x2603e13]   ; [43bc2d0] TypeInfo Cysharp.Threading.Tasks.UniTask
+01db84c4  jne      0x1db84cb
+01db84cb  movdqa   xmmword ptr [rsp + 0x60], xmm6   ; ._currentPosition
+01db84d1  xor      edx, edx
+01db84d3  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01db84d8  call     0x4dfd80
+01db84dd  movaps   xmm0, xmmword ptr [rsp + 0x60]   ; ._currentPosition
+01db84e2  movdqa   xmmword ptr [rsp + 0x60], xmm0   ; ._currentPosition
+01db84e8  xor      edx, edx
+01db84ea  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01db84ef  call     0xa55c00
+01db84f4  test     al, al
+01db84f6  je       0x1db85bd
+01db84fc  xor      edx, edx
+01db84fe  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01db8503  call     0xa55b40
+01db8508  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db8510  test     rax, rax
+01db8513  je       0x1db8b66
+01db8519  mov      rcx, qword ptr [rax + 0x10]
+01db851d  test     rcx, rcx
+01db8520  je       0x1db8b61
+01db8526  xor      edx, edx
+01db8528  call     0x1d11c40   ; PawnEnemy::get_IsCancelToken()
+01db852d  test     al, al
+01db852f  jne      0x1db8617
+01db8535  mov      rax, qword ptr [rdi + 0x38]   ; ._callback
+01db8539  test     rax, rax
+01db853c  je       0x1db8b5c
+01db8542  cmp      byte ptr [rax + 0x9a], 0
+01db8549  jne      0x1db8617
+01db854f  movss    xmm0, dword ptr [rdi + 0x68]
+01db8554  addss    xmm0, dword ptr [rdi + 0x54]   ; .<nrot>5__4
+01db8559  movss    dword ptr [rdi + 0x54], xmm0   ; .<nrot>5__4
+01db855e  jmp      0x1db81b1
+01db8563  mov      dword ptr [rsp + 0x170], 4   ; ._targetY
+01db856e  mov      dword ptr [rdi], 4
+01db8574  movaps   xmm0, xmmword ptr [rsp + 0x60]   ; ._currentPosition
+01db8579  movups   xmmword ptr [rdi + 0x58], xmm0   ; ._gameObjectCache
+01db857d  lea      rcx, [rdi + 0x58]   ; ._gameObjectCache
+01db8581  xor      edx, edx
+01db8583  call     0x4dfd80
+01db8588  lea      rcx, [rdi + 8]
+01db858c  mov      r9, qword ptr [rip + 0x25eaeed]   ; [43a3480] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::AwaitUnsafeOnCompleted<.Awa
+01db8593  mov      r8, rdi
+01db8596  lea      rdx, [rsp + 0x60]   ; ._currentPosition
+01db859b  call     0x739050
+01db85a1  cmp      dword ptr [r15], 0
+01db85a5  jge      0x1db85b8
+01db85a7  mov      rax, qword ptr [r12]
+01db85ab  test     rax, rax
+01db85ae  je       0x1db8b4c
+01db85b4  mov      byte ptr [rax + 0x28], 0   ; .isDark
+01db85b8  jmp      0x1db8a33
+01db85bd  mov      dword ptr [rsp + 0x170], 5   ; ._targetY
+01db85c8  mov      dword ptr [rdi], 5
+01db85ce  movaps   xmm0, xmmword ptr [rsp + 0x60]   ; ._currentPosition
+01db85d3  movups   xmmword ptr [rdi + 0x58], xmm0   ; ._gameObjectCache
+01db85d7  lea      rcx, [rdi + 0x58]   ; ._gameObjectCache
+01db85db  xor      edx, edx
+01db85dd  call     0x4dfd80
+01db85e2  lea      rcx, [rdi + 8]
+01db85e6  mov      r9, qword ptr [rip + 0x25eae93]   ; [43a3480] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::AwaitUnsafeOnCompleted<.Awa
+01db85ed  mov      r8, rdi
+01db85f0  lea      rdx, [rsp + 0x60]   ; ._currentPosition
+01db85f5  call     0x739050
+01db85fb  cmp      dword ptr [r15], 0
+01db85ff  jge      0x1db8612
+01db8601  mov      rax, qword ptr [r12]
+01db8605  test     rax, rax
+01db8608  je       0x1db8b71
+01db860e  mov      byte ptr [rax + 0x28], 0   ; .isDark
+01db8612  jmp      0x1db8a33
+01db8617  mov      rax, qword ptr [rdi + 0x38]   ; ._callback
+01db861b  test     rax, rax
+01db861e  je       0x1db8bb7
+01db8624  cmp      byte ptr [rax + 0x9a], 0
+01db862b  jne      0x1db87ca
+01db8631  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db8639  test     rax, rax
+01db863c  je       0x1db8bab
+01db8642  mov      rcx, qword ptr [rax + 0x10]
+01db8646  test     rcx, rcx
+01db8649  je       0x1db8ba6
+01db864f  xor      edx, edx
+01db8651  call     0x1d11c40   ; PawnEnemy::get_IsCancelToken()
+01db8656  test     al, al
+01db8658  jne      0x1db87ca
+01db865e  mov      rcx, qword ptr [rdi + 0x38]   ; ._callback
+01db8662  test     rcx, rcx
+01db8665  je       0x1db8ba1
+01db866b  xor      edx, edx
+01db866d  call     0x1d631e0   ; EnePartsGroup::ToSleep()
+01db8672  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db867a  test     rax, rax
+01db867d  je       0x1db8b9c
+01db8683  mov      rbx, qword ptr [rax + 0x20]   ; .trot
+01db8687  mov      rcx, qword ptr [rip + 0x25c5812]   ; [437dea0] TypeInfo UnityEngine.Object
+01db8695  jne      0x1db869c
+01db869c  xor      r8d, r8d
+01db869f  xor      edx, edx
+01db86a1  mov      rcx, rbx
+01db86a4  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01db86a9  test     al, al
+01db86ab  je       0x1db87ca
+01db86b1  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db86b9  test     rax, rax
+01db86bc  je       0x1db8b97
+01db86c2  mov      rbx, qword ptr [rax + 0x20]   ; .trot
+01db86c6  mov      rcx, qword ptr [rip + 0x25f9563]   ; [43b1c30] TypeInfo InGame.Kernel.Enemy.Ene_Bos08A
+01db86d4  jne      0x1db86e2
+01db86db  mov      rcx, qword ptr [rip + 0x25f954e]   ; [43b1c30] TypeInfo InGame.Kernel.Enemy.Ene_Bos08A
+01db86e2  mov      rax, qword ptr [rcx + 0xb8]
+01db86e9  mov      edx, dword ptr [rax + 4]   ; static Ene_Bos08A+4
+01db86ec  test     rbx, rbx
+01db86ef  je       0x1db8b92
+01db86f5  xor      r9d, r9d
+01db86f8  movss    xmm2, dword ptr [rax + 0x68]   ; static Ene_Bos08A+68
+01db86fd  mov      rcx, rbx
+01db8700  call     0x2fb5080   ; Animator::CrossFadeInFixedTime(System.Int32,System.Single)
+01db8705  mov      rax, qword ptr [rip + 0x25f9524]   ; [43b1c30] TypeInfo InGame.Kernel.Enemy.Ene_Bos08A
+01db870c  mov      rcx, qword ptr [rax + 0xb8]
+01db8713  movss    xmm6, dword ptr [rcx + 0x68]   ; static Ene_Bos08A+68
+01db8718  mulss    xmm6, xmm9
+01db871d  comiss   xmm6, xmm7
+01db8720  jbe      0x1db87ca
+01db8726  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db872e  test     rax, rax
+01db8731  je       0x1db8b8d
+01db8737  mov      rcx, qword ptr [rax + 0x10]
+01db873b  test     rcx, rcx
+01db873e  je       0x1db8b81
+01db8744  xor      edx, edx
+01db8746  call     0x1d11bc0   ; PawnEnemy::get_CToken()
+01db874b  mov      rbx, rax
+01db874e  mov      rcx, qword ptr [rip + 0x2620fc3]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01db875c  jne      0x1db8763
+01db8763  xor      r9d, r9d
+01db8766  movaps   xmm2, xmm6
+01db8769  mov      rdx, rbx
+01db876c  lea      rcx, [rsp + 0xa8]   ; ._updateEvents
+01db8774  call     0x1ce3290   ; InGameManager::DelaySecond(System.Threading.CancellationToken,System.Single)
+01db8779  movups   xmm6, xmmword ptr [rax]
+01db877c  mov      rcx, qword ptr [rip + 0x2603b4d]   ; [43bc2d0] TypeInfo Cysharp.Threading.Tasks.UniTask
+01db878a  jne      0x1db8791
+01db8791  movdqa   xmmword ptr [rsp + 0x60], xmm6   ; ._currentPosition
+01db8797  xor      edx, edx
+01db8799  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01db879e  call     0x4dfd80
+01db87a3  movaps   xmm0, xmmword ptr [rsp + 0x60]   ; ._currentPosition
+01db87a8  movdqa   xmmword ptr [rsp + 0x60], xmm0   ; ._currentPosition
+01db87ae  xor      edx, edx
+01db87b0  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01db87b5  call     0xa55c00
+01db87ba  test     al, al
+01db87bc  je       0x1db8805
+01db87be  xor      edx, edx
+01db87c0  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01db87c5  call     0xa55b40
+01db87ca  mov      qword ptr [rdi + 0x40], rsi   ; .<tpassed>5__2
+01db87ce  lea      rcx, [rdi + 0x40]   ; .<tpassed>5__2
+01db87d2  xor      edx, edx
+01db87d4  call     0x4dfd80
+01db87d9  mov      qword ptr [rdi + 0x48], rsi   ; ._hitIndex
+01db87dd  lea      rcx, [rdi + 0x48]   ; ._hitIndex
+01db87e1  xor      edx, edx
+01db87e3  call     0x4dfd80
+01db87e9  cmp      dword ptr [r15], 0
+01db87ed  jge      0x1db8800
+01db87ef  mov      rax, qword ptr [r12]
+01db87f3  test     rax, rax
+01db87f6  je       0x1db8bb1
+01db87fc  mov      byte ptr [rax + 0x28], 0   ; .isDark
+01db8800  jmp      0x1db89e5
+01db8805  mov      dword ptr [rsp + 0x170], 6   ; ._targetY
+01db8810  mov      dword ptr [rdi], 6
+01db8816  movaps   xmm0, xmmword ptr [rsp + 0x60]   ; ._currentPosition
+01db881b  movups   xmmword ptr [rdi + 0x58], xmm0   ; ._gameObjectCache
+01db881f  lea      rcx, [rdi + 0x58]   ; ._gameObjectCache
+01db8823  xor      edx, edx
+01db8825  call     0x4dfd80
+01db882a  lea      rcx, [rdi + 8]
+01db882e  mov      r9, qword ptr [rip + 0x25eac4b]   ; [43a3480] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::AwaitUnsafeOnCompleted<.Awa
+01db8835  mov      r8, rdi
+01db8838  lea      rdx, [rsp + 0x60]   ; ._currentPosition
+01db883d  call     0x739050
+01db8843  cmp      dword ptr [r15], 0
+01db8847  jge      0x1db885a
+01db8849  mov      rax, qword ptr [r12]
+01db884d  test     rax, rax
+01db8850  je       0x1db8b87
+01db8856  mov      byte ptr [rax + 0x28], 0   ; .isDark
+01db885a  jmp      0x1db8a33
+01db885f  movss    xmm0, dword ptr [rdi + 0x24]   ; .tsecond
+01db8864  comiss   xmm0, xmm7
+01db8867  jbe      0x1db8917
+01db886d  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db8875  test     rax, rax
+01db8878  je       0x1db8be6
+01db887e  mov      rcx, qword ptr [rax + 0x10]
+01db8882  test     rcx, rcx
+01db8885  je       0x1db8bda
+01db888b  xor      edx, edx
+01db888d  call     0x1d11bc0   ; PawnEnemy::get_CToken()
+01db8892  mov      rbx, rax
+01db8895  movss    xmm6, dword ptr [rdi + 0x24]   ; .tsecond
+01db889a  mov      rcx, qword ptr [rip + 0x2620e77]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01db88a8  jne      0x1db88af
+01db88af  xor      r9d, r9d
+01db88b2  movaps   xmm2, xmm6
+01db88b5  mov      rdx, rbx
+01db88b8  lea      rcx, [rsp + 0xa8]   ; ._updateEvents
+01db88c0  call     0x1ce3290   ; InGameManager::DelaySecond(System.Threading.CancellationToken,System.Single)
+01db88c5  movups   xmm6, xmmword ptr [rax]
+01db88c8  mov      rcx, qword ptr [rip + 0x2603a01]   ; [43bc2d0] TypeInfo Cysharp.Threading.Tasks.UniTask
+01db88d6  jne      0x1db88dd
+01db88dd  movdqa   xmmword ptr [rsp + 0x60], xmm6   ; ._currentPosition
+01db88e3  xor      edx, edx
+01db88e5  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01db88ea  call     0x4dfd80
+01db88ef  movaps   xmm0, xmmword ptr [rsp + 0x60]   ; ._currentPosition
+01db88f4  movdqa   xmmword ptr [rsp + 0x60], xmm0   ; ._currentPosition
+01db88fa  xor      edx, edx
+01db88fc  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01db8901  call     0xa55c00
+01db8906  test     al, al
+01db8908  je       0x1db893b
+01db890a  xor      edx, edx
+01db890c  lea      rcx, [rsp + 0x60]   ; ._currentPosition
+01db8911  call     0xa55b40
+01db8917  cmp      dword ptr [rsp + 0x170], 0   ; ._targetY
+01db891f  jge      0x1db8936
+01db8921  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db8929  test     rax, rax
+01db892c  je       0x1db8bec
+01db8932  mov      byte ptr [rax + 0x28], 0   ; .isDark
+01db8936  jmp      0x1db89e5
+01db893b  mov      dword ptr [rsp + 0x170], 2   ; ._targetY
+01db8946  mov      dword ptr [rdi], 2
+01db894c  movaps   xmm0, xmmword ptr [rsp + 0x60]   ; ._currentPosition
+01db8951  movups   xmmword ptr [rdi + 0x58], xmm0   ; ._gameObjectCache
+01db8955  lea      rcx, [rdi + 0x58]   ; ._gameObjectCache
+01db8959  xor      edx, edx
+01db895b  call     0x4dfd80
+01db8960  lea      rcx, [rdi + 8]
+01db8964  mov      r9, qword ptr [rip + 0x25eab15]   ; [43a3480] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::AwaitUnsafeOnCompleted<.Awa
+01db896b  mov      r8, rdi
+01db896e  lea      rdx, [rsp + 0x60]   ; ._currentPosition
+01db8973  call     0x739050
+01db8979  cmp      dword ptr [rsp + 0x170], 0   ; ._targetY
+01db8981  jge      0x1db8998
+01db8983  mov      rax, qword ptr [rsp + 0x178]   ; ._token
+01db898b  test     rax, rax
+01db898e  je       0x1db8be0
+01db8994  mov      byte ptr [rax + 0x28], 0   ; .isDark
+01db8998  jmp      0x1db8a33
+01db899d  mov      rax, qword ptr [rsp + 0x90]   ; ._priority
+01db89a5  cmp      dword ptr [rax], 0
+01db89a8  jge      0x1db89c2
+01db89aa  mov      rax, qword ptr [rsp + 0x98]   ; ._invincibleTime
+01db89b2  mov      rcx, qword ptr [rax]
+01db89b5  test     rcx, rcx
+01db89b8  je       0x1db8c07
+01db89be  mov      byte ptr [rcx + 0x28], 0   ; .isDark
+01db89c2  mov      rcx, qword ptr [rsp + 0x88]   ; ._objectInfo
+01db89ca  test     rcx, rcx
+01db89cd  jne      0x1db8c02
+01db89d3  xor      esi, esi
+01db89d5  mov      rdi, qword ptr [rsp + 0x160]
+01db89dd  mov      r14, qword ptr [rsp + 0x80]
+01db89e5  mov      dword ptr [r14], 0xfffffffe
+01db89ec  mov      qword ptr [rdi + 0x38], rsi   ; ._callback
+01db89f0  lea      rcx, [rdi + 0x38]   ; ._callback
+01db89f4  xor      edx, edx
+01db89f6  call     0x4dfd80
+01db89fb  cmp      byte ptr [rip + 0x28a7f22], 0   ; [4660924] bss
+01db8a02  jne      0x1db8a17
+01db8a04  lea      rcx, [rip + 0x261ca3d]   ; [43d5448] TypeInfo Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise
+01db8a0b  call     0x4e0a50
+01db8a10  mov      byte ptr [rip + 0x28a7f0d], 1   ; [4660924] bss
+01db8a17  cmp      qword ptr [rdi + 8], 0
+01db8a1c  je       0x1db8a33
+01db8a1e  mov      ecx, 2
+01db8a23  mov      r8, qword ptr [rdi + 8]
+01db8a27  mov      rdx, qword ptr [rip + 0x261ca1a]   ; [43d5448] TypeInfo Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise
+01db8a2e  call     0x22b0
+01db8a33  lea      r11, [rsp + 0x130]   ; ._causeOfDeath
+01db8a3b  mov      rbx, qword ptr [r11 + 0x38]   ; ._callback
+01db8a3f  movaps   xmm6, xmmword ptr [r11 - 0x10]
+01db8a44  movaps   xmm7, xmmword ptr [r11 - 0x20]
+01db8a49  movaps   xmm8, xmmword ptr [r11 - 0x30]
+01db8a4e  movaps   xmm9, xmmword ptr [r11 - 0x40]
+01db8a53  movaps   xmm10, xmmword ptr [r11 - 0x50]
+01db8a58  mov      rsp, r11
+01db8a5b  pop      r15
+01db8a5d  pop      r14
+01db8a5f  pop      r12
+01db8a61  pop      rdi
+01db8a62  pop      rsi
+01db8a63  ret      
+01db8a64  mov      rax, qword ptr [rsp + 0x80]
+01db8a6c  mov      dword ptr [rax], 0xfffffffe
+01db8a72  xor      esi, esi
+01db8a74  mov      rbx, qword ptr [rsp + 0x160]
+01db8a7c  mov      qword ptr [rbx + 0x38], rsi   ; ._callback
+01db8a80  lea      rcx, [rbx + 0x38]   ; ._callback
+01db8a84  xor      edx, edx
+01db8a86  call     0x4dfd80
+01db8a8b  mov      eax, dword ptr [rsp + 0x78]   ; ._basePosition
+01db8a8f  dec      eax
+01db8a91  movsxd   rdx, eax
+01db8a94  lea      rcx, [rbx + 8]
+01db8a98  xor      r8d, r8d
+01db8a9b  mov      rdx, qword ptr [rsp + rdx*8 + 0x70]
+01db8aa0  call     0x1132bc0
+01db8aa5  jmp      0x1db8a33
+01db8aa7  call     0x4e0d00
+01db8aad  call     0x4e0d00
+01db8ab2  call     0x4e0d00
+01db8ab7  call     0x4e0d00
+01db8abc  call     0x4e0d00
+01db8ac2  call     0x4e0cf0
+01db8ac7  call     0x4e0d00
+01db8acc  call     0x4e0d00
+01db8ad2  call     0x4e0d00
+01db8ad8  call     0x4e0d00
+01db8add  call     0x4e0d00
+01db8ae3  call     0x4e0d00
+01db8ae9  call     0x4e0d00
+01db8aee  call     0x4e0d00
+01db8af3  call     0x4e0d00
+01db8af9  call     0x4e0d00
+01db8aff  call     0x4e0d00
+01db8b04  call     0x4e0d00
+01db8b0a  call     0x4e0d00
+01db8b10  call     0x4e0d00
+01db8b15  call     0x4e0d00
+01db8b1a  call     0x4e0d00
+01db8b1f  call     0x4e0d00
+01db8b24  call     0x4e0d00
+01db8b2a  call     0x4e0d00
+01db8b30  call     0x4e0d00
+01db8b35  call     0x4e0d00
+01db8b3b  call     0x4e0d00
+01db8b41  call     0x4e0d00
+01db8b46  call     0x4e0d00
+01db8b4c  call     0x4e0d00
+01db8b52  call     0x4e0d00
+01db8b57  call     0x4e0d00
+01db8b5c  call     0x4e0d00
+01db8b61  call     0x4e0d00
+01db8b66  call     0x4e0d00
+01db8b6b  call     0x4e0d00
+01db8b71  call     0x4e0d00
+01db8b77  call     0x4e0d00
+01db8b7c  call     0x4e0d00
+01db8b81  call     0x4e0d00
+01db8b87  call     0x4e0d00
+01db8b8d  call     0x4e0d00
+01db8b92  call     0x4e0d00
+01db8b97  call     0x4e0d00
+01db8b9c  call     0x4e0d00
+01db8ba1  call     0x4e0d00
+01db8ba6  call     0x4e0d00
+01db8bab  call     0x4e0d00
+01db8bb1  call     0x4e0d00
+01db8bb7  call     0x4e0d00
+01db8bbc  call     0x4e0d00
+01db8bc1  call     0x4e0d00
+01db8bc6  call     0x4e0d00
+01db8bcb  call     0x4e0d00
+01db8bd0  call     0x4e0d00
+01db8bd5  call     0x4e0d00
+01db8bda  call     0x4e0d00
+01db8be0  call     0x4e0d00
+01db8be6  call     0x4e0d00
+01db8bec  call     0x4e0d00
+01db8bf2  call     0x4e0d00
+01db8bf7  call     0x4e0d00
+01db8bfc  call     0x4e0d00
+01db8c02  call     0x4dc9e0
+01db8c07  call     0x4e0d00

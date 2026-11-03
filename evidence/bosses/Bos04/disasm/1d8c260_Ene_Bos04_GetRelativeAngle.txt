@@ -1,0 +1,87 @@
+== System.Single InGame.Kernel.Enemy.Ene_Bos04::GetRelativeAngle() RVA 1d8c260 len 183
+01d8c260 mov        qword ptr [rsp + 8], rbx
+01d8c265 push       rdi
+01d8c266 sub        rsp, 0x50
+01d8c26a cmp        byte ptr [rip + 0x28d754e], 0 ; [.data 46637bf]
+01d8c271 mov        rbx, rcx
+01d8c274 jne        0x1d8c289
+01d8c276 lea        rcx, [rip + 0x262bd83] ; [.data 43b8000] MethodRef#202981
+01d8c27d call       0x4e0a50
+01d8c282 mov        byte ptr [rip + 0x28d7536], 1 ; [.data 46637bf]
+01d8c289 mov        rax, qword ptr [rip + 0x262bd70] ; [.data 43b8000] MethodRef#202981
+01d8c290 mov        rax, qword ptr [rax + 0x20]
+01d8c294 test       byte ptr [rax + 0x135], 1
+01d8c29b jne        0x1d8c2a5
+01d8c29d mov        rcx, rax
+01d8c2a0 call       0x4de1e0
+01d8c2a5 mov        rax, qword ptr [rax + 0xc0] ; ~_burnShake
+01d8c2ac mov        rax, qword ptr [rax + 0x10]
+01d8c2b0 test       byte ptr [rax + 0x135], 1
+01d8c2b7 jne        0x1d8c2c1
+01d8c2b9 mov        rcx, rax
+01d8c2bc call       0x4de1e0
+01d8c2c1 cmp        dword ptr [rbx + 0x2f8], -1 ; ~_targetPlayer
+01d8c2c8 mov        rax, qword ptr [rax + 0xb8] ; ~_mover
+01d8c2cf mov        rdi, qword ptr [rax]
+01d8c2d2 jne        0x1d8c323
+01d8c2d4 mov        rdx, qword ptr [rbx + 0x50]
+01d8c2d8 test       rdx, rdx
+01d8c2db je         0x1d8c3de
+01d8c2e1 xor        r8d, r8d
+01d8c2e4 lea        rcx, [rsp + 0x30]
+01d8c2e9 call       0x3093ba0 ; UnityEngine.Transform::get_position()
+01d8c2ee test       rdi, rdi
+01d8c2f1 je         0x1d8c3de
+01d8c2f7 movsd      xmm0, qword ptr [rax]
+01d8c2fb lea        rdx, [rsp + 0x20]
+01d8c300 mov        eax, dword ptr [rax + 8]
+01d8c303 xor        r9d, r9d
+01d8c306 xor        r8d, r8d
+01d8c309 movsd      qword ptr [rsp + 0x20], xmm0
+01d8c30f mov        rcx, rdi
+01d8c312 mov        dword ptr [rsp + 0x28], eax
+01d8c316 call       0x1ce4c30 ; InGame.Kernel.InGameManager::GetNearestPlayerIndexInWorld(UnityEngine.Vector3,System.Boolean)
+01d8c31b mov        dword ptr [rbx + 0x2f8], eax ; ~_targetPlayer
+01d8c321 jmp        0x1d8c32c
+01d8c323 test       rdi, rdi
+01d8c326 je         0x1d8c3de
+01d8c32c mov        r8d, dword ptr [rbx + 0x2f8] ; ~_targetPlayer
+01d8c333 lea        rcx, [rsp + 0x30]
+01d8c338 xor        r9d, r9d
+01d8c33b mov        rdx, rdi
+01d8c33e call       0x1ce5c90 ; InGame.Kernel.InGameManager::GetPlayerSkyPosition(System.Int32)
+01d8c343 mov        rdx, qword ptr [rbx + 0x50]
+01d8c347 movsd      xmm0, qword ptr [rax]
+01d8c34b mov        edi, dword ptr [rax + 8]
+01d8c34e movsd      qword ptr [rsp + 0x20], xmm0
+01d8c354 test       rdx, rdx
+01d8c357 je         0x1d8c3de
+01d8c35d xor        r8d, r8d
+01d8c360 lea        rcx, [rsp + 0x30]
+01d8c365 call       0x3093ba0 ; UnityEngine.Transform::get_position()
+01d8c36a movss      xmm0, dword ptr [rsp + 0x20]
+01d8c370 mov        rbx, qword ptr [rbx + 0x288] ; ~_upperCore
+01d8c377 movsd      xmm1, qword ptr [rax]
+01d8c37b subss      xmm0, xmm1
+01d8c37f movd       xmm1, edi
+01d8c383 subss      xmm1, dword ptr [rax + 8]
+01d8c388 test       rbx, rbx
+01d8c38b je         0x1d8c3de
+01d8c38d movaps     xmmword ptr [rsp + 0x40], xmm6
+01d8c392 call       0x578890
+01d8c397 movaps     xmm6, xmm0
+01d8c39a lea        rcx, [rsp + 0x30]
+01d8c39f mulss      xmm6, dword ptr [rip + 0x1754839] ; [.rdata 34e0be0] f=57.295780181884766 d=52776566835805.76 v4=['57.2958', '100', '180', '2000']
+01d8c3a7 xor        r8d, r8d
+01d8c3aa mov        rdx, rbx
+01d8c3ad call       0x3093180 ; UnityEngine.Transform::get_eulerAngles()
+01d8c3b2 movss      xmm1, dword ptr [rip + 0x176055e] ; [.rdata 34ec918] f=360.0 d=1.4044481158322838e+306 v4=['360', 'inf', 'nan', 'nan']
+01d8c3ba subss      xmm6, dword ptr [rax + 4]
+01d8c3bf addss      xmm6, dword ptr [rip + 0x1866925] ; [.rdata 35f2cec] f=720.0 d=4.722367682711709e+21 v4=['720', '960', '-0.01', '-6']
+01d8c3c7 movaps     xmm0, xmm6
+01d8c3ca movaps     xmm6, xmmword ptr [rsp + 0x40]
+01d8c3cf mov        rbx, qword ptr [rsp + 0x60]
+01d8c3d4 add        rsp, 0x50
+01d8c3d8 pop        rdi
+01d8c3d9 jmp        0x578cb0
+01d8c3de call       0x4e0d00

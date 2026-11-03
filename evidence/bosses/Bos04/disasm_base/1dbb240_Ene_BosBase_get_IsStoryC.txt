@@ -1,0 +1,8 @@
+== System.Boolean InGame.Kernel.Enemy.Ene_BosBase::get_IsStoryC() RVA 1dbb240 len 17
+01dbb240 cmp        dword ptr [rcx + 0x210], 1 ; ~_currentPlayMode
+01dbb247 je         0x1dbb24c
+01dbb249 xor        al, al
+01dbb24b ret        
+01dbb24c cmp        dword ptr [rcx + 0x214], 2 ; ~_currentActor
+01dbb253 sete       al
+01dbb256 ret        

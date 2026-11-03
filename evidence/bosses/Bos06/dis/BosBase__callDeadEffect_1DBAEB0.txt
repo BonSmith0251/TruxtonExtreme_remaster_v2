@@ -1,0 +1,76 @@
+01dbaeb0 push rbx 
+01dbaeb2 sub rsp, 0x30 
+01dbaeb6 cmp byte ptr [rip + 0x28a89c1], 0 ; rva=466387e
+01dbaebd mov rbx, rcx 
+01dbaec0 jne 0x1dbaee1 
+01dbaec2 lea rcx, [rip + 0x25fc6a7] ; rva=43b7570
+01dbaec9 call 0x4e0a50 
+01dbaece lea rcx, [rip + 0x25fd12b] ; rva=43b8000
+01dbaed5 call 0x4e0a50 
+01dbaeda mov byte ptr [rip + 0x28a899d], 1 ; rva=466387e
+01dbaee1 cmp byte ptr [rbx + 0x1b3], 0 
+01dbaee8 jne 0x1dbafd9 
+01dbaeee mov rax, qword ptr [rip + 0x25fc67b] ; rva=43b7570
+01dbaef5 mov rax, qword ptr [rax + 0x20] 
+01dbaef9 test byte ptr [rax + 0x135], 1 
+01dbaf00 jne 0x1dbaf0a 
+01dbaf02 mov rcx, rax 
+01dbaf05 call 0x4de1e0 
+01dbaf0a mov rax, qword ptr [rax + 0xc0] 
+01dbaf11 mov rax, qword ptr [rax + 0x10] 
+01dbaf15 test byte ptr [rax + 0x135], 1 
+01dbaf1c jne 0x1dbaf26 
+01dbaf1e mov rcx, rax 
+01dbaf21 call 0x4de1e0 
+01dbaf26 mov rax, qword ptr [rax + 0xb8] 
+01dbaf2d mov rcx, qword ptr [rax] 
+01dbaf30 test rcx, rcx 
+01dbaf33 je 0x1dbaf56 
+01dbaf35 movss xmm1, dword ptr [rip + 0x1725c8f] ; rva=34e0bcc f=1 d=50.12387842
+01dbaf3d movss xmm2, dword ptr [rip + 0x17319cf] ; rva=34ec914 f=3
+01dbaf45 movaps xmm3, xmm1 
+01dbaf48 mov qword ptr [rsp + 0x20], 0 
+01dbaf51 call 0x1cc6330 ; CinemachineMan::ShakeCamera(System.Single,System.Single,System.Single)
+01dbaf56 mov rax, qword ptr [rip + 0x25fd0a3] ; rva=43b8000
+01dbaf5d mov rax, qword ptr [rax + 0x20] 
+01dbaf61 test byte ptr [rax + 0x135], 1 
+01dbaf68 jne 0x1dbaf72 
+01dbaf6a mov rcx, rax 
+01dbaf6d call 0x4de1e0 
+01dbaf72 mov rax, qword ptr [rax + 0xc0] 
+01dbaf79 mov rax, qword ptr [rax + 0x10] 
+01dbaf7d test byte ptr [rax + 0x135], 1 
+01dbaf84 jne 0x1dbaf8e 
+01dbaf86 mov rcx, rax 
+01dbaf89 call 0x4de1e0 
+01dbaf8e mov rax, qword ptr [rax + 0xb8] 
+01dbaf95 mov rcx, qword ptr [rax] 
+01dbaf98 test rcx, rcx 
+01dbaf9b je 0x1dbafdf 
+01dbaf9d movss xmm3, dword ptr [rip + 0x1731a67] ; rva=34eca0c f=2
+01dbafa5 movss xmm2, dword ptr [rip + 0x1837d1b] ; rva=35f2cc8 f=0.8 d=0.003671875684
+01dbafad movss xmm1, dword ptr [rip + 0x1725c13] ; rva=34e0bc8 f=0.5 d=0.007812501834
+01dbafb5 mov qword ptr [rsp + 0x20], 0 
+01dbafbe call 0x1cee560 ; InGameManager::VibrationPlayer(System.Single,System.Single,System.Single)
+01dbafc3 xor edx, edx 
+01dbafc5 mov byte ptr [rbx + 0x1b3], 1 
+01dbafcc mov rcx, rbx 
+01dbafcf add rsp, 0x30 
+01dbafd3 pop rbx 
+01dbafd4 jmp 0x1d10e20 ; PawnEnemy::_callDeadEffect()
+01dbafd9 add rsp, 0x30 
+01dbafdd pop rbx 
+01dbafde ret 
+01dbafdf call 0x4e0d00 
+01dbafe4 int3 
+01dbafe5 int3 
+01dbafe6 int3 
+01dbafe7 int3 
+01dbafe8 int3 
+01dbafe9 int3 
+01dbafea int3 
+01dbafeb int3 
+01dbafec int3 
+01dbafed int3 
+01dbafee int3 
+01dbafef int3 

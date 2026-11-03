@@ -1,0 +1,66 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04Bit::ReStart(System.Boolean) RVA 1d8afa0 len 11f
+01d8afa0 mov        qword ptr [rsp + 8], rbx
+01d8afa5 push       rdi
+01d8afa6 sub        rsp, 0x20
+01d8afaa cmp        byte ptr [rip + 0x28d881c], 0 ; [.data 46637cd]
+01d8afb1 movzx      edi, dl
+01d8afb4 mov        rbx, rcx
+01d8afb7 jne        0x1d8afe4
+01d8afb9 lea        rcx, [rip + 0x26268e8] ; [.data 43b18a8] TypeInfo#37306
+01d8afc0 call       0x4e0a50
+01d8afc5 lea        rcx, [rip + 0x25eabdc] ; [.data 4375ba8] MethodRef#202071
+01d8afcc call       0x4e0a50
+01d8afd1 lea        rcx, [rip + 0x262d028] ; [.data 43b8000] MethodRef#202981
+01d8afd8 call       0x4e0a50
+01d8afdd mov        byte ptr [rip + 0x28d87e9], 1 ; [.data 46637cd]
+01d8afe4 xor        r8d, r8d
+01d8afe7 movzx      edx, dil
+01d8afeb mov        rcx, rbx
+01d8afee call       0x1d0f040 ; InGame.Kernel.Enemy.PawnEnemy::ReStart(System.Boolean)
+01d8aff3 xor        edx, edx
+01d8aff5 mov        rcx, rbx
+01d8aff8 call       0x1d0d1b0 ; InGame.Kernel.Enemy.PawnEnemy::CreateToken()
+01d8affd mov        rax, qword ptr [rip + 0x262cffc] ; [.data 43b8000] MethodRef#202981
+01d8b004 mov        rax, qword ptr [rax + 0x20]
+01d8b008 test       byte ptr [rax + 0x135], 1
+01d8b00f jne        0x1d8b019
+01d8b011 mov        rcx, rax
+01d8b014 call       0x4de1e0
+01d8b019 mov        rax, qword ptr [rax + 0xc0] ; ~_burnShake
+01d8b020 mov        rax, qword ptr [rax + 0x10]
+01d8b024 test       byte ptr [rax + 0x135], 1
+01d8b02b jne        0x1d8b035
+01d8b02d mov        rcx, rax
+01d8b030 call       0x4de1e0
+01d8b035 mov        rax, qword ptr [rax + 0xb8] ; ~_mover
+01d8b03c mov        rcx, qword ptr [rax]
+01d8b03f test       rcx, rcx
+01d8b042 je         0x1d8b0ba
+01d8b044 mov        rax, qword ptr [rip + 0x262685d] ; [.data 43b18a8] TypeInfo#37306
+01d8b04b mov        rdi, qword ptr [rcx + 0xf0] ; ~_deadBullet
+01d8b052 cmp        dword ptr [rax + 0xe4], 0
+01d8b059 jne        0x1d8b06a
+01d8b05b mov        rcx, rax
+01d8b05e call       0x4e0d90
+01d8b063 mov        rax, qword ptr [rip + 0x262683e] ; [.data 43b18a8] TypeInfo#37306
+01d8b06a mov        rax, qword ptr [rax + 0xb8] ; ~_mover
+01d8b071 mov        rcx, qword ptr [rax]
+01d8b074 test       rcx, rcx
+01d8b077 je         0x1d8b0ba
+01d8b079 mov        r8, qword ptr [rip + 0x25eab28] ; [.data 4375ba8] MethodRef#202071
+01d8b080 xor        edx, edx
+01d8b082 call       0xb16860
+01d8b087 test       rdi, rdi
+01d8b08a je         0x1d8b0ba
+01d8b08c xor        r8d, r8d
+01d8b08f mov        rdx, rax
+01d8b092 mov        rcx, rdi
+01d8b095 call       0x1ccb7b0 ; InGame.Kernel.InGameBulletManager::GetTemplate(System.String)
+01d8b09a lea        rcx, [rbx + 0x1b8] ; ~_isPlayerSideBottom
+01d8b0a1 mov        qword ptr [rbx + 0x1b8], rax ; ~_isPlayerSideBottom
+01d8b0a8 mov        rdx, rax
+01d8b0ab mov        rbx, qword ptr [rsp + 0x30]
+01d8b0b0 add        rsp, 0x20
+01d8b0b4 pop        rdi
+01d8b0b5 jmp        0x4dfd80
+01d8b0ba call       0x4e0d00

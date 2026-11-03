@@ -1,0 +1,784 @@
+{
+ "name": "Shader Graphs/sg_distortion_fade",
+ "bundle": "defaultlocalgroup_assets_all_d58d8015662a6b04bca842fe72e2a7e1.bundle",
+ "path_id": "4313811996127323789",
+ "keywordNames": [
+  "STEREO_INSTANCING_ON",
+  "UNITY_SINGLE_PASS_STEREO",
+  "STEREO_MULTIVIEW_ON",
+  "STEREO_CUBEMAP_RENDER_ON",
+  "LIGHTMAP_ON",
+  "DIRLIGHTMAP_COMBINED",
+  "USE_LEGACY_LIGHTMAPS",
+  "LIGHTMAP_BICUBIC_SAMPLING",
+  "DOTS_INSTANCING_ON",
+  "_FOVEATED_RENDERING_NON_UNIFORM_RASTER",
+  "INSTANCING_ON",
+  "FOG_LINEAR",
+  "FOG_EXP",
+  "FOG_EXP2",
+  "_DBUFFER_MRT1",
+  "_DBUFFER_MRT2",
+  "_DBUFFER_MRT3",
+  "DEBUG_DISPLAY",
+  "_SCREEN_SPACE_OCCLUSION",
+  "_WRITE_RENDERING_LAYERS",
+  "_GBUFFER_NORMALS_OCT",
+  "SHADOWS_SHADOWMASK",
+  "_RENDER_PASS_ENABLED"
+ ],
+ "passes": [
+  {
+   "label": "0_0_Universal_Forward",
+   "name": "Universal Forward",
+   "useName": "",
+   "tags": {
+    "DisableBatching": "False",
+    "QUEUE": "Transparent",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Transparent",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalUnlitSubTarget",
+    "UniversalMaterialType": "Unlit"
+   },
+   "subShaderTags": {
+    "DisableBatching": "False",
+    "QUEUE": "Transparent",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Transparent",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalUnlitSubTarget",
+    "UniversalMaterialType": "Unlit"
+   },
+   "lod": 0,
+   "state": {
+    "blend": [
+     5.0,
+     10.0,
+     1.0,
+     10.0
+    ],
+    "blendOp": [
+     0.0,
+     0.0
+    ],
+    "colMask": 15.0,
+    "zTest": 4.0,
+    "zWrite": 0.0,
+    "culling": 2.0,
+    "offsetFactor": 0.0,
+    "offsetUnits": 0.0,
+    "stencilRef": 0.0,
+    "stencilComp": 8.0,
+    "stencilPass": 0.0,
+    "stencilFail": 0.0,
+    "stencilZFail": 0.0,
+    "stencilReadMask": 255.0,
+    "stencilWriteMask": 255.0
+   },
+   "programs": {
+    "vs": [
+     {
+      "blob": 1,
+      "params": 0,
+      "keywords": []
+     },
+     {
+      "blob": 2,
+      "params": 0,
+      "keywords": [
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 3,
+      "params": 0,
+      "keywords": [
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 4,
+      "params": 0,
+      "keywords": [
+       "FOG_EXP2"
+      ]
+     }
+    ],
+    "ps": [
+     {
+      "blob": 6,
+      "params": 5,
+      "keywords": []
+     },
+     {
+      "blob": 7,
+      "params": 5,
+      "keywords": [
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 8,
+      "params": 5,
+      "keywords": [
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 9,
+      "params": 5,
+      "keywords": [
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 10,
+      "params": 5,
+      "keywords": [
+       "_SCREEN_SPACE_OCCLUSION"
+      ]
+     },
+     {
+      "blob": 11,
+      "params": 5,
+      "keywords": [
+       "FOG_LINEAR",
+       "_SCREEN_SPACE_OCCLUSION"
+      ]
+     },
+     {
+      "blob": 12,
+      "params": 5,
+      "keywords": [
+       "FOG_EXP",
+       "_SCREEN_SPACE_OCCLUSION"
+      ]
+     },
+     {
+      "blob": 13,
+      "params": 5,
+      "keywords": [
+       "FOG_EXP2",
+       "_SCREEN_SPACE_OCCLUSION"
+      ]
+     }
+    ]
+   },
+   "bindings": {
+    "vs": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 2128,
+       "members": [
+        {
+         "name": "unity_MatrixVP",
+         "offset": 1264,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDraw",
+       "slot": 1,
+       "size": 752,
+       "members": [
+        {
+         "name": "unity_ObjectToWorld",
+         "offset": 0,
+         "matrix": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_WorldToObject",
+         "offset": 64,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    },
+    "ps": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 2128,
+       "members": [
+        {
+         "name": "_ScaledScreenParams",
+         "offset": 48,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "_GlobalMipBias",
+         "offset": 64,
+         "dim": 2,
+         "array": 0
+        },
+        {
+         "name": "_TimeParameters",
+         "offset": 304,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "_ProjectionParams",
+         "offset": 352,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_MatrixV",
+         "offset": 1072,
+         "matrix": 4,
+         "array": 0
+        },
+        {
+         "name": "_Tx_SpeedRate",
+         "offset": 2096,
+         "dim": 1,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerMaterial",
+       "slot": 1,
+       "size": 96,
+       "members": [
+        {
+         "name": "_Scale",
+         "offset": 0,
+         "dim": 1,
+         "array": 0
+        },
+        {
+         "name": "_ScrollSpeed",
+         "offset": 4,
+         "dim": 1,
+         "array": 0
+        },
+        {
+         "name": "_NoizeOrRipple",
+         "offset": 8,
+         "dim": 1,
+         "array": 0
+        },
+        {
+         "name": "_Intensity",
+         "offset": 12,
+         "dim": 1,
+         "array": 0
+        },
+        {
+         "name": "_Transparency",
+         "offset": 16,
+         "dim": 1,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [
+      {
+       "name": "_CameraOpaqueTexture",
+       "register": 0,
+       "sampler": 0,
+       "dim": 2
+      }
+     ],
+     "samplers": []
+    }
+   }
+  },
+  {
+   "label": "0_1_MotionVectors",
+   "name": "MotionVectors",
+   "useName": "",
+   "tags": {
+    "DisableBatching": "False",
+    "LIGHTMODE": "MOTIONVECTORS",
+    "QUEUE": "Transparent",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Transparent",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalUnlitSubTarget",
+    "UniversalMaterialType": "Unlit"
+   },
+   "subShaderTags": {
+    "DisableBatching": "False",
+    "QUEUE": "Transparent",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Transparent",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalUnlitSubTarget",
+    "UniversalMaterialType": "Unlit"
+   },
+   "lod": 0,
+   "state": {
+    "blend": [
+     1.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    "blendOp": [
+     0.0,
+     0.0
+    ],
+    "colMask": 12.0,
+    "zTest": 4.0,
+    "zWrite": 1.0,
+    "culling": 2.0,
+    "offsetFactor": 0.0,
+    "offsetUnits": 0.0,
+    "stencilRef": 0.0,
+    "stencilComp": 8.0,
+    "stencilPass": 0.0,
+    "stencilFail": 0.0,
+    "stencilZFail": 0.0,
+    "stencilReadMask": 255.0,
+    "stencilWriteMask": 255.0
+   },
+   "programs": {
+    "vs": [
+     {
+      "blob": 15,
+      "params": 14,
+      "keywords": []
+     }
+    ],
+    "ps": [
+     {
+      "blob": 17,
+      "params": 16,
+      "keywords": []
+     }
+    ]
+   },
+   "bindings": {
+    "vs": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 2144,
+       "members": [
+        {
+         "name": "unity_MatrixVP",
+         "offset": 1264,
+         "matrix": 4,
+         "array": 0
+        },
+        {
+         "name": "_PrevViewProjMatrix",
+         "offset": 1440,
+         "matrix": 4,
+         "array": 0
+        },
+        {
+         "name": "_NonJitteredViewProjMatrix",
+         "offset": 1504,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDraw",
+       "slot": 1,
+       "size": 752,
+       "members": [
+        {
+         "name": "unity_ObjectToWorld",
+         "offset": 0,
+         "matrix": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_MatrixPreviousM",
+         "offset": 576,
+         "matrix": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_MotionVectorsParams",
+         "offset": 704,
+         "dim": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    },
+    "ps": {
+     "constantBuffers": [
+      {
+       "name": "UnityPerDraw",
+       "slot": 0,
+       "size": 752,
+       "members": [
+        {
+         "name": "unity_MotionVectorsParams",
+         "offset": 704,
+         "dim": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    }
+   }
+  },
+  {
+   "label": "0_2_DepthNormalsOnly",
+   "name": "DepthNormalsOnly",
+   "useName": "",
+   "tags": {
+    "DisableBatching": "False",
+    "LIGHTMODE": "DepthNormalsOnly",
+    "QUEUE": "Transparent",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Transparent",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalUnlitSubTarget",
+    "UniversalMaterialType": "Unlit"
+   },
+   "subShaderTags": {
+    "DisableBatching": "False",
+    "QUEUE": "Transparent",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Transparent",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalUnlitSubTarget",
+    "UniversalMaterialType": "Unlit"
+   },
+   "lod": 0,
+   "state": {
+    "blend": [
+     1.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    "blendOp": [
+     0.0,
+     0.0
+    ],
+    "colMask": 15.0,
+    "zTest": 4.0,
+    "zWrite": 1.0,
+    "culling": 2.0,
+    "offsetFactor": 0.0,
+    "offsetUnits": 0.0,
+    "stencilRef": 0.0,
+    "stencilComp": 8.0,
+    "stencilPass": 0.0,
+    "stencilFail": 0.0,
+    "stencilZFail": 0.0,
+    "stencilReadMask": 255.0,
+    "stencilWriteMask": 255.0
+   },
+   "programs": {
+    "vs": [
+     {
+      "blob": 18,
+      "params": 0,
+      "keywords": []
+     }
+    ],
+    "ps": [
+     {
+      "blob": 20,
+      "params": 19,
+      "keywords": []
+     },
+     {
+      "blob": 21,
+      "params": 19,
+      "keywords": [
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     }
+    ]
+   },
+   "bindings": {
+    "vs": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 2128,
+       "members": [
+        {
+         "name": "unity_MatrixVP",
+         "offset": 1264,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDraw",
+       "slot": 1,
+       "size": 752,
+       "members": [
+        {
+         "name": "unity_ObjectToWorld",
+         "offset": 0,
+         "matrix": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_WorldToObject",
+         "offset": 64,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    },
+    "ps": {
+     "constantBuffers": [],
+     "textures": [],
+     "samplers": []
+    }
+   }
+  },
+  {
+   "label": "0_3_GBuffer",
+   "name": "GBuffer",
+   "useName": "",
+   "tags": {
+    "DisableBatching": "False",
+    "LIGHTMODE": "UniversalGBuffer",
+    "QUEUE": "Transparent",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Transparent",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalUnlitSubTarget",
+    "UniversalMaterialType": "Unlit"
+   },
+   "subShaderTags": {
+    "DisableBatching": "False",
+    "QUEUE": "Transparent",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Transparent",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalUnlitSubTarget",
+    "UniversalMaterialType": "Unlit"
+   },
+   "lod": 0,
+   "state": {
+    "blend": [
+     5.0,
+     10.0,
+     1.0,
+     10.0
+    ],
+    "blendOp": [
+     0.0,
+     0.0
+    ],
+    "colMask": 15.0,
+    "zTest": 4.0,
+    "zWrite": 0.0,
+    "culling": 2.0,
+    "offsetFactor": 0.0,
+    "offsetUnits": 0.0,
+    "stencilRef": 0.0,
+    "stencilComp": 8.0,
+    "stencilPass": 0.0,
+    "stencilFail": 0.0,
+    "stencilZFail": 0.0,
+    "stencilReadMask": 255.0,
+    "stencilWriteMask": 255.0
+   },
+   "programs": {
+    "vs": [
+     {
+      "blob": 22,
+      "params": 0,
+      "keywords": []
+     }
+    ],
+    "ps": [
+     {
+      "blob": 23,
+      "params": 5,
+      "keywords": [
+       "_SCREEN_SPACE_OCCLUSION",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 24,
+      "params": 5,
+      "keywords": [
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 25,
+      "params": 5,
+      "keywords": [
+       "_SCREEN_SPACE_OCCLUSION",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 26,
+      "params": 5,
+      "keywords": [
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     }
+    ]
+   },
+   "bindings": {
+    "vs": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 2128,
+       "members": [
+        {
+         "name": "unity_MatrixVP",
+         "offset": 1264,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDraw",
+       "slot": 1,
+       "size": 752,
+       "members": [
+        {
+         "name": "unity_ObjectToWorld",
+         "offset": 0,
+         "matrix": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_WorldToObject",
+         "offset": 64,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    },
+    "ps": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 2128,
+       "members": [
+        {
+         "name": "_ScaledScreenParams",
+         "offset": 48,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "_GlobalMipBias",
+         "offset": 64,
+         "dim": 2,
+         "array": 0
+        },
+        {
+         "name": "_TimeParameters",
+         "offset": 304,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "_ProjectionParams",
+         "offset": 352,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_MatrixV",
+         "offset": 1072,
+         "matrix": 4,
+         "array": 0
+        },
+        {
+         "name": "_Tx_SpeedRate",
+         "offset": 2096,
+         "dim": 1,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerMaterial",
+       "slot": 1,
+       "size": 96,
+       "members": [
+        {
+         "name": "_Scale",
+         "offset": 0,
+         "dim": 1,
+         "array": 0
+        },
+        {
+         "name": "_ScrollSpeed",
+         "offset": 4,
+         "dim": 1,
+         "array": 0
+        },
+        {
+         "name": "_NoizeOrRipple",
+         "offset": 8,
+         "dim": 1,
+         "array": 0
+        },
+        {
+         "name": "_Intensity",
+         "offset": 12,
+         "dim": 1,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [
+      {
+       "name": "_CameraOpaqueTexture",
+       "register": 0,
+       "sampler": 0,
+       "dim": 2
+      }
+     ],
+     "samplers": []
+    }
+   }
+  }
+ ]
+}

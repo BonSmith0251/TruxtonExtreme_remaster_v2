@@ -1,0 +1,28 @@
+== System.Void InGame.Kernel.Enemy.Ene_BosBase::ConsumeAttackLoop(System.Int32) RVA 1db93f0 len 6f
+01db93f0 mov        qword ptr [rsp + 8], rbx
+01db93f5 mov        qword ptr [rsp + 0x10], rsi
+01db93fa push       rdi
+01db93fb sub        rsp, 0x20
+01db93ff cmp        byte ptr [rip + 0x28aa47c], 0 ; [.data 4663882]
+01db9406 mov        esi, edx
+01db9408 mov        rdi, rcx
+01db940b jne        0x1db9420
+01db940d lea        rcx, [rip + 0x25b97b4] ; [.data 4372bc8] TypeInfo#41713
+01db9414 call       0x4e0a50
+01db9419 mov        byte ptr [rip + 0x28aa462], 1 ; [.data 4663882]
+01db9420 mov        rcx, qword ptr [rip + 0x25b97a1] ; [.data 4372bc8] TypeInfo#41713
+01db9427 mov        ebx, dword ptr [rdi + 0x1e8] ; ~_attackLoopCount
+01db942d cmp        dword ptr [rcx + 0xe4], 0
+01db9434 jne        0x1db943b
+01db9436 call       0x4e0d90
+01db943b sub        ebx, esi
+01db943d xor        r8d, r8d
+01db9440 mov        edx, ebx
+01db9442 xor        ecx, ecx
+01db9444 call       0x202aa40 ; System.Math::Max(System.Int32,System.Int32)
+01db9449 mov        rbx, qword ptr [rsp + 0x30]
+01db944e mov        rsi, qword ptr [rsp + 0x38]
+01db9453 mov        dword ptr [rdi + 0x1e8], eax ; ~_attackLoopCount
+01db9459 add        rsp, 0x20
+01db945d pop        rdi
+01db945e ret        

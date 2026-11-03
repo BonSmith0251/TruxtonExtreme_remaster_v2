@@ -1,0 +1,111 @@
+01dba5c0 mov qword ptr [rsp + 0x10], rbx 
+01dba5c5 mov qword ptr [rsp + 0x18], rbp 
+01dba5ca mov qword ptr [rsp + 0x20], rsi 
+01dba5cf push r14 
+01dba5d1 sub rsp, 0x70 
+01dba5d5 cmp byte ptr [rip + 0x28a92a4], 0 ; rva=4663880
+01dba5dc mov ebp, r9d 
+01dba5df mov rsi, r8 
+01dba5e2 mov r14d, edx 
+01dba5e5 jne 0x1dba606 
+01dba5e7 lea rcx, [rip + 0x25fda12] ; rva=43b8000
+01dba5ee call 0x4e0a50 
+01dba5f3 lea rcx, [rip + 0x25e7d6e] ; rva=43a2368
+01dba5fa call 0x4e0a50 
+01dba5ff mov byte ptr [rip + 0x28a927a], 1 ; rva=4663880
+01dba606 mov rax, qword ptr [rip + 0x25fd9f3] ; rva=43b8000
+01dba60d mov rax, qword ptr [rax + 0x20] 
+01dba611 test byte ptr [rax + 0x135], 1 
+01dba618 jne 0x1dba622 
+01dba61a mov rcx, rax 
+01dba61d call 0x4de1e0 
+01dba622 mov rax, qword ptr [rax + 0xc0] 
+01dba629 mov rax, qword ptr [rax + 0x10] 
+01dba62d test byte ptr [rax + 0x135], 1 
+01dba634 jne 0x1dba63e 
+01dba636 mov rcx, rax 
+01dba639 call 0x4de1e0 
+01dba63e mov rax, qword ptr [rax + 0xb8] 
+01dba645 mov qword ptr [rsp + 0x80], rdi 
+01dba64d mov rbx, qword ptr [rax] 
+01dba650 test rbx, rbx 
+01dba653 je 0x1dba77d 
+01dba659 mov rdi, qword ptr [rbx + 0x98] 
+01dba660 test rdi, rdi 
+01dba663 je 0x1dba77d 
+01dba669 movsd xmm0, qword ptr [rsi] 
+01dba66d lea r8, [rsp + 0x50] 
+01dba672 mov eax, dword ptr [rsi + 8] 
+01dba675 lea rcx, [rsp + 0x60] 
+01dba67a xor r9d, r9d 
+01dba67d movsd qword ptr [rsp + 0x50], xmm0 
+01dba683 mov rdx, rdi 
+01dba686 mov dword ptr [rsp + 0x58], eax 
+01dba68a call 0x308ea00 ; Transform::InverseTransformPoint(UnityEngine.Vector3)
+01dba68f cmp byte ptr [rip + 0x28a1dc7], 0 ; rva=465c45d
+01dba696 mov rsi, qword ptr [rbx + 0x108] 
+01dba69d movsd xmm1, qword ptr [rax] 
+01dba6a1 mov ebx, dword ptr [rax + 8] 
+01dba6a4 movsd qword ptr [rsp + 0x50], xmm1 
+01dba6aa jne 0x1dba6c5 
+01dba6ac lea rcx, [rip + 0x2607025] ; rva=43c16d8
+01dba6b3 call 0x4e0a50 
+01dba6b8 movsd xmm1, qword ptr [rsp + 0x50] 
+01dba6be mov byte ptr [rip + 0x28a1d98], 1 ; rva=465c45d
+01dba6c5 mov rax, qword ptr [rip + 0x260700c] ; rva=43c16d8
+01dba6cc mov rax, qword ptr [rax + 0xb8] 
+01dba6d3 test rsi, rsi 
+01dba6d6 je 0x1dba77d 
+01dba6dc movsd xmm0, qword ptr [rax] 
+01dba6e0 mov r9d, ebp 
+01dba6e3 mov eax, dword ptr [rax + 8] 
+01dba6e6 mov r8d, r14d 
+01dba6e9 mov dword ptr [rsp + 0x58], eax 
+01dba6ed mov rdx, rdi 
+01dba6f0 mov qword ptr [rsp + 0x40], 0 
+01dba6f9 mov rcx, rsi 
+01dba6fc mov dword ptr [rsp + 0x68], ebx 
+01dba700 mov ebx, dword ptr [rsp + 0xa0] 
+01dba707 cmp ebx, -1 
+01dba70a movsd qword ptr [rsp + 0x50], xmm0 
+01dba710 sete al 
+01dba713 movsd qword ptr [rsp + 0x60], xmm1 
+01dba719 mov byte ptr [rsp + 0x38], al 
+01dba71d lea rax, [rsp + 0x50] 
+01dba722 mov byte ptr [rsp + 0x30], 0 
+01dba727 mov qword ptr [rsp + 0x28], rax 
+01dba72c lea rax, [rsp + 0x60] 
+01dba731 mov qword ptr [rsp + 0x20], rax 
+01dba736 call 0x1cd0040 ; InGameEffectManager::ExplosionQue(UnityEngine.Transform,System.Int32,System.Int32,UnityEngine.Vector3,UnityEngine.Vector3,System.Boolean,System.Boolean)
+01dba73b cmp ebx, -1 
+01dba73e je 0x1dba75e 
+01dba740 mov rcx, qword ptr [rip + 0x25e7c21] ; rva=43a2368
+01dba747 cmp dword ptr [rcx + 0xe4], 0 
+01dba74e jne 0x1dba755 
+01dba750 call 0x4e0d90 
+01dba755 xor edx, edx 
+01dba757 mov ecx, ebx 
+01dba759 call 0x2723de0 ; SoundUtility::PlayQue(TXEKernel.Sound.SoundUtility/ID)
+01dba75e mov rdi, qword ptr [rsp + 0x80] 
+01dba766 lea r11, [rsp + 0x70] 
+01dba76b mov rbx, qword ptr [r11 + 0x18] 
+01dba76f mov rbp, qword ptr [r11 + 0x20] 
+01dba773 mov rsi, qword ptr [r11 + 0x28] 
+01dba777 mov rsp, r11 
+01dba77a pop r14 
+01dba77c ret 
+01dba77d call 0x4e0d00 
+01dba782 int3 
+01dba783 int3 
+01dba784 int3 
+01dba785 int3 
+01dba786 int3 
+01dba787 int3 
+01dba788 int3 
+01dba789 int3 
+01dba78a int3 
+01dba78b int3 
+01dba78c int3 
+01dba78d int3 
+01dba78e int3 
+01dba78f int3 

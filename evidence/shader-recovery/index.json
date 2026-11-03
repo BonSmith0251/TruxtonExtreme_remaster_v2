@@ -1,0 +1,876 @@
+[
+ {
+  "name": "Shader Graphs/sg_bgmap_triplaner_ground1",
+  "dir": "Shader_Graphs_sg_bgmap_triplaner_ground1",
+  "passes": [
+   [
+    "0_0_Universal_Forward",
+    null
+   ],
+   [
+    "0_1_GBuffer",
+    null
+   ],
+   [
+    "0_2_ShadowCaster",
+    null
+   ],
+   [
+    "0_3_MotionVectors",
+    null
+   ],
+   [
+    "0_4_DepthNormals",
+    null
+   ],
+   [
+    "0_5_Universal_2D",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "Shader Graphs/sg_bgmap_triplaner_lava1",
+  "dir": "Shader_Graphs_sg_bgmap_triplaner_lava1",
+  "passes": [
+   [
+    "0_0_Universal_Forward",
+    null
+   ],
+   [
+    "0_1_GBuffer",
+    null
+   ],
+   [
+    "0_2_ShadowCaster",
+    null
+   ],
+   [
+    "0_3_MotionVectors",
+    null
+   ],
+   [
+    "0_4_DepthOnly",
+    null
+   ],
+   [
+    "0_5_DepthNormals",
+    null
+   ],
+   [
+    "0_6_Universal_2D",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "TXE/AE/Add",
+  "dir": "TXE_AE_Add",
+  "passes": [
+   [
+    "0_0_Default",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "Shader Graphs/sg_object_scale_texture",
+  "dir": "Shader_Graphs_sg_object_scale_texture",
+  "passes": [
+   [
+    "0_0_Universal_Forward",
+    null
+   ],
+   [
+    "0_1_GBuffer",
+    null
+   ],
+   [
+    "0_2_ShadowCaster",
+    null
+   ],
+   [
+    "0_3_MotionVectors",
+    null
+   ],
+   [
+    "0_4_DepthOnly",
+    null
+   ],
+   [
+    "0_5_DepthNormals",
+    null
+   ],
+   [
+    "0_6_Universal_2D",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "Shader Graphs/sg_fresnel",
+  "dir": "Shader_Graphs_sg_fresnel",
+  "passes": [
+   [
+    "0_0_Universal_Forward",
+    null
+   ],
+   [
+    "0_1_GBuffer",
+    null
+   ],
+   [
+    "0_2_ShadowCaster",
+    null
+   ],
+   [
+    "0_3_MotionVectors",
+    null
+   ],
+   [
+    "0_4_DepthOnly",
+    null
+   ],
+   [
+    "0_5_DepthNormals",
+    null
+   ],
+   [
+    "0_6_Universal_2D",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "Shader Graphs/sg_fresnel_outline",
+  "dir": "Shader_Graphs_sg_fresnel_outline",
+  "passes": [
+   [
+    "0_0_Universal_Forward",
+    null
+   ],
+   [
+    "0_1_MotionVectors",
+    null
+   ],
+   [
+    "0_2_DepthNormalsOnly",
+    null
+   ],
+   [
+    "0_3_GBuffer",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "Shader Graphs/sg_emission_flicker_fogswitch",
+  "dir": "Shader_Graphs_sg_emission_flicker_fogswitch",
+  "passes": [
+   [
+    "0_0_Universal_Forward",
+    null
+   ],
+   [
+    "0_1_GBuffer",
+    null
+   ],
+   [
+    "0_2_ShadowCaster",
+    null
+   ],
+   [
+    "0_3_DepthOnly",
+    null
+   ],
+   [
+    "0_4_DepthNormals",
+    null
+   ],
+   [
+    "0_5_Universal_2D",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "UI/Trasition",
+  "dir": "UI_Trasition",
+  "passes": [
+   [
+    "0_0_Trasition",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "Shader Graphs/sg_emission_FlickerDepth",
+  "dir": "Shader_Graphs_sg_emission_FlickerDepth",
+  "passes": [
+   [
+    "0_0_Universal_Forward",
+    null
+   ],
+   [
+    "0_1_GBuffer",
+    null
+   ],
+   [
+    "0_2_ShadowCaster",
+    null
+   ],
+   [
+    "0_3_DepthOnly",
+    null
+   ],
+   [
+    "0_4_DepthNormals",
+    null
+   ],
+   [
+    "0_5_Universal2D",
+    null
+   ],
+   [
+    "1_0_Universal_Forward",
+    null
+   ],
+   [
+    "1_1_ShadowCaster",
+    null
+   ],
+   [
+    "1_2_DepthOnly",
+    null
+   ],
+   [
+    "1_3_DepthNormals",
+    null
+   ],
+   [
+    "1_4_Universal2D",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "TATSUJIN/Particle/Additive",
+  "dir": "TATSUJIN_Particle_Additive",
+  "passes": [
+   [
+    "0_0_pass",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "TXE/AE/SoftLight",
+  "dir": "TXE_AE_SoftLight",
+  "passes": [
+   [
+    "0_0_pass",
+    null
+   ],
+   [
+    "0_1_pass",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "TXE/AE/Overlay",
+  "dir": "TXE_AE_Overlay",
+  "passes": [
+   [
+    "0_0_pass",
+    null
+   ],
+   [
+    "0_1_pass",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "Shader Graphs/sg_burnt_ground",
+  "dir": "Shader_Graphs_sg_burnt_ground",
+  "passes": [
+   [
+    "0_0_Universal_Forward",
+    null
+   ],
+   [
+    "0_1_MotionVectors",
+    null
+   ],
+   [
+    "0_2_DepthNormalsOnly",
+    null
+   ],
+   [
+    "0_3_ShadowCaster",
+    null
+   ],
+   [
+    "0_4_GBuffer",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "TATSUJIN/Particle/Subtractive",
+  "dir": "TATSUJIN_Particle_Subtractive",
+  "passes": [
+   [
+    "0_0_pass",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "Shader Graphs/sg_overlaid_fire",
+  "dir": "Shader_Graphs_sg_overlaid_fire",
+  "passes": [
+   [
+    "0_0_Universal_Forward",
+    null
+   ],
+   [
+    "0_1_MotionVectors",
+    null
+   ],
+   [
+    "0_2_DepthNormalsOnly",
+    null
+   ],
+   [
+    "0_3_ShadowCaster",
+    null
+   ],
+   [
+    "0_4_GBuffer",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "TXE/AE/Sub",
+  "dir": "TXE_AE_Sub",
+  "passes": [
+   [
+    "0_0_Default",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "TXE/AE/Screen",
+  "dir": "TXE_AE_Screen",
+  "passes": [
+   [
+    "0_0_Default",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "Shader Graphs/sg_shield",
+  "dir": "Shader_Graphs_sg_shield",
+  "passes": [
+   [
+    "0_0_Universal_Forward",
+    null
+   ],
+   [
+    "0_1_MotionVectors",
+    null
+   ],
+   [
+    "0_2_DepthNormalsOnly",
+    null
+   ],
+   [
+    "0_3_GBuffer",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "Shader Graphs/sg_bgmap_triplaner_grassrock1",
+  "dir": "Shader_Graphs_sg_bgmap_triplaner_grassrock1",
+  "passes": [
+   [
+    "0_0_Universal_Forward",
+    null
+   ],
+   [
+    "0_1_GBuffer",
+    null
+   ],
+   [
+    "0_2_ShadowCaster",
+    null
+   ],
+   [
+    "0_3_MotionVectors",
+    null
+   ],
+   [
+    "0_4_DepthOnly",
+    null
+   ],
+   [
+    "0_5_DepthNormals",
+    null
+   ],
+   [
+    "0_6_Universal_2D",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "TATSUJIN/Particle/AlphaBlended",
+  "dir": "TATSUJIN_Particle_AlphaBlended",
+  "passes": [
+   [
+    "0_0_pass",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "KANAI/SpriteAdd",
+  "dir": "KANAI_SpriteAdd",
+  "passes": [
+   [
+    "0_0_pass",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "TATSUJIN/TXE_Lit",
+  "dir": "TATSUJIN_TXE_Lit",
+  "passes": [
+   [
+    "0_0_ForwardLit",
+    null
+   ],
+   [
+    "0_1_ShadowCaster",
+    null
+   ],
+   [
+    "0_2_GBuffer",
+    null
+   ],
+   [
+    "0_3_DepthOnly",
+    null
+   ],
+   [
+    "0_4_DepthNormals",
+    null
+   ],
+   [
+    "1_0_ForwardLit",
+    null
+   ],
+   [
+    "1_1_ShadowCaster",
+    null
+   ],
+   [
+    "1_2_DepthOnly",
+    null
+   ],
+   [
+    "1_3_DepthNormals",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "Shader Graphs/sg_distortion_fade",
+  "dir": "Shader_Graphs_sg_distortion_fade",
+  "passes": [
+   [
+    "0_0_Universal_Forward",
+    null
+   ],
+   [
+    "0_1_MotionVectors",
+    null
+   ],
+   [
+    "0_2_DepthNormalsOnly",
+    null
+   ],
+   [
+    "0_3_GBuffer",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "TXE/AE/Default",
+  "dir": "TXE_AE_Default",
+  "passes": [
+   [
+    "0_0_Default",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "Shader Graphs/sg_deferred_nofog_planet",
+  "dir": "Shader_Graphs_sg_deferred_nofog_planet",
+  "passes": [
+   [
+    "0_0_Universal_Forward",
+    null
+   ],
+   [
+    "0_1_DepthOnly",
+    null
+   ],
+   [
+    "0_2_MotionVectors",
+    null
+   ],
+   [
+    "0_3_DepthNormalsOnly",
+    null
+   ],
+   [
+    "0_4_ShadowCaster",
+    null
+   ],
+   [
+    "0_5_GBuffer",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "Shader Graphs/sg_vertex_shader_tranceparent",
+  "dir": "Shader_Graphs_sg_vertex_shader_tranceparent",
+  "passes": [
+   [
+    "0_0_Universal_Forward",
+    null
+   ],
+   [
+    "0_1_GBuffer",
+    null
+   ],
+   [
+    "0_2_ShadowCaster",
+    null
+   ],
+   [
+    "0_3_MotionVectors",
+    null
+   ],
+   [
+    "0_4_DepthNormals",
+    null
+   ],
+   [
+    "0_5_Universal_2D",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "TXE/AE/HardLight",
+  "dir": "TXE_AE_HardLight",
+  "passes": [
+   [
+    "0_0_pass",
+    null
+   ],
+   [
+    "0_1_pass",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "TXE/AE/Mul",
+  "dir": "TXE_AE_Mul",
+  "passes": [
+   [
+    "0_0_Default",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "Shader Graphs/sg_volume_light",
+  "dir": "Shader_Graphs_sg_volume_light",
+  "passes": [
+   [
+    "0_0_Universal_Forward",
+    null
+   ],
+   [
+    "0_1_MotionVectors",
+    null
+   ],
+   [
+    "0_2_DepthNormalsOnly",
+    null
+   ],
+   [
+    "0_3_GBuffer",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "Shader Graphs/sg_explosion_sphere",
+  "dir": "Shader_Graphs_sg_explosion_sphere",
+  "passes": [
+   [
+    "0_0_Universal_Forward",
+    null
+   ],
+   [
+    "0_1_MotionVectors",
+    null
+   ],
+   [
+    "0_2_DepthNormalsOnly",
+    null
+   ],
+   [
+    "0_3_ShadowCaster",
+    null
+   ],
+   [
+    "0_4_GBuffer",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "Shader Graphs/sg_bgmap_triplaner_grassobj1",
+  "dir": "Shader_Graphs_sg_bgmap_triplaner_grassobj1",
+  "passes": [
+   [
+    "0_0_Universal_Forward",
+    null
+   ],
+   [
+    "0_1_GBuffer",
+    null
+   ],
+   [
+    "0_2_ShadowCaster",
+    null
+   ],
+   [
+    "0_3_MotionVectors",
+    null
+   ],
+   [
+    "0_4_DepthOnly",
+    null
+   ],
+   [
+    "0_5_DepthNormals",
+    null
+   ],
+   [
+    "0_6_Universal_2D",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "Shader Graphs/sg_vertex_shader_opaque_nofog",
+  "dir": "Shader_Graphs_sg_vertex_shader_opaque_nofog",
+  "passes": [
+   [
+    "0_0_Universal_Forward",
+    null
+   ],
+   [
+    "0_1_GBuffer",
+    null
+   ],
+   [
+    "0_2_ShadowCaster",
+    null
+   ],
+   [
+    "0_3_MotionVectors",
+    null
+   ],
+   [
+    "0_4_DepthOnly",
+    null
+   ],
+   [
+    "0_5_DepthNormals",
+    null
+   ],
+   [
+    "0_6_Universal_2D",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "TATSUJIN/EffectCommon",
+  "dir": "TATSUJIN_EffectCommon",
+  "passes": [
+   [
+    "0_0_pass",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "Shader Graphs/sg_flame02_multiply",
+  "dir": "Shader_Graphs_sg_flame02_multiply",
+  "passes": [
+   [
+    "0_0_Universal_Forward",
+    null
+   ],
+   [
+    "0_1_MotionVectors",
+    null
+   ],
+   [
+    "0_2_DepthNormalsOnly",
+    null
+   ],
+   [
+    "0_3_GBuffer",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "Shader Graphs/sg_distortion",
+  "dir": "Shader_Graphs_sg_distortion",
+  "passes": [
+   [
+    "0_0_Universal_Forward",
+    null
+   ],
+   [
+    "0_1_MotionVectors",
+    null
+   ],
+   [
+    "0_2_DepthNormalsOnly",
+    null
+   ],
+   [
+    "0_3_ShadowCaster",
+    null
+   ],
+   [
+    "0_4_GBuffer",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "Shader Graphs/sg_flame02_additive",
+  "dir": "Shader_Graphs_sg_flame02_additive",
+  "passes": [
+   [
+    "0_0_Universal_Forward",
+    null
+   ],
+   [
+    "0_1_MotionVectors",
+    null
+   ],
+   [
+    "0_2_DepthNormalsOnly",
+    null
+   ],
+   [
+    "0_3_GBuffer",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "TATSUJIN/NormalShot",
+  "dir": "TATSUJIN_NormalShot",
+  "passes": [
+   [
+    "0_0_pass",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "TATSUJIN/SpriteBillboard",
+  "dir": "TATSUJIN_SpriteBillboard",
+  "passes": [
+   [
+    "0_0_pass",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "TATSUJIN/SpriteBillbordAnime",
+  "dir": "TATSUJIN_SpriteBillbordAnime",
+  "passes": [
+   [
+    "0_0_pass",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "TATSUJIN/DamageFlush",
+  "dir": "TATSUJIN_DamageFlush",
+  "passes": [
+   [
+    "0_0_pass",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "TATSUJIN/DissolveLaser",
+  "dir": "TATSUJIN_DissolveLaser",
+  "passes": [
+   [
+    "0_0_pass",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "TATSUJIN/SpriteAnime",
+  "dir": "TATSUJIN_SpriteAnime",
+  "passes": [
+   [
+    "0_0_pass",
+    null
+   ]
+  ]
+ },
+ {
+  "name": "TATSUJIN/ThunderLaserAnime",
+  "dir": "TATSUJIN_ThunderLaserAnime",
+  "passes": [
+   [
+    "0_0_pass",
+    null
+   ]
+  ]
+ }
+]

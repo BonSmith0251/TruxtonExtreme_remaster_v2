@@ -1,0 +1,1666 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Successfully connected to the License Client on channel: "LicenseClient-Administrator" at "2026-11-02T17:17:02.4852582Z"
+[Licensing::Client] Error: Code 10 while verifying Licensing Client signature (process Id: 20676, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+[Licensing::Module] Error: LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              b72a9a246b494708a66b3b176871d4a9
+  Correlation Id:          a08f9f166376b060b86f71b64a4c4994
+  External correlation Id: 5367884276968344459
+  Machine Id:              SmLwur5F0LQAuqkG+wD5hHa2ViY=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Administrator" (connect: 0.00s, validation: 0.01s, handshake: 0.02s)
+[Licensing::IpcConnector] Successfully connected to the License Notification on channel: "LicenseClient-Administrator-notifications" at "2026-11-02T17:17:02.5191576Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully updated license
+Built from '2023.2/release' branch; Version is '2023.2.22f1 (6b19bf4f8115) revision 7018943'; Using compiler version '193431935'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Enterprise' Language: 'en' Physical Memory: 32633 MB
+[Licensing::Client] Successfully resolved entitlements
+[Licensing::Module] Serial number assigned to: "F4-NZA2-MVNV-Q88S-GQ7M-XXXX"
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity 2023.2.22f1\Editor\Unity.exe
+-batchmode
+-quit
+-projectPath
+D:/games/TruxtonExRecon/Reconstructed
+-executeMethod
+SceneDedup.RunBatch
+-dedupMode
+apply
+-dedupRemap
+1
+-dedupTargets
+Assets/OriginalRecovered/Samples/Prefabs/Reference/Stage/BG04Stage.prefab;Assets/OriginalRecovered/Samples/Prefabs/Reference/Stage/BG06Stage.prefab;Assets/OriginalRecovered/Samples/Prefabs/Reference/Stage/BG07Stage.prefab
+-dedupLibrary
+Assets/OriginalRecovered/TXE_GraphicData
+-dedupLibraryCache
+D:/games/TruxtonExRecon/evidence/scene-dedup/library-signatures.json
+-dedupOutRoot
+Assets/OriginalRecovered/Samples/Prefabs/Reference/Stage/Dedup/Shared
+-dedupBackup
+D:/games/TruxtonExRecon/Backups
+-dedupReport
+D:/games/TruxtonExRecon/evidence/scene-dedup/debug467/apply.json
+-logFile
+D:/games/TruxtonExRecon/evidence/scene-dedup/debug467/apply.log
+Successfully changed project path to: D:/games/TruxtonExRecon/Reconstructed
+D:/games/TruxtonExRecon/Reconstructed
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [23404] Host "[IP] 192.168.131.39 [Port] 55504 [Flags] 2 [Guid] 1485732209 [EditorId] 1485732209 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-CPPSF6V) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [23404] Host "[IP] 192.168.131.39 [Port] 55504 [Flags] 2 [Guid] 1485732209 [EditorId] 1485732209 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-CPPSF6V) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+[Physics::Module] Initialized MultithreadedJobDispatcher with 15 workers.
+[Package Manager] Connected to IPC stream "Upm-30328" after 0.3 seconds.
+Library Redirect Path: Library/
+[Licensing::Client] Successfully resolved entitlements
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 39 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.addressables@1.21.21 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.addressables@1.21.21)
+    com.unity.timeline@1.8.7 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.timeline@1.8.7)
+    com.unity.splines@2.5.2 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.splines@2.5.2)
+    com.unity.inputsystem@1.7.0 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.inputsystem@1.7.0)
+    com.unity.nuget.newtonsoft-json@3.2.1 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1)
+    com.unity.mathematics@1.2.6 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.mathematics@1.2.6)
+    com.unity.settings-manager@2.0.1 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.settings-manager@2.0.1)
+    com.unity.scriptablebuildpipeline@1.21.23 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.scriptablebuildpipeline@1.21.23)
+    com.unity.burst@1.8.13 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.burst@1.8.13)
+    com.unity.searcher@4.9.2 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.searcher@4.9.2)
+    com.unity.collections@1.4.0 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.collections@1.4.0)
+    com.unity.test-framework@1.3.9 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.test-framework@1.3.9)
+    com.unity.nuget.mono-cecil@1.11.4 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4)
+    com.unity.ext.nunit@2.0.5 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.ext.nunit@2.0.5)
+  Built-in packages:
+    com.unity.render-pipelines.universal@16.0.6 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.render-pipelines.universal@16.0.6)
+    com.unity.modules.animation@1.0.0 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.modules.animation@1.0.0)
+    com.unity.modules.imageconversion@1.0.0 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.modules.imageconversion@1.0.0)
+    com.unity.modules.jsonserialize@1.0.0 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.modules.jsonserialize@1.0.0)
+    com.unity.modules.physics@1.0.0 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.modules.physics@1.0.0)
+    com.unity.modules.ui@1.0.0 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.modules.ui@1.0.0)
+    com.unity.modules.imgui@1.0.0 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.modules.imgui@1.0.0)
+    com.unity.modules.particlesystem@1.0.0 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.modules.particlesystem@1.0.0)
+    com.unity.modules.audio@1.0.0 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.modules.audio@1.0.0)
+    com.unity.modules.video@1.0.0 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.modules.video@1.0.0)
+    com.unity.ugui@2.0.0 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.ugui@2.0.0)
+    com.unity.modules.physics2d@1.0.0 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.modules.physics2d@1.0.0)
+    com.unity.modules.screencapture@1.0.0 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.modules.screencapture@1.0.0)
+    com.unity.visualeffectgraph@16.0.6 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.visualeffectgraph@16.0.6)
+    com.unity.shadergraph@16.0.6 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.shadergraph@16.0.6)
+    com.unity.render-pipelines.core@16.0.6 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.render-pipelines.core@16.0.6)
+    com.unity.modules.uielements@1.0.0 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.modules.uielements@1.0.0)
+    com.unity.modules.director@1.0.0 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.modules.director@1.0.0)
+    com.unity.modules.assetbundle@1.0.0 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.modules.assetbundle@1.0.0)
+    com.unity.modules.unitywebrequest@1.0.0 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.modules.unitywebrequest@1.0.0)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle@1.0.0)
+    com.unity.modules.terrain@1.0.0 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.modules.terrain@1.0.0)
+    com.unity.rendering.light-transport@1.0.2 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.rendering.light-transport@1.0.2)
+    com.unity.modules.hierarchycore@1.0.0 (location: D:\games\TruxtonExRecon\Reconstructed\Library\PackageCache\com.unity.modules.hierarchycore@1.0.0)
+  Embedded packages:
+    com.unity.cinemachine@file:D:\games\TruxtonExRecon\Reconstructed\Packages\com.unity.cinemachine (location: D:\games\TruxtonExRecon\Reconstructed\Packages\com.unity.cinemachine)
+[Subsystems] No new subsystems found in resolved package list.
+Package Manager log level set to [2]
+[Package Manager] Done registering packages in 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.22 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2023.2.22f1 (6b19bf4f8115)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity 2023.2.22f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/games/TruxtonExRecon/Reconstructed/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA RTX PRO 5000 Blackwell (ID=0x2bb3)
+    Vendor:   NVIDIA
+    VRAM:     48481 MB
+    Driver:   32.0.15.8088
+[Licensing::Client] Successfully resolved entitlements
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity 2023.2.22f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity 2023.2.22f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity 2023.2.22f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56328
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity 2023.2.22f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002022 seconds.
+- Loaded All Assemblies, in  0.325 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.244 seconds
+Domain Reload Profiling: 568ms
+	BeginReloadAssembly (112ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (41ms)
+	LoadAllAssembliesAndSetupDomain (127ms)
+		LoadAssemblies (109ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (125ms)
+			TypeCache.Refresh (124ms)
+				TypeCache.ScanAssembly (113ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (244ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (206ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (8ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (4ms)
+			ProcessInitializeOnLoadAttributes (149ms)
+			ProcessInitializeOnLoadMethodAttributes (40ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlements
+Application.AssetDatabase Initial Refresh Start
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:80
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\games\TruxtonExRecon\Reconstructed\
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 32.6860ms
+Starting: C:\Program Files\Unity 2023.2.22f1\Editor\Data\bee_backend.exe --dont-print-to-structured-log --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: D:/games/TruxtonExRecon/Reconstructed
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.runtime.interopservices.windowsruntime has duplicate hint path. Ignoring "C:\Program Files\Unity 2023.2.22f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.InteropServices.WindowsRuntime.dll" in favor of "C:\Program Files\Unity 2023.2.22f1\Editor\Data\NetStandard\Extensions\2.0.0\System.Runtime.InteropServices.WindowsRuntime.dll"
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.componentmodel.composition has duplicate hint path. Ignoring "C:\Program Files\Unity 2023.2.22f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.ComponentModel.Composition.dll" in favor of "C:\Program Files\Unity 2023.2.22f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.ComponentModel.Composition.dll"
+DisplayProgressbar: Compiling Scripts
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved Unity.Burst.Cecil, Version=0.11.4.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e with Library\PackageCache\com.unity.burst@1.8.13\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved Mono.Cecil, Version=0.11.4.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e with Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc - - 200 - application/grpc 39.9266ms
+ExitCode: 0 Duration: 0s151ms
+[541/689    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+*** Tundra build success (0.13 seconds), 1 items updated, 689 evaluated
+AssetDatabase: script compilation time: 0.481343s
+Begin MonoManager ReloadAssembly
+Total cache size 210535348
+Total cache size after purge 210535348
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.764 seconds
+Refreshing native plugins compatible for Editor in 0.20 ms, found 0 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.304 seconds
+Domain Reload Profiling: 3067ms
+	BeginReloadAssembly (345ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (10ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (28ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (27ms)
+	LoadAllAssembliesAndSetupDomain (353ms)
+		LoadAssemblies (236ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (193ms)
+			TypeCache.Refresh (146ms)
+				TypeCache.ScanAssembly (136ms)
+			BuildScriptInfoCaches (26ms)
+			ResolveRequiredComponents (19ms)
+	FinalizeReload (2304ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (2071ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (65ms)
+			ProcessInitializeOnLoadAttributes (1933ms)
+			ProcessInitializeOnLoadMethodAttributes (55ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (11ms)
+Asset Pipeline Refresh (id=9e9181464d9cbc548baa558141fcb4de): Total: 4.131 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=2796 ms
+		Asset DB Callback time: managed=17 ms, native=0 ms
+		Scripting: domain reloads=1, domain reload time=800 ms, compile time=483 ms, other=33 ms
+		Project Asset Count: scripts=1664, non-scripts=14945
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 1.030ms
+	ApplyChangesToAssetFolders: 0.201ms
+	Scan: 82.175ms
+	OnSourceAssetsModified: 0.001ms
+	CategorizeAssetsWithTransientArtifact: 34.518ms
+	ProcessAssetsWithTransientArtifactChanges: 86.618ms
+	CategorizeAssets: 154.625ms
+	ImportOutOfDateAssets: 2314.019ms (1825.043ms without children)
+		CompileScripts: 483.494ms
+		ReloadNativeAssets: 0.023ms
+		UnloadImportedAssets: 2.572ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.820ms
+		InitializingProgressBar: 0.000ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 1.065ms
+	PostProcessAllAssets: 17.304ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.000ms
+	UnloadStreamsBegin: 0.799ms
+	PersistCurrentRevisions: 0.474ms
+	UnloadStreamsEnd: 0.001ms
+	GenerateScriptTypeHashes: 15.064ms
+	Untracked: 1439.278ms
+
+Application.AssetDatabase Initial Refresh End
+Shader 'RecoveredStub/TextMeshPro/Distance Field SSD': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Shader 'RecoveredStub/TextMeshPro/Distance Field Overlay': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Shader 'RecoveredStub/TextMeshPro/Distance Field SSD': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Shader 'RecoveredStub/TextMeshPro/Distance Field': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Shader 'RecoveredStub/TextMeshPro/Distance Field Overlay': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Shader 'RecoveredStub/TextMeshPro/Distance Field': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Shader 'RecoveredStub/TextMeshPro/Distance Field Overlay': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Shader 'RecoveredStub/TextMeshPro/Distance Field': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Shader 'RecoveredStub/TextMeshPro/Distance Field SSD': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Shader 'RecoveredStub/TextMeshPro/Distance Field Overlay': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Shader 'RecoveredStub/TextMeshPro/Distance Field SSD': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Shader 'RecoveredStub/TextMeshPro/Distance Field': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Scanning for USB devices : 7.677ms
+Initializing Unity extensions:
+[Licensing::Client] Successfully resolved entitlements
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-Truxton Extreme Reconstruction
+Unloading 266 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 5507 unused Assets / (17.3 MB). Loaded Objects now: 6479.
+Memory consumption went from 280.0 MB to 262.7 MB.
+Total: 12.461300 ms (FindLiveObjects: 0.505200 ms CreateObjectMapping: 0.493300 ms MarkObjects: 5.004100 ms  DeleteObjects: 6.457900 ms)
+
+Loaded scene 'Library/Unused/a839b3612143b08429e149d9d3fdc83b'
+	Deserialize:            933.777 ms
+	Integration:            96.603 ms
+	Integration of assets:  2.784 ms
+	Thread Wait Time:       -0.485 ms
+	Total Operation Time:   1032.680 ms
+Start importing Assets/OriginalRecovered/Samples/Prefabs/Reference/Stage/Dedup/Shared/item_area.prefab using Guid(2bb29fe2a37746e418012c02e4980832) (PrefabImporter) -> (artifact id: 'b02bbd3fade5de2c1cb3ea550351dcfe') in 0.0084317 seconds
+Refreshing native plugins compatible for Editor in 0.16 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=9731fc21f6e8af541b60d9613b2e9b1f): Total: 0.306 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=3 ms, native=89 ms
+		Asset DB Callback time: managed=150 ms, native=63 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=1664, non-scripts=14946
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 9
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.135ms
+	Scan: 15.913ms
+	OnSourceAssetsModified: 0.768ms
+	CategorizeAssetsWithTransientArtifact: 0.010ms
+	ProcessAssetsWithTransientArtifactChanges: 0.062ms
+	CategorizeAssets: 25.986ms
+	ImportOutOfDateAssets: 14.584ms (1.003ms without children)
+		ImportManagerImport: 10.741ms (2.003ms without children)
+			ImportInProcess: 8.716ms
+			UpdateCategorizedAssets: 0.021ms
+		ReloadNativeAssets: 0.235ms
+		UnloadImportedAssets: 0.156ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.666ms
+		InitializingProgressBar: 0.005ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.778ms
+	PostProcessAllAssets: 149.128ms
+	Hotreload: 64.045ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.618ms
+	UnloadStreamsBegin: 2.776ms
+	PersistCurrentRevisions: 0.694ms
+	UnloadStreamsEnd: 0.001ms
+	Untracked: 31.607ms
+
+Transform child is linked multiple times to parent; removed extraneous links from parent
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SerializedObject:ApplyModifiedPropertiesWithoutUndo ()
+SceneDedup:Remap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:589)
+SceneDedup:Swap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:575)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:170)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+[Assets/Editor/SceneDedup.cs line 170]
+
+Transform child is linked multiple times to parent; removed extraneous links from parent
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SerializedObject:ApplyModifiedPropertiesWithoutUndo ()
+SceneDedup:Remap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:589)
+SceneDedup:Swap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:575)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:170)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+[Assets/Editor/SceneDedup.cs line 170]
+
+Start importing Assets/OriginalRecovered/Samples/Prefabs/Reference/Stage/Dedup/Shared/belan___2.prefab using Guid(b7bd6db41a4c6914cb85a7875a3886a9) (PrefabImporter) -> (artifact id: '2d86344bb6a51795a2d72054a07862ee') in 0.0038998 seconds
+Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=f8663374e847e984da6730cad2832118): Total: 0.063 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/OriginalRecovered/Samples/Prefabs/Reference/Stage/Dedup/Shared/belan__3.prefab using Guid(126402005f225104b96feefe2d2095c5) (PrefabImporter) -> (artifact id: 'e135759f6e09db26543a95ba915c8ccb') in 0.0033959 seconds
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=5ff6ecdca39a5234c9c1e63a96360bcb): Total: 0.044 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/OriginalRecovered/Samples/Prefabs/Reference/Stage/Dedup/Shared/belan__4.prefab using Guid(64ef12f77b286eb4dbc1bec0c2abab93) (PrefabImporter) -> (artifact id: 'a7ee5eca17dd438921b3a723b98139ac') in 0.0029676 seconds
+Refreshing native plugins compatible for Editor in 0.21 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=20b4bd4af0948f74588da6495f7de7da): Total: 0.044 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/OriginalRecovered/Samples/Prefabs/Reference/Stage/BG04Stage.prefab using Guid(d9dad6d18c22551409a8183b9467a481) (PrefabImporter) -> (artifact id: 'e5c3507b1c36f65de96d607633a68b47') in 0.1051598 seconds
+Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=04e0459b827177d49b009aa181d4d590): Total: 0.243 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/OriginalRecovered/Samples/Prefabs/Reference/Stage/Dedup/Shared/dedup-manifest.json using Guid(5d62fa9bc28d7ea4f93124c8ac652118) (TextScriptImporter) -> (artifact id: 'ec4e620dfff71b02f25facdc48d0b831') in 0.0217364 seconds
+Refreshing native plugins compatible for Editor in 0.21 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c5be0863358471d48a76c8485e79b08e): Total: 0.062 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Renderer at <b>index 1</b> is missing for camera <b>Camera</b>, falling back to Default Renderer. <b>Round1 Renderer</b>
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogWarning (object,UnityEngine.Object)
+UnityEngine.Rendering.Universal.UniversalAdditionalCameraData:get_scriptableRenderer () (at ./Library/PackageCache/com.unity.render-pipelines.universal@16.0.6/Runtime/UniversalAdditionalCameraData.cs:527)
+UnityEngine.Rendering.Universal.UniversalAdditionalCameraData:OnDestroy () (at ./Library/PackageCache/com.unity.render-pipelines.universal@16.0.6/Runtime/UniversalAdditionalCameraData.cs:836)
+UnityEditor.SceneManagement.EditorSceneManager:ClosePreviewScene (UnityEngine.SceneManagement.Scene)
+UnityEditor.PrefabUtility:UnloadPrefabContents (UnityEngine.SceneManagement.Scene)
+UnityEditor.PrefabUtility:UnloadPrefabContents (UnityEngine.GameObject)
+SceneDedup:Close (bool,UnityEngine.GameObject&) (at Assets/Editor/SceneDedup.cs:236)
+SceneDedup:Load (string,bool,UnityEngine.GameObject&) (at Assets/Editor/SceneDedup.cs:201)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:177)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+(Filename: ./Library/PackageCache/com.unity.render-pipelines.universal@16.0.6/Runtime/UniversalAdditionalCameraData.cs Line: 527)
+
+Loaded scene 'Library/Unused/ab2ff1e7bfe001449a5208221855a206'
+	Deserialize:            7.068 ms
+	Integration:            38.138 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       2.534 ms
+	Total Operation Time:   47.741 ms
+Renderer at <b>index 1</b> is missing for camera <b>Camera</b>, falling back to Default Renderer. <b>Round1 Renderer</b>
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogWarning (object,UnityEngine.Object)
+UnityEngine.Rendering.Universal.UniversalAdditionalCameraData:get_scriptableRenderer () (at ./Library/PackageCache/com.unity.render-pipelines.universal@16.0.6/Runtime/UniversalAdditionalCameraData.cs:527)
+UnityEngine.Rendering.Universal.UniversalAdditionalCameraData:OnDestroy () (at ./Library/PackageCache/com.unity.render-pipelines.universal@16.0.6/Runtime/UniversalAdditionalCameraData.cs:836)
+UnityEditor.SceneManagement.EditorSceneManager:ClosePreviewScene (UnityEngine.SceneManagement.Scene)
+UnityEditor.PrefabUtility:UnloadPrefabContents (UnityEngine.SceneManagement.Scene)
+UnityEditor.PrefabUtility:UnloadPrefabContents (UnityEngine.GameObject)
+SceneDedup:Close (bool,UnityEngine.GameObject&) (at Assets/Editor/SceneDedup.cs:236)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:187)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+(Filename: ./Library/PackageCache/com.unity.render-pipelines.universal@16.0.6/Runtime/UniversalAdditionalCameraData.cs Line: 527)
+
+Start importing Assets/OriginalRecovered/Samples/Prefabs/Reference/Stage/BG04Stage.prefab using Guid(d9dad6d18c22551409a8183b9467a481) (PrefabImporter) -> (artifact id: '58843e2caf2882a143be21149d403f8f') in 1.0932691 seconds
+Refreshing native plugins compatible for Editor in 0.19 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=8300053c25394f0459e027431b7c247f): Total: 1.268 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=1263 ms
+		Asset DB Callback time: managed=1 ms, native=2 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=1664, non-scripts=14949
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Scan Filter Count: 7
+	InvokeCustomDependenciesCallbacks: 0.000ms
+	InvokePackagesCallback: 0.000ms
+	ApplyChangesToAssetFolders: 0.057ms
+	Scan: 6.487ms
+	OnSourceAssetsModified: 0.040ms
+	CategorizeAssetsWithTransientArtifact: 0.005ms
+	ProcessAssetsWithTransientArtifactChanges: 0.031ms
+	CategorizeAssets: 19.288ms
+	ImportOutOfDateAssets: 1231.843ms (-52.900ms without children)
+		ImportManagerImport: 1216.510ms (122.837ms without children)
+			ImportInProcess: 1093.609ms
+			UpdateCategorizedAssets: 0.064ms
+		ReloadNativeAssets: 0.245ms
+		UnloadImportedAssets: 11.947ms
+		ReloadImportedAssets: 53.701ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.704ms
+		InitializingProgressBar: 0.006ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.628ms
+	PostProcessAllAssets: 1.409ms
+	Hotreload: 2.148ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.915ms
+	UnloadStreamsBegin: 0.002ms
+	PersistCurrentRevisions: 0.569ms
+	UnloadStreamsEnd: 0.002ms
+	Untracked: 4.795ms
+
+Exception: flattened result differs from the original; restored the backup
+  at SceneDedup.Run (System.String path, System.Boolean apply, System.String outRoot, System.String backupRoot) [0x004a0] in D:\games\TruxtonExRecon\Reconstructed\Assets\Editor\SceneDedup.cs:188 
+UnityEngine.DebugLogHandler:Internal_LogException_Injected(Exception, IntPtr)
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+SceneDedup:Run(String, Boolean, String, String) (at Assets\Editor\SceneDedup.cs:192)
+SceneDedup:RunBatch() (at Assets\Editor\SceneDedup.cs:67)
+
+(Filename: Assets/Editor/SceneDedup.cs Line: 192)
+
+Loaded scene 'Library/Unused/32201982fd052b645b15cd1e7334aaa9'
+	Deserialize:            1250.138 ms
+	Integration:            73.137 ms
+	Integration of assets:  0.869 ms
+	Thread Wait Time:       -0.705 ms
+	Total Operation Time:   1323.439 ms
+Transform child is linked multiple times to parent; removed extraneous links from parent
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SerializedObject:ApplyModifiedPropertiesWithoutUndo ()
+SceneDedup:Remap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:589)
+SceneDedup:Swap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:575)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:170)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+[Assets/Editor/SceneDedup.cs line 170]
+
+Transform child is linked multiple times to parent; removed extraneous links from parent
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SerializedObject:ApplyModifiedPropertiesWithoutUndo ()
+SceneDedup:Remap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:589)
+SceneDedup:Swap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:575)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:170)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+[Assets/Editor/SceneDedup.cs line 170]
+
+Transform child is linked multiple times to parent; removed extraneous links from parent
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SerializedObject:ApplyModifiedPropertiesWithoutUndo ()
+SceneDedup:Remap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:589)
+SceneDedup:Swap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:575)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:170)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+[Assets/Editor/SceneDedup.cs line 170]
+
+Transform child is linked multiple times to parent; removed extraneous links from parent
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SerializedObject:ApplyModifiedPropertiesWithoutUndo ()
+SceneDedup:Remap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:589)
+SceneDedup:Swap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:575)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:170)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+[Assets/Editor/SceneDedup.cs line 170]
+
+Transform child is linked multiple times to parent; removed extraneous links from parent
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SerializedObject:ApplyModifiedPropertiesWithoutUndo ()
+SceneDedup:Remap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:589)
+SceneDedup:Swap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:575)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:170)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+[Assets/Editor/SceneDedup.cs line 170]
+
+Transform child is linked multiple times to parent; removed extraneous links from parent
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SerializedObject:ApplyModifiedPropertiesWithoutUndo ()
+SceneDedup:Remap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:589)
+SceneDedup:Swap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:575)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:170)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+[Assets/Editor/SceneDedup.cs line 170]
+
+Transform child is linked multiple times to parent; removed extraneous links from parent
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SerializedObject:ApplyModifiedPropertiesWithoutUndo ()
+SceneDedup:Remap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:589)
+SceneDedup:Swap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:575)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:170)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+[Assets/Editor/SceneDedup.cs line 170]
+
+Transform child is linked multiple times to parent; removed extraneous links from parent
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SerializedObject:ApplyModifiedPropertiesWithoutUndo ()
+SceneDedup:Remap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:589)
+SceneDedup:Swap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:575)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:170)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+[Assets/Editor/SceneDedup.cs line 170]
+
+Start importing Assets/OriginalRecovered/Samples/Prefabs/Reference/Stage/BG06Stage.prefab using Guid(a001850c7ce21f842aeaa5e134aa9c46) (PrefabImporter) -> (artifact id: '7f86bbdf5a0e4cdea1ac7093cafa4fd0') in 0.184781 seconds
+Refreshing native plugins compatible for Editor in 0.20 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=3f130c743a647044390a2706697e834f): Total: 0.387 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=351 ms
+		Asset DB Callback time: managed=1 ms, native=34 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=1664, non-scripts=14949
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Scan Filter Count: 7
+	InvokeCustomDependenciesCallbacks: 0.000ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.073ms
+	Scan: 5.490ms
+	OnSourceAssetsModified: 0.042ms
+	CategorizeAssetsWithTransientArtifact: 0.003ms
+	ProcessAssetsWithTransientArtifactChanges: 0.032ms
+	CategorizeAssets: 21.262ms
+	ImportOutOfDateAssets: 313.051ms (-71.060ms without children)
+		ImportManagerImport: 293.729ms (108.568ms without children)
+			ImportInProcess: 185.052ms
+			UpdateCategorizedAssets: 0.109ms
+		ReloadNativeAssets: 0.389ms
+		UnloadImportedAssets: 15.046ms
+		ReloadImportedAssets: 71.882ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 2.216ms
+		InitializingProgressBar: 0.006ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.844ms
+	PostProcessAllAssets: 1.093ms
+	Hotreload: 34.354ms
+	GatherAllCurrentPrimaryArtifactRevisions: 1.355ms
+	UnloadStreamsBegin: 3.146ms
+	PersistCurrentRevisions: 0.559ms
+	UnloadStreamsEnd: 0.001ms
+	Untracked: 6.178ms
+
+Asset Pipeline Refresh (id=b3c30f1e3c996684a80b8c4657178411): Total: 0.008 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Renderer at <b>index 1</b> is missing for camera <b>Camera</b>, falling back to Default Renderer. <b>Round1 Renderer</b>
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogWarning (object,UnityEngine.Object)
+UnityEngine.Rendering.Universal.UniversalAdditionalCameraData:get_scriptableRenderer () (at ./Library/PackageCache/com.unity.render-pipelines.universal@16.0.6/Runtime/UniversalAdditionalCameraData.cs:527)
+UnityEngine.Rendering.Universal.UniversalAdditionalCameraData:OnDestroy () (at ./Library/PackageCache/com.unity.render-pipelines.universal@16.0.6/Runtime/UniversalAdditionalCameraData.cs:836)
+UnityEditor.SceneManagement.EditorSceneManager:ClosePreviewScene (UnityEngine.SceneManagement.Scene)
+UnityEditor.PrefabUtility:UnloadPrefabContents (UnityEngine.SceneManagement.Scene)
+UnityEditor.PrefabUtility:UnloadPrefabContents (UnityEngine.GameObject)
+SceneDedup:Close (bool,UnityEngine.GameObject&) (at Assets/Editor/SceneDedup.cs:236)
+SceneDedup:Load (string,bool,UnityEngine.GameObject&) (at Assets/Editor/SceneDedup.cs:201)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:177)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+(Filename: ./Library/PackageCache/com.unity.render-pipelines.universal@16.0.6/Runtime/UniversalAdditionalCameraData.cs Line: 527)
+
+Loaded scene 'Library/Unused/8565139d34a79d44fabcda334b990ec0'
+	Deserialize:            23.814 ms
+	Integration:            51.120 ms
+	Integration of assets:  0.012 ms
+	Thread Wait Time:       0.020 ms
+	Total Operation Time:   74.966 ms
+Renderer at <b>index 1</b> is missing for camera <b>Camera</b>, falling back to Default Renderer. <b>Round1 Renderer</b>
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogWarning (object,UnityEngine.Object)
+UnityEngine.Rendering.Universal.UniversalAdditionalCameraData:get_scriptableRenderer () (at ./Library/PackageCache/com.unity.render-pipelines.universal@16.0.6/Runtime/UniversalAdditionalCameraData.cs:527)
+UnityEngine.Rendering.Universal.UniversalAdditionalCameraData:OnDestroy () (at ./Library/PackageCache/com.unity.render-pipelines.universal@16.0.6/Runtime/UniversalAdditionalCameraData.cs:836)
+UnityEditor.SceneManagement.EditorSceneManager:ClosePreviewScene (UnityEngine.SceneManagement.Scene)
+UnityEditor.PrefabUtility:UnloadPrefabContents (UnityEngine.SceneManagement.Scene)
+UnityEditor.PrefabUtility:UnloadPrefabContents (UnityEngine.GameObject)
+SceneDedup:Close (bool,UnityEngine.GameObject&) (at Assets/Editor/SceneDedup.cs:236)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:187)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+(Filename: ./Library/PackageCache/com.unity.render-pipelines.universal@16.0.6/Runtime/UniversalAdditionalCameraData.cs Line: 527)
+
+Start importing Assets/OriginalRecovered/Samples/Prefabs/Reference/Stage/BG06Stage.prefab using Guid(a001850c7ce21f842aeaa5e134aa9c46) (PrefabImporter) -> (artifact id: 'd4c96af5f984f66e918e5c0d1d0bc60e') in 1.4060729 seconds
+Refreshing native plugins compatible for Editor in 0.19 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=ff92800354dc66c4cb0faeb8a8d900b9): Total: 1.608 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=1602 ms
+		Asset DB Callback time: managed=1 ms, native=3 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=1664, non-scripts=14949
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Scan Filter Count: 7
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.086ms
+	Scan: 7.027ms
+	OnSourceAssetsModified: 0.068ms
+	CategorizeAssetsWithTransientArtifact: 0.007ms
+	ProcessAssetsWithTransientArtifactChanges: 0.047ms
+	CategorizeAssets: 19.670ms
+	ImportOutOfDateAssets: 1569.369ms (-70.075ms without children)
+		ImportManagerImport: 1544.163ms (137.780ms without children)
+			ImportInProcess: 1406.339ms
+			UpdateCategorizedAssets: 0.043ms
+		ReloadNativeAssets: 0.296ms
+		UnloadImportedAssets: 21.804ms
+		ReloadImportedAssets: 70.833ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.703ms
+		InitializingProgressBar: 0.006ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.637ms
+	PostProcessAllAssets: 1.332ms
+	Hotreload: 3.712ms
+	GatherAllCurrentPrimaryArtifactRevisions: 1.152ms
+	UnloadStreamsBegin: 0.003ms
+	PersistCurrentRevisions: 0.543ms
+	UnloadStreamsEnd: 0.001ms
+	Untracked: 4.863ms
+
+Exception: flattened result differs from the original; restored the backup
+  at SceneDedup.Run (System.String path, System.Boolean apply, System.String outRoot, System.String backupRoot) [0x004a0] in D:\games\TruxtonExRecon\Reconstructed\Assets\Editor\SceneDedup.cs:188 
+UnityEngine.DebugLogHandler:Internal_LogException_Injected(Exception, IntPtr)
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+SceneDedup:Run(String, Boolean, String, String) (at Assets\Editor\SceneDedup.cs:192)
+SceneDedup:RunBatch() (at Assets\Editor\SceneDedup.cs:67)
+
+(Filename: Assets/Editor/SceneDedup.cs Line: 192)
+
+Loaded scene 'Library/Unused/38c715ce2923cdb4ab72171194adae34'
+	Deserialize:            900.123 ms
+	Integration:            89.016 ms
+	Integration of assets:  0.756 ms
+	Thread Wait Time:       -0.633 ms
+	Total Operation Time:   989.263 ms
+Transform child is linked multiple times to parent; removed extraneous links from parent
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SerializedObject:ApplyModifiedPropertiesWithoutUndo ()
+SceneDedup:Remap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:589)
+SceneDedup:Swap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:575)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:170)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+[Assets/Editor/SceneDedup.cs line 170]
+
+Transform child is linked multiple times to parent; removed extraneous links from parent
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SerializedObject:ApplyModifiedPropertiesWithoutUndo ()
+SceneDedup:Remap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:589)
+SceneDedup:Swap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:575)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:170)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+[Assets/Editor/SceneDedup.cs line 170]
+
+Transform child is linked multiple times to parent; removed extraneous links from parent
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SerializedObject:ApplyModifiedPropertiesWithoutUndo ()
+SceneDedup:Remap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:589)
+SceneDedup:Swap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:575)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:170)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+[Assets/Editor/SceneDedup.cs line 170]
+
+Transform child is linked multiple times to parent; removed extraneous links from parent
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SerializedObject:ApplyModifiedPropertiesWithoutUndo ()
+SceneDedup:Remap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:589)
+SceneDedup:Swap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:575)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:170)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+[Assets/Editor/SceneDedup.cs line 170]
+
+Transform child is linked multiple times to parent; removed extraneous links from parent
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SerializedObject:ApplyModifiedPropertiesWithoutUndo ()
+SceneDedup:Remap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:589)
+SceneDedup:Swap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:575)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:170)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+[Assets/Editor/SceneDedup.cs line 170]
+
+Transform child is linked multiple times to parent; removed extraneous links from parent
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SerializedObject:ApplyModifiedPropertiesWithoutUndo ()
+SceneDedup:Remap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:589)
+SceneDedup:Swap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:575)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:170)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+[Assets/Editor/SceneDedup.cs line 170]
+
+Transform child is linked multiple times to parent; removed extraneous links from parent
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SerializedObject:ApplyModifiedPropertiesWithoutUndo ()
+SceneDedup:Remap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:589)
+SceneDedup:Swap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:575)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:170)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+[Assets/Editor/SceneDedup.cs line 170]
+
+Transform child is linked multiple times to parent; removed extraneous links from parent
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SerializedObject:ApplyModifiedPropertiesWithoutUndo ()
+SceneDedup:Remap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:589)
+SceneDedup:Swap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:575)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:170)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+[Assets/Editor/SceneDedup.cs line 170]
+
+Transform child is linked multiple times to parent; removed extraneous links from parent
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SerializedObject:ApplyModifiedPropertiesWithoutUndo ()
+SceneDedup:Remap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:589)
+SceneDedup:Swap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:575)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:170)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+[Assets/Editor/SceneDedup.cs line 170]
+
+Transform child is linked multiple times to parent; removed extraneous links from parent
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SerializedObject:ApplyModifiedPropertiesWithoutUndo ()
+SceneDedup:Remap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:589)
+SceneDedup:Swap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:575)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:170)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+[Assets/Editor/SceneDedup.cs line 170]
+
+Transform child is linked multiple times to parent; removed extraneous links from parent
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SerializedObject:ApplyModifiedPropertiesWithoutUndo ()
+SceneDedup:Remap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:589)
+SceneDedup:Swap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:575)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:170)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+[Assets/Editor/SceneDedup.cs line 170]
+
+Transform child is linked multiple times to parent; removed extraneous links from parent
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SerializedObject:ApplyModifiedPropertiesWithoutUndo ()
+SceneDedup:Remap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:589)
+SceneDedup:Swap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:575)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:170)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+[Assets/Editor/SceneDedup.cs line 170]
+
+Transform child is linked multiple times to parent; removed extraneous links from parent
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SerializedObject:ApplyModifiedPropertiesWithoutUndo ()
+SceneDedup:Remap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:589)
+SceneDedup:Swap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:575)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:170)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+[Assets/Editor/SceneDedup.cs line 170]
+
+Transform child is linked multiple times to parent; removed extraneous links from parent
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SerializedObject:ApplyModifiedPropertiesWithoutUndo ()
+SceneDedup:Remap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:589)
+SceneDedup:Swap (UnityEngine.GameObject,UnityEngine.GameObject,System.Collections.Generic.List`1<SceneDedup/Node>) (at Assets/Editor/SceneDedup.cs:575)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:170)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+[Assets/Editor/SceneDedup.cs line 170]
+
+Start importing Assets/OriginalRecovered/Samples/Prefabs/Reference/Stage/Dedup/Shared/pf_bg07_plate_set_a1_boss__2.prefab using Guid(7f3031264d43e2d4a871b48fda6b49dc) (PrefabImporter) -> (artifact id: 'e173baa9919ff89e8cd4b4f96c98bbd7') in 0.0049991 seconds
+Refreshing native plugins compatible for Editor in 0.21 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=9ba112cab19d81a4c80c58d395ad5c62): Total: 0.068 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/OriginalRecovered/Samples/Prefabs/Reference/Stage/Dedup/Shared/pf_bg07_wheel01_bank__2.prefab using Guid(92b9a348e15ec9c41a609bc2d6509aa5) (PrefabImporter) -> (artifact id: '45c5c6a6dedcd522b24f99d7402ed17c') in 0.0033458 seconds
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=7056b4385a1ed0d48af98b2416b69c26): Total: 0.061 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/OriginalRecovered/Samples/Prefabs/Reference/Stage/Dedup/Shared/pf_bg07_crank01_bank__2.prefab using Guid(5eeb7f7b47ef57941a31fb2e9ef056ed) (PrefabImporter) -> (artifact id: '43179e028d3fb2965648026e7ccba1fa') in 0.0036367 seconds
+Refreshing native plugins compatible for Editor in 0.22 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=6b7c65c4ba2f729429e4fc39d558e23f): Total: 0.050 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/OriginalRecovered/Samples/Prefabs/Reference/Stage/BG07Stage.prefab using Guid(45d2ec647e1334e49907f3e47a5854e0) (PrefabImporter) -> (artifact id: '81234834f591066f74a9e7df3b4ed6ff') in 0.115109 seconds
+Refreshing native plugins compatible for Editor in 0.19 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=3f74ca80c32a4b6438ce13701894a748): Total: 0.251 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/OriginalRecovered/Samples/Prefabs/Reference/Stage/Dedup/Shared/dedup-manifest.json using Guid(5d62fa9bc28d7ea4f93124c8ac652118) (TextScriptImporter) -> (artifact id: '7d9fc07446dc14ae3259d775ed62054d') in 0.0015065 seconds
+Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=405af63e1815b8944aa4e8993f3104c5): Total: 0.049 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Renderer at <b>index 1</b> is missing for camera <b>Camera</b>, falling back to Default Renderer. <b>Round1 Renderer</b>
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogWarning (object,UnityEngine.Object)
+UnityEngine.Rendering.Universal.UniversalAdditionalCameraData:get_scriptableRenderer () (at ./Library/PackageCache/com.unity.render-pipelines.universal@16.0.6/Runtime/UniversalAdditionalCameraData.cs:527)
+UnityEngine.Rendering.Universal.UniversalAdditionalCameraData:OnDestroy () (at ./Library/PackageCache/com.unity.render-pipelines.universal@16.0.6/Runtime/UniversalAdditionalCameraData.cs:836)
+UnityEditor.SceneManagement.EditorSceneManager:ClosePreviewScene (UnityEngine.SceneManagement.Scene)
+UnityEditor.PrefabUtility:UnloadPrefabContents (UnityEngine.SceneManagement.Scene)
+UnityEditor.PrefabUtility:UnloadPrefabContents (UnityEngine.GameObject)
+SceneDedup:Close (bool,UnityEngine.GameObject&) (at Assets/Editor/SceneDedup.cs:236)
+SceneDedup:Load (string,bool,UnityEngine.GameObject&) (at Assets/Editor/SceneDedup.cs:201)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:177)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+(Filename: ./Library/PackageCache/com.unity.render-pipelines.universal@16.0.6/Runtime/UniversalAdditionalCameraData.cs Line: 527)
+
+Loaded scene 'Library/Unused/f91eb6c99d6fe56499663dcd0fdfd383'
+	Deserialize:            11.182 ms
+	Integration:            49.523 ms
+	Integration of assets:  0.006 ms
+	Thread Wait Time:       0.002 ms
+	Total Operation Time:   60.713 ms
+Renderer at <b>index 1</b> is missing for camera <b>Camera</b>, falling back to Default Renderer. <b>Round1 Renderer</b>
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogWarning (object,UnityEngine.Object)
+UnityEngine.Rendering.Universal.UniversalAdditionalCameraData:get_scriptableRenderer () (at ./Library/PackageCache/com.unity.render-pipelines.universal@16.0.6/Runtime/UniversalAdditionalCameraData.cs:527)
+UnityEngine.Rendering.Universal.UniversalAdditionalCameraData:OnDestroy () (at ./Library/PackageCache/com.unity.render-pipelines.universal@16.0.6/Runtime/UniversalAdditionalCameraData.cs:836)
+UnityEditor.SceneManagement.EditorSceneManager:ClosePreviewScene (UnityEngine.SceneManagement.Scene)
+UnityEditor.PrefabUtility:UnloadPrefabContents (UnityEngine.SceneManagement.Scene)
+UnityEditor.PrefabUtility:UnloadPrefabContents (UnityEngine.GameObject)
+SceneDedup:Close (bool,UnityEngine.GameObject&) (at Assets/Editor/SceneDedup.cs:236)
+SceneDedup:Run (string,bool,string,string) (at Assets/Editor/SceneDedup.cs:187)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:67)
+
+(Filename: ./Library/PackageCache/com.unity.render-pipelines.universal@16.0.6/Runtime/UniversalAdditionalCameraData.cs Line: 527)
+
+Start importing Assets/OriginalRecovered/Samples/Prefabs/Reference/Stage/BG07Stage.prefab using Guid(45d2ec647e1334e49907f3e47a5854e0) (PrefabImporter) -> (artifact id: '4774ab88502fcfa838c6dd526190d353') in 1.0354839 seconds
+Refreshing native plugins compatible for Editor in 0.20 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=e374b019eb062bd4395a12f9fcfe37e5): Total: 1.208 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=1200 ms
+		Asset DB Callback time: managed=1 ms, native=6 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=1664, non-scripts=14952
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Scan Filter Count: 7
+	InvokeCustomDependenciesCallbacks: 0.000ms
+	InvokePackagesCallback: 0.000ms
+	ApplyChangesToAssetFolders: 0.092ms
+	Scan: 6.701ms
+	OnSourceAssetsModified: 0.050ms
+	CategorizeAssetsWithTransientArtifact: 0.005ms
+	ProcessAssetsWithTransientArtifactChanges: 0.039ms
+	CategorizeAssets: 18.673ms
+	ImportOutOfDateAssets: 1168.057ms (-59.196ms without children)
+		ImportManagerImport: 1151.670ms (115.896ms without children)
+			ImportInProcess: 1035.732ms
+			UpdateCategorizedAssets: 0.042ms
+		ReloadNativeAssets: 0.370ms
+		UnloadImportedAssets: 12.835ms
+		ReloadImportedAssets: 60.005ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.661ms
+		InitializingProgressBar: 0.005ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.705ms
+	PostProcessAllAssets: 1.413ms
+	Hotreload: 6.045ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.645ms
+	UnloadStreamsBegin: 0.002ms
+	PersistCurrentRevisions: 0.571ms
+	UnloadStreamsEnd: 0.001ms
+	Untracked: 5.322ms
+
+Exception: flattened result differs from the original; restored the backup
+  at SceneDedup.Run (System.String path, System.Boolean apply, System.String outRoot, System.String backupRoot) [0x004a0] in D:\games\TruxtonExRecon\Reconstructed\Assets\Editor\SceneDedup.cs:188 
+UnityEngine.DebugLogHandler:Internal_LogException_Injected(Exception, IntPtr)
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+SceneDedup:Run(String, Boolean, String, String) (at Assets\Editor\SceneDedup.cs:192)
+SceneDedup:RunBatch() (at Assets\Editor\SceneDedup.cs:67)
+
+(Filename: Assets/Editor/SceneDedup.cs Line: 192)
+
+[SceneDedup] Assets/OriginalRecovered/Samples/Prefabs/Reference/Stage/BG04Stage.prefab: FAIL apply: groups planned 32/76 applied 32, copies 159/159, objects 3563->3563, bytes 10094696->692433 flattened result differs from the original; restored the backup
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:70)
+
+(Filename: Assets/Editor/SceneDedup.cs Line: 70)
+
+[SceneDedup] Assets/OriginalRecovered/Samples/Prefabs/Reference/Stage/BG06Stage.prefab: FAIL apply: groups planned 42/82 applied 42, copies 652/652, objects 4809->4809, bytes 10318934->2504194 flattened result differs from the original; restored the backup
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:70)
+
+(Filename: Assets/Editor/SceneDedup.cs Line: 70)
+
+[SceneDedup] Assets/OriginalRecovered/Samples/Prefabs/Reference/Stage/BG07Stage.prefab: FAIL apply: groups planned 31/69 applied 31, copies 298/298, objects 3555->3555, bytes 8763280->1235146 flattened result differs from the original; restored the backup
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:70)
+
+(Filename: Assets/Editor/SceneDedup.cs Line: 70)
+
+Shader 'RecoveredStub/TextMeshPro/Distance Field': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Clearing [NotoSansJP-Medium SDF] dynamic font asset data.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+TMPro.EditorEventCallbacks/<>c:<InitializeFontAssetResourceChangeCallBacks>b__0_0 () (at ./Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMP_EditorResourceManager.cs:36)
+UnityEditor.EditorApplication:Internal_EditorApplicationQuit ()
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:71)
+
+(Filename: ./Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMP_EditorResourceManager.cs Line: 36)
+
+Clearing [NotoSansKR-Medium SDF] dynamic font asset data.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+TMPro.EditorEventCallbacks/<>c:<InitializeFontAssetResourceChangeCallBacks>b__0_0 () (at ./Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMP_EditorResourceManager.cs:36)
+UnityEditor.EditorApplication:Internal_EditorApplicationQuit ()
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:71)
+
+(Filename: ./Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMP_EditorResourceManager.cs Line: 36)
+
+Clearing [NotoSansSC-Medium SDF] dynamic font asset data.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+TMPro.EditorEventCallbacks/<>c:<InitializeFontAssetResourceChangeCallBacks>b__0_0 () (at ./Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMP_EditorResourceManager.cs:36)
+UnityEditor.EditorApplication:Internal_EditorApplicationQuit ()
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:71)
+
+(Filename: ./Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMP_EditorResourceManager.cs Line: 36)
+
+Clearing [NotoSansTC-Medium SDF] dynamic font asset data.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+TMPro.EditorEventCallbacks/<>c:<InitializeFontAssetResourceChangeCallBacks>b__0_0 () (at ./Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMP_EditorResourceManager.cs:36)
+UnityEditor.EditorApplication:Internal_EditorApplicationQuit ()
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:71)
+
+(Filename: ./Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMP_EditorResourceManager.cs Line: 36)
+
+Shader 'RecoveredStub/TextMeshPro/Distance Field': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Clearing [NotoSansJP-Medium SDF] dynamic font asset data.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+TMPro.EditorEventCallbacks/<>c:<InitializeFontAssetResourceChangeCallBacks>b__0_0 () (at ./Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMP_EditorResourceManager.cs:36)
+UnityEditor.EditorApplication:Internal_EditorApplicationQuit ()
+SceneDedup:RunBatch () (at Assets/Editor/SceneDedup.cs:71)
+
+(Filename: ./Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMP_EditorResourceManager.cs Line: 36)
+
+[Licensing::IpcConnector] License Notification channel disconnected successfully.
+[Licensing::IpcConnector] License Client channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+abort_threads: Failed aborting id: 00000000000081E4, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 0000000000000360, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 00000000000081E4, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 0000000000000360, mono_thread_manage will ignore it
+
+debugger-agent: Unable to listen on 3784
+[Performance] WinEditorMain                                                                                                  :        1 samples, Peak.  4.54 s (1.0x), Avg.  4.54 s, Total. 4.542 s (12.1%)
+[Performance] WinEditorMain.ConfigureCrashHandler                                                                            :        1 samples, Peak.  15.4 us (1.0x), Avg.  15.4 us, Total. 15.40 us (0.0%)
+[Performance] WinEditorMain.CurlRequestInitialize                                                                            :        1 samples, Peak.   364 us (1.0x), Avg.   364 us, Total. 364.1 us (0.0%)
+[Performance] WinEditorMain.SetupLogFile                                                                                     :        1 samples, Peak.   161 us (1.0x), Avg.   161 us, Total. 161.0 us (0.0%)
+[Performance] WinEditorMain.RunNativeTestsIfRequiredAndExit                                                                  :        1 samples, Peak.   100 ns (1.0x), Avg.   100 ns, Total. 100.0 ns (0.0%)
+[Performance] WinEditorMain.Licensing                                                                                        :        1 samples, Peak.  4.53 s (1.0x), Avg.  4.53 s, Total. 4.529 s (12.1%)
+[Performance] WinEditorMain.InitializeCrashHandler                                                                           :        1 samples, Peak.  11.0 ms (1.0x), Avg.  11.0 ms, Total. 11.03 ms (0.0%)
+[Performance] WinEditorMain.CreateApplication                                                                                :        1 samples, Peak.   256 us (1.0x), Avg.   256 us, Total. 256.2 us (0.0%)
+[Performance] Application.InitializeProject                                                                                  :        1 samples, Peak.  5.96 s (1.0x), Avg.  5.96 s, Total. 5.965 s (15.9%)
+[Performance] Application.PackageManager.StartServer                                                                         :        1 samples, Peak.   851 us (1.0x), Avg.   851 us, Total. 850.5 us (0.0%)
+[Performance] Application.AcquireProjectLock                                                                                 :        1 samples, Peak.  4.76 ms (1.0x), Avg.  4.76 ms, Total. 4.763 ms (0.0%)
+[Performance] Application.InitializeEngineNoGraphics                                                                         :        1 samples, Peak.  48.9 ms (1.0x), Avg.  48.9 ms, Total. 48.94 ms (0.1%)
+[Performance] Application.PackageManager.Initialize                                                                          :        1 samples, Peak.   290 ms (1.0x), Avg.   290 ms, Total. 290.1 ms (0.8%)
+[Performance] Connecting to Package Manager                                                                                  :       30 samples, Peak.  49.8 us (20.8x), Avg.  2.39 us, Total. 71.80 us (0.0%)
+[Performance] Application.EngineGraphics.Initialize                                                                          :        1 samples, Peak.   243 ms (1.0x), Avg.   243 ms, Total. 242.6 ms (0.6%)
+[Performance] Application.GI.Initialize                                                                                      :        1 samples, Peak.  2.49 ms (1.0x), Avg.  2.49 ms, Total. 2.495 ms (0.0%)
+[Performance] Application.LoadAllDefaultResourcesFromEditor                                                                  :        1 samples, Peak.  2.26 ms (1.0x), Avg.  2.26 ms, Total. 2.257 ms (0.0%)
+[Performance] Application.LoadMonoAssemblies                                                                                 :        1 samples, Peak.   576 ms (1.0x), Avg.   576 ms, Total. 575.5 ms (1.5%)
+[Performance] RestoreManagedReferences                                                                                       :        2 samples, Peak.  56.8 ms (2.0x), Avg.  28.4 ms, Total. 56.83 ms (0.2%)
+[Performance] AssemblyReloadEvents.afterAssemblyReload: UnityEditor.SceneTemplate.SceneTemplateService.AfterAssemblyReload   :        2 samples, Peak.  3.05 ms (1.6x), Avg.  1.89 ms, Total. 3.787 ms (0.0%)
+[Performance] ProcessService.EditorAfterLoadAllAssemblies                                                                    :        2 samples, Peak.   304 us (1.1x), Avg.   268 us, Total. 536.0 us (0.0%)
+[Performance] Application.ReadLicenseInfo                                                                                    :        1 samples, Peak.  13.8 ms (1.0x), Avg.  13.8 ms, Total. 13.80 ms (0.0%)
+[Performance] Application.InitialRefresh                                                                                     :        1 samples, Peak.  4.13 s (1.0x), Avg.  4.13 s, Total. 4.134 s (11.0%)
+[Performance] AssetDatabase.InitialRefresh                                                                                   :        1 samples, Peak.  4.13 s (1.0x), Avg.  4.13 s, Total. 4.131 s (11.0%)
+[Performance] Compiling Scripts                                                                                              :        1 samples, Peak.   481 ms (1.0x), Avg.   481 ms, Total. 481.4 ms (1.3%)
+[Performance] AssemblyReloadEvents.beforeAssemblyReload: UnityEditor.SceneTemplate.SceneTemplateService.BeforeAssemblyReload :        1 samples, Peak.   746 us (1.0x), Avg.   746 us, Total. 746.5 us (0.0%)
+[Performance] EditorResources.Load                                                                                           :       19 samples, Peak.  49.6 ms (17.9x), Avg.  2.77 ms, Total. 52.64 ms (0.1%)
+[Performance] DidReloadScriptsTestListCache.ScriptReloaded                                                                   :        1 samples, Peak.  1.05 ms (1.0x), Avg.  1.05 ms, Total. 1.052 ms (0.0%)
+[Performance] DidReloadScriptsTestRunnerWindow.CompilationCallback                                                           :        1 samples, Peak.   500 us (1.0x), Avg.   500 us, Total. 500.0 us (0.0%)
+[Performance] DidReloadScriptsLookDev.OnEditorReload                                                                         :        1 samples, Peak.   183 us (1.0x), Avg.   183 us, Total. 183.3 us (0.0%)
+[Performance] DidReloadScriptsDebugWindow.OnEditorReload                                                                     :        1 samples, Peak.  4.64 ms (1.0x), Avg.  4.64 ms, Total. 4.636 ms (0.0%)
+[Performance] DidReloadScriptsVolumeComponentEditor.OnEditorReload                                                           :        1 samples, Peak.  18.3 ms (1.0x), Avg.  18.3 ms, Total. 18.31 ms (0.0%)
+[Performance] DidReloadScriptsAdvancedDropdownWindow.OnScriptReload                                                          :        2 samples, Peak.   269 us (1.1x), Avg.   244 us, Total. 488.1 us (0.0%)
+[Performance] DidReloadScriptsCinemachineExtension.OnScriptReload                                                            :        1 samples, Peak.   498 us (1.0x), Avg.   498 us, Total. 498.2 us (0.0%)
+[Performance] DidReloadScriptsCinemachineVirtualCameraBase.OnScriptReload                                                    :        1 samples, Peak.   105 us (1.0x), Avg.   105 us, Total. 104.9 us (0.0%)
+[Performance] DidReloadScriptsEditorMenuExtensions.FindAndCloseAllContextMenus                                               :        1 samples, Peak.  2.59 ms (1.0x), Avg.  2.59 ms, Total. 2.586 ms (0.0%)
+[Performance] CinemachineSettings.OnPostprocessAllAssets                                                                     :       32 samples, Peak.   361 us (16.6x), Avg.  21.8 us, Total. 696.3 us (0.0%)
+[Performance] UniversalRenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets                                      :       32 samples, Peak.  4.28 ms (15.7x), Avg.   272 us, Total. 8.710 ms (0.0%)
+[Performance] TerrainToolbarOverlayPostProcessor.OnPostprocessAllAssets                                                      :       32 samples, Peak.   317 us (14.1x), Avg.  22.6 us, Total. 721.7 us (0.0%)
+[Performance] SyncVS.PostprocessSyncProject                                                                                  :       16 samples, Peak.  1.75 ms (12.5x), Avg.   140 us, Total. 2.244 ms (0.0%)
+[Performance] Application.ImportPackagesAndSetTemplateWhenCreatingProject                                                    :        1 samples, Peak.  15.6 ms (1.0x), Avg.  15.6 ms, Total. 15.58 ms (0.0%)
+[Performance] Application.SyncCurrentColorSpace                                                                              :        1 samples, Peak.  99.4 ms (1.0x), Avg.  99.4 ms, Total. 99.35 ms (0.3%)
+[Performance] Application.OnUsbDevicesChanged                                                                                :        1 samples, Peak.  7.72 ms (1.0x), Avg.  7.72 ms, Total. 7.724 ms (0.0%)
+[Performance] Application.AssetInstanceCacheUpdate                                                                           :        1 samples, Peak.   200 ns (1.0x), Avg.   200 ns, Total. 200.0 ns (0.0%)
+[Performance] Application.UnityExtensions.Initialize                                                                         :        1 samples, Peak.  30.2 ms (1.0x), Avg.  30.2 ms, Total. 30.23 ms (0.1%)
+[Performance] CodeEditorProjectSync.SyncEditorProject                                                                        :        1 samples, Peak.   165 us (1.0x), Avg.   165 us, Total. 164.9 us (0.0%)
+[Performance] Application.ExecuteStartups                                                                                    :        1 samples, Peak.  59.1 ms (1.0x), Avg.  59.1 ms, Total. 59.07 ms (0.2%)
+[Performance] Menu.RegisterMenuInterface                                                                                     :       26 samples, Peak.  1.60 us (7.2x), Avg.   223 ns, Total. 5.800 us (0.0%)
+[Performance] Gizmo.RebuildRenderers                                                                                         :        1 samples, Peak.  57.1 ms (1.0x), Avg.  57.1 ms, Total. 57.12 ms (0.2%)
+[Performance] Gizmo.AddGizmoRenderers                                                                                        :      139 samples, Peak.  1.37 ms (44.0x), Avg.  31.3 us, Total. 4.345 ms (0.0%)
+[Performance] Application.editorInitializingProject                                                                          :        1 samples, Peak.  88.8 ms (1.0x), Avg.  88.8 ms, Total. 88.77 ms (0.2%)
+[Performance] Application.InitializeMenu                                                                                     :        1 samples, Peak.   305 ms (1.0x), Avg.   305 ms, Total. 304.8 ms (0.8%)
+[Performance] Menu.RebuildAll                                                                                                :        1 samples, Peak.   305 ms (1.0x), Avg.   305 ms, Total. 304.7 ms (0.8%)
+[Performance] Menu.BuildRegisteredMenuInterfaces                                                                             :        1 samples, Peak.   299 ms (1.0x), Avg.   299 ms, Total. 298.7 ms (0.8%)
+[Performance] Menu.FilterMenuItem                                                                                            :     1304 samples, Peak.   134 ms (1118.5x), Avg.   120 us, Total. 156.8 ms (0.4%)
+[Performance] UpdateAllMenus                                                                                                 :        1 samples, Peak.   604 us (1.0x), Avg.   604 us, Total. 603.8 us (0.0%)
+[Performance] Menu.RebuildOSMainMenu                                                                                         :        1 samples, Peak.  4.31 ms (1.0x), Avg.  4.31 ms, Total. 4.308 ms (0.0%)
+[Performance] EditorSceneManager.sceneClosing: UnityEditor.SceneVisibilityManager.EditorSceneManagerOnSceneClosing           :        1 samples, Peak.   310 us (1.0x), Avg.   310 us, Total. 309.9 us (0.0%)
+[Performance] GUIView.RepaintAll.PlayerLoopController                                                                        :        1 samples, Peak.  1000 ns (1.0x), Avg.  1000 ns, Total. 1000.0 ns (0.0%)
+[Performance] EditorSceneManager.newSceneCreated: UnityEditor.SceneTemplate.SceneTemplateService.OnNewSceneCreated           :        1 samples, Peak.   220 us (1.0x), Avg.   220 us, Total. 219.7 us (0.0%)
+[Performance] EditorSceneManager.newSceneCreated: UnityEditor.SceneVisibilityManager.EditorSceneManagerOnNewSceneCreated     :        1 samples, Peak.   190 us (1.0x), Avg.   190 us, Total. 189.6 us (0.0%)
+[Performance] EditorSceneManager.newSceneCreated: UnityEditor.SceneManagement.StageNavigationManager.OnNewSceneCreated       :        1 samples, Peak.  54.0 us (1.0x), Avg.  54.0 us, Total. 54.00 us (0.0%)
+[Performance] Application.InvokeFinishedLoadingProject                                                                       :        1 samples, Peak.  33.6 ms (1.0x), Avg.  33.6 ms, Total. 33.64 ms (0.1%)
+[Performance] ProcessService.OnProjectLoaded                                                                                 :        1 samples, Peak.  50.8 us (1.0x), Avg.  50.8 us, Total. 50.80 us (0.0%)
+[Performance] VersionControl.Task.Wait                                                                                       :        1 samples, Peak.  11.5 us (1.0x), Avg.  11.5 us, Total. 11.50 us (0.0%)
+[Performance] Inspector.InitOrRebuild                                                                                        :     1018 samples, Peak.  1.29 ms (3.6x), Avg.   357 us, Total. 363.7 ms (1.0%)
+[Performance] VisualEffectAssetModificationProcessor.OnWillSaveAssets                                                        :       18 samples, Peak.   512 us (13.4x), Avg.  38.2 us, Total. 688.4 us (0.0%)
+[Performance] BuilderAssetModificationProcessor.OnWillSaveAssets                                                             :       18 samples, Peak.   373 us (16.5x), Avg.  22.6 us, Total. 407.4 us (0.0%)
+[Performance] TerrainModificationProcessor.OnWillSaveAssets                                                                  :       18 samples, Peak.   562 us (17.3x), Avg.  32.4 us, Total. 583.8 us (0.0%)
+[Performance] AudioContainerModificationProcessor.OnWillSaveAssets                                                           :       18 samples, Peak.  60.2 us (13.1x), Avg.  4.60 us, Total. 82.80 us (0.0%)
+[Performance] MaterialModificationProcessor.OnWillCreateAsset                                                                :       28 samples, Peak.   772 us (17.0x), Avg.  45.3 us, Total. 1.269 ms (0.0%)
+[Performance] BuilderAssetModificationProcessor.OnWillCreateAsset                                                            :       14 samples, Peak.   218 us (7.5x), Avg.  29.1 us, Total. 407.6 us (0.0%)
+[Performance] ShaderImporter.SourceAssetModified                                                                             :       15 samples, Peak.  1.20 us (1.7x), Avg.   727 ns, Total. 10.90 us (0.0%)
+[Performance] ShaderIncludeImporter.SourceAssetModified                                                                      :       15 samples, Peak.  1.20 us (1.9x), Avg.   640 ns, Total. 9.600 us (0.0%)
+[Performance] PresetManagerPostProcessor.OnPreprocessAsset                                                                   :       15 samples, Peak.   811 us (10.0x), Avg.  81.2 us, Total. 1.218 ms (0.0%)
+[Performance] CancelSplashScreenOnAssetChange.OnPreprocessAsset                                                              :       15 samples, Peak.   137 us (12.6x), Avg.  10.9 us, Total. 163.2 us (0.0%)
+[Performance] ShaderGraphAssetPostProcessor.OnPreprocessAsset                                                                :       15 samples, Peak.   141 us (11.3x), Avg.  12.5 us, Total. 188.2 us (0.0%)
+[Performance] VFXExternalShaderProcessor.OnPreprocessAsset                                                                   :       15 samples, Peak.   458 us (14.0x), Avg.  32.7 us, Total. 490.4 us (0.0%)
+[Performance] AssetDatabase.ImportAssets                                                                                     :       15 samples, Peak.  1.70 us (2.7x), Avg.   620 ns, Total. 9.300 us (0.0%)
+[Performance] SamplePostprocessor.OnPostprocessAllAssets                                                                     :       60 samples, Peak.   249 us (12.8x), Avg.  19.4 us, Total. 1.164 ms (0.0%)
+[Performance] TMPro_TexturePostProcessor.OnPostprocessAllAssets                                                              :       30 samples, Peak.   516 us (11.2x), Avg.  46.1 us, Total. 1.382 ms (0.0%)
+[Performance] WindowAssetPostprocessingWatcher_Internal.OnPostprocessAllAssets                                               :       30 samples, Peak.  1.49 ms (2.0x), Avg.   731 us, Total. 21.92 ms (0.1%)
+[Performance] BuilderAssetPostprocessor.OnPostprocessAllAssets                                                               :       30 samples, Peak.  4.50 ms (14.7x), Avg.   306 us, Total. 9.189 ms (0.0%)
+[Performance] AddressablesAssetPostProcessor.OnPostprocessAllAssets                                                          :       30 samples, Peak.  2.41 ms (12.2x), Avg.   197 us, Total. 5.915 ms (0.0%)
+[Performance] ArtifactBrowserPostProcessor.OnPostprocessAllAssets                                                            :       30 samples, Peak.   481 us (13.7x), Avg.  35.0 us, Total. 1.051 ms (0.0%)
+[Performance] AssetEvents.OnPostprocessAllAssets                                                                             :       60 samples, Peak.   222 us (20.4x), Avg.  10.9 us, Total. 654.8 us (0.0%)
+[Performance] AudioContainerPostProcessor.OnPostprocessAllAssets                                                             :       30 samples, Peak.  76.2 us (10.5x), Avg.  7.23 us, Total. 216.9 us (0.0%)
+[Performance] AudioMixerPostprocessor.OnPostprocessAllAssets                                                                 :       30 samples, Peak.   275 us (13.5x), Avg.  20.4 us, Total. 611.0 us (0.0%)
+[Performance] StyleCatalogPostProcessor.OnPostprocessAllAssets                                                               :       30 samples, Peak.  20.1 ms (14.9x), Avg.  1.35 ms, Total. 40.41 ms (0.1%)
+[Performance] BuildCatalog                                                                                                   :        1 samples, Peak.  19.0 ms (1.0x), Avg.  19.0 ms, Total. 19.03 ms (0.1%)
+[Performance] ModelImporterPostProcessor.OnPostprocessAllAssets                                                              :       30 samples, Peak.  1.29 ms (13.3x), Avg.  96.9 us, Total. 2.906 ms (0.0%)
+[Performance] AssetDatabaseProxy.OnPostprocessAllAssets                                                                      :       30 samples, Peak.   109 ms (14.7x), Avg.  7.40 ms, Total. 222.0 ms (0.6%)
+[Performance] MaterialPostprocessor.OnPostprocessAllAssets                                                                   :       60 samples, Peak.   570 us (14.1x), Avg.  40.5 us, Total. 2.431 ms (0.0%)
+[Performance] RetainedModeAssetPostprocessor.OnPostprocessAllAssets                                                          :       30 samples, Peak.  2.44 ms (14.3x), Avg.   171 us, Total. 5.126 ms (0.0%)
+[Performance] AssetChangedListener.OnPostprocessAllAssets                                                                    :       30 samples, Peak.  1.10 ms (10.0x), Avg.   110 us, Total. 3.310 ms (0.0%)
+[Performance] PostProcessor.OnPostprocessAllAssets                                                                           :       30 samples, Peak.   188 us (7.6x), Avg.  24.7 us, Total. 740.9 us (0.0%)
+[Performance] ShaderGraphAssetPostProcessor.OnPostprocessAllAssets                                                           :       30 samples, Peak.  1.09 ms (8.4x), Avg.   130 us, Total. 3.889 ms (0.0%)
+[Performance] SpeedTreePostProcessor.OnPostprocessAllAssets                                                                  :       30 samples, Peak.   127 us (12.1x), Avg.  10.5 us, Total. 314.0 us (0.0%)
+[Performance] TextAssetPostProcessor.OnPostprocessAllAssets                                                                  :       30 samples, Peak.   280 us (12.2x), Avg.  22.9 us, Total. 687.1 us (0.0%)
+[Performance] VFXGraphPreprocessor.OnPostprocessAllAssets                                                                    :       30 samples, Peak.   718 us (12.9x), Avg.  55.7 us, Total. 1.671 ms (0.0%)
+[Performance] AssetPathToTypes.OnPostprocessAllAssets                                                                        :       30 samples, Peak.   477 us (14.2x), Avg.  33.6 us, Total. 1.009 ms (0.0%)
+[Performance] EditorApplication.projectChanged: UnityEditor.Audio.MixerEffectDefinitionReloader.OnProjectChanged             :        7 samples, Peak.   441 us (1.1x), Avg.   391 us, Total. 2.740 ms (0.0%)
+[Performance] EditorApplication.projectChanged: UnityEngine.InputSystem.LowLevel.NativeInputRuntime.OnProjectChanged         :        7 samples, Peak.   166 us (6.3x), Avg.  26.3 us, Total. 183.9 us (0.0%)
+[Performance] AssetDatabase.Refresh                                                                                          :        3 samples, Peak.  62.6 ms (1.6x), Avg.  39.6 ms, Total. 118.7 ms (0.3%)
+[Performance] AssetDatabase.ImportAsset                                                                                      :        3 samples, Peak.  1.61 s (1.2x), Avg.  1.36 s, Total. 4.085 s (10.9%)
+[Performance] Application.Shutdown.SaveDefaultWindowPreferences                                                              :        1 samples, Peak.  53.8 us (1.0x), Avg.  53.8 us, Total. 53.80 us (0.0%)
+[Performance] Application.Shutdown.SaveSceneManagerSetup                                                                     :        1 samples, Peak.   216 us (1.0x), Avg.   216 us, Total. 215.9 us (0.0%)
+[Performance] Application.Shutdown.CleanupAllContainerWindows                                                                :        1 samples, Peak.  6.30 us (1.0x), Avg.  6.30 us, Total. 6.300 us (0.0%)
+[Performance] EditorApplication.quitting: Unity.Burst.Editor.BurstLoader.OnEditorApplicationQuitting                         :        1 samples, Peak.  30.6 us (1.0x), Avg.  30.6 us, Total. 30.60 us (0.0%)
+[Performance] EditorApplication.quitting: callback in TMPro.EditorEventCallbacks                                             :        1 samples, Peak.  85.4 ms (1.0x), Avg.  85.4 ms, Total. 85.42 ms (0.2%)
+[Performance] EditorApplication.quitting: callback in UnityEditor.TextCore.Text.EditorEventCallbacks                         :        1 samples, Peak.  17.9 ms (1.0x), Avg.  17.9 ms, Total. 17.88 ms (0.0%)
+[Performance] Application.Shutdown.PauseProfilerSession                                                                      :        1 samples, Peak.  39.6 us (1.0x), Avg.  39.6 us, Total. 39.60 us (0.0%)
+[Performance] Application.Shutdown.PauseAssetImportWorkers                                                                   :        1 samples, Peak.   280 us (1.0x), Avg.   280 us, Total. 280.0 us (0.0%)
+[Performance] Application.Shutdown.SaveAssets                                                                                :        1 samples, Peak.  1.67 ms (1.0x), Avg.  1.67 ms, Total. 1.673 ms (0.0%)
+[Performance] Application.Shutdown.CleanupRenderPipeline                                                                     :        1 samples, Peak.  2.80 us (1.0x), Avg.  2.80 us, Total. 2.800 us (0.0%)
+[Performance] Application.Shutdown.StopPreloadManager                                                                        :        1 samples, Peak.  10.3 ms (1.0x), Avg.  10.3 ms, Total. 10.31 ms (0.0%)
+[Performance] Application.Shutdown.DestroyWorld                                                                              :        1 samples, Peak.  4.78 ms (1.0x), Avg.  4.78 ms, Total. 4.782 ms (0.0%)
+[Performance] Application.Shutdown.CleanupAfterLoad                                                                          :        1 samples, Peak.   150 ms (1.0x), Avg.   150 ms, Total. 150.0 ms (0.4%)
+[Performance] Application.Shutdown.Progress                                                                                  :        1 samples, Peak.  12.9 us (1.0x), Avg.  12.9 us, Total. 12.90 us (0.0%)
+[Performance] Application.Shutdown.GICleanupManagers                                                                         :        1 samples, Peak.   870 us (1.0x), Avg.   870 us, Total. 870.1 us (0.0%)
+[Performance] Application.Shutdown.MenuCleanupClass                                                                          :        1 samples, Peak.   408 us (1.0x), Avg.   408 us, Total. 407.8 us (0.0%)
+[Performance] Application.Shutdown.ADBSaveStateBeforeShutdown                                                                :        1 samples, Peak.  7.50 us (1.0x), Avg.  7.50 us, Total. 7.500 us (0.0%)
+[Performance] Application.Shutdown.RemoteShutdown                                                                            :        1 samples, Peak.  1.10 us (1.0x), Avg.  1.10 us, Total. 1.100 us (0.0%)
+[Performance] Application.Shutdown.CleanupVCProvider                                                                         :        1 samples, Peak.  7.60 us (1.0x), Avg.  7.60 us, Total. 7.600 us (0.0%)
+[Performance] Application.Shutdown.InputShutdown                                                                             :        1 samples, Peak.   400 ns (1.0x), Avg.   400 ns, Total. 400.0 ns (0.0%)
+[Performance] Application.Shutdown.GizmoManagerDestroy                                                                       :        1 samples, Peak.   645 us (1.0x), Avg.   645 us, Total. 644.7 us (0.0%)
+[Performance] Application.Shutdown.ProfilerSession                                                                           :        1 samples, Peak.   178 us (1.0x), Avg.   178 us, Total. 178.1 us (0.0%)
+[Performance] Application.Shutdown.ReleaseGfxWindowOnAllGUIViews                                                             :        1 samples, Peak.   300 ns (1.0x), Avg.   300 ns, Total. 300.0 ns (0.0%)
+[Performance] Application.Shutdown.CleanupEngine                                                                             :        1 samples, Peak.   129 ms (1.0x), Avg.   129 ms, Total. 128.6 ms (0.3%)
+[Performance] Application.Shutdown.CleanupAssetDatabase                                                                      :        1 samples, Peak.  13.4 ms (1.0x), Avg.  13.4 ms, Total. 13.43 ms (0.0%)
+[Performance] Application.Shutdown.ScriptCompilationCleanUp                                                                  :        1 samples, Peak.  13.0 ms (1.0x), Avg.  13.0 ms, Total. 13.01 ms (0.0%)
+[Performance] Application.Shutdown.DestroyJobSystem                                                                          :        1 samples, Peak.   105 us (1.0x), Avg.   105 us, Total. 104.8 us (0.0%)
+[Performance] Application.Shutdown.CleanupPersistentManager                                                                  :        1 samples, Peak.  2.80 ms (1.0x), Avg.  2.80 ms, Total. 2.796 ms (0.0%)
+[Performance] Application.Shutdown.CleanupAsyncReadManager                                                                   :        1 samples, Peak.   280 us (1.0x), Avg.   280 us, Total. 280.1 us (0.0%)
+[Performance] Application.Shutdown.CleanupProgressBar                                                                        :        1 samples, Peak.   300 ns (1.0x), Avg.   300 ns, Total. 300.0 ns (0.0%)
+[Performance] Application.Shutdown.CleanupMono                                                                               :        1 samples, Peak.   112 ms (1.0x), Avg.   112 ms, Total. 111.8 ms (0.3%)
+[Performance] Application.Shutdown.CleanupStdConverters                                                                      :        1 samples, Peak.  6.50 us (1.0x), Avg.  6.50 us, Total. 6.500 us (0.0%)
+[Performance] Application.Shutdown.UnloadAllPlatformSupportModuleNativeDlls                                                  :        1 samples, Peak.   700 ns (1.0x), Avg.   700 ns, Total. 700.0 ns (0.0%)
+[Performance] Application.Shutdown.UnloadAllPlatformSupportNativeLibraries                                                   :        1 samples, Peak.   100 ns (1.0x), Avg.   100 ns, Total. 100.0 ns (0.0%)
+[Performance] Application.Shutdown.CleanupAutoDocumentation                                                                  :        1 samples, Peak.   309 us (1.0x), Avg.   309 us, Total. 308.9 us (0.0%)
+[Performance] Application.Shutdown.ShaderNameManagerDestroy                                                                  :        1 samples, Peak.  37.1 us (1.0x), Avg.  37.1 us, Total. 37.10 us (0.0%)
+[Performance] Application.Shutdown.CleanupCacheServer                                                                        :        1 samples, Peak.   200 ns (1.0x), Avg.   200 ns, Total. 200.0 ns (0.0%)
+[Performance] Application.Shutdown.Virtualization_Shutdown                                                                   :        1 samples, Peak.   300 ns (1.0x), Avg.   300 ns, Total. 300.0 ns (0.0%)
+[Performance] Application.Shutdown.DevConnections                                                                            :        1 samples, Peak.   115 us (1.0x), Avg.   115 us, Total. 115.0 us (0.0%)
+Thread: ID 23404, CleanupSafetyData: safetyData 30173aa0
+Thread: ID 23404, CleanupSafetyData: safetyData 30170e60
+Thread: ID 23404, CleanupSafetyData: safetyData 30171010
+Thread: ID 23404, CleanupSafetyData: safetyData 3177cfb0
+Checking for leaked weakptr:
+  Found no leaked weakptrs.
+[Package Manager] Server process was shutdown
+Memory Statistics:
+[ALLOC_TEMP_TLS] TLS Allocator
+  StackAllocators : 
+    [ALLOC_TEMP_CurlRequest]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_MAIN]
+      Initial Block Size 16.0 MB
+      Current Block Size 23.8 MB
+      Peak Allocated Bytes 16.9 MB
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 4]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 48 B
+      Overflow Count 0
+    [ALLOC_TEMP_Loading.PreloadManager]
+      Initial Block Size 32.0 MB
+      Current Block Size 32.0 MB
+      Peak Allocated Bytes 2.4 MB
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 3]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 48 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 11]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 50 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 7]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 48 B
+      Overflow Count 0
+    [ALLOC_TEMP_EditorTaskManager]
+      Initial Block Size 64.0 KB
+      Current Block Size 68.0 KB
+      Peak Allocated Bytes 64.0 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 6]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 48 B
+      Overflow Count 0
+    [ALLOC_TEMP_CloudJob.worker 0]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 3.5 KB
+      Overflow Count 0
+    [ALLOC_TEMP_AUDIO_FMOD (WASAPI) feeder thread]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 58 B
+      Overflow Count 0
+    [ALLOC_TEMP_Profiler.Dispatcher]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 12]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 50 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 2]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 1.4 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 10]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 50 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 15]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 50 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 8]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 48 B
+      Overflow Count 0
+    [ALLOC_TEMP_AUDIO_FMOD mixer thread]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 38 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.worker 5]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 9.0 KB
+      Overflow Count 1
+    [ALLOC_TEMP_Background Job.worker 13]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 50 B
+      Overflow Count 0
+    [ALLOC_TEMP_BakingJobs.worker 0]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 40 B
+      Overflow Count 0
+    [ALLOC_TEMP_AssetGarbageCollectorHelper] x 15
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_BakingJobs.worker 6]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 40 B
+      Overflow Count 0
+    [ALLOC_TEMP_BakingJobs.worker 7]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 40 B
+      Overflow Count 0
+    [ALLOC_TEMP_BakingJobs.worker 4]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 40 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 0]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 48 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.worker 6]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 9.2 KB
+      Overflow Count 1
+    [ALLOC_TEMP_Job.worker 8]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 13.7 KB
+      Overflow Count 1
+    [ALLOC_TEMP_Background Job.worker 14]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 50 B
+      Overflow Count 0
+    [ALLOC_TEMP_BakingJobs.worker 1]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 40 B
+      Overflow Count 0
+    [ALLOC_TEMP_BatchDeleteObjects]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 38 B
+      Overflow Count 0
+    [ALLOC_TEMP_BakingJobs.worker 5]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 40 B
+      Overflow Count 0
+    [ALLOC_TEMP_AUDIO_FMOD stream thread]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 40 B
+      Overflow Count 0
+    [ALLOC_TEMP_CoreBusinessMetricsCache]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 7.5 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Job.worker 11]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 10.4 KB
+      Overflow Count 1
+    [ALLOC_TEMP_Background Job.worker 9]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 48 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.worker 0]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 8.7 KB
+      Overflow Count 1
+    [ALLOC_TEMP_Job.worker 4]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 9.7 KB
+      Overflow Count 1
+    [ALLOC_TEMP_Job.worker 14]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 9.2 KB
+      Overflow Count 1
+    [ALLOC_TEMP_Job.worker 13]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 22.0 KB
+      Overflow Count 1
+    [ALLOC_TEMP_Background Job.worker 1]
+      Initial Block Size 32.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 151.1 KB
+      Overflow Count 15059
+    [ALLOC_TEMP_AssetDatabase.IOService]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 48 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.worker 1]
+      Initial Block Size 256.0 KB
+      Current Block Size 1.0 MB
+      Peak Allocated Bytes 1.0 MB
+      Overflow Count 1
+    [ALLOC_TEMP_BakingJobs.worker 3]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 40 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 5]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 48 B
+      Overflow Count 0
+    [ALLOC_TEMP_DirMonitor]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 0.8 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Job.worker 12]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 12.5 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Job.worker 3]
+      Initial Block Size 256.0 KB
+      Current Block Size 1.0 MB
+      Peak Allocated Bytes 1.0 MB
+      Overflow Count 1
+    [ALLOC_TEMP_BakingJobs.worker 2]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 40 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.worker 2]
+      Initial Block Size 256.0 KB
+      Current Block Size 1.0 MB
+      Peak Allocated Bytes 1.0 MB
+      Overflow Count 1
+    [ALLOC_TEMP_Job.worker 10]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 9.3 KB
+      Overflow Count 1
+    [ALLOC_TEMP_Job.worker 7]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 18.5 KB
+      Overflow Count 1
+    [ALLOC_TEMP_Job.worker 9]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 10.9 KB
+      Overflow Count 1
+    [ALLOC_TEMP_Loading.AsyncRead]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 448 B
+      Overflow Count 0
+[ALLOC_MEMORYPROFILER]
+  Requested Block Size 1.0 MB
+  Peak Block count 4
+  Peak Allocated memory 3.7 MB
+  Peak Large allocation bytes 0 B
+[ALLOC_DEFAULT] Dual Thread Allocator
+  Peak main deferred allocation count 66816
+    [ALLOC_BUCKET]
+      Large Block size 32.0 MB
+      Used Block count 2
+      Peak Allocated bytes 29.2 MB
+    [ALLOC_DEFAULT_MAIN]
+      Requested Block Size 16.0 MB
+      Peak Block count 16
+      Peak Allocated memory 225.6 MB
+      Peak Large allocation bytes 0 B
+    [ALLOC_DEFAULT_THREAD]
+      Requested Block Size 16.0 MB
+      Peak Block count 1
+      Peak Allocated memory 128.0 MB
+      Peak Large allocation bytes 128.0 MB
+[ALLOC_TEMP_JOB_1_FRAME]
+  Initial Block Size 2.0 MB
+  Used Block Count 0
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_TEMP_JOB_2_FRAMES]
+  Initial Block Size 2.0 MB
+  Used Block Count 0
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_TEMP_JOB_4_FRAMES (JobTemp)]
+  Initial Block Size 2.0 MB
+  Used Block Count 1
+  Overflow Count (too large) 0
+  Overflow Count (full) 43788
+[ALLOC_TEMP_JOB_ASYNC (Background)]
+  Initial Block Size 1.0 MB
+  Used Block Count 1
+  Overflow Count (too large) 7
+  Overflow Count (full) 0
+[ALLOC_GFX] Dual Thread Allocator
+  Peak main deferred allocation count 0
+    [ALLOC_BUCKET]
+      Large Block size 32.0 MB
+      Used Block count 2
+      Peak Allocated bytes 29.2 MB
+    [ALLOC_GFX_MAIN]
+      Requested Block Size 16.0 MB
+      Peak Block count 1
+      Peak Allocated memory 12.3 MB
+      Peak Large allocation bytes 0 B
+    [ALLOC_GFX_THREAD]
+      Requested Block Size 16.0 MB
+      Peak Block count 1
+      Peak Allocated memory 6.1 KB
+      Peak Large allocation bytes 0 B
+[ALLOC_CACHEOBJECTS] Dual Thread Allocator
+  Peak main deferred allocation count 2158
+    [ALLOC_BUCKET]
+      Large Block size 32.0 MB
+      Used Block count 2
+      Peak Allocated bytes 29.2 MB
+    [ALLOC_CACHEOBJECTS_MAIN]
+      Requested Block Size 4.0 MB
+      Peak Block count 15
+      Peak Allocated memory 92.1 MB
+      Peak Large allocation bytes 44.4 MB
+    [ALLOC_CACHEOBJECTS_THREAD]
+      Requested Block Size 4.0 MB
+      Peak Block count 6
+      Peak Allocated memory 27.3 MB
+      Peak Large allocation bytes 12.0 MB
+[ALLOC_TYPETREE] Dual Thread Allocator
+  Peak main deferred allocation count 10720
+    [ALLOC_BUCKET]
+      Large Block size 32.0 MB
+      Used Block count 2
+      Peak Allocated bytes 29.2 MB
+    [ALLOC_TYPETREE_MAIN]
+      Requested Block Size 2.0 MB
+      Peak Block count 14
+      Peak Allocated memory 27.3 MB
+      Peak Large allocation bytes 0 B
+    [ALLOC_TYPETREE_THREAD]
+      Requested Block Size 2.0 MB
+      Peak Block count 1
+      Peak Allocated memory 32.5 KB
+      Peak Large allocation bytes 0 B
+[ALLOC_PROFILER]
+  Requested Block Size 16.0 MB
+  Peak Block count 1
+  Peak Allocated memory 495.3 KB
+  Peak Large allocation bytes 0 B
+    [ALLOC_PROFILER_BUCKET]
+      Large Block size 32.0 MB
+      Used Block count 1
+      Peak Allocated bytes 10.1 KB
+[ALLOC_PROFILER_EDITOR]
+  Requested Block Size 1.0 MB
+  Peak Block count 0
+  Peak Allocated memory 0 B
+  Peak Large allocation bytes 0 B
+    [ALLOC_PROFILER_BUCKET]
+      Large Block size 32.0 MB
+      Used Block count 1
+      Peak Allocated bytes 10.1 KB
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1793639860053,"processId":30328,"allocatedMemory":34734533,"memoryLabels":[{"Default":17549},{"Permanent":15300},{"NewDelete":853696},{"Thread":4230344},{"Manager":30074},{"VertexData":8},{"Geometry":816},{"Texture":160},{"Shader":77797},{"Material":24},{"GfxDevice":55384},{"Animation":5647048},{"Audio":4040},{"FontEngine":224},{"Physics":369},{"Serialization":968},{"Input":14816},{"JobScheduler":33024},{"Mono":32},{"ScriptingNativeRuntime":155060},{"BaseObject":1619504},{"Resource":1304},{"Renderer":2360},{"Transform":4646},{"File":976},{"WebCam":80},{"Culling":32},{"Terrain":953},{"Wind":24},{"STL":40},{"String":19376},{"DynamicArray":165073},{"HashMap":78112},{"Utility":2664142},{"Curl":1448},{"PoolAlloc":1768},{"AI":104},{"TypeTree":4493},{"ScriptManager":512},{"RuntimeInitializeOnLoadManager":64},{"SpriteAtlas":112},{"GI":7888},{"Director":8240},{"CloudService":8936},{"WebRequest":808},{"VR":45953},{"SceneManager":496},{"Video":64},{"LazyScriptCache":32},{"NativeArray":8},{"Camera":17},{"Secure":1},{"SerializationCache":1576},{"APIUpdating":10320},{"Subsystems":336},{"VirtualTexturing":57888},{"StaticSafetyDebugInfo":278528},{"Analytics":544},{"Hierarchy":16},{"Gui":80},{"EditorUtility":68525},{"VersionControl":4},{"Undo":624},{"AssetDatabase":18486508},{"EditorGi":328},{"UnityConnect":24848},{"Collab":545},{"Upm":1728},{"DrivenProperties":72},{"LocalIPC":276},{"ProfilerEditor":9738},{"CoreBusinessMetrics":14030},{"Licensing":3656},{"AssetReference":32},{"IPCStream":32}]}

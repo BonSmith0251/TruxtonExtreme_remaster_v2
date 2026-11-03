@@ -1,0 +1,11 @@
+#### InGame.Kernel.Enemy.Ene_Lc01::ReStart(System.Boolean) RVA 1dbe210 len 20
+01dbe210  push     rbx
+01dbe212  sub      rsp, 0x20
+01dbe216  xor      r8d, r8d
+01dbe219  mov      rbx, rcx
+01dbe21c  call     0x1d17fc0   ; PawnEnemyGround::ReStart(System.Boolean)
+01dbe221  xor      edx, edx
+01dbe223  mov      rcx, rbx
+01dbe226  add      rsp, 0x20
+01dbe22a  pop      rbx
+01dbe22b  jmp      0x1dbd540   ; Ene_Lc01::Init()

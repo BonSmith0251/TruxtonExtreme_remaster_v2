@@ -1,0 +1,46 @@
+01d9b4b0 mov qword ptr [rsp + 8], rbx 
+01d9b4b5 push rdi 
+01d9b4b6 sub rsp, 0x30 
+01d9b4ba mov rbx, qword ptr [rdx + 0x270] 
+01d9b4c1 mov rdi, rcx 
+01d9b4c4 mov edx, 2 
+01d9b4c9 mov ecx, 1 
+01d9b4ce xor r8d, r8d 
+01d9b4d1 call 0x1df1780 ; RandomUtility::Range(System.Int32,System.Int32)
+01d9b4d6 test rbx, rbx 
+01d9b4d9 je 0x1d9b518 
+01d9b4db cdqe 
+01d9b4dd dec rax 
+01d9b4e0 cmp eax, dword ptr [rbx + 0x18] 
+01d9b4e3 jae 0x1d9b51e 
+01d9b4e5 mov rdx, qword ptr [rbx + rax*8 + 0x20] 
+01d9b4ea test rdx, rdx 
+01d9b4ed je 0x1d9b518 
+01d9b4ef xor r8d, r8d 
+01d9b4f2 lea rcx, [rsp + 0x20] 
+01d9b4f7 call 0x3093ba0 ; Transform::get_position()
+01d9b4fc mov rbx, qword ptr [rsp + 0x40] 
+01d9b501 movsd xmm0, qword ptr [rax] 
+01d9b505 mov eax, dword ptr [rax + 8] 
+01d9b508 movsd qword ptr [rdi], xmm0 
+01d9b50c mov dword ptr [rdi + 8], eax 
+01d9b50f mov rax, rdi 
+01d9b512 add rsp, 0x30 
+01d9b516 pop rdi 
+01d9b517 ret 
+01d9b518 call 0x4e0d00 
+01d9b51d int3 
+01d9b51e call 0x4e0cf0 
+01d9b523 int3 
+01d9b524 int3 
+01d9b525 int3 
+01d9b526 int3 
+01d9b527 int3 
+01d9b528 int3 
+01d9b529 int3 
+01d9b52a int3 
+01d9b52b int3 
+01d9b52c int3 
+01d9b52d int3 
+01d9b52e int3 
+01d9b52f int3 

@@ -1,0 +1,49 @@
+01dbaff0 push rbx 
+01dbaff2 sub rsp, 0x20 
+01dbaff6 cmp byte ptr [rip + 0x28a888a], 0 ; rva=4663887
+01dbaffd jne 0x1dbb02a 
+01dbafff lea rcx, [rip + 0x25f6e42] ; rva=43b1e48
+01dbb006 call 0x4e0a50 
+01dbb00b lea rcx, [rip + 0x25b7396] ; rva=43723a8
+01dbb012 call 0x4e0a50 
+01dbb017 lea rcx, [rip + 0x25d88ba] ; rva=43938d8
+01dbb01e call 0x4e0a50 
+01dbb023 mov byte ptr [rip + 0x28a885d], 1 ; rva=4663887
+01dbb02a mov rcx, qword ptr [rip + 0x25b7377] ; rva=43723a8
+01dbb031 mov edx, 8 
+01dbb036 call 0x4dfe00 
+01dbb03b mov rdx, qword ptr [rip + 0x25d8896] ; rva=43938d8
+01dbb042 xor r8d, r8d 
+01dbb045 mov rcx, rax 
+01dbb048 mov rbx, rax 
+01dbb04b call 0x1f40520 ; RuntimeHelpers::InitializeArray(System.Array,System.RuntimeFieldHandle)
+01dbb050 mov rcx, qword ptr [rip + 0x25f6df1] ; rva=43b1e48
+01dbb057 mov rdx, qword ptr [rcx + 0xb8] 
+01dbb05e mov qword ptr [rdx], rbx 
+01dbb061 mov rdx, rbx 
+01dbb064 mov rcx, qword ptr [rip + 0x25f6ddd] ; rva=43b1e48
+01dbb06b mov rcx, qword ptr [rcx + 0xb8] 
+01dbb072 call 0x4dfd80 
+01dbb077 mov rcx, qword ptr [rip + 0x25f6dca] ; rva=43b1e48
+01dbb07e mov rax, qword ptr [rcx + 0xb8] 
+01dbb085 mov rax, qword ptr [rax] 
+01dbb088 test rax, rax 
+01dbb08b je 0x1dbb0a0 
+01dbb08d mov rcx, qword ptr [rcx + 0xb8] 
+01dbb094 mov eax, dword ptr [rax + 0x18] 
+01dbb097 mov dword ptr [rcx + 8], eax 
+01dbb09a add rsp, 0x20 
+01dbb09e pop rbx 
+01dbb09f ret 
+01dbb0a0 call 0x4e0d00 
+01dbb0a5 int3 
+01dbb0a6 int3 
+01dbb0a7 int3 
+01dbb0a8 int3 
+01dbb0a9 int3 
+01dbb0aa int3 
+01dbb0ab int3 
+01dbb0ac int3 
+01dbb0ad int3 
+01dbb0ae int3 
+01dbb0af int3 

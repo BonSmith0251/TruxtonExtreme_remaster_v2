@@ -1,0 +1,30 @@
+01de8840 sub rsp, 0x38 
+01de8844 cmp byte ptr [rip + 0x287b18e], 0 ; rva=46639d9
+01de884b movaps xmmword ptr [rsp + 0x20], xmm6 
+01de8850 movaps xmm6, xmm0 
+01de8853 jne 0x1de8868 
+01de8855 lea rcx, [rip + 0x25d9b6c] ; rva=43c23c8
+01de885c call 0x4e0a50 
+01de8861 mov byte ptr [rip + 0x287b171], 1 ; rva=46639d9
+01de8868 mov rcx, qword ptr [rip + 0x25d9b59] ; rva=43c23c8
+01de886f cmp dword ptr [rcx + 0xe4], 0 
+01de8876 jne 0x1de887d 
+01de8878 call 0x4e0d90 
+01de887d mulss xmm6, dword ptr [rip + 0x1704123] ; rva=34ec9a8 f=90
+01de8885 xor edx, edx 
+01de8887 movaps xmm0, xmm6 
+01de888a call 0x1df6fa0 ; VectorUtility::Cosf(System.Single)
+01de888f movss xmm1, dword ptr [rip + 0x16f8335] ; rva=34e0bcc f=1 d=50.12387842
+01de8897 movaps xmm6, xmmword ptr [rsp + 0x20] 
+01de889c subss xmm1, xmm0 
+01de88a0 movaps xmm0, xmm1 
+01de88a3 add rsp, 0x38 
+01de88a7 ret 
+01de88a8 int3 
+01de88a9 int3 
+01de88aa int3 
+01de88ab int3 
+01de88ac int3 
+01de88ad int3 
+01de88ae int3 
+01de88af int3 

@@ -1,0 +1,827 @@
+====================================================================================================
+BG01 ene_x01 Pf_Ene_X01 id 0f1bb2d87b30be64dbe192a6dc7dc375 attr 0 dur 100.0 pos (0.0, 0.0, 150.0)
+   routes = ["move_ene_x01_enter1", "move_ene_x01_move_l", "move_ene_x01_leave"]
+  placement {"objectName": "", "moveSpeed": 50.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 7, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       2 Rotate        dotime=50 repeatDelay=5 vec=(1234,4567,7890) nameValue='pf_ene_x01'
+      14 Speed         value0=10 dotime=0.5 repeatDelay=10 awakeRate=1 vec=(123,456,789)
+      14 Speed         value0=50 dotime=0.5 repeatDelay=10 awakeRate=2 vec=(123,456,789)
+       8 Bullet        repeatCount=999 repeatDelay=0.5 awakeRate=1 vec=(123,456,789) stringValue='ene_x01_fire1'
+      10 SetObjFlag    intValue1=256 repeatDelay=0.5 awakeRate=2 vec=(123,456,789) stringValue='ene_x01_fire1'
+  SPAWN EnemyEntryClip t=260.000-276.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/X01:146:260.000000
+====================================================================================================
+BG02 ene_x02 Pf_Ene_X02 id 722a5793171eed24d9a7b151de3ae2ad attr 0 dur 100.0 pos (0.0, 0.0, 150.0)
+   routes = ["move_ene_x01_enter1", "move_ene_x01_move_l", "move_ene_x01_leave"]
+  placement {"objectName": "", "moveSpeed": 50.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 7, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       2 Rotate        dotime=50 repeatDelay=5 vec=(1234,4567,7890) nameValue='pf_ene_x02'
+      14 Speed         value0=10 dotime=0.5 repeatDelay=10 awakeRate=1 vec=(123,456,789)
+      14 Speed         value0=50 dotime=0.5 repeatDelay=10 awakeRate=2 vec=(123,456,789)
+       8 Bullet        repeatCount=999 repeatDelay=0.5 awakeRate=1 vec=(123,456,789) stringValue='ene_x02_fire1'
+      10 SetObjFlag    intValue1=256 repeatDelay=0.5 awakeRate=2 vec=(123,456,789) stringValue='ene_x02_fire1'
+  SPAWN EnemyEntryClip t=160.000-176.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/X02:110:160.000000
+====================================================================================================
+BG04 ene_mi01_3b Pf_Ene_Mi01 id 1facaebc284f04b4f97c15d74e3ed596 attr 16 dur 60.0 pos (0.0, 0.0, 140.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 180.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+      15 SplineMove     stringValue='move_mi01_3b_enter'
+      80 TaskWait      intValue1=256
+      15 SplineMove     stringValue='common_D20'
+      14 Speed         value0=10 dotime=0.5
+      80 TaskWait      intValue1=256
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 vec=(0,0,-720)
+      80 TaskWait      intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 vec=(0,0,720)
+      80 TaskWait      intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 intValue1=1 vec=(0,0,-720)
+      15 SplineMove     stringValue='move_mi01_3b_move1'
+      14 Speed         value0=30 dotime=0.5
+      80 TaskWait      intValue1=256
+      15 SplineMove     stringValue='move_mi01_3b_move2'
+      14 Speed         value0=10 dotime=0.5
+      80 TaskWait      intValue1=256
+      80 TaskWait      value0=100 dotime=2 intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 vec=(0,0,720)
+      80 TaskWait      intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+      15 SplineMove     stringValue='move_mi01_3b_leave'
+      14 Speed         value0=100 dotime=2
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone) t=268.000-288.000 off=(90,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MI01:53:268.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=330.000-350.000 off=(100,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MI01:52:330.000000
+====================================================================================================
+BG04 ene_mi01_8 Pf_Ene_Mi01 id 1fd910f697e320c44a664369e27eb13a attr 16 dur 60.0 pos (0.0, 0.0, 140.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 180.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+      15 SplineMove     stringValue='move_mi01_8_enter'
+      80 TaskWait      intValue1=256
+      15 SplineMove     stringValue='common_D20'
+      14 Speed         value0=10 dotime=0.5
+      80 TaskWait      intValue1=256
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 vec=(0,0,720)
+      80 TaskWait      intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 vec=(0,0,-720)
+      80 TaskWait      intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 intValue1=1 vec=(0,0,720)
+      15 SplineMove     stringValue='move_mi01_8_move1'
+      14 Speed         value0=30 dotime=0.5
+      80 TaskWait      intValue1=256
+      15 SplineMove     stringValue='move_mi01_8_move2'
+      14 Speed         value0=10 dotime=0.5
+      80 TaskWait      intValue1=256
+      80 TaskWait      value0=100 dotime=2 intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 vec=(0,0,-720)
+      80 TaskWait      intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+      15 SplineMove     stringValue='move_mi01_8_leave'
+      14 Speed         value0=100 dotime=2
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=270.000-288.000 off=(-25,0,10) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MI01:53:268.000000
+====================================================================================================
+BG04 ene_mi01_2a Pf_Ene_Mi01 id 5daf4da72a631134c86f760ee97e3a04 attr 16 dur 60.0 pos (0.0, 0.0, 140.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 180.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+      15 SplineMove     stringValue='move_mi01_2a_enter'
+      80 TaskWait      intValue1=256
+      15 SplineMove     stringValue='common_D20'
+      14 Speed         value0=10 dotime=0.5
+      80 TaskWait      intValue1=256
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 vec=(0,0,-720)
+      80 TaskWait      intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 vec=(0,0,720)
+      80 TaskWait      intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 intValue1=1 vec=(0,0,-720)
+      15 SplineMove     stringValue='move_mi01_2a_move1'
+      14 Speed         value0=30 dotime=0.5
+      80 TaskWait      intValue1=256
+      15 SplineMove     stringValue='move_mi01_2a_move2'
+      14 Speed         value0=10 dotime=0.5
+      80 TaskWait      intValue1=256
+      80 TaskWait      value0=100 dotime=2 intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 vec=(0,0,720)
+      80 TaskWait      intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+      15 SplineMove     stringValue='move_mi01_2a_leave'
+      14 Speed         value0=100 dotime=2
+  SPAWN EnemyEntryClip(Clone) t=192.000-212.000 off=(-50,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MI01:51:192.000000
+  SPAWN EnemyEntryClip(Clone) t=332.000-350.000 off=(-50,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MI01:52:330.000000
+====================================================================================================
+BG04 ene_mi01_1a Pf_Ene_Mi01 id 71cca98e802286e478e749ef06d06fe9 attr 16 dur 60.0 pos (0.0, 0.0, 140.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 180.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+      15 SplineMove     stringValue='move_mi01_1a_enter'
+      80 TaskWait      intValue1=256
+      15 SplineMove     stringValue='common_D20'
+      14 Speed         value0=10 dotime=0.5
+      80 TaskWait      intValue1=256
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 vec=(0,0,720)
+      80 TaskWait      intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 vec=(0,0,-720)
+      80 TaskWait      intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 intValue1=1 vec=(0,0,720)
+      15 SplineMove     stringValue='move_mi01_1a_move1'
+      14 Speed         value0=30 dotime=0.5
+      80 TaskWait      intValue1=256
+      15 SplineMove     stringValue='move_mi01_1a_move2'
+      14 Speed         value0=10 dotime=0.5
+      80 TaskWait      intValue1=256
+      80 TaskWait      value0=100 dotime=2 intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 vec=(0,0,-720)
+      80 TaskWait      intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+      15 SplineMove     stringValue='move_mi01_1a_leave'
+      14 Speed         value0=100 dotime=2
+  SPAWN EnemyEntryClip t=194.000-212.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MI01:51:192.000000
+  SPAWN EnemyEntryClip t=334.000-350.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MI01:52:330.000000
+====================================================================================================
+BG04 ene_mi01_2b Pf_Ene_Mi01 id a740e8c7e1fdde14384b82eca0d518dc attr 16 dur 60.0 pos (0.0, 0.0, 140.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 180.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+      15 SplineMove     stringValue='move_mi01_2b_enter'
+      80 TaskWait      intValue1=256
+      15 SplineMove     stringValue='common_D20'
+      14 Speed         value0=10 dotime=0.5
+      80 TaskWait      intValue1=256
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 vec=(0,0,720)
+      80 TaskWait      intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 vec=(0,0,-720)
+      80 TaskWait      intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 intValue1=1 vec=(0,0,720)
+      15 SplineMove     stringValue='move_mi01_2b_move1'
+      14 Speed         value0=30 dotime=0.5
+      80 TaskWait      intValue1=256
+      15 SplineMove     stringValue='move_mi01_2b_move2'
+      14 Speed         value0=10 dotime=0.5
+      80 TaskWait      intValue1=256
+      80 TaskWait      value0=100 dotime=2 intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 vec=(0,0,-720)
+      80 TaskWait      intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+      15 SplineMove     stringValue='move_mi01_2b_leave'
+      14 Speed         value0=100 dotime=2
+  SPAWN EnemyEntryClip(Clone)(Clone) t=192.000-212.000 off=(50,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MI01:51:192.000000
+  SPAWN EnemyEntryClip(Clone)(Clone) t=332.000-350.000 off=(50,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MI01:52:330.000000
+====================================================================================================
+BG04 ene_mi01_8b Pf_Ene_Mi01 id e7222c058f88de64abf568753cab67c1 attr 16 dur 60.0 pos (0.0, 0.0, 140.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 180.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+      15 SplineMove     stringValue='move_mi01_8_enter'
+      80 TaskWait      intValue1=256
+      15 SplineMove     stringValue='common_D20'
+      14 Speed         value0=10 dotime=0.5
+      80 TaskWait      intValue1=256
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 vec=(0,0,-720)
+      80 TaskWait      intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 vec=(0,0,720)
+      80 TaskWait      intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 intValue1=1 vec=(0,0,-720)
+      15 SplineMove     stringValue='move_mi01_8_move1'
+      14 Speed         value0=30 dotime=0.5
+      80 TaskWait      intValue1=256
+      15 SplineMove     stringValue='move_mi01_8_move2'
+      14 Speed         value0=10 dotime=0.5
+      80 TaskWait      intValue1=256
+      80 TaskWait      value0=100 dotime=2 intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 vec=(0,0,720)
+      80 TaskWait      intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+      15 SplineMove     stringValue='move_mi01_8_leave'
+      14 Speed         value0=100 dotime=2
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=270.000-288.000 off=(25,0,10) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MI01:53:268.000000
+====================================================================================================
+BG04 ene_mi01_3a Pf_Ene_Mi01 id e9596e8f44aa5e44bae54bc498e21b39 attr 16 dur 60.0 pos (0.0, 0.0, 140.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 180.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+      15 SplineMove     stringValue='move_mi01_3a_enter'
+      80 TaskWait      intValue1=256
+      15 SplineMove     stringValue='common_D20'
+      14 Speed         value0=10 dotime=0.5
+      80 TaskWait      intValue1=256
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 vec=(0,0,720)
+      80 TaskWait      intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 vec=(0,0,-720)
+      80 TaskWait      intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 intValue1=1 vec=(0,0,720)
+      15 SplineMove     stringValue='move_mi01_3a_move1'
+      14 Speed         value0=30 dotime=0.5
+      80 TaskWait      intValue1=256
+      15 SplineMove     stringValue='move_mi01_3a_move2'
+      14 Speed         value0=10 dotime=0.5
+      80 TaskWait      intValue1=256
+      80 TaskWait      value0=100 dotime=2 intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+       2 Rotate        dotime=2 vec=(0,0,-720)
+      80 TaskWait      intValue1=1
+       8 Bullet         stringValue='mi01_fire1' nameValue='muzzle01'
+       1 Delay         dotime=0.5
+      15 SplineMove     stringValue='move_mi01_3a_leave'
+      14 Speed         value0=100 dotime=2
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=268.000-288.000 off=(-90,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MI01:53:268.000000
+  SPAWN EnemyEntryClip(Clone)(Clone) t=330.000-350.000 off=(-100,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MI01:52:330.000000
+====================================================================================================
+BG05 ene_mk01a Pf_Ene_Mk01 id 0e26943aeaf069b46976399a823444ab attr 16 dur 60.0 pos (0.0, 0.0, 150.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 30.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 180.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 7, "lookAt": 1, "attributeFlag": 1, "PlaneOffsetY": 0.0}
+  placement {"objectName": "Pf_Ene_Si01", "moveSpeed": 10.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 20.0, "y": 0.0, "z": -30.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 1, "PlaneOffsetY": 0.0}
+  placement {"objectName": "Pf_Ene_Si01", "moveSpeed": 10.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 10.0, "y": 0.0, "z": -30.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 1, "PlaneOffsetY": 0.0}
+  placement {"objectName": "Pf_Ene_Si01", "moveSpeed": 10.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": -30.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 1, "PlaneOffsetY": 0.0}
+  placement {"objectName": "Pf_Ene_Si01", "moveSpeed": 10.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": -10.0, "y": 0.0, "z": -30.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 1, "PlaneOffsetY": 0.0}
+  placement {"objectName": "Pf_Ene_Si01", "moveSpeed": 10.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": -20.0, "y": 0.0, "z": -30.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 1, "PlaneOffsetY": 0.0}
+  placement {"objectName": "Pf_Ene_Si01", "moveSpeed": 10.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": -20.0, "y": 0.0, "z": -30.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 1, "PlaneOffsetY": 0.0}
+  placement {"objectName": "Pf_Ene_Si01", "moveSpeed": 10.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": -20.0, "y": 0.0, "z": -30.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 1, "PlaneOffsetY": 0.0}
+  placement {"objectName": "Pf_Ene_Si01", "moveSpeed": 10.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": -20.0, "y": 0.0, "z": -30.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 1, "PlaneOffsetY": 0.0}
+  placement {"objectName": "Pf_Ene_Si01", "moveSpeed": 10.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": -20.0, "y": 0.0, "z": -30.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 1, "PlaneOffsetY": 0.0}
+  placement {"objectName": "Pf_Ene_Si01", "moveSpeed": 10.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": -20.0, "y": 0.0, "z": -30.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 1, "PlaneOffsetY": 0.0}
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=252.000-272.000 off=(-30,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+====================================================================================================
+BG05 ene_mk01b Pf_Ene_Mk01 id e20647e5797ca7945a98f6f6595ed6aa attr 16 dur 60.0 pos (0.0, 0.0, 150.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 30.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 180.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 7, "lookAt": 1, "attributeFlag": 1, "PlaneOffsetY": 0.0}
+  placement {"objectName": "Pf_Ene_Si01", "moveSpeed": 10.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 20.0, "y": 0.0, "z": -30.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 1, "PlaneOffsetY": 0.0}
+  placement {"objectName": "Pf_Ene_Si01", "moveSpeed": 10.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 10.0, "y": 0.0, "z": -30.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 1, "PlaneOffsetY": 0.0}
+  placement {"objectName": "Pf_Ene_Si01", "moveSpeed": 10.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": -30.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 1, "PlaneOffsetY": 0.0}
+  placement {"objectName": "Pf_Ene_Si01", "moveSpeed": 10.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": -10.0, "y": 0.0, "z": -30.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 1, "PlaneOffsetY": 0.0}
+  placement {"objectName": "Pf_Ene_Si01", "moveSpeed": 10.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": -20.0, "y": 0.0, "z": -30.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 1, "PlaneOffsetY": 0.0}
+  placement {"objectName": "Pf_Ene_Si01", "moveSpeed": 10.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": -20.0, "y": 0.0, "z": -30.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 1, "PlaneOffsetY": 0.0}
+  placement {"objectName": "Pf_Ene_Si01", "moveSpeed": 10.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": -20.0, "y": 0.0, "z": -30.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 1, "PlaneOffsetY": 0.0}
+  placement {"objectName": "Pf_Ene_Si01", "moveSpeed": 10.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": -20.0, "y": 0.0, "z": -30.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 1, "PlaneOffsetY": 0.0}
+  placement {"objectName": "Pf_Ene_Si01", "moveSpeed": 10.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": -20.0, "y": 0.0, "z": -30.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 1, "PlaneOffsetY": 0.0}
+  placement {"objectName": "Pf_Ene_Si01", "moveSpeed": 10.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": -20.0, "y": 0.0, "z": -30.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 1, "PlaneOffsetY": 0.0}
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=272.000-292.000 off=(30,0,0) rot=(0,0,0) idx=1 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+====================================================================================================
+BG06 default_Lc01 Pf_Ene_Lc01 id 0416bc79665b70e4ba3c1c16060520c7 attr 1552 dur 60.0 pos (0.0, 0.0, 0.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 0.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+    1001 FinishWait    repeatDelay=3 nameValue='pf_ene_bma01/ene_bma01_battery/muzzle01'
+  SPAWN EnemyEntryClip t=260.000-330.000 off=(0,250,4850) rot=(0,180,0) idx=0 loop=False/0 outDestroy=False ground=True offsets=[] grp=ground/BG06_ge
+====================================================================================================
+BG07 ene_mf01_5a1 Pf_Ene_Mf01 id 011b7cc65d471f544b55bd2bbfb97368 attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 100.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=7.75 dotime=6 repeatDelay=0.1 nameValue='pf_ene_mf01' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,-100)
+       8 Bullet        value1=1.2 repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip t=124.000-151.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MF:81:124.000000
+====================================================================================================
+BG07 ene_mf01_7b4 Pf_Ene_Mf01 id 1345031f7ecd5324f893e12ec27e366a attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 265.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=7.4 dotime=2 intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+       1 Delay         value0=17.19 dotime=2 intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-265) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,-100)
+       8 Bullet        value1=0.73 repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=151.000-181.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MF:84:151.000000
+====================================================================================================
+BG07 ene_mf01_7a6 Pf_Ene_Mf01 id 23b21d8c216eb664b9b6bd0ab09289c9 attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 375.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=7.4 dotime=2 repeatDelay=0.1 nameValue='pf_ene_mf01' flag0
+       1 Delay         value0=17.19 dotime=2 intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-375) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,-100)
+       8 Bullet        value1=0.91 repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone) t=124.000-151.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MF:83:124.000000
+====================================================================================================
+BG07 ene_mf01_5a2 Pf_Ene_Mf01 id 2531216e303f56d41a13654ee3d02a4a attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 177.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=7.75 dotime=6 repeatDelay=0.1 nameValue='pf_ene_mf01' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-177) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,-100)
+       8 Bullet        value1=1.9 repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip(Clone) t=124.000-151.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MF:81:124.000000
+====================================================================================================
+BG07 ene_mf01_5a3 Pf_Ene_Mf01 id 4f1e1cb0cf0c5a14f8b7d99703b24d2f attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 254.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=7.75 dotime=6 repeatDelay=0.1 nameValue='pf_ene_mf01' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-254) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,-100)
+       8 Bullet        value1=2.6 repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip(Clone)(Clone) t=124.000-151.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MF:81:124.000000
+====================================================================================================
+BG07 ene_mf01_7a1 Pf_Ene_Mf01 id 582f9dc505bd6754e87cdeb71cae0692 attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 100.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=7.4 dotime=2 repeatDelay=0.1 nameValue='pf_ene_mf01' flag0
+       1 Delay         value0=17.19 dotime=2 intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,-100)
+       8 Bullet        value1=1.46 repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip t=124.000-151.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MF:83:124.000000
+====================================================================================================
+BG07 ene_mf01_5b2 Pf_Ene_Mf01 id 64e0fd37dfe510446943faf94eeabee5 attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 177.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=7.75 dotime=6 repeatDelay=0.1 nameValue='pf_ene_mf01' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-177) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,-100)
+       8 Bullet        value1=1.9 repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip(Clone) t=151.000-181.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MF:82:151.000000
+====================================================================================================
+BG07 ene_mf01_5a5 Pf_Ene_Mf01 id 7856b2fde8c80e743930a8d5a3cc9b88 attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 408.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=7.75 dotime=6 repeatDelay=0.1 nameValue='pf_ene_mf01' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-408) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,-100)
+       8 Bullet        repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=124.000-151.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MF:81:124.000000
+====================================================================================================
+BG07 ene_mf01_5b5 Pf_Ene_Mf01 id 7a95f8a866029694f9b8b74f3c78f843 attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 408.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=7.75 dotime=6 repeatDelay=0.1 nameValue='pf_ene_mf01' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-408) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,-100)
+       8 Bullet        repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=151.000-181.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MF:82:151.000000
+====================================================================================================
+BG07 ene_mf01_7a3 Pf_Ene_Mf01 id 7bd5aaf24b9034c4e9f8f417201ffdc3 attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 210.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=7.4 dotime=2 repeatDelay=0.1 nameValue='pf_ene_mf01' flag0
+       1 Delay         value0=17.19 dotime=2 intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-210) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,-100)
+       8 Bullet        value1=1.64 repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip(Clone)(Clone) t=124.000-151.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MF:83:124.000000
+====================================================================================================
+BG07 ene_mf01_5b3 Pf_Ene_Mf01 id 7f737cec6f470294294c50c7acaa4de8 attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 254.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=7.75 dotime=6 repeatDelay=0.1 nameValue='pf_ene_mf01' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-254) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,-100)
+       8 Bullet        value1=2.6 repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip(Clone)(Clone) t=151.000-181.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MF:82:151.000000
+====================================================================================================
+BG07 ene_mf01_7a2 Pf_Ene_Mf01 id 8723b3da43fbd4046904e22aa9c45784 attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 155.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=7.4 dotime=2 repeatDelay=0.1 nameValue='pf_ene_mf01' flag0
+       1 Delay         value0=17.19 dotime=2 intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-155) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,-100)
+       8 Bullet        value1=0.55 repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip(Clone) t=124.000-151.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MF:83:124.000000
+====================================================================================================
+BG07 ene_mf01_5b1 Pf_Ene_Mf01 id 89598b1ad5f29ea4d855a5ff2aed964e attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 100.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=7.75 dotime=6 repeatDelay=0.1 nameValue='pf_ene_mf01' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,-100)
+       8 Bullet        value1=1.2 repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip t=151.000-181.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MF:82:151.000000
+====================================================================================================
+BG07 ene_mf01_7b1 Pf_Ene_Mf01 id 96e9f30046ed35b49aabd3753755c8c4 attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 100.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=7.4 dotime=2 repeatDelay=0.1 nameValue='pf_ene_mf01' flag0
+       1 Delay         value0=17.19 dotime=2 intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,-100)
+       8 Bullet        value1=1.46 repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip t=151.000-181.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MF:84:151.000000
+====================================================================================================
+BG07 ene_mf01_7b5 Pf_Ene_Mf01 id 9bcbaa7306a596a40a9252aafe6ae84f attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 320.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=7.4 dotime=2 intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+       1 Delay         value0=17.19 dotime=2 intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-320) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,-100)
+       8 Bullet        value1=1.82 repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=151.000-181.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MF:84:151.000000
+====================================================================================================
+BG07 ene_mf01_7b6 Pf_Ene_Mf01 id a7db8c93917095d4e9ac1427c00e2329 attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 375.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=7.4 dotime=2 intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+       1 Delay         value0=17.19 dotime=2 intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-375) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,-100)
+       8 Bullet        value1=0.91 repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone) t=151.000-181.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MF:84:151.000000
+====================================================================================================
+BG07 ene_mf01_7a4 Pf_Ene_Mf01 id ac73f45355e2bde44902fd4d5d10d7e3 attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 265.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=7.4 dotime=2 repeatDelay=0.1 nameValue='pf_ene_mf01' flag0
+       1 Delay         value0=17.19 dotime=2 intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-265) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,-100)
+       8 Bullet        value1=0.73 repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=124.000-151.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MF:83:124.000000
+====================================================================================================
+BG07 ene_mf01_7b2 Pf_Ene_Mf01 id ad13a2a9b79c65f46ae166aadfd34b6b attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 155.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=7.4 dotime=2 intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+       1 Delay         value0=17.19 dotime=2 intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-155) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,-100)
+       8 Bullet        value1=0.55 repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip(Clone) t=151.000-181.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MF:84:151.000000
+====================================================================================================
+BG07 ene_x03 Pf_Ene_X03 id b09397f3ccff6104c91effa536270e3c attr 0 dur 100.0 pos (0.0, 0.0, 150.0)
+   routes = ["move_ene_x01_enter1", "move_ene_x01_move_l", "move_ene_x01_leave"]
+  placement {"objectName": "", "moveSpeed": 50.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 7, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       2 Rotate        dotime=50 repeatDelay=5 vec=(1234,4567,7890) nameValue='pf_ene_x03'
+      14 Speed         value0=10 dotime=0.5 repeatDelay=10 awakeRate=1 vec=(123,456,789)
+      14 Speed         value0=50 dotime=0.5 repeatDelay=10 awakeRate=2 vec=(123,456,789)
+       8 Bullet        repeatCount=999 repeatDelay=0.5 awakeRate=1 vec=(123,456,789) stringValue='ene_x03_fire1'
+      10 SetObjFlag    intValue1=256 repeatDelay=0.5 awakeRate=2 vec=(123,456,789) stringValue='ene_x03_fire1'
+  SPAWN EnemyEntryClip t=244.000-260.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/X03:103:244.000000
+====================================================================================================
+BG07 ene_mf01_5a4 Pf_Ene_Mf01 id b85a9ac36e410d14b974962f9085dad3 attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 331.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=7.75 dotime=6 repeatDelay=0.1 nameValue='pf_ene_mf01' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-331) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,-100)
+       8 Bullet        value1=1.3 repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=124.000-151.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MF:81:124.000000
+====================================================================================================
+BG07 ene_mf01_7b3 Pf_Ene_Mf01 id ce4a9bb013d17004eb1e8e05c201a5d4 attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 210.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=7.4 dotime=2 intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+       1 Delay         value0=17.19 dotime=2 intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-210) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,-100)
+       8 Bullet        value1=1.64 repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip(Clone)(Clone) t=151.000-181.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MF:84:151.000000
+====================================================================================================
+BG07 ene_mf01_5b4 Pf_Ene_Mf01 id e25d131a26913244dab3e53e9bd6d4dc attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 331.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=7.75 dotime=6 repeatDelay=0.1 nameValue='pf_ene_mf01' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-331) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,-100)
+       8 Bullet        value1=1.3 repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=151.000-181.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MF:82:151.000000
+====================================================================================================
+BG07 ene_mf01_7a5 Pf_Ene_Mf01 id e5ee1a69e1190b047a6bcc4eb8629b90 attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 320.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=7.4 dotime=2 repeatDelay=0.1 nameValue='pf_ene_mf01' flag0
+       1 Delay         value0=17.19 dotime=2 intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-320) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,-100)
+       8 Bullet        value1=1.82 repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=124.000-151.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MF:83:124.000000
+====================================================================================================
+BG07 ene_mf01_7a7 Pf_Ene_Mf01 id f0a76df75a05a244e967521ea83bd1c2 attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 430.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=7.4 dotime=2 repeatDelay=0.1 nameValue='pf_ene_mf01' flag0
+       1 Delay         value0=17.19 dotime=2 intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-430) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,-100)
+       8 Bullet        repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=124.000-151.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MF:83:124.000000
+====================================================================================================
+BG07 ene_mf01_7b7 Pf_Ene_Mf01 id f4851b1f826cf0d43907acde3282de34 attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 430.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=7.4 dotime=2 intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+       1 Delay         value0=17.19 dotime=2 intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-430) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,-100)
+       8 Bullet        repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60l_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=151.000-181.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MF:84:151.000000
+====================================================================================================
+BG08 ene_mf01_3a3 Pf_Ene_Mf01 id 03a9f7de7954a4141864dcb3de8667f1 attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 356.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=6.41 dotime=8 repeatDelay=0.1 nameValue='pf_ene_mf01' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-356) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+       8 Bullet        repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip(Clone)(Clone) t=280.000-310.000 off=(60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE E:49:235.000000
+====================================================================================================
+BG08 ene_mf01_3a1 Pf_Ene_Mf01 id 1041839012cba3e47b417b74b0c18047 attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 100.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=6.41 dotime=8 repeatDelay=0.1 nameValue='pf_ene_mf01' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+       8 Bullet        value1=0.3 repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip t=280.000-310.000 off=(60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE E:49:235.000000
+====================================================================================================
+BG08 ene_mx02_1b Pf_Ene_Mx02 id 72d283922da0c534789f3064d7696076 attr 0 dur 0.0 pos (0.0, 0.0, 105.0)
+   routes = ["move_sn01_1b"]
+  placement {"objectName": "", "moveSpeed": 80.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+      14 Speed         value0=30 dotime=0.5
+      14 Speed         value0=80 dotime=0.5 awakeRate=0.2
+       8 Bullet        randomWait=0.5 awakeRate=0.2 stringValue='mx02_fire1' nameValue='pf_ene_mx01_sky/muzlle03'
+  SPAWN EnemyEntryClip(Clone) t=10.000-13.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MX02:41:10.000000
+  SPAWN EnemyEntryClip(Clone)(Clone) t=10.800-13.800 off=(25,0,10) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MX02:41:10.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=11.000-14.000 off=(-25,0,10) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MX02:41:10.000000
+  SPAWN EnemyEntryClip(Clone) t=27.000-30.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MX02:42:27.000000
+  SPAWN EnemyEntryClip(Clone)(Clone) t=27.800-30.800 off=(25,0,10) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MX02:42:27.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=28.000-31.000 off=(-25,0,10) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MX02:42:27.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=28.600-31.600 off=(-50,0,20) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MX02:42:27.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=28.800-31.800 off=(50,0,20) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MX02:42:27.000000
+====================================================================================================
+BG08 ene_mf01_3a2 Pf_Ene_Mf01 id c4efd503c06a3ba40b44633ae8c1c141 attr 16 dur 60.0 pos (0.0, 0.0, 15.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 228.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       1 Delay         value0=6.41 dotime=8 repeatDelay=0.1 nameValue='pf_ene_mf01' flag0
+       2 Rotate        dotime=60 intValue1=10 repeatDelay=0.1 vec=(0,0,7200) nameValue='pf_ene_mf01/ene_mf01' flag0
+      13 Translate     dotime=999 intValue1=4 repeatDelay=0.1 vec=(0,0,-228) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+       8 Bullet        value1=0.15 repeatCount=999 repeatDelay=2 stringValue='mf01_fire2' nameValue='pf_ene_mf01/muzzle'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_all'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_all'
+      15 SplineMove    intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60r_half'
+      80 TaskWait      intValue1=256 repeatDelay=0.1 vec=(0,0,-100) stringValue='common_circle60_half'
+      13 Translate     dotime=999 intValue1=256 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+      80 TaskWait      intValue1=4 repeatDelay=0.1 vec=(0,0,200) stringValue='common_circle60_half' flag0
+  SPAWN EnemyEntryClip(Clone) t=280.000-310.000 off=(60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE E:49:235.000000
+====================================================================================================
+BG08 ene_mx02_1a Pf_Ene_Mx02 id fcbd8c8b9f8bd6a45a7d2618f34c5ba4 attr 0 dur 0.0 pos (0.0, 0.0, 105.0)
+   routes = ["move_sn01_1a"]
+  placement {"objectName": "", "moveSpeed": 80.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+      14 Speed         value0=30 dotime=0.5
+      14 Speed         value0=80 dotime=0.5 awakeRate=0.2
+       8 Bullet        randomWait=0.5 awakeRate=0.2 stringValue='mx02_fire1' nameValue='pf_ene_mx01_sky/muzlle03'
+  SPAWN EnemyEntryClip(Clone) t=5.000-8.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MX02:39:5.000000
+  SPAWN EnemyEntryClip(Clone)(Clone) t=5.800-8.800 off=(-25,0,10) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MX02:39:5.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=6.000-9.000 off=(25,0,10) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MX02:39:5.000000
+  SPAWN EnemyEntryClip(Clone) t=22.000-25.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MX02:40:22.000000
+  SPAWN EnemyEntryClip(Clone)(Clone) t=22.800-25.800 off=(-25,0,10) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MX02:40:22.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=23.000-26.000 off=(25,0,10) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MX02:40:22.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=23.600-26.600 off=(50,0,20) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MX02:40:22.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=23.800-26.800 off=(-50,0,20) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MX02:40:22.000000

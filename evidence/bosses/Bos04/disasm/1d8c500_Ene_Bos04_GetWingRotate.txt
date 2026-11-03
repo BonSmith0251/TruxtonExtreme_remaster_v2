@@ -1,0 +1,58 @@
+== UnityEngine.Quaternion InGame.Kernel.Enemy.Ene_Bos04::GetWingRotate(System.Int32,System.Single) RVA 1d8c500 len ef
+01d8c500 mov        qword ptr [rsp + 8], rbx
+01d8c505 push       rdi
+01d8c506 sub        rsp, 0x70
+01d8c50a cmp        byte ptr [rip + 0x28d72a1], 0 ; [.data 46637b2]
+01d8c511 mov        ebx, r8d
+01d8c514 movaps     xmmword ptr [rsp + 0x60], xmm6
+01d8c519 mov        rdi, rcx
+01d8c51c movaps     xmm6, xmm3
+01d8c51f jne        0x1d8c534
+01d8c521 lea        rcx, [rip + 0x26252d0] ; [.data 43b17f8] TypeInfo#37303
+01d8c528 call       0x4e0a50
+01d8c52d mov        byte ptr [rip + 0x28d727e], 1 ; [.data 46637b2]
+01d8c534 mov        rcx, qword ptr [rip + 0x26252bd] ; [.data 43b17f8] TypeInfo#37303
+01d8c53b cmp        dword ptr [rcx + 0xe4], 0
+01d8c542 jne        0x1d8c550
+01d8c544 call       0x4e0d90
+01d8c549 mov        rcx, qword ptr [rip + 0x26252a8] ; [.data 43b17f8] TypeInfo#37303
+01d8c550 mov        rax, qword ptr [rcx + 0xb8] ; ~_mover
+01d8c557 mov        rdx, qword ptr [rax + 0x40]
+01d8c55b test       rdx, rdx
+01d8c55e je         0x1d8c5e4
+01d8c564 lea        eax, [rbx + rbx]
+01d8c567 cmp        eax, dword ptr [rdx + 0x18]
+01d8c56a jae        0x1d8c5ea
+01d8c56c movsxd     r8, eax
+01d8c56f mov        rax, qword ptr [rcx + 0xb8] ; ~_mover
+01d8c576 add        r8, 2
+01d8c57a add        r8, r8
+01d8c57d mov        rcx, qword ptr [rax + 0x40]
+01d8c581 lea        eax, [rbx + rbx]
+01d8c584 movsxd     r9, eax
+01d8c587 inc        eax
+01d8c589 cmp        eax, dword ptr [rcx + 0x18]
+01d8c58c jae        0x1d8c5ea
+01d8c58e movups     xmm1, xmmword ptr [rdx + r8*8]
+01d8c593 lea        rax, [r9 + 3]
+01d8c597 mov        qword ptr [rsp + 0x20], 0
+01d8c5a0 add        rax, rax
+01d8c5a3 lea        r8, [rsp + 0x30]
+01d8c5a8 movaps     xmm3, xmm6
+01d8c5ab movaps     xmmword ptr [rsp + 0x40], xmm1
+01d8c5b0 lea        rdx, [rsp + 0x40]
+01d8c5b5 movups     xmm0, xmmword ptr [rcx + rax*8]
+01d8c5b9 lea        rcx, [rsp + 0x50]
+01d8c5be movaps     xmmword ptr [rsp + 0x30], xmm0
+01d8c5c3 call       0x304ddc0 ; UnityEngine.Quaternion::Internal_Slerp(UnityEngine.Quaternion&,UnityEngine.Quaternion&,System.Single)
+01d8c5c8 mov        rbx, qword ptr [rsp + 0x80]
+01d8c5d0 movaps     xmm6, xmmword ptr [rsp + 0x60]
+01d8c5d5 movups     xmm0, xmmword ptr [rax]
+01d8c5d8 mov        rax, rdi
+01d8c5db movups     xmmword ptr [rdi], xmm0
+01d8c5de add        rsp, 0x70
+01d8c5e2 pop        rdi
+01d8c5e3 ret        
+01d8c5e4 call       0x4e0d00
+01d8c5e9 int3       
+01d8c5ea call       0x4e0cf0

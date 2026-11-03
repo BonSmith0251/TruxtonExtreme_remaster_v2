@@ -1,0 +1,321 @@
+#### InGame.Kernel.Enemy.PawnEnemy::_callDeadEffect() RVA 1d10e20 len 5d7
+01d10e20  push     rbp
+01d10e22  push     rbx
+01d10e23  push     rdi
+01d10e24  lea      rbp, [rsp - 0x47]
+01d10e29  sub      rsp, 0xc0
+01d10e30  cmp      byte ptr [rip + 0x29525e3], 0   ; [466341a] bss
+01d10e37  mov      rbx, rcx
+01d10e3a  jne      0x1d10e7f
+01d10e3c  lea      rcx, [rip + 0x265a13d]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01d10e43  call     0x4e0a50
+01d10e48  lea      rcx, [rip + 0x26a71b1]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d10e4f  call     0x4e0a50
+01d10e54  lea      rcx, [rip + 0x266d045]   ; [437dea0] TypeInfo UnityEngine.Object
+01d10e5b  call     0x4e0a50
+01d10e60  lea      rcx, [rip + 0x2671af9]   ; [4382960] TypeInfo InGame.Kernel.Enemy.PawnEnemy
+01d10e67  call     0x4e0a50
+01d10e6c  lea      rcx, [rip + 0x26914f5]   ; [43a2368] TypeInfo TXEKernel.Sound.SoundUtility
+01d10e73  call     0x4e0a50
+01d10e78  mov      byte ptr [rip + 0x295259b], 1   ; [466341a] bss
+01d10e7f  mov      rax, qword ptr [rip + 0x26a717a]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d10e86  mov      rax, qword ptr [rax + 0x20]   ; .trot
+01d10e8a  test     byte ptr [rax + 0x135], 1
+01d10e91  jne      0x1d10e9b
+01d10e93  mov      rcx, rax
+01d10e96  call     0x4de1e0
+01d10e9b  mov      rax, qword ptr [rax + 0xc0]   ; ._burnShake
+01d10ea2  mov      rax, qword ptr [rax + 0x10]
+01d10ea6  test     byte ptr [rax + 0x135], 1
+01d10ead  jne      0x1d10eb7
+01d10eaf  mov      rcx, rax
+01d10eb2  call     0x4de1e0
+01d10eb7  mov      rax, qword ptr [rax + 0xb8]   ; ._mover
+01d10ebe  mov      rdx, qword ptr [rbx + 0x50]   ; .<>u__2
+01d10ec2  mov      qword ptr [rsp + 0xe8], rsi   ; ._deadExplosionHash
+01d10eca  mov      qword ptr [rsp + 0xb8], r12   ; ._mover
+01d10ed2  mov      rdi, qword ptr [rax]
+01d10ed5  mov      qword ptr [rsp + 0xb0], r13   ; ._updateEventCount
+01d10edd  mov      qword ptr [rsp + 0xa8], r14   ; ._updateEvents
+01d10ee5  mov      qword ptr [rsp + 0xa0], r15   ; .PoolEvent
+01d10eed  movaps   xmmword ptr [rsp + 0x90], xmm6   ; ._priority
+01d10ef5  movaps   xmmword ptr [rsp + 0x80], xmm7
+01d10efd  movaps   xmmword ptr [rsp + 0x70], xmm8
+01d10f03  test     rdx, rdx
+01d10f06  je       0x1d113f2
+01d10f0c  movsd    xmm0, qword ptr [rbx + 0x15c]   ; ._explosionOffset
+01d10f14  lea      r8, [rbp - 0x29]
+01d10f18  mov      eax, dword ptr [rbx + 0x164]
+01d10f1e  lea      rcx, [rbp - 0x19]
+01d10f22  xor      r9d, r9d
+01d10f25  movsd    qword ptr [rbp - 0x29], xmm0
+01d10f2a  mov      dword ptr [rbp - 0x21], eax
+01d10f2d  call     0x3091f10   ; Transform::TransformPoint(UnityEngine.Vector3)
+01d10f32  cmp      dword ptr [rbx + 0xe8], -1   ; ._deadExplosionHash
+01d10f39  mov      r14d, dword ptr [rax + 8]
+01d10f3d  movsd    xmm8, qword ptr [rax]
+01d10f42  movaps   xmm7, xmm8
+01d10f46  mov      dword ptr [rbp + 0x77], r14d
+01d10f4a  mov      dword ptr [rbp + 0x67], r14d
+01d10f4e  je       0x1d11111
+01d10f54  mov      rdx, qword ptr [rbx]
+01d10f57  mov      rcx, rbx
+01d10f5a  mov      rax, qword ptr [rdx + 0x238]   ; vcall InGame.Kernel.Enemy.PawnEnemy::IsGround
+01d10f61  mov      rdx, qword ptr [rdx + 0x240]   ; vcall InGame.Kernel.Enemy.PawnEnemy::IsGround
+01d10f68  call     rax
+01d10f6a  test     al, al
+01d10f6c  jne      0x1d10fc3
+01d10f6e  test     rdi, rdi
+01d10f71  je       0x1d113f2
+01d10f77  mov      rdx, qword ptr [rdi + 0x98]   ; ._invincibleTime
+01d10f7e  test     rdx, rdx
+01d10f81  je       0x1d113f2
+01d10f87  xor      r9d, r9d
+01d10f8a  movsd    qword ptr [rbp - 0x29], xmm8
+01d10f90  lea      r8, [rbp - 0x29]
+01d10f94  mov      dword ptr [rbp - 0x21], r14d
+01d10f98  lea      rcx, [rbp - 0x19]
+01d10f9c  call     0x308ea00   ; Transform::InverseTransformPoint(UnityEngine.Vector3)
+01d10fa1  mov      rdx, qword ptr [rbx]
+01d10fa4  mov      rcx, rbx
+01d10fa7  movsd    xmm7, qword ptr [rax]
+01d10fab  mov      eax, dword ptr [rax + 8]
+01d10fae  mov      dword ptr [rbp + 0x67], eax
+01d10fb1  mov      rax, qword ptr [rdx + 0x238]   ; vcall InGame.Kernel.Enemy.PawnEnemy::IsGround
+01d10fb8  mov      rdx, qword ptr [rdx + 0x240]   ; vcall InGame.Kernel.Enemy.PawnEnemy::IsGround
+01d10fbf  call     rax
+01d10fc1  jmp      0x1d10fe2
+01d10fc3  mov      rdx, qword ptr [rbx]
+01d10fc6  mov      rcx, rbx
+01d10fc9  mov      rax, qword ptr [rdx + 0x238]   ; vcall InGame.Kernel.Enemy.PawnEnemy::IsGround
+01d10fd0  mov      rdx, qword ptr [rdx + 0x240]   ; vcall InGame.Kernel.Enemy.PawnEnemy::IsGround
+01d10fd7  call     rax
+01d10fd9  test     rdi, rdi
+01d10fdc  je       0x1d113f2
+01d10fe2  test     al, al
+01d10fe4  je       0x1d10fef
+01d10fe6  mov      r14, qword ptr [rdi + 0x80]
+01d10fed  jmp      0x1d10ff6
+01d10fef  mov      r14, qword ptr [rdi + 0x98]   ; ._invincibleTime
+01d10ff6  mov      rdx, qword ptr [rbx]
+01d10ff9  mov      rcx, rbx
+01d10ffc  mov      rax, qword ptr [rdx + 0x238]   ; vcall InGame.Kernel.Enemy.PawnEnemy::IsGround
+01d11003  mov      rdx, qword ptr [rdx + 0x240]   ; vcall InGame.Kernel.Enemy.PawnEnemy::IsGround
+01d1100a  call     rax
+01d1100c  test     al, al
+01d1100e  je       0x1d1103b
+01d11010  mov      rax, qword ptr [rip + 0x2659f69]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01d11017  cmp      dword ptr [rax + 0xe4], 0
+01d1101e  jne      0x1d1102f
+01d11020  mov      rcx, rax
+01d11023  call     0x4e0d90
+01d11028  mov      rax, qword ptr [rip + 0x2659f51]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01d1102f  mov      rax, qword ptr [rax + 0xb8]
+01d11036  mov      esi, dword ptr [rax + 0x24]   ; static LayerUtility+24
+01d11039  jmp      0x1d11047
+01d1103b  xor      edx, edx
+01d1103d  mov      rcx, rbx
+01d11040  call     0x1ddf470   ; HybridCollisions::GetLayer()
+01d11045  mov      esi, eax
+01d11047  mov      r8, qword ptr [rbx]
+01d1104a  lea      rcx, [rbp - 0x19]
+01d1104e  mov      r15, qword ptr [rdi + 0x108]   ; ._overplayDeadSound
+01d11055  mov      rdx, rbx
+01d11058  mov      r12d, dword ptr [rbx + 0xe8]   ; ._deadExplosionHash
+01d1105f  mov      r9, qword ptr [r8 + 0x598]   ; vcall InGame.Kernel.Enemy.PawnEnemy::GetDifferenceVector
+01d11066  mov      r8, qword ptr [r8 + 0x5a0]   ; vcall InGame.Kernel.Enemy.PawnEnemy::GetDifferenceVector
+01d1106d  call     r9
+01d11070  mov      rdx, qword ptr [rbx]
+01d11073  mov      rcx, rbx
+01d11076  movsd    xmm6, qword ptr [rax]
+01d1107a  mov      r13d, dword ptr [rax + 8]
+01d1107e  mov      rax, qword ptr [rdx + 0x238]   ; vcall InGame.Kernel.Enemy.PawnEnemy::IsGround
+01d11085  mov      rdx, qword ptr [rdx + 0x240]   ; vcall InGame.Kernel.Enemy.PawnEnemy::IsGround
+01d1108c  call     rax
+01d1108e  test     r15, r15
+01d11091  je       0x1d113f2
+01d11097  mov      ecx, dword ptr [rbp + 0x67]
+01d1109a  mov      r9d, esi
+01d1109d  mov      qword ptr [rsp + 0x40], 0   ; .<tpassed>5__2
+01d110a6  mov      r8d, r12d
+01d110a9  mov      byte ptr [rsp + 0x38], 1   ; ._callback
+01d110ae  mov      rdx, r14
+01d110b1  mov      byte ptr [rsp + 0x30], al   ; .tsecond
+01d110b5  lea      rax, [rbp - 0x29]
+01d110b9  mov      qword ptr [rsp + 0x28], rax   ; .isDark
+01d110be  lea      rax, [rbp - 0x19]
+01d110c2  mov      dword ptr [rbp - 0x11], ecx
+01d110c5  mov      rcx, r15
+01d110c8  mov      qword ptr [rsp + 0x20], rax   ; .trot
+01d110cd  movsd    qword ptr [rbp - 0x29], xmm6
+01d110d2  mov      dword ptr [rbp - 0x21], r13d
+01d110d6  movsd    qword ptr [rbp - 0x19], xmm7
+01d110db  call     0x1cd0040   ; InGameEffectManager::ExplosionQue(UnityEngine.Transform,System.Int32,System.Int32,UnityEngine.Vector3,UnityEngine.Vector3,System.Boolean,System.Boolean)
+01d110e0  cmp      dword ptr [rbx + 0x108], -1   ; ._overplayDeadSound
+01d110e7  je       0x1d1110d
+01d110e9  mov      rcx, qword ptr [rip + 0x2691278]   ; [43a2368] TypeInfo TXEKernel.Sound.SoundUtility
+01d110f0  mov      esi, dword ptr [rbx + 0x108]   ; ._overplayDeadSound
+01d110f6  cmp      dword ptr [rcx + 0xe4], 0
+01d110fd  jne      0x1d11104
+01d110ff  call     0x4e0d90
+01d11104  xor      edx, edx
+01d11106  mov      ecx, esi
+01d11108  call     0x2723de0   ; SoundUtility::PlayQue(TXEKernel.Sound.SoundUtility/ID)
+01d1110d  mov      r14d, dword ptr [rbp + 0x77]
+01d11111  cmp      dword ptr [rbx + 0x130], 0x6e   ; ._causeOfDeath
+01d11118  jne      0x1d11127
+01d1111a  cmp      dword ptr [rbx + 0x134], 0   ; ._deathByPno
+01d11121  jl       0x1d113a0
+01d11127  mov      rdx, qword ptr [rbx]
+01d1112a  mov      rcx, rbx
+01d1112d  mov      rax, qword ptr [rdx + 0x238]   ; vcall InGame.Kernel.Enemy.PawnEnemy::IsGround
+01d11134  mov      rdx, qword ptr [rdx + 0x240]   ; vcall InGame.Kernel.Enemy.PawnEnemy::IsGround
+01d1113b  call     rax
+01d1113d  test     rdi, rdi
+01d11140  je       0x1d113f2
+01d11146  movzx    r9d, al
+01d1114a  movsd    qword ptr [rbp - 0x19], xmm8
+01d11150  lea      r8, [rbp - 0x19]
+01d11154  mov      dword ptr [rbp - 0x11], r14d
+01d11158  mov      rdx, rdi
+01d1115b  mov      qword ptr [rsp + 0x20], 0   ; .trot
+01d11164  lea      rcx, [rbp - 0x29]
+01d11168  call     0x1ce6750   ; InGameManager::GetSkyRootPosition(UnityEngine.Vector3,System.Boolean)
+01d1116d  xor      r8d, r8d
+01d11170  lea      rdx, [rbp - 0x19]
+01d11174  mov      rcx, rdi
+01d11177  movsd    xmm6, qword ptr [rax]
+01d1117b  mov      r14d, dword ptr [rax + 8]
+01d1117f  movsd    qword ptr [rbp - 0x19], xmm6
+01d11184  mov      dword ptr [rbp - 0x11], r14d
+01d11188  call     0x1ce7580   ; InGameManager::IsGameArea(UnityEngine.Vector3)
+01d1118d  test     al, al
+01d1118f  je       0x1d113a0
+01d11195  mov      rcx, qword ptr [rip + 0x26717c4]   ; [4382960] TypeInfo InGame.Kernel.Enemy.PawnEnemy
+01d1119c  mov      esi, dword ptr [rbx + 0x130]   ; ._causeOfDeath
+01d111a2  cmp      dword ptr [rcx + 0xe4], 0
+01d111a9  jne      0x1d111b0
+01d111ab  call     0x4e0d90
+01d111b0  cmp      esi, 0x63
+01d111b3  jbe      0x1d111ba
+01d111b5  cmp      esi, 0x6f
+01d111b8  jne      0x1d11206
+01d111ba  mov      rcx, qword ptr [rip + 0x266ccdf]   ; [437dea0] TypeInfo UnityEngine.Object
+01d111c1  mov      rsi, qword ptr [rbx + 0x100]   ; ._deadBulletCache
+01d111c8  cmp      dword ptr [rcx + 0xe4], 0
+01d111cf  jne      0x1d111d6
+01d111d1  call     0x4e0d90
+01d111d6  xor      r8d, r8d
+01d111d9  xor      edx, edx
+01d111db  mov      rcx, rsi
+01d111de  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01d111e3  test     al, al
+01d111e5  je       0x1d11206
+01d111e7  mov      rdx, qword ptr [rbx + 0x100]   ; ._deadBulletCache
+01d111ee  lea      r8, [rbp - 0x19]
+01d111f2  xor      r9d, r9d
+01d111f5  movsd    qword ptr [rbp - 0x19], xmm6
+01d111fa  mov      rcx, rdi
+01d111fd  mov      dword ptr [rbp - 0x11], r14d
+01d11201  call     0x1ce34c0   ; InGameManager::DirectBulletFire(InGame.Kernel.Enemy.BulletTemplate,UnityEngine.Vector3)
+01d11206  cmp      dword ptr [rbx + 0x134], 0   ; ._deathByPno
+01d1120d  jl       0x1d113a0
+01d11213  cmp      byte ptr [rip + 0x29521ff], 0   ; [4663419] bss
+01d1121a  jne      0x1d1122f
+01d1121c  lea      rcx, [rip + 0x26a6ddd]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d11223  call     0x4e0a50
+01d11228  mov      byte ptr [rip + 0x29521ea], 1   ; [4663419] bss
+01d1122f  cmp      byte ptr [rbx + 0x140], 0   ; ._isResultDone
+01d11236  jne      0x1d113a0
+01d1123c  mov      byte ptr [rbx + 0x140], 1   ; ._isResultDone
+01d11243  mov      rax, qword ptr [rip + 0x26a6db6]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d1124a  mov      rax, qword ptr [rax + 0x20]   ; .trot
+01d1124e  test     byte ptr [rax + 0x135], 1
+01d11255  jne      0x1d1125f
+01d11257  mov      rcx, rax
+01d1125a  call     0x4de1e0
+01d1125f  mov      rax, qword ptr [rax + 0xc0]   ; ._burnShake
+01d11266  mov      rax, qword ptr [rax + 0x10]
+01d1126a  test     byte ptr [rax + 0x135], 1
+01d11271  jne      0x1d1127b
+01d11273  mov      rcx, rax
+01d11276  call     0x4de1e0
+01d1127b  cmp      byte ptr [rbx + 0x13f], 0   ; ._isExboostDead
+01d11282  mov      rax, qword ptr [rax + 0xb8]   ; ._mover
+01d11289  mov      rdi, qword ptr [rax]
+01d1128c  jne      0x1d112d9
+01d1128e  cmp      dword ptr [rbx + 0x134], -1   ; ._deathByPno
+01d11295  je       0x1d113a0
+01d1129b  test     rdi, rdi
+01d1129e  je       0x1d113f2
+01d112a4  mov      edx, dword ptr [rbx + 0x134]   ; ._deathByPno
+01d112aa  xor      r8d, r8d
+01d112ad  mov      rcx, rdi
+01d112b0  call     0x1ce5a30   ; InGameManager::GetPlayerControll(System.Int32)
+01d112b5  test     rax, rax
+01d112b8  je       0x1d113f2
+01d112be  movd     xmm1, dword ptr [rbx + 0x110]   ; ._pipilCount
+01d112c6  xor      r8d, r8d
+01d112c9  cvtdq2ps xmm1, xmm1
+01d112cc  mov      rcx, rax
+01d112cf  call     0x1d4a630   ; PlayerControll::PipilCountUp(System.Single)
+01d112d4  jmp      0x1d113a0
+01d112d9  mov      rdx, qword ptr [rbx + 0x50]   ; .<>u__2
+01d112dd  test     rdx, rdx
+01d112e0  je       0x1d113f2
+01d112e6  movsd    xmm0, qword ptr [rbx + 0x15c]   ; ._explosionOffset
+01d112ee  lea      r8, [rbp - 0x19]
+01d112f2  mov      eax, dword ptr [rbx + 0x164]
+01d112f8  lea      rcx, [rbp - 0x29]
+01d112fc  xor      r9d, r9d
+01d112ff  movsd    qword ptr [rbp - 0x19], xmm0
+01d11304  mov      dword ptr [rbp - 0x11], eax
+01d11307  call     0x3091f10   ; Transform::TransformPoint(UnityEngine.Vector3)
+01d1130c  mov      rdx, qword ptr [rbx]
+01d1130f  mov      rcx, rbx
+01d11312  movsd    xmm6, qword ptr [rax]
+01d11316  mov      esi, dword ptr [rax + 8]
+01d11319  mov      rax, qword ptr [rdx + 0x238]   ; vcall InGame.Kernel.Enemy.PawnEnemy::IsGround
+01d11320  mov      rdx, qword ptr [rdx + 0x240]   ; vcall InGame.Kernel.Enemy.PawnEnemy::IsGround
+01d11327  call     rax
+01d11329  test     rdi, rdi
+01d1132c  je       0x1d113f2
+01d11332  movzx    r9d, al
+01d11336  movsd    qword ptr [rbp - 0x19], xmm6
+01d1133b  lea      r8, [rbp - 0x19]
+01d1133f  mov      dword ptr [rbp - 0x11], esi
+01d11342  mov      rdx, rdi
+01d11345  mov      qword ptr [rsp + 0x20], 0   ; .trot
+01d1134e  lea      rcx, [rbp - 0x29]
+01d11352  call     0x1ce6750   ; InGameManager::GetSkyRootPosition(UnityEngine.Vector3,System.Boolean)
+01d11357  mov      rcx, qword ptr [rbx + 0x128]   ; ._recordData
+01d1135e  test     rcx, rcx
+01d11361  je       0x1d113f2
+01d11367  movsd    xmm0, qword ptr [rax]
+01d1136b  lea      rdx, [rbp - 0x19]
+01d1136f  mov      eax, dword ptr [rax + 8]
+01d11372  mov      r9d, dword ptr [rbx + 0x134]   ; ._deathByPno
+01d11379  mov      r8d, dword ptr [rbx + 0x114]   ; ._jewelCount
+01d11380  mov      dword ptr [rbp - 0x11], eax
+01d11383  mov      eax, dword ptr [rcx + 0x50]   ; .<>u__2
+01d11386  mov      rcx, rdi
+01d11389  mov      qword ptr [rsp + 0x28], 0   ; .isDark
+01d11392  movsd    qword ptr [rbp - 0x19], xmm0
+01d11397  mov      dword ptr [rsp + 0x20], eax   ; .trot
+01d1139b  call     0x1ce93b0   ; InGameManager::PipilDrop(UnityEngine.Vector3,System.Int32,System.Int32,TXEKernel.Enemy.EnemySize)
+01d113a0  xor      edx, edx
+01d113a2  mov      rcx, rbx
+01d113a5  movaps   xmm8, xmmword ptr [rsp + 0x70]
+01d113ab  movaps   xmm7, xmmword ptr [rsp + 0x80]
+01d113b3  movaps   xmm6, xmmword ptr [rsp + 0x90]   ; ._priority
+01d113bb  mov      r15, qword ptr [rsp + 0xa0]   ; .PoolEvent
+01d113c3  mov      r14, qword ptr [rsp + 0xa8]   ; ._updateEvents
+01d113cb  mov      r13, qword ptr [rsp + 0xb0]   ; ._updateEventCount
+01d113d3  mov      r12, qword ptr [rsp + 0xb8]   ; ._mover
+01d113db  mov      rsi, qword ptr [rsp + 0xe8]   ; ._deadExplosionHash
+01d113e3  add      rsp, 0xc0
+01d113ea  pop      rdi
+01d113eb  pop      rbx
+01d113ec  pop      rbp
+01d113ed  jmp      0x1ddf2c0   ; HybridCollisions::CollisionFinish()
+01d113f2  call     0x4e0d00

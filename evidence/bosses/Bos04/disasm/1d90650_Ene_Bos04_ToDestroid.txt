@@ -1,0 +1,42 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04::ToDestroid() RVA 1d90650 len 9f
+01d90650 push       rbx
+01d90652 sub        rsp, 0x20
+01d90656 cmp        byte ptr [rip + 0x28d314d], 0 ; [.data 46637aa]
+01d9065d mov        rbx, rcx
+01d90660 jne        0x1d90675
+01d90662 lea        rcx, [rip + 0x261cc37] ; [.data 43ad2a0] TypeInfo#46759
+01d90669 call       0x4e0a50
+01d9066e mov        byte ptr [rip + 0x28d3135], 1 ; [.data 46637aa]
+01d90675 xor        edx, edx
+01d90677 mov        rcx, rbx
+01d9067a call       0x1dbb280 ; InGame.Kernel.Enemy.Ene_BosBase::get_IsTrophy()
+01d9067f test       al, al
+01d90681 je         0x1d906a4
+01d90683 mov        rcx, qword ptr [rip + 0x261cc16] ; [.data 43ad2a0] TypeInfo#46759
+01d9068a cmp        dword ptr [rcx + 0xe4], 0
+01d90691 jne        0x1d90698
+01d90693 call       0x4e0d90
+01d90698 xor        edx, edx
+01d9069a mov        ecx, 5
+01d9069f call       0x2717e50 ; TXEKernel.TXEResident::SetTrophy(TXEKernel.TrophyManager/ID)
+01d906a4 xor        edx, edx
+01d906a6 mov        rcx, rbx
+01d906a9 call       0x1dba790 ; InGame.Kernel.Enemy.Ene_BosBase::StopBossTimer()
+01d906ae mov        rcx, qword ptr [rbx + 0xb8] ; ~_mover
+01d906b5 test       rcx, rcx
+01d906b8 je         0x1d906ea
+01d906ba xor        edx, edx
+01d906bc call       0x1cd9830 ; InGame.Kernel.InGameEnemyMoveBase::DeleteRouteToken()
+01d906c1 xor        edx, edx
+01d906c3 mov        rcx, rbx
+01d906c6 call       0x1d8be20 ; InGame.Kernel.Enemy.Ene_Bos04::DestroyGuardians()
+01d906cb xor        edx, edx
+01d906cd mov        rcx, rbx
+01d906d0 call       0x1d0f520 ; InGame.Kernel.Enemy.PawnEnemy::ReleaseToken()
+01d906d5 xor        r8d, r8d
+01d906d8 mov        edx, 0x64
+01d906dd mov        rcx, rbx
+01d906e0 add        rsp, 0x20
+01d906e4 pop        rbx
+01d906e5 jmp        0x1d901d0 ; InGame.Kernel.Enemy.Ene_Bos04::SetState(InGame.Kernel.Enemy.Ene_Bos04/Boss04State)
+01d906ea call       0x4e0d00

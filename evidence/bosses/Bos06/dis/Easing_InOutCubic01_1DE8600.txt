@@ -1,0 +1,20 @@
+01de8600 movss xmm3, dword ptr [rip + 0x16f85c0] ; rva=34e0bc8 f=0.5 d=0.007812501834
+01de8608 movaps xmm1, xmm0 
+01de860b comiss xmm3, xmm1 
+01de860e ja 0x1de8637 
+01de8610 movss xmm0, dword ptr [rip + 0x16f85b4] ; rva=34e0bcc f=1 d=50.12387842
+01de8618 movaps xmm2, xmm0 
+01de861b subss xmm2, xmm1 
+01de861f addss xmm2, xmm2 
+01de8623 movaps xmm1, xmm2 
+01de8626 mulss xmm1, xmm2 
+01de862a mulss xmm1, xmm2 
+01de862e mulss xmm1, xmm3 
+01de8632 subss xmm0, xmm1 
+01de8636 ret 
+01de8637 addss xmm1, xmm1 
+01de863b movaps xmm0, xmm1 
+01de863e mulss xmm0, xmm1 
+01de8642 mulss xmm0, xmm1 
+01de8646 mulss xmm0, xmm3 
+01de864a ret 

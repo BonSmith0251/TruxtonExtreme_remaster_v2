@@ -1,0 +1,36 @@
+#### InGame.Kernel.InGameResident::GetBltSelecter(System.String) RVA 1d219c0 len 93
+01d219c0  mov      qword ptr [rsp + 8], rbx
+01d219c5  push     rdi
+01d219c6  sub      rsp, 0x20
+01d219ca  cmp      byte ptr [rip + 0x2941b26], 0   ; [46634f7] bss
+01d219d1  mov      rdi, rdx
+01d219d4  mov      rbx, rcx
+01d219d7  jne      0x1d219f8
+01d219d9  lea      rcx, [rip + 0x2662e70]   ; [4384850] MethodRef System.Collections.Generic.Dictionary`2<prime,InGame.Kernel.Enemy.BulletTemplateSelecter>::ContainsKey
+01d219e0  call     0x4e0a50
+01d219e5  lea      rcx, [rip + 0x2662f1c]   ; [4384908] MethodRef System.Collections.Generic.Dictionary`2<prime,InGame.Kernel.Enemy.BulletTemplateSelecter>::get_Item
+01d219ec  call     0x4e0a50
+01d219f1  mov      byte ptr [rip + 0x2941aff], 1   ; [46634f7] bss
+01d219f8  cmp      qword ptr [rbx + 0xb0], 0   ; ._bltSelecters
+01d21a00  je       0x1d21a41
+01d21a02  mov      r8, qword ptr [rip + 0x2662e47]   ; [4384850] MethodRef System.Collections.Generic.Dictionary`2<prime,InGame.Kernel.Enemy.BulletTemplateSelecter>::ContainsKey
+01d21a09  mov      rdx, rdi
+01d21a0c  mov      rcx, qword ptr [rbx + 0xb0]   ; ._bltSelecters
+01d21a13  call     0x1893090
+01d21a18  test     al, al
+01d21a1a  je       0x1d21a41
+01d21a1c  mov      rcx, qword ptr [rbx + 0xb0]   ; ._bltSelecters
+01d21a23  test     rcx, rcx
+01d21a26  je       0x1d21a4e
+01d21a28  mov      r8, qword ptr [rip + 0x2662ed9]   ; [4384908] MethodRef System.Collections.Generic.Dictionary`2<prime,InGame.Kernel.Enemy.BulletTemplateSelecter>::get_Item
+01d21a2f  mov      rdx, rdi
+01d21a32  mov      rbx, qword ptr [rsp + 0x30]   ; ._routeData
+01d21a37  add      rsp, 0x20
+01d21a3b  pop      rdi
+01d21a3c  jmp      0x18b3860
+01d21a41  mov      rbx, qword ptr [rsp + 0x30]   ; ._routeData
+01d21a46  xor      eax, eax
+01d21a48  add      rsp, 0x20
+01d21a4c  pop      rdi
+01d21a4d  ret      
+01d21a4e  call     0x4e0d00

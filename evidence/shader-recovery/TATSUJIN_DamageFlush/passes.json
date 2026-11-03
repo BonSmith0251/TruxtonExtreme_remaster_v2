@@ -1,0 +1,121 @@
+{
+ "name": "TATSUJIN/DamageFlush",
+ "bundle": "ingame_assets_all_8034fdacf783ddd76b81996e259b6efa.bundle",
+ "path_id": "-762619420861747925",
+ "keywordNames": [
+  "STEREO_INSTANCING_ON",
+  "UNITY_SINGLE_PASS_STEREO",
+  "STEREO_MULTIVIEW_ON",
+  "STEREO_CUBEMAP_RENDER_ON"
+ ],
+ "passes": [
+  {
+   "label": "0_0_pass",
+   "name": "",
+   "useName": "",
+   "tags": {
+    "IGNOREPROJECTOR": "true",
+    "RenderType": "Transparent"
+   },
+   "subShaderTags": {
+    "IGNOREPROJECTOR": "true",
+    "RenderType": "Transparent"
+   },
+   "lod": 200,
+   "state": {
+    "blend": [
+     5.0,
+     10.0,
+     5.0,
+     10.0
+    ],
+    "blendOp": [
+     0.0,
+     0.0
+    ],
+    "colMask": 15.0,
+    "zTest": 4.0,
+    "zWrite": 0.0,
+    "culling": 2.0,
+    "offsetFactor": 0.0,
+    "offsetUnits": 0.0,
+    "stencilRef": 0.0,
+    "stencilComp": 8.0,
+    "stencilPass": 0.0,
+    "stencilFail": 0.0,
+    "stencilZFail": 0.0,
+    "stencilReadMask": 255.0,
+    "stencilWriteMask": 255.0
+   },
+   "programs": {
+    "vs": [
+     {
+      "blob": 1,
+      "params": 0,
+      "keywords": []
+     }
+    ],
+    "ps": [
+     {
+      "blob": 3,
+      "params": 2,
+      "keywords": []
+     }
+    ]
+   },
+   "bindings": {
+    "vs": {
+     "constantBuffers": [
+      {
+       "name": "UnityPerDraw",
+       "slot": 0,
+       "size": 176,
+       "members": [
+        {
+         "name": "unity_ObjectToWorld",
+         "offset": 0,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerFrame",
+       "slot": 1,
+       "size": 368,
+       "members": [
+        {
+         "name": "unity_MatrixVP",
+         "offset": 272,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    },
+    "ps": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 48,
+       "members": [
+        {
+         "name": "_Color",
+         "offset": 32,
+         "dim": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    }
+   }
+  }
+ ]
+}

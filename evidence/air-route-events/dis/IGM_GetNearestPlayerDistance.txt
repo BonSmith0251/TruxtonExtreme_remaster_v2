@@ -1,0 +1,50 @@
+#### InGame.Kernel.InGameManager::GetNearestPlayerDistance(UnityEngine.Vector2) RVA 1ce4ae0 len d6
+01ce4ae0  push     rbx
+01ce4ae2  sub      rsp, 0x40
+01ce4ae6  movaps   xmmword ptr [rsp + 0x30], xmm6   ; ._entryFlag
+01ce4aeb  xor      r8d, r8d
+01ce4aee  movaps   xmmword ptr [rsp + 0x20], xmm7   ; ev.value0
+01ce4af3  mov      rbx, rcx
+01ce4af6  mov      qword ptr [rsp + 0x68], rdx   ; ev.flag0/._flagStateFuture
+01ce4afb  call     0x1ce4cb0   ; InGameManager::GetNearestPlayerIndex(UnityEngine.Vector2)
+01ce4b00  xor      r8d, r8d
+01ce4b03  mov      edx, eax
+01ce4b05  mov      rcx, rbx
+01ce4b08  call     0x1ce5bc0   ; InGameManager::GetPlayerScreenPosition(System.Int32)
+01ce4b0d  mov      qword ptr [rsp + 0x50], rax   ; ev.randomFire/._animatorsPlay
+01ce4b12  mov      rax, qword ptr [rbx + 0x130]
+01ce4b19  movss    xmm7, dword ptr [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01ce4b1f  movss    xmm6, dword ptr [rsp + 0x54]   ; ev.randomWait/._particleTimeScale
+01ce4b25  subss    xmm7, dword ptr [rsp + 0x68]   ; ev.flag0/._flagStateFuture
+01ce4b2b  subss    xmm6, dword ptr [rsp + 0x6c]   ; ._flagStateNow
+01ce4b31  test     rax, rax
+01ce4b34  je       0x1ce4bb1
+01ce4b36  cmp      byte ptr [rip + 0x2977959], 0   ; [465c496] bss
+01ce4b3d  mulss    xmm7, dword ptr [rax + 0x90]   ; ._destroyedToken
+01ce4b45  mulss    xmm6, dword ptr [rax + 0x94]
+01ce4b4d  jne      0x1ce4b62
+01ce4b4f  lea      rcx, [rip + 0x268e072]   ; [4372bc8] TypeInfo System.Math
+01ce4b56  call     0x4e0a50
+01ce4b5b  mov      byte ptr [rip + 0x2977934], 1   ; [465c496] bss
+01ce4b62  mov      rcx, qword ptr [rip + 0x268e05f]   ; [4372bc8] TypeInfo System.Math
+01ce4b69  cmp      dword ptr [rcx + 0xe4], 0
+01ce4b70  jne      0x1ce4b77
+01ce4b72  call     0x4e0d90
+01ce4b77  mulss    xmm6, xmm6
+01ce4b7b  xorps    xmm0, xmm0
+01ce4b7e  mulss    xmm7, xmm7
+01ce4b82  addss    xmm6, xmm7
+01ce4b86  cvtps2pd xmm1, xmm6
+01ce4b89  ucomisd  xmm0, xmm1
+01ce4b8d  ja       0x1ce4b95
+01ce4b8f  sqrtpd   xmm0, xmm1
+01ce4b93  jmp      0x1ce4b9d
+01ce4b95  movaps   xmm0, xmm1
+01ce4b98  call     0x5787d0
+01ce4b9d  movaps   xmm6, xmmword ptr [rsp + 0x30]   ; ._entryFlag
+01ce4ba2  movaps   xmm7, xmmword ptr [rsp + 0x20]   ; ev.value0
+01ce4ba7  cvtsd2ss xmm0, xmm0
+01ce4bab  add      rsp, 0x40
+01ce4baf  pop      rbx
+01ce4bb0  ret      
+01ce4bb1  call     0x4e0d00

@@ -1,0 +1,17 @@
+01db9870 sub rsp, 0x28 
+01db9874 cmp byte ptr [rip + 0x28aa000], 0 ; rva=466387b
+01db987b jne 0x1db9890 
+01db987d lea rcx, [rip + 0x25fff8c] ; rva=43b9810
+01db9884 call 0x4e0a50 
+01db9889 mov byte ptr [rip + 0x28a9feb], 1 ; rva=466387b
+01db9890 mov rax, qword ptr [rip + 0x25fff79] ; rva=43b9810
+01db9897 cmp dword ptr [rax + 0xe4], 0 
+01db989e jne 0x1db98af 
+01db98a0 mov rcx, rax 
+01db98a3 call 0x4e0d90 
+01db98a8 mov rax, qword ptr [rip + 0x25fff61] ; rva=43b9810
+01db98af mov rcx, qword ptr [rax + 0xb8] 
+01db98b6 movss xmm0, dword ptr [rcx] 
+01db98ba add rsp, 0x28 
+01db98be ret 
+01db98bf int3 

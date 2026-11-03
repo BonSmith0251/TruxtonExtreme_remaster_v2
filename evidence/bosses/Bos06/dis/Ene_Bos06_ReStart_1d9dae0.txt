@@ -1,0 +1,300 @@
+01d9dae0 push rbx 
+01d9dae2 push rdi 
+01d9dae3 sub rsp, 0x68 
+01d9dae7 cmp byte ptr [rip + 0x28c5d03], 0 ; rva=46637f1
+01d9daee movzx ebx, dl 
+01d9daf1 mov rdi, rcx 
+01d9daf4 jne 0x1d9db39 
+01d9daf6 lea rcx, [rip + 0x262ce73] ; rva=43ca970
+01d9dafd call 0x4e0a50 
+01d9db02 lea rcx, [rip + 0x262d597] ; rva=43cb0a0
+01d9db09 call 0x4e0a50 
+01d9db0e lea rcx, [rip + 0x25edf93] ; rva=438baa8
+01d9db15 call 0x4e0a50 
+01d9db1a lea rcx, [rip + 0x25ee047] ; rva=438bb68
+01d9db21 call 0x4e0a50 
+01d9db26 lea rcx, [rip + 0x2613f9b] ; rva=43b1ac8
+01d9db2d call 0x4e0a50 
+01d9db32 mov byte ptr [rip + 0x28c5cb8], 1 ; rva=46637f1
+01d9db39 mov qword ptr [rsp + 0x80], rbp 
+01d9db41 xor r8d, r8d 
+01d9db44 mov qword ptr [rsp + 0x88], rsi 
+01d9db4c movzx edx, bl 
+01d9db4f mov qword ptr [rsp + 0x90], r12 
+01d9db57 mov rcx, rdi 
+01d9db5a mov qword ptr [rsp + 0x60], r13 
+01d9db5f mov qword ptr [rsp + 0x58], r14 
+01d9db64 mov qword ptr [rsp + 0x50], r15 
+01d9db69 call 0x1dba390 ; Ene_BosBase::ReStart(System.Boolean)
+01d9db6e xor edx, edx 
+01d9db70 mov rcx, rdi 
+01d9db73 call 0x1d0d1b0 ; PawnEnemy::CreateToken()
+01d9db78 mov rax, qword ptr [rdi + 0xb8] 
+01d9db7f test rax, rax 
+01d9db82 je 0x1d9e05e 
+01d9db88 mov byte ptr [rax + 0x191], 1 
+01d9db8f xor r13d, r13d 
+01d9db92 mov rbx, qword ptr [rdi + 0x288] 
+01d9db99 mov dword ptr [rdi + 0x2b0], r13d 
+01d9dba0 mov byte ptr [rdi + 0x2c8], r13b 
+01d9dba7 mov dword ptr [rdi + 0x1ec], r13d 
+01d9dbae mov dword ptr [rdi + 0x2bc], 0x3f000000 
+01d9dbb8 cmp byte ptr [rip + 0x28be89e], r13b ; rva=465c45d
+01d9dbbf jne 0x1d9dbd4 
+01d9dbc1 lea rcx, [rip + 0x2623b10] ; rva=43c16d8
+01d9dbc8 call 0x4e0a50 
+01d9dbcd mov byte ptr [rip + 0x28be889], 1 ; rva=465c45d
+01d9dbd4 mov rax, qword ptr [rip + 0x2623afd] ; rva=43c16d8
+01d9dbdb mov rax, qword ptr [rax + 0xb8] 
+01d9dbe2 test rbx, rbx 
+01d9dbe5 je 0x1d9e05e 
+01d9dbeb movsd xmm0, qword ptr [rax] 
+01d9dbef lea rdx, [rsp + 0x40] 
+01d9dbf4 mov eax, dword ptr [rax + 8] 
+01d9dbf7 xor r8d, r8d 
+01d9dbfa mov rcx, rbx 
+01d9dbfd movsd qword ptr [rsp + 0x40], xmm0 
+01d9dc03 mov dword ptr [rsp + 0x48], eax 
+01d9dc07 call 0x3094570 ; Transform::set_localPosition(UnityEngine.Vector3)
+01d9dc0c cmp byte ptr [rip + 0x28be84e], r13b ; rva=465c461
+01d9dc13 mov rbx, qword ptr [rdi + 0x288] 
+01d9dc1a jne 0x1d9dc2f 
+01d9dc1c lea rcx, [rip + 0x25edd35] ; rva=438b958
+01d9dc23 call 0x4e0a50 
+01d9dc28 mov byte ptr [rip + 0x28be832], 1 ; rva=465c461
+01d9dc2f mov rax, qword ptr [rip + 0x25edd22] ; rva=438b958
+01d9dc36 mov rdx, qword ptr [rax + 0xb8] 
+01d9dc3d test rbx, rbx 
+01d9dc40 je 0x1d9e05e 
+01d9dc46 movups xmm0, xmmword ptr [rdx] 
+01d9dc49 xor r8d, r8d 
+01d9dc4c lea rdx, [rsp + 0x40] 
+01d9dc51 mov rcx, rbx 
+01d9dc54 movaps xmmword ptr [rsp + 0x40], xmm0 
+01d9dc59 call 0x3094650 ; Transform::set_localRotation(UnityEngine.Quaternion)
+01d9dc5e cmp byte ptr [rip + 0x28be7f8], r13b ; rva=465c45d
+01d9dc65 mov rbx, qword ptr [rdi + 0x290] 
+01d9dc6c jne 0x1d9dc81 
+01d9dc6e lea rcx, [rip + 0x2623a63] ; rva=43c16d8
+01d9dc75 call 0x4e0a50 
+01d9dc7a mov byte ptr [rip + 0x28be7dc], 1 ; rva=465c45d
+01d9dc81 mov rax, qword ptr [rip + 0x2623a50] ; rva=43c16d8
+01d9dc88 mov rax, qword ptr [rax + 0xb8] 
+01d9dc8f test rbx, rbx 
+01d9dc92 je 0x1d9e05e 
+01d9dc98 movsd xmm0, qword ptr [rax] 
+01d9dc9c lea rdx, [rsp + 0x40] 
+01d9dca1 mov eax, dword ptr [rax + 8] 
+01d9dca4 xor r8d, r8d 
+01d9dca7 mov rcx, rbx 
+01d9dcaa movsd qword ptr [rsp + 0x40], xmm0 
+01d9dcb0 mov dword ptr [rsp + 0x48], eax 
+01d9dcb4 call 0x3094570 ; Transform::set_localPosition(UnityEngine.Vector3)
+01d9dcb9 cmp byte ptr [rip + 0x28be7a1], r13b ; rva=465c461
+01d9dcc0 mov rbx, qword ptr [rdi + 0x290] 
+01d9dcc7 jne 0x1d9dcdc 
+01d9dcc9 lea rcx, [rip + 0x25edc88] ; rva=438b958
+01d9dcd0 call 0x4e0a50 
+01d9dcd5 mov byte ptr [rip + 0x28be785], 1 ; rva=465c461
+01d9dcdc mov rax, qword ptr [rip + 0x25edc75] ; rva=438b958
+01d9dce3 mov rcx, qword ptr [rax + 0xb8] 
+01d9dcea test rbx, rbx 
+01d9dced je 0x1d9e05e 
+01d9dcf3 movups xmm0, xmmword ptr [rcx] 
+01d9dcf6 xor r8d, r8d 
+01d9dcf9 lea rdx, [rsp + 0x40] 
+01d9dcfe mov rcx, rbx 
+01d9dd01 movaps xmmword ptr [rsp + 0x40], xmm0 
+01d9dd06 call 0x3094650 ; Transform::set_localRotation(UnityEngine.Quaternion)
+01d9dd0b mov rax, qword ptr [rip + 0x2613db6] ; rva=43b1ac8
+01d9dd12 mov rbx, qword ptr [rdi + 0x298] 
+01d9dd19 cmp dword ptr [rax + 0xe4], r13d 
+01d9dd20 jne 0x1d9dd31 
+01d9dd22 mov rcx, rax 
+01d9dd25 call 0x4e0d90 
+01d9dd2a mov rax, qword ptr [rip + 0x2613d97] ; rva=43b1ac8
+01d9dd31 mov rax, qword ptr [rax + 0xb8] 
+01d9dd38 test rbx, rbx 
+01d9dd3b je 0x1d9e05e 
+01d9dd41 movsd xmm0, qword ptr [rax + 0xc] 
+01d9dd46 lea rdx, [rsp + 0x40] 
+01d9dd4b mov eax, dword ptr [rax + 0x14] 
+01d9dd4e xor r8d, r8d 
+01d9dd51 mov rcx, rbx 
+01d9dd54 movsd qword ptr [rsp + 0x40], xmm0 
+01d9dd5a mov dword ptr [rsp + 0x48], eax 
+01d9dd5e call 0x3094570 ; Transform::set_localPosition(UnityEngine.Vector3)
+01d9dd63 cmp byte ptr [rip + 0x28be6f7], r13b ; rva=465c461
+01d9dd6a mov rbx, qword ptr [rdi + 0x298] 
+01d9dd71 jne 0x1d9dd86 
+01d9dd73 lea rcx, [rip + 0x25edbde] ; rva=438b958
+01d9dd7a call 0x4e0a50 
+01d9dd7f mov byte ptr [rip + 0x28be6db], 1 ; rva=465c461
+01d9dd86 mov rax, qword ptr [rip + 0x25edbcb] ; rva=438b958
+01d9dd8d mov rcx, qword ptr [rax + 0xb8] 
+01d9dd94 test rbx, rbx 
+01d9dd97 je 0x1d9e05e 
+01d9dd9d movups xmm0, xmmword ptr [rcx] 
+01d9dda0 xor r8d, r8d 
+01d9dda3 lea rdx, [rsp + 0x40] 
+01d9dda8 mov rcx, rbx 
+01d9ddab movaps xmmword ptr [rsp + 0x40], xmm0 
+01d9ddb0 call 0x3094650 ; Transform::set_localRotation(UnityEngine.Quaternion)
+01d9ddb5 lea rcx, [rdi + 0x2d0] 
+01d9ddbc mov qword ptr [rdi + 0x2d0], r13 
+01d9ddc3 xor edx, edx 
+01d9ddc5 call 0x4dfd80 
+01d9ddca xor r8d, r8d 
+01d9ddcd mov qword ptr [rdi + 0x2d8], r13 
+01d9ddd4 xorps xmm1, xmm1 
+01d9ddd7 mov rcx, rdi 
+01d9ddda call 0x1d9ad50 ; Ene_Bos06::BatteryMove(System.Single)
+01d9dddf xor r8d, r8d 
+01d9dde2 mov word ptr [rdi + 0x2e0], r13w 
+01d9ddea mov edx, 4 
+01d9ddef mov dword ptr [rdi + 0x2e4], r13d 
+01d9ddf6 mov rcx, rdi 
+01d9ddf9 mov word ptr [rdi + 0x2e8], r13w 
+01d9de01 call 0x1d0da10 ; PawnEnemy::GetParts(System.Int32)
+01d9de06 mov rsi, qword ptr [rdi + 0x2f0] 
+01d9de0d xor edx, edx 
+01d9de0f mov rcx, rdi 
+01d9de12 mov rbp, rax 
+01d9de15 call 0x1d11bc0 ; PawnEnemy::get_CToken()
+01d9de1a mov rcx, qword ptr [rip + 0x262d27f] ; rva=43cb0a0
+01d9de21 mov rbx, rax 
+01d9de24 mov r14, qword ptr [rdi + 0x298] 
+01d9de2b call 0x4e0cb0 
+01d9de30 mov r8, qword ptr [rip + 0x25edd31] ; rva=438bb68
+01d9de37 xor r9d, r9d 
+01d9de3a mov rdx, rdi 
+01d9de3d mov rcx, rax 
+01d9de40 mov r15, rax 
+01d9de43 call 0x1c4c760 
+01d9de48 mov r12, qword ptr [rdi + 0xb8] 
+01d9de4f test rsi, rsi 
+01d9de52 je 0x1d9e05e 
+01d9de58 cmp byte ptr [rip + 0x28c59a3], r13b ; rva=4663802
+01d9de5f jne 0x1d9de80 
+01d9de61 lea rcx, [rip + 0x25f7960] ; rva=43957c8
+01d9de68 call 0x4e0a50 
+01d9de6d lea rcx, [rip + 0x25ca724] ; rva=4368598
+01d9de74 call 0x4e0a50 
+01d9de79 mov byte ptr [rip + 0x28c5982], 1 ; rva=4663802
+01d9de80 lea rcx, [rsi + 0x30] 
+01d9de84 mov qword ptr [rsi + 0x30], r14 
+01d9de88 mov rdx, r14 
+01d9de8b call 0x4dfd80 
+01d9de90 lea rcx, [rsi + 0x38] 
+01d9de94 mov qword ptr [rsi + 0x38], rbp 
+01d9de98 mov rdx, rbp 
+01d9de9b call 0x4dfd80 
+01d9dea0 mov dword ptr [rsi + 0x10], r13d 
+01d9dea4 mov edx, 1 
+01d9dea9 mov rcx, qword ptr [rip + 0x25ca6e8] ; rva=4368598
+01d9deb0 call 0x4dfe00 
+01d9deb5 mov rbp, rax 
+01d9deb8 test rax, rax 
+01d9debb je 0x1d9e05e 
+01d9dec1 cmp dword ptr [rax + 0x18], r13d 
+01d9dec5 jbe 0x1d9e064 
+01d9decb lea rcx, [rax + 0x20] 
+01d9decf mov qword ptr [rax + 0x20], rbx 
+01d9ded3 xor edx, edx 
+01d9ded5 call 0x4dfd80 
+01d9deda mov rcx, qword ptr [rip + 0x25f78e7] ; rva=43957c8
+01d9dee1 cmp dword ptr [rcx + 0xe4], r13d 
+01d9dee8 jne 0x1d9deef 
+01d9deea call 0x4e0d90 
+01d9deef xor edx, edx 
+01d9def1 mov rcx, rbp 
+01d9def4 call 0x20947c0 ; CancellationTokenSource::CreateLinkedTokenSource(System.Threading.CancellationToken[])
+01d9def9 lea rcx, [rsi + 0x40] 
+01d9defd mov qword ptr [rsi + 0x40], rax 
+01d9df01 mov rdx, rax 
+01d9df04 call 0x4dfd80 
+01d9df09 lea rcx, [rsi + 0x48] 
+01d9df0d mov qword ptr [rsi + 0x48], r15 
+01d9df11 mov rdx, r15 
+01d9df14 call 0x4dfd80 
+01d9df19 lea rcx, [rsi + 0x50] 
+01d9df1d mov qword ptr [rsi + 0x50], r12 
+01d9df21 mov rdx, r12 
+01d9df24 call 0x4dfd80 
+01d9df29 mov dword ptr [rsi + 0x28], 2 
+01d9df30 mov rcx, qword ptr [rip + 0x262ca39] ; rva=43ca970
+01d9df37 mov rbx, qword ptr [rdi + 0x2f8] 
+01d9df3e call 0x4e0cb0 
+01d9df43 mov r8, qword ptr [rip + 0x25edb5e] ; rva=438baa8
+01d9df4a xor r9d, r9d 
+01d9df4d mov rdx, rdi 
+01d9df50 mov rcx, rax 
+01d9df53 mov rsi, rax 
+01d9df56 call 0xb0af90 ; RSAManaged/KeyGeneratedEventHandler::.ctor(System.Object,System.IntPtr)
+01d9df5b mov rcx, qword ptr [rdi + 0x270] 
+01d9df62 test rcx, rcx 
+01d9df65 je 0x1d9e05e 
+01d9df6b cmp dword ptr [rcx + 0x18], 6 
+01d9df6f jbe 0x1d9e064 
+01d9df75 cmp dword ptr [rcx + 0x18], 8 
+01d9df79 mov rdx, qword ptr [rcx + 0x50] 
+01d9df7d jbe 0x1d9e064 
+01d9df83 test rbx, rbx 
+01d9df86 je 0x1d9e05e 
+01d9df8c mov rax, qword ptr [rcx + 0x60] 
+01d9df90 mov rcx, rbx 
+01d9df93 mov r9, qword ptr [rdi + 0x278] 
+01d9df9a mov r8, qword ptr [rdi + 0x288] 
+01d9dfa1 mov qword ptr [rsp + 0x30], r13 
+01d9dfa6 mov qword ptr [rsp + 0x28], rax 
+01d9dfab mov qword ptr [rsp + 0x20], rdx 
+01d9dfb0 mov rdx, rsi 
+01d9dfb3 call 0x1d9fb20 ; Ene_Bos06/BatteryMovement::Initialize(System.Action`2<UnityEngine.Transform,UnityEngine.Transform>,UnityEngine.Transform,UnityEngine.Transform,UnityEngine.Transform,UnityEngine.Transform)
+01d9dfb8 mov rcx, qword ptr [rip + 0x262c9b1] ; rva=43ca970
+01d9dfbf mov rbx, qword ptr [rdi + 0x300] 
+01d9dfc6 call 0x4e0cb0 
+01d9dfcb mov r8, qword ptr [rip + 0x25edad6] ; rva=438baa8
+01d9dfd2 xor r9d, r9d 
+01d9dfd5 mov rdx, rdi 
+01d9dfd8 mov rcx, rax 
+01d9dfdb mov rsi, rax 
+01d9dfde call 0xb0af90 ; RSAManaged/KeyGeneratedEventHandler::.ctor(System.Object,System.IntPtr)
+01d9dfe3 mov rcx, qword ptr [rdi + 0x270] 
+01d9dfea test rcx, rcx 
+01d9dfed je 0x1d9e05e 
+01d9dfef cmp dword ptr [rcx + 0x18], 5 
+01d9dff3 jbe 0x1d9e064 
+01d9dff5 cmp dword ptr [rcx + 0x18], 7 
+01d9dff9 mov rdx, qword ptr [rcx + 0x48] 
+01d9dffd jbe 0x1d9e064 
+01d9dfff test rbx, rbx 
+01d9e002 je 0x1d9e05e 
+01d9e004 mov rax, qword ptr [rcx + 0x58] 
+01d9e008 mov rcx, rbx 
+01d9e00b mov r9, qword ptr [rdi + 0x280] 
+01d9e012 mov r8, qword ptr [rdi + 0x290] 
+01d9e019 mov qword ptr [rsp + 0x30], r13 
+01d9e01e mov qword ptr [rsp + 0x28], rax 
+01d9e023 mov qword ptr [rsp + 0x20], rdx 
+01d9e028 mov rdx, rsi 
+01d9e02b call 0x1d9fb20 ; Ene_Bos06/BatteryMovement::Initialize(System.Action`2<UnityEngine.Transform,UnityEngine.Transform>,UnityEngine.Transform,UnityEngine.Transform,UnityEngine.Transform,UnityEngine.Transform)
+01d9e030 mov r15, qword ptr [rsp + 0x50] 
+01d9e035 mov r14, qword ptr [rsp + 0x58] 
+01d9e03a mov r13, qword ptr [rsp + 0x60] 
+01d9e03f mov r12, qword ptr [rsp + 0x90] 
+01d9e047 mov rsi, qword ptr [rsp + 0x88] 
+01d9e04f mov rbp, qword ptr [rsp + 0x80] 
+01d9e057 add rsp, 0x68 
+01d9e05b pop rdi 
+01d9e05c pop rbx 
+01d9e05d ret 
+01d9e05e call 0x4e0d00 
+01d9e063 int3 
+01d9e064 call 0x4e0cf0 
+01d9e069 int3 
+01d9e06a int3 
+01d9e06b int3 
+01d9e06c int3 
+01d9e06d int3 
+01d9e06e int3 
+01d9e06f int3 

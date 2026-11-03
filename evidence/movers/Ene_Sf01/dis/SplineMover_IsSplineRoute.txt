@@ -1,0 +1,8 @@
+#### InGame.Kernel.SplineMover::IsSplineRoute() RVA 1d43d60 len 18
+01d43d60  cmp      qword ptr [rcx + 0x1e8], 0   ; ._routes
+01d43d68  jne      0x1d43d6d
+01d43d6a  xor      al, al
+01d43d6c  ret      
+01d43d6d  cmp      dword ptr [rcx + 0x1f4], 0   ; ._routesIndexMax
+01d43d74  setg     al
+01d43d77  ret      

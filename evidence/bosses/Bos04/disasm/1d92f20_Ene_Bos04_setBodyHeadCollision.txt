@@ -1,0 +1,36 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04::setBodyHeadCollision(System.Boolean) RVA 1d92f20 len 7f
+01d92f20 mov        qword ptr [rsp + 8], rbx
+01d92f25 mov        qword ptr [rsp + 0x10], rsi
+01d92f2a push       rdi
+01d92f2b sub        rsp, 0x20
+01d92f2f movzx      edi, dl
+01d92f32 xor        r8d, r8d
+01d92f35 xor        edx, edx
+01d92f37 mov        rbx, rcx
+01d92f3a call       0x1d0da10 ; InGame.Kernel.Enemy.PawnEnemy::GetParts(System.Int32)
+01d92f3f xor        r8d, r8d
+01d92f42 mov        edx, 2
+01d92f47 mov        rcx, rbx
+01d92f4a mov        rsi, rax
+01d92f4d call       0x1d0da10 ; InGame.Kernel.Enemy.PawnEnemy::GetParts(System.Int32)
+01d92f52 mov        rbx, rax
+01d92f55 test       rsi, rsi
+01d92f58 je         0x1d92f9a
+01d92f5a movzx      r8d, dil
+01d92f5e xor        r9d, r9d
+01d92f61 xor        r8b, 1
+01d92f65 mov        edx, 0x60
+01d92f6a mov        rcx, rsi
+01d92f6d call       0x1d61c30 ; InGame.Kernel.Enemy.EnePartsGroup::ChangeCollisionsAttribute(InGame.Kernel.Enemy.EnemyCollisionAttribute,System.Boolean)
+01d92f72 test       rbx, rbx
+01d92f75 je         0x1d92f9a
+01d92f77 xor        r9d, r9d
+01d92f7a movzx      r8d, dil
+01d92f7e mov        edx, 0x60
+01d92f83 mov        rcx, rbx
+01d92f86 mov        rbx, qword ptr [rsp + 0x30]
+01d92f8b mov        rsi, qword ptr [rsp + 0x38]
+01d92f90 add        rsp, 0x20
+01d92f94 pop        rdi
+01d92f95 jmp        0x1d61c30 ; InGame.Kernel.Enemy.EnePartsGroup::ChangeCollisionsAttribute(InGame.Kernel.Enemy.EnemyCollisionAttribute,System.Boolean)
+01d92f9a call       0x4e0d00

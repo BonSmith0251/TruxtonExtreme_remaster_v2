@@ -1,0 +1,82 @@
+#### InGame.Kernel.Enemy.PawnEnemy::UpdateDeadBulletCache() RVA 1d10ba0 len 152
+01d10ba0  push     rbx
+01d10ba2  sub      rsp, 0x20
+01d10ba6  cmp      byte ptr [rip + 0x295285e], 0   ; [466340b] bss
+01d10bad  mov      rbx, rcx
+01d10bb0  jne      0x1d10be9
+01d10bb2  lea      rcx, [rip + 0x26a72df]   ; [43b7e98] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::IsInstanceNull
+01d10bb9  call     0x4e0a50
+01d10bbe  lea      rcx, [rip + 0x26a77bb]   ; [43b8380] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameResident>::get_GetInstance
+01d10bc5  call     0x4e0a50
+01d10bca  lea      rcx, [rip + 0x26a742f]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d10bd1  call     0x4e0a50
+01d10bd6  lea      rcx, [rip + 0x266d2c3]   ; [437dea0] TypeInfo UnityEngine.Object
+01d10bdd  call     0x4e0a50
+01d10be2  mov      byte ptr [rip + 0x2952822], 1   ; [466340b] bss
+01d10be9  mov      rcx, qword ptr [rip + 0x26a72a8]   ; [43b7e98] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::IsInstanceNull
+01d10bf0  call     0xd102f0   ; MonoBehaviourSingleton`1::IsInstanceNull() | SimpleSingleton`1::IsInstanceNull()
+01d10bf5  test     al, al
+01d10bf7  jne      0x1d10ce7
+01d10bfd  mov      qword ptr [rsp + 0x30], rsi   ; .tsecond
+01d10c02  mov      qword ptr [rsp + 0x38], rdi   ; ._callback
+01d10c07  mov      rcx, qword ptr [rbx + 0xf8]   ; ._deadBulletSelecter
+01d10c0e  xor      edx, edx
+01d10c10  mov      rsi, qword ptr [rbx + 0xf0]   ; ._deadBullet
+01d10c17  call     0x1e83800   ; String::IsNullOrEmpty(System.String)
+01d10c1c  test     al, al
+01d10c1e  jne      0x1d10c8d
+01d10c20  mov      rcx, qword ptr [rip + 0x26a7759]   ; [43b8380] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameResident>::get_GetInstance
+01d10c27  call     0x27540
+01d10c2c  test     rax, rax
+01d10c2f  je       0x1d10ced
+01d10c35  mov      rdx, qword ptr [rbx + 0xf8]   ; ._deadBulletSelecter
+01d10c3c  xor      r8d, r8d
+01d10c3f  mov      rcx, rax
+01d10c42  call     0x1d219c0   ; InGameResident::GetBltSelecter(System.String)
+01d10c47  mov      rcx, qword ptr [rip + 0x266d252]   ; [437dea0] TypeInfo UnityEngine.Object
+01d10c4e  mov      rdi, rax
+01d10c51  cmp      dword ptr [rcx + 0xe4], 0
+01d10c58  jne      0x1d10c5f
+01d10c5a  call     0x4e0d90
+01d10c5f  xor      r8d, r8d
+01d10c62  xor      edx, edx
+01d10c64  mov      rcx, rdi
+01d10c67  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01d10c6c  test     al, al
+01d10c6e  je       0x1d10c8d
+01d10c70  xor      ecx, ecx
+01d10c72  call     0x1df1220   ; RandomUtility::Make01()
+01d10c77  test     rdi, rdi
+01d10c7a  je       0x1d10ced
+01d10c7c  xor      r8d, r8d
+01d10c7f  movaps   xmm1, xmm0
+01d10c82  mov      rcx, rdi
+01d10c85  call     0x1d61030   ; BulletTemplateSelecter::GetBT(System.Single)
+01d10c8a  mov      rsi, rax
+01d10c8d  xor      edx, edx
+01d10c8f  mov      rcx, rsi
+01d10c92  call     0x1e83800   ; String::IsNullOrEmpty(System.String)
+01d10c97  test     al, al
+01d10c99  je       0x1d10c9f
+01d10c9b  xor      eax, eax
+01d10c9d  jmp      0x1d10cc7
+01d10c9f  mov      rcx, qword ptr [rip + 0x26a735a]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d10ca6  call     0x27540
+01d10cab  test     rax, rax
+01d10cae  je       0x1d10ced
+01d10cb0  mov      rcx, qword ptr [rax + 0xf0]   ; ._deadBullet
+01d10cb7  test     rcx, rcx
+01d10cba  je       0x1d10ced
+01d10cbc  xor      r8d, r8d
+01d10cbf  mov      rdx, rsi
+01d10cc2  call     0x1ccb7b0   ; InGameBulletManager::GetTemplate(System.String)
+01d10cc7  lea      rcx, [rbx + 0x100]   ; ._deadBulletCache
+01d10cce  mov      qword ptr [rbx + 0x100], rax   ; ._deadBulletCache
+01d10cd5  mov      rdx, rax
+01d10cd8  call     0x4dfd80
+01d10cdd  mov      rdi, qword ptr [rsp + 0x38]   ; ._callback
+01d10ce2  mov      rsi, qword ptr [rsp + 0x30]   ; .tsecond
+01d10ce7  add      rsp, 0x20
+01d10ceb  pop      rbx
+01d10cec  ret      
+01d10ced  call     0x4e0d00

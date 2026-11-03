@@ -1,0 +1,41 @@
+#### InGame.Kernel.SplineMover::SetRouteData(System.String[],UnityEngine.Vector3) RVA 1d44460 len a7
+01d44460  mov      qword ptr [rsp + 8], rbx
+01d44465  mov      qword ptr [rsp + 0x10], rsi   ; ev.eventType
+01d4446a  push     rdi
+01d4446b  sub      rsp, 0x30
+01d4446f  mov      rbx, rcx
+01d44472  mov      qword ptr [rcx + 0x1e8], rdx   ; ._routes
+01d44479  add      rcx, 0x1e8
+01d44480  mov      rdi, r8
+01d44483  mov      rsi, rdx
+01d44486  call     0x4dfd80
+01d4448b  test     rsi, rsi
+01d4448e  je       0x1d44502
+01d44490  mov      eax, dword ptr [rsi + 0x18]   ; ev.repeatDelay
+01d44493  movsd    xmm0, qword ptr [rdi]
+01d44497  mov      rcx, qword ptr [rbx + 0x70]   ; ._transformCache
+01d4449b  mov      dword ptr [rbx + 0x1f4], eax   ; ._routesIndexMax
+01d444a1  mov      eax, dword ptr [rdi + 8]
+01d444a4  movsd    qword ptr [rbx + 0x224], xmm0   ; ._startPosition
+01d444ac  mov      dword ptr [rbx + 0x22c], eax
+01d444b2  mov      dword ptr [rbx + 0x1f0], 0   ; ._routesIndex
+01d444bc  test     rcx, rcx
+01d444bf  je       0x1d44502
+01d444c1  xor      r8d, r8d
+01d444c4  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01d444ca  lea      rdx, [rsp + 0x20]   ; ev.value0
+01d444cf  mov      dword ptr [rsp + 0x28], eax   ; ev.vectorValue
+01d444d3  cmp      byte ptr [rbx + 0x52], r8b   ; ._isEntryGround
+01d444d7  je       0x1d444e0
+01d444d9  call     0x3094950   ; Transform::set_position(UnityEngine.Vector3)
+01d444de  jmp      0x1d444e5
+01d444e0  call     0x3094570   ; Transform::set_localPosition(UnityEngine.Vector3)
+01d444e5  xor      r8d, r8d
+01d444e8  xorps    xmm1, xmm1
+01d444eb  mov      rcx, rbx
+01d444ee  mov      rbx, qword ptr [rsp + 0x40]   ; ._animators
+01d444f3  mov      rsi, qword ptr [rsp + 0x48]   ; .GameObjectCache
+01d444f8  add      rsp, 0x30
+01d444fc  pop      rdi
+01d444fd  jmp      0x1d452d0   ; SplineMover::updateRouteData(System.Single)
+01d44502  call     0x4e0d00

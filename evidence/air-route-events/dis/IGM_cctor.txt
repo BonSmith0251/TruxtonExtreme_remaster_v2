@@ -1,0 +1,390 @@
+#### InGame.Kernel.InGameManager::.cctor() RVA 1cf04e0 len 89e
+01cf04e0  sub      rsp, 0x58
+01cf04e4  cmp      byte ptr [rip + 0x2972ea3], 0   ; [466338e] bss
+01cf04eb  jne      0x1cf05a0
+01cf04f1  lea      rcx, [rip + 0x26e9220]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf04f8  call     0x4e0a50
+01cf04fd  lea      rcx, [rip + 0x26807a4]   ; [4370ca8] TypeInfo UnityEngine.Rect[]
+01cf0504  call     0x4e0a50
+01cf0509  lea      rcx, [rip + 0x2683070]   ; [4373580] TypeInfo prime[]
+01cf0510  call     0x4e0a50
+01cf0515  lea      rcx, [rip + 0x269d1ec]   ; [438d708] str:"item_box_airR"
+01cf051c  call     0x4e0a50
+01cf0521  lea      rcx, [rip + 0x269d2a0]   ; [438d7c8] str:"item_box_airT"
+01cf0528  call     0x4e0a50
+01cf052d  lea      rcx, [rip + 0x2671584]   ; [4361ab8] str:"RushBonus"
+01cf0534  call     0x4e0a50
+01cf0539  lea      rcx, [rip + 0x26781f8]   ; [4368738] str:"Score1000"
+01cf0540  call     0x4e0a50
+01cf0545  lea      rcx, [rip + 0x269d0fc]   ; [438d648] str:"item_box_airL"
+01cf054c  call     0x4e0a50
+01cf0551  lea      rcx, [rip + 0x26e8e90]   ; [43d93e8] str:"InGameTwID"
+01cf0558  call     0x4e0a50
+01cf055d  lea      rcx, [rip + 0x269cc64]   ; [438d1c8] str:"itemCarryDrop00"
+01cf0564  call     0x4e0a50
+01cf0569  lea      rcx, [rip + 0x2678280]   ; [43687f0] str:"Score5000"
+01cf0570  call     0x4e0a50
+01cf0575  lea      rcx, [rip + 0x26d02ac]   ; [43c0828] str:"Pf_Item_Box01"
+01cf057c  call     0x4e0a50
+01cf0581  lea      rcx, [rip + 0x269d000]   ; [438d588] str:"item_box_airB"
+01cf0588  call     0x4e0a50
+01cf058d  lea      rcx, [rip + 0x268c9a4]   ; [437cf38] str:"ItemGet01"
+01cf0594  call     0x4e0a50
+01cf0599  mov      byte ptr [rip + 0x2972dee], 1   ; [466338e] bss
+01cf05a0  mov      rax, qword ptr [rip + 0x26e9171]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf05a7  movdqa   xmm0, xmmword ptr [rip + 0x19026b1]   ; rdata 35f2c60 f=-2,-0.1,4,1 d=-5.238692119e-11
+01cf05af  mov      qword ptr [rsp + 0x50], rbx   ; ev.randomFire/._animatorsPlay
+01cf05b4  movaps   xmmword ptr [rsp + 0x40], xmm6   ; ev.intValue1/._animators
+01cf05b9  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf05c0  movups   xmmword ptr [rcx], xmm0
+01cf05c3  mov      rax, qword ptr [rip + 0x26e914e]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf05ca  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf05d1  mov      rax, qword ptr [rip + 0x26e8e10]   ; [43d93e8] str:"InGameTwID"
+01cf05d8  mov      qword ptr [rcx + 0x10], rax   ; ev.eventType
+01cf05dc  mov      rax, qword ptr [rip + 0x26e9135]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf05e3  mov      rdx, qword ptr [rip + 0x26e8dfe]   ; [43d93e8] str:"InGameTwID"
+01cf05ea  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf05f1  add      rcx, 0x10
+01cf05f5  call     0x4dfd80
+01cf05fa  mov      rax, qword ptr [rip + 0x26e9117]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0601  mov      edx, 5
+01cf0606  movdqa   xmm0, xmmword ptr [rip + 0x1902662]   ; rdata 35f2c70 f=-0.15,-0.05,1.3,1.1 d=-2.046364101e-13
+01cf060e  movdqa   xmm1, xmmword ptr [rip + 0x190266a]   ; rdata 35f2c80 f=-0.15,-0.15,1.3,1.3 d=-1.490117134e-09
+01cf0616  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf061d  movups   xmmword ptr [rcx + 0x18], xmm0   ; ev.repeatDelay
+01cf0621  mov      rax, qword ptr [rip + 0x26e90f0]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0628  movdqa   xmm0, xmmword ptr [rip + 0x1902660]   ; rdata 35f2c90 f=-0.2,-0.2,1.4,1.4 d=-1.341105178e-08
+01cf0630  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0637  movups   xmmword ptr [rcx + 0x28], xmm1   ; ev.vectorValue
+01cf063b  mov      rax, qword ptr [rip + 0x26e90d6]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0642  movdqa   xmm1, xmmword ptr [rip + 0x1902656]   ; rdata 35f2ca0 f=-0.3,-0.3,1.6,1.6 d=-3.814699868e-07
+01cf064a  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0651  movups   xmmword ptr [rcx + 0x38], xmm0   ; ev.stringValue/._psystems
+01cf0655  mov      rax, qword ptr [rip + 0x26e90bc]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf065c  movdqa   xmm0, xmmword ptr [rip + 0x190264c]   ; rdata 35f2cb0 f=-0.5,-0.5,2,2 d=-3.051759984e-05
+01cf0664  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf066b  movups   xmmword ptr [rcx + 0x48], xmm1   ; ev.intValue3/.GameObjectCache
+01cf066f  mov      rax, qword ptr [rip + 0x26e90a2]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0676  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf067d  movups   xmmword ptr [rcx + 0x58], xmm0   ; ev.nameValue/._particleSpeed
+01cf0681  mov      rcx, qword ptr [rip + 0x2680620]   ; [4370ca8] TypeInfo UnityEngine.Rect[]
+01cf0688  call     0x4dfe00
+01cf068d  mov      rcx, qword ptr [rip + 0x26e9084]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0694  mov      rdx, rax
+01cf0697  mov      rax, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cf069e  test     rdx, rdx
+01cf06a1  je       0x1cf0d73
+01cf06a7  cmp      dword ptr [rdx + 0x18], 0   ; ev.repeatDelay
+01cf06ab  jbe      0x1cf0d79
+01cf06b1  movups   xmm0, xmmword ptr [rax + 0x28]   ; ev.vectorValue
+01cf06b5  movups   xmmword ptr [rdx + 0x20], xmm0   ; ev.value0
+01cf06b9  cmp      dword ptr [rdx + 0x18], 1   ; ev.repeatDelay
+01cf06bd  mov      rcx, qword ptr [rip + 0x26e9054]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf06c4  mov      rax, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cf06cb  jbe      0x1cf0d79
+01cf06d1  movups   xmm0, xmmword ptr [rax + 0x38]   ; ev.stringValue/._psystems
+01cf06d5  movups   xmmword ptr [rdx + 0x30], xmm0   ; ._entryFlag
+01cf06d9  cmp      dword ptr [rdx + 0x18], 2   ; ev.repeatDelay
+01cf06dd  mov      rax, qword ptr [rip + 0x26e9034]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf06e4  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf06eb  jbe      0x1cf0d79
+01cf06f1  movups   xmm0, xmmword ptr [rcx + 0x48]   ; ev.intValue3/.GameObjectCache
+01cf06f5  movups   xmmword ptr [rdx + 0x40], xmm0   ; ev.intValue1/._animators
+01cf06f9  cmp      dword ptr [rdx + 0x18], 3   ; ev.repeatDelay
+01cf06fd  mov      rax, qword ptr [rip + 0x26e9014]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0704  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf070b  jbe      0x1cf0d79
+01cf0711  movups   xmm0, xmmword ptr [rcx + 0x58]   ; ev.nameValue/._particleSpeed
+01cf0715  movups   xmmword ptr [rdx + 0x50], xmm0   ; ev.randomFire/._animatorsPlay
+01cf0719  cmp      dword ptr [rdx + 0x18], 4   ; ev.repeatDelay
+01cf071d  mov      rax, qword ptr [rip + 0x26e8ff4]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0724  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf072b  jbe      0x1cf0d79
+01cf0731  movups   xmm0, xmmword ptr [rcx + 0x58]   ; ev.nameValue/._particleSpeed
+01cf0735  movups   xmmword ptr [rdx + 0x60], xmm0   ; ev.subnameValue/._psystemCount
+01cf0739  mov      rax, qword ptr [rip + 0x26e8fd8]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0740  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0747  mov      qword ptr [rcx + 0x68], rdx   ; ev.flag0/._flagStateFuture
+01cf074b  mov      rax, qword ptr [rip + 0x26e8fc6]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0752  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0759  add      rcx, 0x68
+01cf075d  call     0x4dfd80
+01cf0762  mov      rax, qword ptr [rip + 0x26e8faf]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0769  lea      rdx, [rsp + 0x20]   ; ev.value0
+01cf076e  xorps    xmm0, xmm0
+01cf0771  mov      qword ptr [rsp + 0x20], 0x3fc90fdb   ; ev.value0
+01cf077a  xorps    xmm6, xmm6
+01cf077d  mov      dword ptr [rsp + 0x28], 0   ; ev.vectorValue
+01cf0785  xor      r8d, r8d
+01cf0788  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf078f  mov      dword ptr [rcx + 0x70], 0x43c80000   ; ._transformCache
+01cf0796  mov      rcx, qword ptr [rip + 0x26e8f7b]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf079d  mov      rax, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cf07a4  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01cf07a9  movss    xmm1, dword ptr [rax + 0x70]   ; ._transformCache
+01cf07ae  unpcklps xmm0, xmm1
+01cf07b1  movsd    qword ptr [rax + 0x74], xmm0
+01cf07b6  movss    dword ptr [rax + 0x7c], xmm6
+01cf07bb  call     0x304d890   ; Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01cf07c0  xor      r8d, r8d
+01cf07c3  lea      rdx, [rsp + 0x20]   ; ev.value0
+01cf07c8  movups   xmm0, xmmword ptr [rax]
+01cf07cb  mov      rax, qword ptr [rip + 0x26e8f46]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf07d2  mov      qword ptr [rsp + 0x20], 0x3fb96c7d   ; ev.value0
+01cf07db  mov      dword ptr [rsp + 0x28], 0   ; ev.vectorValue
+01cf07e3  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf07ea  movups   xmmword ptr [rcx + 0x80], xmm0   ; ._transformCaches
+01cf07f1  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01cf07f6  call     0x304d890   ; Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01cf07fb  mov      edx, 4
+01cf0800  movups   xmm0, xmmword ptr [rax]
+01cf0803  mov      rax, qword ptr [rip + 0x26e8f0e]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf080a  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0811  movups   xmmword ptr [rcx + 0x90], xmm0   ; ._destroyedToken
+01cf0818  mov      rcx, qword ptr [rip + 0x2682d61]   ; [4373580] TypeInfo prime[]
+01cf081f  call     0x4dfe00
+01cf0824  mov      rbx, rax
+01cf0827  test     rax, rax
+01cf082a  je       0x1cf0d73
+01cf0830  cmp      dword ptr [rax + 0x18], 0   ; ev.repeatDelay
+01cf0834  mov      rdx, qword ptr [rip + 0x269cf8d]   ; [438d7c8] str:"item_box_airT"
+01cf083b  jbe      0x1cf0d79
+01cf0841  lea      rcx, [rax + 0x20]   ; ev.value0
+01cf0845  mov      qword ptr [rax + 0x20], rdx   ; ev.value0
+01cf0849  call     0x4dfd80
+01cf084e  cmp      dword ptr [rbx + 0x18], 1   ; ev.repeatDelay
+01cf0852  mov      rdx, qword ptr [rip + 0x269cd2f]   ; [438d588] str:"item_box_airB"
+01cf0859  jbe      0x1cf0d79
+01cf085f  lea      rcx, [rbx + 0x28]   ; ev.vectorValue
+01cf0863  mov      qword ptr [rbx + 0x28], rdx   ; ev.vectorValue
+01cf0867  call     0x4dfd80
+01cf086c  cmp      dword ptr [rbx + 0x18], 2   ; ev.repeatDelay
+01cf0870  mov      rdx, qword ptr [rip + 0x269cdd1]   ; [438d648] str:"item_box_airL"
+01cf0877  jbe      0x1cf0d79
+01cf087d  lea      rcx, [rbx + 0x30]   ; ._entryFlag
+01cf0881  mov      qword ptr [rbx + 0x30], rdx   ; ._entryFlag
+01cf0885  call     0x4dfd80
+01cf088a  cmp      dword ptr [rbx + 0x18], 3   ; ev.repeatDelay
+01cf088e  mov      rdx, qword ptr [rip + 0x269ce73]   ; [438d708] str:"item_box_airR"
+01cf0895  jbe      0x1cf0d79
+01cf089b  lea      rcx, [rbx + 0x38]   ; ev.stringValue/._psystems
+01cf089f  mov      qword ptr [rbx + 0x38], rdx   ; ev.stringValue/._psystems
+01cf08a3  call     0x4dfd80
+01cf08a8  mov      rax, qword ptr [rip + 0x26e8e69]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf08af  mov      rdx, rbx
+01cf08b2  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf08b9  mov      qword ptr [rcx + 0xa0], rbx   ; ._rotateToken
+01cf08c0  mov      rax, qword ptr [rip + 0x26e8e51]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf08c7  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf08ce  add      rcx, 0xa0
+01cf08d5  call     0x4dfd80
+01cf08da  mov      rax, qword ptr [rip + 0x26e8e37]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf08e1  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf08e8  mov      rax, qword ptr [rip + 0x26cff39]   ; [43c0828] str:"Pf_Item_Box01"
+01cf08ef  mov      qword ptr [rcx + 0xa8], rax   ; ._scaleToken
+01cf08f6  mov      rax, qword ptr [rip + 0x26e8e1b]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf08fd  mov      rdx, qword ptr [rip + 0x26cff24]   ; [43c0828] str:"Pf_Item_Box01"
+01cf0904  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf090b  add      rcx, 0xa8
+01cf0912  call     0x4dfd80
+01cf0917  mov      rcx, qword ptr [rip + 0x2682c62]   ; [4373580] TypeInfo prime[]
+01cf091e  mov      edx, 1
+01cf0923  call     0x4dfe00
+01cf0928  mov      rbx, rax
+01cf092b  test     rax, rax
+01cf092e  je       0x1cf0d73
+01cf0934  cmp      dword ptr [rax + 0x18], 0   ; ev.repeatDelay
+01cf0938  mov      rdx, qword ptr [rip + 0x269c889]   ; [438d1c8] str:"itemCarryDrop00"
+01cf093f  jbe      0x1cf0d79
+01cf0945  lea      rcx, [rax + 0x20]   ; ev.value0
+01cf0949  mov      qword ptr [rax + 0x20], rdx   ; ev.value0
+01cf094d  call     0x4dfd80
+01cf0952  mov      rcx, qword ptr [rip + 0x26e8dbf]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0959  mov      rdx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cf0960  mov      qword ptr [rdx + 0xb0], rbx   ; ._translateToken
+01cf0967  mov      rdx, rbx
+01cf096a  mov      rax, qword ptr [rip + 0x26e8da7]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0971  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0978  add      rcx, 0xb0
+01cf097f  call     0x4dfd80
+01cf0984  mov      rcx, qword ptr [rip + 0x2677e65]   ; [43687f0] str:"Score5000"
+01cf098b  test     rcx, rcx
+01cf098e  je       0x1cf0d73
+01cf0994  mov      rdx, qword ptr [rcx]
+01cf0997  mov      rax, qword ptr [rdx + 0x158]   ; ._wakeAfterSecond
+01cf099e  mov      rdx, qword ptr [rdx + 0x160]   ; ._durationPassTime
+01cf09a5  call     rax
+01cf09a7  mov      rcx, qword ptr [rip + 0x26e8d6a]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf09ae  mov      rdx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cf09b5  mov      dword ptr [rdx + 0xb8], eax   ; ._hormingToken
+01cf09bb  mov      rcx, qword ptr [rip + 0x2677d76]   ; [4368738] str:"Score1000"
+01cf09c2  test     rcx, rcx
+01cf09c5  je       0x1cf0d73
+01cf09cb  mov      rdx, qword ptr [rcx]
+01cf09ce  mov      rax, qword ptr [rdx + 0x158]   ; ._wakeAfterSecond
+01cf09d5  mov      rdx, qword ptr [rdx + 0x160]   ; ._durationPassTime
+01cf09dc  call     rax
+01cf09de  mov      rcx, qword ptr [rip + 0x26e8d33]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf09e5  mov      rdx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cf09ec  mov      dword ptr [rdx + 0xbc], eax
+01cf09f2  mov      rcx, qword ptr [rip + 0x26710bf]   ; [4361ab8] str:"RushBonus"
+01cf09f9  test     rcx, rcx
+01cf09fc  je       0x1cf0d73
+01cf0a02  mov      rdx, qword ptr [rcx]
+01cf0a05  mov      rax, qword ptr [rdx + 0x158]   ; ._wakeAfterSecond
+01cf0a0c  mov      rdx, qword ptr [rdx + 0x160]   ; ._durationPassTime
+01cf0a13  call     rax
+01cf0a15  mov      rcx, qword ptr [rip + 0x26e8cfc]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0a1c  mov      rdx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cf0a23  mov      dword ptr [rdx + 0xc0], eax   ; ._speedToken
+01cf0a29  mov      rcx, qword ptr [rip + 0x268c508]   ; [437cf38] str:"ItemGet01"
+01cf0a30  test     rcx, rcx
+01cf0a33  je       0x1cf0d73
+01cf0a39  mov      rdx, qword ptr [rcx]
+01cf0a3c  mov      rax, qword ptr [rdx + 0x158]   ; ._wakeAfterSecond
+01cf0a43  mov      rdx, qword ptr [rdx + 0x160]   ; ._durationPassTime
+01cf0a4a  call     rax
+01cf0a4c  mov      rcx, qword ptr [rip + 0x26e8cc5]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0a53  xorps    xmm0, xmm0
+01cf0a56  movss    xmm2, dword ptr [rip + 0x19021be]   ; rdata 35f2c1c f=-50,-200,0,0 d=-1.35108054e+16
+01cf0a5e  movss    xmm1, dword ptr [rip + 0x19021ae]   ; rdata 35f2c14 f=-7,-20,-50,-200 d=-134217824.4
+01cf0a66  unpcklps xmm0, xmm6
+01cf0a69  mov      rdx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cf0a70  mov      dword ptr [rdx + 0xc4], eax
+01cf0a76  mov      rax, qword ptr [rip + 0x26e8c9b]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0a7d  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0a84  mov      dword ptr [rcx + 0xc8], 0x41000000   ; ._taskFlag
+01cf0a8e  mov      rax, qword ptr [rip + 0x26e8c83]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0a95  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0a9c  mov      dword ptr [rcx + 0xcc], 0x64
+01cf0aa6  mov      rax, qword ptr [rip + 0x26e8c6b]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0aad  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0ab4  mov      dword ptr [rcx + 0xd0], 2   ; .isEntryedArea
+01cf0abe  mov      rax, qword ptr [rip + 0x26e8c53]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0ac5  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0acc  movsd    qword ptr [rcx + 0xd4], xmm0   ; ._moveType
+01cf0ad4  movss    dword ptr [rcx + 0xdc], xmm2
+01cf0adc  mov      rax, qword ptr [rip + 0x26e8c35]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0ae3  movss    xmm0, dword ptr [rip + 0x190212d]   ; rdata 35f2c18 f=-20,-50,-200,0 d=-2.061585293e+11
+01cf0aeb  unpcklps xmm0, xmm6
+01cf0aee  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0af5  movsd    qword ptr [rcx + 0xe0], xmm0
+01cf0afd  movss    dword ptr [rcx + 0xe8], xmm2   ; ._spline
+01cf0b05  mov      rax, qword ptr [rip + 0x26e8c0c]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0b0c  movss    xmm0, dword ptr [rip + 0x17f00c8]   ; rdata 34e0bdc f=20,57.29578,100,180 d=7.278466204e+11
+01cf0b14  unpcklps xmm0, xmm6
+01cf0b17  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0b1e  movsd    qword ptr [rcx + 0xec], xmm0
+01cf0b26  xorps    xmm0, xmm0
+01cf0b29  movss    dword ptr [rcx + 0xf4], xmm2
+01cf0b31  mov      rax, qword ptr [rip + 0x26e8be0]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0b38  movss    xmm2, dword ptr [rip + 0x1902088]   ; rdata 35f2bc8 f=-100,-1000,0.5,0.5 d=-7.673848961e+21
+01cf0b40  unpcklps xmm0, xmm1
+01cf0b43  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0b4a  movsd    qword ptr [rcx + 0xf8], xmm0   ; ._splineRouteName
+01cf0b52  xorps    xmm0, xmm0
+01cf0b55  movss    dword ptr [rcx + 0x100], xmm6   ; ._routeLutIndex
+01cf0b5d  mov      rax, qword ptr [rip + 0x26e8bb4]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0b64  unpcklps xmm0, xmm6
+01cf0b67  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0b6e  movsd    qword ptr [rcx + 0x104], xmm0   ; ._splineRootPosition
+01cf0b76  xorps    xmm0, xmm0
+01cf0b79  movss    dword ptr [rcx + 0x10c], xmm2
+01cf0b81  mov      rax, qword ptr [rip + 0x26e8b90]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0b88  movss    xmm2, dword ptr [rip + 0x1902068]   ; rdata 35f2bf8 f=200,999,1080,1920 d=7.600059742e+21
+01cf0b90  unpcklps xmm0, xmm6
+01cf0b93  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0b9a  movsd    qword ptr [rcx + 0x110], xmm0   ; ._splineStartPosition
+01cf0ba2  xorps    xmm0, xmm0
+01cf0ba5  movss    dword ptr [rcx + 0x118], xmm2
+01cf0bad  mov      rax, qword ptr [rip + 0x26e8b64]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0bb4  movss    xmm2, dword ptr [rip + 0x17f0010]   ; rdata 34e0bcc f=1,3.141593,4,10 d=50.12387842
+01cf0bbc  unpcklps xmm0, xmm6
+01cf0bbf  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0bc6  movsd    qword ptr [rcx + 0x11c], xmm0   ; ._splineCurrentPosition
+01cf0bce  xorps    xmm0, xmm0
+01cf0bd1  movss    dword ptr [rcx + 0x124], xmm2
+01cf0bd9  mov      rax, qword ptr [rip + 0x26e8b38]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0be0  movss    xmm2, dword ptr [rip + 0x17f000c]   ; rdata 34e0bf4 f=-1,0,0,1 d=1.58735232e-314
+01cf0be8  unpcklps xmm0, xmm6
+01cf0beb  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0bf2  movsd    qword ptr [rcx + 0x128], xmm0   ; ._beforeDirection
+01cf0bfa  movss    dword ptr [rcx + 0x130], xmm2
+01cf0c02  mov      rax, qword ptr [rip + 0x26e8b0f]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0c09  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0c10  mov      dword ptr [rcx + 0x134], 0x42f60000   ; ._currentDirection
+01cf0c1a  mov      rax, qword ptr [rip + 0x26e8af7]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0c21  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0c28  mov      dword ptr [rcx + 0x138], 0x41200000
+01cf0c32  mov      rax, qword ptr [rip + 0x26e8adf]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0c39  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0c40  mov      dword ptr [rcx + 0x13c], 0x42810000
+01cf0c4a  mov      rax, qword ptr [rip + 0x26e8ac7]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0c51  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0c58  mov      rbx, qword ptr [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01cf0c5d  mov      dword ptr [rcx + 0x140], 0x427c0000   ; ._targetPlayerIndex
+01cf0c67  mov      rdx, qword ptr [rip + 0x26e8aaa]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0c6e  mov      rax, qword ptr [rdx + 0xb8]   ; ._hormingToken
+01cf0c75  movss    xmm0, dword ptr [rax + 0x140]   ; ._targetPlayerIndex
+01cf0c7d  addss    xmm0, dword ptr [rax + 0x13c]
+01cf0c85  movss    dword ptr [rax + 0x144], xmm0   ; ._intValue1
+01cf0c8d  mov      rcx, qword ptr [rip + 0x26e8a84]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0c94  mov      rax, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cf0c9b  movss    xmm1, dword ptr [rax + 0x134]   ; ._currentDirection
+01cf0ca3  movss    xmm2, dword ptr [rax + 0x13c]
+01cf0cab  xorps    xmm1, xmmword ptr [rip + 0x17eff5e]   ; rdata 34e0c10 f=-0,-0,-0,-0 d=-1.060997895e-314
+01cf0cb2  xorps    xmm2, xmmword ptr [rip + 0x17eff57]   ; rdata 34e0c10 f=-0,-0,-0,-0 d=-1.060997895e-314
+01cf0cb9  unpcklps xmm1, xmm6
+01cf0cbc  movsd    qword ptr [rax + 0x148], xmm1   ; ._moveValue0
+01cf0cc4  movdqa   xmm1, xmmword ptr [rip + 0x1901f74]   ; rdata 35f2c40 f=0.05,0.05,0.9,0.85 d=2.046363555e-13
+01cf0ccc  movss    dword ptr [rax + 0x150], xmm2   ; ._localDuration
+01cf0cd4  mov      rdx, qword ptr [rip + 0x26e8a3d]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0cdb  mov      rax, qword ptr [rdx + 0xb8]   ; ._hormingToken
+01cf0ce2  movss    xmm0, dword ptr [rax + 0x134]   ; ._currentDirection
+01cf0cea  movss    xmm2, dword ptr [rax + 0x140]   ; ._targetPlayerIndex
+01cf0cf2  unpcklps xmm0, xmm6
+01cf0cf5  movaps   xmm6, xmmword ptr [rsp + 0x40]   ; ev.intValue1/._animators
+01cf0cfa  movsd    qword ptr [rax + 0x154], xmm0   ; ._homingDuration
+01cf0d02  movdqa   xmm0, xmmword ptr [rip + 0x1901f26]   ; rdata 35f2c30 f=0.05,0.05,0.9,0.75 d=2.046363555e-13
+01cf0d0a  movss    dword ptr [rax + 0x15c], xmm2   ; ._durationTime
+01cf0d12  mov      rax, qword ptr [rip + 0x26e89ff]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0d19  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0d20  movups   xmmword ptr [rcx + 0x160], xmm0   ; ._durationPassTime
+01cf0d27  mov      rax, qword ptr [rip + 0x26e89ea]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0d2e  movdqa   xmm0, xmmword ptr [rip + 0x1901f1a]   ; rdata 35f2c50 f=0.05,0.05,0.9,0.95 d=2.046363555e-13
+01cf0d36  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0d3d  movups   xmmword ptr [rcx + 0x170], xmm1   ; ._firstRotate
+01cf0d44  mov      rax, qword ptr [rip + 0x26e89cd]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0d4b  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0d52  movups   xmmword ptr [rcx + 0x180], xmm0   ; ._lastDir
+01cf0d59  mov      rax, qword ptr [rip + 0x26e89b8]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf0d60  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cf0d67  movups   xmmword ptr [rcx + 0x190], xmm0   ; ._isSmooth
+01cf0d6e  add      rsp, 0x58
+01cf0d72  ret      
+01cf0d73  call     0x4e0d00
+01cf0d78  int3     
+01cf0d79  call     0x4e0cf0
+#### InGame.Kernel.InGameManager/<>c::.cctor() RVA 1d2c0a0 len 67
+01d2c0a0  push     rbx
+01d2c0a2  sub      rsp, 0x20
+01d2c0a6  cmp      byte ptr [rip + 0x29373de], 0   ; [466348b] bss
+01d2c0ad  jne      0x1d2c0c2
+01d2c0af  lea      rcx, [rip + 0x266c80a]   ; [43988c0] TypeInfo .<>c
+01d2c0b6  call     0x4e0a50
+01d2c0bb  mov      byte ptr [rip + 0x29373c9], 1   ; [466348b] bss
+01d2c0c2  mov      rcx, qword ptr [rip + 0x266c7f7]   ; [43988c0] TypeInfo .<>c
+01d2c0c9  call     0x4e0cb0
+01d2c0ce  xor      edx, edx
+01d2c0d0  mov      rcx, rax
+01d2c0d3  mov      rbx, rax
+01d2c0d6  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01d2c0db  mov      rcx, qword ptr [rip + 0x266c7de]   ; [43988c0] TypeInfo .<>c
+01d2c0e2  mov      rdx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01d2c0e9  mov      qword ptr [rdx], rbx
+01d2c0ec  mov      rdx, rbx
+01d2c0ef  mov      rcx, qword ptr [rip + 0x266c7ca]   ; [43988c0] TypeInfo .<>c
+01d2c0f6  mov      rcx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01d2c0fd  add      rsp, 0x20
+01d2c101  pop      rbx
+01d2c102  jmp      0x4dfd80

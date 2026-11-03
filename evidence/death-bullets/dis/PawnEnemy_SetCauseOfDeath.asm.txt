@@ -1,0 +1,7 @@
+#### InGame.Kernel.Enemy.PawnEnemy::SetCauseOfDeath(System.Int32,TXEKernel.TXEKernelHybridCollisions/attackType,System.Boolean) RVA 1d0f680 len 1e
+01d0f680  cmp      dword ptr [rcx + 0x130], -1   ; ._causeOfDeath
+01d0f687  jne      0x1d0f69d
+01d0f689  mov      dword ptr [rcx + 0x130], r8d   ; ._causeOfDeath
+01d0f690  mov      dword ptr [rcx + 0x134], edx   ; ._deathByPno
+01d0f696  mov      byte ptr [rcx + 0x13f], r9b   ; ._isExboostDead
+01d0f69d  ret      

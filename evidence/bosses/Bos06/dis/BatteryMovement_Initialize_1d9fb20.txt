@@ -1,0 +1,105 @@
+01d9fb20 push rsi 
+01d9fb22 sub rsp, 0x60 
+01d9fb26 movaps xmmword ptr [rsp + 0x50], xmm6 
+01d9fb2b mov rsi, rcx 
+01d9fb2e mov qword ptr [rsp + 0x70], rbx 
+01d9fb33 xorps xmm0, xmm0 
+01d9fb36 mov qword ptr [rcx + 0x48], rdx 
+01d9fb3a mov rbx, r8 
+01d9fb3d mov qword ptr [rsp + 0x78], rdi 
+01d9fb42 add rcx, 0x48 
+01d9fb46 mov rdi, r9 
+01d9fb49 movups xmmword ptr [rsp + 0x40], xmm0 
+01d9fb4e call 0x4dfd80 
+01d9fb53 lea rcx, [rsi + 0x28] 
+01d9fb57 mov qword ptr [rsi + 0x28], rbx 
+01d9fb5b mov rdx, rbx 
+01d9fb5e call 0x4dfd80 
+01d9fb63 lea rcx, [rsi + 0x30] 
+01d9fb67 mov qword ptr [rsi + 0x30], rdi 
+01d9fb6b mov rdx, rdi 
+01d9fb6e call 0x4dfd80 
+01d9fb73 mov rdx, qword ptr [rsp + 0x90] 
+01d9fb7b lea rcx, [rsi + 0x38] 
+01d9fb7f mov qword ptr [rsi + 0x38], rdx 
+01d9fb83 call 0x4dfd80 
+01d9fb88 mov rdx, qword ptr [rsp + 0x98] 
+01d9fb90 lea rcx, [rsi + 0x40] 
+01d9fb94 mov qword ptr [rsi + 0x40], rdx 
+01d9fb98 call 0x4dfd80 
+01d9fb9d mov rdx, qword ptr [rsi + 0x30] 
+01d9fba1 mov rdi, qword ptr [rsp + 0x78] 
+01d9fba6 mov rbx, qword ptr [rsp + 0x70] 
+01d9fbab mov byte ptr [rsi + 0x10], 0 
+01d9fbaf test rdx, rdx 
+01d9fbb2 je 0x1d9fcd9 
+01d9fbb8 xor r8d, r8d 
+01d9fbbb lea rcx, [rsp + 0x30] 
+01d9fbc0 call 0x3093da0 ; Transform::get_rotation()
+01d9fbc5 xor r8d, r8d 
+01d9fbc8 lea rdx, [rsp + 0x40] 
+01d9fbcd lea rcx, [rsp + 0x20] 
+01d9fbd2 movups xmm0, xmmword ptr [rax] 
+01d9fbd5 movups xmmword ptr [rsp + 0x40], xmm0 
+01d9fbda call 0x304dee0 ; Quaternion::Internal_ToEulerRad(UnityEngine.Quaternion&)
+01d9fbdf movss xmm6, dword ptr [rip + 0x1740ff9] ; rva=34e0be0 f=57.29578
+01d9fbe7 lea rdx, [rsp + 0x20] 
+01d9fbec xor r8d, r8d 
+01d9fbef lea rcx, [rsp + 0x30] 
+01d9fbf4 movsd xmm0, qword ptr [rax] 
+01d9fbf8 movss xmm1, dword ptr [rax + 8] 
+01d9fbfd movaps xmm3, xmm0 
+01d9fc00 movaps xmm2, xmm0 
+01d9fc03 mulss xmm3, xmm6 
+01d9fc07 shufps xmm2, xmm2, 0x55 
+01d9fc0b mulss xmm2, xmm6 
+01d9fc0f mulss xmm1, xmm6 
+01d9fc13 unpcklps xmm3, xmm2 
+01d9fc16 movsd qword ptr [rsp + 0x20], xmm3 
+01d9fc1c movss dword ptr [rsp + 0x28], xmm1 
+01d9fc22 movsd qword ptr [rsp + 0x30], xmm0 
+01d9fc28 call 0x304dbe0 ; Quaternion::Internal_MakePositive(UnityEngine.Vector3)
+01d9fc2d mov rdx, qword ptr [rsi + 0x30] 
+01d9fc31 movsd xmm1, qword ptr [rax] 
+01d9fc35 mov eax, dword ptr [rax + 8] 
+01d9fc38 movaps xmm0, xmm1 
+01d9fc3b shufps xmm0, xmm0, 0x55 
+01d9fc3f movss dword ptr [rsi + 0x18], xmm0 
+01d9fc44 mov dword ptr [rsp + 0x28], eax 
+01d9fc48 movsd qword ptr [rsp + 0x20], xmm1 
+01d9fc4e test rdx, rdx 
+01d9fc51 je 0x1d9fcd9 
+01d9fc57 xor r8d, r8d 
+01d9fc5a lea rcx, [rsp + 0x30] 
+01d9fc5f call 0x3093da0 ; Transform::get_rotation()
+01d9fc64 xor r8d, r8d 
+01d9fc67 lea rdx, [rsp + 0x40] 
+01d9fc6c lea rcx, [rsp + 0x30] 
+01d9fc71 movups xmm0, xmmword ptr [rax] 
+01d9fc74 movups xmmword ptr [rsp + 0x40], xmm0 
+01d9fc79 call 0x304dee0 ; Quaternion::Internal_ToEulerRad(UnityEngine.Quaternion&)
+01d9fc7e xor r8d, r8d 
+01d9fc81 lea rdx, [rsp + 0x20] 
+01d9fc86 lea rcx, [rsp + 0x30] 
+01d9fc8b movsd xmm0, qword ptr [rax] 
+01d9fc8f movss xmm1, dword ptr [rax + 8] 
+01d9fc94 movaps xmm3, xmm0 
+01d9fc97 movaps xmm2, xmm0 
+01d9fc9a mulss xmm3, xmm6 
+01d9fc9e shufps xmm2, xmm2, 0x55 
+01d9fca2 mulss xmm2, xmm6 
+01d9fca6 mulss xmm1, xmm6 
+01d9fcaa unpcklps xmm3, xmm2 
+01d9fcad movsd qword ptr [rsp + 0x20], xmm0 
+01d9fcb3 movsd qword ptr [rsp + 0x20], xmm3 
+01d9fcb9 movss dword ptr [rsp + 0x28], xmm1 
+01d9fcbf call 0x304dbe0 ; Quaternion::Internal_MakePositive(UnityEngine.Vector3)
+01d9fcc4 movaps xmm6, xmmword ptr [rsp + 0x50] 
+01d9fcc9 movss xmm0, dword ptr [rax + 4] 
+01d9fcce movss dword ptr [rsi + 0x1c], xmm0 
+01d9fcd3 add rsp, 0x60 
+01d9fcd7 pop rsi 
+01d9fcd8 ret 
+01d9fcd9 call 0x4e0d00 
+01d9fcde int3 
+01d9fcdf int3 

@@ -1,0 +1,24 @@
+#### InGame.Kernel.Enemy.Ene_Sg01::.cctor() RVA 1cfee20 len 8d
+01cfee20  sub      rsp, 0x28
+01cfee24  cmp      byte ptr [rip + 0x296458c], 0   ; [46633b7] bss
+01cfee2b  jne      0x1cfee40
+01cfee2d  lea      rcx, [rip + 0x26b3d6c]   ; [43b2ba0] TypeInfo InGame.Kernel.Enemy.Ene_Sg01
+01cfee34  call     0x4e0a50
+01cfee39  mov      byte ptr [rip + 0x2964577], 1   ; [46633b7] bss
+01cfee40  mov      rax, qword ptr [rip + 0x26b3d59]   ; [43b2ba0] TypeInfo InGame.Kernel.Enemy.Ene_Sg01
+01cfee47  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cfee4e  mov      dword ptr [rcx], 0x42480000
+01cfee54  mov      rax, qword ptr [rip + 0x26b3d45]   ; [43b2ba0] TypeInfo InGame.Kernel.Enemy.Ene_Sg01
+01cfee5b  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cfee62  mov      dword ptr [rcx + 4], 0x44160000
+01cfee69  mov      rax, qword ptr [rip + 0x26b3d30]   ; [43b2ba0] TypeInfo InGame.Kernel.Enemy.Ene_Sg01
+01cfee70  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cfee77  mov      dword ptr [rcx + 8], 0x41200000
+01cfee7e  mov      rax, qword ptr [rip + 0x26b3d1b]   ; [43b2ba0] TypeInfo InGame.Kernel.Enemy.Ene_Sg01
+01cfee85  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cfee8c  mov      dword ptr [rcx + 0xc], 0x41a00000
+01cfee93  mov      rax, qword ptr [rip + 0x26b3d06]   ; [43b2ba0] TypeInfo InGame.Kernel.Enemy.Ene_Sg01
+01cfee9a  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cfeea1  mov      dword ptr [rcx + 0x10], 0x42700000   ; ev.eventType
+01cfeea8  add      rsp, 0x28
+01cfeeac  ret      

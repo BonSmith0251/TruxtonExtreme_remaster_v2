@@ -1,0 +1,20 @@
+== System.Void InGame.Kernel.Enemy.Ene_BosBase::ChangeColorMode(System.Boolean,UnityEngine.Color,System.Single,System.Single) RVA 1db92c0 len 5a
+01db92c0 sub        rsp, 0x68
+01db92c4 movups     xmm0, xmmword ptr [r8]
+01db92c8 lea        r9, [rsp + 0x40]
+01db92cd movzx      r8d, dl
+01db92d1 movss      xmm1, dword ptr [rsp + 0x90] ; ~_priority
+01db92da mov        rdx, rcx
+01db92dd mov        qword ptr [rsp + 0x30], 0
+01db92e6 lea        rcx, [rsp + 0x50]
+01db92eb movss      dword ptr [rsp + 0x28], xmm1
+01db92f1 movaps     xmmword ptr [rsp + 0x40], xmm0
+01db92f6 movss      dword ptr [rsp + 0x20], xmm3
+01db92fc call       0x1db91a0 ; InGame.Kernel.Enemy.Ene_BosBase::ChangeBaseColor(System.Boolean,UnityEngine.Color,System.Single,System.Single)
+01db9301 xor        edx, edx
+01db9303 lea        rcx, [rsp + 0x40]
+01db9308 movups     xmm0, xmmword ptr [rax]
+01db930b movaps     xmmword ptr [rsp + 0x40], xmm0
+01db9310 call       0x2742890 ; Cysharp.Threading.Tasks.UniTaskExtensions::Forget(Cysharp.Threading.Tasks.UniTask)
+01db9315 add        rsp, 0x68
+01db9319 ret        

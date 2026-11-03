@@ -1,0 +1,21 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04::RemoveGuardian(InGame.Kernel.Enemy.Ene_Bos04Bit) RVA 1d90170 len 56
+01d90170 mov        qword ptr [rsp + 8], rbx
+01d90175 push       rdi
+01d90176 sub        rsp, 0x20
+01d9017a cmp        byte ptr [rip + 0x28d3633], 0 ; [.data 46637b4]
+01d90181 mov        rdi, rdx
+01d90184 mov        rbx, rcx
+01d90187 jne        0x1d9019c
+01d90189 lea        rcx, [rip + 0x262d9e8] ; [.data 43bdb78] MethodRef#201296
+01d90190 call       0x4e0a50
+01d90195 mov        byte ptr [rip + 0x28d3618], 1 ; [.data 46637b4]
+01d9019c mov        rcx, qword ptr [rbx + 0x2e8] ; ~_guardianList
+01d901a3 test       rcx, rcx
+01d901a6 je         0x1d901c1
+01d901a8 mov        r8, qword ptr [rip + 0x262d9c9] ; [.data 43bdb78] MethodRef#201296
+01d901af mov        rdx, rdi
+01d901b2 mov        rbx, qword ptr [rsp + 0x30]
+01d901b7 add        rsp, 0x20
+01d901bb pop        rdi
+01d901bc jmp        0xbcf710
+01d901c1 call       0x4e0d00

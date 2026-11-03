@@ -1,0 +1,17 @@
+01db9fb0 cmp dword ptr [rcx + 0x21c], edx 
+01db9fb6 jl 0x1db9fbb 
+01db9fb8 mov al, 1 
+01db9fba ret 
+01db9fbb cmp dword ptr [rcx + 0x224], r8d 
+01db9fc2 setge al 
+01db9fc5 ret 
+01db9fc6 int3 
+01db9fc7 int3 
+01db9fc8 int3 
+01db9fc9 int3 
+01db9fca int3 
+01db9fcb int3 
+01db9fcc int3 
+01db9fcd int3 
+01db9fce int3 
+01db9fcf int3 

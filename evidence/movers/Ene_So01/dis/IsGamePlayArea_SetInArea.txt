@@ -1,0 +1,61 @@
+01ddf760  sub      rsp, 0x28
+01ddf764  movsxd   rax, dword ptr [rcx + 0x4c]   ; ._collisionsCount
+01ddf768  test     eax, eax
+01ddf76a  jle      0x1ddf7a3
+01ddf76c  mov      r9, qword ptr [rcx + 0x20]   ; ._collisions
+01ddf770  mov      r10, rax
+01ddf773  xor      eax, eax
+01ddf775  lea      rdx, [r9 + 0x20]   ; ._collisions
+01ddf779  mov      ecx, eax
+01ddf77b  test     r9, r9
+01ddf77e  je       0x1ddf7b1
+01ddf780  cmp      eax, dword ptr [r9 + 0x18]
+01ddf784  jae      0x1ddf7b7
+01ddf786  mov      r8, qword ptr [rdx]
+01ddf789  test     r8, r8
+01ddf78c  je       0x1ddf7b1
+01ddf78e  cmp      byte ptr [r8 + 0x40], 0   ; ._hitOrders
+01ddf793  jne      0x1ddf7aa
+01ddf795  inc      eax
+01ddf797  inc      rcx
+01ddf79a  add      rdx, 8
+01ddf79e  cmp      rcx, r10
+01ddf7a1  jl       0x1ddf780
+01ddf7a3  xor      al, al
+01ddf7a5  add      rsp, 0x28
+01ddf7a9  ret      
+01ddf7aa  mov      al, 1
+01ddf7ac  add      rsp, 0x28
+01ddf7b0  ret      
+01ddf7b1  call     0x4e0d00
+01ddf7b6  int3     
+01ddf7b7  call     0x4e0cf0
+01dddad0  mov      qword ptr [rsp + 0x10], rbx
+01dddad5  push     rdi
+01dddad6  sub      rsp, 0x20
+01dddada  cmp      byte ptr [rcx + 0x41], 0   ; ._isFinished
+01dddade  movzx    edi, dl
+01dddae1  mov      rbx, rcx
+01dddae4  jne      0x1dddb22
+01dddae6  cmp      byte ptr [rcx + 0x40], dl   ; ._isInBetweenArea
+01dddae9  je       0x1dddb22
+01dddaeb  mov      qword ptr [rsp + 0x30], rsi   ; ._bridge
+01dddaf0  mov      rsi, qword ptr [rcx + 0x30]   ; ._bridge
+01dddaf4  test     rsi, rsi
+01dddaf7  je       0x1dddb2d
+01dddaf9  xor      r8d, r8d
+01dddafc  mov      rcx, rsi
+01dddaff  call     0x30581b0   ; Behaviour::set_enabled(System.Boolean)
+01dddb04  mov      rcx, qword ptr [rsi + 0x30]   ; ._bridge
+01dddb08  test     rcx, rcx
+01dddb0b  je       0x1dddb2d
+01dddb0d  xor      r8d, r8d
+01dddb10  movzx    edx, dil
+01dddb14  call     0x30581b0   ; Behaviour::set_enabled(System.Boolean)
+01dddb19  mov      rsi, qword ptr [rsp + 0x30]   ; ._bridge
+01dddb1e  mov      byte ptr [rbx + 0x40], dil   ; ._isInBetweenArea
+01dddb22  mov      rbx, qword ptr [rsp + 0x38]   ; ._transformCache
+01dddb27  add      rsp, 0x20
+01dddb2b  pop      rdi
+01dddb2c  ret      
+01dddb2d  call     0x4e0d00

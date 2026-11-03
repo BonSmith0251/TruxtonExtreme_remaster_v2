@@ -1,0 +1,268 @@
+{
+ "name": "TATSUJIN/Particle/AlphaBlended",
+ "bundle": "defaultlocalgroup_assets_all_d58d8015662a6b04bca842fe72e2a7e1.bundle",
+ "path_id": "1507587707206904083",
+ "keywordNames": [
+  "STEREO_INSTANCING_ON",
+  "UNITY_SINGLE_PASS_STEREO",
+  "STEREO_MULTIVIEW_ON",
+  "STEREO_CUBEMAP_RENDER_ON",
+  "_USEFOG_OFF",
+  "_USEFOG_ON",
+  "INSTANCING_ON",
+  "FOG_LINEAR",
+  "FOG_EXP",
+  "FOG_EXP2"
+ ],
+ "passes": [
+  {
+   "label": "0_0_pass",
+   "name": "",
+   "useName": "",
+   "tags": {
+    "FORCENOSHADOWCASTING": "true",
+    "IGNOREPROJECTOR": "true",
+    "PreviewType": "Plane",
+    "QUEUE": "Transparent",
+    "RenderType": "Transparent"
+   },
+   "subShaderTags": {
+    "FORCENOSHADOWCASTING": "true",
+    "IGNOREPROJECTOR": "true",
+    "PreviewType": "Plane",
+    "QUEUE": "Transparent",
+    "RenderType": "Transparent"
+   },
+   "lod": 100,
+   "state": {
+    "blend": [
+     5.0,
+     10.0,
+     5.0,
+     10.0
+    ],
+    "blendOp": [
+     0.0,
+     0.0
+    ],
+    "colMask": 15.0,
+    "zTest": [
+     0.0,
+     "_ZTest"
+    ],
+    "zWrite": [
+     0.0,
+     "_ZWrite"
+    ],
+    "culling": 0.0,
+    "offsetFactor": 0.0,
+    "offsetUnits": 0.0,
+    "stencilRef": 0.0,
+    "stencilComp": 8.0,
+    "stencilPass": 0.0,
+    "stencilFail": 0.0,
+    "stencilZFail": 0.0,
+    "stencilReadMask": 255.0,
+    "stencilWriteMask": 255.0
+   },
+   "programs": {
+    "vs": [
+     {
+      "blob": 2,
+      "params": 0,
+      "keywords": [
+       "_USEFOG_OFF"
+      ]
+     },
+     {
+      "blob": 3,
+      "params": 0,
+      "keywords": [
+       "_USEFOG_OFF",
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 4,
+      "params": 0,
+      "keywords": [
+       "_USEFOG_OFF",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 5,
+      "params": 0,
+      "keywords": [
+       "_USEFOG_OFF",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 6,
+      "params": 1,
+      "keywords": [
+       "_USEFOG_OFF",
+       "INSTANCING_ON"
+      ]
+     },
+     {
+      "blob": 7,
+      "params": 1,
+      "keywords": [
+       "_USEFOG_OFF",
+       "INSTANCING_ON",
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 8,
+      "params": 1,
+      "keywords": [
+       "_USEFOG_OFF",
+       "INSTANCING_ON",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 9,
+      "params": 1,
+      "keywords": [
+       "_USEFOG_OFF",
+       "INSTANCING_ON",
+       "FOG_EXP2"
+      ]
+     }
+    ],
+    "ps": [
+     {
+      "blob": 11,
+      "params": 10,
+      "keywords": [
+       "_USEFOG_OFF"
+      ]
+     },
+     {
+      "blob": 12,
+      "params": 10,
+      "keywords": [
+       "_USEFOG_OFF",
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 13,
+      "params": 10,
+      "keywords": [
+       "_USEFOG_OFF",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 14,
+      "params": 10,
+      "keywords": [
+       "_USEFOG_OFF",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 15,
+      "params": 10,
+      "keywords": [
+       "_USEFOG_OFF",
+       "INSTANCING_ON"
+      ]
+     },
+     {
+      "blob": 16,
+      "params": 10,
+      "keywords": [
+       "_USEFOG_OFF",
+       "INSTANCING_ON",
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 17,
+      "params": 10,
+      "keywords": [
+       "_USEFOG_OFF",
+       "INSTANCING_ON",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 18,
+      "params": 10,
+      "keywords": [
+       "_USEFOG_OFF",
+       "INSTANCING_ON",
+       "FOG_EXP2"
+      ]
+     }
+    ]
+   },
+   "bindings": {
+    "vs": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 64,
+       "members": [
+        {
+         "name": "_MainTex_ST",
+         "offset": 32,
+         "dim": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerFrame",
+       "slot": null,
+       "size": 368,
+       "members": [
+        {
+         "name": "unity_MatrixVP",
+         "offset": 272,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    },
+    "ps": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 64,
+       "members": [
+        {
+         "name": "_ClipLevel",
+         "offset": 48,
+         "dim": 1,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [
+      {
+       "name": "_MainTex",
+       "register": 0,
+       "sampler": 0,
+       "dim": 2
+      }
+     ],
+     "samplers": []
+    }
+   }
+  }
+ ]
+}

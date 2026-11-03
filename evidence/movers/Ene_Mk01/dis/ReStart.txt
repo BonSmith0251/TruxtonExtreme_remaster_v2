@@ -1,0 +1,257 @@
+01dc8440  mov      qword ptr [rsp + 0x10], rbx   ; ev.eventType
+01dc8445  mov      qword ptr [rsp + 0x18], rsi   ; ev.repeatDelay
+01dc844a  mov      qword ptr [rsp + 0x20], rdi   ; ev.value0
+01dc844f  mov      qword ptr [rsp + 8], rcx
+01dc8454  push     r14
+01dc8456  sub      rsp, 0x70
+01dc845a  movzx    ebx, dl
+01dc845d  mov      rdi, rcx
+01dc8460  cmp      byte ptr [rip + 0x289b475], 0   ; [46638dc] bss
+01dc8467  jne      0x1dc8504
+01dc846d  lea      rcx, [rip + 0x25ea23c]   ; [43b26b0] TypeInfo InGame.Kernel.Enemy.Ene_Mk01
+01dc8474  call     0x4e0a50
+01dc8479  lea      rcx, [rip + 0x25f8b30]   ; [43c0fb0] MethodRef .Enumerator<prime>::Dispose
+01dc8480  call     0x4e0a50
+01dc8485  lea      rcx, [rip + 0x25f8bdc]   ; [43c1068] MethodRef .Enumerator<prime>::MoveNext
+01dc848c  call     0x4e0a50
+01dc8491  lea      rcx, [rip + 0x25f8c88]   ; [43c1120] MethodRef .Enumerator<prime>::get_Current
+01dc8498  call     0x4e0a50
+01dc849d  lea      rcx, [rip + 0x25aae74]   ; [4373318] TypeInfo G<.Enumerator>
+01dc84a4  call     0x4e0a50
+01dc84a9  lea      rcx, [rip + 0x25d71c0]   ; [439f670] MethodRef System.Collections.Generic.List`1<.SplineRouteData>::Add
+01dc84b0  call     0x4e0a50
+01dc84b5  lea      rcx, [rip + 0x25ad1e4]   ; [43756a0] MethodRef System.Collections.Generic.List`1<prime>::GetEnumerator
+01dc84bc  call     0x4e0a50
+01dc84c1  lea      rcx, [rip + 0x25d7260]   ; [439f728] MethodRef System.Collections.Generic.List`1<.SplineRouteData>::GetEnumerator
+01dc84c8  call     0x4e0a50
+01dc84cd  lea      rcx, [rip + 0x25d70dc]   ; [439f5b0] MethodRef System.Collections.Generic.List`1<.SplineRouteData>::.ctor
+01dc84d4  call     0x4e0a50
+01dc84d9  lea      rcx, [rip + 0x25f2f10]   ; [43bb3f0] TypeInfo G<System.Collections.Generic.List`1>
+01dc84e0  call     0x4e0a50
+01dc84e5  lea      rcx, [rip + 0x25efb14]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01dc84ec  call     0x4e0a50
+01dc84f1  lea      rcx, [rip + 0x25dce98]   ; [43a5390] str:"mk01_fire1"
+01dc84f8  call     0x4e0a50
+01dc84fd  mov      byte ptr [rip + 0x289b3d8], 1   ; [46638dc] bss
+01dc8504  xorps    xmm0, xmm0
+01dc8507  xor      eax, eax
+01dc8509  movups   xmmword ptr [rsp + 0x40], xmm0   ; ._hitOrders
+01dc850e  mov      qword ptr [rsp + 0x50], rax   ; ._transformCache
+01dc8513  xor      r8d, r8d
+01dc8516  movzx    edx, bl
+01dc8519  mov      rcx, rdi
+01dc851c  call     0x1d19d10   ; RookEnemy::ReStart(System.Boolean)
+01dc8521  mov      rax, qword ptr [rdi + 0xb8]   ; ._mover
+01dc8528  test     rax, rax
+01dc852b  je       0x1dc88df
+01dc8531  movss    xmm0, dword ptr [rax + 0x164]
+01dc8539  movss    dword ptr [rdi + 0x218], xmm0   ; ._initialSpeed
+01dc8541  movss    dword ptr [rdi + 0x21c], xmm0   ; ._moveSpeed
+01dc8549  xor      r14d, r14d
+01dc854c  mov      dword ptr [rdi + 0x214], r14d   ; ._moveState
+01dc8553  mov      rcx, rax
+01dc8556  test     rax, rax
+01dc8559  je       0x1dc88df
+01dc855f  mov      rdx, qword ptr [rax]
+01dc8562  mov      rax, qword ptr [rdx + 0x328]
+01dc8569  mov      rdx, qword ptr [rdx + 0x330]
+01dc8570  call     rax
+01dc8572  xor      edx, edx
+01dc8574  mov      rcx, rdi
+01dc8577  call     0x1d0d1b0   ; PawnEnemy::CreateToken()
+01dc857c  mov      rcx, qword ptr [rip + 0x25f2e6d]   ; [43bb3f0] TypeInfo G<System.Collections.Generic.List`1>
+01dc8583  call     0x4e0cb0
+01dc8588  mov      rbx, rax
+01dc858b  mov      rdx, qword ptr [rip + 0x25d701e]   ; [439f5b0] MethodRef System.Collections.Generic.List`1<.SplineRouteData>::.ctor
+01dc8592  mov      rcx, rax
+01dc8595  call     0xb16050   ; List`1::.ctor() | LowLevelList`1::.ctor()
+01dc859a  mov      qword ptr [rdi + 0x230], rbx   ; ._routeList
+01dc85a1  lea      rcx, [rdi + 0x230]   ; ._routeList
+01dc85a8  mov      rdx, rbx
+01dc85ab  call     0x4dfd80
+01dc85b0  mov      rax, qword ptr [rip + 0x25ea0f9]   ; [43b26b0] TypeInfo InGame.Kernel.Enemy.Ene_Mk01
+01dc85b7  cmp      dword ptr [rax + 0xe4], r14d
+01dc85be  jne      0x1dc85cf
+01dc85c0  mov      rcx, rax
+01dc85c3  call     0x4e0d90
+01dc85c8  mov      rax, qword ptr [rip + 0x25ea0e1]   ; [43b26b0] TypeInfo InGame.Kernel.Enemy.Ene_Mk01
+01dc85cf  mov      rax, qword ptr [rax + 0xb8]   ; statics
+01dc85d6  mov      rcx, qword ptr [rax + 0x18]   ; S:Ene_Mk01._routeNames
+01dc85da  movsxd   rax, dword ptr [rdi + 0x94]   ; ._indexValue
+01dc85e1  test     rcx, rcx
+01dc85e4  je       0x1dc88df
+01dc85ea  cmp      eax, dword ptr [rcx + 0x18]   ; ev.repeatDelay
+01dc85ed  jae      0x1dc88e5
+01dc85f3  mov      rdx, qword ptr [rcx + rax*8 + 0x20]
+01dc85f8  test     rdx, rdx
+01dc85fb  je       0x1dc88df
+01dc8601  mov      r8, qword ptr [rip + 0x25ad098]   ; [43756a0] MethodRef System.Collections.Generic.List`1<prime>::GetEnumerator
+01dc8608  lea      rcx, [rsp + 0x28]   ; ev.vectorValue
+01dc860d  call     0xb11790
+01dc8612  movups   xmm0, xmmword ptr [rsp + 0x28]   ; ev.vectorValue
+01dc8617  movups   xmmword ptr [rsp + 0x40], xmm0   ; ._hitOrders
+01dc861c  movsd    xmm1, qword ptr [rsp + 0x38]   ; .onDisableEvent
+01dc8622  movsd    qword ptr [rsp + 0x50], xmm1   ; ._transformCache
+01dc8628  mov      qword ptr [rsp + 0x28], r14   ; ev.vectorValue
+01dc862d  lea      rbx, [rsp + 0x40]   ; ._hitOrders
+01dc8632  mov      qword ptr [rsp + 0x30], rbx   ; ._Damage
+01dc8637  nop      word ptr [rax + rax]
+01dc8640  mov      rdx, qword ptr [rip + 0x25f8a21]   ; [43c1068] MethodRef .Enumerator<prime>::MoveNext
+01dc8647  lea      rcx, [rsp + 0x40]   ; ._hitOrders
+01dc864c  call     0x198e510
+01dc8651  test     al, al
+01dc8653  je       0x1dc8741
+01dc8659  mov      rsi, qword ptr [rsp + 0x50]   ; ._transformCache
+01dc865e  mov      rax, qword ptr [rip + 0x25ef99b]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01dc8665  mov      rax, qword ptr [rax + 0x20]   ; ev.value0
+01dc8669  test     byte ptr [rax + 0x135], 1
+01dc8670  jne      0x1dc867a
+01dc8672  mov      rcx, rax
+01dc8675  call     0x4de1e0
+01dc867a  mov      rax, qword ptr [rax + 0xc0]   ; ._burnShake
+01dc8681  mov      rax, qword ptr [rax + 0x10]   ; ev.eventType
+01dc8685  test     byte ptr [rax + 0x135], 1
+01dc868c  jne      0x1dc8696
+01dc868e  mov      rcx, rax
+01dc8691  call     0x4de1e0
+01dc8696  mov      rax, qword ptr [rax + 0xb8]   ; ._mover
+01dc869d  mov      rcx, qword ptr [rax]
+01dc86a0  test     rcx, rcx
+01dc86a3  je       0x1dc8900
+01dc86a9  mov      rcx, qword ptr [rcx + 0x120]   ; ._sizeType
+01dc86b0  test     rcx, rcx
+01dc86b3  je       0x1dc88fb
+01dc86b9  xor      r8d, r8d
+01dc86bc  mov      rdx, rsi
+01dc86bf  call     0x1d239c0   ; InGameRouteManager::GetData(System.String)
+01dc86c4  mov      r10, rax
+01dc86c7  mov      r9, qword ptr [rdi + 0x230]   ; ._routeList
+01dc86ce  test     r9, r9
+01dc86d1  je       0x1dc88f6
+01dc86d7  mov      rax, qword ptr [rip + 0x25d6f92]   ; [439f670] MethodRef System.Collections.Generic.List`1<.SplineRouteData>::Add
+01dc86de  inc      dword ptr [r9 + 0x1c]   ; ev.awakeRate
+01dc86e2  mov      rdx, qword ptr [r9 + 0x10]   ; ev.eventType
+01dc86e6  movsxd   rcx, dword ptr [r9 + 0x18]   ; ev.repeatDelay
+01dc86ea  test     rdx, rdx
+01dc86ed  je       0x1dc88f1
+01dc86f3  cmp      ecx, dword ptr [rdx + 0x18]   ; ev.repeatDelay
+01dc86f6  jb       0x1dc8717
+01dc86f8  mov      rax, qword ptr [rax + 0x20]   ; ev.value0
+01dc86fc  mov      r8, qword ptr [rax + 0xc0]   ; ._burnShake
+01dc8703  mov      r8, qword ptr [r8 + 0x70]
+01dc8707  mov      rdx, r10
+01dc870a  mov      rcx, r9
+01dc870d  call     0xbc8200
+01dc8712  jmp      0x1dc8640
+01dc8717  lea      eax, [rcx + 1]
+01dc871a  mov      dword ptr [r9 + 0x18], eax   ; ev.repeatDelay
+01dc871e  cmp      ecx, dword ptr [rdx + 0x18]   ; ev.repeatDelay
+01dc8721  jae      0x1dc88eb
+01dc8727  mov      qword ptr [rdx + rcx*8 + 0x20], r10
+01dc872c  add      rdx, 0x20
+01dc8730  lea      rcx, [rdx + rcx*8]
+01dc8734  mov      rdx, r10
+01dc8737  call     0x4dfd80
+01dc873c  jmp      0x1dc8640
+01dc8741  mov      rdx, qword ptr [rip + 0x25f8868]   ; [43c0fb0] MethodRef .Enumerator<prime>::Dispose
+01dc8748  mov      rcx, rbx
+01dc874b  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01dc8750  jmp      0x1dc877c
+01dc8752  mov      rdx, qword ptr [rip + 0x25f8857]   ; [43c0fb0] MethodRef .Enumerator<prime>::Dispose
+01dc8759  mov      rcx, qword ptr [rsp + 0x30]   ; ._Damage
+01dc875e  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01dc8763  mov      rcx, qword ptr [rsp + 0x28]   ; ev.vectorValue
+01dc8768  test     rcx, rcx
+01dc876b  jne      0x1dc8906
+01dc8771  xor      r14d, r14d
+01dc8774  mov      rdi, qword ptr [rsp + 0x80]
+01dc877c  mov      rdx, qword ptr [rdi + 0x230]   ; ._routeList
+01dc8783  test     rdx, rdx
+01dc8786  je       0x1dc890c
+01dc878c  mov      r8, qword ptr [rip + 0x25d6f95]   ; [439f728] MethodRef System.Collections.Generic.List`1<.SplineRouteData>::GetEnumerator
+01dc8793  lea      rcx, [rsp + 0x28]   ; ev.vectorValue
+01dc8798  call     0xb11790
+01dc879d  movups   xmm0, xmmword ptr [rsp + 0x28]   ; ev.vectorValue
+01dc87a2  movups   xmmword ptr [rsp + 0x58], xmm0   ; ._gameObjectCache
+01dc87a7  movsd    xmm1, qword ptr [rsp + 0x38]   ; .onDisableEvent
+01dc87ad  movsd    qword ptr [rsp + 0x68], xmm1   ; ev.flag0
+01dc87b3  lea      rdx, [rsp + 0x58]   ; ._gameObjectCache
+01dc87b8  mov      rcx, qword ptr [rip + 0x25aab59]   ; [4373318] TypeInfo G<.Enumerator>
+01dc87bf  call     0x4dfd60
+01dc87c4  mov      qword ptr [rdi + 0x238], rax   ; ._routeData
+01dc87cb  lea      rcx, [rdi + 0x238]   ; ._routeData
+01dc87d2  mov      rdx, rax
+01dc87d5  call     0x4dfd80
+01dc87da  mov      qword ptr [rdi + 0x224], 0   ; ._rotateTime
+01dc87e5  mov      rax, qword ptr [rip + 0x25ef814]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01dc87ec  mov      rax, qword ptr [rax + 0x20]   ; ev.value0
+01dc87f0  test     byte ptr [rax + 0x135], 1
+01dc87f7  jne      0x1dc8801
+01dc87f9  mov      rcx, rax
+01dc87fc  call     0x4de1e0
+01dc8801  mov      rax, qword ptr [rax + 0xc0]   ; ._burnShake
+01dc8808  mov      rax, qword ptr [rax + 0x10]   ; ev.eventType
+01dc880c  test     byte ptr [rax + 0x135], 1
+01dc8813  jne      0x1dc881d
+01dc8815  mov      rcx, rax
+01dc8818  call     0x4de1e0
+01dc881d  mov      rdx, qword ptr [rax + 0xb8]   ; ._mover
+01dc8824  xor      r9d, r9d
+01dc8827  mov      r8b, 1
+01dc882a  mov      rdx, qword ptr [rdx]
+01dc882d  mov      rcx, rdi
+01dc8830  call     0x1dc8db0   ; Ene_Mk01::SetTargetPlayer(InGame.Kernel.InGameManager,System.Boolean)
+01dc8835  xor      r9d, r9d
+01dc8838  mov      r8b, 1
+01dc883b  mov      edx, dword ptr [rdi + 0x210]   ; ._targetPlayer
+01dc8841  mov      rcx, rdi
+01dc8844  call     0x1dc8ba0   ; Ene_Mk01::SetChildTarget(System.Int32,System.Boolean)
+01dc8849  mov      rax, qword ptr [rip + 0x25ef7b0]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01dc8850  mov      rax, qword ptr [rax + 0x20]   ; ev.value0
+01dc8854  test     byte ptr [rax + 0x135], 1
+01dc885b  jne      0x1dc8865
+01dc885d  mov      rcx, rax
+01dc8860  call     0x4de1e0
+01dc8865  mov      rax, qword ptr [rax + 0xc0]   ; ._burnShake
+01dc886c  mov      rax, qword ptr [rax + 0x10]   ; ev.eventType
+01dc8870  test     byte ptr [rax + 0x135], 1
+01dc8877  jne      0x1dc8881
+01dc8879  mov      rcx, rax
+01dc887c  call     0x4de1e0
+01dc8881  mov      rax, qword ptr [rax + 0xb8]   ; ._mover
+01dc8888  mov      rcx, qword ptr [rax]
+01dc888b  test     rcx, rcx
+01dc888e  je       0x1dc890c
+01dc8890  mov      rcx, qword ptr [rcx + 0xf0]   ; ._deadBullet
+01dc8897  test     rcx, rcx
+01dc889a  je       0x1dc890c
+01dc889c  xor      r8d, r8d
+01dc889f  mov      rdx, qword ptr [rip + 0x25dcaea]   ; [43a5390] str:"mk01_fire1"
+01dc88a6  call     0x1ccb7b0   ; InGameBulletManager::GetTemplate(System.String)
+01dc88ab  mov      qword ptr [rdi + 0x1f8], rax   ; ._bt
+01dc88b2  lea      rcx, [rdi + 0x1f8]   ; ._bt
+01dc88b9  mov      rdx, rax
+01dc88bc  call     0x4dfd80
+01dc88c1  mov      dword ptr [rdi + 0x200], r14d   ; ._fireTimer
+01dc88c8  lea      r11, [rsp + 0x70]
+01dc88cd  mov      rbx, qword ptr [r11 + 0x18]   ; ev.repeatDelay
+01dc88d1  mov      rsi, qword ptr [r11 + 0x20]   ; ev.value0
+01dc88d5  mov      rdi, qword ptr [r11 + 0x28]   ; ev.vectorValue
+01dc88d9  mov      rsp, r11
+01dc88dc  pop      r14
+01dc88de  ret      
+01dc88df  call     0x4e0d00
+01dc88e4  int3     
+01dc88e5  call     0x4e0cf0
+01dc88ea  nop      
+01dc88eb  call     0x4e0cf0
+01dc88f0  nop      
+01dc88f1  call     0x4e0d00
+01dc88f6  call     0x4e0d00
+01dc88fb  call     0x4e0d00
+01dc8900  call     0x4e0d00
+01dc8905  nop      
+01dc8906  call     0x4dc9e0
+01dc890b  int3     
+01dc890c  call     0x4e0d00
+

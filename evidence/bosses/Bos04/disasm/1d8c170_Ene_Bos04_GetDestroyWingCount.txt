@@ -1,0 +1,50 @@
+== System.Int32 InGame.Kernel.Enemy.Ene_Bos04::GetDestroyWingCount(System.Boolean) RVA 1d8c170 len b4
+01d8c170 mov        qword ptr [rsp + 8], rbx
+01d8c175 mov        qword ptr [rsp + 0x10], rbp
+01d8c17a mov        qword ptr [rsp + 0x18], rsi
+01d8c17f mov        qword ptr [rsp + 0x20], rdi
+01d8c184 push       r14
+01d8c186 sub        rsp, 0x50
+01d8c18a xor        eax, eax
+01d8c18c movzx      esi, dl
+01d8c18f xor        r14d, r14d
+01d8c192 mov        qword ptr [rsp + 0x30], rax
+01d8c197 mov        edi, r14d
+01d8c19a mov        rbp, rcx
+01d8c19d mov        ebx, 3
+01d8c1a2 xor        r8d, r8d
+01d8c1a5 mov        edx, ebx
+01d8c1a7 mov        rcx, rbp
+01d8c1aa call       0x1d0da10 ; InGame.Kernel.Enemy.PawnEnemy::GetParts(System.Int32)
+01d8c1af test       rax, rax
+01d8c1b2 je         0x1d8c21f
+01d8c1b4 cmp        byte ptr [rax + 0x9a], r14b
+01d8c1bb jne        0x1d8c1f9
+01d8c1bd test       sil, sil
+01d8c1c0 je         0x1d8c1fb
+01d8c1c2 xor        ecx, ecx
+01d8c1c4 mov        qword ptr [rsp + 0x28], r14
+01d8c1c9 mov        qword ptr [rsp + 0x30], rcx
+01d8c1ce mov        r9b, 1
+01d8c1d1 movsd      xmm0, qword ptr [rsp + 0x30]
+01d8c1d7 movzx      r8d, r9b
+01d8c1db mov        dword ptr [rsp + 0x48], ecx
+01d8c1df xor        edx, edx
+01d8c1e1 lea        rcx, [rsp + 0x40]
+01d8c1e6 movsd      qword ptr [rsp + 0x40], xmm0
+01d8c1ec mov        qword ptr [rsp + 0x20], rcx
+01d8c1f1 mov        rcx, rax
+01d8c1f4 call       0x1d61850 ; InGame.Kernel.Enemy.EnePartsGroup::BreakParts(System.Boolean,System.Boolean,System.Boolean,UnityEngine.Vector3)
+01d8c1f9 inc        edi
+01d8c1fb inc        ebx
+01d8c1fd cmp        ebx, 6
+01d8c200 jle        0x1d8c1a2
+01d8c202 mov        rbx, qword ptr [rsp + 0x60]
+01d8c207 mov        eax, edi
+01d8c209 mov        rdi, qword ptr [rsp + 0x78]
+01d8c20e mov        rbp, qword ptr [rsp + 0x68]
+01d8c213 mov        rsi, qword ptr [rsp + 0x70]
+01d8c218 add        rsp, 0x50
+01d8c21c pop        r14
+01d8c21e ret        
+01d8c21f call       0x4e0d00

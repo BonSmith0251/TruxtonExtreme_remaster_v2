@@ -1,0 +1,35 @@
+01cdccc0  push     rbx
+01cdccc2  sub      rsp, 0x20
+01cdccc6  cmp      dword ptr [rdx + 0x1ac], 2   ; ._lookAtType
+01cdcccd  mov      rbx, rcx
+01cdccd0  je       0x1cdcd14
+01cdccd2  cmp      byte ptr [rip + 0x2981ac4], 0   ; [465e79d] bss
+01cdccd9  jne      0x1cdccee
+01cdccdb  lea      rcx, [rip + 0x26e49f6]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01cdcce2  call     0x4e0a50
+01cdcce7  mov      byte ptr [rip + 0x2981aaf], 1   ; [465e79d] bss
+01cdccee  mov      rax, qword ptr [rip + 0x26e49e3]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01cdccf5  mov      rax, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cdccfc  movsd    xmm0, qword ptr [rax + 0x48]   ; ev.intValue3/.GameObjectCache
+01cdcd01  mov      eax, dword ptr [rax + 0x50]   ; ev.randomFire/._animatorsPlay
+01cdcd04  movsd    qword ptr [rbx], xmm0
+01cdcd08  mov      dword ptr [rbx + 8], eax
+01cdcd0b  mov      rax, rbx
+01cdcd0e  add      rsp, 0x20
+01cdcd12  pop      rbx
+01cdcd13  ret      
+01cdcd14  cmp      byte ptr [rip + 0x29865c5], 0   ; [46632e0] bss
+01cdcd1b  jne      0x1cdcd30
+01cdcd1d  lea      rcx, [rip + 0x26e49b4]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01cdcd24  call     0x4e0a50
+01cdcd29  mov      byte ptr [rip + 0x29865b0], 1   ; [46632e0] bss
+01cdcd30  mov      rax, qword ptr [rip + 0x26e49a1]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01cdcd37  mov      rax, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cdcd3e  movsd    xmm0, qword ptr [rax + 0x54]   ; ev.randomWait/._particleTimeScale
+01cdcd43  mov      eax, dword ptr [rax + 0x5c]   ; ._animatorsCount
+01cdcd46  movsd    qword ptr [rbx], xmm0
+01cdcd4a  mov      dword ptr [rbx + 8], eax
+01cdcd4d  mov      rax, rbx
+01cdcd50  add      rsp, 0x20
+01cdcd54  pop      rbx
+01cdcd55  ret      

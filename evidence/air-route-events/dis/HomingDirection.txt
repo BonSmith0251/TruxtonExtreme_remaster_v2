@@ -1,0 +1,176 @@
+#### KANAI.Kernel.VectorUtility::HomingDirection(UnityEngine.Vector3,UnityEngine.Vector3,System.Single) RVA 1df7550 len 139
+01df7550  mov      qword ptr [rsp + 8], rbx
+01df7555  mov      qword ptr [rsp + 0x10], rsi   ; ev.eventType
+01df755a  push     rdi
+01df755b  sub      rsp, 0x80
+01df7562  cmp      byte ptr [rip + 0x286c4f0], 0   ; [4663a59] bss
+01df7569  mov      rsi, r8
+01df756c  movaps   xmmword ptr [rsp + 0x70], xmm6   ; ._transformCache
+01df7571  mov      rdi, rdx
+01df7574  movaps   xmmword ptr [rsp + 0x60], xmm7   ; ev.subnameValue/._psystemCount
+01df7579  movaps   xmm6, xmm3
+01df757c  mov      rbx, rcx
+01df757f  jne      0x1df7594
+01df7581  lea      rcx, [rip + 0x25cae40]   ; [43c23c8] TypeInfo KANAI.Kernel.VectorUtility
+01df7588  call     0x4e0a50
+01df758d  mov      byte ptr [rip + 0x286c4c5], 1   ; [4663a59] bss
+01df7594  mov      rcx, qword ptr [rip + 0x25cae2d]   ; [43c23c8] TypeInfo KANAI.Kernel.VectorUtility
+01df759b  cmp      dword ptr [rcx + 0xe4], 0
+01df75a2  jne      0x1df75a9
+01df75a4  call     0x4e0d90
+01df75a9  xor      edx, edx
+01df75ab  movaps   xmm0, xmm6
+01df75ae  call     0x1df8a70   ; VectorUtility::Sinf(System.Single)
+01df75b3  movaps   xmm7, xmm0
+01df75b6  xor      edx, edx
+01df75b8  movaps   xmm0, xmm6
+01df75bb  call     0x1df6fa0   ; VectorUtility::Cosf(System.Single)
+01df75c0  movss    xmm3, dword ptr [rsi]
+01df75c4  xorps    xmm1, xmm1
+01df75c7  movss    xmm2, dword ptr [rsi + 8]
+01df75cc  movaps   xmm6, xmm0
+01df75cf  movss    xmm0, dword ptr [rip + 0x16e9601]   ; rdata 34e0bd8 f=10,20,57.29578,100 d=134217760.6
+01df75d7  mulss    xmm3, xmm3
+01df75db  mov      dword ptr [rsi + 4], 0
+01df75e2  mulss    xmm2, xmm2
+01df75e6  addss    xmm3, xmm1
+01df75ea  addss    xmm3, xmm2
+01df75ee  comiss   xmm0, xmm3
+01df75f1  ja       0x1df7659
+01df75f3  mov      rcx, qword ptr [rip + 0x25cadce]   ; [43c23c8] TypeInfo KANAI.Kernel.VectorUtility
+01df75fa  cmp      dword ptr [rcx + 0xe4], 0
+01df7601  jne      0x1df7608
+01df7603  call     0x4e0d90
+01df7608  movsd    xmm0, qword ptr [rsi]
+01df760c  lea      r8, [rsp + 0x30]   ; ._entryFlag
+01df7611  mov      eax, dword ptr [rsi + 8]
+01df7614  lea      rdx, [rsp + 0x40]   ; ev.intValue1/._animators
+01df7619  movsd    qword ptr [rsp + 0x30], xmm0   ; ._entryFlag
+01df761f  lea      rcx, [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01df7624  movsd    xmm0, qword ptr [rdi]
+01df7628  movaps   xmm3, xmm7
+01df762b  mov      dword ptr [rsp + 0x38], eax   ; ev.stringValue/._psystems
+01df762f  mov      eax, dword ptr [rdi + 8]
+01df7632  mov      qword ptr [rsp + 0x28], 0   ; ev.vectorValue
+01df763b  movsd    qword ptr [rsp + 0x40], xmm0   ; ev.intValue1/._animators
+01df7641  movss    dword ptr [rsp + 0x20], xmm6   ; ev.value0
+01df7647  mov      dword ptr [rsp + 0x48], eax   ; ev.intValue3/.GameObjectCache
+01df764b  call     0x1df73b0   ; VectorUtility::HomingDirection(UnityEngine.Vector3,UnityEngine.Vector3,System.Single,System.Single)
+01df7650  movsd    xmm0, qword ptr [rax]
+01df7654  mov      eax, dword ptr [rax + 8]
+01df7657  jmp      0x1df7660
+01df7659  movsd    xmm0, qword ptr [rdi]
+01df765d  mov      eax, dword ptr [rdi + 8]
+01df7660  movaps   xmm6, xmmword ptr [rsp + 0x70]   ; ._transformCache
+01df7665  lea      r11, [rsp + 0x80]   ; ._transformCaches
+01df766d  mov      rsi, qword ptr [r11 + 0x18]   ; ev.repeatDelay
+01df7671  movaps   xmm7, xmmword ptr [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01df7676  movsd    qword ptr [rbx], xmm0
+01df767a  mov      dword ptr [rbx + 8], eax
+01df767d  mov      rax, rbx
+01df7680  mov      rbx, qword ptr [r11 + 0x10]   ; ev.eventType
+01df7684  mov      rsp, r11
+01df7687  pop      rdi
+01df7688  ret      
+#### KANAI.Kernel.VectorUtility::HomingDirection(UnityEngine.Vector3,UnityEngine.Vector3,System.Single,System.Single) RVA 1df73b0 len 19a
+01df73b0  mov      qword ptr [rsp + 8], rbx
+01df73b5  mov      qword ptr [rsp + 0x10], rbp   ; ev.eventType
+01df73ba  mov      qword ptr [rsp + 0x18], rsi   ; ev.repeatDelay
+01df73bf  push     rdi
+01df73c0  sub      rsp, 0x50
+01df73c4  movsd    xmm0, qword ptr [r8]
+01df73c9  xor      eax, eax
+01df73cb  cmp      byte ptr [rip + 0x286c217], al   ; [46635e8] bss
+01df73d1  mov      rsi, r8
+01df73d4  mov      ebp, dword ptr [r8 + 8]
+01df73d8  mov      rdi, rdx
+01df73db  movaps   xmmword ptr [rsp + 0x40], xmm6   ; ev.intValue1/._animators
+01df73e0  mov      rbx, rcx
+01df73e3  mov      qword ptr [rcx], rax
+01df73e6  movaps   xmm6, xmm3
+01df73e9  mov      dword ptr [rcx + 8], eax
+01df73ec  movaps   xmmword ptr [rsp + 0x30], xmm7   ; ._entryFlag
+01df73f1  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01df73f7  mov      dword ptr [rsp + 0x28], ebp   ; ev.vectorValue
+01df73fb  jne      0x1df7410
+01df73fd  lea      rcx, [rip + 0x25ca2d4]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01df7404  call     0x4e0a50
+01df7409  mov      byte ptr [rip + 0x286c1d8], 1   ; [46635e8] bss
+01df7410  xor      edx, edx
+01df7412  lea      rcx, [rsp + 0x20]   ; ev.value0
+01df7417  call     0x5d2df0
+01df741c  comiss   xmm0, dword ptr [rip + 0x16e983d]   ; rdata 34e0c60 f=1e-05,-2,6.211746e+22,1.861304e+34 d=-2.000000411
+01df7423  jbe      0x1df744a
+01df7425  movss    xmm3, dword ptr [rsp + 0x20]   ; ev.value0
+01df742b  movss    xmm1, dword ptr [rsp + 0x24]   ; ev.value1
+01df7431  movd     xmm2, ebp
+01df7435  divss    xmm3, xmm0
+01df7439  divss    xmm1, xmm0
+01df743d  divss    xmm2, xmm0
+01df7441  unpcklps xmm3, xmm1
+01df7444  movd     eax, xmm2
+01df7448  jmp      0x1df745f
+01df744a  mov      rax, qword ptr [rip + 0x25ca287]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01df7451  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01df7458  movsd    xmm3, qword ptr [rcx]
+01df745c  mov      eax, dword ptr [rcx + 8]
+01df745f  movss    xmm7, dword ptr [rsp + 0x80]   ; ._transformCaches
+01df7468  movaps   xmm0, xmm6
+01df746b  mulss    xmm0, dword ptr [rdi + 8]
+01df7470  movaps   xmm4, xmm7
+01df7473  mulss    xmm4, dword ptr [rdi]
+01df7477  movaps   xmm5, xmm7
+01df747a  mulss    xmm5, dword ptr [rdi + 8]
+01df747f  subss    xmm4, xmm0
+01df7483  movsd    qword ptr [rbx], xmm3
+01df7487  movaps   xmm0, xmm6
+01df748a  mov      dword ptr [rbx + 8], eax
+01df748d  mulss    xmm0, dword ptr [rdi]
+01df7491  movss    xmm2, dword ptr [rbx + 8]
+01df7496  mulss    xmm2, dword ptr [rdi + 8]
+01df749b  addss    xmm5, xmm0
+01df749f  movss    xmm0, dword ptr [rbx]
+01df74a3  mulss    xmm0, dword ptr [rdi]
+01df74a7  addss    xmm2, xmm0
+01df74ab  movaps   xmm1, xmm5
+01df74ae  mulss    xmm1, dword ptr [rdi + 8]
+01df74b3  movaps   xmm0, xmm4
+01df74b6  mulss    xmm0, dword ptr [rdi]
+01df74ba  addss    xmm1, xmm0
+01df74be  comiss   xmm2, xmm1
+01df74c1  jae      0x1df7528
+01df74c3  movaps   xmm3, xmm6
+01df74c6  movaps   xmm0, xmm7
+01df74c9  mulss    xmm0, dword ptr [rdi]
+01df74cd  movaps   xmm2, xmm5
+01df74d0  xorps    xmm6, xmmword ptr [rip + 0x16e9739]   ; rdata 34e0c10 f=-0,-0,-0,-0 d=-1.060997895e-314
+01df74d7  mulss    xmm3, dword ptr [rdi + 8]
+01df74dc  mulss    xmm6, dword ptr [rdi]
+01df74e0  mulss    xmm7, dword ptr [rdi + 8]
+01df74e5  addss    xmm3, xmm0
+01df74e9  mulss    xmm2, dword ptr [rsi + 8]
+01df74ee  movaps   xmm0, xmm4
+01df74f1  mulss    xmm0, dword ptr [rsi]
+01df74f5  addss    xmm6, xmm7
+01df74f9  addss    xmm2, xmm0
+01df74fd  movaps   xmm0, xmm3
+01df7500  mulss    xmm0, dword ptr [rsi]
+01df7504  movaps   xmm1, xmm6
+01df7507  mulss    xmm1, dword ptr [rsi + 8]
+01df750c  addss    xmm1, xmm0
+01df7510  comiss   xmm2, xmm1
+01df7513  jae      0x1df751c
+01df7515  movss    dword ptr [rbx + 8], xmm6
+01df751a  jmp      0x1df7524
+01df751c  movss    dword ptr [rbx + 8], xmm5
+01df7521  movaps   xmm3, xmm4
+01df7524  movss    dword ptr [rbx], xmm3
+01df7528  mov      rbp, qword ptr [rsp + 0x68]   ; ev.flag0/._flagStateFuture
+01df752d  mov      rax, rbx
+01df7530  mov      rbx, qword ptr [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01df7535  mov      rsi, qword ptr [rsp + 0x70]   ; ._transformCache
+01df753a  movaps   xmm6, xmmword ptr [rsp + 0x40]   ; ev.intValue1/._animators
+01df753f  movaps   xmm7, xmmword ptr [rsp + 0x30]   ; ._entryFlag
+01df7544  add      rsp, 0x50
+01df7548  pop      rdi
+01df7549  ret      

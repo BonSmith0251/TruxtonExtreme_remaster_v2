@@ -1,0 +1,126 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04::PatternEntryWait(System.Single) RVA 1d8cdf0 len 247
+01d8cdf0 push       rbx
+01d8cdf2 sub        rsp, 0x50
+01d8cdf6 cmp        byte ptr [rip + 0x28d69ba], 0 ; [.data 46637b7]
+01d8cdfd mov        rbx, rcx
+01d8ce00 movaps     xmmword ptr [rsp + 0x40], xmm6
+01d8ce05 movaps     xmm6, xmm1
+01d8ce08 jne        0x1d8ce29
+01d8ce0a lea        rcx, [rip + 0x26249e7] ; [.data 43b17f8] TypeInfo#37303
+01d8ce11 call       0x4e0a50
+01d8ce16 lea        rcx, [rip + 0x261554b] ; [.data 43a2368] TypeInfo#45781
+01d8ce1d call       0x4e0a50
+01d8ce22 mov        byte ptr [rip + 0x28d698e], 1 ; [.data 46637b7]
+01d8ce29 mov        ecx, dword ptr [rbx + 0x1ec] ; ~_patternMode
+01d8ce2f test       ecx, ecx
+01d8ce31 je         0x1d8cffc
+01d8ce37 sub        ecx, 1
+01d8ce3a je         0x1d8cf8b
+01d8ce40 sub        ecx, 1
+01d8ce43 je         0x1d8ce9f
+01d8ce45 cmp        ecx, 1
+01d8ce48 jne        0x1d8cf80
+01d8ce4e movss      xmm1, dword ptr [rbx + 0x2cc] ; ~_localTime
+01d8ce56 xorps      xmm0, xmm0
+01d8ce59 subss      xmm1, xmm6
+01d8ce5d comiss     xmm0, xmm1
+01d8ce60 movss      dword ptr [rbx + 0x2cc], xmm1 ; ~_localTime
+01d8ce68 jb         0x1d8cf80
+01d8ce6e xor        r8d, r8d
+01d8ce71 mov        edx, 0x22
+01d8ce76 mov        rcx, rbx
+01d8ce79 call       0x1ccf500 ; InGame.Kernel.InGameCollisionBase::ResetObjectFlag(InGame.Kernel.InGameObject/InGameObjectFlag)
+01d8ce7e xor        r8d, r8d
+01d8ce81 mov        dl, 1
+01d8ce83 mov        rcx, rbx
+01d8ce86 call       0x1dba430 ; InGame.Kernel.Enemy.Ene_BosBase::ResetBossTimer(System.Boolean)
+01d8ce8b xor        edx, edx
+01d8ce8d mov        rcx, rbx
+01d8ce90 movaps     xmm6, xmmword ptr [rsp + 0x40]
+01d8ce95 add        rsp, 0x50
+01d8ce99 pop        rbx
+01d8ce9a jmp        0x1d8bc40 ; InGame.Kernel.Enemy.Ene_Bos04::CheckNextState()
+01d8ce9f mov        rax, qword ptr [rbx + 0xb8] ; ~_mover
+01d8cea6 mov        qword ptr [rsp + 0x60], rsi
+01d8ceab mov        qword ptr [rsp + 0x68], rdi
+01d8ceb0 test       rax, rax
+01d8ceb3 je         0x1d8d032
+01d8ceb9 cmp        byte ptr [rax + 0x2b8], 0 ; ~_pattern5EaseIn
+01d8cec0 je         0x1d8cf76
+01d8cec6 xor        r8d, r8d
+01d8cec9 mov        dl, 1
+01d8cecb mov        rcx, rax
+01d8cece call       0x1d1d5a0 ; InGame.Kernel.InGameObjectBase::StopAnime(System.Boolean)
+01d8ced3 cmp        byte ptr [rip + 0x28cf583], 0 ; [.data 465c45d]
+01d8ceda mov        rdi, qword ptr [rbx + 0x168] ; ~_modelTop
+01d8cee1 jne        0x1d8cef6
+01d8cee3 lea        rcx, [rip + 0x26347ee] ; [.data 43c16d8] TypeInfo#48704
+01d8ceea call       0x4e0a50
+01d8ceef mov        byte ptr [rip + 0x28cf567], 1 ; [.data 465c45d]
+01d8cef6 mov        rax, qword ptr [rip + 0x26347db] ; [.data 43c16d8] TypeInfo#48704
+01d8cefd mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d8cf04 mov        rax, qword ptr [rip + 0x26248ed] ; [.data 43b17f8] TypeInfo#37303
+01d8cf0b movsd      xmm6, qword ptr [rcx]
+01d8cf0f cmp        dword ptr [rax + 0xe4], 0
+01d8cf16 mov        esi, dword ptr [rcx + 8]
+01d8cf19 jne        0x1d8cf2a
+01d8cf1b mov        rcx, rax
+01d8cf1e call       0x4e0d90
+01d8cf23 mov        rax, qword ptr [rip + 0x26248ce] ; [.data 43b17f8] TypeInfo#37303
+01d8cf2a mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d8cf31 test       rdi, rdi
+01d8cf34 je         0x1d8d032
+01d8cf3a movups     xmm0, xmmword ptr [rcx + 0x48]
+01d8cf3e xor        r9d, r9d
+01d8cf41 lea        r8, [rsp + 0x30]
+01d8cf46 lea        rdx, [rsp + 0x20]
+01d8cf4b movsd      qword ptr [rsp + 0x20], xmm6
+01d8cf51 mov        rcx, rdi
+01d8cf54 movaps     xmmword ptr [rsp + 0x30], xmm0
+01d8cf59 mov        dword ptr [rsp + 0x28], esi
+01d8cf5d call       0x30913c0 ; UnityEngine.Transform::SetLocalPositionAndRotation(UnityEngine.Vector3,UnityEngine.Quaternion)
+01d8cf62 mov        dword ptr [rbx + 0x2cc], 0x3e800000 ; ~_localTime
+01d8cf6c mov        dword ptr [rbx + 0x1ec], 3 ; ~_patternMode
+01d8cf76 mov        rsi, qword ptr [rsp + 0x60]
+01d8cf7b mov        rdi, qword ptr [rsp + 0x68]
+01d8cf80 movaps     xmm6, xmmword ptr [rsp + 0x40]
+01d8cf85 add        rsp, 0x50
+01d8cf89 pop        rbx
+01d8cf8a ret        
+01d8cf8b addss      xmm6, dword ptr [rbx + 0x2cc] ; ~_localTime
+01d8cf93 movss      dword ptr [rbx + 0x2cc], xmm6 ; ~_localTime
+01d8cf9b mov        rax, qword ptr [rip + 0x2624856] ; [.data 43b17f8] TypeInfo#37303
+01d8cfa2 cmp        dword ptr [rax + 0xe4], 0
+01d8cfa9 jne        0x1d8cfba
+01d8cfab mov        rcx, rax
+01d8cfae call       0x4e0d90
+01d8cfb3 mov        rax, qword ptr [rip + 0x262483e] ; [.data 43b17f8] TypeInfo#37303
+01d8cfba mov        rax, qword ptr [rax + 0xb8] ; ~_mover
+01d8cfc1 comiss     xmm6, dword ptr [rax + 0x68]
+01d8cfc5 jb         0x1d8cf80
+01d8cfc7 xor        r8d, r8d
+01d8cfca mov        edx, 1
+01d8cfcf mov        rcx, rbx
+01d8cfd2 call       0x1ccf500 ; InGame.Kernel.InGameCollisionBase::ResetObjectFlag(InGame.Kernel.InGameObject/InGameObjectFlag)
+01d8cfd7 xor        r8d, r8d
+01d8cfda mov        edx, 0x22
+01d8cfdf mov        rcx, rbx
+01d8cfe2 call       0x1ccf580 ; InGame.Kernel.InGameCollisionBase::SetObjectFlag(InGame.Kernel.InGameObject/InGameObjectFlag)
+01d8cfe7 mov        dword ptr [rbx + 0x1ec], 2 ; ~_patternMode
+01d8cff1 movaps     xmm6, xmmword ptr [rsp + 0x40]
+01d8cff6 add        rsp, 0x50
+01d8cffa pop        rbx
+01d8cffb ret        
+01d8cffc mov        rcx, qword ptr [rip + 0x2615365] ; [.data 43a2368] TypeInfo#45781
+01d8d003 cmp        dword ptr [rcx + 0xe4], 0
+01d8d00a jne        0x1d8d011
+01d8d00c call       0x4e0d90
+01d8d011 xor        edx, edx
+01d8d013 mov        ecx, 0x36
+01d8d018 call       0x2723de0 ; TXEKernel.Sound.SoundUtility::PlayQue(TXEKernel.Sound.SoundUtility/ID)
+01d8d01d movaps     xmm6, xmmword ptr [rsp + 0x40]
+01d8d022 mov        dword ptr [rbx + 0x1ec], 1 ; ~_patternMode
+01d8d02c add        rsp, 0x50
+01d8d030 pop        rbx
+01d8d031 ret        
+01d8d032 call       0x4e0d00

@@ -1,0 +1,38 @@
+#### InGame.Kernel.Enemy.Ene_Sm01::SetRandomMoveRotation() RVA 1d02780 len a7
+01d02780  push     rbx
+01d02782  sub      rsp, 0x60
+01d02786  movss    xmm1, dword ptr [rip + 0x17ea18a]   ; rdata 34ec918 f=360,inf,nan,nan d=1.404448116e+306
+01d0278e  xor      r8d, r8d
+01d02791  movaps   xmmword ptr [rsp + 0x50], xmm7   ; ev.randomFire/._animatorsPlay
+01d02796  xorps    xmm0, xmm0
+01d02799  movaps   xmmword ptr [rsp + 0x40], xmm8   ; ev.intValue1/._animators
+01d0279f  mov      rbx, rcx
+01d027a2  call     0x306f9d0   ; Random::Range(System.Single,System.Single)
+01d027a7  movss    xmm1, dword ptr [rip + 0x17ea169]   ; rdata 34ec918 f=360,inf,nan,nan d=1.404448116e+306
+01d027af  movaps   xmm8, xmm0
+01d027b3  xorps    xmm0, xmm0
+01d027b6  xor      r8d, r8d
+01d027b9  call     0x306f9d0   ; Random::Range(System.Single,System.Single)
+01d027be  movss    xmm1, dword ptr [rip + 0x17ea152]   ; rdata 34ec918 f=360,inf,nan,nan d=1.404448116e+306
+01d027c6  movaps   xmm7, xmm0
+01d027c9  xorps    xmm0, xmm0
+01d027cc  xor      r8d, r8d
+01d027cf  call     0x306f9d0   ; Random::Range(System.Single,System.Single)
+01d027d4  movss    xmm1, dword ptr [rip + 0x17de3e4]   ; rdata 34e0bc0 f=0.01745329,0.05,0.5,1 d=2.046363552e-13
+01d027dc  lea      rdx, [rsp + 0x20]   ; ev.value0
+01d027e1  mulss    xmm8, xmm1
+01d027e6  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01d027eb  xor      r8d, r8d
+01d027ee  mulss    xmm7, xmm1
+01d027f2  mulss    xmm0, xmm1
+01d027f6  unpcklps xmm8, xmm7
+01d027fa  movsd    qword ptr [rsp + 0x20], xmm8   ; ev.value0
+01d02801  movss    dword ptr [rsp + 0x28], xmm0   ; ev.vectorValue
+01d02807  call     0x304d890   ; Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01d0280c  movaps   xmm7, xmmword ptr [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01d02811  movaps   xmm8, xmmword ptr [rsp + 0x40]   ; ev.intValue1/._animators
+01d02817  movups   xmm0, xmmword ptr [rax]
+01d0281a  movups   xmmword ptr [rbx + 0x1d8], xmm0   ; ._smoothRotateValue
+01d02821  add      rsp, 0x60
+01d02825  pop      rbx
+01d02826  ret      

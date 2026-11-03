@@ -1,0 +1,103 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04::OnHitProgress(KANAI.HybridCollision.HybridCollisionManager/CollisionOrder) RVA 1d8c980 len 1a0
+01d8c980 mov        qword ptr [rsp + 0x10], rbx
+01d8c985 push       rsi
+01d8c986 sub        rsp, 0x40
+01d8c98a cmp        byte ptr [rip + 0x28d6e1c], 0 ; [.data 46637ad]
+01d8c991 mov        rbx, rdx
+01d8c994 mov        rsi, rcx
+01d8c997 jne        0x1d8c9c4
+01d8c999 lea        rcx, [rip + 0x25de5e0] ; [.data 436af80] TypeInfo#41050
+01d8c9a0 call       0x4e0a50
+01d8c9a5 lea        rcx, [rip + 0x25f14f4] ; [.data 437dea0] TypeInfo#42619
+01d8c9ac call       0x4e0a50
+01d8c9b1 lea        rcx, [rip + 0x25f5fa8] ; [.data 4382960] TypeInfo#43058
+01d8c9b8 call       0x4e0a50
+01d8c9bd mov        byte ptr [rip + 0x28d6de9], 1 ; [.data 46637ad]
+01d8c9c4 mov        rax, qword ptr [rbx]
+01d8c9c7 mov        qword ptr [rsp + 0x50], rdi
+01d8c9cc test       rax, rax
+01d8c9cf je         0x1d8cb1b
+01d8c9d5 mov        rcx, qword ptr [rip + 0x25de5a4] ; [.data 436af80] TypeInfo#41050
+01d8c9dc mov        edi, dword ptr [rax + 0x68]
+01d8c9df cmp        dword ptr [rcx + 0xe4], 0
+01d8c9e6 jne        0x1d8c9ed
+01d8c9e8 call       0x4e0d90
+01d8c9ed xor        edx, edx
+01d8c9ef mov        ecx, edi
+01d8c9f1 call       0x1dd77f0 ; InGame.Utility.LayerUtility::IsEnemyBullet(System.Int32)
+01d8c9f6 test       al, al
+01d8c9f8 jne        0x1d8ca34
+01d8c9fa mov        rcx, qword ptr [rip + 0x25de57f] ; [.data 436af80] TypeInfo#41050
+01d8ca01 cmp        dword ptr [rcx + 0xe4], 0
+01d8ca08 jne        0x1d8ca0f
+01d8ca0a call       0x4e0d90
+01d8ca0f xor        edx, edx
+01d8ca11 mov        ecx, edi
+01d8ca13 call       0x1dd7850 ; InGame.Utility.LayerUtility::IsEnemy(System.Int32)
+01d8ca18 test       al, al
+01d8ca1a jne        0x1d8ca44
+01d8ca1c movups     xmm0, xmmword ptr [rbx]
+01d8ca1f xor        r8d, r8d
+01d8ca22 lea        rdx, [rsp + 0x30]
+01d8ca27 mov        rcx, rsi
+01d8ca2a movaps     xmmword ptr [rsp + 0x30], xmm0
+01d8ca2f call       0x1d0eb10 ; InGame.Kernel.Enemy.PawnEnemy::OnHitProgress(KANAI.HybridCollision.HybridCollisionManager/CollisionOrder)
+01d8ca34 mov        rdi, qword ptr [rsp + 0x50]
+01d8ca39 mov        rbx, qword ptr [rsp + 0x58]
+01d8ca3e add        rsp, 0x40
+01d8ca42 pop        rsi
+01d8ca43 ret        
+01d8ca44 mov        rax, qword ptr [rbx]
+01d8ca47 test       rax, rax
+01d8ca4a je         0x1d8cb1b
+01d8ca50 mov        rdx, qword ptr [rax + 0x28]
+01d8ca54 test       rdx, rdx
+01d8ca57 je         0x1d8cb1b
+01d8ca5d mov        rdx, qword ptr [rdx + 0x48]
+01d8ca61 test       rdx, rdx
+01d8ca64 jne        0x1d8ca6a
+01d8ca66 xor        ebx, ebx
+01d8ca68 jmp        0x1d8caa7
+01d8ca6a mov        r8, qword ptr [rip + 0x25f5eef] ; [.data 4382960] TypeInfo#43058
+01d8ca71 mov        r9, qword ptr [rdx]
+01d8ca74 movzx      eax, byte ptr [r8 + 0x130] ; ~_causeOfDeath
+01d8ca7c cmp        byte ptr [r9 + 0x130], al ; ~_causeOfDeath
+01d8ca83 jb         0x1d8ca9d
+01d8ca85 movzx      ecx, al
+01d8ca88 mov        rax, qword ptr [r9 + 0xc8] ; ~_burnShakeSpeed
+01d8ca8f cmp        qword ptr [rax + rcx*8 - 8], r8
+01d8ca94 jne        0x1d8ca9d
+01d8ca96 mov        eax, 1
+01d8ca9b jmp        0x1d8ca9f
+01d8ca9d xor        eax, eax
+01d8ca9f xor        ebx, ebx
+01d8caa1 test       eax, eax
+01d8caa3 cmovne     rbx, rdx
+01d8caa7 mov        rcx, qword ptr [rip + 0x25f13f2] ; [.data 437dea0] TypeInfo#42619
+01d8caae cmp        dword ptr [rcx + 0xe4], 0
+01d8cab5 jne        0x1d8cabc
+01d8cab7 call       0x4e0d90
+01d8cabc xor        r8d, r8d
+01d8cabf xor        edx, edx
+01d8cac1 mov        rcx, rbx
+01d8cac4 call       0x306d400 ; UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01d8cac9 test       al, al
+01d8cacb je         0x1d8ca34
+01d8cad1 test       rbx, rbx
+01d8cad4 je         0x1d8cb1b
+01d8cad6 xor        r9d, r9d
+01d8cad9 mov        qword ptr [rsp + 0x20], 0
+01d8cae2 mov        edx, 0xffffffff
+01d8cae7 mov        r8d, 0x6f
+01d8caed mov        rcx, rbx
+01d8caf0 call       0x1d0f680 ; InGame.Kernel.Enemy.PawnEnemy::SetCauseOfDeath(System.Int32,TXEKernel.TXEKernelHybridCollisions/attackType,System.Boolean)
+01d8caf5 mov        rdx, qword ptr [rbx]
+01d8caf8 mov        rcx, rbx
+01d8cafb mov        rax, qword ptr [rdx + 0x2f8] ; ~_targetPlayer
+01d8cb02 mov        rdx, qword ptr [rdx + 0x300] ; ~_lastFireAngle
+01d8cb09 mov        rdi, qword ptr [rsp + 0x50]
+01d8cb0e mov        rbx, qword ptr [rsp + 0x58]
+01d8cb13 add        rsp, 0x40
+01d8cb17 pop        rsi
+01d8cb18 jmp        rax
+01d8cb1b call       0x4e0d00

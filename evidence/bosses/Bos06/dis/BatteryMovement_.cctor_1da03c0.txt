@@ -1,0 +1,32 @@
+01da03c0 sub rsp, 0x28 
+01da03c4 cmp byte ptr [rip + 0x28c343d], 0 ; rva=4663808
+01da03cb jne 0x1da03e0 
+01da03cd lea rcx, [rip + 0x25ea3c4] ; rva=438a798
+01da03d4 call 0x4e0a50 
+01da03d9 mov byte ptr [rip + 0x28c3428], 1 ; rva=4663808
+01da03e0 mov rax, qword ptr [rip + 0x25ea3b1] ; rva=438a798
+01da03e7 mov rcx, qword ptr [rax + 0xb8] 
+01da03ee mov dword ptr [rcx], 0x40400000 
+01da03f4 mov rax, qword ptr [rip + 0x25ea39d] ; rva=438a798
+01da03fb mov rcx, qword ptr [rax + 0xb8] 
+01da0402 mov dword ptr [rcx + 4], 0 
+01da0409 mov rax, qword ptr [rip + 0x25ea388] ; rva=438a798
+01da0410 mov rcx, qword ptr [rax + 0xb8] 
+01da0417 mov dword ptr [rcx + 8], 0x3f800000 
+01da041e mov rax, qword ptr [rip + 0x25ea373] ; rva=438a798
+01da0425 mov rcx, qword ptr [rax + 0xb8] 
+01da042c mov dword ptr [rcx + 0xc], 0x3e4ccccd 
+01da0433 mov rdx, qword ptr [rip + 0x25ea35e] ; rva=438a798
+01da043a mov rax, qword ptr [rdx + 0xb8] 
+01da0441 movss xmm0, dword ptr [rax + 8] 
+01da0446 subss xmm0, dword ptr [rax + 4] 
+01da044b movss dword ptr [rax + 0x10], xmm0 
+01da0450 mov rax, qword ptr [rip + 0x25ea341] ; rva=438a798
+01da0457 mov rcx, qword ptr [rax + 0xb8] 
+01da045e mov dword ptr [rcx + 0x14], 0x40a00000 
+01da0465 mov rax, qword ptr [rip + 0x25ea32c] ; rva=438a798
+01da046c mov rcx, qword ptr [rax + 0xb8] 
+01da0473 mov dword ptr [rcx + 0x18], 0x41200000 
+01da047a add rsp, 0x28 
+01da047e ret 
+01da047f int3 

@@ -1,0 +1,18 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04Bit::.ctor() RVA 1d8b3a0 len 49
+01d8b3a0 push       rbx
+01d8b3a2 sub        rsp, 0x20
+01d8b3a6 cmp        byte ptr [rip + 0x28d8423], 0 ; [.data 46637d0]
+01d8b3ad mov        rbx, rcx
+01d8b3b0 jne        0x1d8b3c5
+01d8b3b2 lea        rcx, [rip + 0x25f75a7] ; [.data 4382960] TypeInfo#43058
+01d8b3b9 call       0x4e0a50
+01d8b3be mov        byte ptr [rip + 0x28d840b], 1 ; [.data 46637d0]
+01d8b3c5 mov        rcx, qword ptr [rip + 0x25f7594] ; [.data 4382960] TypeInfo#43058
+01d8b3cc cmp        dword ptr [rcx + 0xe4], 0
+01d8b3d3 jne        0x1d8b3da
+01d8b3d5 call       0x4e0d90
+01d8b3da xor        edx, edx
+01d8b3dc mov        rcx, rbx
+01d8b3df add        rsp, 0x20
+01d8b3e3 pop        rbx
+01d8b3e4 jmp        0x1d11520 ; InGame.Kernel.Enemy.PawnEnemy::.ctor()

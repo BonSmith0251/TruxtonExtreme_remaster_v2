@@ -1,0 +1,109 @@
+#### InGame.Kernel.InGameResident::SetPlayMode(TXEKernel.PlayMode,TXEKernel.PlayActor,System.Boolean) RVA 1d220e0 len 1f5
+01d220e0  mov      qword ptr [rsp + 8], rbx
+01d220e5  mov      qword ptr [rsp + 0x10], rsi
+01d220ea  mov      qword ptr [rsp + 0x18], rdi
+01d220ef  push     r14
+01d220f1  sub      rsp, 0x60
+01d220f5  movzx    ebx, r9b
+01d220f9  mov      esi, r8d
+01d220fc  mov      r14d, edx
+01d220ff  mov      rdi, rcx
+01d22102  cmp      byte ptr [rip + 0x29413ed], 0   ; [46634f6] bss
+01d22109  jne      0x1d22166
+01d2210b  lea      rcx, [rip + 0x26628ae]   ; [43849c0] MethodRef System.Collections.Generic.Dictionary`2<prime,InGame.Kernel.Enemy.BulletTemplateSelecter>::get_Values
+01d22112  call     0x4e0a50
+01d22117  lea      rcx, [rip + 0x2640b32]   ; [4362c50] MethodRef .Enumerator<prime,InGame.Kernel.Enemy.BulletTemplateSelecter>::Dispose
+01d2211e  call     0x4e0a50
+01d22123  lea      rcx, [rip + 0x2640bde]   ; [4362d08] MethodRef .Enumerator<prime,InGame.Kernel.Enemy.BulletTemplateSelecter>::MoveNext
+01d2212a  call     0x4e0a50
+01d2212f  lea      rcx, [rip + 0x2640c8a]   ; [4362dc0] MethodRef .Enumerator<prime,InGame.Kernel.Enemy.BulletTemplateSelecter>::get_Current
+01d22136  call     0x4e0a50
+01d2213b  lea      rcx, [rip + 0x2695d56]   ; [43b7e98] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::IsInstanceNull
+01d22142  call     0x4e0a50
+01d22147  lea      rcx, [rip + 0x2695eb2]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d2214e  call     0x4e0a50
+01d22153  lea      rcx, [rip + 0x2648fe6]   ; [436b140] MethodRef .ValueCollection<prime,InGame.Kernel.Enemy.BulletTemplateSelecter>::GetEnumerator
+01d2215a  call     0x4e0a50
+01d2215f  mov      byte ptr [rip + 0x2941390], 1   ; [46634f6] bss
+01d22166  xorps    xmm0, xmm0
+01d22169  xor      eax, eax
+01d2216b  movups   xmmword ptr [rsp + 0x40], xmm0   ; ._animationPalette
+01d22170  mov      qword ptr [rsp + 0x50], rax   ; ._bulletSEPalette
+01d22175  mov      dword ptr [rdi + 0x28], r14d   ; ._playMode
+01d22179  mov      dword ptr [rdi + 0x2c], esi   ; ._playActor
+01d2217c  mov      byte ptr [rdi + 0xc8], bl   ; ._isTraining
+01d22182  mov      rcx, qword ptr [rip + 0x2695d0f]   ; [43b7e98] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::IsInstanceNull
+01d22189  call     0xd102f0   ; MonoBehaviourSingleton`1::IsInstanceNull() | SimpleSingleton`1::IsInstanceNull()
+01d2218e  test     al, al
+01d22190  jne      0x1d221ec
+01d22192  mov      rax, qword ptr [rip + 0x2695e67]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d22199  mov      rax, qword ptr [rax + 0x20]   ; ._FlushColors
+01d2219d  test     byte ptr [rax + 0x135], 1
+01d221a4  jne      0x1d221ae
+01d221a6  mov      rcx, rax
+01d221a9  call     0x4de1e0
+01d221ae  mov      rax, qword ptr [rax + 0xc0]   ; ._bgmPlaylist
+01d221b5  mov      rax, qword ptr [rax + 0x10]
+01d221b9  test     byte ptr [rax + 0x135], 1
+01d221c0  jne      0x1d221ca
+01d221c2  mov      rcx, rax
+01d221c5  call     0x4de1e0
+01d221ca  mov      rax, qword ptr [rax + 0xb8]   ; ._bgmPath
+01d221d1  mov      rcx, qword ptr [rax]
+01d221d4  test     rcx, rcx
+01d221d7  je       0x1d222d0
+01d221dd  xor      r9d, r9d
+01d221e0  mov      r8d, dword ptr [rdi + 0x2c]   ; ._playActor
+01d221e4  mov      edx, dword ptr [rdi + 0x28]   ; ._playMode
+01d221e7  call     0x1ced730   ; InGameManager::UpdateParamsByPlayMode(TXEKernel.PlayMode,TXEKernel.PlayActor)
+01d221ec  cmp      qword ptr [rdi + 0xb0], 0   ; ._bltSelecters
+01d221f4  je       0x1d222ab
+01d221fa  mov      rdx, qword ptr [rip + 0x26627bf]   ; [43849c0] MethodRef System.Collections.Generic.Dictionary`2<prime,InGame.Kernel.Enemy.BulletTemplateSelecter>::get_Values
+01d22201  mov      rcx, qword ptr [rdi + 0xb0]   ; ._bltSelecters
+01d22208  call     0x17e5690   ; Dictionary`2::get_Values() | Dictionary`2::System.Collections.Generic.IDictionary<TKey,TValue>.get_Values()
+01d2220d  test     rax, rax
+01d22210  je       0x1d222d0
+01d22216  mov      r8, qword ptr [rip + 0x2648f23]   ; [436b140] MethodRef .ValueCollection<prime,InGame.Kernel.Enemy.BulletTemplateSelecter>::GetEnumerator
+01d2221d  mov      rdx, rax
+01d22220  lea      rcx, [rsp + 0x28]   ; ._playMode
+01d22225  call     0xacb410
+01d2222a  movups   xmm0, xmmword ptr [rsp + 0x28]   ; ._playMode
+01d2222f  movups   xmmword ptr [rsp + 0x40], xmm0   ; ._animationPalette
+01d22234  movsd    xmm1, qword ptr [rsp + 0x38]   ; ._effectPalette
+01d2223a  movsd    qword ptr [rsp + 0x50], xmm1   ; ._bulletSEPalette
+01d22240  mov      qword ptr [rsp + 0x28], 0   ; ._playMode
+01d22249  lea      rbx, [rsp + 0x40]   ; ._animationPalette
+01d2224e  mov      qword ptr [rsp + 0x30], rbx   ; ._routeData
+01d22253  mov      rdx, qword ptr [rip + 0x2640aae]   ; [4362d08] MethodRef .Enumerator<prime,InGame.Kernel.Enemy.BulletTemplateSelecter>::MoveNext
+01d2225a  lea      rcx, [rsp + 0x40]   ; ._animationPalette
+01d2225f  call     0x19acbb0
+01d22264  test     al, al
+01d22266  je       0x1d2227f
+01d22268  mov      rcx, qword ptr [rsp + 0x50]   ; ._bulletSEPalette
+01d2226d  test     rcx, rcx
+01d22270  je       0x1d222c4
+01d22272  xor      r8d, r8d
+01d22275  mov      edx, dword ptr [rdi + 0x28]   ; ._playMode
+01d22278  call     0x1d61390   ; BulletTemplateSelecter::SetCurrentMode(TXEKernel.PlayMode)
+01d2227d  jmp      0x1d22253
+01d2227f  mov      rdx, qword ptr [rip + 0x26409ca]   ; [4362c50] MethodRef .Enumerator<prime,InGame.Kernel.Enemy.BulletTemplateSelecter>::Dispose
+01d22286  mov      rcx, rbx
+01d22289  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01d2228e  jmp      0x1d222ab
+01d22290  mov      rdx, qword ptr [rip + 0x26409b9]   ; [4362c50] MethodRef .Enumerator<prime,InGame.Kernel.Enemy.BulletTemplateSelecter>::Dispose
+01d22297  mov      rcx, qword ptr [rsp + 0x30]   ; ._routeData
+01d2229c  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01d222a1  mov      rcx, qword ptr [rsp + 0x28]   ; ._playMode
+01d222a6  test     rcx, rcx
+01d222a9  jne      0x1d222ca
+01d222ab  mov      rbx, qword ptr [rsp + 0x70]   ; ._ingameScaler
+01d222b0  mov      rsi, qword ptr [rsp + 0x78]   ; ._playerJetColors
+01d222b5  mov      rdi, qword ptr [rsp + 0x80]   ; ._billboardMaterial
+01d222bd  add      rsp, 0x60
+01d222c1  pop      r14
+01d222c3  ret      
+01d222c4  call     0x4e0d00
+01d222c9  nop      
+01d222ca  call     0x4dc9e0
+01d222cf  int3     
+01d222d0  call     0x4e0d00

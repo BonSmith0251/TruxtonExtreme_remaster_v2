@@ -1,0 +1,17 @@
+== InGame.Kernel.Enemy.PawnEnemy/EnemyChildData[] InGame.Kernel.Enemy.Ene_Bos04::SubEnemys() RVA 1d90600 len 4e
+01d90600 sub        rsp, 0x28
+01d90604 cmp        byte ptr [rip + 0x28d31a1], 0 ; [.data 46637ac]
+01d9060b jne        0x1d90620
+01d9060d lea        rcx, [rip + 0x26211e4] ; [.data 43b17f8] TypeInfo#37303
+01d90614 call       0x4e0a50
+01d90619 mov        byte ptr [rip + 0x28d318c], 1 ; [.data 46637ac]
+01d90620 mov        rax, qword ptr [rip + 0x26211d1] ; [.data 43b17f8] TypeInfo#37303
+01d90627 cmp        dword ptr [rax + 0xe4], 0
+01d9062e jne        0x1d9063f
+01d90630 mov        rcx, rax
+01d90633 call       0x4e0d90
+01d90638 mov        rax, qword ptr [rip + 0x26211b9] ; [.data 43b17f8] TypeInfo#37303
+01d9063f mov        rax, qword ptr [rax + 0xb8] ; ~_mover
+01d90646 mov        rax, qword ptr [rax]
+01d90649 add        rsp, 0x28
+01d9064d ret        

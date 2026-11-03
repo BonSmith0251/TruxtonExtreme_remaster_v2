@@ -1,0 +1,37 @@
+01da0350 mov qword ptr [rsp + 8], rbx 
+01da0355 push rdi 
+01da0356 sub rsp, 0x20 
+01da035a mov rbx, rcx 
+01da035d xor edi, edi 
+01da035f mov qword ptr [rcx + 0x28], rdi 
+01da0363 xor edx, edx 
+01da0365 add rcx, 0x28 
+01da0369 call 0x4dfd80 
+01da036e lea rcx, [rbx + 0x30] 
+01da0372 mov qword ptr [rbx + 0x30], rdi 
+01da0376 xor edx, edx 
+01da0378 call 0x4dfd80 
+01da037d lea rcx, [rbx + 0x38] 
+01da0381 mov qword ptr [rbx + 0x38], rdi 
+01da0385 xor edx, edx 
+01da0387 call 0x4dfd80 
+01da038c lea rcx, [rbx + 0x40] 
+01da0390 mov qword ptr [rbx + 0x40], rdi 
+01da0394 xor edx, edx 
+01da0396 call 0x4dfd80 
+01da039b lea rcx, [rbx + 0x48] 
+01da039f mov qword ptr [rbx + 0x48], rdi 
+01da03a3 xor edx, edx 
+01da03a5 call 0x4dfd80 
+01da03aa mov byte ptr [rbx + 0x10], dil 
+01da03ae mov rbx, qword ptr [rsp + 0x30] 
+01da03b3 add rsp, 0x20 
+01da03b7 pop rdi 
+01da03b8 ret 
+01da03b9 int3 
+01da03ba int3 
+01da03bb int3 
+01da03bc int3 
+01da03bd int3 
+01da03be int3 
+01da03bf int3 

@@ -1,0 +1,41 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04Bit::Fire() RVA 1d8aea0 len a3
+01d8aea0 push       rbx
+01d8aea2 sub        rsp, 0x70
+01d8aea6 xor        edx, edx
+01d8aea8 mov        rbx, rcx
+01d8aeab call       0x1d11c40 ; InGame.Kernel.Enemy.PawnEnemy::get_IsCancelToken()
+01d8aeb0 test       al, al
+01d8aeb2 jne        0x1d8af38
+01d8aeb8 mov        qword ptr [rsp + 0x80], rdi
+01d8aec0 xor        edx, edx
+01d8aec2 mov        rdi, qword ptr [rbx + 0xb8] ; ~_mover
+01d8aec9 mov        rcx, rbx
+01d8aecc call       0x1d11bc0 ; InGame.Kernel.Enemy.PawnEnemy::get_CToken()
+01d8aed1 mov        rcx, qword ptr [rbx + 0x50]
+01d8aed5 test       rdi, rdi
+01d8aed8 je         0x1d8af3e
+01d8aeda mov        r9, qword ptr [rbx + 0x1b8] ; ~_isPlayerSideBottom
+01d8aee1 xor        edx, edx
+01d8aee3 mov        qword ptr [rsp + 0x58], rdx
+01d8aee8 xorps      xmm0, xmm0
+01d8aeeb mov        qword ptr [rsp + 0x50], rdx
+01d8aef0 mov        r8, rax
+01d8aef3 mov        dword ptr [rsp + 0x48], edx
+01d8aef7 movss      dword ptr [rsp + 0x40], xmm0
+01d8aefd mov        qword ptr [rsp + 0x38], rdx
+01d8af02 mov        qword ptr [rsp + 0x30], rcx
+01d8af07 lea        rcx, [rsp + 0x60]
+01d8af0c mov        byte ptr [rsp + 0x28], dl
+01d8af10 mov        byte ptr [rsp + 0x20], dl
+01d8af14 mov        rdx, rdi
+01d8af17 call       0x1cd8fe0 ; InGame.Kernel.InGameEnemyMoveBase::BulletFireAsync(System.Threading.CancellationToken,InGame.Kernel.Enemy.BulletTemplate,System.Boolean,System.Boolean,UnityEngine.Transform,UnityEngine.Transform,System.Single,System.Int32,System.Action`1<InGame.Kernel.InGameBulletInterface>)
+01d8af1c xor        edx, edx
+01d8af1e lea        rcx, [rsp + 0x60]
+01d8af23 movups     xmm0, xmmword ptr [rax]
+01d8af26 movaps     xmmword ptr [rsp + 0x60], xmm0
+01d8af2b call       0x2742890 ; Cysharp.Threading.Tasks.UniTaskExtensions::Forget(Cysharp.Threading.Tasks.UniTask)
+01d8af30 mov        rdi, qword ptr [rsp + 0x80]
+01d8af38 add        rsp, 0x70
+01d8af3c pop        rbx
+01d8af3d ret        
+01d8af3e call       0x4e0d00

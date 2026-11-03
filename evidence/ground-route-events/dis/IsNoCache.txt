@@ -1,0 +1,40 @@
+01d1dfb0  push     rbx
+01d1dfb2  sub      rsp, 0x20
+01d1dfb6  cmp      byte ptr [rip + 0x2945503], 0   ; [46634c0] bss
+01d1dfbd  mov      rbx, rdx
+01d1dfc0  jne      0x1d1dfed
+01d1dfc2  lea      rcx, [rip + 0x26a933f]   ; [43c7308] str:"collision"
+01d1dfc9  call     0x4e0a50
+01d1dfce  lea      rcx, [rip + 0x26b3d8b]   ; [43d1d60] str:"damage"
+01d1dfd5  call     0x4e0a50
+01d1dfda  lea      rcx, [rip + 0x26a110f]   ; [43bf0f0] str:"burner"
+01d1dfe1  call     0x4e0a50
+01d1dfe6  mov      byte ptr [rip + 0x29454d3], 1   ; [46634c0] bss
+01d1dfed  test     rbx, rbx
+01d1dff0  je       0x1d1e043
+01d1dff2  mov      rdx, qword ptr [rip + 0x26b3d67]   ; [43d1d60] str:"damage"
+01d1dff9  xor      r8d, r8d
+01d1dffc  mov      rcx, rbx
+01d1dfff  call     0x1e7f1a0   ; String::Contains(System.String)
+01d1e004  test     al, al
+01d1e006  jne      0x1d1e03b
+01d1e008  mov      rdx, qword ptr [rip + 0x26a92f9]   ; [43c7308] str:"collision"
+01d1e00f  xor      r8d, r8d
+01d1e012  mov      rcx, rbx
+01d1e015  call     0x1e7f1a0   ; String::Contains(System.String)
+01d1e01a  test     al, al
+01d1e01c  jne      0x1d1e03b
+01d1e01e  mov      rdx, qword ptr [rip + 0x26a10cb]   ; [43bf0f0] str:"burner"
+01d1e025  xor      r8d, r8d
+01d1e028  mov      rcx, rbx
+01d1e02b  call     0x1e7f1a0   ; String::Contains(System.String)
+01d1e030  test     al, al
+01d1e032  setne    al
+01d1e035  add      rsp, 0x20
+01d1e039  pop      rbx
+01d1e03a  ret      
+01d1e03b  mov      al, 1
+01d1e03d  add      rsp, 0x20
+01d1e041  pop      rbx
+01d1e042  ret      
+01d1e043  call     0x4e0d00

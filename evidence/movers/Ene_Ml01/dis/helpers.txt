@@ -1,0 +1,250 @@
+01dcca20  push     rbx
+01dcca22  sub      rsp, 0x60
+01dcca26  mov      rdx, qword ptr [rdx + 0x50]   ; ._transformCache
+01dcca2a  mov      rbx, rcx
+01dcca2d  test     rdx, rdx
+01dcca30  je       0x1dccac0
+01dcca36  xor      r8d, r8d
+01dcca39  movaps   xmmword ptr [rsp + 0x50], xmm6   ; ._transformCache
+01dcca3e  lea      rcx, [rsp + 0x40]   ; ._hitOrders
+01dcca43  call     0x30937f0   ; Transform::get_localRotation()
+01dcca48  cmp      byte ptr [rip + 0x2891d4e], 0   ; [465e79d] bss
+01dcca4f  movups   xmm6, xmmword ptr [rax]
+01dcca52  jne      0x1dcca67
+01dcca54  lea      rcx, [rip + 0x25f4c7d]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01dcca5b  call     0x4e0a50
+01dcca60  mov      byte ptr [rip + 0x2891d36], 1   ; [465e79d] bss
+01dcca67  mov      rax, qword ptr [rip + 0x25f4c6a]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01dcca6e  lea      r8, [rsp + 0x20]   ; ev.value0
+01dcca73  xor      r9d, r9d
+01dcca76  movdqa   xmmword ptr [rsp + 0x40], xmm6   ; ._hitOrders
+01dcca7c  lea      rdx, [rsp + 0x40]   ; ._hitOrders
+01dcca81  lea      rcx, [rsp + 0x30]   ; ._Damage
+01dcca86  mov      rax, qword ptr [rax + 0xb8]   ; statics
+01dcca8d  movsd    xmm0, qword ptr [rax + 0x48]   ; S:Vector3.forwardVector
+01dcca92  mov      eax, dword ptr [rax + 0x50]   ; ._transformCache
+01dcca95  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01dcca9b  mov      dword ptr [rsp + 0x28], eax   ; ev.vectorValue
+01dcca9f  call     0x304ea60   ; Quaternion::op_Multiply(UnityEngine.Quaternion,UnityEngine.Vector3)
+01dccaa4  movaps   xmm6, xmmword ptr [rsp + 0x50]   ; ._transformCache
+01dccaa9  movsd    xmm0, qword ptr [rax]   ; S:Vector3.zeroVector
+01dccaad  mov      eax, dword ptr [rax + 8]
+01dccab0  movsd    qword ptr [rbx], xmm0
+01dccab4  mov      dword ptr [rbx + 8], eax
+01dccab7  mov      rax, rbx
+01dccaba  add      rsp, 0x60
+01dccabe  pop      rbx
+01dccabf  ret      
+01dccac0  call     0x4e0d00
+
+01dcc5e0  mov      rax, rsp
+01dcc5e3  mov      qword ptr [rax + 8], rbx
+01dcc5e7  mov      qword ptr [rax + 0x10], rbp   ; ev.eventType
+01dcc5eb  mov      qword ptr [rax + 0x18], rsi   ; ev.repeatDelay
+01dcc5ef  push     rdi
+01dcc5f0  sub      rsp, 0xa0
+01dcc5f7  cmp      byte ptr [rip + 0x288ff13], 0   ; [465c511] bss
+01dcc5fe  mov      rdi, r9
+01dcc601  movaps   xmmword ptr [rax - 0x18], xmm6
+01dcc605  mov      rsi, r8
+01dcc608  movaps   xmmword ptr [rax - 0x28], xmm7
+01dcc60c  mov      rbp, rdx
+01dcc60f  mov      rbx, rcx
+01dcc612  jne      0x1dcc627
+01dcc614  lea      rcx, [rip + 0x25f50bd]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01dcc61b  call     0x4e0a50
+01dcc620  mov      byte ptr [rip + 0x288feea], 1   ; [465c511] bss
+01dcc627  mov      rax, qword ptr [rip + 0x25f50aa]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01dcc62e  lea      r8, [rsp + 0x30]   ; ._Damage
+01dcc633  xor      r9d, r9d
+01dcc636  lea      rdx, [rsp + 0x40]   ; ._hitOrders
+01dcc63b  lea      rcx, [rsp + 0x70]
+01dcc640  mov      rax, qword ptr [rax + 0xb8]   ; statics
+01dcc647  movsd    xmm0, qword ptr [rax + 0x18]   ; S:Vector3.upVector
+01dcc64c  mov      eax, dword ptr [rax + 0x20]   ; ev.value0
+01dcc64f  movsd    qword ptr [rsp + 0x30], xmm0   ; ._Damage
+01dcc655  movsd    xmm0, qword ptr [rdi]
+01dcc659  mov      dword ptr [rsp + 0x38], eax   ; .onDisableEvent
+01dcc65d  mov      eax, dword ptr [rdi + 8]
+01dcc660  movsd    qword ptr [rsp + 0x40], xmm0   ; ._hitOrders
+01dcc666  mov      dword ptr [rsp + 0x48], eax   ; ._hitIndex
+01dcc66a  call     0x304db80   ; Quaternion::Internal_LookRotation(UnityEngine.Vector3&,UnityEngine.Vector3&)
+01dcc66f  movups   xmm2, xmmword ptr [rsi]
+01dcc672  mov      rdi, rax
+01dcc675  movss    xmm6, dword ptr [rsp + 0xd0]   ; ._startDelayTime
+01dcc67e  movups   xmm3, xmmword ptr [rax]   ; S:Vector3.zeroVector
+01dcc681  movss    xmm7, dword ptr [rip + 0x1714543]   ; rdata 34e0bcc f=1,3.141593,4,10 d=50.12387842
+01dcc689  movaps   xmm0, xmm2
+01dcc68c  mulss    xmm6, dword ptr [rbp + 0x230]   ; ._turnSpeed
+01dcc694  movaps   xmm4, xmm3
+01dcc697  shufps   xmm4, xmm3, 0x55
+01dcc69b  movaps   xmm1, xmm3
+01dcc69e  shufps   xmm0, xmm2, 0x55
+01dcc6a2  mulss    xmm4, xmm0
+01dcc6a6  movaps   xmm0, xmm3
+01dcc6a9  mulss    xmm0, xmm2
+01dcc6ad  shufps   xmm1, xmm3, 0xaa
+01dcc6b1  movaps   xmmword ptr [rsp + 0x50], xmm3   ; ._transformCache
+01dcc6b6  addss    xmm4, xmm0
+01dcc6ba  movaps   xmmword ptr [rsp + 0x60], xmm2   ; ._currentPosition
+01dcc6bf  movaps   xmm0, xmm2
+01dcc6c2  shufps   xmm3, xmm3, 0xff
+01dcc6c6  shufps   xmm0, xmm2, 0xaa
+01dcc6ca  mulss    xmm1, xmm0
+01dcc6ce  shufps   xmm2, xmm2, 0xff
+01dcc6d2  mulss    xmm3, xmm2
+01dcc6d6  addss    xmm4, xmm1
+01dcc6da  addss    xmm4, xmm3
+01dcc6de  andps    xmm4, xmmword ptr [rip + 0x172023b]   ; rdata 34ec920 f=nan,nan,nan,nan d=nan
+01dcc6e5  minss    xmm4, xmm7
+01dcc6e9  comiss   xmm4, dword ptr [rip + 0x18265e4]   ; rdata 35f2cd4 f=0.999999,4.5,45,60 d=1024.000242
+01dcc6f0  ja       0x1dcc73d
+01dcc6f2  movaps   xmm0, xmm4
+01dcc6f5  call     0x578460
+01dcc6fa  addss    xmm0, xmm0
+01dcc6fe  mulss    xmm0, dword ptr [rip + 0x17144da]   ; rdata 34e0be0 f=57.29578,100,180,2000 d=5.277656684e+13
+01dcc706  xorps    xmm1, xmm1
+01dcc709  ucomiss  xmm0, xmm1
+01dcc70c  jp       0x1dcc710
+01dcc70e  je       0x1dcc73d
+01dcc710  divss    xmm6, xmm0
+01dcc714  lea      r8, [rsp + 0x50]   ; ._transformCache
+01dcc719  mov      qword ptr [rsp + 0x20], 0   ; ev.value0
+01dcc722  lea      rdx, [rsp + 0x60]   ; ._currentPosition
+01dcc727  lea      rcx, [rsp + 0x70]
+01dcc72c  minss    xmm7, xmm6
+01dcc730  movaps   xmm3, xmm7
+01dcc733  call     0x304dce0   ; Quaternion::Internal_SlerpUnclamped(UnityEngine.Quaternion&,UnityEngine.Quaternion&,System.Single)
+01dcc738  movups   xmm0, xmmword ptr [rax]   ; S:Vector3.zeroVector
+01dcc73b  jmp      0x1dcc740
+01dcc73d  movups   xmm0, xmmword ptr [rdi]
+01dcc740  lea      r11, [rsp + 0xa0]   ; .PoolEvent
+01dcc748  mov      rax, rbx
+01dcc74b  mov      rbp, qword ptr [r11 + 0x18]   ; ev.repeatDelay
+01dcc74f  mov      rsi, qword ptr [r11 + 0x20]   ; ev.value0
+01dcc753  movaps   xmm6, xmmword ptr [r11 - 0x10]
+01dcc758  movaps   xmm7, xmmword ptr [r11 - 0x20]
+01dcc75d  movups   xmmword ptr [rbx], xmm0
+01dcc760  mov      rbx, qword ptr [r11 + 0x10]   ; ev.eventType
+01dcc764  mov      rsp, r11
+01dcc767  pop      rdi
+01dcc768  ret      
+
+01dca480  push     rbx
+01dca482  sub      rsp, 0x30
+01dca486  movaps   xmm0, xmm1
+01dca489  movaps   xmmword ptr [rsp + 0x20], xmm6   ; ev.value0
+01dca48e  movss    xmm1, dword ptr [rip + 0x1722482]   ; rdata 34ec918 f=360,inf,nan,nan d=1.404448116e+306
+01dca496  mov      rbx, r8
+01dca499  call     0x578cb0
+01dca49e  movaps   xmm6, xmm0
+01dca4a1  comiss   xmm6, dword ptr [rip + 0x1716740]   ; rdata 34e0be8 f=180,2000,-0.0001,-1 d=1.96450476e+24
+01dca4a8  jbe      0x1dca4b4
+01dca4aa  subss    xmm6, dword ptr [rip + 0x1722466]   ; rdata 34ec918 f=360,inf,nan,nan d=1.404448116e+306
+01dca4b2  jmp      0x1dca4c9
+01dca4b4  movss    xmm0, dword ptr [rip + 0x18288a8]   ; rdata 35f2d64 f=-180,0.9,-75,-400 d=0.002734375675
+01dca4bc  comiss   xmm0, xmm6
+01dca4bf  jbe      0x1dca4c9
+01dca4c1  addss    xmm6, dword ptr [rip + 0x172244f]   ; rdata 34ec918 f=360,inf,nan,nan d=1.404448116e+306
+01dca4c9  movss    xmm1, dword ptr [rbx + 8]
+01dca4ce  movss    xmm0, dword ptr [rbx]
+01dca4d2  call     0x578890
+01dca4d7  mulss    xmm0, dword ptr [rip + 0x1716701]   ; rdata 34e0be0 f=57.29578,100,180,2000 d=5.277656684e+13
+01dca4df  subss    xmm0, xmm6
+01dca4e3  movaps   xmm6, xmmword ptr [rsp + 0x20]   ; ev.value0
+01dca4e8  andps    xmm0, xmmword ptr [rip + 0x1722431]   ; rdata 34ec920 f=nan,nan,nan,nan d=nan
+01dca4ef  add      rsp, 0x30
+01dca4f3  pop      rbx
+01dca4f4  ret      
+
+01dca6c0  movss    xmm1, dword ptr [rdx]
+01dca6c4  movdqa   xmm2, xmmword ptr [rip + 0x1722254]   ; rdata 34ec920 f=nan,nan,nan,nan d=nan
+01dca6cc  movss    xmm0, dword ptr [rcx + 0x220]   ; ._searchLimitX
+01dca6d4  andps    xmm1, xmm2
+01dca6d7  comiss   xmm0, xmm1
+01dca6da  ja       0x1dca6df
+01dca6dc  xor      al, al
+01dca6de  ret      
+01dca6df  movss    xmm1, dword ptr [rdx + 4]
+01dca6e4  movss    xmm0, dword ptr [rcx + 0x224]   ; ._searchLimitY
+01dca6ec  andps    xmm1, xmm2
+01dca6ef  comiss   xmm0, xmm1
+01dca6f2  seta     al
+01dca6f5  ret      
+01dca6f6  int3     
+01dca6f7  int3     
+01dca6f8  int3     
+01dca6f9  int3     
+01dca6fa  int3     
+01dca6fb  int3     
+01dca6fc  int3     
+01dca6fd  int3     
+01dca6fe  int3     
+01dca6ff  int3     
+01dca700  push     rbx
+01dca702  sub      rsp, 0x80
+01dca709  movaps   xmmword ptr [rsp + 0x70], xmm6
+01dca70e  movaps   xmm6, xmm2
+01dca711  mov      rbx, rcx
+01dca714  test     rdx, rdx
+01dca717  je       0x1dca81e
+01dca71d  xor      r8d, r8d
+01dca720  lea      rcx, [rsp + 0x30]   ; ._Damage
+01dca725  call     0x3093700   ; Transform::get_localPosition()
+01dca72a  mov      rdx, qword ptr [rbx + 0x50]   ; ._transformCache
+01dca72e  movsd    xmm0, qword ptr [rax]
+01dca732  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01dca738  test     rdx, rdx
+01dca73b  je       0x1dca81e
+01dca741  xor      r8d, r8d
+01dca744  movaps   xmmword ptr [rsp + 0x60], xmm7   ; ._currentPosition
+01dca749  lea      rcx, [rsp + 0x50]   ; ._transformCache
+01dca74e  call     0x30937f0   ; Transform::get_localRotation()
+01dca753  cmp      byte ptr [rip + 0x2894043], 0   ; [465e79d] bss
+01dca75a  movups   xmm7, xmmword ptr [rax]
+01dca75d  jne      0x1dca772
+01dca75f  lea      rcx, [rip + 0x25f6f72]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01dca766  call     0x4e0a50
+01dca76b  mov      byte ptr [rip + 0x289402b], 1   ; [465e79d] bss
+01dca772  mov      rax, qword ptr [rip + 0x25f6f5f]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01dca779  lea      r8, [rsp + 0x30]   ; ._Damage
+01dca77e  xor      r9d, r9d
+01dca781  movdqa   xmmword ptr [rsp + 0x50], xmm7   ; ._transformCache
+01dca787  lea      rdx, [rsp + 0x50]   ; ._transformCache
+01dca78c  lea      rcx, [rsp + 0x40]   ; ._hitOrders
+01dca791  mov      rax, qword ptr [rax + 0xb8]   ; statics
+01dca798  movsd    xmm0, qword ptr [rax + 0x48]   ; S:Vector3.forwardVector
+01dca79d  mov      eax, dword ptr [rax + 0x50]   ; ._transformCache
+01dca7a0  movsd    qword ptr [rsp + 0x30], xmm0   ; ._Damage
+01dca7a6  mov      dword ptr [rsp + 0x38], eax   ; .onDisableEvent
+01dca7aa  call     0x304ea60   ; Quaternion::op_Multiply(UnityEngine.Quaternion,UnityEngine.Vector3)
+01dca7af  movdqa   xmm3, xmmword ptr [rip + 0x1722169]   ; rdata 34ec920 f=nan,nan,nan,nan d=nan
+01dca7b7  movss    xmm0, dword ptr [rbx + 0x220]   ; ._searchLimitX
+01dca7bf  movaps   xmm7, xmmword ptr [rsp + 0x60]   ; ._currentPosition
+01dca7c4  movsd    xmm1, qword ptr [rax]   ; S:Vector3.zeroVector
+01dca7c8  movaps   xmm2, xmm1
+01dca7cb  mulss    xmm1, xmm6
+01dca7cf  shufps   xmm2, xmm2, 0x55
+01dca7d3  mulss    xmm2, xmm6
+01dca7d7  addss    xmm1, dword ptr [rsp + 0x20]   ; ev.value0
+01dca7dd  addss    xmm2, dword ptr [rsp + 0x24]   ; ev.value1
+01dca7e3  andps    xmm1, xmm3
+01dca7e6  comiss   xmm0, xmm1
+01dca7e9  ja       0x1dca7fd
+01dca7eb  xor      al, al
+01dca7ed  xor      al, 1
+01dca7ef  movaps   xmm6, xmmword ptr [rsp + 0x70]
+01dca7f4  add      rsp, 0x80
+01dca7fb  pop      rbx
+01dca7fc  ret      
+01dca7fd  movss    xmm0, dword ptr [rbx + 0x224]   ; ._searchLimitY
+01dca805  andps    xmm2, xmm3
+01dca808  movaps   xmm6, xmmword ptr [rsp + 0x70]
+01dca80d  comiss   xmm0, xmm2
+01dca810  seta     al
+01dca813  xor      al, 1
+01dca815  add      rsp, 0x80
+01dca81c  pop      rbx
+01dca81d  ret      
+01dca81e  call     0x4e0d00
+

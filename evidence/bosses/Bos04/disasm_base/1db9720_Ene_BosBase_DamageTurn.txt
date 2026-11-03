@@ -1,0 +1,63 @@
+== Cysharp.Threading.Tasks.UniTask InGame.Kernel.Enemy.Ene_BosBase::DamageTurn(UnityEngine.Quaternion,System.Single,System.Action) RVA 1db9720 len 11d
+01db9720 mov        qword ptr [rsp + 8], rbx
+01db9725 mov        qword ptr [rsp + 0x10], rsi
+01db972a push       rdi
+01db972b sub        rsp, 0xb0
+01db9732 cmp        byte ptr [rip + 0x28aa14c], 0 ; [.data 4663885]
+01db9739 mov        rsi, r8
+01db973c movaps     xmmword ptr [rsp + 0xa0], xmm6 ; ~PoolEvent
+01db9744 mov        rbx, rdx
+01db9747 movaps     xmm6, xmm3
+01db974a mov        rdi, rcx
+01db974d jne        0x1db9762
+01db974f lea        rcx, [rip + 0x25eb2fa] ; [.data 43a4a50] MethodRef#179827
+01db9756 call       0x4e0a50
+01db975b mov        byte ptr [rip + 0x28aa123], 1 ; [.data 4663885]
+01db9762 xorps      xmm0, xmm0
+01db9765 lea        rcx, [rsp + 0x38]
+01db976a xor        eax, eax
+01db976c xor        edx, edx
+01db976e movups     xmmword ptr [rsp + 0x30], xmm0
+01db9773 mov        qword ptr [rsp + 0x90], rax ; ~_priority
+01db977b movups     xmmword ptr [rsp + 0x40], xmm0
+01db9780 movups     xmmword ptr [rsp + 0x38], xmm0
+01db9785 movups     xmmword ptr [rsp + 0x50], xmm0
+01db978a movups     xmmword ptr [rsp + 0x60], xmm0
+01db978f movups     xmmword ptr [rsp + 0x70], xmm0
+01db9794 movups     xmmword ptr [rsp + 0x80], xmm0
+01db979c call       0x4dfd80
+01db97a1 mov        rdx, rbx
+01db97a4 mov        qword ptr [rsp + 0x48], rbx
+01db97a9 lea        rcx, [rsp + 0x48]
+01db97ae call       0x4dfd80
+01db97b3 movups     xmm0, xmmword ptr [rsi]
+01db97b6 mov        rdx, qword ptr [rsp + 0xe0] ; ~_deadExplosion
+01db97be lea        rcx, [rsp + 0x68]
+01db97c3 movss      dword ptr [rsp + 0x60], xmm6
+01db97c9 movaps     xmmword ptr [rsp + 0x50], xmm0
+01db97ce mov        qword ptr [rsp + 0x68], rdx
+01db97d3 call       0x4dfd80
+01db97d8 mov        rbx, qword ptr [rip + 0x25eb271] ; [.data 43a4a50] MethodRef#179827
+01db97df mov        dword ptr [rsp + 0x30], 0xffffffff
+01db97e7 cmp        qword ptr [rbx + 0x38], 0
+01db97ec jne        0x1db97f6
+01db97ee mov        rcx, rbx
+01db97f1 call       0x4de260
+01db97f6 mov        rdx, qword ptr [rbx + 0x38]
+01db97fa lea        rcx, [rsp + 0x30]
+01db97ff mov        rdx, qword ptr [rdx + 0x10]
+01db9803 call       0x1dd0e40 ; InGame.Kernel.Enemy.Ene_BosBase/<DamageTurn>d__50::MoveNext()
+01db9808 xor        r8d, r8d
+01db980b lea        rdx, [rsp + 0x38]
+01db9810 lea        rcx, [rsp + 0x20]
+01db9815 call       0x71b540
+01db981a lea        r11, [rsp + 0xb0] ; ~_updateEventCount
+01db9822 mov        rbx, qword ptr [r11 + 0x10]
+01db9826 mov        rsi, qword ptr [r11 + 0x18]
+01db982a movups     xmm0, xmmword ptr [rax]
+01db982d mov        rax, rdi
+01db9830 movaps     xmm6, xmmword ptr [r11 - 0x10]
+01db9835 movups     xmmword ptr [rdi], xmm0
+01db9838 mov        rsp, r11
+01db983b pop        rdi
+01db983c ret        

@@ -1,0 +1,71 @@
+{
+  "schema": "truxton-boss-constants/1",
+  "class": "InGame.Kernel.Enemy.Ene_Bos01",
+  "source": "D:/games/Truxton Extreme/GameAssembly.dll (IL2CPP x64); disassembly in dis_all.txt / dis_base.txt (dis.py)",
+  "statics_cctor_0x1d7bf30": {
+    "_homePosition": [0, 0, 40],
+    "_rushPosition": [0, 0, -30],
+    "_homeStayTime": 8.0,
+    "_cannonMax": 8,
+    "_moveSpring": 8.0,
+    "_moveDamping": 5.6,
+    "_btNames": ["Boss01/bos01laser01", "Boss01/bos01laser02", "Boss01/bos01bullet01", "Boss01/bos01bullet10", "Boss01/bos01bullet11"],
+    "_asteroidEnemyClipNames": ["ene_asteroid_bs_l_l", "ene_asteroid_bs_m_l", "ene_asteroid_bs_s_l", "ene_asteroid_bs_l_r", "ene_asteroid_bs_m_r", "ene_asteroid_bs_s_r"],
+    "_asteroidSpawnTime": 60.0,
+    "_bodyLaser1name": "body/body_laser_muzzle40",
+    "_bodyLaser2name": "body/body_laser_muzzle60",
+    "_bodyCoreMuzzle": "body/body_muzzle50",
+    "Destruction_Rotation_deg": [20, 135, 0],
+    "_allPatterns": ["_pattern1", "_pattern2", "_pattern3"],
+    "unused_patterns": ["_pattern4", "_pattern5"],
+    "patterns_file": "wing_patterns.json"
+  },
+  "metadata_literal_constants": {
+    "PT1_HoverSpeed": 2, "PT1_HoverAmplitude": 5, "PT1_TotalDuration": 5, "PT1_TotalDuration2": 2, "PT1_BlendInDuration": 1.5,
+    "PT2_HoverSpeed": 2, "PT2_HoverAmplitude": 5, "PT2_FireWaitTime1": 1, "PT2_FireWaitTime2": 0.1,
+    "PT2_HomeArrivalDistance": 0.5, "PT2_HomeMoveSpeed": 0.4, "PT2_WaitTime": 1.5,
+    "Wing_OpenSpeed": 0.5, "Wing_CloseSpeed": 1,
+    "Destruction_FallDistance": 150, "Destruction_InitialExplosionCount": 4,
+    "Destruction_Shake1_Amount": 0.5, "Destruction_Shake1_Speed": 1, "Destruction_Shake1_Time": 2,
+    "Destruction_SmallBombInterval": 0.2, "Destruction_DirectionTime": 5.5, "Destruction_FallStartTime": 3.5,
+    "Destruction_DeadEffectWaitTime": 2,
+    "Destruction_Shake2_Amount": 0.5, "Destruction_Shake2_Speed": 1, "Destruction_Shake2_Time": 5,
+    "CannonBreak_Shake_Time": 1, "CannonBreak_Shake_Power": 1, "CannonBreak_Shake_Speed": 10,
+    "MovementStopThresholdSq": 0.01, "MovementIntegrationMaxStep": 0.05,
+    "InfinityLoopWidth": 10, "InfinityLoopHeight": 1, "InfinityLoopEndThreshold": 0.99,
+    "Wing_WaitBetweenPatterns": 5, "Wing_WaitAfterLastPattern": 10, "Wing_CannonRollDuration": 1, "Wing_ResetToLaserWaitTime": 3,
+    "Core_InitialWaitTime": 10, "Core_ShotCount": 8, "Core_ShotInterval": 0.5, "Core_SequenceInterval": 10,
+    "DestroyedCannonColorBlendRate": 0.5,
+    "CannonData.RollAngle": -90
+  },
+  "instance_defaults_ctor_0x1d7d0e0": {"PartsCount": 11, "_ShortLaserSEVolume": 0.5, "_isEntry": true, "_movementSpringScale": 1.0, "_wingLaserBits": "0x1ff800 (WingAll)"},
+  "prefab_serialized": {"_ShortLaserSEVolume": 0.7, "_deadExplosion": "pf_eff_explposion_boss", "_overplayDeadSound": "41 exp_st3_boss_b02", "_explosionOffset": [0, 0, 0], "_HitPoint": 100},
+  "cannonBits": {
+    "L4": 1, "L3": 2, "L2": 4, "L1": 8, "R4": 16, "R3": 32, "R2": 64, "R1": 128,
+    "BodyL": 256, "BodyR": 512, "Core": 1024,
+    "WL5": 2048, "WL4": 4096, "WL3": 8192, "WL2": 16384, "WL1": 32768,
+    "WR5": 65536, "WR4": 131072, "WR3": 262144, "WR2": 524288, "WR1": 1048576
+  },
+  "shoulder_cannons": [
+    {"i": 0, "bit": "L4", "base": "pf_bs01/body/wing40/cannon44/cannon", "target": "wing40/cannon44t", "part": "shoulder_r4 (PartsList 6)"},
+    {"i": 1, "bit": "L3", "base": "pf_bs01/body/wing40/cannon 43/cannon", "target": "wing40/cannon43t", "part": "shoulder_r3 (5)"},
+    {"i": 2, "bit": "L2", "base": "pf_bs01/body/wing40/cannon 42/cannon", "target": "wing40/cannon42t", "part": "shoulder_r2 (4)"},
+    {"i": 3, "bit": "L1", "base": "pf_bs01/body/wing40/cannon 41/cannon", "target": "wing40/cannon41t", "part": "shoulder_r1 (3)"},
+    {"i": 4, "bit": "R4", "base": "pf_bs01/body/wing60/cannon 64/cannon", "target": "wing60/cannon64t", "part": "shoulder_l4 (10)"},
+    {"i": 5, "bit": "R3", "base": "pf_bs01/body/wing60/cannon 63/cannon", "target": "wing60/cannon63t", "part": "shoulder_l3 (9)"},
+    {"i": 6, "bit": "R2", "base": "pf_bs01/body/wing60/cannon 62/cannon", "target": "wing60/cannon62t", "part": "shoulder_l2 (8)"},
+    {"i": 7, "bit": "R1", "base": "pf_bs01/body/wing60/cannon 61/cannon", "target": "wing60/cannon61t", "part": "shoulder_l1 (7)"}
+  ],
+  "shoulder_cannon_children": {"bullet_muzzle": "cannon_muzzle", "laser_muzzle": "laser_cannon_muzzle"},
+  "wing_muzzles": [
+    {"i": 0, "bit": "WL5", "muzzle": "wing40/psrts45/muzzle"}, {"i": 1, "bit": "WL4", "muzzle": "wing40/psrts 44/muzzle"},
+    {"i": 2, "bit": "WL3", "muzzle": "wing40/psrts 43/muzzle"}, {"i": 3, "bit": "WL2", "muzzle": "wing40/psrts 42/muzzle"},
+    {"i": 4, "bit": "WL1", "muzzle": "wing40/psrts 41/muzzle"}, {"i": 5, "bit": "WR5", "muzzle": "wing60/psrts 65/muzzle"},
+    {"i": 6, "bit": "WR4", "muzzle": "wing60/psrts 64/muzzle"}, {"i": 7, "bit": "WR3", "muzzle": "wing60/psrts 63/muzzle"},
+    {"i": 8, "bit": "WR2", "muzzle": "wing60/psrts 62/muzzle"}, {"i": 9, "bit": "WR1", "muzzle": "wing60/psrts 61/muzzle"}
+  ],
+  "wing_muzzle_targets": "each <muzzle>/target (local 0,0,1)",
+  "wings": {"_leftWingModel": "pf_bs01/body/wing60 (localRotation Euler(0,+a,0))", "_rightWingModel": "pf_bs01/body/wing40 (Euler(0,-a,0))", "a_closed": 90, "a_open": 0},
+  "sounds": {"101": "bg1_boss_mothership_02 (EntryWait -> PT1)", "105": "bg1_boss_wing_open_01", "107": "bg1_boss_wing_close_01", "40": "exp_st3_boss_a01 (small bombs)", "42": "exp_st3_boss_c03 (end of destruction)", "106": "enemybullet013_01 (Ene_BosBase.InitializeToPlay ChangeSE(B004) on every boss template)"},
+  "trophy": "TrophyManager.ID 9 Gashim, on ToDestroid when IsTrophy"
+}

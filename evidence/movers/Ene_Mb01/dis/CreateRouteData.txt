@@ -1,0 +1,166 @@
+#### InGame.Kernel.Enemy.Ene_Mb01::CreateRouteData(InGame.Kernel.Timeline.EnemyData,UnityEngine.Vector3) RVA 1dbf1c0 len 30a
+01dbf1c0  mov      qword ptr [rsp + 0x20], rbx   ; ev.value0
+01dbf1c5  mov      qword ptr [rsp + 0x18], r8   ; ev.repeatDelay
+01dbf1ca  mov      qword ptr [rsp + 0x10], rdx   ; ev.eventType
+01dbf1cf  mov      qword ptr [rsp + 8], rcx
+01dbf1d4  push     rsi
+01dbf1d5  push     rdi
+01dbf1d6  push     r14
+01dbf1d8  sub      rsp, 0x80
+01dbf1df  movaps   xmmword ptr [rsp + 0x70], xmm6   ; ._transformCache
+01dbf1e4  mov      r14, r8
+01dbf1e7  mov      rsi, rdx
+01dbf1ea  mov      rdi, rcx
+01dbf1ed  cmp      byte ptr [rip + 0x28a46bc], 0   ; [46638b0] bss
+01dbf1f4  jne      0x1dbf25d
+01dbf1f6  lea      rcx, [rip + 0x25f2fcb]   ; [43b21c8] TypeInfo InGame.Kernel.Enemy.Ene_Mb01
+01dbf1fd  call     0x4e0a50
+01dbf202  lea      rcx, [rip + 0x25ff4af]   ; [43be6b8] MethodRef .Enumerator<InGame.Kernel.Timeline.RouteEvent>::Dispose
+01dbf209  call     0x4e0a50
+01dbf20e  lea      rcx, [rip + 0x25ff55b]   ; [43be770] MethodRef .Enumerator<InGame.Kernel.Timeline.RouteEvent>::MoveNext
+01dbf215  call     0x4e0a50
+01dbf21a  lea      rcx, [rip + 0x25ff607]   ; [43be828] MethodRef .Enumerator<InGame.Kernel.Timeline.RouteEvent>::get_Current
+01dbf221  call     0x4e0a50
+01dbf226  lea      rcx, [rip + 0x25aed43]   ; [436df70] MethodRef System.Collections.Generic.List`1<InGame.Kernel.Timeline.RouteEvent>::GetEnumerator
+01dbf22d  call     0x4e0a50
+01dbf232  lea      rcx, [rip + 0x25aef5f]   ; [436e198] MethodRef System.Collections.Generic.List`1<InGame.Kernel.Timeline.RouteEvent>::ToArray
+01dbf239  call     0x4e0a50
+01dbf23e  lea      rcx, [rip + 0x25e4edb]   ; [43a4120] MethodRef System.Collections.Generic.List`1<G<System.Collections.Generic.List`1>>::get_Item
+01dbf245  call     0x4e0a50
+01dbf24a  lea      rcx, [rip + 0x25e4f87]   ; [43a41d8] MethodRef System.Collections.Generic.List`1<G<System.Collections.Generic.List`1>>::set_Item
+01dbf251  call     0x4e0a50
+01dbf256  mov      byte ptr [rip + 0x28a4653], 1   ; [46638b0] bss
+01dbf25d  xorps    xmm0, xmm0
+01dbf260  xor      eax, eax
+01dbf262  movups   xmmword ptr [rsp + 0x50], xmm0   ; ev.randomFire/._animatorsPlay
+01dbf267  mov      qword ptr [rsp + 0x60], rax   ; ev.subnameValue/._psystemCount
+01dbf26c  mov      rcx, qword ptr [rip + 0x25f2f55]   ; [43b21c8] TypeInfo InGame.Kernel.Enemy.Ene_Mb01
+01dbf273  cmp      dword ptr [rcx + 0xe4], eax
+01dbf279  jne      0x1dbf287
+01dbf27b  call     0x4e0d90
+01dbf280  mov      rcx, qword ptr [rip + 0x25f2f41]   ; [43b21c8] TypeInfo InGame.Kernel.Enemy.Ene_Mb01
+01dbf287  mov      rax, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01dbf28e  mov      rbx, qword ptr [rax]
+01dbf291  mov      rcx, rbx
+01dbf294  test     rbx, rbx
+01dbf297  je       0x1dbf4b9
+01dbf29d  mov      r8, qword ptr [rip + 0x25e4e7c]   ; [43a4120] MethodRef System.Collections.Generic.List`1<G<System.Collections.Generic.List`1>>::get_Item
+01dbf2a4  xor      edx, edx
+01dbf2a6  call     0xb16860
+01dbf2ab  mov      r9, qword ptr [rip + 0x25e4f26]   ; [43a41d8] MethodRef System.Collections.Generic.List`1<G<System.Collections.Generic.List`1>>::set_Item
+01dbf2b2  mov      r8, rax
+01dbf2b5  mov      edx, 1
+01dbf2ba  mov      rcx, rbx
+01dbf2bd  call     0xbd6b40
+01dbf2c2  mov      rax, qword ptr [rip + 0x25f2eff]   ; [43b21c8] TypeInfo InGame.Kernel.Enemy.Ene_Mb01
+01dbf2c9  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01dbf2d0  mov      rcx, qword ptr [rcx]
+01dbf2d3  test     rcx, rcx
+01dbf2d6  je       0x1dbf4b9
+01dbf2dc  mov      r8, qword ptr [rip + 0x25e4e3d]   ; [43a4120] MethodRef System.Collections.Generic.List`1<G<System.Collections.Generic.List`1>>::get_Item
+01dbf2e3  mov      edx, 1
+01dbf2e8  call     0xb16860
+01dbf2ed  test     rax, rax
+01dbf2f0  je       0x1dbf4b9
+01dbf2f6  mov      r8, qword ptr [rip + 0x25aec73]   ; [436df70] MethodRef System.Collections.Generic.List`1<InGame.Kernel.Timeline.RouteEvent>::GetEnumerator
+01dbf2fd  mov      rdx, rax
+01dbf300  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01dbf305  call     0xb11790
+01dbf30a  movups   xmm0, xmmword ptr [rsp + 0x30]   ; ._entryFlag
+01dbf30f  movups   xmmword ptr [rsp + 0x50], xmm0   ; ev.randomFire/._animatorsPlay
+01dbf314  movsd    xmm1, qword ptr [rsp + 0x40]   ; ev.intValue1/._animators
+01dbf31a  movsd    qword ptr [rsp + 0x60], xmm1   ; ev.subnameValue/._psystemCount
+01dbf320  mov      qword ptr [rsp + 0x30], 0   ; ._entryFlag
+01dbf329  lea      rbx, [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01dbf32e  mov      qword ptr [rsp + 0x38], rbx   ; ev.stringValue/._psystems
+01dbf333  movss    xmm6, dword ptr [rip + 0x17218d5]   ; rdata 34e0c10 f=-0,-0,-0,-0 d=-1.060997895e-314
+01dbf33b  nop      dword ptr [rax + rax]
+01dbf340  mov      rdx, qword ptr [rip + 0x25ff429]   ; [43be770] MethodRef .Enumerator<InGame.Kernel.Timeline.RouteEvent>::MoveNext
+01dbf347  lea      rcx, [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01dbf34c  call     0x198e510
+01dbf351  test     al, al
+01dbf353  je       0x1dbf37e
+01dbf355  mov      rax, qword ptr [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01dbf35a  test     rax, rax
+01dbf35d  je       0x1dbf4bf
+01dbf363  cmp      dword ptr [rax + 0x10], 2   ; ev.eventType
+01dbf367  jne      0x1dbf340
+01dbf369  cmp      byte ptr [rax + 0x68], 0   ; ev.flag0/._flagStateFuture
+01dbf36d  je       0x1dbf340
+01dbf36f  movss    xmm0, dword ptr [rax + 0x30]   ; ._entryFlag
+01dbf374  xorps    xmm0, xmm6
+01dbf377  movss    dword ptr [rax + 0x30], xmm0   ; ._entryFlag
+01dbf37c  jmp      0x1dbf340
+01dbf37e  mov      rdx, qword ptr [rip + 0x25ff333]   ; [43be6b8] MethodRef .Enumerator<InGame.Kernel.Timeline.RouteEvent>::Dispose
+01dbf385  mov      rcx, rbx
+01dbf388  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01dbf38d  jmp      0x1dbf3c6
+01dbf38f  mov      rdx, qword ptr [rip + 0x25ff322]   ; [43be6b8] MethodRef .Enumerator<InGame.Kernel.Timeline.RouteEvent>::Dispose
+01dbf396  mov      rcx, qword ptr [rsp + 0x38]   ; ev.stringValue/._psystems
+01dbf39b  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01dbf3a0  mov      rcx, qword ptr [rsp + 0x30]   ; ._entryFlag
+01dbf3a5  test     rcx, rcx
+01dbf3a8  jne      0x1dbf4c5
+01dbf3ae  mov      r14, qword ptr [rsp + 0xb0]   ; ._translateToken
+01dbf3b6  mov      rsi, qword ptr [rsp + 0xa8]   ; ._scaleToken
+01dbf3be  mov      rdi, qword ptr [rsp + 0xa0]   ; ._rotateToken
+01dbf3c6  test     rsi, rsi
+01dbf3c9  je       0x1dbf4b9
+01dbf3cf  xor      edx, edx
+01dbf3d1  mov      rcx, rsi
+01dbf3d4  call     0x1d32ec0   ; EnemyData::ShallowCopy()
+01dbf3d9  mov      qword ptr [rdi + 0x1b0], rax   ; ._moverState
+01dbf3e0  lea      rcx, [rdi + 0x1b0]   ; ._moverState
+01dbf3e7  mov      rdx, rax
+01dbf3ea  call     0x4dfd80
+01dbf3ef  mov      rbx, qword ptr [rdi + 0x1b0]   ; ._moverState
+01dbf3f6  mov      rax, qword ptr [rip + 0x25f2dcb]   ; [43b21c8] TypeInfo InGame.Kernel.Enemy.Ene_Mb01
+01dbf3fd  cmp      dword ptr [rax + 0xe4], 0
+01dbf404  jne      0x1dbf415
+01dbf406  mov      rcx, rax
+01dbf409  call     0x4e0d90
+01dbf40e  mov      rax, qword ptr [rip + 0x25f2db3]   ; [43b21c8] TypeInfo InGame.Kernel.Enemy.Ene_Mb01
+01dbf415  mov      rax, qword ptr [rax + 0xb8]   ; ._hormingToken
+01dbf41c  mov      rcx, qword ptr [rax]
+01dbf41f  test     rcx, rcx
+01dbf422  je       0x1dbf4b9
+01dbf428  mov      r8, qword ptr [rip + 0x25e4cf1]   ; [43a4120] MethodRef System.Collections.Generic.List`1<G<System.Collections.Generic.List`1>>::get_Item
+01dbf42f  mov      edx, dword ptr [rdi + 0x94]
+01dbf435  call     0xb16860
+01dbf43a  test     rax, rax
+01dbf43d  je       0x1dbf4b9
+01dbf43f  mov      rdx, qword ptr [rip + 0x25aed52]   ; [436e198] MethodRef System.Collections.Generic.List`1<InGame.Kernel.Timeline.RouteEvent>::ToArray
+01dbf446  mov      rcx, rax
+01dbf449  call     0xb15e40   ; List`1::ToArray()
+01dbf44e  test     rbx, rbx
+01dbf451  je       0x1dbf4b9
+01dbf453  mov      qword ptr [rbx + 0x58], rax   ; ev.nameValue/._particleSpeed
+01dbf457  lea      rcx, [rbx + 0x58]   ; ev.nameValue/._particleSpeed
+01dbf45b  mov      rdx, rax
+01dbf45e  call     0x4dfd80
+01dbf463  mov      rcx, qword ptr [rdi + 0x1b0]   ; ._moverState
+01dbf46a  test     rcx, rcx
+01dbf46d  je       0x1dbf4b9
+01dbf46f  xor      edx, edx
+01dbf471  call     0x1d321e0   ; EnemyData::Coordinate()
+01dbf476  movsd    xmm0, qword ptr [r14]
+01dbf47b  movsd    qword ptr [rsp + 0x30], xmm0   ; ._entryFlag
+01dbf481  mov      eax, dword ptr [r14 + 8]
+01dbf485  mov      dword ptr [rsp + 0x38], eax   ; ev.stringValue/._psystems
+01dbf489  xor      r9d, r9d
+01dbf48c  lea      r8, [rsp + 0x30]   ; ._entryFlag
+01dbf491  mov      rdx, qword ptr [rdi + 0x1b0]   ; ._moverState
+01dbf498  mov      rcx, rdi
+01dbf49b  call     0x1d0d170   ; PawnEnemy::CreateRouteData(InGame.Kernel.Timeline.EnemyData,UnityEngine.Vector3)
+01dbf4a0  mov      rbx, qword ptr [rsp + 0xb8]   ; ._hormingToken
+01dbf4a8  movaps   xmm6, xmmword ptr [rsp + 0x70]   ; ._transformCache
+01dbf4ad  add      rsp, 0x80
+01dbf4b4  pop      r14
+01dbf4b6  pop      rdi
+01dbf4b7  pop      rsi
+01dbf4b8  ret      
+01dbf4b9  call     0x4e0d00
+01dbf4be  nop      
+01dbf4bf  call     0x4e0d00
+01dbf4c4  nop      
+01dbf4c5  call     0x4dc9e0

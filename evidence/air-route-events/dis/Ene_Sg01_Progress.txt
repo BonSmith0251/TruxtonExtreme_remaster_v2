@@ -1,0 +1,136 @@
+#### InGame.Kernel.Enemy.Ene_Sg01::Progress(System.Single) RVA 1cfebd0 len 247
+01cfebd0  push     rbx
+01cfebd2  sub      rsp, 0x60
+01cfebd6  cmp      byte ptr [rip + 0x29647d9], 0   ; [46633b6] bss
+01cfebdd  mov      rbx, rcx
+01cfebe0  jne      0x1cfec01
+01cfebe2  lea      rcx, [rip + 0x26b3fb7]   ; [43b2ba0] TypeInfo InGame.Kernel.Enemy.Ene_Sg01
+01cfebe9  call     0x4e0a50
+01cfebee  lea      rcx, [rip + 0x26b940b]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01cfebf5  call     0x4e0a50
+01cfebfa  mov      byte ptr [rip + 0x29647b5], 1   ; [46633b6] bss
+01cfec01  mov      rcx, qword ptr [rbx + 0x20]   ; ev.value0
+01cfec05  mov      qword ptr [rsp + 0x70], rdi   ; ._transformCache
+01cfec0a  movaps   xmmword ptr [rsp + 0x50], xmm6   ; ev.randomFire/._animatorsPlay
+01cfec0f  test     rcx, rcx
+01cfec12  je       0x1cfee12
+01cfec18  xor      edx, edx
+01cfec1a  call     0x1cda9e0   ; InGameEnemyMoveBase::IsHormingMove()
+01cfec1f  test     al, al
+01cfec21  jne      0x1cfecc9
+01cfec27  mov      rcx, qword ptr [rbx + 0x20]   ; ev.value0
+01cfec2b  test     rcx, rcx
+01cfec2e  je       0x1cfee12
+01cfec34  xor      edx, edx
+01cfec36  call     0x1cda7c0   ; InGameEnemyMoveBase::IsDirectionMove()
+01cfec3b  test     al, al
+01cfec3d  je       0x1cfecb9
+01cfec3f  cmp      byte ptr [rbx + 0x28], 0   ; ev.vectorValue
+01cfec43  je       0x1cfecb9
+01cfec45  mov      rax, qword ptr [rbx + 0x20]   ; ev.value0
+01cfec49  test     rax, rax
+01cfec4c  je       0x1cfee12
+01cfec52  mov      rcx, qword ptr [rip + 0x26b3f47]   ; [43b2ba0] TypeInfo InGame.Kernel.Enemy.Ene_Sg01
+01cfec59  movss    xmm6, dword ptr [rax + 0x164]   ; ._currentSpeed
+01cfec61  cmp      dword ptr [rcx + 0xe4], 0
+01cfec68  jne      0x1cfec76
+01cfec6a  call     0x4e0d90
+01cfec6f  mov      rcx, qword ptr [rip + 0x26b3f2a]   ; [43b2ba0] TypeInfo InGame.Kernel.Enemy.Ene_Sg01
+01cfec76  mov      rax, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cfec7d  movss    xmm0, dword ptr [rax + 0xc]
+01cfec82  comiss   xmm0, xmm6
+01cfec85  jbe      0x1cfecb9
+01cfec87  cmp      dword ptr [rcx + 0xe4], 0
+01cfec8e  mov      rbx, qword ptr [rbx + 0x20]   ; ev.value0
+01cfec92  jne      0x1cfeca0
+01cfec94  call     0x4e0d90
+01cfec99  mov      rcx, qword ptr [rip + 0x26b3f00]   ; [43b2ba0] TypeInfo InGame.Kernel.Enemy.Ene_Sg01
+01cfeca0  test     rbx, rbx
+01cfeca3  je       0x1cfee12
+01cfeca9  mov      rax, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01cfecb0  mov      ecx, dword ptr [rax + 0xc]
+01cfecb3  mov      dword ptr [rbx + 0x164], ecx   ; ._currentSpeed
+01cfecb9  movaps   xmm6, xmmword ptr [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01cfecbe  mov      rdi, qword ptr [rsp + 0x70]   ; ._transformCache
+01cfecc3  add      rsp, 0x60
+01cfecc7  pop      rbx
+01cfecc8  ret      
+01cfecc9  mov      rax, qword ptr [rip + 0x26b9330]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01cfecd0  mov      rax, qword ptr [rax + 0x20]   ; ev.value0
+01cfecd4  test     byte ptr [rax + 0x135], 1
+01cfecdb  jne      0x1cfece5
+01cfecdd  mov      rcx, rax
+01cfece0  call     0x4de1e0
+01cfece5  mov      rax, qword ptr [rax + 0xc0]   ; ._speedToken
+01cfecec  mov      rax, qword ptr [rax + 0x10]   ; ev.eventType
+01cfecf0  test     byte ptr [rax + 0x135], 1
+01cfecf7  jne      0x1cfed01
+01cfecf9  mov      rcx, rax
+01cfecfc  call     0x4de1e0
+01cfed01  mov      rax, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cfed08  xor      edx, edx
+01cfed0a  mov      rcx, rbx
+01cfed0d  mov      rdi, qword ptr [rax]
+01cfed10  call     0x3059180   ; Component::get_transform()
+01cfed15  test     rax, rax
+01cfed18  je       0x1cfee12
+01cfed1e  xor      r8d, r8d
+01cfed21  lea      rcx, [rsp + 0x40]   ; ev.intValue1/._animators
+01cfed26  mov      rdx, rax
+01cfed29  call     0x3093ba0   ; Transform::get_position()
+01cfed2e  test     rdi, rdi
+01cfed31  je       0x1cfee12
+01cfed37  movsd    xmm0, qword ptr [rax]
+01cfed3b  lea      rdx, [rsp + 0x30]   ; ._entryFlag
+01cfed40  mov      eax, dword ptr [rax + 8]
+01cfed43  xor      r9d, r9d
+01cfed46  xor      r8d, r8d
+01cfed49  movsd    qword ptr [rsp + 0x30], xmm0   ; ._entryFlag
+01cfed4f  mov      rcx, rdi
+01cfed52  mov      dword ptr [rsp + 0x38], eax   ; ev.stringValue/._psystems
+01cfed56  mov      qword ptr [rsp + 0x20], 0   ; ev.value0
+01cfed5f  call     0x1ce6470   ; InGameManager::GetScreenPosition(UnityEngine.Vector3,System.Boolean,System.Boolean)
+01cfed64  xor      r8d, r8d
+01cfed67  mov      rdx, rax
+01cfed6a  mov      rcx, rdi
+01cfed6d  call     0x1ce4ae0   ; InGameManager::GetNearestPlayerDistance(UnityEngine.Vector2)
+01cfed72  mov      rdx, qword ptr [rip + 0x26b3e27]   ; [43b2ba0] TypeInfo InGame.Kernel.Enemy.Ene_Sg01
+01cfed79  movaps   xmm6, xmm0
+01cfed7c  cmp      dword ptr [rdx + 0xe4], 0
+01cfed83  jne      0x1cfed94
+01cfed85  mov      rcx, rdx
+01cfed88  call     0x4e0d90
+01cfed8d  mov      rdx, qword ptr [rip + 0x26b3e0c]   ; [43b2ba0] TypeInfo InGame.Kernel.Enemy.Ene_Sg01
+01cfed94  mov      rax, qword ptr [rdx + 0xb8]   ; ._hormingToken
+01cfed9b  movss    xmm2, dword ptr [rax]
+01cfed9f  movss    xmm0, dword ptr [rax + 4]
+01cfeda4  cvttss2si eax, xmm6
+01cfeda8  movd     xmm1, eax
+01cfedac  cvtdq2ps xmm1, xmm1
+01cfedaf  comiss   xmm2, xmm1
+01cfedb2  ja       0x1cfedbe
+01cfedb4  comiss   xmm1, xmm0
+01cfedb7  jbe      0x1cfedc1
+01cfedb9  movaps   xmm1, xmm0
+01cfedbc  jmp      0x1cfedc1
+01cfedbe  movaps   xmm1, xmm2
+01cfedc1  mov      r8, qword ptr [rbx + 0x20]   ; ev.value0
+01cfedc5  test     r8, r8
+01cfedc8  je       0x1cfee12
+01cfedca  mov      rax, qword ptr [rdx + 0xb8]   ; ._hormingToken
+01cfedd1  movaps   xmm6, xmmword ptr [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01cfedd6  mov      rdi, qword ptr [rsp + 0x70]   ; ._transformCache
+01cfeddb  subss    xmm1, dword ptr [rax]
+01cfeddf  movss    xmm0, dword ptr [rax + 4]
+01cfede4  subss    xmm0, dword ptr [rax]
+01cfede8  divss    xmm1, xmm0
+01cfedec  movss    xmm0, dword ptr [rax + 0x10]   ; ev.eventType
+01cfedf1  subss    xmm0, dword ptr [rax + 8]
+01cfedf6  mulss    xmm1, xmm0
+01cfedfa  addss    xmm1, dword ptr [rax + 8]
+01cfedff  movss    dword ptr [r8 + 0x164], xmm1   ; ._currentSpeed
+01cfee08  mov      byte ptr [rbx + 0x28], 1   ; ev.vectorValue
+01cfee0c  add      rsp, 0x60
+01cfee10  pop      rbx
+01cfee11  ret      
+01cfee12  call     0x4e0d00

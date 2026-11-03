@@ -1,0 +1,82 @@
+Type: InGame.Kernel.Enemy.Ene_Bos06+<>c__DisplayClass6_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	xor edx,edx
+	jmp near ptr 00000001805BCDB0h
+
+ISIL:
+	001 Move rdx, 0
+	002 Call 0x1805BCDB0, rcx, rdx, r8, r9, stack:0x0
+	003 Return 
+
+Method: InGame.Kernel.Enemy.Ene_Bos06+PartsKind <GetHormingTarget>b__0()
+
+Disassembly:
+	sub rsp,28h
+	mov rax,[rcx+10h]
+	test rax,rax
+	je short 0000000181DB8E41h
+	cmp dword ptr [rax+2B0h],3
+	je short 0000000181DB8E31h
+	mov r8d,[rcx+18h]
+	mov eax,55555556h
+	imul r8d
+	mov eax,edx
+	shr eax,1Fh
+	add edx,eax
+	lea eax,[rdx+rdx*2]
+	sub r8d,eax
+	jne short 0000000181DB8E1Bh
+	mov eax,3
+	add rsp,28h
+	ret
+	cmp r8d,1
+	mov eax,4
+	mov ecx,2
+	cmove eax,ecx
+	add rsp,28h
+	ret
+	mov eax,[rcx+18h]
+	not eax
+	and eax,1
+	or eax,2
+	add rsp,28h
+	ret
+	call 00000001804E0D00h
+
+ISIL:
+	001 ShiftStack -40
+	002 Move rax, [rcx+16]
+	003 Compare rax, 0
+	004 JumpIfEqual {33}
+	005 Compare [rax+688], 3
+	006 JumpIfEqual {27}
+	007 Move r8, [rcx+24]
+	008 Move rax, 0x55555556
+	009 NotImplemented "imul r8d"
+	010 Move rax, rdx
+	011 ShiftRight rax, 31
+	012 Add rdx, rdx, rax
+	013 LoadAddress rax, [rdx+rdx*2]
+	014 Subtract r8, r8, rax
+	015 JumpIfNotEqual {19}
+	016 Move rax, 3
+	017 ShiftStack 40
+	018 Return rax
+	019 Compare r8, 1
+	020 Move rax, 4
+	021 Move rcx, 2
+	022 JumpIfNotEqual {24}
+	023 Move rax, rcx
+	024 Nop 
+	025 ShiftStack 40
+	026 Return rax
+	027 Move rax, [rcx+24]
+	028 Neg rax
+	029 And rax, rax, 1
+	030 Or rax, rax, 2
+	031 ShiftStack 40
+	032 Return rax
+	033 Call 0x1804E0D00, rcx, rdx, r8, r9

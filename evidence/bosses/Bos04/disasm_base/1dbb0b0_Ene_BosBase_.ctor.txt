@@ -1,0 +1,20 @@
+== System.Void InGame.Kernel.Enemy.Ene_BosBase::.ctor() RVA 1dbb0b0 len 5d
+01dbb0b0 push       rbx
+01dbb0b2 sub        rsp, 0x20
+01dbb0b6 cmp        byte ptr [rip + 0x28a87c9], 0 ; [.data 4663886]
+01dbb0bd mov        rbx, rcx
+01dbb0c0 jne        0x1dbb0d5
+01dbb0c2 lea        rcx, [rip + 0x25c7897] ; [.data 4382960] TypeInfo#43058
+01dbb0c9 call       0x4e0a50
+01dbb0ce mov        byte ptr [rip + 0x28a87b1], 1 ; [.data 4663886]
+01dbb0d5 mov        dword ptr [rbx + 0x1cc], 0x3f800000 ; ~_directionTimeScale
+01dbb0df mov        dword ptr [rbx + 0x214], 0xffffffff ; ~_currentActor
+01dbb0e9 mov        rcx, qword ptr [rip + 0x25c7870] ; [.data 4382960] TypeInfo#43058
+01dbb0f0 cmp        dword ptr [rcx + 0xe4], 0
+01dbb0f7 jne        0x1dbb0fe
+01dbb0f9 call       0x4e0d90
+01dbb0fe xor        edx, edx
+01dbb100 mov        rcx, rbx
+01dbb103 add        rsp, 0x20
+01dbb107 pop        rbx
+01dbb108 jmp        0x1d11520 ; InGame.Kernel.Enemy.PawnEnemy::.ctor()

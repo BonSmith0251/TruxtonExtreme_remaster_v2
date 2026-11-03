@@ -1,0 +1,6 @@
+#### InGame.Kernel.Enemy.EnemyMover::UpdateEvent(System.Single,System.Single) RVA 1d6cdb0 len 12
+01d6cdb0  cmp      byte ptr [rcx + 0x294], 0   ; .<_isEventStackPlay>k__BackingField
+01d6cdb7  jne      0x1d6cdc1
+01d6cdb9  xor      r9d, r9d
+01d6cdbc  jmp      0x1d44720   ; SplineMover::UpdateEvent(System.Single,System.Single)
+01d6cdc1  ret      

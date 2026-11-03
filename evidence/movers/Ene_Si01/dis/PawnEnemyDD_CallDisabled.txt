@@ -1,0 +1,14 @@
+#### InGame.Kernel.Enemy.PawnEnemyDD::CallDisabled() RVA 1d16ef0 len 2b
+01d16ef0  push     rbx
+01d16ef2  sub      rsp, 0x20
+01d16ef6  mov      rbx, rcx
+01d16ef9  mov      rcx, qword ptr [rcx + 0x1c8]   ; ._masterEnemy
+01d16f00  test     rcx, rcx
+01d16f03  je       0x1d16f0c
+01d16f05  xor      edx, edx
+01d16f07  call     0x2094220   ; CancellationTokenSource::Cancel()
+01d16f0c  xor      edx, edx
+01d16f0e  mov      rcx, rbx
+01d16f11  add      rsp, 0x20
+01d16f15  pop      rbx
+01d16f16  jmp      0x1d0cc00   ; PawnEnemy::CallDisabled()

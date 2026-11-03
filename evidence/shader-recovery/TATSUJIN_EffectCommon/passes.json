@@ -1,0 +1,272 @@
+{
+ "name": "TATSUJIN/EffectCommon",
+ "bundle": "defaultlocalgroup_assets_all_d58d8015662a6b04bca842fe72e2a7e1.bundle",
+ "path_id": "8990663220460801040",
+ "keywordNames": [
+  "STEREO_INSTANCING_ON",
+  "UNITY_SINGLE_PASS_STEREO",
+  "STEREO_MULTIVIEW_ON",
+  "STEREO_CUBEMAP_RENDER_ON",
+  "SOFTPARTICLES_ON",
+  "FOG_LINEAR",
+  "FOG_EXP",
+  "FOG_EXP2"
+ ],
+ "passes": [
+  {
+   "label": "0_0_pass",
+   "name": "",
+   "useName": "",
+   "tags": {
+    "IGNOREPROJECTOR": "true",
+    "QUEUE": "Transparent",
+    "RenderType": "Transparent"
+   },
+   "subShaderTags": {
+    "IGNOREPROJECTOR": "true",
+    "QUEUE": "Transparent",
+    "RenderType": "Transparent"
+   },
+   "lod": 0,
+   "state": {
+    "blend": [
+     [
+      0.0,
+      "_SrcFactor"
+     ],
+     [
+      0.0,
+      "_DstFactor"
+     ],
+     [
+      0.0,
+      "_SrcFactor"
+     ],
+     [
+      0.0,
+      "_DstFactor"
+     ]
+    ],
+    "blendOp": [
+     0.0,
+     0.0
+    ],
+    "colMask": 15.0,
+    "zTest": [
+     0.0,
+     "_ZTest"
+    ],
+    "zWrite": [
+     0.0,
+     "_ZWrite"
+    ],
+    "culling": [
+     0.0,
+     "_Cull"
+    ],
+    "offsetFactor": 0.0,
+    "offsetUnits": 0.0,
+    "stencilRef": 0.0,
+    "stencilComp": 8.0,
+    "stencilPass": 0.0,
+    "stencilFail": 0.0,
+    "stencilZFail": 0.0,
+    "stencilReadMask": 255.0,
+    "stencilWriteMask": 255.0
+   },
+   "programs": {
+    "vs": [
+     {
+      "blob": 2,
+      "params": 0,
+      "keywords": []
+     },
+     {
+      "blob": 3,
+      "params": 1,
+      "keywords": [
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 4,
+      "params": 1,
+      "keywords": [
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 5,
+      "params": 1,
+      "keywords": [
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 6,
+      "params": 0,
+      "keywords": [
+       "SOFTPARTICLES_ON"
+      ]
+     },
+     {
+      "blob": 7,
+      "params": 1,
+      "keywords": [
+       "SOFTPARTICLES_ON",
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 8,
+      "params": 1,
+      "keywords": [
+       "SOFTPARTICLES_ON",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 9,
+      "params": 1,
+      "keywords": [
+       "SOFTPARTICLES_ON",
+       "FOG_EXP2"
+      ]
+     }
+    ],
+    "ps": [
+     {
+      "blob": 11,
+      "params": 10,
+      "keywords": []
+     },
+     {
+      "blob": 12,
+      "params": 10,
+      "keywords": [
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 13,
+      "params": 10,
+      "keywords": [
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 14,
+      "params": 10,
+      "keywords": [
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 15,
+      "params": 10,
+      "keywords": [
+       "SOFTPARTICLES_ON"
+      ]
+     },
+     {
+      "blob": 16,
+      "params": 10,
+      "keywords": [
+       "SOFTPARTICLES_ON",
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 17,
+      "params": 10,
+      "keywords": [
+       "SOFTPARTICLES_ON",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 18,
+      "params": 10,
+      "keywords": [
+       "SOFTPARTICLES_ON",
+       "FOG_EXP2"
+      ]
+     }
+    ]
+   },
+   "bindings": {
+    "vs": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 64,
+       "members": [
+        {
+         "name": "_MainTex_ST",
+         "offset": 32,
+         "dim": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDraw",
+       "slot": null,
+       "size": 176,
+       "members": [
+        {
+         "name": "unity_ObjectToWorld",
+         "offset": 0,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerFrame",
+       "slot": null,
+       "size": 368,
+       "members": [
+        {
+         "name": "unity_MatrixVP",
+         "offset": 272,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    },
+    "ps": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 64,
+       "members": [
+        {
+         "name": "_TintColor",
+         "offset": 48,
+         "dim": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [
+      {
+       "name": "_MainTex",
+       "register": 0,
+       "sampler": 0,
+       "dim": 2
+      }
+     ],
+     "samplers": []
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,117 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04::coreLongLaser() RVA 1d91dc0 len 229
+01d91dc0 push       rbx
+01d91dc2 push       rsi
+01d91dc3 sub        rsp, 0x88
+01d91dca cmp        byte ptr [rip + 0x28d19f2], 0 ; [.data 46637c3]
+01d91dd1 mov        rsi, rcx
+01d91dd4 jne        0x1d91e25
+01d91dd6 lea        rcx, [rip + 0x2634e7b] ; [.data 43c6c58] TypeInfo#9574
+01d91ddd call       0x4e0a50
+01d91de2 lea        rcx, [rip + 0x25ee757] ; [.data 4380540] MethodRef#202245
+01d91de9 call       0x4e0a50
+01d91dee lea        rcx, [rip + 0x25f5983] ; [.data 4387778] MethodDef#71700
+01d91df5 call       0x4e0a50
+01d91dfa lea        rcx, [rip + 0x25f8757] ; [.data 438a558] TypeInfo#53894
+01d91e01 call       0x4e0a50
+01d91e06 lea        rcx, [rip + 0x25d40fb] ; [.data 4365f08] STR "target"
+01d91e0d call       0x4e0a50
+01d91e12 lea        rcx, [rip + 0x25e96d7] ; [.data 437b4f0] STR "upper"
+01d91e19 call       0x4e0a50
+01d91e1e mov        byte ptr [rip + 0x28d199e], 1 ; [.data 46637c3]
+01d91e25 mov        rcx, qword ptr [rip + 0x25f872c] ; [.data 438a558] TypeInfo#53894
+01d91e2c mov        qword ptr [rsp + 0xa0], rbp ; ~PoolEvent
+01d91e34 mov        qword ptr [rsp + 0xa8], rdi ; ~_updateEvents
+01d91e3c mov        qword ptr [rsp + 0xb8], r12 ; ~_mover
+01d91e44 mov        qword ptr [rsp + 0x80], r13
+01d91e4c mov        qword ptr [rsp + 0x78], r14
+01d91e51 mov        qword ptr [rsp + 0x70], r15
+01d91e56 call       0x4e0cb0
+01d91e5b xor        edx, edx
+01d91e5d mov        rcx, rax
+01d91e60 mov        rbx, rax
+01d91e63 call       0x5bcdb0 ; AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose()
+01d91e68 test       rbx, rbx
+01d91e6b je         0x1d91fe4
+01d91e71 mov        byte ptr [rbx + 0x10], 1
+01d91e75 mov        rcx, qword ptr [rip + 0x2634ddc] ; [.data 43c6c58] TypeInfo#9574
+01d91e7c call       0x4e0cb0
+01d91e81 mov        r8, qword ptr [rip + 0x25f58f0] ; [.data 4387778] MethodDef#71700
+01d91e88 xor        r9d, r9d
+01d91e8b mov        rdx, rbx
+01d91e8e mov        rcx, rax
+01d91e91 mov        r13, rax
+01d91e94 call       0x1c4a150 ; System.IOAsyncCallback::.ctor(System.Object,System.IntPtr) || UnityEngine.Rendering.ICameraHistoryReadAccess/HistoryRequestDelegate::.ctor(System.Object,System.IntPtr) || UnityEngine.Playables.PlayableSystems/PlayableSystemDelegate::.ctor(System.Object,System.IntPtr)
+01d91e99 mov        rcx, qword ptr [rsi + 0xb8] ; ~_mover
+01d91ea0 test       rcx, rcx
+01d91ea3 je         0x1d91fe4
+01d91ea9 mov        rdx, qword ptr [rip + 0x25e9640] ; [.data 437b4f0] STR "upper"
+01d91eb0 xor        r8d, r8d
+01d91eb3 call       0x1cda270 ; InGame.Kernel.InGameEnemyMoveBase::GetMuzzlePack(System.String)
+01d91eb8 mov        rcx, qword ptr [rsi + 0xb8] ; ~_mover
+01d91ebf mov        rbp, rax
+01d91ec2 test       rcx, rcx
+01d91ec5 je         0x1d91fe4
+01d91ecb mov        rdx, qword ptr [rip + 0x25d4036] ; [.data 4365f08] STR "target"
+01d91ed2 xor        r8d, r8d
+01d91ed5 call       0x1cda270 ; InGame.Kernel.InGameEnemyMoveBase::GetMuzzlePack(System.String)
+01d91eda xor        r8d, r8d
+01d91edd mov        edx, 3
+01d91ee2 mov        rcx, rsi
+01d91ee5 mov        rdi, rax
+01d91ee8 call       0x1db9840 ; InGame.Kernel.Enemy.Ene_BosBase::GetBT(System.Int32)
+01d91eed mov        qword ptr [rsp + 0xb0], rax ; ~_updateEventCount
+01d91ef5 xor        ebx, ebx
+01d91ef7 test       rbp, rbp
+01d91efa je         0x1d91fe4
+01d91f00 mov        rcx, qword ptr [rbp + 0x18]
+01d91f04 test       rcx, rcx
+01d91f07 je         0x1d91fe4
+01d91f0d mov        r8, qword ptr [rip + 0x25ee62c] ; [.data 4380540] MethodRef#202245
+01d91f14 mov        edx, ebx
+01d91f16 call       0xb16860
+01d91f1b mov        r15, rax
+01d91f1e test       rdi, rdi
+01d91f21 je         0x1d91fe4
+01d91f27 mov        rcx, qword ptr [rdi + 0x18]
+01d91f2b test       rcx, rcx
+01d91f2e je         0x1d91fe4
+01d91f34 mov        r8, qword ptr [rip + 0x25ee605] ; [.data 4380540] MethodRef#202245
+01d91f3b mov        edx, ebx
+01d91f3d call       0xb16860
+01d91f42 mov        r14, qword ptr [rsi + 0xb8] ; ~_mover
+01d91f49 xor        edx, edx
+01d91f4b mov        rcx, rsi
+01d91f4e mov        r12, rax
+01d91f51 call       0x1d11bc0 ; InGame.Kernel.Enemy.PawnEnemy::get_CToken()
+01d91f56 test       r14, r14
+01d91f59 je         0x1d91fe4
+01d91f5f mov        r9, qword ptr [rsp + 0xb0] ; ~_updateEventCount
+01d91f67 xor        ecx, ecx
+01d91f69 mov        qword ptr [rsp + 0x40], rcx
+01d91f6e mov        r8, rax
+01d91f71 mov        qword ptr [rsp + 0x38], r13
+01d91f76 mov        rdx, r14
+01d91f79 mov        dword ptr [rsp + 0x30], ecx
+01d91f7d lea        rcx, [rsp + 0x60]
+01d91f82 mov        qword ptr [rsp + 0x28], r12
+01d91f87 mov        qword ptr [rsp + 0x20], r15
+01d91f8c call       0x1cd8bf0 ; InGame.Kernel.InGameEnemyMoveBase::BulletDirFireAsync(System.Threading.CancellationToken,InGame.Kernel.Enemy.BulletTemplate,UnityEngine.Transform,UnityEngine.Transform,System.Int32,System.Action`1<InGame.Kernel.InGameBulletInterface>)
+01d91f91 xor        edx, edx
+01d91f93 lea        rcx, [rsp + 0x50]
+01d91f98 movups     xmm0, xmmword ptr [rax]
+01d91f9b movaps     xmmword ptr [rsp + 0x50], xmm0
+01d91fa0 call       0x2742890 ; Cysharp.Threading.Tasks.UniTaskExtensions::Forget(Cysharp.Threading.Tasks.UniTask)
+01d91fa5 inc        ebx
+01d91fa7 cmp        ebx, 4
+01d91faa jl         0x1d91f00
+01d91fb0 mov        r15, qword ptr [rsp + 0x70]
+01d91fb5 mov        r14, qword ptr [rsp + 0x78]
+01d91fba mov        r13, qword ptr [rsp + 0x80]
+01d91fc2 mov        r12, qword ptr [rsp + 0xb8] ; ~_mover
+01d91fca mov        rdi, qword ptr [rsp + 0xa8] ; ~_updateEvents
+01d91fd2 mov        rbp, qword ptr [rsp + 0xa0] ; ~PoolEvent
+01d91fda add        rsp, 0x88
+01d91fe1 pop        rsi
+01d91fe2 pop        rbx
+01d91fe3 ret        
+01d91fe4 call       0x4e0d00

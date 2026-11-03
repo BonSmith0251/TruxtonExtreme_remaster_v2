@@ -1,0 +1,62 @@
+01d9ad50 mov rax, rsp 
+01d9ad53 mov qword ptr [rax + 8], rbx 
+01d9ad57 push rdi 
+01d9ad58 sub rsp, 0x50 
+01d9ad5c mov rdi, qword ptr [rcx + 0x278] 
+01d9ad63 lea rdx, [rax - 0x38] 
+01d9ad67 movaps xmm2, xmm1 
+01d9ad6a movaps xmmword ptr [rax - 0x18], xmm6 
+01d9ad6e mulss xmm2, dword ptr [rip + 0x1745e4a] ; rva=34e0bc0 f=0.01745329
+01d9ad76 movaps xmm6, xmm1 
+01d9ad79 mov rbx, rcx 
+01d9ad7c xor r8d, r8d 
+01d9ad7f movss dword ptr [rcx + 0x2dc], xmm6 
+01d9ad87 lea rcx, [rax - 0x28] 
+01d9ad8b mov dword ptr [rax - 0x38], 0 
+01d9ad92 movss dword ptr [rax - 0x34], xmm2 
+01d9ad97 mov dword ptr [rax - 0x30], 0 
+01d9ad9e call 0x304d890 ; Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01d9ada3 test rdi, rdi 
+01d9ada6 je 0x1d9ae2f 
+01d9adac movups xmm0, xmmword ptr [rax] 
+01d9adaf xor r8d, r8d 
+01d9adb2 lea rdx, [rsp + 0x20] 
+01d9adb7 mov rcx, rdi 
+01d9adba movaps xmmword ptr [rsp + 0x20], xmm0 
+01d9adbf call 0x3094650 ; Transform::set_localRotation(UnityEngine.Quaternion)
+01d9adc4 xorps xmm6, xmmword ptr [rip + 0x1745e45] ; rva=34e0c10 f=-0
+01d9adcb lea rdx, [rsp + 0x20] 
+01d9add0 mulss xmm6, dword ptr [rip + 0x1745de8] ; rva=34e0bc0 f=0.01745329
+01d9add8 lea rcx, [rsp + 0x30] 
+01d9addd mov rbx, qword ptr [rbx + 0x280] 
+01d9ade4 xor r8d, r8d 
+01d9ade7 mov dword ptr [rsp + 0x20], 0 
+01d9adef mov dword ptr [rsp + 0x28], 0 
+01d9adf7 movss dword ptr [rsp + 0x24], xmm6 
+01d9adfd call 0x304d890 ; Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01d9ae02 test rbx, rbx 
+01d9ae05 je 0x1d9ae2f 
+01d9ae07 movups xmm0, xmmword ptr [rax] 
+01d9ae0a xor r8d, r8d 
+01d9ae0d lea rdx, [rsp + 0x20] 
+01d9ae12 mov rcx, rbx 
+01d9ae15 movaps xmmword ptr [rsp + 0x20], xmm0 
+01d9ae1a call 0x3094650 ; Transform::set_localRotation(UnityEngine.Quaternion)
+01d9ae1f mov rbx, qword ptr [rsp + 0x60] 
+01d9ae24 movaps xmm6, xmmword ptr [rsp + 0x40] 
+01d9ae29 add rsp, 0x50 
+01d9ae2d pop rdi 
+01d9ae2e ret 
+01d9ae2f call 0x4e0d00 
+01d9ae34 int3 
+01d9ae35 int3 
+01d9ae36 int3 
+01d9ae37 int3 
+01d9ae38 int3 
+01d9ae39 int3 
+01d9ae3a int3 
+01d9ae3b int3 
+01d9ae3c int3 
+01d9ae3d int3 
+01d9ae3e int3 
+01d9ae3f int3 

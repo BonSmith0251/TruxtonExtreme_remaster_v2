@@ -1,0 +1,56 @@
+{
+  "source": "D:/games/Truxton Extreme/GameAssembly.dll, Ene_Bos07..cctor RVA 0x1DA7580 (static field offsets from code/types.jsonl / DiffableCs Ene_Bos07.cs)",
+  "btNames": ["Boss07/bos07leg", "Boss07/bos07leg2", "Boss07/bos07leg1way", "Boss07/bos07leg2way", "Boss07/bos07body3way",
+              "Boss07/bos07armh", "Boss07/bos07body", "Boss07/bos07bodyS", "Boss07/bos07face", "Boss07/bos07laser"],
+  "btEnum": ["legSLaser3", "legBullet", "leg1Way", "leg2Way", "body3way", "armBulletH", "bodyShotCenter", "bodyShotSide", "face", "laser"],
+  "muzzles_Boss07MZ": {
+    "0": "muzzle_body_upper_01", "1": "muzzle_body_upper_02", "2": "muzzle_body_under_1", "3": "muzzle_body_under_3",
+    "4": "muzzle_body_leg40", "5": "muzzle_body_leg42_1", "6": "muzzle_body_leg60", "7": "muzzle_body_leg62_1",
+    "8": "cover_muzzle_1", "9": "cover_muzzle_2", "10": "cover_muzzle_3", "11": "muzzle_body_upper_02_target",
+    "12": "_batteries[0] pos_body_battery01", "13": "_batteries[1] pos_body_battery03", "14": "_batteries[2] pos_body_battery04",
+    "15": "_batteries[3] pos_body_battery06", "16": "_batteries[4] pos_body_battery07", "17": "_batteries[5] pos_body_battery09"
+  },
+  "muzzleResolution": "Initialize 0x1DA1850: index>=12 -> _batteries[index-12]; else _modelTop.FindAlls(enumName)",
+  "smallBombMuzzles": {"values": [0, 1, 2, 3, 8, 12, 13, 14, 15, 16, 17], "pick": "RandomUtility.Range(1,11) inclusive, minus 1",
+                       "source": "GetSmallBombPosition 0x1DA1200; int[11] InitializeArray data = <PrivateImplementationDetails> field 49CAB895...C9ED (global-metadata fieldDefaultValues dataIndex 514320) [I: the only 44-byte InGame.Kernel blob whose values are Boss07MZ indices]"},
+  "legArcs_deg_thigh_knee_toe": {
+    "A": [-45, 135, 45], "B": [10, 20, 30], "C": [10, 20, 30], "C_WindUp": [-10, 20, 30],
+    "C_Throw1": [60, 60, 60], "C_Throw2": [-20, 20, 30], "Reach": [45, 45, 0], "Reach2": [45, 45, 45]
+  },
+  "legArcsUse": "SetupLegPattern 0x1DA6240: leg40[i] end = Euler(0, +arc[i], 0); leg60[i] end = Euler(0, -arc[i], 0); start = current localRotation",
+  "statics": {
+    "_arm40StartPos": [-25, 0, -16], "_arm40EndPos": [-25, 0, 16], "_arm40SlidePos": [-25, 0, 48], "_arm40FallPos": [-25, -100, 48],
+    "_armFallRot_euler": [89, 0, 0], "_LtoR_euler": [0, -89, 0], "_RtoL_euler": [0, 89, 0],
+    "_arm60StartPos": [25, 0, -16], "_arm60EndPos": [25, 0, 16], "_arm60SlidePos": [25, 0, 48], "_arm60FallPos": [25, -100, 48],
+    "_mainBodyHome": [0, -9, -8], "_mainBodyBack": [0, 0, -15], "_mode6Position": [0, 0, -20],
+    "_EntryNoHitTime": 3.5,
+    "LungeWindUpDistance": 30, "LungeThrowDistance": -50, "LungeWindUpRate": -0.6, "LungeVector": [0, 0, -50],
+    "Pattern2_LegChangeTime": 1.0, "Pattern2_AttackInterval": 0.2, "Pattern2_AttackTime": 6.0, "Pattern2_FireCount": 15,
+    "Pattern2_muzzleRadius": 20.0, "Pattern2_HomingSpeed": 0.16666667,
+    "Pattern3_LegChangeTime": 1.5, "Pattern3_LegWindUpTime": 1.8, "Pattern3_LegWaitTime": 0.2, "Pattern3_LegSwingTime": 0.8, "Pattern3_LegEndTime": 0.2,
+    "LegFire1WayTime": 0.5, "LegFire2WayTime": 1.0, "BatteryFire3Way1Time": 0.5, "BatteryFire3Way2Time": 0.75, "BatteryFire3Way3Time": 1.0,
+    "Pattern4_ArmChangeTime": 1.2, "Pattern4_CircuitTime": 8.0, "Pattern4_FaceRotateSpeedMin": 0.5, "Pattern4_FaceRotateSpeedMax": 2.0,
+    "Pattern4_HomingAttackTime": 3.0, "Pattern4_HomingAttackInterval": 2.0, "Pattern4_BatteryAttackTime": 2.0,
+    "Pattern4_CoverAttackInterval": 0.1, "Pattern4_CoverAttackCount": 15,
+    "Pattern6_CircuitTime": 4.0, "Pattern6_HomingTime": 0.8
+  },
+  "unusedStatics": ["_arm40SlidePos", "_arm40FallPos", "_armFallRot", "_LtoR", "_RtoL", "_arm60SlidePos", "_arm60FallPos", "LungeThrowDistance (only via LungeWindUpRate)", "LegArcs A/Reach/Reach2"],
+  "inlineLiterals": {
+    "BCMove": {"xAmp": 30, "zAmp": 5, "zOffset": -5, "period": "2*pi*rate"},
+    "EntryWait": {"coverSpinDegPerSec": 480, "playerCenterHalfWidth": 100, "dirTime": 0.5, "settle": 1.0},
+    "PT3_cancelRate": 0.6, "PT3_attacksPerCycle": 4,
+    "PT4_faceSpeedEase": {"toMin": 0.1, "toMax": 0.5},
+    "BCFire_armOffsetDeg": [60, -60],
+    "PT5": {"moveTime": 1.25, "turretBackTime": 2.0, "bounceRateScale": 2.0},
+    "PT6": {"laserPhase": 10.0, "laserInterval": 2.0, "laserMax": 5, "body4Phase": 1.0, "body4Interval": 0.2, "subPhase": 2.0, "subInterval": 1.0, "circuitEnd": 6.0},
+    "PT7": {"moveTime": 2.0},
+    "Destruction": {"dropY": -150, "targetEuler": [20, 45, 0], "dirTime": 5.5, "firstWait": 3.5, "secondWait": 2.0, "smallBombBase": 0.2,
+                     "shakeStart": [0.5, 1, 2], "shakeBomb": [0.5, 1, 5], "smallBombSE": 40, "finalSE": 42},
+    "OnPartsBreak_legShake": [0.5, 2, 10],
+    "AddDamageParts_legPowerScale": 0.01
+  },
+  "sounds": {"85": "bg7_boss_app_01", "86": "bg7_boss_open_arm_01", "87": "bg7_boss_close_arm_01", "88": "bg7_boss_unit_rotation_01",
+             "89": "bg7_boss_unit_exp_01", "90": "bg7_boss_main_gun_cocking_01", "192": "bg7_boss_main_gun_cocking_02",
+             "212": "boss_parts_destruction_g_01", "237": "bg7_boss_close_arm_02", "40": "exp_st3_boss_a01", "41": "exp_st3_boss_b02 (_overplayDeadSound)",
+             "42": "exp_st3_boss_c03", "177": "boss_defeat01_01 (StopBossTimer)"}
+}

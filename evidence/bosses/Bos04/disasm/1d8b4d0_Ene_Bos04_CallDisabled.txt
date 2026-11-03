@@ -1,0 +1,42 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04::CallDisabled() RVA 1d8b4d0 len b3
+01d8b4d0 push       rbx
+01d8b4d2 sub        rsp, 0x20
+01d8b4d6 cmp        byte ptr [rip + 0x28d82ce], 0 ; [.data 46637ab]
+01d8b4dd mov        rbx, rcx
+01d8b4e0 jne        0x1d8b501
+01d8b4e2 lea        rcx, [rip + 0x263251f] ; [.data 43bda08] MethodRef#201294
+01d8b4e9 call       0x4e0a50
+01d8b4ee lea        rcx, [rip + 0x2616e73] ; [.data 43a2368] TypeInfo#45781
+01d8b4f5 call       0x4e0a50
+01d8b4fa mov        byte ptr [rip + 0x28d82aa], 1 ; [.data 46637ab]
+01d8b501 mov        rcx, qword ptr [rbx + 0x2e8] ; ~_guardianList
+01d8b508 test       rcx, rcx
+01d8b50b je         0x1d8b57e
+01d8b50d mov        r8d, dword ptr [rcx + 0x18]
+01d8b511 inc        dword ptr [rcx + 0x1c]
+01d8b514 mov        dword ptr [rcx + 0x18], 0
+01d8b51b test       r8d, r8d
+01d8b51e jle        0x1d8b52e
+01d8b520 mov        rcx, qword ptr [rcx + 0x10]
+01d8b524 xor        r9d, r9d
+01d8b527 xor        edx, edx
+01d8b529 call       0x203d380 ; System.Array::Clear(System.Array,System.Int32,System.Int32)
+01d8b52e cmp        dword ptr [rbx + 0x2d4], -1 ; ~_rollSEId
+01d8b535 je         0x1d8b56f
+01d8b537 mov        rcx, qword ptr [rip + 0x2616e2a] ; [.data 43a2368] TypeInfo#45781
+01d8b53e mov        qword ptr [rsp + 0x30], rdi
+01d8b543 mov        edi, dword ptr [rbx + 0x2d4] ; ~_rollSEId
+01d8b549 cmp        dword ptr [rcx + 0xe4], 0
+01d8b550 jne        0x1d8b557
+01d8b552 call       0x4e0d90
+01d8b557 xor        edx, edx
+01d8b559 mov        ecx, edi
+01d8b55b call       0x2725560 ; TXEKernel.Sound.SoundUtility::StopCh(System.Int32)
+01d8b560 mov        rdi, qword ptr [rsp + 0x30]
+01d8b565 mov        dword ptr [rbx + 0x2d4], 0xffffffff ; ~_rollSEId
+01d8b56f xor        edx, edx
+01d8b571 mov        rcx, rbx
+01d8b574 add        rsp, 0x20
+01d8b578 pop        rbx
+01d8b579 jmp        0x1d0cc00 ; InGame.Kernel.Enemy.PawnEnemy::CallDisabled()
+01d8b57e call       0x4e0d00

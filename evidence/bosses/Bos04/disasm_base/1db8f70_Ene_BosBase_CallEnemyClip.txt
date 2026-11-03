@@ -1,0 +1,127 @@
+== System.Collections.Generic.List`1<InGame.Kernel.Enemy.PawnEnemy> InGame.Kernel.Enemy.Ene_BosBase::CallEnemyClip(System.Int32,UnityEngine.Vector3,InGame.Kernel.Enemy.PawnEnemy/poolEventFunction) RVA 1db8f70 len 22c
+01db8f70 mov        qword ptr [rsp + 8], rbx
+01db8f75 mov        qword ptr [rsp + 0x10], rsi
+01db8f7a mov        qword ptr [rsp + 0x18], rdi
+01db8f7f push       r14
+01db8f81 sub        rsp, 0x90
+01db8f88 mov        r14, r9
+01db8f8b mov        rsi, r8
+01db8f8e movsxd     rbx, edx
+01db8f91 mov        rdi, rcx
+01db8f94 cmp        byte ptr [rip + 0x28aa8e1], 0 ; [.data 466387c]
+01db8f9b jne        0x1db8fe0
+01db8f9d lea        rcx, [rip + 0x260213c] ; [.data 43bb0e0] MethodRef#199176
+01db8fa4 call       0x4e0a50
+01db8fa9 lea        rcx, [rip + 0x26021e8] ; [.data 43bb198] MethodRef#199177
+01db8fb0 call       0x4e0a50
+01db8fb5 lea        rcx, [rip + 0x2602294] ; [.data 43bb250] MethodRef#199178
+01db8fbc call       0x4e0a50
+01db8fc1 lea        rcx, [rip + 0x25a9e38] ; [.data 4362e00] MethodRef#201786
+01db8fc8 call       0x4e0a50
+01db8fcd lea        rcx, [rip + 0x25ff02c] ; [.data 43b8000] MethodRef#202981
+01db8fd4 call       0x4e0a50
+01db8fd9 mov        byte ptr [rip + 0x28aa89c], 1 ; [.data 466387c]
+01db8fe0 xorps      xmm0, xmm0
+01db8fe3 xor        eax, eax
+01db8fe5 movups     xmmword ptr [rsp + 0x70], xmm0
+01db8fea mov        qword ptr [rsp + 0x80], rax
+01db8ff2 test       ebx, ebx
+01db8ff4 js         0x1db9163
+01db8ffa cmp        ebx, dword ptr [rdi + 0x1fc] ; ~<_enemyDataCount>k__BackingField
+01db9000 jge        0x1db9163
+01db9006 mov        rcx, qword ptr [rip + 0x25feff3] ; [.data 43b8000] MethodRef#202981
+01db900d call       0x27540
+01db9012 mov        r10, rax
+01db9015 mov        rcx, qword ptr [rdi + 0x200] ; ~_enemyDatas
+01db901c test       rcx, rcx
+01db901f je         0x1db9197
+01db9025 cmp        ebx, dword ptr [rcx + 0x18]
+01db9028 jae        0x1db917f
+01db902e mov        rdx, qword ptr [rcx + rbx*8 + 0x20]
+01db9033 test       r10, r10
+01db9036 je         0x1db9197
+01db903c movsd      xmm0, qword ptr [rsi]
+01db9040 movsd      qword ptr [rsp + 0x40], xmm0
+01db9046 mov        eax, dword ptr [rsi + 8]
+01db9049 mov        dword ptr [rsp + 0x48], eax
+01db904d xor        ebx, ebx
+01db904f mov        qword ptr [rsp + 0x30], rbx
+01db9054 mov        dword ptr [rsp + 0x28], ebx
+01db9058 mov        dword ptr [rsp + 0x20], 2
+01db9060 lea        r9, [rsp + 0x40]
+01db9065 mov        r8, qword ptr [r10 + 0x98] ; ~_invincibleTime
+01db906c mov        rcx, r10
+01db906f call       0x1ce38d0 ; InGame.Kernel.InGameManager::EntryEnemyNoRate(InGame.Kernel.Timeline.EnemyData,UnityEngine.Transform,UnityEngine.Vector3,InGame.Kernel.Enemy.PawnEnemy/Division,System.Int32)
+01db9074 mov        rsi, rax
+01db9077 mov        qword ptr [rsp + 0x40], rax
+01db907c test       rax, rax
+01db907f je         0x1db9163
+01db9085 mov        r8, qword ptr [rip + 0x25a9d74] ; [.data 4362e00] MethodRef#201786
+01db908c mov        rdx, rax
+01db908f lea        rcx, [rsp + 0x58]
+01db9094 call       0xb11790
+01db9099 movups     xmm0, xmmword ptr [rsp + 0x58]
+01db909e movups     xmmword ptr [rsp + 0x70], xmm0
+01db90a3 movsd      xmm1, qword ptr [rsp + 0x68]
+01db90a9 movsd      qword ptr [rsp + 0x80], xmm1
+01db90b2 mov        qword ptr [rsp + 0x58], rbx
+01db90b7 lea        rbx, [rsp + 0x70]
+01db90bc mov        qword ptr [rsp + 0x60], rbx
+01db90c1 mov        rdx, qword ptr [rip + 0x26020d0] ; [.data 43bb198] MethodRef#199177
+01db90c8 lea        rcx, [rsp + 0x70]
+01db90cd call       0x198e510
+01db90d2 test       al, al
+01db90d4 je         0x1db912d
+01db90d6 mov        rdi, qword ptr [rsp + 0x80]
+01db90de test       rdi, rdi
+01db90e1 je         0x1db918b
+01db90e7 xor        r8d, r8d
+01db90ea mov        rdx, r14
+01db90ed mov        rcx, rdi
+01db90f0 call       0x1d11b00 ; InGame.Kernel.Enemy.PawnEnemy::add_PoolEvent(InGame.Kernel.Enemy.PawnEnemy/poolEventFunction)
+01db90f5 xor        edx, edx
+01db90f7 mov        rcx, rdi
+01db90fa call       0x1d0e5b0 ; InGame.Kernel.Enemy.PawnEnemy::IsDelayed()
+01db90ff test       al, al
+01db9101 jne        0x1db90c1
+01db9103 mov        rax, qword ptr [rdi + 0xb8] ; ~_mover
+01db910a test       rax, rax
+01db910d je         0x1db9185
+01db910f cmp        byte ptr [rax + 0x51], 0
+01db9113 jne        0x1db90c1
+01db9115 mov        rcx, rax
+01db9118 mov        rdx, qword ptr [rax]
+01db911b mov        rax, qword ptr [rdx + 0x1a8]
+01db9122 mov        rdx, qword ptr [rdx + 0x1b0] ; ~_isBossDead
+01db9129 call       rax
+01db912b jmp        0x1db90c1
+01db912d mov        rdx, qword ptr [rip + 0x2601fac] ; [.data 43bb0e0] MethodRef#199176
+01db9134 mov        rcx, rbx
+01db9137 call       0x5bcdb0 ; AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose()
+01db913c jmp        0x1db915e
+01db913e mov        rdx, qword ptr [rip + 0x2601f9b] ; [.data 43bb0e0] MethodRef#199176
+01db9145 mov        rcx, qword ptr [rsp + 0x60]
+01db914a call       0x5bcdb0 ; AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose()
+01db914f mov        rcx, qword ptr [rsp + 0x58]
+01db9154 test       rcx, rcx
+01db9157 jne        0x1db9191
+01db9159 mov        rsi, qword ptr [rsp + 0x40]
+01db915e mov        rax, rsi
+01db9161 jmp        0x1db9165
+01db9163 xor        eax, eax
+01db9165 lea        r11, [rsp + 0x90] ; ~_priority
+01db916d mov        rbx, qword ptr [r11 + 0x10]
+01db9171 mov        rsi, qword ptr [r11 + 0x18]
+01db9175 mov        rdi, qword ptr [r11 + 0x20]
+01db9179 mov        rsp, r11
+01db917c pop        r14
+01db917e ret        
+01db917f call       0x4e0cf0
+01db9184 nop        
+01db9185 call       0x4e0d00
+01db918a nop        
+01db918b call       0x4e0d00
+01db9190 nop        
+01db9191 call       0x4dc9e0
+01db9196 int3       
+01db9197 call       0x4e0d00

@@ -1,0 +1,61 @@
+01dbe510  push     rbx
+01dbe512  sub      rsp, 0x20
+01dbe516  cmp      byte ptr [rip + 0x28a538d], 0   ; [46638aa] bss
+01dbe51d  jne      0x1dbe56e
+01dbe51f  lea      rcx, [rip + 0x25f3bea]   ; [43b2110] TypeInfo InGame.Kernel.Enemy.Ene_Lc01
+01dbe52b  lea      rcx, [rip + 0x25b504e]   ; [4373580] TypeInfo prime[]
+01dbe537  lea      rcx, [rip + 0x25d569a]   ; [4393bd8] str:"lc01_fire3"
+01dbe543  lea      rcx, [rip + 0x25d5746]   ; [4393c90] str:"lc01_firec"
+01dbe54f  lea      rcx, [rip + 0x25d55c2]   ; [4393b18] str:"lc01_fire1"
+01dbe55b  lea      rcx, [rip + 0x25d57ee]   ; [4393d50] str:"lc01_firec2"
+01dbe567  mov      byte ptr [rip + 0x28a533c], 1   ; [46638aa] bss
+01dbe56e  mov      rcx, qword ptr [rip + 0x25b500b]   ; [4373580] TypeInfo prime[]
+01dbe575  mov      edx, 4
+01dbe57a  call     0x4dfe00
+01dbe57f  mov      rbx, rax
+01dbe582  test     rax, rax
+01dbe585  je       0x1dbe655
+01dbe58b  cmp      dword ptr [rax + 0x18], 0   ; ev.repeatDelay
+01dbe58f  mov      rdx, qword ptr [rip + 0x25d5582]   ; [4393b18] str:"lc01_fire1"
+01dbe596  jbe      0x1dbe65b
+01dbe59c  lea      rcx, [rax + 0x20]   ; ev.value0
+01dbe5a0  mov      qword ptr [rax + 0x20], rdx   ; ev.value0
+01dbe5a4  call     0x4dfd80
+01dbe5a9  cmp      dword ptr [rbx + 0x18], 1   ; ev.repeatDelay
+01dbe5ad  mov      rdx, qword ptr [rip + 0x25d5624]   ; [4393bd8] str:"lc01_fire3"
+01dbe5b4  jbe      0x1dbe65b
+01dbe5ba  lea      rcx, [rbx + 0x28]   ; ev.vectorValue
+01dbe5be  mov      qword ptr [rbx + 0x28], rdx   ; ev.vectorValue
+01dbe5c2  call     0x4dfd80
+01dbe5c7  cmp      dword ptr [rbx + 0x18], 2   ; ev.repeatDelay
+01dbe5cb  mov      rdx, qword ptr [rip + 0x25d56be]   ; [4393c90] str:"lc01_firec"
+01dbe5d2  jbe      0x1dbe65b
+01dbe5d8  lea      rcx, [rbx + 0x30]   ; ._entryFlag
+01dbe5dc  mov      qword ptr [rbx + 0x30], rdx   ; ._entryFlag
+01dbe5e0  call     0x4dfd80
+01dbe5e5  cmp      dword ptr [rbx + 0x18], 3   ; ev.repeatDelay
+01dbe5e9  mov      rdx, qword ptr [rip + 0x25d5760]   ; [4393d50] str:"lc01_firec2"
+01dbe5f0  jbe      0x1dbe65b
+01dbe5f2  lea      rcx, [rbx + 0x38]   ; ev.stringValue/._psystems
+01dbe5f6  mov      qword ptr [rbx + 0x38], rdx   ; ev.stringValue/._psystems
+01dbe5fa  call     0x4dfd80
+01dbe5ff  mov      rax, qword ptr [rip + 0x25f3b0a]   ; [43b2110] TypeInfo InGame.Kernel.Enemy.Ene_Lc01
+01dbe606  mov      rdx, rbx
+01dbe609  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01dbe610  mov      qword ptr [rcx], rbx
+01dbe613  mov      rcx, qword ptr [rip + 0x25f3af6]   ; [43b2110] TypeInfo InGame.Kernel.Enemy.Ene_Lc01
+01dbe61a  mov      rcx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01dbe621  call     0x4dfd80
+01dbe626  mov      rax, qword ptr [rip + 0x25f3ae3]   ; [43b2110] TypeInfo InGame.Kernel.Enemy.Ene_Lc01
+01dbe62d  xorps    xmm1, xmm1
+01dbe630  movss    xmm2, dword ptr [rip + 0x1834868]   ; rdata 35f2ea0 f=430,86400,-120,-1920 d=1.644919914e+37
+01dbe638  xorps    xmm0, xmm0
+01dbe63b  unpcklps xmm0, xmm1
+01dbe63e  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01dbe645  movsd    qword ptr [rcx + 8], xmm0
+01dbe64a  movss    dword ptr [rcx + 0x10], xmm2   ; ev.eventType
+01dbe64f  add      rsp, 0x20
+01dbe653  pop      rbx
+01dbe654  ret      
+01dbe655  call     0x4e0d00
+01dbe65b  call     0x4e0cf0

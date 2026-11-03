@@ -1,0 +1,50 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04Bit::Setup(InGame.Kernel.Enemy.Ene_Bos04) RVA 1d8b0c0 len cc
+01d8b0c0 mov        qword ptr [rsp + 8], rbx
+01d8b0c5 push       rdi
+01d8b0c6 sub        rsp, 0x20
+01d8b0ca mov        rbx, rcx
+01d8b0cd mov        qword ptr [rcx + 0x1b0], rdx ; ~_isBossDead
+01d8b0d4 add        rcx, 0x1b0
+01d8b0db call       0x4dfd80
+01d8b0e0 mov        rdi, qword ptr [rbx + 0x1b0] ; ~_isBossDead
+01d8b0e7 test       rdi, rdi
+01d8b0ea je         0x1d8b181
+01d8b0f0 cmp        byte ptr [rip + 0x28d86bc], 0 ; [.data 46637b3]
+01d8b0f7 jne        0x1d8b10c
+01d8b0f9 lea        rcx, [rip + 0x2632850] ; [.data 43bd950] MethodRef#201293
+01d8b100 call       0x4e0a50
+01d8b105 mov        byte ptr [rip + 0x28d86a7], 1 ; [.data 46637b3]
+01d8b10c mov        rcx, qword ptr [rdi + 0x2e8] ; ~_guardianList
+01d8b113 test       rcx, rcx
+01d8b116 je         0x1d8b181
+01d8b118 mov        r9, qword ptr [rip + 0x2632831] ; [.data 43bd950] MethodRef#201293
+01d8b11f inc        dword ptr [rcx + 0x1c]
+01d8b122 mov        r8, qword ptr [rcx + 0x10]
+01d8b126 test       r8, r8
+01d8b129 je         0x1d8b181
+01d8b12b movsxd     rdx, dword ptr [rcx + 0x18]
+01d8b12f cmp        edx, dword ptr [r8 + 0x18]
+01d8b133 jb         0x1d8b156
+01d8b135 mov        rax, qword ptr [r9 + 0x20]
+01d8b139 mov        rdx, rbx
+01d8b13c mov        r8, qword ptr [rax + 0xc0] ; ~_burnShake
+01d8b143 mov        r8, qword ptr [r8 + 0x70]
+01d8b147 mov        rbx, qword ptr [rsp + 0x30]
+01d8b14c add        rsp, 0x20
+01d8b150 pop        rdi
+01d8b151 jmp        0xbc8200
+01d8b156 lea        eax, [rdx + 1]
+01d8b159 mov        dword ptr [rcx + 0x18], eax
+01d8b15c cmp        edx, dword ptr [r8 + 0x18]
+01d8b160 jae        0x1d8b187
+01d8b162 mov        qword ptr [r8 + rdx*8 + 0x20], rbx
+01d8b167 add        r8, 0x20
+01d8b16b lea        rcx, [r8 + rdx*8]
+01d8b16f mov        rdx, rbx
+01d8b172 mov        rbx, qword ptr [rsp + 0x30]
+01d8b177 add        rsp, 0x20
+01d8b17b pop        rdi
+01d8b17c jmp        0x4dfd80
+01d8b181 call       0x4e0d00
+01d8b186 int3       
+01d8b187 call       0x4e0cf0

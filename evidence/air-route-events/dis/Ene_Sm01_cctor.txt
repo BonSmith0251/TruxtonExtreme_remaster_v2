@@ -1,0 +1,23 @@
+#### InGame.Kernel.Enemy.Ene_Sm01::.cctor() RVA 1d02a60 len 79
+01d02a60  sub      rsp, 0x28
+01d02a64  cmp      byte ptr [rip + 0x2960962], 0   ; [46633cd] bss
+01d02a6b  jne      0x1d02a8c
+01d02a6d  lea      rcx, [rip + 0x26b03fc]   ; [43b2e70] TypeInfo InGame.Kernel.Enemy.Ene_Sm01
+01d02a74  call     0x4e0a50
+01d02a79  lea      rcx, [rip + 0x2694188]   ; [4396c08] str:"_SeedV3"
+01d02a80  call     0x4e0a50
+01d02a85  mov      byte ptr [rip + 0x2960941], 1   ; [46633cd] bss
+01d02a8c  mov      rax, qword ptr [rip + 0x26b03dd]   ; [43b2e70] TypeInfo InGame.Kernel.Enemy.Ene_Sm01
+01d02a93  xor      edx, edx
+01d02a95  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01d02a9c  mov      dword ptr [rcx], 0x41200000
+01d02aa2  mov      rax, qword ptr [rip + 0x26b03c7]   ; [43b2e70] TypeInfo InGame.Kernel.Enemy.Ene_Sm01
+01d02aa9  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01d02ab0  mov      dword ptr [rcx + 4], 0x41700000
+01d02ab7  mov      rcx, qword ptr [rip + 0x269414a]   ; [4396c08] str:"_SeedV3"
+01d02abe  call     0x3018c90   ; Shader::PropertyToID(System.String)
+01d02ac3  mov      rcx, qword ptr [rip + 0x26b03a6]   ; [43b2e70] TypeInfo InGame.Kernel.Enemy.Ene_Sm01
+01d02aca  mov      rdx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01d02ad1  mov      dword ptr [rdx + 8], eax
+01d02ad4  add      rsp, 0x28
+01d02ad8  ret      

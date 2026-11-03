@@ -1,0 +1,130 @@
+#### InGame.Kernel.Enemy.Ene_Lc01::InitializeToPlay() RVA 1dbd720 len 25d
+01dbd720  push     rbp
+01dbd722  push     r13
+01dbd724  sub      rsp, 0x28
+01dbd728  cmp      byte ptr [rip + 0x28a6173], 0   ; [46638a2] bss
+01dbd72f  mov      r13, rcx
+01dbd732  jne      0x1dbd76b
+01dbd734  lea      rcx, [rip + 0x25aa5c5]   ; [4367d00] TypeInfo InGame.Kernel.Enemy.BulletTemplate[]
+01dbd740  lea      rcx, [rip + 0x25f49c9]   ; [43b2110] TypeInfo InGame.Kernel.Enemy.Ene_Lc01
+01dbd74c  lea      rcx, [rip + 0x25d4295]   ; [43919e8] MethodRef System.Linq.Enumerable::Any<prime>
+01dbd758  lea      rcx, [rip + 0x25fa8a1]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01dbd764  mov      byte ptr [rip + 0x28a6137], 1   ; [46638a2] bss
+01dbd76b  mov      rax, qword ptr [rip + 0x25fa88e]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01dbd772  mov      rax, qword ptr [rax + 0x20]   ; ev.value0
+01dbd776  test     byte ptr [rax + 0x135], 1
+01dbd77d  jne      0x1dbd787
+01dbd77f  mov      rcx, rax
+01dbd782  call     0x4de1e0
+01dbd787  mov      rax, qword ptr [rax + 0xc0]   ; ._speedToken
+01dbd78e  mov      rax, qword ptr [rax + 0x10]   ; ev.eventType
+01dbd792  test     byte ptr [rax + 0x135], 1
+01dbd799  jne      0x1dbd7a3
+01dbd79b  mov      rcx, rax
+01dbd79e  call     0x4de1e0
+01dbd7a3  mov      rcx, qword ptr [rip + 0x25f4966]   ; [43b2110] TypeInfo InGame.Kernel.Enemy.Ene_Lc01
+01dbd7aa  mov      rax, qword ptr [rax + 0xb8]   ; ._hormingToken
+01dbd7b1  cmp      dword ptr [rcx + 0xe4], 0
+01dbd7b8  mov      rbp, qword ptr [rax]
+01dbd7bb  jne      0x1dbd7c9
+01dbd7bd  call     0x4e0d90
+01dbd7c2  mov      rcx, qword ptr [rip + 0x25f4947]   ; [43b2110] TypeInfo InGame.Kernel.Enemy.Ene_Lc01
+01dbd7c9  mov      rax, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01dbd7d0  mov      qword ptr [rsp + 0x40], rbx   ; ev.intValue1/._animators
+01dbd7d5  mov      qword ptr [rsp + 0x48], rsi   ; ev.intValue3/.GameObjectCache
+01dbd7da  mov      qword ptr [rsp + 0x50], rdi   ; ev.randomFire/._animatorsPlay
+01dbd7df  cmp      qword ptr [rax], 0
+01dbd7e3  mov      qword ptr [rsp + 0x58], r14   ; ev.nameValue/._particleSpeed
+01dbd7e8  mov      qword ptr [rsp + 0x20], r15   ; ev.value0
+01dbd7ed  je       0x1dbd92e
+01dbd7f3  cmp      dword ptr [rcx + 0xe4], 0
+01dbd7fa  jne      0x1dbd808
+01dbd7fc  call     0x4e0d90
+01dbd801  mov      rcx, qword ptr [rip + 0x25f4908]   ; [43b2110] TypeInfo InGame.Kernel.Enemy.Ene_Lc01
+01dbd808  mov      rcx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01dbd80f  mov      rdx, qword ptr [rip + 0x25d41d2]   ; [43919e8] MethodRef System.Linq.Enumerable::Any<prime>
+01dbd816  mov      rcx, qword ptr [rcx]
+01dbd819  call     0x7d5180   ; Enumerable::Any(System.Collections.Generic.IEnumerable`1<TSource>)
+01dbd81e  test     al, al
+01dbd820  je       0x1dbd92e
+01dbd826  mov      rax, qword ptr [rip + 0x25f48e3]   ; [43b2110] TypeInfo InGame.Kernel.Enemy.Ene_Lc01
+01dbd82d  xor      ebx, ebx
+01dbd82f  cmp      dword ptr [rax + 0xe4], ebx
+01dbd835  jne      0x1dbd846
+01dbd837  mov      rcx, rax
+01dbd83a  call     0x4e0d90
+01dbd83f  mov      rax, qword ptr [rip + 0x25f48ca]   ; [43b2110] TypeInfo InGame.Kernel.Enemy.Ene_Lc01
+01dbd846  mov      rax, qword ptr [rax + 0xb8]   ; ._hormingToken
+01dbd84d  mov      rdx, qword ptr [rax]
+01dbd850  test     rdx, rdx
+01dbd853  je       0x1dbd978
+01dbd859  mov      edx, dword ptr [rdx + 0x18]   ; ev.repeatDelay
+01dbd85c  mov      rcx, qword ptr [rip + 0x25aa49d]   ; [4367d00] TypeInfo InGame.Kernel.Enemy.BulletTemplate[]
+01dbd863  call     0x4dfe00
+01dbd868  lea      rcx, [r13 + 0x230]   ; ._splineRotate
+01dbd86f  mov      qword ptr [r13 + 0x230], rax   ; ._splineRotate
+01dbd876  mov      rdx, rax
+01dbd879  call     0x4dfd80
+01dbd87e  mov      rax, qword ptr [rip + 0x25f488b]   ; [43b2110] TypeInfo InGame.Kernel.Enemy.Ene_Lc01
+01dbd885  mov      rcx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01dbd88c  mov      eax, ebx
+01dbd88e  mov      r14, qword ptr [rcx]
+01dbd891  test     r14, r14
+01dbd894  je       0x1dbd978
+01dbd89a  mov      r15d, 0x20
+01dbd8a0  cmp      eax, dword ptr [r14 + 0x18]   ; ev.repeatDelay
+01dbd8a4  jge      0x1dbd92e
+01dbd8aa  cmp      ebx, dword ptr [r14 + 0x18]   ; ev.repeatDelay
+01dbd8ae  jae      0x1dbd972
+01dbd8b4  mov      rdi, qword ptr [r13 + 0x230]   ; ._splineRotate
+01dbd8bb  test     rbp, rbp
+01dbd8be  je       0x1dbd978
+01dbd8c4  mov      rcx, qword ptr [rbp + 0xf0]   ; ._routeLutAsset
+01dbd8cb  test     rcx, rcx
+01dbd8ce  je       0x1dbd978
+01dbd8d4  mov      rdx, qword ptr [r14 + r15]
+01dbd8d8  xor      r8d, r8d
+01dbd8db  call     0x1ccb7b0   ; InGameBulletManager::GetTemplate(System.String)
+01dbd8e0  mov      rsi, rax
+01dbd8e3  test     rdi, rdi
+01dbd8e6  je       0x1dbd978
+01dbd8ec  test     rax, rax
+01dbd8ef  je       0x1dbd905
+01dbd8f1  mov      rdx, qword ptr [rdi]
+01dbd8f4  mov      rcx, rax
+01dbd8f7  mov      rdx, qword ptr [rdx + 0x40]   ; ev.intValue1/._animators
+01dbd8fb  call     0x4dfda0
+01dbd900  test     rax, rax
+01dbd903  je       0x1dbd962
+01dbd905  cmp      ebx, dword ptr [rdi + 0x18]   ; ev.repeatDelay
+01dbd908  jae      0x1dbd972
+01dbd90a  movsxd   rax, ebx
+01dbd90d  mov      rdx, rsi
+01dbd910  add      rax, 4
+01dbd914  mov      qword ptr [r15 + rdi], rsi
+01dbd918  lea      rcx, [rdi + rax*8]
+01dbd91c  call     0x4dfd80
+01dbd921  inc      ebx
+01dbd923  add      r15, 8
+01dbd927  mov      eax, ebx
+01dbd929  jmp      0x1dbd8a0
+01dbd92e  xor      edx, edx
+01dbd930  mov      rcx, r13
+01dbd933  call     0x1d0de30   ; PawnEnemy::InitializeToPlay()
+01dbd938  xor      edx, edx
+01dbd93a  mov      rcx, r13
+01dbd93d  mov      r15, qword ptr [rsp + 0x20]   ; ev.value0
+01dbd942  mov      r14, qword ptr [rsp + 0x58]   ; ev.nameValue/._particleSpeed
+01dbd947  mov      rdi, qword ptr [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01dbd94c  mov      rsi, qword ptr [rsp + 0x48]   ; ev.intValue3/.GameObjectCache
+01dbd951  mov      rbx, qword ptr [rsp + 0x40]   ; ev.intValue1/._animators
+01dbd956  add      rsp, 0x28
+01dbd95a  pop      r13
+01dbd95c  pop      rbp
+01dbd95d  jmp      0x1dbd540   ; Ene_Lc01::Init()
+01dbd962  call     0x4e0670
+01dbd967  mov      rcx, rax
+01dbd96a  xor      edx, edx
+01dbd96c  call     0x4e0cc0
+01dbd972  call     0x4e0cf0
+01dbd978  call     0x4e0d00

@@ -1,0 +1,2291 @@
+Method: InGame.Kernel.Enemy.PawnEnemy+EnemyChildData[] SubEnemys()
+	001 ShiftStack -8
+	002 Move stack:0x0, rbx
+	003 ShiftStack -8
+	004 Move stack:0x0, rdi
+	005 ShiftStack -168
+	006 Compare [0x184663876], 0
+	007 Move rdi, rcx
+	008 JumpIfNotEqual {24}
+	009 LoadAddress rcx, [0x1843919E8]
+	010 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	011 LoadAddress rcx, [0x1843A3620]
+	012 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	013 LoadAddress rcx, [0x1843A3568]
+	014 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	015 LoadAddress rcx, [0x1843A36D0]
+	016 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	017 LoadAddress rcx, [0x1843A34B8]
+	018 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	019 LoadAddress rcx, [0x1843BC250]
+	020 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	021 LoadAddress rcx, [0x1843B8000]
+	022 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	023 Move [0x184663876], 1
+	024 Move rdx, 0
+	025 Move rcx, rdi
+	026 Call 0x18079B610, rcx, rdx, r8, r9, stack:0x0, stack:0x8
+	027 Move rdx, [rdi]
+	028 Move rcx, rdi
+	029 Move rbx, rax
+	030 Move r8, [rdx+1720]
+	031 Move rdx, [rdx+1728]
+	032 Call r8
+	033 Move stack:0x30, rax
+	034 Move rdi, rax
+	035 Compare rax, 0
+	036 JumpIfEqual {163}
+	037 Move rdx, [0x1843919E8]
+	038 Move rcx, rax
+	039 Call 0x1807D5180, rcx, rdx
+	040 Compare rax, 0
+	041 JumpIfEqual {163}
+	042 Move stack:0x80, r15
+	043 Move stack:0xC8, rbp
+	044 Move stack:0xA0, rsi
+	045 Move stack:0x98, r12
+	046 Move stack:0x90, r13
+	047 Move stack:0x88, r14
+	048 Move rcx, typeof(System.Collections.Generic.List`1<EnemyChildData>)
+	049 Call "il2cpp_codegen_object_new", rcx, rdx, r8, r9
+	050 Move rdx, [0x1843A34B8]
+	051 Move rcx, rax
+	052 Move r15, rax
+	053 Call 0x180B16050, rcx, rdx
+	054 Compare rbx, 0
+	055 JumpIfEqual {62}
+	056 Compare r15, 0
+	057 JumpIfEqual {174}
+	058 Move r8, [0x1843A3620]
+	059 Move rdx, rbx
+	060 Move rcx, r15
+	061 Call List`1<EnemyChildData>.AddRange, rcx, rdx
+	062 Move rcx, [0x1843B8000]
+	063 Call 0x180027540, rcx, rdx, r8, r9
+	064 Compare rax, 0
+	065 JumpIfEqual {174}
+	066 Move rcx, [rax+312]
+	067 Move r13, 0
+	068 Move rax, [rdi+24]
+	069 Move stack:0x38, rcx
+	070 Compare rax, 0
+	071 JumpIfLessOrEqual {146}
+	072 Move stack:0xD8, rax
+	073 LoadAddress rax, [rdi+32]
+	074 Move stack:0xD0, rax
+	075 Move stack:0xC0, r13
+	076 Nop 
+	077 Compare r13, [rdi+24]
+	078 JumpIfGreaterOrEqual {172}
+	079 Compare rcx, 0
+	080 JumpIfEqual {174}
+	081 Move rdx, [rax]
+	082 Move r8, 0
+	083 Call InGameEnemyClipsManager.GetData, rcx, rdx
+	084 Move rbp, rax
+	085 Compare rax, 0
+	086 JumpIfEqual {174}
+	087 Move rdx, 0
+	088 Move rcx, rax
+	089 Call EnemyData.get_RepeatDataSum, rcx, rdx
+	090 Move rsi, [rbp+80]
+	091 Move r12, rax
+	092 Nop 
+	093 Move rdi, 0
+	094 LoadAddress r14, [rsi+32]
+	095 Compare rsi, 0
+	096 JumpIfEqual {174}
+	097 Nop 
+	098 Compare rdi, [rsi+24]
+	099 JumpIfGreaterOrEqual {134}
+	100 JumpIfGreaterOrEqual {172}
+	101 Move rbx, [r14]
+	102 Compare rbx, 0
+	103 JumpIfEqual {174}
+	104 Move rcx, [rbx+16]
+	105 Move rdx, 0
+	106 Call String.IsNullOrEmpty, rcx, rdx
+	107 Compare rax, 0
+	108 JumpIfEqual {111}
+	109 Move rdx, [rbp+32]
+	110 Goto {112}
+	111 Move rdx, [rbx+16]
+	112 Move rax, 0
+	113 LoadAddress r9, [r12+1]
+	114 Move xmm0, 0
+	115 Move stack:0x50, rax
+	116 Move r8, 0
+	117 Move stack:0x20, rax
+	118 LoadAddress rcx, stack:0x40
+	119 Move stack:0x40, xmm0
+	120 Call 0x181311700, rcx, rdx, r8, r9
+	121 Compare r15, 0
+	122 JumpIfEqual {170}
+	123 Move xmm0, stack:0x40
+	124 LoadAddress rdx, stack:0x60
+	125 Move r8, [0x1843A3568]
+	126 Move xmm1, stack:0x50
+	127 Move rcx, r15
+	128 Move stack:0x60, xmm0
+	129 Move stack:0x70, xmm1
+	130 Call 0x180019F90, rcx, rdx, r8, r9
+	131 Add rdi, rdi, 1
+	132 Add r14, r14, 8
+	133 Goto {98}
+	134 Move rbx, stack:0xC0
+	135 Add r13, r13, 1
+	136 Move rax, stack:0xD0
+	137 Add rbx, rbx, 1
+	138 Add rax, rax, 8
+	139 Move stack:0xC0, rbx
+	140 Move stack:0xD0, rax
+	141 Compare rbx, stack:0xD8
+	142 JumpIfGreaterOrEqual {146}
+	143 Move rdi, stack:0x30
+	144 Move rcx, stack:0x38
+	145 Goto {77}
+	146 Compare r15, 0
+	147 JumpIfEqual {174}
+	148 Move rdx, [0x1843A36D0]
+	149 Move rcx, r15
+	150 Move r14, stack:0x88
+	151 Move r13, stack:0x90
+	152 Move r12, stack:0x98
+	153 Move rsi, stack:0xA0
+	154 Move rbp, stack:0xC8
+	155 Move r15, stack:0x80
+	156 ShiftStack 168
+	157 Move rdi, stack:0x0
+	158 ShiftStack 8
+	159 Move rbx, stack:0x0
+	160 ShiftStack 8
+	161 Call 0x180B15E40, rcx, rdx
+	162 Return rax
+	163 Move rax, rbx
+	164 ShiftStack 168
+	165 Move rdi, stack:0x0
+	166 ShiftStack 8
+	167 Move rbx, stack:0x0
+	168 ShiftStack 8
+	169 Return rax
+	170 Call 0x1804E0D00, rcx, rdx, r8, r9
+	171 Interrupt 
+	172 Call 0x1804E0CF0, rcx, rdx, r8, r9
+	173 Interrupt 
+	174 Call 0x1804E0D00, rcx, rdx, r8, r9
+
+Method: System.Void InitializeToPlay()
+	001 ShiftStack -8
+	002 Move stack:0x0, rsi
+	003 ShiftStack -8
+	004 Move stack:0x0, r12
+	005 ShiftStack -8
+	006 Move stack:0x0, r13
+	007 ShiftStack -8
+	008 Move stack:0x0, r14
+	009 ShiftStack -8
+	010 Move stack:0x0, r15
+	011 ShiftStack -32
+	012 Compare [0x184663877], 0
+	013 Move r14, rcx
+	014 JumpIfNotEqual {28}
+	015 LoadAddress rcx, [0x184367D00]
+	016 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	017 LoadAddress rcx, [0x18436A758]
+	018 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	019 LoadAddress rcx, [0x1843919E8]
+	020 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	021 LoadAddress rcx, [0x1843B82D0]
+	022 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	023 LoadAddress rcx, [0x1843B8380]
+	024 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	025 LoadAddress rcx, [0x1843B8000]
+	026 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	027 Move [0x184663877], 1
+	028 Move rax, [0x1843B8000]
+	029 Move rax, [rax+32]
+	030 Compare [rax+309], 1
+	031 JumpIfNotEqual {34}
+	032 Move rcx, rax
+	033 Call 0x1804DE1E0, rcx, rdx, r8, r9
+	034 Move rax, [rax+192]
+	035 Move rax, [rax+16]
+	036 Compare [rax+309], 1
+	037 JumpIfNotEqual {40}
+	038 Move rcx, rax
+	039 Call 0x1804DE1E0, rcx, rdx, r8, r9
+	040 Move rax, [rax+184]
+	041 Move rcx, r14
+	042 Move rdx, [r14]
+	043 Move stack:0x50, rbx
+	044 Move stack:0x58, rbp
+	045 Move r13, [rax]
+	046 Move rax, [rdx+1704]
+	047 Move rdx, [rdx+1712]
+	048 Move stack:0x60, rdi
+	049 Call rax
+	050 Move rsi, 0
+	051 Move r12, rax
+	052 Move r15, 32
+	053 Compare rax, 0
+	054 JumpIfEqual {119}
+	055 Move rdx, [0x1843919E8]
+	056 Move rcx, rax
+	057 Call 0x1807D5180, rcx, rdx
+	058 Compare rax, 0
+	059 JumpIfEqual {119}
+	060 Move rdx, [r12+24]
+	061 Move rbx, rsi
+	062 Move rcx, typeof(InGame.Kernel.Enemy.BulletTemplate[1])
+	063 Call "SzArrayNew", rcx, rdx, r8, r9
+	064 LoadAddress rcx, [r14+520]
+	065 Move [r14+520], rax
+	066 Move rdx, rax
+	067 Call 0x1804DFD80, rcx, rdx, r8, r9
+	068 Move rax, rsi
+	069 Nop 
+	070 Compare rax, [r12+24]
+	071 JumpIfGreaterOrEqual {118}
+	072 Compare rbx, [r12+24]
+	073 JumpIfGreaterOrEqual {233}
+	074 Move rdi, [r14+520]
+	075 Compare r13, 0
+	076 JumpIfEqual {221}
+	077 Move rcx, [r13+240]
+	078 Compare rcx, 0
+	079 JumpIfEqual {221}
+	080 Move rdx, [r12+r15]
+	081 Move r8, 0
+	082 Call InGameBulletManager.GetTemplate, rcx, rdx
+	083 Move rbp, rax
+	084 Compare rdi, 0
+	085 JumpIfEqual {221}
+	086 Compare rax, 0
+	087 JumpIfEqual {94}
+	088 Move rdx, [rdi]
+	089 Move rcx, rax
+	090 Move rdx, [rdx+64]
+	091 Call 0x1804DFDA0, rcx, rdx, r8, r9
+	092 Compare rax, 0
+	093 JumpIfEqual {223}
+	094 Compare rbx, [rdi+24]
+	095 JumpIfGreaterOrEqual {233}
+	096 Move rax, rbx
+	097 Move rdx, rbp
+	098 Add rax, rax, 4
+	099 Move [r15+rdi], rbp
+	100 LoadAddress rcx, [rdi+rax*8]
+	101 Call 0x1804DFD80, rcx, rdx, r8, r9
+	102 Move rax, [r14+520]
+	103 Compare rax, 0
+	104 JumpIfEqual {221}
+	105 Compare rbx, [rax+24]
+	106 JumpIfGreaterOrEqual {233}
+	107 Move rcx, [r15+rax]
+	108 Compare rcx, 0
+	109 JumpIfEqual {221}
+	110 Move r9, 0
+	111 Move rdx, 4
+	112 Move r8, 106
+	113 Call BulletTemplate.ChangeSE, rcx, rdx, r8
+	114 Add rbx, rbx, 1
+	115 Add r15, r15, 8
+	116 Move rax, rbx
+	117 Goto {70}
+	118 Move r15, 32
+	119 Move rdx, [r14]
+	120 Move rcx, r14
+	121 Move rax, [rdx+1720]
+	122 Move rdx, [rdx+1728]
+	123 Call rax
+	124 Move rbp, rax
+	125 Compare rax, 0
+	126 JumpIfEqual {177}
+	127 Move rdx, [0x1843919E8]
+	128 Move rcx, rax
+	129 Call 0x1807D5180, rcx, rdx
+	130 Compare rax, 0
+	131 JumpIfEqual {177}
+	132 Move rdx, [rbp+24]
+	133 Move [r14+508], rdx
+	134 Move rcx, typeof(InGame.Kernel.Timeline.EnemyData[1])
+	135 Call "SzArrayNew", rcx, rdx, r8, r9
+	136 LoadAddress rcx, [r14+512]
+	137 Move [r14+512], rax
+	138 Move rdx, rax
+	139 Call 0x1804DFD80, rcx, rdx, r8, r9
+	140 Move rax, rsi
+	141 Nop 
+	142 Compare rax, [rbp+24]
+	143 JumpIfGreaterOrEqual {177}
+	144 Compare rsi, [rbp+24]
+	145 JumpIfGreaterOrEqual {233}
+	146 Move rbx, [r14+512]
+	147 Compare r13, 0
+	148 JumpIfEqual {221}
+	149 Move rcx, [r13+312]
+	150 Compare rcx, 0
+	151 JumpIfEqual {221}
+	152 Move rdx, [r15+rbp]
+	153 Move r8, 0
+	154 Call InGameEnemyClipsManager.GetData, rcx, rdx
+	155 Move rdi, rax
+	156 Compare rbx, 0
+	157 JumpIfEqual {221}
+	158 Compare rax, 0
+	159 JumpIfEqual {166}
+	160 Move rdx, [rbx]
+	161 Move rcx, rax
+	162 Move rdx, [rdx+64]
+	163 Call 0x1804DFDA0, rcx, rdx, r8, r9
+	164 Compare rax, 0
+	165 JumpIfEqual {228}
+	166 Compare rsi, [rbx+24]
+	167 JumpIfGreaterOrEqual {233}
+	168 Move rax, rsi
+	169 Move rdx, rdi
+	170 Add rax, rax, 4
+	171 Move [rbx+r15], rdi
+	172 LoadAddress rcx, [rbx+rax*8]
+	173 Call 0x1804DFD80, rcx, rdx, r8, r9
+	174 Add rsi, rsi, 1
+	175 Add r15, r15, 8
+	176 Goto {140}
+	177 Move rcx, [0x1843B82D0]
+	178 Call 0x180D102F0, rcx
+	179 Compare rax, 0
+	180 JumpIfNotEqual {203}
+	181 Move rax, [0x1843B8380]
+	182 Move rax, [rax+32]
+	183 Compare [rax+309], 1
+	184 JumpIfNotEqual {187}
+	185 Move rcx, rax
+	186 Call 0x1804DE1E0, rcx, rdx, r8, r9
+	187 Move rax, [rax+192]
+	188 Move rax, [rax+16]
+	189 Compare [rax+309], 1
+	190 JumpIfNotEqual {193}
+	191 Move rcx, rax
+	192 Call 0x1804DE1E0, rcx, rdx, r8, r9
+	193 Move rax, [rax+184]
+	194 Move rcx, [rax]
+	195 Compare rcx, 0
+	196 JumpIfEqual {221}
+	197 Move rax, [rcx+40]
+	198 Move [r14+528], rax
+	199 Move rax, [rcx+44]
+	200 Move [r14+532], rax
+	201 Move rax, [rcx+200]
+	202 Move [r14+536], rax
+	203 Move rdx, 0
+	204 Move rcx, r14
+	205 Move rdi, stack:0x60
+	206 Move rbp, stack:0x58
+	207 Move rbx, stack:0x50
+	208 ShiftStack 32
+	209 Move r15, stack:0x0
+	210 ShiftStack 8
+	211 Move r14, stack:0x0
+	212 ShiftStack 8
+	213 Move r13, stack:0x0
+	214 ShiftStack 8
+	215 Move r12, stack:0x0
+	216 ShiftStack 8
+	217 Move rsi, stack:0x0
+	218 ShiftStack 8
+	219 Call PawnEnemy.InitializeToPlay, rcx, rdx
+	220 Return 
+	221 Call 0x1804E0D00, rcx, rdx, r8, r9
+	222 Interrupt 
+	223 Call 0x1804E0670, rcx, rdx, r8, r9
+	224 Move rcx, rax
+	225 Move rdx, 0
+	226 Call 0x1804E0CC0, rcx, rdx, r8, r9
+	227 Interrupt 
+	228 Call 0x1804E0670, rcx, rdx, r8, r9
+	229 Move rcx, rax
+	230 Move rdx, 0
+	231 Call 0x1804E0CC0, rcx, rdx, r8, r9
+	232 Interrupt 
+	233 Call 0x1804E0CF0, rcx, rdx, r8, r9
+
+Method: System.Collections.Generic.List`1<System.String> GetBulletTemplates()
+	001 Move stack:0x20, rbx
+	002 ShiftStack -8
+	003 Move stack:0x0, rsi
+	004 ShiftStack -32
+	005 Compare [0x184663878], 0
+	006 Move rbx, rcx
+	007 JumpIfNotEqual {15}
+	008 LoadAddress rcx, [0x1843919E8]
+	009 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	010 LoadAddress rcx, [0x184375478]
+	011 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	012 LoadAddress rcx, [0x1843B8000]
+	013 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	014 Move [0x184663878], 1
+	015 Move stack:0x30, rbp
+	016 Move rdx, 0
+	017 Move stack:0x38, rdi
+	018 Move rcx, rbx
+	019 Move stack:0x40, r14
+	020 Call PawnEnemy.GetBulletTemplates, rcx, rdx
+	021 Move rdx, [rbx]
+	022 Move rcx, rbx
+	023 Move rsi, rax
+	024 Move r8, [rdx+1704]
+	025 Move rdx, [rdx+1712]
+	026 Call r8
+	027 Compare rax, 0
+	028 JumpIfEqual {35}
+	029 Compare rsi, 0
+	030 JumpIfEqual {89}
+	031 Move r8, [0x184375478]
+	032 Move rdx, rax
+	033 Move rcx, rsi
+	034 Call List`1<Object>.AddRange, rcx, rdx
+	035 Move rdx, [rbx]
+	036 Move rcx, rbx
+	037 Move rax, [rdx+1720]
+	038 Move rdx, [rdx+1728]
+	039 Call rax
+	040 Move rdi, rax
+	041 Compare rax, 0
+	042 JumpIfEqual {80}
+	043 Move rdx, [0x1843919E8]
+	044 Move rcx, rax
+	045 Call 0x1807D5180, rcx, rdx
+	046 Compare rax, 0
+	047 JumpIfEqual {80}
+	048 Move rcx, [0x1843B8000]
+	049 Call 0x180027540, rcx, rdx, r8, r9
+	050 Move rbp, rax
+	051 LoadAddress r14, [rdi+32]
+	052 Move rbx, 0
+	053 Move rcx, rbx
+	054 Compare rbx, [rdi+24]
+	055 JumpIfGreaterOrEqual {80}
+	056 Compare rbx, [rdi+24]
+	057 JumpIfGreaterOrEqual {91}
+	058 Compare rbp, 0
+	059 JumpIfEqual {89}
+	060 Move rcx, [rbp+312]
+	061 Compare rcx, 0
+	062 JumpIfEqual {89}
+	063 Move rdx, [r14]
+	064 Move r8, 0
+	065 Call InGameEnemyClipsManager.GetData, rcx, rdx
+	066 Compare rax, 0
+	067 JumpIfEqual {89}
+	068 Move rdx, 0
+	069 Move rcx, rax
+	070 Call EnemyData.GetBulletTemplateNames, rcx, rdx
+	071 Compare rsi, 0
+	072 JumpIfEqual {89}
+	073 Move r8, [0x184375478]
+	074 Move rdx, rax
+	075 Move rcx, rsi
+	076 Call List`1<Object>.AddRange, rcx, rdx
+	077 Add rbx, rbx, 1
+	078 Add r14, r14, 8
+	079 Goto {53}
+	080 Move r14, stack:0x40
+	081 Move rax, rsi
+	082 Move rdi, stack:0x38
+	083 Move rbp, stack:0x30
+	084 Move rbx, stack:0x48
+	085 ShiftStack 32
+	086 Move rsi, stack:0x0
+	087 ShiftStack 8
+	088 Return rax
+	089 Call 0x1804E0D00, rcx, rdx, r8, r9
+	090 Interrupt 
+	091 Call 0x1804E0CF0, rcx, rdx, r8, r9
+
+Method: System.Void ReStart(System.Boolean withPlay)
+	001 Move stack:0x8, rbx
+	002 Move stack:0x10, rsi
+	003 ShiftStack -8
+	004 Move stack:0x0, rdi
+	005 ShiftStack -48
+	006 Move rsi, 0
+	007 Move [rcx+432], 0
+	008 Move rdi, rdx
+	009 Move [rcx+492], rsi
+	010 Move rdx, [rcx+80]
+	011 Move rbx, rcx
+	012 Move [rcx+540], rsi
+	013 Move [rcx+444], rsi
+	014 Move [rcx+436], rsi
+	015 Compare rdx, 0
+	016 JumpIfEqual {36}
+	017 Move r8, 0
+	018 LoadAddress rcx, stack:0x20
+	019 Call Transform.get_localPosition, rcx, rdx
+	020 Move r8, 0
+	021 Move rdx, rdi
+	022 Move rcx, [rax+8]
+	023 Move xmm0, [rax]
+	024 Move [rbx+552], xmm0
+	025 Move [rbx+560], rcx
+	026 Move rcx, rbx
+	027 Move [rbx+548], rsi
+	028 Move [rbx+448], 0x41200000    ; 0x41200000=10
+	029 Move rbx, stack:0x40
+	030 Move rsi, stack:0x48
+	031 ShiftStack 48
+	032 Move rdi, stack:0x0
+	033 ShiftStack 8
+	034 Call PawnEnemy.ReStart, rcx, rdx
+	035 Return 
+	036 Call 0x1804E0D00, rcx, rdx, r8, r9
+
+Method: System.Boolean IsBossType()
+	001 Move rax, 1
+	002 Return rax
+
+Method: System.Void StateExec(System.Single dt)
+No ISIL was generated
+Method: System.Void LocalLateUpdate(System.Single dt)
+	001 Move stack:0x10, rbx
+	002 ShiftStack -8
+	003 Move stack:0x0, rdi
+	004 ShiftStack -96
+	005 Compare [0x184663879], 0
+	006 Move rbx, rcx
+	007 Move stack:0x50, xmm6
+	008 Move xmm6, xmm1
+	009 Move stack:0x40, xmm7
+	010 JumpIfNotEqual {14}
+	011 LoadAddress rcx, [0x1843B8000]
+	012 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	013 Move [0x184663879], 1
+	014 Move rax, [0x1843B8000]
+	015 Move rax, [rax+32]
+	016 Compare [rax+309], 1
+	017 JumpIfNotEqual {20}
+	018 Move rcx, rax
+	019 Call 0x1804DE1E0, rcx, rdx, r8, r9
+	020 Move rax, [rax+192]
+	021 Move rax, [rax+16]
+	022 Compare [rax+309], 1
+	023 JumpIfNotEqual {26}
+	024 Move rcx, rax
+	025 Call 0x1804DE1E0, rcx, rdx, r8, r9
+	026 Move rax, [rax+184]
+	027 Move xmm7, 0
+	028 Compare xmm6, xmm7
+	029 Move stack:0x70, rsi
+	030 Move rdi, [rax]
+	031 Move stack:0x30, xmm8
+	032 JumpIfLessOrEqual {100}
+	033 Move rdx, [rbx]
+	034 Move rcx, rbx
+	035 Move rax, [rdx+872]
+	036 Move rdx, [rdx+880]
+	037 Call rax
+	038 Compare rax, 0
+	039 JumpIfEqual {100}
+	040 Move rdx, [rbx+80]
+	041 Compare rdx, 0
+	042 JumpIfEqual {113}
+	043 Move r8, 0
+	044 LoadAddress rcx, stack:0x20
+	045 Call Transform.get_position, rcx, rdx
+	046 Move rdx, [rbx]
+	047 Move rcx, rbx
+	048 Move xmm8, [rax]
+	049 Move rsi, [rax+8]
+	050 Move rax, [rdx+568]
+	051 Move rdx, [rdx+576]
+	052 Call rax
+	053 Compare rdi, 0
+	054 JumpIfEqual {113}
+	055 Move r9, 0
+	056 Move stack:0x20, xmm8
+	057 Move r8, rax
+	058 Move stack:0x28, rsi
+	059 LoadAddress rdx, stack:0x20
+	060 Move rcx, rdi
+	061 Call InGameManager.GetNearestPlayerIndexInWorld, rcx, rdx, r8
+	062 Move r9, 0
+	063 LoadAddress rcx, stack:0x20
+	064 Move r8, rax
+	065 Move rdx, rdi
+	066 Call InGameManager.GetPlayerSkyPosition, rcx, rdx
+	067 Move xmm0, [0x1835F2C18]    ; [1835F2C18]=f=-20 v4=(-20,-50,-200,0)
+	068 Move xmm2, [rax]
+	069 Move rdx, [rax+8]
+	070 Compare xmm7, xmm2
+	071 Move xmm1, rdx
+	072 Move [rbx+496], xmm2
+	073 NotImplemented "seta al"
+	074 Move [rbx+504], rdx
+	075 Compare xmm7, xmm1
+	076 Move [rbx+437], rax
+	077 NotImplemented "seta al"
+	078 Compare xmm0, xmm1
+	079 Move [rbx+438], rax
+	080 NotImplemented "seta al"
+	081 Compare xmm2, [0x1835F2BC8]    ; [1835F2BC8]=f=-100 v4=(-100,-1000,0.5,0.5)
+	082 Move [rbx+440], rax
+	083 JumpIfGreater {86}
+	084 Move rax, 0
+	085 Goto {89}
+	086 Move xmm0, [0x1834E0BE4]    ; [1834E0BE4]=f=100 v4=(100,180,2000,-0.0001)
+	087 Compare xmm0, xmm2
+	088 NotImplemented "seta al"
+	089 Move r8, 0
+	090 Move [rbx+439], rax
+	091 Move xmm1, xmm6
+	092 Move rcx, rbx
+	093 Call Ene_BosBase.ProgressBossTimer, rcx, rdx
+	094 Move r8, [rbx]
+	095 Move xmm1, xmm6
+	096 Move rcx, rbx
+	097 Move rax, [r8+1672]
+	098 Move r8, [r8+1680]
+	099 Call rax
+	100 Move r8, 0
+	101 Move xmm1, xmm6
+	102 Move rcx, rbx
+	103 Move xmm8, stack:0x30
+	104 Move rsi, stack:0x70
+	105 Move rbx, stack:0x78
+	106 Move xmm6, stack:0x50
+	107 Move xmm7, stack:0x40
+	108 ShiftStack 96
+	109 Move rdi, stack:0x0
+	110 ShiftStack 8
+	111 Call PawnEnemy.LocalLateUpdate, rcx, rdx
+	112 Return 
+	113 Call 0x1804E0D00, rcx, rdx, r8, r9
+
+Method: System.Void ResetBossTimer(System.Boolean withPlay)
+	001 ShiftStack -8
+	002 Move stack:0x0, rbx
+	003 ShiftStack -48
+	004 Move [rcx+434], rdx
+	005 Move rbx, rcx
+	006 Move rdx, [rcx+80]
+	007 Move [rcx+444], 0
+	008 Move [rcx+435], 0
+	009 Move [rcx+540], 0
+	010 Compare rdx, 0
+	011 JumpIfEqual {25}
+	012 Move r8, 0
+	013 LoadAddress rcx, stack:0x20
+	014 Call Transform.get_localPosition, rcx, rdx
+	015 Move xmm0, [rax]
+	016 Move rcx, [rax+8]
+	017 Move [rbx+552], xmm0
+	018 Move [rbx+560], rcx
+	019 Move [rbx+548], 0
+	020 Move [rbx+448], 0x41200000    ; 0x41200000=10
+	021 ShiftStack 48
+	022 Move rbx, stack:0x0
+	023 ShiftStack 8
+	024 Return 
+	025 Call 0x1804E0D00, rcx, rdx, r8, r9
+
+Method: System.Void UpdatePlayerPositionFlag(UnityEngine.Vector3 ppos)
+	001 Move xmm0, [rdx]
+	002 Move rax, [rdx+8]
+	003 Move [rcx+496], xmm0
+	004 Move xmm0, 0
+	005 Compare xmm0, [rdx]
+	006 Move [rcx+504], rax
+	007 NotImplemented "seta al"
+	008 Compare xmm0, [rdx+8]
+	009 Move [rcx+437], rax
+	010 Move xmm0, [0x1835F2C18]    ; [1835F2C18]=f=-20 v4=(-20,-50,-200,0)
+	011 NotImplemented "seta al"
+	012 Compare xmm0, [rdx+8]
+	013 Move [rcx+438], rax
+	014 Move xmm0, [rdx]
+	015 NotImplemented "seta al"
+	016 Compare xmm0, [0x1835F2BC8]    ; [1835F2BC8]=f=-100 v4=(-100,-1000,0.5,0.5)
+	017 Move [rcx+440], rax
+	018 JumpIfGreater {22}
+	019 Move rax, 0
+	020 Move [rcx+439], rax
+	021 Return 
+	022 Move xmm0, [0x1834E0BE4]    ; [1834E0BE4]=f=100 v4=(100,180,2000,-0.0001)
+	023 Compare xmm0, [rdx]
+	024 NotImplemented "seta al"
+	025 Move [rcx+439], rax
+	026 Return 
+
+Method: System.Void ProgressBossTimer(System.Single dt)
+	001 ShiftStack -8
+	002 Move stack:0x0, rbx
+	003 ShiftStack -96
+	004 Compare [rcx+434], 0
+	005 Move rbx, rcx
+	006 Move stack:0x50, xmm6
+	007 Move xmm6, xmm1
+	008 Move stack:0x40, xmm7
+	009 Move stack:0x30, xmm8
+	010 Move xmm8, 0
+	011 Move stack:0x20, xmm9
+	012 Move xmm9, [0x1835F2EA4]    ; [1835F2EA4]=f=86400 v4=(86400,-120,-1920,0.25)
+	013 JumpIfEqual {56}
+	014 Move xmm7, xmm1
+	015 Add xmm7, xmm7, [rcx+444]
+	016 Compare xmm8, xmm7
+	017 JumpIfGreater {22}
+	018 Compare xmm7, xmm9
+	019 JumpIfLessOrEqual {23}
+	020 Move xmm7, xmm9
+	021 Goto {23}
+	022 Move xmm7, 0
+	023 Compare [rcx+548], 18
+	024 Move [rcx+444], xmm7
+	025 JumpIfEqual {51}
+	026 Move rdx, [rcx]
+	027 Move rax, [rdx+1688]
+	028 Move rdx, [rdx+1696]
+	029 Call rax
+	030 Compare xmm7, xmm0
+	031 JumpIfGreaterOrEqual {43}
+	032 Move xmm0, [rbx+448]
+	033 Subtract xmm0, xmm0, xmm6
+	034 Compare xmm8, xmm0
+	035 Move [rbx+448], xmm0
+	036 JumpIfLess {44}
+	037 Compare [rbx+548], 18
+	038 JumpIfGreaterOrEqual {45}
+	039 Add xmm0, xmm0, [0x1834E0BD8]    ; [1834E0BD8]=f=10 v4=(10,20,57.2958,100)
+	040 Add [rbx+548], [rbx+548], 1
+	041 Move [rbx+448], xmm0
+	042 Goto {44}
+	043 Move [rbx+548], 18
+	044 Compare [rbx+548], 18
+	045 JumpIfNotEqual {51}
+	046 Move rdx, [rbx]
+	047 Move rcx, rbx
+	048 Move rax, [rdx+1752]
+	049 Move rdx, [rdx+1760]
+	050 Call rax
+	051 Move rdx, [rbx]
+	052 Move rcx, rbx
+	053 Move rax, [rdx+1736]
+	054 Move rdx, [rdx+1744]
+	055 Call rax
+	056 Compare [rbx+436], 0
+	057 JumpIfNotEqual {69}
+	058 Move xmm0, xmm6
+	059 Multiply xmm0, xmm0, [rbx+460]
+	060 Add xmm0, xmm0, [rbx+456]
+	061 Compare xmm8, xmm0
+	062 JumpIfGreater {67}
+	063 Compare xmm0, xmm9
+	064 JumpIfLessOrEqual {68}
+	065 Move xmm0, xmm9
+	066 Goto {68}
+	067 Move xmm0, 0
+	068 Move [rbx+456], xmm0
+	069 Move xmm0, [rbx+464]
+	070 Compare xmm0, xmm8
+	071 Move xmm9, stack:0x20
+	072 JumpIfLessOrEqual {95}
+	073 Add xmm6, xmm6, [rbx+468]
+	074 Compare xmm6, xmm0
+	075 Move [rbx+468], xmm6
+	076 NotImplemented "setae al"
+	077 Move [rbx+476], rax
+	078 Compare rax, 0
+	079 JumpIfEqual {95}
+	080 Move xmm7, xmm0
+	081 Move xmm0, xmm6
+	082 Divide xmm0, xmm0, xmm7
+	083 Call 0x180578740, rcx, rdx, r8, r9
+	084 Multiply xmm0, xmm0, xmm7
+	085 Subtract xmm6, xmm6, xmm0
+	086 Compare xmm8, xmm6
+	087 JumpIfGreater {92}
+	088 Compare xmm6, xmm7
+	089 JumpIfLessOrEqual {93}
+	090 Move xmm6, xmm7
+	091 Goto {93}
+	092 Move xmm6, 0
+	093 Add [rbx+472], [rbx+472], 1
+	094 Move [rbx+468], xmm6
+	095 Move xmm6, stack:0x50
+	096 Move xmm7, stack:0x40
+	097 Move xmm8, stack:0x30
+	098 ShiftStack 96
+	099 Move rbx, stack:0x0
+	100 ShiftStack 8
+	101 Return 
+
+Method: System.Void StopBossTimer()
+	001 ShiftStack -8
+	002 Move stack:0x0, rbx
+	003 ShiftStack -32
+	004 Compare [0x18466387A], 0
+	005 Move rbx, rcx
+	006 JumpIfNotEqual {12}
+	007 LoadAddress rcx, [0x1843B8000]
+	008 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	009 LoadAddress rcx, [0x1843A2368]
+	010 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	011 Move [0x18466387A], 1
+	012 Move rdx, 0
+	013 Move stack:0x30, rdi
+	014 Move rcx, rbx
+	015 Call PawnEnemy.DisabledAllParts, rcx, rdx
+	016 Compare [rbx+434], 0
+	017 JumpIfEqual {53}
+	018 Move rax, [0x1843B8000]
+	019 Move rax, [rax+32]
+	020 Compare [rax+309], 1
+	021 JumpIfNotEqual {24}
+	022 Move rcx, rax
+	023 Call 0x1804DE1E0, rcx, rdx, r8, r9
+	024 Move rax, [rax+192]
+	025 Move rax, [rax+16]
+	026 Compare [rax+309], 1
+	027 JumpIfNotEqual {30}
+	028 Move rcx, rax
+	029 Call 0x1804DE1E0, rcx, rdx, r8, r9
+	030 Move rax, [rax+184]
+	031 Move rdi, [rax]
+	032 Compare rdi, 0
+	033 JumpIfEqual {62}
+	034 Move rdx, 0
+	035 Move rcx, rdi
+	036 Call InGameManager.AddDiPoint_BossDestroy, rcx, rdx
+	037 Move rdx, [rbx]
+	038 Move rcx, rbx
+	039 Move rax, [rdx+1768]
+	040 Move rdx, [rdx+1776]
+	041 Call rax
+	042 Move r8, 0
+	043 Move rdx, rax
+	044 Move rcx, rdi
+	045 Call InGameManager.SetBossTime, rcx, rdx
+	046 Move rcx, typeof(TXEKernel.Sound.SoundUtility)
+	047 Compare [rcx+228], 0
+	048 JumpIfNotEqual {50}
+	049 Call "il2cpp_runtime_class_init_export", rcx, rdx, r8, r9
+	050 Move rdx, 0
+	051 Move rcx, 177
+	052 Call SoundUtility.PlayQue, rcx, rdx
+	053 Move rdx, 0
+	054 Move [rbx+434], 0
+	055 Move rcx, rbx
+	056 Move rdi, stack:0x30
+	057 ShiftStack 32
+	058 Move rbx, stack:0x0
+	059 ShiftStack 8
+	060 Call PawnEnemy.DeadResultUpdate, rcx, rdx
+	061 Return 
+	062 Call 0x1804E0D00, rcx, rdx, r8, r9
+
+Method: System.Single GetBattileTime()
+	001 ShiftStack -40
+	002 Compare [0x18466387B], 0
+	003 JumpIfNotEqual {7}
+	004 LoadAddress rcx, [0x1843B9810]
+	005 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	006 Move [0x18466387B], 1
+	007 Move rax, typeof(InGame.UI.UIBossGauge)
+	008 Compare [rax+228], 0
+	009 JumpIfNotEqual {13}
+	010 Move rcx, rax
+	011 Call "il2cpp_runtime_class_init_export", rcx, rdx, r8, r9
+	012 Move rax, typeof(InGame.UI.UIBossGauge)
+	013 Move rcx, [rax+184]
+	014 Move xmm0, [rcx]
+	015 ShiftStack 40
+	016 Return xmm0
+
+Method: System.Collections.Generic.List`1<InGame.Kernel.Enemy.PawnEnemy> CallEnemyClip(System.Int32 tindex, UnityEngine.Vector3 offset, InGame.Kernel.Enemy.PawnEnemy+poolEventFunction poolFunction = null)
+	001 Move stack:0x8, rbx
+	002 Move stack:0x10, rsi
+	003 Move stack:0x18, rdi
+	004 ShiftStack -8
+	005 Move stack:0x0, r14
+	006 ShiftStack -144
+	007 Move r14, r9
+	008 Move rsi, r8
+	009 Move rbx, rdx
+	010 Move rdi, rcx
+	011 Compare [0x18466387C], 0
+	012 JumpIfNotEqual {24}
+	013 LoadAddress rcx, [0x1843BB0E0]
+	014 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	015 LoadAddress rcx, [0x1843BB198]
+	016 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	017 LoadAddress rcx, [0x1843BB250]
+	018 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	019 LoadAddress rcx, [0x184362E00]
+	020 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	021 LoadAddress rcx, [0x1843B8000]
+	022 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	023 Move [0x18466387C], 1
+	024 Move xmm0, 0
+	025 Move rax, 0
+	026 Move stack:0x70, xmm0
+	027 Move stack:0x80, rax
+	028 Compare rbx, 0
+	029 JumpIfSign {111}
+	030 Compare rbx, [rdi+508]
+	031 JumpIfGreaterOrEqual {111}
+	032 Move rcx, [0x1843B8000]
+	033 Call 0x180027540, rcx, rdx, r8, r9
+	034 Move r10, rax
+	035 Move rcx, [rdi+512]
+	036 Compare rcx, 0
+	037 JumpIfEqual {128}
+	038 Compare rbx, [rcx+24]
+	039 JumpIfGreaterOrEqual {120}
+	040 Move rdx, [rcx+32+rbx*8]
+	041 Compare r10, 0
+	042 JumpIfEqual {128}
+	043 Move xmm0, [rsi]
+	044 Move stack:0x40, xmm0
+	045 Move rax, [rsi+8]
+	046 Move stack:0x48, rax
+	047 Move rbx, 0
+	048 Move stack:0x30, rbx
+	049 Move stack:0x28, rbx
+	050 Move stack:0x20, 2
+	051 LoadAddress r9, stack:0x40
+	052 Move r8, [r10+152]
+	053 Move rcx, r10
+	054 Call InGameManager.EntryEnemyNoRate, rcx, rdx, r8, r9, stack:0x0, stack:0x8
+	055 Move rsi, rax
+	056 Move stack:0x40, rax
+	057 Compare rax, 0
+	058 JumpIfEqual {111}
+	059 Move r8, [0x184362E00]
+	060 Move rdx, rax
+	061 LoadAddress rcx, stack:0x58
+	062 Call 0x180B11790, rcx, rdx
+	063 Move xmm0, stack:0x58
+	064 Move stack:0x70, xmm0
+	065 Move xmm1, stack:0x68
+	066 Move stack:0x80, xmm1
+	067 Move stack:0x58, rbx
+	068 LoadAddress rbx, stack:0x70
+	069 Move stack:0x60, rbx
+	070 Move rdx, [0x1843BB198]
+	071 LoadAddress rcx, stack:0x70
+	072 Call Enumerator<Object>.MoveNext, rcx, rdx
+	073 Compare rax, 0
+	074 JumpIfEqual {98}
+	075 Move rdi, stack:0x80
+	076 Compare rdi, 0
+	077 JumpIfEqual {124}
+	078 Move r8, 0
+	079 Move rdx, r14
+	080 Move rcx, rdi
+	081 Call PawnEnemy.add_PoolEvent, rcx, rdx
+	082 Move rdx, 0
+	083 Move rcx, rdi
+	084 Call PawnEnemy.IsDelayed, rcx, rdx
+	085 Compare rax, 0
+	086 JumpIfNotEqual {70}
+	087 Move rax, [rdi+184]
+	088 Compare rax, 0
+	089 JumpIfEqual {122}
+	090 Compare [rax+81], 0
+	091 JumpIfNotEqual {70}
+	092 Move rcx, rax
+	093 Move rdx, [rax]
+	094 Move rax, [rdx+424]
+	095 Move rdx, [rdx+432]
+	096 Call rax
+	097 Goto {70}
+	098 Move rdx, [0x1843BB0E0]
+	099 Move rcx, rbx
+	100 Call 0x1805BCDB0, rcx, rdx, r8, r9, stack:0x0
+	101 Goto {109}
+	102 Move rdx, [0x1843BB0E0]
+	103 Move rcx, stack:0x60
+	104 Call 0x1805BCDB0, rcx, rdx, r8, r9, stack:0x0
+	105 Move rcx, stack:0x58
+	106 Compare rcx, 0
+	107 JumpIfNotEqual {126}
+	108 Move rsi, stack:0x40
+	109 Move rax, rsi
+	110 Goto {112}
+	111 Move rax, 0
+	112 LoadAddress r11, stack:0x90
+	113 Move rbx, [r11+16]
+	114 Move rsi, [r11+24]
+	115 Move rdi, [r11+32]
+	116 Move rsp, r11
+	117 Move r14, stack:0x0
+	118 ShiftStack 8
+	119 Return rax
+	120 Call 0x1804E0CF0, rcx, rdx, r8, r9
+	121 Nop 
+	122 Call 0x1804E0D00, rcx, rdx, r8, r9
+	123 Nop 
+	124 Call 0x1804E0D00, rcx, rdx, r8, r9
+	125 Nop 
+	126 Call 0x1804DC9E0, rcx, rdx, r8, r9
+	127 Interrupt 
+	128 Call 0x1804E0D00, rcx, rdx, r8, r9
+
+Method: InGame.Kernel.Enemy.BulletTemplate GetBT(System.Int32 tindex)
+	001 ShiftStack -40
+	002 Move r8, [rcx+520]
+	003 Compare r8, 0
+	004 JumpIfEqual {11}
+	005 Compare rdx, [r8+24]
+	006 JumpIfGreaterOrEqual {13}
+	007 Move rax, rdx
+	008 Move rax, [r8+32+rax*8]
+	009 ShiftStack 40
+	010 Return rax
+	011 Call 0x1804E0D00, rcx, rdx, r8, r9
+	012 Interrupt 
+	013 Call 0x1804E0CF0, rcx, rdx, r8, r9
+
+Method: System.String[] GetBossBT()
+	001 Move rax, 0
+	002 Return rax
+
+Method: System.String[] GetBossCD()
+	001 Move rax, 0
+	002 Return rax
+
+Method: System.Boolean UptoHpStep(InGame.Kernel.Enemy.Ene_BosBase+HitPState hpstep)
+	001 Move rax, [rcx+540]
+	002 Compare rax, rdx
+	003 Move [rcx+540], rdx
+	004 NotImplemented "setl al"
+	005 Return rax
+
+Method: System.Boolean IsOverHP(InGame.Kernel.Enemy.Ene_BosBase+HitPState hpstep)
+	001 Compare [rcx+540], rdx
+	002 NotImplemented "setge al"
+	003 Return rax
+
+Method: System.Boolean IsOverStep(InGame.Kernel.Enemy.Ene_BosBase+TimeSteps astep)
+	001 Compare [rcx+548], rdx
+	002 NotImplemented "setge al"
+	003 Return rax
+
+Method: System.Boolean IsOverAorB(InGame.Kernel.Enemy.Ene_BosBase+HitPState hpstep, InGame.Kernel.Enemy.Ene_BosBase+TimeSteps astep)
+	001 Compare [rcx+540], rdx
+	002 JumpIfLess {5}
+	003 Move rax, 1
+	004 Return rax
+	005 Compare [rcx+548], r8
+	006 NotImplemented "setge al"
+	007 Return rax
+
+Method: System.Void CountupBossTimer(System.Single dt)
+	001 ShiftStack -8
+	002 Move stack:0x0, rbx
+	003 ShiftStack -80
+	004 Move stack:0x40, xmm6
+	005 Move rbx, rcx
+	006 Move stack:0x30, xmm7
+	007 Move xmm6, xmm1
+	008 Add xmm6, xmm6, [rcx+444]
+	009 Move xmm7, 0
+	010 Move stack:0x20, xmm8
+	011 Move xmm8, xmm1
+	012 Compare xmm7, xmm6
+	013 JumpIfGreater {19}
+	014 Move xmm0, [0x1835F2EA4]    ; [1835F2EA4]=f=86400 v4=(86400,-120,-1920,0.25)
+	015 Compare xmm6, xmm0
+	016 JumpIfLessOrEqual {20}
+	017 Move xmm6, xmm0
+	018 Goto {20}
+	019 Move xmm6, 0
+	020 Compare [rcx+548], 18
+	021 Move [rcx+444], xmm6
+	022 JumpIfEqual {48}
+	023 Move rdx, [rcx]
+	024 Move rax, [rdx+1688]
+	025 Move rdx, [rdx+1696]
+	026 Call rax
+	027 Compare xmm6, xmm0
+	028 JumpIfGreaterOrEqual {40}
+	029 Move xmm0, [rbx+448]
+	030 Subtract xmm0, xmm0, xmm8
+	031 Compare xmm7, xmm0
+	032 Move [rbx+448], xmm0
+	033 JumpIfLess {41}
+	034 Compare [rbx+548], 18
+	035 JumpIfGreaterOrEqual {42}
+	036 Add xmm0, xmm0, [0x1834E0BD8]    ; [1834E0BD8]=f=10 v4=(10,20,57.2958,100)
+	037 Add [rbx+548], [rbx+548], 1
+	038 Move [rbx+448], xmm0
+	039 Goto {41}
+	040 Move [rbx+548], 18
+	041 Compare [rbx+548], 18
+	042 JumpIfNotEqual {48}
+	043 Move rdx, [rbx]
+	044 Move rcx, rbx
+	045 Move rax, [rdx+1752]
+	046 Move rdx, [rdx+1760]
+	047 Call rax
+	048 Move xmm6, stack:0x40
+	049 Move xmm7, stack:0x30
+	050 Move xmm8, stack:0x20
+	051 ShiftStack 80
+	052 Move rbx, stack:0x0
+	053 ShiftStack 8
+	054 Return 
+
+Method: System.Boolean UpdateHPState()
+	001 Move stack:0x8, rbx
+	002 Move stack:0x10, rbp
+	003 Move stack:0x18, rsi
+	004 ShiftStack -8
+	005 Move stack:0x0, rdi
+	006 ShiftStack -48
+	007 Compare [0x18466387D], 0
+	008 Move rsi, rcx
+	009 Move stack:0x20, xmm6
+	010 JumpIfNotEqual {14}
+	011 LoadAddress rcx, [0x1843B1E48]
+	012 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	013 Move [0x18466387D], 1
+	014 Move rdx, 0
+	015 Move rcx, rsi
+	016 Call HybridCollisions.get_HitPointRate, rcx, rdx
+	017 Move rcx, typeof(InGame.Kernel.Enemy.Ene_BosBase)
+	018 Move rbp, 0
+	019 Move rbx, 0
+	020 Move xmm6, xmm0
+	021 Move rdi, 32
+	022 Compare [rcx+228], 0
+	023 JumpIfNotEqual {26}
+	024 Call "il2cpp_runtime_class_init_export", rcx, rdx, r8, r9
+	025 Move rcx, typeof(InGame.Kernel.Enemy.Ene_BosBase)
+	026 Move rax, [rcx+184]
+	027 Compare rbx, [rax+8]
+	028 JumpIfGreaterOrEqual {48}
+	029 Compare [rcx+228], 0
+	030 JumpIfNotEqual {33}
+	031 Call "il2cpp_runtime_class_init_export", rcx, rdx, r8, r9
+	032 Move rcx, typeof(InGame.Kernel.Enemy.Ene_BosBase)
+	033 Move rax, [rcx+184]
+	034 Move rdx, [rax]
+	035 Compare rdx, 0
+	036 JumpIfEqual {57}
+	037 Compare rbx, [rdx+24]
+	038 JumpIfGreaterOrEqual {59}
+	039 Compare xmm6, [rdi+rdx]
+	040 JumpIfGreater {44}
+	041 Add rbx, rbx, 1
+	042 Add rdi, rdi, 4
+	043 Goto {22}
+	044 Move rax, [rsi+540]
+	045 Compare rax, rbx
+	046 Move [rsi+540], rbx
+	047 NotImplemented "setl bpl"
+	048 Move rbx, stack:0x40
+	049 Move rax, rbp
+	050 Move rbp, stack:0x48
+	051 Move rsi, stack:0x50
+	052 Move xmm6, stack:0x20
+	053 ShiftStack 48
+	054 Move rdi, stack:0x0
+	055 ShiftStack 8
+	056 Return rax
+	057 Call 0x1804E0D00, rcx, rdx, r8, r9
+	058 Interrupt 
+	059 Call 0x1804E0CF0, rcx, rdx, r8, r9
+
+Method: System.Void _callDeadEffect()
+	001 ShiftStack -8
+	002 Move stack:0x0, rbx
+	003 ShiftStack -48
+	004 Compare [0x18466387E], 0
+	005 Move rbx, rcx
+	006 JumpIfNotEqual {12}
+	007 LoadAddress rcx, [0x1843B7570]
+	008 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	009 LoadAddress rcx, [0x1843B8000]
+	010 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	011 Move [0x18466387E], 1
+	012 Compare [rbx+435], 0
+	013 JumpIfNotEqual {64}
+	014 Move rax, [0x1843B7570]
+	015 Move rax, [rax+32]
+	016 Compare [rax+309], 1
+	017 JumpIfNotEqual {20}
+	018 Move rcx, rax
+	019 Call 0x1804DE1E0, rcx, rdx, r8, r9
+	020 Move rax, [rax+192]
+	021 Move rax, [rax+16]
+	022 Compare [rax+309], 1
+	023 JumpIfNotEqual {26}
+	024 Move rcx, rax
+	025 Call 0x1804DE1E0, rcx, rdx, r8, r9
+	026 Move rax, [rax+184]
+	027 Move rcx, [rax]
+	028 Compare rcx, 0
+	029 JumpIfEqual {35}
+	030 Move xmm1, [0x1834E0BCC]    ; [1834E0BCC]=f=1 d=50.12387842 v4=(1,3.14159,4,10)
+	031 Move xmm2, [0x1834EC914]    ; [1834EC914]=f=3 v4=(3,360,inf,nan)
+	032 Move xmm3, xmm1
+	033 Move stack:0x20, 0
+	034 Call CinemachineMan.ShakeCamera, rcx, xmm1, xmm2, r9
+	035 Move rax, [0x1843B8000]
+	036 Move rax, [rax+32]
+	037 Compare [rax+309], 1
+	038 JumpIfNotEqual {41}
+	039 Move rcx, rax
+	040 Call 0x1804DE1E0, rcx, rdx, r8, r9
+	041 Move rax, [rax+192]
+	042 Move rax, [rax+16]
+	043 Compare [rax+309], 1
+	044 JumpIfNotEqual {47}
+	045 Move rcx, rax
+	046 Call 0x1804DE1E0, rcx, rdx, r8, r9
+	047 Move rax, [rax+184]
+	048 Move rcx, [rax]
+	049 Compare rcx, 0
+	050 JumpIfEqual {68}
+	051 Move xmm3, typeof(T)
+	052 Move xmm2, [0x1835F2CC8]    ; [1835F2CC8]=f=0.8 d=0.003671875684 v4=(0.8,0.93,0.95,0.999999)
+	053 Move xmm1, [0x1834E0BC8]    ; [1834E0BC8]=f=0.5 d=0.007812501834 v4=(0.5,1,3.14159,4)
+	054 Move stack:0x20, 0
+	055 Call InGameManager.VibrationPlayer, rcx, xmm1, xmm2, r9
+	056 Move rdx, 0
+	057 Move [rbx+435], 1
+	058 Move rcx, rbx
+	059 ShiftStack 48
+	060 Move rbx, stack:0x0
+	061 ShiftStack 8
+	062 Call PawnEnemy._callDeadEffect, rcx, rdx
+	063 Return 
+	064 ShiftStack 48
+	065 Move rbx, stack:0x0
+	066 ShiftStack 8
+	067 Return 
+	068 Call 0x1804E0D00, rcx, rdx, r8, r9
+
+Method: System.Void ToDestroidVib()
+	001 ShiftStack -8
+	002 Move stack:0x0, rbx
+	003 ShiftStack -48
+	004 Compare [0x18466387F], 0
+	005 Move rbx, rcx
+	006 JumpIfNotEqual {12}
+	007 LoadAddress rcx, [0x1843B7E98]
+	008 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	009 LoadAddress rcx, [0x1843B8000]
+	010 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	011 Move [0x18466387F], 1
+	012 Compare [rbx+432], 0
+	013 JumpIfNotEqual {29}
+	014 Move rcx, [0x1843B7E98]
+	015 Call 0x180D102F0, rcx
+	016 Compare rax, 0
+	017 JumpIfNotEqual {28}
+	018 Move rcx, [0x1843B8000]
+	019 Call 0x180027540, rcx, rdx, r8, r9
+	020 Compare rax, 0
+	021 JumpIfEqual {33}
+	022 Move xmm3, typeof(T)
+	023 Move rcx, rax
+	024 Move xmm2, [0x1834E0BCC]    ; [1834E0BCC]=f=1 d=50.12387842 v4=(1,3.14159,4,10)
+	025 Move xmm1, [0x1835F2CC8]    ; [1835F2CC8]=f=0.8 d=0.003671875684 v4=(0.8,0.93,0.95,0.999999)
+	026 Move stack:0x20, 0
+	027 Call InGameManager.VibrationPlayer, rcx, xmm1, xmm2, r9
+	028 Move [rbx+432], 1
+	029 ShiftStack 48
+	030 Move rbx, stack:0x0
+	031 ShiftStack 8
+	032 Return 
+	033 Call 0x1804E0D00, rcx, rdx, r8, r9
+
+Method: System.Void TimeupAction()
+	001 Return 
+
+Method: System.Int32 GetBonusTimeKind()
+	001 Move rax, 0
+	002 Return rax
+
+Method: System.Void ToDestroid()
+	001 ShiftStack -8
+	002 Move stack:0x0, rbx
+	003 ShiftStack -48
+	004 Move rdx, [rcx]
+	005 Move rbx, rcx
+	006 Move rax, [rdx+440]
+	007 Move rdx, [rdx+448]
+	008 Call rax
+	009 Compare rax, 0
+	010 JumpIfNotEqual {35}
+	011 Compare [0x18466387F], rax
+	012 JumpIfNotEqual {18}
+	013 LoadAddress rcx, [0x1843B7E98]
+	014 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	015 LoadAddress rcx, [0x1843B8000]
+	016 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	017 Move [0x18466387F], 1
+	018 Compare [rbx+432], 0
+	019 JumpIfNotEqual {35}
+	020 Move rcx, [0x1843B7E98]
+	021 Call 0x180D102F0, rcx
+	022 Compare rax, 0
+	023 JumpIfNotEqual {34}
+	024 Move rcx, [0x1843B8000]
+	025 Call 0x180027540, rcx, rdx, r8, r9
+	026 Compare rax, 0
+	027 JumpIfEqual {42}
+	028 Move xmm3, typeof(T)
+	029 Move rcx, rax
+	030 Move xmm2, [0x1834E0BCC]    ; [1834E0BCC]=f=1 d=50.12387842 v4=(1,3.14159,4,10)
+	031 Move xmm1, [0x1835F2CC8]    ; [1835F2CC8]=f=0.8 d=0.003671875684 v4=(0.8,0.93,0.95,0.999999)
+	032 Move stack:0x20, 0
+	033 Call InGameManager.VibrationPlayer, rcx, xmm1, xmm2, r9
+	034 Move [rbx+432], 1
+	035 Move rdx, 0
+	036 Move rcx, rbx
+	037 ShiftStack 48
+	038 Move rbx, stack:0x0
+	039 ShiftStack 8
+	040 Call PawnEnemy.ToDestroid, rcx, rdx
+	041 Return 
+	042 Call 0x1804E0D00, rcx, rdx, r8, r9
+
+Method: System.Boolean IsGamePlayArea()
+	001 Compare [rcx+432], 0
+	002 JumpIfEqual {7}
+	003 Move rdx, [rcx]
+	004 Move rax, [rdx+440]
+	005 Move rdx, [rdx+448]
+	006 CallNoReturn rax
+	007 Move rax, 1
+	008 Return rax
+
+Method: System.Void SkyExplosionEffect(System.Int32 tcode, UnityEngine.Vector3 worldPos, System.Int32 mylayer, TXEKernel.Sound.SoundUtility+ID seID = -1)
+	001 Move stack:0x10, rbx
+	002 Move stack:0x18, rbp
+	003 Move stack:0x20, rsi
+	004 ShiftStack -8
+	005 Move stack:0x0, r14
+	006 ShiftStack -112
+	007 Compare [0x184663880], 0
+	008 Move rbp, r9
+	009 Move rsi, r8
+	010 Move r14, rdx
+	011 JumpIfNotEqual {17}
+	012 LoadAddress rcx, [0x1843B8000]
+	013 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	014 LoadAddress rcx, [0x1843A2368]
+	015 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	016 Move [0x184663880], 1
+	017 Move rax, [0x1843B8000]
+	018 Move rax, [rax+32]
+	019 Compare [rax+309], 1
+	020 JumpIfNotEqual {23}
+	021 Move rcx, rax
+	022 Call 0x1804DE1E0, rcx, rdx, r8, r9
+	023 Move rax, [rax+192]
+	024 Move rax, [rax+16]
+	025 Compare [rax+309], 1
+	026 JumpIfNotEqual {29}
+	027 Move rcx, rax
+	028 Call 0x1804DE1E0, rcx, rdx, r8, r9
+	029 Move rax, [rax+184]
+	030 Move stack:0x80, rdi
+	031 Move rbx, [rax]
+	032 Compare rbx, 0
+	033 JumpIfEqual {99}
+	034 Move rdi, [rbx+152]
+	035 Compare rdi, 0
+	036 JumpIfEqual {99}
+	037 Move xmm0, [rsi]
+	038 LoadAddress r8, stack:0x50
+	039 Move rax, [rsi+8]
+	040 LoadAddress rcx, stack:0x60
+	041 Move r9, 0
+	042 Move stack:0x50, xmm0
+	043 Move rdx, rdi
+	044 Move stack:0x58, rax
+	045 Call Transform.InverseTransformPoint, rcx, rdx
+	046 Compare [0x18465C45D], 0
+	047 Move rsi, [rbx+264]
+	048 Move xmm1, [rax]
+	049 Move rbx, [rax+8]
+	050 Move stack:0x50, xmm1
+	051 JumpIfNotEqual {56}
+	052 LoadAddress rcx, [0x1843C16D8]
+	053 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	054 Move xmm1, stack:0x50
+	055 Move [0x18465C45D], 1
+	056 Move rax, typeof(UnityEngine.Vector3)
+	057 Move rax, [rax+184]
+	058 Compare rsi, 0
+	059 JumpIfEqual {99}
+	060 Move xmm0, [rax]
+	061 Move r9, rbp
+	062 Move rax, [rax+8]
+	063 Move r8, r14
+	064 Move stack:0x58, rax
+	065 Move rdx, rdi
+	066 Move stack:0x40, 0
+	067 Move rcx, rsi
+	068 Move stack:0x68, rbx
+	069 Move rbx, stack:0xA0
+	070 Compare rbx, 18446744073709551615
+	071 Move stack:0x50, xmm0
+	072 NotImplemented "sete al"
+	073 Move stack:0x60, xmm1
+	074 Move stack:0x38, rax
+	075 LoadAddress rax, stack:0x50
+	076 Move stack:0x30, 0
+	077 Move stack:0x28, rax
+	078 LoadAddress rax, stack:0x60
+	079 Move stack:0x20, rax
+	080 Call InGameEffectManager.ExplosionQue, rcx, rdx, r8, r9, stack:0x0, stack:0x8, stack:0x10, stack:0x18
+	081 Compare rbx, 18446744073709551615
+	082 JumpIfEqual {90}
+	083 Move rcx, typeof(TXEKernel.Sound.SoundUtility)
+	084 Compare [rcx+228], 0
+	085 JumpIfNotEqual {87}
+	086 Call "il2cpp_runtime_class_init_export", rcx, rdx, r8, r9
+	087 Move rdx, 0
+	088 Move rcx, rbx
+	089 Call SoundUtility.PlayQue, rcx, rdx
+	090 Move rdi, stack:0x80
+	091 LoadAddress r11, stack:0x70
+	092 Move rbx, [r11+24]
+	093 Move rbp, [r11+32]
+	094 Move rsi, [r11+40]
+	095 Move rsp, r11
+	096 Move r14, stack:0x0
+	097 ShiftStack 8
+	098 Return 
+	099 Call 0x1804E0D00, rcx, rdx, r8, r9
+
+Method: System.Void SetSmallBombSecond(System.Single ttime)
+	001 Move [rcx+480], xmm1
+	002 Move [rcx+484], 0
+	003 Return 
+
+Method: System.Boolean IsCallSmallBomb(System.Single dt)
+	001 ShiftStack -8
+	002 Move stack:0x0, rbx
+	003 ShiftStack -64
+	004 Compare [0x184663881], 0
+	005 Move rbx, rcx
+	006 Move stack:0x30, xmm6
+	007 Move xmm6, xmm1
+	008 JumpIfNotEqual {12}
+	009 LoadAddress rcx, [0x1843B8000]
+	010 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	011 Move [0x184663881], 1
+	012 Move xmm2, [rbx+484]
+	013 Move xmm0, 0
+	014 Subtract xmm2, xmm2, xmm6
+	015 Compare xmm0, xmm2
+	016 Move [rbx+484], xmm2
+	017 JumpIfGreaterOrEqual {24}
+	018 Move rax, 0
+	019 Move xmm6, stack:0x30
+	020 ShiftStack 64
+	021 Move rbx, stack:0x0
+	022 ShiftStack 8
+	023 Return rax
+	024 Move rcx, 0
+	025 Call RandomUtility.Make01, rcx
+	026 Compare [rbx+435], 0
+	027 Move xmm6, [0x1834E0C24]    ; [1834E0C24]=f=0.1 d=1.068115119e-05 v4=(0.1,0.45,0,0)
+	028 Multiply xmm0, xmm0, xmm6
+	029 Add xmm0, xmm0, [rbx+480]
+	030 Move [rbx+484], xmm0
+	031 Move xmm0, [rbx+480]
+	032 Multiply xmm0, xmm0, [0x1835F2D68]    ; [1835F2D68]=f=0.9 v4=(0.9,-75,-400,0.03)
+	033 Move [rbx+480], xmm0
+	034 JumpIfNotEqual {45}
+	035 Move rcx, [0x1843B8000]
+	036 Call 0x180027540, rcx, rdx, r8, r9
+	037 Compare rax, 0
+	038 JumpIfEqual {51}
+	039 Move xmm3, [rbx+480]
+	040 Move xmm2, xmm6
+	041 Move xmm1, [0x1835F2D80]    ; [1835F2D80]=f=0.4 d=0.0002021484828 v4=(0.4,0.666,1.2,1.8)
+	042 Move rcx, rax
+	043 Move stack:0x20, 0
+	044 Call InGameManager.VibrationPlayer, rcx, xmm1, xmm2, r9
+	045 Move xmm6, stack:0x30
+	046 Move rax, 1
+	047 ShiftStack 64
+	048 Move rbx, stack:0x0
+	049 ShiftStack 8
+	050 Return rax
+	051 Call 0x1804E0D00, rcx, rdx, r8, r9
+
+Method: UnityEngine.Vector3 GetSmallBombPosition()
+	001 ShiftStack -8
+	002 Move stack:0x0, rbx
+	003 ShiftStack -48
+	004 Move rdx, [rdx+80]
+	005 Move rbx, rcx
+	006 Compare rdx, 0
+	007 JumpIfEqual {20}
+	008 Move r8, 0
+	009 LoadAddress rcx, stack:0x20
+	010 Call Transform.get_position, rcx, rdx
+	011 Move xmm0, [rax]
+	012 Move rax, [rax+8]
+	013 Move [rbx], xmm0
+	014 Move [rbx+8], rax
+	015 Move rax, rbx
+	016 ShiftStack 48
+	017 Move rbx, stack:0x0
+	018 ShiftStack 8
+	019 Return rax
+	020 Call 0x1804E0D00, rcx, rdx, r8, r9
+
+Method: System.Void SetDirectionTime(System.Single ttime, System.Single tscale = 1)
+	001 Move [rcx+452], xmm1
+	002 Move [rcx+460], xmm2
+	003 Move [rcx+456], 0
+	004 Return 
+
+Method: System.Void SetDirectionScale(System.Single tscale)
+	001 Move [rcx+460], xmm1
+	002 Return 
+
+Method: System.Single GetDirectionRate()
+	001 Move xmm1, [rcx+452]
+	002 Move xmm2, 0
+	003 Compare xmm1, xmm2
+	004 JumpIfLessOrEqual {14}
+	005 Move xmm0, [rcx+456]
+	006 Divide xmm0, xmm0, xmm1
+	007 Compare xmm2, xmm0
+	008 JumpIfGreater {14}
+	009 Move xmm1, [0x1834E0BCC]    ; [1834E0BCC]=f=1 d=50.12387842 v4=(1,3.14159,4,10)
+	010 Compare xmm0, xmm1
+	011 JumpIfLessOrEqual {15}
+	012 Move xmm0, xmm1
+	013 Return xmm0
+	014 Move xmm0, 0
+	015 Return xmm0
+
+Method: System.Void SetDirectionPause(System.Boolean v)
+	001 Move [rcx+436], rdx
+	002 Return 
+
+Method: System.Void SetRepeatTime(System.Single ttime)
+	001 Move rax, 0
+	002 Move [rcx+464], xmm1
+	003 Move [rcx+468], rax
+	004 Move [rcx+476], rax
+	005 Return 
+
+Method: System.Void AddRepeatTime(System.Single ttime)
+	001 ShiftStack -8
+	002 Move stack:0x0, rbx
+	003 ShiftStack -80
+	004 Move xmm0, [rcx+464]
+	005 Move rbx, rcx
+	006 Move stack:0x40, xmm6
+	007 Move xmm6, xmm1
+	008 Move stack:0x20, xmm8
+	009 Move xmm8, 0
+	010 Compare xmm0, xmm8
+	011 JumpIfLessOrEqual {36}
+	012 Add xmm6, xmm6, [rcx+468]
+	013 Compare xmm6, xmm0
+	014 Move [rcx+468], xmm6
+	015 NotImplemented "setae al"
+	016 Move [rcx+476], rax
+	017 Compare rax, 0
+	018 JumpIfEqual {36}
+	019 Move stack:0x30, xmm7
+	020 Move xmm7, xmm0
+	021 Move xmm0, xmm6
+	022 Divide xmm0, xmm0, xmm7
+	023 Call 0x180578740, rcx, rdx, r8, r9
+	024 Multiply xmm0, xmm0, xmm7
+	025 Subtract xmm6, xmm6, xmm0
+	026 Compare xmm8, xmm6
+	027 JumpIfGreater {32}
+	028 Compare xmm6, xmm7
+	029 JumpIfLessOrEqual {33}
+	030 Move xmm6, xmm7
+	031 Goto {33}
+	032 Move xmm6, 0
+	033 Add [rbx+472], [rbx+472], 1
+	034 Move xmm7, stack:0x30
+	035 Move [rbx+468], xmm6
+	036 Move xmm6, stack:0x40
+	037 Move xmm8, stack:0x20
+	038 ShiftStack 80
+	039 Move rbx, stack:0x0
+	040 ShiftStack 8
+	041 Return 
+
+Method: System.Single GetRepeatRate()
+	001 Move xmm0, [rcx+468]
+	002 Move xmm1, 0
+	003 Divide xmm0, xmm0, [rcx+464]
+	004 Compare xmm1, xmm0
+	005 JumpIfGreater {11}
+	006 Move xmm1, [0x1834E0BCC]    ; [1834E0BCC]=f=1 d=50.12387842 v4=(1,3.14159,4,10)
+	007 Compare xmm0, xmm1
+	008 JumpIfLessOrEqual {12}
+	009 Move xmm0, xmm1
+	010 Return xmm0
+	011 Move xmm0, 0
+	012 Return xmm0
+
+Method: System.Void SetLoopCount(System.Int32 nmax)
+	001 Move stack:0x8, rbx
+	002 ShiftStack -8
+	003 Move stack:0x0, rdi
+	004 ShiftStack -32
+	005 Move rdi, rcx
+	006 Move rbx, rdx
+	007 Move rcx, 0
+	008 Call RandomUtility.Make, rcx
+	009 Move TEMP, rax
+	010 ShiftRight TEMP, 31
+	011 Compare TEMP, 1
+	012 JumpIfNotEqual {15}
+	013 Move rdx, 0xFFFFFFFF
+	014 Goto {16}
+	015 Move rdx, 0
+	016 Nop 
+	017 NotImplemented "idiv ebx"
+	018 Move rbx, stack:0x30
+	019 Add rdx, rdx, 1
+	020 Move [rdi+488], rdx
+	021 ShiftStack 32
+	022 Move rdi, stack:0x0
+	023 ShiftStack 8
+	024 Return 
+
+Method: System.Void SetLoopCountDirect(System.Int32 ncount)
+	001 Move [rcx+488], rdx
+	002 Return 
+
+Method: System.Void SetLoopCount(System.Int32 nmin, System.Int32 nmax)
+	001 Move stack:0x8, rbx
+	002 Move stack:0x10, rsi
+	003 ShiftStack -8
+	004 Move stack:0x0, rdi
+	005 ShiftStack -32
+	006 Move rsi, rcx
+	007 Move rbx, r8
+	008 Move rcx, 0
+	009 Move rdi, rdx
+	010 Call RandomUtility.Make, rcx
+	011 Move TEMP, rax
+	012 ShiftRight TEMP, 31
+	013 Compare TEMP, 1
+	014 JumpIfNotEqual {17}
+	015 Move rdx, 0xFFFFFFFF
+	016 Goto {18}
+	017 Move rdx, 0
+	018 Nop 
+	019 Subtract rbx, rbx, rdi
+	020 NotImplemented "idiv ebx"
+	021 Move rbx, stack:0x30
+	022 LoadAddress rax, [rdi+1]
+	023 Add rax, rax, rdx
+	024 Move [rsi+488], rax
+	025 Move rsi, stack:0x38
+	026 ShiftStack 32
+	027 Move rdi, stack:0x0
+	028 ShiftStack 8
+	029 Return 
+
+Method: System.Boolean IsAttackLoop()
+	001 Move rax, [rcx+488]
+	002 Subtract rax, rax, 1
+	003 Move [rcx+488], rax
+	004 Compare rax, 0
+	005 JumpIfLessOrEqual {8}
+	006 Move rax, 1
+	007 Return rax
+	008 Move [rcx+488], 0
+	009 Move rax, 0
+	010 Return rax
+
+Method: System.Void ConsumeAttackLoop(System.Int32 count = 1)
+	001 Move stack:0x8, rbx
+	002 Move stack:0x10, rsi
+	003 ShiftStack -8
+	004 Move stack:0x0, rdi
+	005 ShiftStack -32
+	006 Compare [0x184663882], 0
+	007 Move rsi, rdx
+	008 Move rdi, rcx
+	009 JumpIfNotEqual {13}
+	010 LoadAddress rcx, [0x184372BC8]
+	011 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	012 Move [0x184663882], 1
+	013 Move rcx, typeof(System.Math)
+	014 Move rbx, [rdi+488]
+	015 Compare [rcx+228], 0
+	016 JumpIfNotEqual {18}
+	017 Call "il2cpp_runtime_class_init_export", rcx, rdx, r8, r9
+	018 Subtract rbx, rbx, rsi
+	019 Move r8, 0
+	020 Move rdx, rbx
+	021 Move rcx, 0
+	022 Call Math.Max, rcx, rdx, r8
+	023 Move rbx, stack:0x30
+	024 Move rsi, stack:0x38
+	025 Move [rdi+488], rax
+	026 ShiftStack 32
+	027 Move rdi, stack:0x0
+	028 ShiftStack 8
+	029 Return 
+
+Method: System.Int32 AttackLoopCount()
+	001 Move rax, [rcx+488]
+	002 Return rax
+
+Method: System.Void SetOldState()
+	001 Move rax, [rcx+540]
+	002 Move [rcx+544], rax
+	003 Return 
+
+Method: System.Boolean IsChangeHpState()
+	001 Move rax, [rcx+540]
+	002 Compare [rcx+544], rax
+	003 NotImplemented "setne al"
+	004 Return rax
+
+Method: Cysharp.Threading.Tasks.UniTask ChangeBaseColor(System.Boolean isDark, UnityEngine.Color color, System.Single tsecond, System.Single twait = 0)
+	001 Move stack:0x8, rbx
+	002 Move stack:0x10, rbp
+	003 Move stack:0x18, rsi
+	004 ShiftStack -8
+	005 Move stack:0x0, rdi
+	006 ShiftStack -144
+	007 Compare [0x184663883], 0
+	008 Move rsi, r9
+	009 Move rbp, r8
+	010 Move rbx, rdx
+	011 Move rdi, rcx
+	012 JumpIfNotEqual {16}
+	013 LoadAddress rcx, [0x1843A4998]
+	014 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	015 Move [0x184663883], 1
+	016 Move xmm0, 0
+	017 LoadAddress rcx, stack:0x38
+	018 Move rax, 0
+	019 Move rdx, 0
+	020 Move stack:0x30, xmm0
+	021 Move stack:0x80, rax
+	022 Move stack:0x40, xmm0
+	023 Move stack:0x38, xmm0
+	024 Move stack:0x50, xmm0
+	025 Move stack:0x60, xmm0
+	026 Move stack:0x70, xmm0
+	027 Call 0x1804DFD80, rcx, rdx, r8, r9
+	028 Move rdx, rbx
+	029 Move stack:0x48, rbx
+	030 LoadAddress rcx, stack:0x48
+	031 Call 0x1804DFD80, rcx, rdx, r8, r9
+	032 Move xmm0, [rsi]
+	033 Move rbx, [0x1843A4998]
+	034 Move xmm1, stack:0xC0
+	035 Move stack:0x5C, xmm0
+	036 Move stack:0x58, rbp
+	037 Move xmm0, stack:0xC8
+	038 Move stack:0x50, xmm0
+	039 Move stack:0x54, xmm1
+	040 Move stack:0x30, 0xFFFFFFFF
+	041 Compare [rbx+56], 0
+	042 JumpIfNotEqual {45}
+	043 Move rcx, rbx
+	044 Call 0x1804DE260, rcx, rdx, r8, r9
+	045 Move rdx, [rbx+56]
+	046 LoadAddress rcx, stack:0x30
+	047 Move rdx, [rdx+16]
+	048 Call <ChangeBaseColor>d__47.MoveNext, rcx, rdx
+	049 Move r8, 0
+	050 LoadAddress rdx, stack:0x38
+	051 LoadAddress rcx, stack:0x20
+	052 Call 0x18071B540, rcx, rdx, r8, r9
+	053 LoadAddress r11, stack:0x90
+	054 Move rbx, [r11+16]
+	055 Move rbp, [r11+24]
+	056 Move xmm0, [rax]
+	057 Move rsi, [r11+32]
+	058 Move rax, rdi
+	059 Move [rdi], xmm0
+	060 Move rsp, r11
+	061 Move rdi, stack:0x0
+	062 ShiftStack 8
+	063 Return rax
+
+Method: System.Void ChangeDarkMode(System.Boolean isDark, System.Single tsec, System.Single twait = 0)
+	001 Move stack:0x8, rbx
+	002 ShiftStack -8
+	003 Move stack:0x0, rdi
+	004 ShiftStack -128
+	005 Compare [0x184663884], 0
+	006 Move rbx, rdx
+	007 Move stack:0x70, xmm6
+	008 Move rdi, rcx
+	009 Move stack:0x60, xmm7
+	010 Move xmm6, xmm3
+	011 Move xmm7, xmm2
+	012 JumpIfNotEqual {16}
+	013 LoadAddress rcx, [0x184382960]
+	014 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	015 Move [0x184663884], 1
+	016 Move rax, typeof(InGame.Kernel.Enemy.PawnEnemy)
+	017 Compare [rax+228], 0
+	018 JumpIfNotEqual {22}
+	019 Move rcx, rax
+	020 Call "il2cpp_runtime_class_init_export", rcx, rdx, r8, r9
+	021 Move rax, typeof(InGame.Kernel.Enemy.PawnEnemy)
+	022 Move rax, [rax+184]
+	023 LoadAddress r9, stack:0x40
+	024 Move stack:0x30, 0
+	025 LoadAddress rcx, stack:0x50
+	026 Move stack:0x28, xmm6
+	027 Move r8, rbx
+	028 Move rdx, rdi
+	029 Move stack:0x20, xmm7
+	030 Move xmm0, [rax+32]
+	031 Move stack:0x40, xmm0
+	032 Call Ene_BosBase.ChangeBaseColor, rcx, rdx, xmm2, xmm3, stack:0x0
+	033 Move rdx, 0
+	034 LoadAddress rcx, stack:0x40
+	035 Move xmm0, [rax]
+	036 Move stack:0x40, xmm0
+	037 Call UniTaskExtensions.Forget, rcx, rdx
+	038 Move rbx, stack:0x90
+	039 Move xmm6, stack:0x70
+	040 Move xmm7, stack:0x60
+	041 ShiftStack 128
+	042 Move rdi, stack:0x0
+	043 ShiftStack 8
+	044 Return 
+
+Method: System.Void ChangeColorMode(System.Boolean isDark, UnityEngine.Color color, System.Single fadeTime, System.Single delayTime)
+	001 ShiftStack -104
+	002 Move xmm0, [r8]
+	003 LoadAddress r9, stack:0x40
+	004 Move r8, rdx
+	005 Move xmm1, stack:0x90
+	006 Move rdx, rcx
+	007 Move stack:0x30, 0
+	008 LoadAddress rcx, stack:0x50
+	009 Move stack:0x28, xmm1
+	010 Move stack:0x40, xmm0
+	011 Move stack:0x20, xmm3
+	012 Call Ene_BosBase.ChangeBaseColor, rcx, rdx, xmm2, xmm3, stack:0x0
+	013 Move rdx, 0
+	014 LoadAddress rcx, stack:0x40
+	015 Move xmm0, [rax]
+	016 Move stack:0x40, xmm0
+	017 Call UniTaskExtensions.Forget, rcx, rdx
+	018 ShiftStack 104
+	019 Return 
+
+Method: Cysharp.Threading.Tasks.UniTask DamageTurn(UnityEngine.Quaternion trot, System.Single tsecond, System.Action _callback = null)
+	001 Move stack:0x8, rbx
+	002 Move stack:0x10, rsi
+	003 ShiftStack -8
+	004 Move stack:0x0, rdi
+	005 ShiftStack -176
+	006 Compare [0x184663885], 0
+	007 Move rsi, r8
+	008 Move stack:0xA0, xmm6
+	009 Move rbx, rdx
+	010 Move xmm6, xmm3
+	011 Move rdi, rcx
+	012 JumpIfNotEqual {16}
+	013 LoadAddress rcx, [0x1843A4A50]
+	014 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	015 Move [0x184663885], 1
+	016 Move xmm0, 0
+	017 LoadAddress rcx, stack:0x38
+	018 Move rax, 0
+	019 Move rdx, 0
+	020 Move stack:0x30, xmm0
+	021 Move stack:0x90, rax
+	022 Move stack:0x40, xmm0
+	023 Move stack:0x38, xmm0
+	024 Move stack:0x50, xmm0
+	025 Move stack:0x60, xmm0
+	026 Move stack:0x70, xmm0
+	027 Move stack:0x80, xmm0
+	028 Call 0x1804DFD80, rcx, rdx, r8, r9
+	029 Move rdx, rbx
+	030 Move stack:0x48, rbx
+	031 LoadAddress rcx, stack:0x48
+	032 Call 0x1804DFD80, rcx, rdx, r8, r9
+	033 Move xmm0, [rsi]
+	034 Move rdx, stack:0xE0
+	035 LoadAddress rcx, stack:0x68
+	036 Move stack:0x60, xmm6
+	037 Move stack:0x50, xmm0
+	038 Move stack:0x68, rdx
+	039 Call 0x1804DFD80, rcx, rdx, r8, r9
+	040 Move rbx, [0x1843A4A50]
+	041 Move stack:0x30, 0xFFFFFFFF
+	042 Compare [rbx+56], 0
+	043 JumpIfNotEqual {46}
+	044 Move rcx, rbx
+	045 Call 0x1804DE260, rcx, rdx, r8, r9
+	046 Move rdx, [rbx+56]
+	047 LoadAddress rcx, stack:0x30
+	048 Move rdx, [rdx+16]
+	049 Call <DamageTurn>d__50.MoveNext, rcx, rdx
+	050 Move r8, 0
+	051 LoadAddress rdx, stack:0x38
+	052 LoadAddress rcx, stack:0x20
+	053 Call 0x18071B540, rcx, rdx, r8, r9
+	054 LoadAddress r11, stack:0xB0
+	055 Move rbx, [r11+16]
+	056 Move rsi, [r11+24]
+	057 Move xmm0, [rax]
+	058 Move rax, rdi
+	059 Move xmm6, [r11-16]
+	060 Move [rdi], xmm0
+	061 Move rsp, r11
+	062 Move rdi, stack:0x0
+	063 ShiftStack 8
+	064 Return rax
+
+Method: System.Boolean get_IsDamageTurned()
+	001 Move rax, [rcx+433]
+	002 Return rax
+
+Method: System.Boolean get_IsDeadEffectCalled()
+	001 Move rax, [rcx+435]
+	002 Return rax
+
+Method: System.Boolean get_IsPlayerSideLeft()
+	001 Move rax, [rcx+437]
+	002 Return rax
+
+Method: System.Boolean get_IsPlayerSideRight()
+	001 Compare [rcx+437], 0
+	002 NotImplemented "sete al"
+	003 Return rax
+
+Method: System.Boolean get_IsPlayerSideDown()
+	001 Move rax, [rcx+438]
+	002 Return rax
+
+Method: System.Boolean get_IsPlayerSideCenter()
+	001 Move rax, [rcx+439]
+	002 Return rax
+
+Method: System.Boolean get_IsPlayerSideBottom()
+	001 Move rax, [rcx+440]
+	002 Return rax
+
+Method: System.Single get_BossAliveTime()
+	001 Move xmm0, [rcx+444]
+	002 Return xmm0
+
+Method: System.Int32 get_RepeatTimes()
+	001 Move rax, [rcx+472]
+	002 Return rax
+
+Method: System.Boolean get_IsRepeatLaped()
+	001 Move rax, [rcx+476]
+	002 Return rax
+
+Method: UnityEngine.Vector3 get_BaseTargetSkyPosition()
+	001 Move rax, [rdx+504]
+	002 Move xmm0, [rdx+496]
+	003 Move [rcx], xmm0
+	004 Move [rcx+8], rax
+	005 Move rax, rcx
+	006 Return rax
+
+Method: System.Int32 get__enemyDataCount()
+	001 Move rax, [rcx+508]
+	002 Return rax
+
+Method: System.Void set__enemyDataCount(System.Int32 value)
+	001 Move [rcx+508], rdx
+	002 Return 
+
+Method: System.Boolean get_IsEasyMode()
+	001 Compare [rcx+528], 1
+	002 JumpIfNotEqual {5}
+	003 Move rax, 1
+	004 Return rax
+	005 Compare [rcx+528], 100
+	006 NotImplemented "sete al"
+	007 Return rax
+
+Method: System.Boolean get_IsStoryMode()
+	001 Compare [rcx+528], 1
+	002 NotImplemented "sete al"
+	003 Return rax
+
+Method: System.Boolean get_IsTutorial()
+	001 Compare [rcx+528], 100
+	002 NotImplemented "sete al"
+	003 Return rax
+
+Method: System.Boolean get_IsTrophy()
+	001 Compare [rcx+528], 100
+	002 JumpIfNotEqual {5}
+	003 Move rax, 0
+	004 Return rax
+	005 Compare [rcx+536], 0
+	006 NotImplemented "sete al"
+	007 Return rax
+
+Method: System.Boolean get_IsStoryA()
+	001 Compare [rcx+528], 1
+	002 JumpIfEqual {5}
+	003 Move rax, 0
+	004 Return rax
+	005 Compare [rcx+532], 0
+	006 NotImplemented "sete al"
+	007 Return rax
+
+Method: System.Boolean get_IsStoryB()
+	001 Compare [rcx+528], 1
+	002 JumpIfEqual {5}
+	003 Move rax, 0
+	004 Return rax
+	005 Compare [rcx+532], 1
+	006 NotImplemented "sete al"
+	007 Return rax
+
+Method: System.Boolean get_IsStoryC()
+	001 Compare [rcx+528], 1
+	002 JumpIfEqual {5}
+	003 Move rax, 0
+	004 Return rax
+	005 Compare [rcx+532], 2
+	006 NotImplemented "sete al"
+	007 Return rax
+
+Method: System.Boolean get_IsArcade()
+	001 Compare [rcx+528], 2
+	002 NotImplemented "sete al"
+	003 Return rax
+
+Method: System.Boolean get_IsTeam()
+	001 Compare [rcx+528], 10
+	002 NotImplemented "sete al"
+	003 Return rax
+
+Method: TXEKernel.PlayActor get_GetPlayActor()
+	001 Move rax, [rcx+532]
+	002 Return rax
+
+Method: InGame.Kernel.Enemy.Ene_BosBase+HitPState get_HpState()
+	001 Move rax, [rcx+540]
+	002 Return rax
+
+Method: UnityEngine.Vector3 get_StartInGamePosition()
+	001 Move rax, [rdx+560]
+	002 Move xmm0, [rdx+552]
+	003 Move [rcx], xmm0
+	004 Move [rcx+8], rax
+	005 Move rax, rcx
+	006 Return rax
+
+Method: UnityEngine.Vector3 CurrentTargetVector(System.Single trate, KANAI.Kernel.EasingUtility+EasingType easeType = 0)
+	001 Move stack:0x8, rbx
+	002 Move stack:0x10, rsi
+	003 ShiftStack -8
+	004 Move stack:0x0, rdi
+	005 ShiftStack -96
+	006 Move stack:0x50, xmm6
+	007 Move rbx, rcx
+	008 Move xmm6, [0x1834E0BCC]    ; [1834E0BCC]=f=1 d=50.12387842 v4=(1,3.14159,4,10)
+	009 Move stack:0x40, xmm7
+	010 Move xmm7, 0
+	011 Compare xmm7, xmm2
+	012 JumpIfGreater {17}
+	013 Compare xmm2, xmm6
+	014 JumpIfLessOrEqual {18}
+	015 Move xmm2, xmm6
+	016 Goto {18}
+	017 Move xmm2, 0
+	018 Move xmm1, [rdx+576]
+	019 Move r8, 0
+	020 Move rdi, [rdx+584]
+	021 Move xmm0, xmm2
+	022 Move rsi, [rdx+572]
+	023 Move stack:0x20, xmm1
+	024 Move xmm1, [rdx+564]
+	025 Move rdx, r9
+	026 Move stack:0x30, xmm1
+	027 Call EasingUtility.Easing01, xmm0, rdx, r8
+	028 Compare xmm7, xmm0
+	029 Move xmm4, xmm0
+	030 JumpIfGreater {35}
+	031 Compare xmm0, xmm6
+	032 JumpIfLessOrEqual {36}
+	033 Move xmm4, xmm6
+	034 Goto {36}
+	035 Move xmm4, 0
+	036 Move xmm3, stack:0x20
+	037 Subtract xmm3, xmm3, stack:0x30
+	038 Move xmm1, stack:0x24
+	039 Subtract xmm1, xmm1, stack:0x34
+	040 Move xmm0, rsi
+	041 Move xmm2, rdi
+	042 Subtract xmm2, xmm2, xmm0
+	043 Multiply xmm3, xmm3, xmm4
+	044 Multiply xmm1, xmm1, xmm4
+	045 Add xmm3, xmm3, stack:0x30
+	046 Multiply xmm2, xmm2, xmm4
+	047 Add xmm1, xmm1, stack:0x34
+	048 Add xmm2, xmm2, xmm0
+	049 Move rsi, stack:0x78
+	050 Move rax, rbx
+	051 Move xmm6, stack:0x50
+	052 Move xmm7, stack:0x40
+	053 Move XMM_TEMP.S[0], xmm3.S[0]
+	054 Move XMM_TEMP.S[1], xmm1.S[0]
+	055 Move XMM_TEMP.S[2], xmm3.S[1]
+	056 Move XMM_TEMP.S[3], xmm1.S[1]
+	057 Move xmm3, XMM_TEMP
+	058 Move [rbx], xmm3
+	059 Move [rbx+8], xmm2
+	060 Move rbx, stack:0x70
+	061 ShiftStack 96
+	062 Move rdi, stack:0x0
+	063 ShiftStack 8
+	064 Return rax
+
+Method: UnityEngine.Quaternion CurrentTargetAngle(System.Single trate)
+	001 ShiftStack -8
+	002 Move stack:0x0, rbx
+	003 ShiftStack -96
+	004 Move xmm0, 0
+	005 Move rbx, rcx
+	006 Compare xmm0, xmm2
+	007 JumpIfGreater {13}
+	008 Move xmm0, [0x1834E0BCC]    ; [1834E0BCC]=f=1 d=50.12387842 v4=(1,3.14159,4,10)
+	009 Compare xmm2, xmm0
+	010 JumpIfLessOrEqual {14}
+	011 Move xmm2, xmm0
+	012 Goto {14}
+	013 Move xmm2, 0
+	014 Move xmm0, [rdx+604]
+	015 LoadAddress r8, stack:0x30
+	016 Move stack:0x20, 0
+	017 Move xmm1, [rdx+588]
+	018 LoadAddress rdx, stack:0x40
+	019 Move xmm3, xmm2
+	020 Move stack:0x30, xmm0
+	021 LoadAddress rcx, stack:0x50
+	022 Move stack:0x40, xmm1
+	023 Call Quaternion.Internal_Lerp, rcx, rdx, xmm2, r9
+	024 Move xmm0, [rax]
+	025 Move rax, rbx
+	026 Move [rbx], xmm0
+	027 ShiftStack 96
+	028 Move rbx, stack:0x0
+	029 ShiftStack 8
+	030 Return rax
+
+Method: UnityEngine.Quaternion CurrentTargetAngleSlerp(System.Single trate)
+	001 ShiftStack -8
+	002 Move stack:0x0, rbx
+	003 ShiftStack -96
+	004 Move xmm0, 0
+	005 Move rbx, rcx
+	006 Compare xmm0, xmm2
+	007 JumpIfGreater {13}
+	008 Move xmm0, [0x1834E0BCC]    ; [1834E0BCC]=f=1 d=50.12387842 v4=(1,3.14159,4,10)
+	009 Compare xmm2, xmm0
+	010 JumpIfLessOrEqual {14}
+	011 Move xmm2, xmm0
+	012 Goto {14}
+	013 Move xmm2, 0
+	014 Move xmm0, [rdx+604]
+	015 LoadAddress r8, stack:0x30
+	016 Move stack:0x20, 0
+	017 Move xmm1, [rdx+588]
+	018 LoadAddress rdx, stack:0x40
+	019 Move xmm3, xmm2
+	020 Move stack:0x30, xmm0
+	021 LoadAddress rcx, stack:0x50
+	022 Move stack:0x40, xmm1
+	023 Call Quaternion.Internal_Slerp, rcx, rdx, xmm2, r9
+	024 Move xmm0, [rax]
+	025 Move rax, rbx
+	026 Move [rbx], xmm0
+	027 ShiftStack 96
+	028 Move rbx, stack:0x0
+	029 ShiftStack 8
+	030 Return rax
+
+Method: System.Void .ctor()
+	001 ShiftStack -8
+	002 Move stack:0x0, rbx
+	003 ShiftStack -32
+	004 Compare [0x184663886], 0
+	005 Move rbx, rcx
+	006 JumpIfNotEqual {10}
+	007 LoadAddress rcx, [0x184382960]
+	008 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	009 Move [0x184663886], 1
+	010 Move [rbx+460], 0x3F800000    ; 0x3F800000=1
+	011 Move [rbx+532], 0xFFFFFFFF
+	012 Move rcx, typeof(InGame.Kernel.Enemy.PawnEnemy)
+	013 Compare [rcx+228], 0
+	014 JumpIfNotEqual {16}
+	015 Call "il2cpp_runtime_class_init_export", rcx, rdx, r8, r9
+	016 Move rdx, 0
+	017 Move rcx, rbx
+	018 ShiftStack 32
+	019 Move rbx, stack:0x0
+	020 ShiftStack 8
+	021 Call PawnEnemy..ctor, rcx, rdx
+	022 Return 
+
+Method: System.Void .cctor()
+	001 ShiftStack -8
+	002 Move stack:0x0, rbx
+	003 ShiftStack -32
+	004 Compare [0x184663887], 0
+	005 JumpIfNotEqual {13}
+	006 LoadAddress rcx, [0x1843B1E48]
+	007 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	008 LoadAddress rcx, [0x1843723A8]
+	009 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	010 LoadAddress rcx, [0x1843938D8]
+	011 Call "il2cpp_codegen_initialize_runtime_metadata", rcx, rdx, r8, r9
+	012 Move [0x184663887], 1
+	013 Move rcx, typeof(System.Single[1])
+	014 Move rdx, 8
+	015 Call "SzArrayNew", rcx, rdx, r8, r9
+	016 Move rdx, [0x1843938D8]
+	017 Move r8, 0
+	018 Move rcx, rax
+	019 Move rbx, rax
+	020 Call RuntimeHelpers.InitializeArray, rcx, rdx, r8
+	021 Move rcx, typeof(InGame.Kernel.Enemy.Ene_BosBase)
+	022 Move rdx, [rcx+184]
+	023 Move [rdx], rbx
+	024 Move rdx, rbx
+	025 Move rcx, typeof(InGame.Kernel.Enemy.Ene_BosBase)
+	026 Move rcx, [rcx+184]
+	027 Call 0x1804DFD80, rcx, rdx, r8, r9
+	028 Move rcx, typeof(InGame.Kernel.Enemy.Ene_BosBase)
+	029 Move rax, [rcx+184]
+	030 Move rax, [rax]
+	031 Compare rax, 0
+	032 JumpIfEqual {40}
+	033 Move rcx, [rcx+184]
+	034 Move rax, [rax+24]
+	035 Move [rcx+8], rax
+	036 ShiftStack 32
+	037 Move rbx, stack:0x0
+	038 ShiftStack 8
+	039 Return 
+	040 Call 0x1804E0D00, rcx, rdx, r8, r9

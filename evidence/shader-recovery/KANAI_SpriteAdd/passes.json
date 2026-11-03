@@ -1,0 +1,199 @@
+{
+ "name": "KANAI/SpriteAdd",
+ "bundle": "defaultlocalgroup_assets_all_d58d8015662a6b04bca842fe72e2a7e1.bundle",
+ "path_id": "2651516000594354570",
+ "keywordNames": [
+  "STEREO_INSTANCING_ON",
+  "UNITY_SINGLE_PASS_STEREO",
+  "STEREO_MULTIVIEW_ON",
+  "STEREO_CUBEMAP_RENDER_ON",
+  "ETC1_EXTERNAL_ALPHA",
+  "INSTANCING_ON",
+  "PIXELSNAP_ON"
+ ],
+ "passes": [
+  {
+   "label": "0_0_pass",
+   "name": "",
+   "useName": "",
+   "tags": {
+    "CanUseSpriteAtlas": "true",
+    "IGNOREPROJECTOR": "true",
+    "PreviewType": "Plane",
+    "QUEUE": "Transparent",
+    "RenderType": "Transparent"
+   },
+   "subShaderTags": {
+    "CanUseSpriteAtlas": "true",
+    "IGNOREPROJECTOR": "true",
+    "PreviewType": "Plane",
+    "QUEUE": "Transparent",
+    "RenderType": "Transparent"
+   },
+   "lod": 0,
+   "state": {
+    "blend": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "blendOp": [
+     0.0,
+     0.0
+    ],
+    "colMask": 15.0,
+    "zTest": 4.0,
+    "zWrite": 0.0,
+    "culling": 0.0,
+    "offsetFactor": 0.0,
+    "offsetUnits": 0.0,
+    "stencilRef": 0.0,
+    "stencilComp": 8.0,
+    "stencilPass": 0.0,
+    "stencilFail": 0.0,
+    "stencilZFail": 0.0,
+    "stencilReadMask": 255.0,
+    "stencilWriteMask": 255.0
+   },
+   "programs": {
+    "vs": [
+     {
+      "blob": 2,
+      "params": 0,
+      "keywords": []
+     },
+     {
+      "blob": 3,
+      "params": 1,
+      "keywords": [
+       "PIXELSNAP_ON"
+      ]
+     },
+     {
+      "blob": 4,
+      "params": 0,
+      "keywords": [
+       "ETC1_EXTERNAL_ALPHA"
+      ]
+     },
+     {
+      "blob": 5,
+      "params": 1,
+      "keywords": [
+       "ETC1_EXTERNAL_ALPHA",
+       "PIXELSNAP_ON"
+      ]
+     }
+    ],
+    "ps": [
+     {
+      "blob": 8,
+      "params": 6,
+      "keywords": []
+     },
+     {
+      "blob": 9,
+      "params": 6,
+      "keywords": [
+       "PIXELSNAP_ON"
+      ]
+     },
+     {
+      "blob": 10,
+      "params": 7,
+      "keywords": [
+       "ETC1_EXTERNAL_ALPHA"
+      ]
+     },
+     {
+      "blob": 11,
+      "params": 7,
+      "keywords": [
+       "ETC1_EXTERNAL_ALPHA",
+       "PIXELSNAP_ON"
+      ]
+     }
+    ]
+   },
+   "bindings": {
+    "vs": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 48,
+       "members": [
+        {
+         "name": "_Color",
+         "offset": 32,
+         "dim": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDraw",
+       "slot": null,
+       "size": 176,
+       "members": [
+        {
+         "name": "unity_ObjectToWorld",
+         "offset": 0,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerFrame",
+       "slot": null,
+       "size": 368,
+       "members": [
+        {
+         "name": "unity_MatrixVP",
+         "offset": 272,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDrawSprite",
+       "slot": null,
+       "size": 32,
+       "members": [
+        {
+         "name": "_RendererColor",
+         "offset": 0,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "_Flip",
+         "offset": 16,
+         "dim": 2,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    },
+    "ps": {
+     "constantBuffers": [],
+     "textures": [
+      {
+       "name": "_MainTex",
+       "register": 0,
+       "sampler": 0,
+       "dim": 2
+      }
+     ],
+     "samplers": []
+    }
+   }
+  }
+ ]
+}

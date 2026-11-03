@@ -1,0 +1,24 @@
+#### InGame.Kernel.InGameManager::GetScreenPosition(UnityEngine.Vector3,System.Boolean,System.Boolean) RVA 1ce6470 len 62
+01ce6470  sub      rsp, 0x58
+01ce6474  mov      rax, rdx
+01ce6477  mov      rdx, qword ptr [rcx + 0x130]
+01ce647e  test     rdx, rdx
+01ce6481  je       0x1ce64cd
+01ce6483  movsd    xmm0, qword ptr [rax]
+01ce6487  lea      rcx, [rsp + 0x40]   ; ev.intValue1/._animators
+01ce648c  mov      eax, dword ptr [rax + 8]
+01ce648f  mov      qword ptr [rsp + 0x28], 0   ; ev.vectorValue
+01ce6498  mov      byte ptr [rsp + 0x20], r9b   ; ev.value0
+01ce649d  movzx    r9d, r8b
+01ce64a1  lea      r8, [rsp + 0x30]   ; ._entryFlag
+01ce64a6  movsd    qword ptr [rsp + 0x30], xmm0   ; ._entryFlag
+01ce64ac  mov      dword ptr [rsp + 0x38], eax   ; ev.stringValue/._psystems
+01ce64b0  call     0x1ddaa00   ; HybridCollisionManager::GetScreenPosition(UnityEngine.Vector3,System.Boolean,System.Boolean)
+01ce64b5  movsd    xmm0, qword ptr [rax]
+01ce64b9  movaps   xmm1, xmm0
+01ce64bc  shufps   xmm1, xmm1, 0x55
+01ce64c0  unpcklps xmm0, xmm1
+01ce64c3  movq     rax, xmm0
+01ce64c8  add      rsp, 0x58
+01ce64cc  ret      
+01ce64cd  call     0x4e0d00

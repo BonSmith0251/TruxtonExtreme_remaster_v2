@@ -1,0 +1,112 @@
+#### InGame.Kernel.Enemy.Ene_Lc01::Init() RVA 1dbd540 len 1df
+01dbd540  mov      qword ptr [rsp + 8], rbx
+01dbd545  mov      qword ptr [rsp + 0x10], rsi   ; ev.eventType
+01dbd54a  mov      qword ptr [rsp + 0x18], rdi   ; ev.repeatDelay
+01dbd54f  mov      qword ptr [rsp + 0x20], r14   ; ev.value0
+01dbd554  push     r15
+01dbd556  sub      rsp, 0x20
+01dbd55a  mov      rax, qword ptr [rcx + 0x278]
+01dbd561  xor      edi, edi
+01dbd563  mov      word ptr [rcx + 0x258], 0
+01dbd56c  mov      rbx, rcx
+01dbd56f  mov      qword ptr [rcx + 0x228], rdi
+01dbd576  mov      dword ptr [rcx + 0x250], edi
+01dbd57c  mov      qword ptr [rcx + 0x260], rdi
+01dbd583  mov      qword ptr [rcx + 0x268], rdi
+01dbd58a  test     rax, rax
+01dbd58d  je       0x1dbd714
+01dbd593  mov      eax, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01dbd596  xor      r8d, r8d
+01dbd599  dec      eax
+01dbd59b  mov      dl, 1
+01dbd59d  mov      dword ptr [rcx + 0x25c], eax
+01dbd5a3  call     0x1dbe290   ; Ene_Lc01::SetTankModel(System.Boolean)
+01dbd5a8  cmp      byte ptr [rip + 0x28a62f5], dil   ; [46638a4] bss
+01dbd5af  jne      0x1dbd5c4
+01dbd5b1  lea      rcx, [rip + 0x25e4db0]   ; [43a2368] TypeInfo TXEKernel.Sound.SoundUtility
+01dbd5bd  mov      byte ptr [rip + 0x28a62e0], 1   ; [46638a4] bss
+01dbd5c4  cmp      dword ptr [rbx + 0x254], -1
+01dbd5cb  je       0x1dbd5fa
+01dbd5cd  mov      rcx, qword ptr [rip + 0x25e4d94]   ; [43a2368] TypeInfo TXEKernel.Sound.SoundUtility
+01dbd5d4  mov      esi, dword ptr [rbx + 0x254]
+01dbd5da  cmp      dword ptr [rcx + 0xe4], edi
+01dbd5e0  jne      0x1dbd5e7
+01dbd5e2  call     0x4e0d90
+01dbd5e7  xor      edx, edx
+01dbd5e9  mov      ecx, esi
+01dbd5eb  call     0x2725560   ; SoundUtility::StopCh(System.Int32)
+01dbd5f0  mov      dword ptr [rbx + 0x254], 0xffffffff
+01dbd5fa  mov      rax, qword ptr [rbx + 0x278]
+01dbd601  mov      esi, edi
+01dbd603  mov      ecx, edi
+01dbd605  test     rax, rax
+01dbd608  je       0x1dbd714
+01dbd60e  mov      r14d, 0x20
+01dbd614  mov      r15d, r14d
+01dbd617  cmp      ecx, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01dbd61a  jge      0x1dbd6af
+01dbd620  mov      rax, qword ptr [rbx + 0x278]
+01dbd627  test     rax, rax
+01dbd62a  je       0x1dbd714
+01dbd630  cmp      esi, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01dbd633  jae      0x1dbd71a
+01dbd639  mov      rax, qword ptr [rbx + 0x220]
+01dbd640  test     rax, rax
+01dbd643  je       0x1dbd714
+01dbd649  cmp      esi, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01dbd64c  jae      0x1dbd71a
+01dbd652  mov      rcx, qword ptr [r15 + rax]
+01dbd656  test     rcx, rcx
+01dbd659  je       0x1dbd714
+01dbd65f  xor      edx, edx
+01dbd661  call     0x1dd1a40   ; Ene_Lc01/coverAction::Reset()
+01dbd666  mov      rax, qword ptr [rbx + 0x220]
+01dbd66d  test     rax, rax
+01dbd670  je       0x1dbd714
+01dbd676  cmp      esi, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01dbd679  jae      0x1dbd71a
+01dbd67f  mov      rcx, qword ptr [r15 + rax]
+01dbd683  test     rcx, rcx
+01dbd686  je       0x1dbd714
+01dbd68c  xor      r8d, r8d
+01dbd68f  xor      edx, edx
+01dbd691  call     0x1dd1940   ; Ene_Lc01/coverAction::PartsSetHitSwitch(System.Boolean)
+01dbd696  mov      rax, qword ptr [rbx + 0x278]
+01dbd69d  inc      esi
+01dbd69f  add      r15, 8
+01dbd6a3  mov      ecx, esi
+01dbd6a5  test     rax, rax
+01dbd6a8  je       0x1dbd714
+01dbd6aa  jmp      0x1dbd617
+01dbd6af  mov      rax, qword ptr [rbx + 0x290]   ; ._isRangeFireLimit
+01dbd6b6  mov      ecx, edi
+01dbd6b8  test     rax, rax
+01dbd6bb  je       0x1dbd714
+01dbd6bd  nop      dword ptr [rax]
+01dbd6c0  cmp      ecx, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01dbd6c3  jge      0x1dbd6f9
+01dbd6c5  mov      rax, qword ptr [rbx + 0x290]   ; ._isRangeFireLimit
+01dbd6cc  test     rax, rax
+01dbd6cf  je       0x1dbd714
+01dbd6d1  cmp      edi, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01dbd6d4  jae      0x1dbd71a
+01dbd6d6  mov      rcx, qword ptr [r14 + rax]
+01dbd6da  test     rcx, rcx
+01dbd6dd  je       0x1dbd714
+01dbd6df  mov      byte ptr [rcx + 0x24], 0   ; ev.value1
+01dbd6e3  inc      edi
+01dbd6e5  mov      rax, qword ptr [rbx + 0x290]   ; ._isRangeFireLimit
+01dbd6ec  add      r14, 8
+01dbd6f0  mov      ecx, edi
+01dbd6f2  test     rax, rax
+01dbd6f5  jne      0x1dbd6c0
+01dbd6f7  jmp      0x1dbd714
+01dbd6f9  mov      rbx, qword ptr [rsp + 0x30]   ; ._entryFlag
+01dbd6fe  mov      rsi, qword ptr [rsp + 0x38]   ; ev.stringValue/._psystems
+01dbd703  mov      rdi, qword ptr [rsp + 0x40]   ; ev.intValue1/._animators
+01dbd708  mov      r14, qword ptr [rsp + 0x48]   ; ev.intValue3/.GameObjectCache
+01dbd70d  add      rsp, 0x20
+01dbd711  pop      r15
+01dbd713  ret      
+01dbd714  call     0x4e0d00
+01dbd71a  call     0x4e0cf0

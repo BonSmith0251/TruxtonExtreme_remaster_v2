@@ -1,0 +1,49 @@
+== System.Boolean InGame.Kernel.Enemy.Ene_BosBase::IsCallSmallBomb(System.Single) RVA 1db9e90 len e1
+01db9e90 push       rbx
+01db9e92 sub        rsp, 0x40
+01db9e96 cmp        byte ptr [rip + 0x28a99e4], 0 ; [.data 4663881]
+01db9e9d mov        rbx, rcx
+01db9ea0 movaps     xmmword ptr [rsp + 0x30], xmm6
+01db9ea5 movaps     xmm6, xmm1
+01db9ea8 jne        0x1db9ebd
+01db9eaa lea        rcx, [rip + 0x25fe14f] ; [.data 43b8000] MethodRef#202981
+01db9eb1 call       0x4e0a50
+01db9eb6 mov        byte ptr [rip + 0x28a99c4], 1 ; [.data 4663881]
+01db9ebd movss      xmm2, dword ptr [rbx + 0x1e4] ; ~_smallBombCurrent
+01db9ec5 xorps      xmm0, xmm0
+01db9ec8 subss      xmm2, xmm6
+01db9ecc comiss     xmm0, xmm2
+01db9ecf movss      dword ptr [rbx + 0x1e4], xmm2 ; ~_smallBombCurrent
+01db9ed7 jae        0x1db9ee6
+01db9ed9 xor        al, al
+01db9edb movaps     xmm6, xmmword ptr [rsp + 0x30]
+01db9ee0 add        rsp, 0x40
+01db9ee4 pop        rbx
+01db9ee5 ret        
+01db9ee6 xor        ecx, ecx
+01db9ee8 call       0x1df1220 ; KANAI.Kernel.RandomUtility::Make01()
+01db9eed cmp        byte ptr [rbx + 0x1b3], 0 ; ~_isDeadEffectCalled
+01db9ef4 movss      xmm6, dword ptr [rip + 0x1726d28] ; [.rdata 34e0c24] f=0.10000000149011612 d=1.0681151189828597e-05 v4=['0.1', '0.45', '0', '0']
+01db9efc mulss      xmm0, xmm6
+01db9f00 addss      xmm0, dword ptr [rbx + 0x1e0] ; ~_smallBombBaseSecond
+01db9f08 movss      dword ptr [rbx + 0x1e4], xmm0 ; ~_smallBombCurrent
+01db9f10 movss      xmm0, dword ptr [rbx + 0x1e0] ; ~_smallBombBaseSecond
+01db9f18 mulss      xmm0, dword ptr [rip + 0x1838e48] ; [.rdata 35f2d68] f=0.8999999761581421 d=-6047314991513.6 v4=['0.9', '-75', '-400', '0.03']
+01db9f20 movss      dword ptr [rbx + 0x1e0], xmm0 ; ~_smallBombBaseSecond
+01db9f28 jne        0x1db9f5f
+01db9f2a mov        rcx, qword ptr [rip + 0x25fe0cf] ; [.data 43b8000] MethodRef#202981
+01db9f31 call       0x27540
+01db9f36 test       rax, rax
+01db9f39 je         0x1db9f6c
+01db9f3b movss      xmm3, dword ptr [rbx + 0x1e0] ; ~_smallBombBaseSecond
+01db9f43 movaps     xmm2, xmm6
+01db9f46 movss      xmm1, dword ptr [rip + 0x1838e32] ; [.rdata 35f2d80] f=0.4000000059604645 d=0.00020214848282193998 v4=['0.4', '0.666', '1.2', '1.8']
+01db9f4e mov        rcx, rax
+01db9f51 mov        qword ptr [rsp + 0x20], 0
+01db9f5a call       0x1cee560 ; InGame.Kernel.InGameManager::VibrationPlayer(System.Single,System.Single,System.Single)
+01db9f5f movaps     xmm6, xmmword ptr [rsp + 0x30]
+01db9f64 mov        al, 1
+01db9f66 add        rsp, 0x40
+01db9f6a pop        rbx
+01db9f6b ret        
+01db9f6c call       0x4e0d00

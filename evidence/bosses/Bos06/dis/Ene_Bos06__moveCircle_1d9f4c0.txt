@@ -1,0 +1,135 @@
+01d9f4c0 mov rax, rsp 
+01d9f4c3 mov qword ptr [rax + 8], rbx 
+01d9f4c7 push rdi 
+01d9f4c8 sub rsp, 0xb0 
+01d9f4cf cmp byte ptr [rip + 0x28c4323], 0 ; rva=46637f9
+01d9f4d6 mov rbx, rcx 
+01d9f4d9 movaps xmmword ptr [rax - 0x18], xmm6 
+01d9f4dd movaps xmmword ptr [rax - 0x28], xmm7 
+01d9f4e1 movaps xmmword ptr [rax - 0x38], xmm8 
+01d9f4e6 movaps xmmword ptr [rax - 0x48], xmm9 
+01d9f4eb movaps xmm9, xmm3 
+01d9f4ef movaps xmmword ptr [rax - 0x58], xmm10 
+01d9f4f4 movaps xmm10, xmm2 
+01d9f4f8 movaps xmmword ptr [rax - 0x68], xmm11 
+01d9f4fd movaps xmm11, xmm1 
+01d9f501 jne 0x1d9f522 
+01d9f503 lea rcx, [rip + 0x26125be] ; rva=43b1ac8
+01d9f50a call 0x4e0a50 
+01d9f50f lea rcx, [rip + 0x2622eb2] ; rva=43c23c8
+01d9f516 call 0x4e0a50 
+01d9f51b mov byte ptr [rip + 0x28c42d7], 1 ; rva=46637f9
+01d9f522 cmp byte ptr [rbx + 0x1b7], 0 
+01d9f529 xorps xmm7, xmm7 
+01d9f52c movss xmm6, dword ptr [rip + 0x1741698] ; rva=34e0bcc f=1 d=50.12387842
+01d9f534 jne 0x1d9f5cc 
+01d9f53a cmp byte ptr [rbx + 0x1b5], 0 
+01d9f541 mov rax, qword ptr [rip + 0x2612580] ; rva=43b1ac8
+01d9f548 je 0x1d9f57a 
+01d9f54a cmp dword ptr [rax + 0xe4], 0 
+01d9f551 jne 0x1d9f562 
+01d9f553 mov rcx, rax 
+01d9f556 call 0x4e0d90 
+01d9f55b mov rax, qword ptr [rip + 0x2612566] ; rva=43b1ac8
+01d9f562 mov rax, qword ptr [rax + 0xb8] 
+01d9f569 movss xmm0, dword ptr [rax + 0x8c] 
+01d9f571 xorps xmm0, xmmword ptr [rip + 0x1741698] ; rva=34e0c10 f=-0
+01d9f578 jmp 0x1d9f5a1 
+01d9f57a cmp dword ptr [rax + 0xe4], 0 
+01d9f581 jne 0x1d9f592 
+01d9f583 mov rcx, rax 
+01d9f586 call 0x4e0d90 
+01d9f58b mov rax, qword ptr [rip + 0x2612536] ; rva=43b1ac8
+01d9f592 mov rax, qword ptr [rax + 0xb8] 
+01d9f599 movss xmm0, dword ptr [rax + 0x8c] 
+01d9f5a1 mulss xmm0, dword ptr [rsp + 0xe0] 
+01d9f5aa addss xmm0, dword ptr [rbx + 0x2bc] 
+01d9f5b2 comiss xmm7, xmm0 
+01d9f5b5 ja 0x1d9f5c1 
+01d9f5b7 comiss xmm0, xmm6 
+01d9f5ba jbe 0x1d9f5c4 
+01d9f5bc movaps xmm0, xmm6 
+01d9f5bf jmp 0x1d9f5c4 
+01d9f5c1 xorps xmm0, xmm0 
+01d9f5c4 movss dword ptr [rbx + 0x2bc], xmm0 
+01d9f5cc mov rcx, qword ptr [rip + 0x26124f5] ; rva=43b1ac8
+01d9f5d3 cmp dword ptr [rcx + 0xe4], 0 
+01d9f5da jne 0x1d9f5e8 
+01d9f5dc call 0x4e0d90 
+01d9f5e1 mov rcx, qword ptr [rip + 0x26124e0] ; rva=43b1ac8
+01d9f5e8 mov rax, qword ptr [rcx + 0xb8] 
+01d9f5ef movss xmm2, dword ptr [rbx + 0x2bc] 
+01d9f5f7 comiss xmm7, xmm2 
+01d9f5fa mov edx, dword ptr [rax + 0x88] 
+01d9f600 movsd xmm0, qword ptr [rax + 0x80] 
+01d9f608 movsd qword ptr [rsp + 0x30], xmm0 
+01d9f60e movsd xmm0, qword ptr [rax + 0x74] 
+01d9f613 movsd qword ptr [rsp + 0x40], xmm0 
+01d9f619 ja 0x1d9f625 
+01d9f61b comiss xmm2, xmm6 
+01d9f61e jbe 0x1d9f628 
+01d9f620 movaps xmm2, xmm6 
+01d9f623 jmp 0x1d9f628 
+01d9f625 xorps xmm2, xmm2 
+01d9f628 movsd xmm1, qword ptr [rbx + 0x228] 
+01d9f630 movss xmm6, dword ptr [rsp + 0x30] 
+01d9f636 movaps xmm0, xmm1 
+01d9f639 subss xmm6, dword ptr [rsp + 0x40] 
+01d9f63f movss xmm7, dword ptr [rsp + 0x34] 
+01d9f645 subss xmm7, dword ptr [rsp + 0x44] 
+01d9f64b mov rcx, qword ptr [rip + 0x2622d76] ; rva=43c23c8
+01d9f652 mov rdi, qword ptr [rbx + 0x50] 
+01d9f656 mulss xmm6, xmm2 
+01d9f65a cmp dword ptr [rcx + 0xe4], 0 
+01d9f661 mulss xmm7, xmm2 
+01d9f665 addss xmm6, dword ptr [rsp + 0x40] 
+01d9f66b movd xmm8, edx 
+01d9f670 subss xmm8, dword ptr [rax + 0x7c] 
+01d9f676 addss xmm7, dword ptr [rsp + 0x44] 
+01d9f67c shufps xmm0, xmm0, 0x55 
+01d9f680 addss xmm6, xmm1 
+01d9f684 movsd qword ptr [rsp + 0x40], xmm1 
+01d9f68a mulss xmm8, xmm2 
+01d9f68f addss xmm7, xmm0 
+01d9f693 addss xmm8, dword ptr [rax + 0x7c] 
+01d9f699 addss xmm8, dword ptr [rbx + 0x230] 
+01d9f6a2 jne 0x1d9f6a9 
+01d9f6a4 call 0x4e0d90 
+01d9f6a9 movaps xmm3, xmm9 
+01d9f6ad mov qword ptr [rsp + 0x20], 0 
+01d9f6b6 movaps xmm2, xmm10 
+01d9f6ba lea rcx, [rsp + 0x40] 
+01d9f6bf movaps xmm1, xmm11 
+01d9f6c3 call 0x1df6af0 ; VectorUtility::CircleSymbol(System.Single,System.Single,System.Single)
+01d9f6c8 movsd xmm2, qword ptr [rax] 
+01d9f6cc movss xmm1, dword ptr [rax + 4] 
+01d9f6d1 addss xmm2, xmm6 
+01d9f6d5 movss xmm3, dword ptr [rax + 8] 
+01d9f6da addss xmm1, xmm7 
+01d9f6de addss xmm3, xmm8 
+01d9f6e3 test rdi, rdi 
+01d9f6e6 je 0x1d9f736 
+01d9f6e8 unpcklps xmm2, xmm1 
+01d9f6eb lea rdx, [rsp + 0x40] 
+01d9f6f0 xor r8d, r8d 
+01d9f6f3 movsd qword ptr [rsp + 0x40], xmm2 
+01d9f6f9 mov rcx, rdi 
+01d9f6fc movss dword ptr [rsp + 0x48], xmm3 
+01d9f702 call 0x3094570 ; Transform::set_localPosition(UnityEngine.Vector3)
+01d9f707 lea r11, [rsp + 0xb0] 
+01d9f70f mov rbx, qword ptr [r11 + 0x10] 
+01d9f713 movaps xmm6, xmmword ptr [r11 - 0x10] 
+01d9f718 movaps xmm7, xmmword ptr [r11 - 0x20] 
+01d9f71d movaps xmm8, xmmword ptr [r11 - 0x30] 
+01d9f722 movaps xmm9, xmmword ptr [r11 - 0x40] 
+01d9f727 movaps xmm10, xmmword ptr [r11 - 0x50] 
+01d9f72c movaps xmm11, xmmword ptr [r11 - 0x60] 
+01d9f731 mov rsp, r11 
+01d9f734 pop rdi 
+01d9f735 ret 
+01d9f736 call 0x4e0d00 
+01d9f73b int3 
+01d9f73c int3 
+01d9f73d int3 
+01d9f73e int3 
+01d9f73f int3 

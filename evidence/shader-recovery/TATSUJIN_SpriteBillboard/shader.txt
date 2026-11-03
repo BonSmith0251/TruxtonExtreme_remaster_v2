@@ -1,0 +1,23 @@
+//////////////////////////////////////////
+//
+// NOTE: This is *not* a valid shader file
+//
+///////////////////////////////////////////
+Shader "TATSUJIN/SpriteBillboard" {
+Properties {
+
+_MainTex ("Texture", 2D) = "white" { }
+
+_TexAlpha ("TexAlpha", Float) = 1.0
+
+}
+SubShader {
+ Tags { "DisableBatching" = "true" "QUEUE" = "Transparent" "RenderType" = "Transparent" }
+ Pass {
+  Tags { "DisableBatching" = "true" "QUEUE" = "Transparent" "RenderType" = "Transparent" }
+ ZTest Always
+ ZWrite Off
+  GpuProgramID 29307
+}
+}
+}

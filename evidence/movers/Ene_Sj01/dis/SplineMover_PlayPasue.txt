@@ -1,0 +1,9 @@
+01d43dc0  sub      rsp, 0x28
+01d43dc4  test     rcx, rcx
+01d43dc7  je       0x1d43dde
+01d43dc9  movzx    eax, dl
+01d43dcc  lea      eax, [rax*2 + 2]
+01d43dd3  mov      dword ptr [rcx + 0x1b0], eax
+01d43dd9  add      rsp, 0x28
+01d43ddd  ret      
+01d43dde  call     0x4e0d00

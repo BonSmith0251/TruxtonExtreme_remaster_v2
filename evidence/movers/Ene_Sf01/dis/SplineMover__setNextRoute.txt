@@ -1,0 +1,74 @@
+#### InGame.Kernel.SplineMover::_setNextRoute(System.Single) RVA 1d45160 len 141
+01d45160  push     rbx
+01d45162  sub      rsp, 0x40
+01d45166  cmp      qword ptr [rcx + 0x1e8], 0   ; ._routes
+01d4516e  mov      rbx, rcx
+01d45171  movaps   xmmword ptr [rsp + 0x30], xmm6   ; ._entryFlag
+01d45176  movaps   xmm6, xmm1
+01d45179  je       0x1d45260
+01d4517f  cmp      dword ptr [rcx + 0x1f4], 0   ; ._routesIndexMax
+01d45186  jle      0x1d45260
+01d4518c  mov      eax, dword ptr [rcx + 0x1f0]   ; ._routesIndex
+01d45192  inc      eax
+01d45194  cmp      eax, dword ptr [rcx + 0x1f4]   ; ._routesIndexMax
+01d4519a  jge      0x1d45260
+01d451a0  cmp      dword ptr [rcx + 0x198], -1   ; ._nextEasingType
+01d451a7  je       0x1d451b5
+01d451a9  mov      eax, dword ptr [rcx + 0x198]   ; ._nextEasingType
+01d451af  mov      dword ptr [rcx + 0x194], eax   ; ._easingType
+01d451b5  inc      dword ptr [rcx + 0x1f0]   ; ._routesIndex
+01d451bb  mov      rdx, qword ptr [rcx + 0x70]   ; ._transformCache
+01d451bf  mov      dword ptr [rcx + 0x198], 0xffffffff   ; ._nextEasingType
+01d451c9  test     rdx, rdx
+01d451cc  je       0x1d4529c
+01d451d2  xor      r8d, r8d
+01d451d5  cmp      byte ptr [rcx + 0x52], r8b   ; ._isEntryGround
+01d451d9  lea      rcx, [rsp + 0x20]   ; ev.value0
+01d451de  je       0x1d451e7
+01d451e0  call     0x3093ba0   ; Transform::get_position()
+01d451e5  jmp      0x1d451ec
+01d451e7  call     0x3093700   ; Transform::get_localPosition()
+01d451ec  movsd    xmm1, qword ptr [rax]
+01d451f0  mov      edx, dword ptr [rax + 8]
+01d451f3  mov      rcx, qword ptr [rbx + 0x70]   ; ._transformCache
+01d451f7  movsd    qword ptr [rbx + 0x224], xmm1   ; ._startPosition
+01d451ff  mov      dword ptr [rbx + 0x22c], edx
+01d45205  test     rcx, rcx
+01d45208  je       0x1d4529c
+01d4520e  xor      r8d, r8d
+01d45211  mov      dword ptr [rsp + 0x28], edx   ; ev.vectorValue
+01d45215  lea      rdx, [rsp + 0x20]   ; ev.value0
+01d4521a  movsd    qword ptr [rsp + 0x20], xmm1   ; ev.value0
+01d45220  cmp      byte ptr [rbx + 0x52], r8b   ; ._isEntryGround
+01d45224  je       0x1d45243
+01d45226  call     0x3094950   ; Transform::set_position(UnityEngine.Vector3)
+01d4522b  xor      r8d, r8d
+01d4522e  movaps   xmm1, xmm6
+01d45231  mov      rcx, rbx
+01d45234  movaps   xmm6, xmmword ptr [rsp + 0x30]   ; ._entryFlag
+01d45239  add      rsp, 0x40
+01d4523d  pop      rbx
+01d4523e  jmp      0x1d452d0   ; SplineMover::updateRouteData(System.Single)
+01d45243  call     0x3094570   ; Transform::set_localPosition(UnityEngine.Vector3)
+01d45248  xor      r8d, r8d
+01d4524b  movaps   xmm1, xmm6
+01d4524e  mov      rcx, rbx
+01d45251  movaps   xmm6, xmmword ptr [rsp + 0x30]   ; ._entryFlag
+01d45256  add      rsp, 0x40
+01d4525a  pop      rbx
+01d4525b  jmp      0x1d452d0   ; SplineMover::updateRouteData(System.Single)
+01d45260  cmp      byte ptr [rcx + 0x1f8], 0   ; ._isEndRouteKeep
+01d45267  jne      0x1d45287
+01d45269  mov      rdx, qword ptr [rcx]
+01d4526c  mov      rax, qword ptr [rdx + 0x278]
+01d45273  mov      rdx, qword ptr [rdx + 0x280]   ; ._eventIndex
+01d4527a  movaps   xmm6, xmmword ptr [rsp + 0x30]   ; ._entryFlag
+01d4527f  add      rsp, 0x40
+01d45283  pop      rbx
+01d45284  jmp      rax
+01d45287  movaps   xmm6, xmmword ptr [rsp + 0x30]   ; ._entryFlag
+01d4528c  mov      dword ptr [rcx + 0x1b0], 4   ; ._moverState
+01d45296  add      rsp, 0x40
+01d4529a  pop      rbx
+01d4529b  ret      
+01d4529c  call     0x4e0d00

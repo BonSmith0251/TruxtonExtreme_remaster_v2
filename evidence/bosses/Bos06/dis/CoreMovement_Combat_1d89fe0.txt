@@ -1,0 +1,88 @@
+01d89fe0 mov qword ptr [rsp + 0x10], rsi 
+01d89fe5 push rdi 
+01d89fe6 sub rsp, 0x50 
+01d89fea cmp byte ptr [rip + 0x28d9812], 0 ; rva=4663803
+01d89ff1 mov rdi, rcx 
+01d89ff4 jne 0x1d8a015 
+01d89ff6 lea rcx, [rip + 0x2627acb] ; rva=43b1ac8
+01d89ffd call 0x4e0a50 
+01d8a002 lea rcx, [rip + 0x25f8957] ; rva=4382960
+01d8a009 call 0x4e0a50 
+01d8a00e mov byte ptr [rip + 0x28d97ee], 1 ; rva=4663803
+01d8a015 mov rcx, qword ptr [rdi + 0x40] 
+01d8a019 mov rsi, qword ptr [rdi + 0x50] 
+01d8a01d mov qword ptr [rsp + 0x60], rbx 
+01d8a022 test rcx, rcx 
+01d8a025 je 0x1d8a156 
+01d8a02b xor edx, edx 
+01d8a02d call 0x2095a70 ; CancellationTokenSource::get_Token()
+01d8a032 mov rbx, rax 
+01d8a035 mov rax, qword ptr [rip + 0x2627a8c] ; rva=43b1ac8
+01d8a03c cmp dword ptr [rax + 0xe4], 0 
+01d8a043 jne 0x1d8a054 
+01d8a045 mov rcx, rax 
+01d8a048 call 0x4e0d90 
+01d8a04d mov rax, qword ptr [rip + 0x2627a74] ; rva=43b1ac8
+01d8a054 mov rax, qword ptr [rax + 0xb8] 
+01d8a05b mov ecx, dword ptr [rax + 0x50] 
+01d8a05e test rsi, rsi 
+01d8a061 je 0x1d8a156 
+01d8a067 mov qword ptr [rsp + 0x30], 0 
+01d8a070 xorps xmm0, xmm0 
+01d8a073 mov dword ptr [rsp + 0x28], ecx 
+01d8a077 mov r9, rbx 
+01d8a07a lea rcx, [rsp + 0x40] 
+01d8a07f movss dword ptr [rsp + 0x20], xmm0 
+01d8a085 mov r8d, 1 
+01d8a08b mov rdx, rsi 
+01d8a08e call 0x1d1db40 ; InGameObjectWithEvent::DelayAnimationTask(System.Int32,System.Threading.CancellationToken,System.Single,System.Int32)
+01d8a093 xor edx, edx 
+01d8a095 lea rcx, [rsp + 0x40] 
+01d8a09a movups xmm0, xmmword ptr [rax] 
+01d8a09d movaps xmmword ptr [rsp + 0x40], xmm0 
+01d8a0a2 call 0x2742890 ; UniTaskExtensions::Forget(Cysharp.Threading.Tasks.UniTask)
+01d8a0a7 mov rcx, qword ptr [rdi + 0x40] 
+01d8a0ab mov rsi, qword ptr [rdi + 0x38] 
+01d8a0af test rcx, rcx 
+01d8a0b2 je 0x1d8a156 
+01d8a0b8 xor edx, edx 
+01d8a0ba call 0x2095a70 ; CancellationTokenSource::get_Token()
+01d8a0bf mov rbx, rax 
+01d8a0c2 mov rax, qword ptr [rip + 0x25f8897] ; rva=4382960
+01d8a0c9 cmp dword ptr [rax + 0xe4], 0 
+01d8a0d0 jne 0x1d8a0e1 
+01d8a0d2 mov rcx, rax 
+01d8a0d5 call 0x4e0d90 
+01d8a0da mov rax, qword ptr [rip + 0x25f887f] ; rva=4382960
+01d8a0e1 mov rcx, qword ptr [rax + 0xb8] 
+01d8a0e8 test rsi, rsi 
+01d8a0eb je 0x1d8a156 
+01d8a0ed movups xmm0, xmmword ptr [rcx + 0x20] 
+01d8a0f1 lea r8, [rsp + 0x40] 
+01d8a0f6 mov qword ptr [rsp + 0x28], 0 
+01d8a0ff movss xmm3, dword ptr [rip + 0x1756ac1] ; rva=34e0bc8 f=0.5 d=0.007812501834
+01d8a107 mov rdx, rbx 
+01d8a10a mov rcx, rsi 
+01d8a10d movaps xmmword ptr [rsp + 0x40], xmm0 
+01d8a112 mov byte ptr [rsp + 0x20], 1 
+01d8a117 call 0x1d61cb0 ; EnePartsGroup::ChangeColorTask(System.Threading.CancellationToken,UnityEngine.Color,System.Single,System.Boolean)
+01d8a11c mov rcx, qword ptr [rdi + 0x38] 
+01d8a120 test rcx, rcx 
+01d8a123 je 0x1d8a156 
+01d8a125 xor edx, edx 
+01d8a127 call 0x1d63240 ; EnePartsGroup::Wakeup()
+01d8a12c movss xmm0, dword ptr [rdi + 0x18] 
+01d8a131 subss xmm0, dword ptr [rip + 0x1756aaf] ; rva=34e0be8 f=180
+01d8a139 mov rbx, qword ptr [rsp + 0x60] 
+01d8a13e mov rsi, qword ptr [rsp + 0x68] 
+01d8a143 mov qword ptr [rdi + 0x10], 4 
+01d8a14b movss dword ptr [rdi + 0x18], xmm0 
+01d8a150 add rsp, 0x50 
+01d8a154 pop rdi 
+01d8a155 ret 
+01d8a156 call 0x4e0d00 
+01d8a15b int3 
+01d8a15c int3 
+01d8a15d int3 
+01d8a15e int3 
+01d8a15f int3 

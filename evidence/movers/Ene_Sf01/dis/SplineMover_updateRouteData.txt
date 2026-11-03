@@ -1,0 +1,83 @@
+#### InGame.Kernel.SplineMover::updateRouteData(System.Single) RVA 1d452d0 len 173
+01d452d0  push     rbx
+01d452d2  sub      rsp, 0x50
+01d452d6  cmp      byte ptr [rip + 0x291e28a], 0   ; [4663567] bss
+01d452dd  mov      rbx, rcx
+01d452e0  movaps   xmmword ptr [rsp + 0x30], xmm7   ; ._entryFlag
+01d452e5  movaps   xmm7, xmm1
+01d452e8  jne      0x1d452fd
+01d452ea  lea      rcx, [rip + 0x2672d0f]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d452f1  call     0x4e0a50
+01d452f6  mov      byte ptr [rip + 0x291e26a], 1   ; [4663567] bss
+01d452fd  cmp      qword ptr [rbx + 0x1e8], 0   ; ._routes
+01d45305  je       0x1d45331
+01d45307  cmp      dword ptr [rbx + 0x1f4], 0   ; ._routesIndexMax
+01d4530e  jle      0x1d45331
+01d45310  mov      rcx, qword ptr [rbx + 0x1e8]   ; ._routes
+01d45317  movsxd   rax, dword ptr [rbx + 0x1f0]   ; ._routesIndex
+01d4531e  cmp      eax, dword ptr [rcx + 0x18]   ; ev.repeatDelay
+01d45321  jae      0x1d4543e
+01d45327  lea      rdx, [rax + 4]
+01d4532b  lea      rdx, [rcx + rdx*8]
+01d4532f  jmp      0x1d4533f
+01d45331  mov      rax, qword ptr [rip + 0x2932bc8]   ; [4677f00] bss
+01d45338  mov      rdx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01d4533f  mov      rax, qword ptr [rip + 0x2672cba]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d45346  mov      qword ptr [rsp + 0x60], rsi   ; ._psystemCount
+01d4534b  mov      rsi, qword ptr [rdx]
+01d4534e  mov      rax, qword ptr [rax + 0x20]   ; ev.value0
+01d45352  test     byte ptr [rax + 0x135], 1
+01d45359  jne      0x1d45363
+01d4535b  mov      rcx, rax
+01d4535e  call     0x4de1e0
+01d45363  mov      rax, qword ptr [rax + 0xc0]   ; ._speedToken
+01d4536a  mov      rax, qword ptr [rax + 0x10]   ; ev.eventType
+01d4536e  test     byte ptr [rax + 0x135], 1
+01d45375  jne      0x1d4537f
+01d45377  mov      rcx, rax
+01d4537a  call     0x4de1e0
+01d4537f  mov      rax, qword ptr [rax + 0xb8]   ; ._hormingToken
+01d45386  mov      rcx, qword ptr [rax]
+01d45389  test     rcx, rcx
+01d4538c  je       0x1d45438
+01d45392  mov      rcx, qword ptr [rcx + 0x120]
+01d45399  test     rcx, rcx
+01d4539c  je       0x1d45438
+01d453a2  mov      qword ptr [rsp + 0x68], rdi   ; ._flagStateFuture
+01d453a7  xor      r8d, r8d
+01d453aa  mov      rdx, rsi
+01d453ad  movaps   xmmword ptr [rsp + 0x40], xmm6   ; ._animators
+01d453b2  call     0x1d239c0   ; InGameRouteManager::GetData(System.String)
+01d453b7  mov      rdi, rax
+01d453ba  mov      rax, qword ptr [rbx]
+01d453bd  mov      r8, qword ptr [rax + 0x2f8]
+01d453c4  mov      r9, rsi
+01d453c7  mov      rax, qword ptr [rax + 0x300]
+01d453ce  mov      rcx, rbx
+01d453d1  mov      qword ptr [rsp + 0x20], rax   ; ev.value0
+01d453d6  test     rdi, rdi
+01d453d9  jne      0x1d453e8
+01d453db  xorps    xmm2, xmm2
+01d453de  xor      edx, edx
+01d453e0  xorps    xmm6, xmm6
+01d453e3  call     r8
+01d453e6  jmp      0x1d45404
+01d453e8  movss    xmm2, dword ptr [rdi + 0x18]   ; ev.repeatDelay
+01d453ed  mov      rdx, qword ptr [rdi + 0x10]   ; ev.eventType
+01d453f1  call     r8
+01d453f4  movaps   xmm6, xmm7
+01d453f7  mulss    xmm6, dword ptr [rbx + 0x164]   ; ._currentSpeed
+01d453ff  divss    xmm6, dword ptr [rdi + 0x18]   ; ev.repeatDelay
+01d45404  movss    dword ptr [rbx + 0x20c], xmm6   ; ._currentRate
+01d4540c  movaps   xmm6, xmmword ptr [rsp + 0x40]   ; ._animators
+01d45411  mov      rdi, qword ptr [rsp + 0x68]   ; ._flagStateFuture
+01d45416  mov      rsi, qword ptr [rsp + 0x60]   ; ._psystemCount
+01d4541b  movss    dword ptr [rbx + 0x160], xmm7   ; ._durationPassTime
+01d45423  movaps   xmm7, xmmword ptr [rsp + 0x30]   ; ._entryFlag
+01d45428  mov      dword ptr [rbx + 0x208], 0   ; ._currentOffset
+01d45432  add      rsp, 0x50
+01d45436  pop      rbx
+01d45437  ret      
+01d45438  call     0x4e0d00
+01d4543d  int3     
+01d4543e  call     0x4e0cf0

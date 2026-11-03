@@ -1,0 +1,53 @@
+01d9ae80 mov qword ptr [rsp + 8], rbx 
+01d9ae85 mov qword ptr [rsp + 0x10], rbp 
+01d9ae8a mov qword ptr [rsp + 0x18], rsi 
+01d9ae8f mov qword ptr [rsp + 0x20], rdi 
+01d9ae94 push r14 
+01d9ae96 sub rsp, 0x60 
+01d9ae9a mov rsi, r8 
+01d9ae9d mov rbp, rdx 
+01d9aea0 xor r8d, r8d 
+01d9aea3 xor edx, edx 
+01d9aea5 mov rbx, rcx 
+01d9aea8 call 0x1db9840 ; Ene_BosBase::GetBT(System.Int32)
+01d9aead mov rdi, qword ptr [rbx + 0xb8] 
+01d9aeb4 xor edx, edx 
+01d9aeb6 mov rcx, rbx 
+01d9aeb9 mov r14, rax 
+01d9aebc call 0x1d11bc0 ; PawnEnemy::get_CToken()
+01d9aec1 test rdi, rdi 
+01d9aec4 je 0x1d9af22 
+01d9aec6 xor ecx, ecx 
+01d9aec8 mov r9, r14 
+01d9aecb mov qword ptr [rsp + 0x40], rcx 
+01d9aed0 mov r8, rax 
+01d9aed3 mov qword ptr [rsp + 0x38], rcx 
+01d9aed8 mov rdx, rdi 
+01d9aedb mov dword ptr [rsp + 0x30], ecx 
+01d9aedf lea rcx, [rsp + 0x50] 
+01d9aee4 mov qword ptr [rsp + 0x28], rsi 
+01d9aee9 mov qword ptr [rsp + 0x20], rbp 
+01d9aeee call 0x1cd8bf0 ; InGameEnemyMoveBase::BulletDirFireAsync(System.Threading.CancellationToken,InGame.Kernel.Enemy.BulletTemplate,UnityEngine.Transform,UnityEngine.Transform,System.Int32,System.Action`1<InGame.Kernel.InGameBulletInterface>)
+01d9aef3 xor edx, edx 
+01d9aef5 lea rcx, [rsp + 0x50] 
+01d9aefa movups xmm0, xmmword ptr [rax] 
+01d9aefd movaps xmmword ptr [rsp + 0x50], xmm0 
+01d9af02 call 0x2742890 ; UniTaskExtensions::Forget(Cysharp.Threading.Tasks.UniTask)
+01d9af07 lea r11, [rsp + 0x60] 
+01d9af0c mov rbx, qword ptr [r11 + 0x10] 
+01d9af10 mov rbp, qword ptr [r11 + 0x18] 
+01d9af14 mov rsi, qword ptr [r11 + 0x20] 
+01d9af18 mov rdi, qword ptr [r11 + 0x28] 
+01d9af1c mov rsp, r11 
+01d9af1f pop r14 
+01d9af21 ret 
+01d9af22 call 0x4e0d00 
+01d9af27 int3 
+01d9af28 int3 
+01d9af29 int3 
+01d9af2a int3 
+01d9af2b int3 
+01d9af2c int3 
+01d9af2d int3 
+01d9af2e int3 
+01d9af2f int3 

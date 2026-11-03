@@ -1,0 +1,117 @@
+#### InGame.Utility.KernelUtility::GetPlaneEuler(UnityEngine.Vector3) RVA 1dd70a0 len 5d
+01dd70a0  push     rbx
+01dd70a2  sub      rsp, 0x40
+01dd70a6  movsd    xmm0, qword ptr [rdx]
+01dd70aa  mov      rbx, rcx
+01dd70ad  mov      eax, dword ptr [rdx + 8]
+01dd70b0  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01dd70b5  lea      rdx, [rsp + 0x20]   ; ev.value0
+01dd70ba  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01dd70c0  xor      r8d, r8d
+01dd70c3  mov      dword ptr [rsp + 0x28], eax   ; ev.vectorValue
+01dd70c7  call     0x1dd7270   ; KernelUtility::GetPlaneQuaternion(UnityEngine.Vector3)
+01dd70cc  xor      r8d, r8d
+01dd70cf  lea      rdx, [rsp + 0x30]   ; ._entryFlag
+01dd70d4  lea      rcx, [rsp + 0x20]   ; ev.value0
+01dd70d9  movups   xmm0, xmmword ptr [rax]
+01dd70dc  movaps   xmmword ptr [rsp + 0x30], xmm0   ; ._entryFlag
+01dd70e1  call     0x1dd7100   ; KernelUtility::GetPlaneEuler(UnityEngine.Quaternion)
+01dd70e6  movsd    xmm0, qword ptr [rax]
+01dd70ea  mov      eax, dword ptr [rax + 8]
+01dd70ed  movsd    qword ptr [rbx], xmm0
+01dd70f1  mov      dword ptr [rbx + 8], eax
+01dd70f4  mov      rax, rbx
+01dd70f7  add      rsp, 0x40
+01dd70fb  pop      rbx
+01dd70fc  ret      
+#### InGame.Utility.KernelUtility::GetPlaneEuler(UnityEngine.Quaternion) RVA 1dd7100 len 170
+01dd7100  push     rbx
+01dd7102  sub      rsp, 0x70
+01dd7106  xor      eax, eax
+01dd7108  movaps   xmmword ptr [rsp + 0x60], xmm6   ; ev.subnameValue/._psystemCount
+01dd710d  mov      qword ptr [rcx], rax
+01dd7110  mov      rbx, rcx
+01dd7113  mov      dword ptr [rcx + 8], eax
+01dd7116  xor      r8d, r8d
+01dd7119  movaps   xmmword ptr [rsp + 0x50], xmm7   ; ev.randomFire/._animatorsPlay
+01dd711e  lea      rcx, [rsp + 0x20]   ; ev.value0
+01dd7123  movaps   xmmword ptr [rsp + 0x40], xmm8   ; ev.intValue1/._animators
+01dd7129  call     0x304dee0   ; Quaternion::Internal_ToEulerRad(UnityEngine.Quaternion&)
+01dd712e  movss    xmm2, dword ptr [rip + 0x1709aaa]   ; rdata 34e0be0 f=57.29578,100,180,2000 d=5.277656684e+13
+01dd7136  lea      rdx, [rsp + 0x20]   ; ev.value0
+01dd713b  xor      r8d, r8d
+01dd713e  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01dd7143  movsd    xmm0, qword ptr [rax]
+01dd7147  movss    xmm1, dword ptr [rax + 8]
+01dd714c  movaps   xmm4, xmm0
+01dd714f  movaps   xmm3, xmm0
+01dd7152  mulss    xmm4, xmm2
+01dd7156  shufps   xmm3, xmm3, 0x55
+01dd715a  mulss    xmm3, xmm2
+01dd715e  mulss    xmm1, xmm2
+01dd7162  unpcklps xmm4, xmm3
+01dd7165  movsd    qword ptr [rsp + 0x20], xmm4   ; ev.value0
+01dd716b  movss    dword ptr [rsp + 0x28], xmm1   ; ev.vectorValue
+01dd7171  movsd    qword ptr [rsp + 0x30], xmm0   ; ._entryFlag
+01dd7177  call     0x304dbe0   ; Quaternion::Internal_MakePositive(UnityEngine.Vector3)
+01dd717c  movss    xmm7, dword ptr [rip + 0x1715794]   ; rdata 34ec918 f=360,inf,nan,nan d=1.404448116e+306
+01dd7184  movsd    xmm0, qword ptr [rax]
+01dd7188  mov      eax, dword ptr [rax + 8]
+01dd718b  movsd    qword ptr [rbx], xmm0
+01dd718f  mov      dword ptr [rbx + 8], eax
+01dd7192  movss    xmm6, dword ptr [rbx]
+01dd7196  subss    xmm6, dword ptr [rip + 0x181bbc6]   ; rdata 35f2d64 f=-180,0.9,-75,-400 d=0.002734375675
+01dd719e  movaps   xmm0, xmm6
+01dd71a1  divss    xmm0, xmm7
+01dd71a5  call     0x578740
+01dd71aa  mulss    xmm0, xmm7
+01dd71ae  xorps    xmm8, xmm8
+01dd71b2  subss    xmm6, xmm0
+01dd71b6  comiss   xmm8, xmm6
+01dd71ba  ja       0x1dd71c6
+01dd71bc  comiss   xmm6, xmm7
+01dd71bf  jbe      0x1dd71c9
+01dd71c1  movaps   xmm6, xmm7
+01dd71c4  jmp      0x1dd71c9
+01dd71c6  xorps    xmm6, xmm6
+01dd71c9  subss    xmm6, dword ptr [rip + 0x1709a17]   ; rdata 34e0be8 f=180,2000,-0.0001,-1 d=1.96450476e+24
+01dd71d1  movss    dword ptr [rbx], xmm6
+01dd71d5  movss    xmm6, dword ptr [rbx + 4]
+01dd71da  subss    xmm6, dword ptr [rip + 0x181bb82]   ; rdata 35f2d64 f=-180,0.9,-75,-400 d=0.002734375675
+01dd71e2  movaps   xmm0, xmm6
+01dd71e5  divss    xmm0, xmm7
+01dd71e9  call     0x578740
+01dd71ee  mulss    xmm0, xmm7
+01dd71f2  subss    xmm6, xmm0
+01dd71f6  comiss   xmm8, xmm6
+01dd71fa  ja       0x1dd7206
+01dd71fc  comiss   xmm6, xmm7
+01dd71ff  jbe      0x1dd7209
+01dd7201  movaps   xmm6, xmm7
+01dd7204  jmp      0x1dd7209
+01dd7206  xorps    xmm6, xmm6
+01dd7209  subss    xmm6, dword ptr [rip + 0x17099d7]   ; rdata 34e0be8 f=180,2000,-0.0001,-1 d=1.96450476e+24
+01dd7211  movss    dword ptr [rbx + 4], xmm6
+01dd7216  movss    xmm6, dword ptr [rbx + 8]
+01dd721b  subss    xmm6, dword ptr [rip + 0x181bb41]   ; rdata 35f2d64 f=-180,0.9,-75,-400 d=0.002734375675
+01dd7223  movaps   xmm0, xmm6
+01dd7226  divss    xmm0, xmm7
+01dd722a  call     0x578740
+01dd722f  mulss    xmm0, xmm7
+01dd7233  subss    xmm6, xmm0
+01dd7237  comiss   xmm8, xmm6
+01dd723b  ja       0x1dd7247
+01dd723d  comiss   xmm6, xmm7
+01dd7240  jbe      0x1dd724a
+01dd7242  movaps   xmm6, xmm7
+01dd7245  jmp      0x1dd724a
+01dd7247  xorps    xmm6, xmm6
+01dd724a  subss    xmm6, dword ptr [rip + 0x1709996]   ; rdata 34e0be8 f=180,2000,-0.0001,-1 d=1.96450476e+24
+01dd7252  movaps   xmm7, xmmword ptr [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01dd7257  mov      rax, rbx
+01dd725a  movaps   xmm8, xmmword ptr [rsp + 0x40]   ; ev.intValue1/._animators
+01dd7260  movss    dword ptr [rbx + 8], xmm6
+01dd7265  movaps   xmm6, xmmword ptr [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01dd726a  add      rsp, 0x70
+01dd726e  pop      rbx
+01dd726f  ret      

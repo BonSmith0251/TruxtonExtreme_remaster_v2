@@ -1,0 +1,19 @@
+== UnityEngine.Vector3 InGame.Kernel.Enemy.Ene_BosBase::GetSmallBombPosition() RVA 1d11d20 len 3b
+01d11d20 push       rbx
+01d11d22 sub        rsp, 0x30
+01d11d26 mov        rdx, qword ptr [rdx + 0x50]
+01d11d2a mov        rbx, rcx
+01d11d2d test       rdx, rdx
+01d11d30 je         0x1d11d56
+01d11d32 xor        r8d, r8d
+01d11d35 lea        rcx, [rsp + 0x20]
+01d11d3a call       0x3093ba0 ; UnityEngine.Transform::get_position()
+01d11d3f movsd      xmm0, qword ptr [rax]
+01d11d43 mov        eax, dword ptr [rax + 8]
+01d11d46 movsd      qword ptr [rbx], xmm0
+01d11d4a mov        dword ptr [rbx + 8], eax
+01d11d4d mov        rax, rbx
+01d11d50 add        rsp, 0x30
+01d11d54 pop        rbx
+01d11d55 ret        
+01d11d56 call       0x4e0d00

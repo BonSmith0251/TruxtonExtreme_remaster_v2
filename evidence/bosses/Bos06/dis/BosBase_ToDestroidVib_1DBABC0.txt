@@ -1,0 +1,41 @@
+01dbabc0 push rbx 
+01dbabc2 sub rsp, 0x30 
+01dbabc6 cmp byte ptr [rip + 0x28a8cb2], 0 ; rva=466387f
+01dbabcd mov rbx, rcx 
+01dbabd0 jne 0x1dbabf1 
+01dbabd2 lea rcx, [rip + 0x25fd2bf] ; rva=43b7e98
+01dbabd9 call 0x4e0a50 
+01dbabde lea rcx, [rip + 0x25fd41b] ; rva=43b8000
+01dbabe5 call 0x4e0a50 
+01dbabea mov byte ptr [rip + 0x28a8c8e], 1 ; rva=466387f
+01dbabf1 cmp byte ptr [rbx + 0x1b0], 0 
+01dbabf8 jne 0x1dbac4b 
+01dbabfa mov rcx, qword ptr [rip + 0x25fd297] ; rva=43b7e98
+01dbac01 call 0xd102f0 ; MonoBehaviourSingleton`1::IsInstanceNull()
+01dbac06 test al, al 
+01dbac08 jne 0x1dbac44 
+01dbac0a mov rcx, qword ptr [rip + 0x25fd3ef] ; rva=43b8000
+01dbac11 call 0x27540 
+01dbac16 test rax, rax 
+01dbac19 je 0x1dbac51 
+01dbac1b movss xmm3, dword ptr [rip + 0x1731de9] ; rva=34eca0c f=2
+01dbac23 mov rcx, rax 
+01dbac26 movss xmm2, dword ptr [rip + 0x1725f9e] ; rva=34e0bcc f=1 d=50.12387842
+01dbac2e movss xmm1, dword ptr [rip + 0x1838092] ; rva=35f2cc8 f=0.8 d=0.003671875684
+01dbac36 mov qword ptr [rsp + 0x20], 0 
+01dbac3f call 0x1cee560 ; InGameManager::VibrationPlayer(System.Single,System.Single,System.Single)
+01dbac44 mov byte ptr [rbx + 0x1b0], 1 
+01dbac4b add rsp, 0x30 
+01dbac4f pop rbx 
+01dbac50 ret 
+01dbac51 call 0x4e0d00 
+01dbac56 int3 
+01dbac57 int3 
+01dbac58 int3 
+01dbac59 int3 
+01dbac5a int3 
+01dbac5b int3 
+01dbac5c int3 
+01dbac5d int3 
+01dbac5e int3 
+01dbac5f int3 

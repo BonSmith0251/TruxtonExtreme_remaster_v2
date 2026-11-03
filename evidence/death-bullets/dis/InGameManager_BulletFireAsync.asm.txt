@@ -1,0 +1,69 @@
+01ce2600  mov      qword ptr [rsp + 8], rbx
+01ce2605  mov      qword ptr [rsp + 0x10], rsi
+01ce260a  mov      qword ptr [rsp + 0x18], rdi
+01ce260f  mov      qword ptr [rsp + 0x20], r14   ; ._baseTimeFactor
+01ce2614  push     rbp
+01ce2615  lea      rbp, [rsp - 0x37]
+01ce261a  sub      rsp, 0xa0
+01ce2621  cmp      byte ptr [rip + 0x2980d0a], 0   ; [4663332] bss
+01ce2628  mov      rbx, r9
+01ce262b  mov      rdi, r8
+01ce262e  mov      rsi, rdx
+01ce2631  mov      r14, rcx
+01ce2634  jne      0x1ce2649
+01ce2636  lea      rcx, [rip + 0x26c6773]   ; [43a8db0] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder::Start<.<BulletFireAsync>d__303>
+01ce263d  call     0x4e0a50
+01ce2642  mov      byte ptr [rip + 0x2980ce9], 1   ; [4663332] bss
+01ce2649  xorps    xmm0, xmm0
+01ce264c  lea      rcx, [rbp - 0x41]
+01ce2650  xor      eax, eax
+01ce2652  xor      edx, edx
+01ce2654  movups   xmmword ptr [rbp - 0x49], xmm0
+01ce2658  mov      qword ptr [rbp + 0x27], rax
+01ce265c  movups   xmmword ptr [rbp - 0x39], xmm0
+01ce2660  movups   xmmword ptr [rbp - 0x29], xmm0
+01ce2664  movups   xmmword ptr [rbp - 0x19], xmm0
+01ce2668  movups   xmmword ptr [rbp - 9], xmm0
+01ce266c  movups   xmmword ptr [rbp + 7], xmm0
+01ce2670  movups   xmmword ptr [rbp + 0x17], xmm0
+01ce2674  call     0x4dfd80
+01ce2679  mov      rdx, r14
+01ce267c  mov      qword ptr [rbp - 0x29], r14
+01ce2680  lea      rcx, [rbp - 0x29]
+01ce2684  call     0x4dfd80
+01ce2689  mov      rdx, rsi
+01ce268c  mov      qword ptr [rbp - 0x39], rsi
+01ce2690  lea      rcx, [rbp - 0x39]
+01ce2694  call     0x4dfd80
+01ce2699  movsd    xmm0, qword ptr [rdi]
+01ce269d  lea      rcx, [rbp - 0x21]
+01ce26a1  mov      eax, dword ptr [rdi + 8]
+01ce26a4  mov      rdx, rbx
+01ce26a7  movsd    qword ptr [rbp - 0x19], xmm0
+01ce26ac  mov      dword ptr [rbp - 0x11], eax
+01ce26af  mov      qword ptr [rbp - 0x21], rbx
+01ce26b3  call     0x4dfd80
+01ce26b8  mov      rdx, qword ptr [rbp + 0x67]
+01ce26bc  lea      rcx, [rbp - 0x31]
+01ce26c0  mov      qword ptr [rbp - 0x31], rdx
+01ce26c4  call     0x4dfd80
+01ce26c9  mov      rdx, qword ptr [rbp + 0x6f]
+01ce26cd  lea      rcx, [rbp - 9]
+01ce26d1  mov      qword ptr [rbp - 9], rdx
+01ce26d5  call     0x4dfd80
+01ce26da  movss    xmm0, dword ptr [rbp + 0x77]
+01ce26df  lea      rdx, [rbp - 0x49]
+01ce26e3  mov      r8, qword ptr [rip + 0x26c66c6]   ; [43a8db0] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder::Start<.<BulletFireAsync>d__303>
+01ce26ea  lea      rcx, [rbp - 0x41]
+01ce26ee  movss    dword ptr [rbp - 0xd], xmm0
+01ce26f3  mov      dword ptr [rbp - 0x49], 0xffffffff
+01ce26fa  call     0x742a50
+01ce26ff  lea      r11, [rsp + 0xa0]   ; ._inGameGroundSkyObject
+01ce2707  xor      al, al
+01ce2709  mov      rbx, qword ptr [r11 + 0x10]
+01ce270d  mov      rsi, qword ptr [r11 + 0x18]
+01ce2711  mov      rdi, qword ptr [r11 + 0x20]   ; ._baseTimeFactor
+01ce2715  mov      r14, qword ptr [r11 + 0x28]   ; ._playTimeFactor
+01ce2719  mov      rsp, r11
+01ce271c  pop      rbp
+01ce271d  ret      

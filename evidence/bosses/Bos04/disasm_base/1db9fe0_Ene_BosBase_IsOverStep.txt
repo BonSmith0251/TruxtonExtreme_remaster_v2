@@ -1,0 +1,4 @@
+== System.Boolean InGame.Kernel.Enemy.Ene_BosBase::IsOverStep(InGame.Kernel.Enemy.Ene_BosBase/TimeSteps) RVA 1db9fe0 len a
+01db9fe0 cmp        dword ptr [rcx + 0x224], edx ; ~_currentActStep
+01db9fe6 setge      al
+01db9fe9 ret        

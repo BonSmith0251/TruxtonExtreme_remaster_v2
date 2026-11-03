@@ -1,0 +1,58 @@
+#### InGame.Kernel.Enemy.EnemyMover::StartRouteWithDelay(System.Action,System.Single,System.Single,System.Action) RVA 1d6cc90 len f1
+01d6cc90  mov      qword ptr [rsp + 8], rbx
+01d6cc95  push     rdi
+01d6cc96  sub      rsp, 0x80
+01d6cc9d  cmp      byte ptr [rip + 0x28f6a89], 0   ; [466372d] bss
+01d6cca4  mov      rbx, rdx
+01d6cca7  movaps   xmmword ptr [rsp + 0x70], xmm6   ; ._transformCache
+01d6ccac  mov      rdi, rcx
+01d6ccaf  movaps   xmmword ptr [rsp + 0x60], xmm7   ; ev.subnameValue/._psystemCount
+01d6ccb4  movaps   xmm6, xmm3
+01d6ccb7  movaps   xmm7, xmm2
+01d6ccba  jne      0x1d6cccf
+01d6ccbc  lea      rcx, [rip + 0x263bd65]   ; [43a8a28] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder::Start<.<StartRouteWithDelay>d__8>
+01d6ccc3  call     0x4e0a50
+01d6ccc8  mov      byte ptr [rip + 0x28f6a5e], 1   ; [466372d] bss
+01d6cccf  xor      eax, eax
+01d6ccd1  lea      rcx, [rsp + 0x28]   ; ev.vectorValue
+01d6ccd6  xorps    xmm0, xmm0
+01d6ccd9  mov      qword ptr [rsp + 0x20], rax   ; ev.value0
+01d6ccde  xorps    xmm1, xmm1
+01d6cce1  movdqa   xmmword ptr [rsp + 0x30], xmm0   ; ._entryFlag
+01d6cce7  xor      edx, edx
+01d6cce9  movdqa   xmmword ptr [rsp + 0x40], xmm1   ; ev.intValue1/._animators
+01d6ccef  movdqa   xmmword ptr [rsp + 0x50], xmm0   ; ev.randomFire/._animatorsPlay
+01d6ccf5  mov      qword ptr [rsp + 0x28], rax   ; ev.vectorValue
+01d6ccfa  call     0x4dfd80
+01d6ccff  mov      rdx, rdi
+01d6cd02  mov      qword ptr [rsp + 0x30], rdi   ; ._entryFlag
+01d6cd07  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01d6cd0c  call     0x4dfd80
+01d6cd11  mov      rdx, rbx
+01d6cd14  mov      qword ptr [rsp + 0x48], rbx   ; ev.intValue3/.GameObjectCache
+01d6cd19  lea      rcx, [rsp + 0x48]   ; ev.intValue3/.GameObjectCache
+01d6cd1e  call     0x4dfd80
+01d6cd23  mov      rdx, qword ptr [rsp + 0xb0]   ; ._translateToken
+01d6cd2b  lea      rcx, [rsp + 0x40]   ; ev.intValue1/._animators
+01d6cd30  mov      qword ptr [rsp + 0x40], rdx   ; ev.intValue1/._animators
+01d6cd35  movss    dword ptr [rsp + 0x3c], xmm7
+01d6cd3b  movss    dword ptr [rsp + 0x38], xmm6   ; ev.stringValue/._psystems
+01d6cd41  call     0x4dfd80
+01d6cd46  mov      r8, qword ptr [rip + 0x263bcdb]   ; [43a8a28] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder::Start<.<StartRouteWithDelay>d__8>
+01d6cd4d  lea      rdx, [rsp + 0x20]   ; ev.value0
+01d6cd52  lea      rcx, [rsp + 0x28]   ; ev.vectorValue
+01d6cd57  mov      dword ptr [rsp + 0x20], 0xffffffff   ; ev.value0
+01d6cd5f  call     0x742d90
+01d6cd64  mov      rbx, qword ptr [rsp + 0x90]   ; ._destroyedToken
+01d6cd6c  xor      al, al
+01d6cd6e  movaps   xmm6, xmmword ptr [rsp + 0x70]   ; ._transformCache
+01d6cd73  movaps   xmm7, xmmword ptr [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01d6cd78  add      rsp, 0x80
+01d6cd7f  pop      rdi
+01d6cd80  ret      
+#### InGame.Kernel.Enemy.EnemyMover::StartRoute(System.Action) RVA 1d6cd90 len 17
+01d6cd90  nop      
+01d6cd92  xor      r8d, r8d
+01d6cd95  cmp      byte ptr [rcx + 0x293], r8b   ; ._inAreaStart
+01d6cd9c  jne      0x1d44210
+01d6cda2  jmp      0x1d44600   ; SplineMover::StartRoute(System.Action)

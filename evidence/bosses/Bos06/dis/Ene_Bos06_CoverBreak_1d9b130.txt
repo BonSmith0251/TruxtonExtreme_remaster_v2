@@ -1,0 +1,61 @@
+01d9b130 push rbx 
+01d9b132 sub rsp, 0x40 
+01d9b136 cmp byte ptr [rip + 0x28c86b7], 0 ; rva=46637f4
+01d9b13d mov rbx, rcx 
+01d9b140 jne 0x1d9b155 
+01d9b142 lea rcx, [rip + 0x260721f] ; rva=43a2368
+01d9b149 call 0x4e0a50 
+01d9b14e mov byte ptr [rip + 0x28c869f], 1 ; rva=46637f4
+01d9b155 xor r8d, r8d 
+01d9b158 mov edx, 1 
+01d9b15d mov rcx, rbx 
+01d9b160 call 0x1d0da10 ; PawnEnemy::GetParts(System.Int32)
+01d9b165 test rax, rax 
+01d9b168 je 0x1d9b20c 
+01d9b16e cmp byte ptr [rax + 0x9a], 0 
+01d9b175 jne 0x1d9b20c 
+01d9b17b xor edx, edx 
+01d9b17d cmp dword ptr [rbx + 0x2b0], 2 
+01d9b184 je 0x1d9b196 
+01d9b186 mov dword ptr [rbx + 0x2b0], 2 
+01d9b190 mov dword ptr [rbx + 0x1ec], edx 
+01d9b196 mov rcx, qword ptr [rbx + 0xb8] 
+01d9b19d test rcx, rcx 
+01d9b1a0 je 0x1d9b214 
+01d9b1a2 mov byte ptr [rcx + 0x1d4], dl 
+01d9b1a8 xor r9d, r9d 
+01d9b1ab xor ecx, ecx 
+01d9b1ad mov qword ptr [rsp + 0x28], rdx 
+01d9b1b2 mov qword ptr [rsp + 0x30], rcx 
+01d9b1b7 mov r8b, 1 
+01d9b1ba movsd xmm0, qword ptr [rsp + 0x30] 
+01d9b1c0 mov dword ptr [rsp + 0x38], ecx 
+01d9b1c4 lea rcx, [rsp + 0x30] 
+01d9b1c9 mov qword ptr [rsp + 0x20], rcx 
+01d9b1ce mov rcx, rax 
+01d9b1d1 mov byte ptr [rbx + 0x2c8], 1 
+01d9b1d8 movsd qword ptr [rsp + 0x30], xmm0 
+01d9b1de call 0x1d61850 ; EnePartsGroup::BreakParts(System.Boolean,System.Boolean,System.Boolean,UnityEngine.Vector3)
+01d9b1e3 mov rcx, qword ptr [rip + 0x260717e] ; rva=43a2368
+01d9b1ea cmp dword ptr [rcx + 0xe4], 0 
+01d9b1f1 jne 0x1d9b1f8 
+01d9b1f3 call 0x4e0d90 
+01d9b1f8 xor edx, edx 
+01d9b1fa mov ecx, 0x81 
+01d9b1ff call 0x2723de0 ; SoundUtility::PlayQue(TXEKernel.Sound.SoundUtility/ID)
+01d9b204 mov al, 1 
+01d9b206 add rsp, 0x40 
+01d9b20a pop rbx 
+01d9b20b ret 
+01d9b20c xor al, al 
+01d9b20e add rsp, 0x40 
+01d9b212 pop rbx 
+01d9b213 ret 
+01d9b214 call 0x4e0d00 
+01d9b219 int3 
+01d9b21a int3 
+01d9b21b int3 
+01d9b21c int3 
+01d9b21d int3 
+01d9b21e int3 
+01d9b21f int3 

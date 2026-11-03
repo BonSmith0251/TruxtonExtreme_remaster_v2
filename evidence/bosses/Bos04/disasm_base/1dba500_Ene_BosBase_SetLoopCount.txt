@@ -1,0 +1,16 @@
+== System.Void InGame.Kernel.Enemy.Ene_BosBase::SetLoopCount(System.Int32) RVA 1dba500 len 2c
+01dba500 mov        qword ptr [rsp + 8], rbx
+01dba505 push       rdi
+01dba506 sub        rsp, 0x20
+01dba50a mov        rdi, rcx
+01dba50d mov        ebx, edx
+01dba50f xor        ecx, ecx
+01dba511 call       0x1df1350 ; KANAI.Kernel.RandomUtility::Make()
+01dba516 cdq        
+01dba517 idiv       ebx
+01dba519 mov        rbx, qword ptr [rsp + 0x30]
+01dba51e inc        edx
+01dba520 mov        dword ptr [rdi + 0x1e8], edx ; ~_attackLoopCount
+01dba526 add        rsp, 0x20
+01dba52a pop        rdi
+01dba52b ret        

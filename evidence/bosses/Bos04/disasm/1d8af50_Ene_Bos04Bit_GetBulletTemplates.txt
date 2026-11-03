@@ -1,0 +1,17 @@
+== System.Collections.Generic.List`1<System.String> InGame.Kernel.Enemy.Ene_Bos04Bit::GetBulletTemplates() RVA 1d8af50 len 4e
+01d8af50 sub        rsp, 0x28
+01d8af54 cmp        byte ptr [rip + 0x28d8874], 0 ; [.data 46637cf]
+01d8af5b jne        0x1d8af70
+01d8af5d lea        rcx, [rip + 0x2626944] ; [.data 43b18a8] TypeInfo#37306
+01d8af64 call       0x4e0a50
+01d8af69 mov        byte ptr [rip + 0x28d885f], 1 ; [.data 46637cf]
+01d8af70 mov        rax, qword ptr [rip + 0x2626931] ; [.data 43b18a8] TypeInfo#37306
+01d8af77 cmp        dword ptr [rax + 0xe4], 0
+01d8af7e jne        0x1d8af8f
+01d8af80 mov        rcx, rax
+01d8af83 call       0x4e0d90
+01d8af88 mov        rax, qword ptr [rip + 0x2626919] ; [.data 43b18a8] TypeInfo#37306
+01d8af8f mov        rax, qword ptr [rax + 0xb8] ; ~_mover
+01d8af96 mov        rax, qword ptr [rax]
+01d8af99 add        rsp, 0x28
+01d8af9d ret        

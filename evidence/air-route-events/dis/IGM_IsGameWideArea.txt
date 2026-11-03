@@ -1,0 +1,79 @@
+#### InGame.Kernel.InGameManager::IsGameWideArea(UnityEngine.Vector3) RVA 1ce7bd0 len 163
+01ce7bd0  mov      qword ptr [rsp + 8], rbx
+01ce7bd5  push     rdi
+01ce7bd6  sub      rsp, 0x50
+01ce7bda  cmp      byte ptr [rip + 0x297b736], 0   ; [4663317] bss
+01ce7be1  mov      rdi, rdx
+01ce7be4  mov      rbx, rcx
+01ce7be7  jne      0x1ce7c08
+01ce7be9  lea      rcx, [rip + 0x26f1b28]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01ce7bf0  call     0x4e0a50
+01ce7bf5  lea      rcx, [rip + 0x26a795c]   ; [438f558] TypeInfo UnityEngine.Rect
+01ce7bfc  call     0x4e0a50
+01ce7c01  mov      byte ptr [rip + 0x297b70f], 1   ; [4663317] bss
+01ce7c08  mov      rax, qword ptr [rbx + 0x130]
+01ce7c0f  test     rax, rax
+01ce7c12  je       0x1ce7d2e
+01ce7c18  mov      rdx, qword ptr [rax + 0x70]   ; ._transformCache
+01ce7c1c  test     rdx, rdx
+01ce7c1f  je       0x1ce7d2e
+01ce7c25  movsd    xmm0, qword ptr [rdi]
+01ce7c29  lea      r8, [rsp + 0x20]   ; ev.value0
+01ce7c2e  mov      eax, dword ptr [rdi + 8]
+01ce7c31  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01ce7c36  xor      r9d, r9d
+01ce7c39  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01ce7c3f  movaps   xmmword ptr [rsp + 0x40], xmm6   ; ev.intValue1/._animators
+01ce7c44  mov      dword ptr [rsp + 0x28], eax   ; ev.vectorValue
+01ce7c48  call     0x2fd65a0   ; Camera::WorldToViewportPoint(UnityEngine.Vector3)
+01ce7c4d  mov      rcx, qword ptr [rip + 0x26f1ac4]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01ce7c54  movsd    xmm0, qword ptr [rax]
+01ce7c58  cmp      dword ptr [rcx + 0xe4], 0
+01ce7c5f  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01ce7c65  jne      0x1ce7c6c
+01ce7c67  call     0x4e0d90
+01ce7c6c  mov      rcx, qword ptr [rip + 0x26a78e5]   ; [438f558] TypeInfo UnityEngine.Rect
+01ce7c73  cmp      dword ptr [rcx + 0xe4], 0
+01ce7c7a  jne      0x1ce7c81
+01ce7c7c  call     0x4e0d90
+01ce7c81  cmp      byte ptr [rip + 0x297b707], 0   ; [466338f] bss
+01ce7c88  mov      rax, qword ptr [rip + 0x26f1a89]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01ce7c8f  mov      rbx, qword ptr [rax + 0xb8]   ; ._hormingToken
+01ce7c96  jne      0x1ce7cab
+01ce7c98  lea      rcx, [rip + 0x26a78b9]   ; [438f558] TypeInfo UnityEngine.Rect
+01ce7c9f  call     0x4e0a50
+01ce7ca4  mov      byte ptr [rip + 0x297b6e4], 1   ; [466338f] bss
+01ce7cab  movss    xmm6, dword ptr [rsp + 0x20]   ; ev.value0
+01ce7cb1  comiss   xmm6, dword ptr [rbx + 0x58]   ; ev.nameValue/._particleSpeed
+01ce7cb5  jb       0x1ce7d1c
+01ce7cb7  mov      rcx, qword ptr [rip + 0x26a789a]   ; [438f558] TypeInfo UnityEngine.Rect
+01ce7cbe  cmp      dword ptr [rcx + 0xe4], 0
+01ce7cc5  jne      0x1ce7ccc
+01ce7cc7  call     0x4e0d90
+01ce7ccc  movss    xmm0, dword ptr [rbx + 0x60]   ; ev.subnameValue/._psystemCount
+01ce7cd1  addss    xmm0, dword ptr [rbx + 0x58]   ; ev.nameValue/._particleSpeed
+01ce7cd6  comiss   xmm0, xmm6
+01ce7cd9  jbe      0x1ce7d1c
+01ce7cdb  movss    xmm6, dword ptr [rsp + 0x24]   ; ev.value1
+01ce7ce1  comiss   xmm6, dword ptr [rbx + 0x5c]   ; ._animatorsCount
+01ce7ce5  jb       0x1ce7d1c
+01ce7ce7  mov      rcx, qword ptr [rip + 0x26a786a]   ; [438f558] TypeInfo UnityEngine.Rect
+01ce7cee  cmp      dword ptr [rcx + 0xe4], 0
+01ce7cf5  jne      0x1ce7cfc
+01ce7cf7  call     0x4e0d90
+01ce7cfc  movss    xmm0, dword ptr [rbx + 0x64]   ; ._withRenderer
+01ce7d01  addss    xmm0, dword ptr [rbx + 0x5c]   ; ._animatorsCount
+01ce7d06  comiss   xmm0, xmm6
+01ce7d09  movaps   xmm6, xmmword ptr [rsp + 0x40]   ; ev.intValue1/._animators
+01ce7d0e  seta     al
+01ce7d11  mov      rbx, qword ptr [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01ce7d16  add      rsp, 0x50
+01ce7d1a  pop      rdi
+01ce7d1b  ret      
+01ce7d1c  xor      eax, eax
+01ce7d1e  movaps   xmm6, xmmword ptr [rsp + 0x40]   ; ev.intValue1/._animators
+01ce7d23  mov      rbx, qword ptr [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01ce7d28  add      rsp, 0x50
+01ce7d2c  pop      rdi
+01ce7d2d  ret      
+01ce7d2e  call     0x4e0d00

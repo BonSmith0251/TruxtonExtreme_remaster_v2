@@ -1,0 +1,62 @@
+01df6af0 push rbx 
+01df6af2 sub rsp, 0x60 
+01df6af6 cmp byte ptr [rip + 0x286cf5e], 0 ; rva=4663a5b
+01df6afd mov rbx, rcx 
+01df6b00 movaps xmmword ptr [rsp + 0x50], xmm6 
+01df6b05 movaps xmmword ptr [rsp + 0x40], xmm7 
+01df6b0a movaps xmm7, xmm1 
+01df6b0d movaps xmmword ptr [rsp + 0x30], xmm8 
+01df6b13 movaps xmm8, xmm3 
+01df6b17 movaps xmmword ptr [rsp + 0x20], xmm9 
+01df6b1d movaps xmm9, xmm2 
+01df6b21 jne 0x1df6b36 
+01df6b23 lea rcx, [rip + 0x25cb89e] ; rva=43c23c8
+01df6b2a call 0x4e0a50 
+01df6b2f mov byte ptr [rip + 0x286cf25], 1 ; rva=4663a5b
+01df6b36 xorps xmm0, xmm0 
+01df6b39 comiss xmm0, xmm7 
+01df6b3c ja 0x1df6b50 
+01df6b3e movss xmm0, dword ptr [rip + 0x16ea086] ; rva=34e0bcc f=1 d=50.12387842
+01df6b46 comiss xmm7, xmm0 
+01df6b49 jbe 0x1df6b53 
+01df6b4b movaps xmm7, xmm0 
+01df6b4e jmp 0x1df6b53 
+01df6b50 xorps xmm7, xmm7 
+01df6b53 mov rcx, qword ptr [rip + 0x25cb86e] ; rva=43c23c8
+01df6b5a mulss xmm7, dword ptr [rip + 0x16f5db6] ; rva=34ec918 f=360
+01df6b62 cmp dword ptr [rcx + 0xe4], 0 
+01df6b69 addss xmm7, dword ptr [rip + 0x16f5e37] ; rva=34ec9a8 f=90
+01df6b71 jne 0x1df6b78 
+01df6b73 call 0x4e0d90 
+01df6b78 xor edx, edx 
+01df6b7a movaps xmm0, xmm7 
+01df6b7d call 0x1df6fa0 ; VectorUtility::Cosf(System.Single)
+01df6b82 movaps xmm6, xmm0 
+01df6b85 xor edx, edx 
+01df6b87 movaps xmm0, xmm7 
+01df6b8a call 0x1df8a70 ; VectorUtility::Sinf(System.Single)
+01df6b8f movaps xmm7, xmmword ptr [rsp + 0x40] 
+01df6b94 movaps xmm1, xmm8 
+01df6b98 xorps xmm1, xmmword ptr [rip + 0x16ea071] ; rva=34e0c10 f=-0
+01df6b9f mov rax, rbx 
+01df6ba2 mulss xmm6, xmm9 
+01df6ba7 mov dword ptr [rbx + 4], 0 
+01df6bae movaps xmm9, xmmword ptr [rsp + 0x20] 
+01df6bb4 mulss xmm1, xmm0 
+01df6bb8 movss dword ptr [rbx], xmm6 
+01df6bbc movaps xmm6, xmmword ptr [rsp + 0x50] 
+01df6bc1 addss xmm1, xmm8 
+01df6bc6 movaps xmm8, xmmword ptr [rsp + 0x30] 
+01df6bcc movss dword ptr [rbx + 8], xmm1 
+01df6bd1 add rsp, 0x60 
+01df6bd5 pop rbx 
+01df6bd6 ret 
+01df6bd7 int3 
+01df6bd8 int3 
+01df6bd9 int3 
+01df6bda int3 
+01df6bdb int3 
+01df6bdc int3 
+01df6bdd int3 
+01df6bde int3 
+01df6bdf int3 

@@ -1,0 +1,6034 @@
+{
+ "name": "Shader Graphs/sg_emission_FlickerDepth",
+ "bundle": "defaultlocalgroup_assets_all_d58d8015662a6b04bca842fe72e2a7e1.bundle",
+ "path_id": "-4898627398383840081",
+ "keywordNames": [
+  "STEREO_INSTANCING_ON",
+  "UNITY_SINGLE_PASS_STEREO",
+  "STEREO_MULTIVIEW_ON",
+  "STEREO_CUBEMAP_RENDER_ON",
+  "DOTS_INSTANCING_ON",
+  "LIGHTMAP_ON",
+  "DYNAMICLIGHTMAP_ON",
+  "DIRLIGHTMAP_COMBINED",
+  "_MAIN_LIGHT_SHADOWS",
+  "_MAIN_LIGHT_SHADOWS_CASCADE",
+  "_MAIN_LIGHT_SHADOWS_SCREEN",
+  "_ADDITIONAL_LIGHTS_VERTEX",
+  "_ADDITIONAL_LIGHTS",
+  "LIGHTMAP_SHADOW_MIXING",
+  "SHADOWS_SHADOWMASK",
+  "_CLUSTER_LIGHT_LOOP",
+  "INSTANCING_ON",
+  "FOG_LINEAR",
+  "FOG_EXP",
+  "FOG_EXP2",
+  "_SCREEN_SPACE_OCCLUSION",
+  "_ADDITIONAL_LIGHT_SHADOWS",
+  "_REFLECTION_PROBE_BLENDING",
+  "_REFLECTION_PROBE_BOX_PROJECTION",
+  "_SHADOWS_SOFT",
+  "_DBUFFER_MRT1",
+  "_DBUFFER_MRT2",
+  "_DBUFFER_MRT3",
+  "_LIGHT_LAYERS",
+  "DEBUG_DISPLAY",
+  "_LIGHT_COOKIES",
+  "_WRITE_RENDERING_LAYERS",
+  "_MIXED_LIGHTING_SUBTRACTIVE",
+  "_GBUFFER_NORMALS_OCT",
+  "_RENDER_PASS_ENABLED",
+  "_CASTING_PUNCTUAL_LIGHT_SHADOW",
+  "EDITOR_VISUALIZATION"
+ ],
+ "passes": [
+  {
+   "label": "0_0_Universal_Forward",
+   "name": "Universal Forward",
+   "useName": "",
+   "tags": {
+    "DisableBatching": "False",
+    "LIGHTMODE": "UniversalForward",
+    "QUEUE": "Geometry",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Opaque",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalLitSubTarget",
+    "UniversalMaterialType": "Lit"
+   },
+   "subShaderTags": {
+    "DisableBatching": "False",
+    "QUEUE": "Geometry",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Opaque",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalLitSubTarget",
+    "UniversalMaterialType": "Lit"
+   },
+   "lod": 0,
+   "state": {
+    "blend": [
+     1.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    "blendOp": [
+     0.0,
+     0.0
+    ],
+    "colMask": 15.0,
+    "zTest": 4.0,
+    "zWrite": 1.0,
+    "culling": 2.0,
+    "offsetFactor": 0.0,
+    "offsetUnits": 0.0,
+    "stencilRef": 0.0,
+    "stencilComp": 8.0,
+    "stencilPass": 0.0,
+    "stencilFail": 0.0,
+    "stencilZFail": 0.0,
+    "stencilReadMask": 255.0,
+    "stencilWriteMask": 255.0
+   },
+   "programs": {
+    "vs": [
+     {
+      "blob": 2,
+      "params": 0,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS"
+      ]
+     },
+     {
+      "blob": 3,
+      "params": 0,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 4,
+      "params": 0,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 5,
+      "params": 0,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 6,
+      "params": 1,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS"
+      ]
+     },
+     {
+      "blob": 7,
+      "params": 1,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 8,
+      "params": 1,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 9,
+      "params": 1,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 10,
+      "params": 1,
+      "keywords": [
+       "_ADDITIONAL_LIGHTS"
+      ]
+     },
+     {
+      "blob": 11,
+      "params": 1,
+      "keywords": [
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 12,
+      "params": 1,
+      "keywords": [
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 13,
+      "params": 1,
+      "keywords": [
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2"
+      ]
+     }
+    ],
+    "ps": [
+     {
+      "blob": 50,
+      "params": 14,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 51,
+      "params": 15,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 52,
+      "params": 15,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 53,
+      "params": 15,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 54,
+      "params": 16,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 55,
+      "params": 17,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 56,
+      "params": 17,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 57,
+      "params": 17,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 58,
+      "params": 18,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 59,
+      "params": 19,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 60,
+      "params": 19,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 61,
+      "params": 19,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 62,
+      "params": 20,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 63,
+      "params": 21,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 64,
+      "params": 21,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 65,
+      "params": 21,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 66,
+      "params": 22,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 67,
+      "params": 23,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 68,
+      "params": 23,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 69,
+      "params": 23,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 70,
+      "params": 24,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 71,
+      "params": 25,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 72,
+      "params": 25,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 73,
+      "params": 25,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 74,
+      "params": 26,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 75,
+      "params": 27,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 76,
+      "params": 27,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 77,
+      "params": 27,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 78,
+      "params": 28,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 79,
+      "params": 29,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 80,
+      "params": 29,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 81,
+      "params": 29,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 82,
+      "params": 30,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 83,
+      "params": 31,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 84,
+      "params": 31,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 85,
+      "params": 31,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 86,
+      "params": 32,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 87,
+      "params": 33,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 88,
+      "params": 33,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 89,
+      "params": 33,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 90,
+      "params": 34,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 91,
+      "params": 35,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 92,
+      "params": 35,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 93,
+      "params": 35,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 94,
+      "params": 36,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 95,
+      "params": 37,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 96,
+      "params": 37,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 97,
+      "params": 37,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 98,
+      "params": 38,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 99,
+      "params": 39,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 100,
+      "params": 39,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 101,
+      "params": 39,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 102,
+      "params": 40,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 103,
+      "params": 41,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 104,
+      "params": 41,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 105,
+      "params": 41,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 106,
+      "params": 42,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 107,
+      "params": 43,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 108,
+      "params": 43,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 109,
+      "params": 43,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 110,
+      "params": 44,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 111,
+      "params": 45,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 112,
+      "params": 45,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 113,
+      "params": 45,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 114,
+      "params": 46,
+      "keywords": [
+       "_ADDITIONAL_LIGHTS"
+      ]
+     },
+     {
+      "blob": 115,
+      "params": 47,
+      "keywords": [
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 116,
+      "params": 47,
+      "keywords": [
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 117,
+      "params": 47,
+      "keywords": [
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 118,
+      "params": 48,
+      "keywords": [
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 119,
+      "params": 48,
+      "keywords": [
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 120,
+      "params": 48,
+      "keywords": [
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 121,
+      "params": 49,
+      "keywords": [
+       "_ADDITIONAL_LIGHTS",
+       "_LIGHT_COOKIES"
+      ]
+     }
+    ]
+   },
+   "bindings": {
+    "vs": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 2112,
+       "members": [
+        {
+         "name": "unity_MatrixVP",
+         "offset": 1264,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDraw",
+       "slot": 1,
+       "size": 752,
+       "members": [
+        {
+         "name": "unity_ObjectToWorld",
+         "offset": 0,
+         "matrix": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_WorldToObject",
+         "offset": 64,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerMaterial",
+       "slot": null,
+       "size": 160,
+       "members": [
+        {
+         "name": "_Shifter",
+         "offset": 144,
+         "dim": 1,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    },
+    "ps": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 2112,
+       "members": [
+        {
+         "name": "_GlobalMipBias",
+         "offset": 64,
+         "dim": 2,
+         "array": 0
+        },
+        {
+         "name": "_MainLightPosition",
+         "offset": 80,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "_MainLightColor",
+         "offset": 96,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "_AdditionalLightsCount",
+         "offset": 160,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "_TimeParameters",
+         "offset": 304,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "_WorldSpaceCameraPos",
+         "offset": 336,
+         "dim": 3,
+         "array": 0
+        },
+        {
+         "name": "unity_OrthoParams",
+         "offset": 400,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_MatrixV",
+         "offset": 1072,
+         "matrix": 4,
+         "array": 0
+        },
+        {
+         "name": "_Tx_SpeedRate",
+         "offset": 2096,
+         "dim": 1,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "AdditionalLights",
+       "slot": 1,
+       "size": 24576,
+       "members": [
+        {
+         "name": "_AdditionalLightsPosition",
+         "offset": 0,
+         "dim": 4,
+         "array": 256
+        },
+        {
+         "name": "_AdditionalLightsColor",
+         "offset": 4096,
+         "dim": 4,
+         "array": 256
+        },
+        {
+         "name": "_AdditionalLightsAttenuation",
+         "offset": 8192,
+         "dim": 4,
+         "array": 256
+        },
+        {
+         "name": "_AdditionalLightsSpotDir",
+         "offset": 12288,
+         "dim": 4,
+         "array": 256
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDraw",
+       "slot": 2,
+       "size": 752,
+       "members": [
+        {
+         "name": "unity_WorldTransformParams",
+         "offset": 144,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_LightData",
+         "offset": 176,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_LightIndices",
+         "offset": 192,
+         "dim": 4,
+         "array": 2
+        },
+        {
+         "name": "unity_SpecCube0_HDR",
+         "offset": 240,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_SHAr",
+         "offset": 432,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_SHAg",
+         "offset": 448,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_SHAb",
+         "offset": 464,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_SHBr",
+         "offset": 480,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_SHBg",
+         "offset": 496,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_SHBb",
+         "offset": 512,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_SHC",
+         "offset": 528,
+         "dim": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerMaterial",
+       "slot": null,
+       "size": 160,
+       "members": [
+        {
+         "name": "_FlickerSpeed",
+         "offset": 0,
+         "dim": 1,
+         "array": 0
+        },
+        {
+         "name": "_EmissionColir",
+         "offset": 32,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "_MaskPower",
+         "offset": 48,
+         "dim": 1,
+         "array": 0
+        },
+        {
+         "name": "_Smoothness",
+         "offset": 96,
+         "dim": 1,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    }
+   }
+  },
+  {
+   "label": "0_1_GBuffer",
+   "name": "GBuffer",
+   "useName": "",
+   "tags": {
+    "DisableBatching": "False",
+    "LIGHTMODE": "UniversalGBuffer",
+    "QUEUE": "Geometry",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Opaque",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalLitSubTarget",
+    "UniversalMaterialType": "Lit"
+   },
+   "subShaderTags": {
+    "DisableBatching": "False",
+    "QUEUE": "Geometry",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Opaque",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalLitSubTarget",
+    "UniversalMaterialType": "Lit"
+   },
+   "lod": 0,
+   "state": {
+    "blend": [
+     1.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    "blendOp": [
+     0.0,
+     0.0
+    ],
+    "colMask": 15.0,
+    "zTest": 4.0,
+    "zWrite": 1.0,
+    "culling": 2.0,
+    "offsetFactor": 0.0,
+    "offsetUnits": 0.0,
+    "stencilRef": 0.0,
+    "stencilComp": 8.0,
+    "stencilPass": 0.0,
+    "stencilFail": 0.0,
+    "stencilZFail": 0.0,
+    "stencilReadMask": 255.0,
+    "stencilWriteMask": 255.0
+   },
+   "programs": {
+    "vs": [
+     {
+      "blob": 124,
+      "params": 122,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS"
+      ]
+     },
+     {
+      "blob": 125,
+      "params": 122,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 126,
+      "params": 122,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 127,
+      "params": 122,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 128,
+      "params": 122,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_MIXED_LIGHTING_SUBTRACTIVE"
+      ]
+     },
+     {
+      "blob": 129,
+      "params": 122,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_LINEAR",
+       "_MIXED_LIGHTING_SUBTRACTIVE"
+      ]
+     },
+     {
+      "blob": 130,
+      "params": 122,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_EXP",
+       "_MIXED_LIGHTING_SUBTRACTIVE"
+      ]
+     },
+     {
+      "blob": 131,
+      "params": 122,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_EXP2",
+       "_MIXED_LIGHTING_SUBTRACTIVE"
+      ]
+     },
+     {
+      "blob": 132,
+      "params": 123,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE"
+      ]
+     },
+     {
+      "blob": 133,
+      "params": 123,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 134,
+      "params": 123,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 135,
+      "params": 123,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 136,
+      "params": 123,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_MIXED_LIGHTING_SUBTRACTIVE"
+      ]
+     },
+     {
+      "blob": 137,
+      "params": 123,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_LINEAR",
+       "_MIXED_LIGHTING_SUBTRACTIVE"
+      ]
+     },
+     {
+      "blob": 138,
+      "params": 123,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_EXP",
+       "_MIXED_LIGHTING_SUBTRACTIVE"
+      ]
+     },
+     {
+      "blob": 139,
+      "params": 123,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_EXP2",
+       "_MIXED_LIGHTING_SUBTRACTIVE"
+      ]
+     },
+     {
+      "blob": 140,
+      "params": 123,
+      "keywords": []
+     },
+     {
+      "blob": 141,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 142,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 143,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 144,
+      "params": 123,
+      "keywords": [
+       "_MIXED_LIGHTING_SUBTRACTIVE"
+      ]
+     },
+     {
+      "blob": 145,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR",
+       "_MIXED_LIGHTING_SUBTRACTIVE"
+      ]
+     },
+     {
+      "blob": 146,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP",
+       "_MIXED_LIGHTING_SUBTRACTIVE"
+      ]
+     },
+     {
+      "blob": 147,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP2",
+       "_MIXED_LIGHTING_SUBTRACTIVE"
+      ]
+     }
+    ],
+    "ps": [
+     {
+      "blob": 152,
+      "params": 148,
+      "keywords": [
+       "FOG_EXP2",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 153,
+      "params": 148,
+      "keywords": [
+       "FOG_EXP",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 154,
+      "params": 148,
+      "keywords": [
+       "FOG_LINEAR",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 155,
+      "params": 148,
+      "keywords": [
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 156,
+      "params": 148,
+      "keywords": [
+       "FOG_EXP2",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 157,
+      "params": 148,
+      "keywords": [
+       "FOG_EXP",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 158,
+      "params": 148,
+      "keywords": [
+       "FOG_LINEAR",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 159,
+      "params": 148,
+      "keywords": [
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 160,
+      "params": 149,
+      "keywords": [
+       "FOG_EXP2",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 161,
+      "params": 149,
+      "keywords": [
+       "FOG_EXP",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 162,
+      "params": 149,
+      "keywords": [
+       "FOG_LINEAR",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 163,
+      "params": 149,
+      "keywords": [
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 164,
+      "params": 149,
+      "keywords": [
+       "FOG_EXP2",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 165,
+      "params": 149,
+      "keywords": [
+       "FOG_EXP",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 166,
+      "params": 149,
+      "keywords": [
+       "FOG_LINEAR",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 167,
+      "params": 149,
+      "keywords": [
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 168,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_EXP2",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 169,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_EXP",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 170,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_LINEAR",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 171,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 172,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_EXP2",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 173,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_EXP",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 174,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_LINEAR",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 175,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 176,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_EXP2",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 177,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_EXP",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 178,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_LINEAR",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 179,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 180,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_EXP2",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 181,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_EXP",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 182,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_LINEAR",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 183,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 184,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 185,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_LINEAR",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 186,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_EXP",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 187,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_EXP2",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 188,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 189,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_LINEAR",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 190,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_EXP",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 191,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_EXP2",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 192,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 193,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_LINEAR",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 194,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_EXP",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 195,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_EXP2",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 196,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 197,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_LINEAR",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 198,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_EXP",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 199,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_EXP2",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 200,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 201,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_LINEAR",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 202,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_EXP",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 203,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_EXP2",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 204,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 205,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_LINEAR",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 206,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_EXP",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 207,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_EXP2",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 208,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 209,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_LINEAR",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 210,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_EXP",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 211,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_EXP2",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 212,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 213,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_LINEAR",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 214,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_EXP",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 215,
+      "params": 150,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_EXP2",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT",
+       "_RENDER_PASS_ENABLED"
+      ]
+     },
+     {
+      "blob": 216,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_EXP2",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 217,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_EXP",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 218,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_LINEAR",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 219,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 220,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_EXP2",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 221,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_EXP",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 222,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "FOG_LINEAR",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 223,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 224,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_EXP2",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 225,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_EXP",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 226,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_LINEAR",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 227,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_MIXED_LIGHTING_SUBTRACTIVE",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 228,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_EXP2",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 229,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_EXP",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 230,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "FOG_LINEAR",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     },
+     {
+      "blob": 231,
+      "params": 151,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_GBUFFER_NORMALS_OCT"
+      ]
+     }
+    ]
+   },
+   "bindings": {
+    "vs": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 2112,
+       "members": [
+        {
+         "name": "unity_MatrixVP",
+         "offset": 1264,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDraw",
+       "slot": 1,
+       "size": 752,
+       "members": [
+        {
+         "name": "unity_ObjectToWorld",
+         "offset": 0,
+         "matrix": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_WorldToObject",
+         "offset": 64,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    },
+    "ps": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 2176,
+       "members": [
+        {
+         "name": "_GlobalMipBias",
+         "offset": 64,
+         "dim": 2,
+         "array": 0
+        },
+        {
+         "name": "_TimeParameters",
+         "offset": 304,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "_WorldSpaceCameraPos",
+         "offset": 336,
+         "dim": 3,
+         "array": 0
+        },
+        {
+         "name": "unity_OrthoParams",
+         "offset": 400,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_MatrixV",
+         "offset": 1072,
+         "matrix": 4,
+         "array": 0
+        },
+        {
+         "name": "_Tx_SpeedRate",
+         "offset": 2096,
+         "dim": 1,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDraw",
+       "slot": 1,
+       "size": 752,
+       "members": [
+        {
+         "name": "unity_WorldTransformParams",
+         "offset": 144,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_SpecCube0_HDR",
+         "offset": 240,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_SHAr",
+         "offset": 432,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_SHAg",
+         "offset": 448,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_SHAb",
+         "offset": 464,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_SHBr",
+         "offset": 480,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_SHBg",
+         "offset": 496,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_SHBb",
+         "offset": 512,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_SHC",
+         "offset": 528,
+         "dim": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerMaterial",
+       "slot": 2,
+       "size": 160,
+       "members": [
+        {
+         "name": "_FlickerSpeed",
+         "offset": 0,
+         "dim": 1,
+         "array": 0
+        },
+        {
+         "name": "_EmissionColir",
+         "offset": 32,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "_MaskPower",
+         "offset": 48,
+         "dim": 1,
+         "array": 0
+        },
+        {
+         "name": "_Smoothness",
+         "offset": 96,
+         "dim": 1,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    }
+   }
+  },
+  {
+   "label": "0_2_ShadowCaster",
+   "name": "ShadowCaster",
+   "useName": "",
+   "tags": {
+    "DisableBatching": "False",
+    "LIGHTMODE": "SHADOWCASTER",
+    "QUEUE": "Geometry",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Opaque",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalLitSubTarget",
+    "UniversalMaterialType": "Lit"
+   },
+   "subShaderTags": {
+    "DisableBatching": "False",
+    "QUEUE": "Geometry",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Opaque",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalLitSubTarget",
+    "UniversalMaterialType": "Lit"
+   },
+   "lod": 0,
+   "state": {
+    "blend": [
+     1.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    "blendOp": [
+     0.0,
+     0.0
+    ],
+    "colMask": 0.0,
+    "zTest": 4.0,
+    "zWrite": 1.0,
+    "culling": 2.0,
+    "offsetFactor": 0.0,
+    "offsetUnits": 0.0,
+    "stencilRef": 0.0,
+    "stencilComp": 8.0,
+    "stencilPass": 0.0,
+    "stencilFail": 0.0,
+    "stencilZFail": 0.0,
+    "stencilReadMask": 255.0,
+    "stencilWriteMask": 255.0
+   },
+   "programs": {
+    "vs": [
+     {
+      "blob": 234,
+      "params": 232,
+      "keywords": []
+     },
+     {
+      "blob": 235,
+      "params": 232,
+      "keywords": [
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 236,
+      "params": 232,
+      "keywords": [
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 237,
+      "params": 232,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 238,
+      "params": 232,
+      "keywords": [
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 239,
+      "params": 232,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 240,
+      "params": 232,
+      "keywords": [
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 241,
+      "params": 232,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 242,
+      "params": 233,
+      "keywords": [
+       "_CASTING_PUNCTUAL_LIGHT_SHADOW"
+      ]
+     },
+     {
+      "blob": 243,
+      "params": 233,
+      "keywords": [
+       "FOG_LINEAR",
+       "_CASTING_PUNCTUAL_LIGHT_SHADOW"
+      ]
+     },
+     {
+      "blob": 244,
+      "params": 233,
+      "keywords": [
+       "FOG_EXP2",
+       "_CASTING_PUNCTUAL_LIGHT_SHADOW"
+      ]
+     },
+     {
+      "blob": 245,
+      "params": 233,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP2",
+       "_CASTING_PUNCTUAL_LIGHT_SHADOW"
+      ]
+     },
+     {
+      "blob": 246,
+      "params": 233,
+      "keywords": [
+       "FOG_EXP",
+       "_CASTING_PUNCTUAL_LIGHT_SHADOW"
+      ]
+     },
+     {
+      "blob": 247,
+      "params": 233,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP",
+       "_CASTING_PUNCTUAL_LIGHT_SHADOW"
+      ]
+     },
+     {
+      "blob": 248,
+      "params": 233,
+      "keywords": [
+       "FOG_EXP",
+       "FOG_EXP2",
+       "_CASTING_PUNCTUAL_LIGHT_SHADOW"
+      ]
+     },
+     {
+      "blob": 249,
+      "params": 233,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP",
+       "FOG_EXP2",
+       "_CASTING_PUNCTUAL_LIGHT_SHADOW"
+      ]
+     }
+    ],
+    "ps": [
+     {
+      "blob": 251,
+      "params": 250,
+      "keywords": []
+     },
+     {
+      "blob": 252,
+      "params": 250,
+      "keywords": [
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 253,
+      "params": 250,
+      "keywords": [
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 254,
+      "params": 250,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 255,
+      "params": 250,
+      "keywords": [
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 256,
+      "params": 250,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 257,
+      "params": 250,
+      "keywords": [
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 258,
+      "params": 250,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     }
+    ]
+   },
+   "bindings": {
+    "vs": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 2128,
+       "members": [
+        {
+         "name": "unity_MatrixVP",
+         "offset": 1264,
+         "matrix": 4,
+         "array": 0
+        },
+        {
+         "name": "_ShadowBias",
+         "offset": 2080,
+         "dim": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDraw",
+       "slot": 1,
+       "size": 752,
+       "members": [
+        {
+         "name": "unity_ObjectToWorld",
+         "offset": 0,
+         "matrix": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_WorldToObject",
+         "offset": 64,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    },
+    "ps": {
+     "constantBuffers": [],
+     "textures": [],
+     "samplers": []
+    }
+   }
+  },
+  {
+   "label": "0_3_DepthOnly",
+   "name": "DepthOnly",
+   "useName": "",
+   "tags": {
+    "DisableBatching": "False",
+    "LIGHTMODE": "DepthOnly",
+    "QUEUE": "Geometry",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Opaque",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalLitSubTarget",
+    "UniversalMaterialType": "Lit"
+   },
+   "subShaderTags": {
+    "DisableBatching": "False",
+    "QUEUE": "Geometry",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Opaque",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalLitSubTarget",
+    "UniversalMaterialType": "Lit"
+   },
+   "lod": 0,
+   "state": {
+    "blend": [
+     1.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    "blendOp": [
+     0.0,
+     0.0
+    ],
+    "colMask": 8.0,
+    "zTest": 4.0,
+    "zWrite": 1.0,
+    "culling": 2.0,
+    "offsetFactor": 0.0,
+    "offsetUnits": 0.0,
+    "stencilRef": 0.0,
+    "stencilComp": 8.0,
+    "stencilPass": 0.0,
+    "stencilFail": 0.0,
+    "stencilZFail": 0.0,
+    "stencilReadMask": 255.0,
+    "stencilWriteMask": 255.0
+   },
+   "programs": {
+    "vs": [
+     {
+      "blob": 260,
+      "params": 259,
+      "keywords": []
+     },
+     {
+      "blob": 261,
+      "params": 259,
+      "keywords": [
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 262,
+      "params": 259,
+      "keywords": [
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 263,
+      "params": 259,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 264,
+      "params": 259,
+      "keywords": [
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 265,
+      "params": 259,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 266,
+      "params": 259,
+      "keywords": [
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 267,
+      "params": 259,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     }
+    ],
+    "ps": [
+     {
+      "blob": 268,
+      "params": 250,
+      "keywords": []
+     },
+     {
+      "blob": 269,
+      "params": 250,
+      "keywords": [
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 270,
+      "params": 250,
+      "keywords": [
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 271,
+      "params": 250,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 272,
+      "params": 250,
+      "keywords": [
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 273,
+      "params": 250,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 274,
+      "params": 250,
+      "keywords": [
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 275,
+      "params": 250,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     }
+    ]
+   },
+   "bindings": {
+    "vs": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 2112,
+       "members": [
+        {
+         "name": "unity_MatrixVP",
+         "offset": 1264,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDraw",
+       "slot": 1,
+       "size": 752,
+       "members": [
+        {
+         "name": "unity_ObjectToWorld",
+         "offset": 0,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerMaterial",
+       "slot": 2,
+       "size": 160,
+       "members": [
+        {
+         "name": "_Shifter",
+         "offset": 144,
+         "dim": 1,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    },
+    "ps": {
+     "constantBuffers": [],
+     "textures": [],
+     "samplers": []
+    }
+   }
+  },
+  {
+   "label": "0_4_DepthNormals",
+   "name": "DepthNormals",
+   "useName": "",
+   "tags": {
+    "DisableBatching": "False",
+    "LIGHTMODE": "DepthNormals",
+    "QUEUE": "Geometry",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Opaque",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalLitSubTarget",
+    "UniversalMaterialType": "Lit"
+   },
+   "subShaderTags": {
+    "DisableBatching": "False",
+    "QUEUE": "Geometry",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Opaque",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalLitSubTarget",
+    "UniversalMaterialType": "Lit"
+   },
+   "lod": 0,
+   "state": {
+    "blend": [
+     1.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    "blendOp": [
+     0.0,
+     0.0
+    ],
+    "colMask": 15.0,
+    "zTest": 4.0,
+    "zWrite": 1.0,
+    "culling": 2.0,
+    "offsetFactor": 0.0,
+    "offsetUnits": 0.0,
+    "stencilRef": 0.0,
+    "stencilComp": 8.0,
+    "stencilPass": 0.0,
+    "stencilFail": 0.0,
+    "stencilZFail": 0.0,
+    "stencilReadMask": 255.0,
+    "stencilWriteMask": 255.0
+   },
+   "programs": {
+    "vs": [
+     {
+      "blob": 276,
+      "params": 123,
+      "keywords": []
+     },
+     {
+      "blob": 277,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 278,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 279,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 280,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 281,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 282,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 283,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     }
+    ],
+    "ps": [
+     {
+      "blob": 284,
+      "params": 123,
+      "keywords": []
+     },
+     {
+      "blob": 285,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 286,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 287,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 288,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 289,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 290,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 291,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     }
+    ]
+   },
+   "bindings": {
+    "vs": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 2112,
+       "members": [
+        {
+         "name": "unity_MatrixVP",
+         "offset": 1264,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDraw",
+       "slot": 1,
+       "size": 752,
+       "members": [
+        {
+         "name": "unity_ObjectToWorld",
+         "offset": 0,
+         "matrix": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_WorldToObject",
+         "offset": 64,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    },
+    "ps": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 2112,
+       "members": [
+        {
+         "name": "_GlobalMipBias",
+         "offset": 64,
+         "dim": 2,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDraw",
+       "slot": 1,
+       "size": 752,
+       "members": [
+        {
+         "name": "unity_WorldTransformParams",
+         "offset": 144,
+         "dim": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [
+      {
+       "name": "_Tx_Normal",
+       "register": 0,
+       "sampler": 0,
+       "dim": 2
+      }
+     ],
+     "samplers": []
+    }
+   }
+  },
+  {
+   "label": "0_5_Universal2D",
+   "name": "",
+   "useName": "",
+   "tags": {
+    "DisableBatching": "False",
+    "LIGHTMODE": "Universal2D",
+    "QUEUE": "Geometry",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Opaque",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalLitSubTarget",
+    "UniversalMaterialType": "Lit"
+   },
+   "subShaderTags": {
+    "DisableBatching": "False",
+    "QUEUE": "Geometry",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Opaque",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalLitSubTarget",
+    "UniversalMaterialType": "Lit"
+   },
+   "lod": 0,
+   "state": {
+    "blend": [
+     1.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    "blendOp": [
+     0.0,
+     0.0
+    ],
+    "colMask": 15.0,
+    "zTest": 4.0,
+    "zWrite": 1.0,
+    "culling": 2.0,
+    "offsetFactor": 0.0,
+    "offsetUnits": 0.0,
+    "stencilRef": 0.0,
+    "stencilComp": 8.0,
+    "stencilPass": 0.0,
+    "stencilFail": 0.0,
+    "stencilZFail": 0.0,
+    "stencilReadMask": 255.0,
+    "stencilWriteMask": 255.0
+   },
+   "programs": {
+    "vs": [
+     {
+      "blob": 292,
+      "params": 123,
+      "keywords": []
+     },
+     {
+      "blob": 293,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 294,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 295,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 296,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 297,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 298,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 299,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     }
+    ],
+    "ps": [
+     {
+      "blob": 301,
+      "params": 300,
+      "keywords": []
+     },
+     {
+      "blob": 302,
+      "params": 300,
+      "keywords": [
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 303,
+      "params": 300,
+      "keywords": [
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 304,
+      "params": 300,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 305,
+      "params": 300,
+      "keywords": [
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 306,
+      "params": 300,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 307,
+      "params": 300,
+      "keywords": [
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 308,
+      "params": 300,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     }
+    ]
+   },
+   "bindings": {
+    "vs": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 2112,
+       "members": [
+        {
+         "name": "unity_MatrixVP",
+         "offset": 1264,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDraw",
+       "slot": 1,
+       "size": 752,
+       "members": [
+        {
+         "name": "unity_ObjectToWorld",
+         "offset": 0,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    },
+    "ps": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 2112,
+       "members": [
+        {
+         "name": "_GlobalMipBias",
+         "offset": 64,
+         "dim": 2,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [
+      {
+       "name": "_Tx_Albedo",
+       "register": 0,
+       "sampler": 0,
+       "dim": 2
+      }
+     ],
+     "samplers": []
+    }
+   }
+  },
+  {
+   "label": "1_0_Universal_Forward",
+   "name": "Universal Forward",
+   "useName": "",
+   "tags": {
+    "DisableBatching": "False",
+    "LIGHTMODE": "UniversalForward",
+    "QUEUE": "Geometry",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Opaque",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalLitSubTarget",
+    "UniversalMaterialType": "Lit"
+   },
+   "subShaderTags": {
+    "DisableBatching": "False",
+    "QUEUE": "Geometry",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Opaque",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalLitSubTarget",
+    "UniversalMaterialType": "Lit"
+   },
+   "lod": 0,
+   "state": {
+    "blend": [
+     1.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    "blendOp": [
+     0.0,
+     0.0
+    ],
+    "colMask": 15.0,
+    "zTest": 4.0,
+    "zWrite": 1.0,
+    "culling": 2.0,
+    "offsetFactor": 0.0,
+    "offsetUnits": 0.0,
+    "stencilRef": 0.0,
+    "stencilComp": 8.0,
+    "stencilPass": 0.0,
+    "stencilFail": 0.0,
+    "stencilZFail": 0.0,
+    "stencilReadMask": 255.0,
+    "stencilWriteMask": 255.0
+   },
+   "programs": {
+    "vs": [
+     {
+      "blob": 309,
+      "params": 122,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS"
+      ]
+     },
+     {
+      "blob": 310,
+      "params": 122,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 311,
+      "params": 122,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 312,
+      "params": 122,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 313,
+      "params": 123,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS"
+      ]
+     },
+     {
+      "blob": 314,
+      "params": 123,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 315,
+      "params": 123,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 316,
+      "params": 123,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 317,
+      "params": 123,
+      "keywords": [
+       "_ADDITIONAL_LIGHTS"
+      ]
+     },
+     {
+      "blob": 318,
+      "params": 123,
+      "keywords": [
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 319,
+      "params": 123,
+      "keywords": [
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 320,
+      "params": 123,
+      "keywords": [
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2"
+      ]
+     }
+    ],
+    "ps": [
+     {
+      "blob": 321,
+      "params": 14,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 322,
+      "params": 15,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 323,
+      "params": 15,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 324,
+      "params": 15,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 325,
+      "params": 16,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 326,
+      "params": 17,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 327,
+      "params": 17,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 328,
+      "params": 17,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 329,
+      "params": 18,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 330,
+      "params": 19,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 331,
+      "params": 19,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 332,
+      "params": 19,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 333,
+      "params": 20,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 334,
+      "params": 21,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 335,
+      "params": 21,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 336,
+      "params": 21,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 337,
+      "params": 22,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 338,
+      "params": 23,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 339,
+      "params": 23,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 340,
+      "params": 23,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 341,
+      "params": 24,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 342,
+      "params": 25,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 343,
+      "params": 25,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 344,
+      "params": 25,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 345,
+      "params": 26,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 346,
+      "params": 27,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 347,
+      "params": 27,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 348,
+      "params": 27,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 349,
+      "params": 28,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 350,
+      "params": 29,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 351,
+      "params": 29,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 352,
+      "params": 29,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 353,
+      "params": 30,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 354,
+      "params": 31,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 355,
+      "params": 31,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 356,
+      "params": 31,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 357,
+      "params": 32,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 358,
+      "params": 33,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 359,
+      "params": 33,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 360,
+      "params": 33,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION"
+      ]
+     },
+     {
+      "blob": 361,
+      "params": 34,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 362,
+      "params": 35,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 363,
+      "params": 35,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 364,
+      "params": 35,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 365,
+      "params": 36,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 366,
+      "params": 37,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 367,
+      "params": 37,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 368,
+      "params": 37,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 369,
+      "params": 38,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 370,
+      "params": 39,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 371,
+      "params": 39,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 372,
+      "params": 39,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 373,
+      "params": 40,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 374,
+      "params": 41,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 375,
+      "params": 41,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 376,
+      "params": 41,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT"
+      ]
+     },
+     {
+      "blob": 377,
+      "params": 42,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 378,
+      "params": 43,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 379,
+      "params": 43,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 380,
+      "params": 43,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 381,
+      "params": 44,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 382,
+      "params": 45,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 383,
+      "params": 45,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 384,
+      "params": 45,
+      "keywords": [
+       "_MAIN_LIGHT_SHADOWS_CASCADE",
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_SCREEN_SPACE_OCCLUSION",
+       "_ADDITIONAL_LIGHT_SHADOWS",
+       "_REFLECTION_PROBE_BLENDING",
+       "_REFLECTION_PROBE_BOX_PROJECTION",
+       "_SHADOWS_SOFT",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 385,
+      "params": 46,
+      "keywords": [
+       "_ADDITIONAL_LIGHTS"
+      ]
+     },
+     {
+      "blob": 386,
+      "params": 47,
+      "keywords": [
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 387,
+      "params": 47,
+      "keywords": [
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 388,
+      "params": 47,
+      "keywords": [
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 389,
+      "params": 48,
+      "keywords": [
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP2",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 390,
+      "params": 48,
+      "keywords": [
+       "_ADDITIONAL_LIGHTS",
+       "FOG_EXP",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 391,
+      "params": 48,
+      "keywords": [
+       "_ADDITIONAL_LIGHTS",
+       "FOG_LINEAR",
+       "_LIGHT_COOKIES"
+      ]
+     },
+     {
+      "blob": 392,
+      "params": 49,
+      "keywords": [
+       "_ADDITIONAL_LIGHTS",
+       "_LIGHT_COOKIES"
+      ]
+     }
+    ]
+   },
+   "bindings": {
+    "vs": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 2112,
+       "members": [
+        {
+         "name": "unity_MatrixVP",
+         "offset": 1264,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDraw",
+       "slot": 1,
+       "size": 752,
+       "members": [
+        {
+         "name": "unity_ObjectToWorld",
+         "offset": 0,
+         "matrix": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_WorldToObject",
+         "offset": 64,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    },
+    "ps": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 2112,
+       "members": [
+        {
+         "name": "_GlobalMipBias",
+         "offset": 64,
+         "dim": 2,
+         "array": 0
+        },
+        {
+         "name": "_MainLightPosition",
+         "offset": 80,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "_MainLightColor",
+         "offset": 96,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "_AdditionalLightsCount",
+         "offset": 160,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "_TimeParameters",
+         "offset": 304,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "_WorldSpaceCameraPos",
+         "offset": 336,
+         "dim": 3,
+         "array": 0
+        },
+        {
+         "name": "unity_OrthoParams",
+         "offset": 400,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_MatrixV",
+         "offset": 1072,
+         "matrix": 4,
+         "array": 0
+        },
+        {
+         "name": "_Tx_SpeedRate",
+         "offset": 2096,
+         "dim": 1,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "AdditionalLights",
+       "slot": 1,
+       "size": 24576,
+       "members": [
+        {
+         "name": "_AdditionalLightsPosition",
+         "offset": 0,
+         "dim": 4,
+         "array": 256
+        },
+        {
+         "name": "_AdditionalLightsColor",
+         "offset": 4096,
+         "dim": 4,
+         "array": 256
+        },
+        {
+         "name": "_AdditionalLightsAttenuation",
+         "offset": 8192,
+         "dim": 4,
+         "array": 256
+        },
+        {
+         "name": "_AdditionalLightsSpotDir",
+         "offset": 12288,
+         "dim": 4,
+         "array": 256
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDraw",
+       "slot": 2,
+       "size": 752,
+       "members": [
+        {
+         "name": "unity_WorldTransformParams",
+         "offset": 144,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_LightData",
+         "offset": 176,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_LightIndices",
+         "offset": 192,
+         "dim": 4,
+         "array": 2
+        },
+        {
+         "name": "unity_SpecCube0_HDR",
+         "offset": 240,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_SHAr",
+         "offset": 432,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_SHAg",
+         "offset": 448,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_SHAb",
+         "offset": 464,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_SHBr",
+         "offset": 480,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_SHBg",
+         "offset": 496,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_SHBb",
+         "offset": 512,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_SHC",
+         "offset": 528,
+         "dim": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerMaterial",
+       "slot": null,
+       "size": 160,
+       "members": [
+        {
+         "name": "_FlickerSpeed",
+         "offset": 0,
+         "dim": 1,
+         "array": 0
+        },
+        {
+         "name": "_EmissionColir",
+         "offset": 32,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "_MaskPower",
+         "offset": 48,
+         "dim": 1,
+         "array": 0
+        },
+        {
+         "name": "_Smoothness",
+         "offset": 96,
+         "dim": 1,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    }
+   }
+  },
+  {
+   "label": "1_1_ShadowCaster",
+   "name": "ShadowCaster",
+   "useName": "",
+   "tags": {
+    "DisableBatching": "False",
+    "LIGHTMODE": "SHADOWCASTER",
+    "QUEUE": "Geometry",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Opaque",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalLitSubTarget",
+    "UniversalMaterialType": "Lit"
+   },
+   "subShaderTags": {
+    "DisableBatching": "False",
+    "QUEUE": "Geometry",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Opaque",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalLitSubTarget",
+    "UniversalMaterialType": "Lit"
+   },
+   "lod": 0,
+   "state": {
+    "blend": [
+     1.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    "blendOp": [
+     0.0,
+     0.0
+    ],
+    "colMask": 0.0,
+    "zTest": 4.0,
+    "zWrite": 1.0,
+    "culling": 2.0,
+    "offsetFactor": 0.0,
+    "offsetUnits": 0.0,
+    "stencilRef": 0.0,
+    "stencilComp": 8.0,
+    "stencilPass": 0.0,
+    "stencilFail": 0.0,
+    "stencilZFail": 0.0,
+    "stencilReadMask": 255.0,
+    "stencilWriteMask": 255.0
+   },
+   "programs": {
+    "vs": [
+     {
+      "blob": 393,
+      "params": 232,
+      "keywords": []
+     },
+     {
+      "blob": 394,
+      "params": 232,
+      "keywords": [
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 395,
+      "params": 232,
+      "keywords": [
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 396,
+      "params": 232,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 397,
+      "params": 232,
+      "keywords": [
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 398,
+      "params": 232,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 399,
+      "params": 232,
+      "keywords": [
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 400,
+      "params": 232,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 401,
+      "params": 233,
+      "keywords": [
+       "_CASTING_PUNCTUAL_LIGHT_SHADOW"
+      ]
+     },
+     {
+      "blob": 402,
+      "params": 233,
+      "keywords": [
+       "FOG_LINEAR",
+       "_CASTING_PUNCTUAL_LIGHT_SHADOW"
+      ]
+     },
+     {
+      "blob": 403,
+      "params": 233,
+      "keywords": [
+       "FOG_EXP2",
+       "_CASTING_PUNCTUAL_LIGHT_SHADOW"
+      ]
+     },
+     {
+      "blob": 404,
+      "params": 233,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP2",
+       "_CASTING_PUNCTUAL_LIGHT_SHADOW"
+      ]
+     },
+     {
+      "blob": 405,
+      "params": 233,
+      "keywords": [
+       "FOG_EXP",
+       "_CASTING_PUNCTUAL_LIGHT_SHADOW"
+      ]
+     },
+     {
+      "blob": 406,
+      "params": 233,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP",
+       "_CASTING_PUNCTUAL_LIGHT_SHADOW"
+      ]
+     },
+     {
+      "blob": 407,
+      "params": 233,
+      "keywords": [
+       "FOG_EXP",
+       "FOG_EXP2",
+       "_CASTING_PUNCTUAL_LIGHT_SHADOW"
+      ]
+     },
+     {
+      "blob": 408,
+      "params": 233,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP",
+       "FOG_EXP2",
+       "_CASTING_PUNCTUAL_LIGHT_SHADOW"
+      ]
+     }
+    ],
+    "ps": [
+     {
+      "blob": 409,
+      "params": 250,
+      "keywords": []
+     },
+     {
+      "blob": 410,
+      "params": 250,
+      "keywords": [
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 411,
+      "params": 250,
+      "keywords": [
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 412,
+      "params": 250,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 413,
+      "params": 250,
+      "keywords": [
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 414,
+      "params": 250,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 415,
+      "params": 250,
+      "keywords": [
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 416,
+      "params": 250,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     }
+    ]
+   },
+   "bindings": {
+    "vs": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 2128,
+       "members": [
+        {
+         "name": "unity_MatrixVP",
+         "offset": 1264,
+         "matrix": 4,
+         "array": 0
+        },
+        {
+         "name": "_ShadowBias",
+         "offset": 2080,
+         "dim": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDraw",
+       "slot": 1,
+       "size": 752,
+       "members": [
+        {
+         "name": "unity_ObjectToWorld",
+         "offset": 0,
+         "matrix": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_WorldToObject",
+         "offset": 64,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    },
+    "ps": {
+     "constantBuffers": [],
+     "textures": [],
+     "samplers": []
+    }
+   }
+  },
+  {
+   "label": "1_2_DepthOnly",
+   "name": "DepthOnly",
+   "useName": "",
+   "tags": {
+    "DisableBatching": "False",
+    "LIGHTMODE": "DepthOnly",
+    "QUEUE": "Geometry",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Opaque",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalLitSubTarget",
+    "UniversalMaterialType": "Lit"
+   },
+   "subShaderTags": {
+    "DisableBatching": "False",
+    "QUEUE": "Geometry",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Opaque",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalLitSubTarget",
+    "UniversalMaterialType": "Lit"
+   },
+   "lod": 0,
+   "state": {
+    "blend": [
+     1.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    "blendOp": [
+     0.0,
+     0.0
+    ],
+    "colMask": 8.0,
+    "zTest": 4.0,
+    "zWrite": 1.0,
+    "culling": 2.0,
+    "offsetFactor": 0.0,
+    "offsetUnits": 0.0,
+    "stencilRef": 0.0,
+    "stencilComp": 8.0,
+    "stencilPass": 0.0,
+    "stencilFail": 0.0,
+    "stencilZFail": 0.0,
+    "stencilReadMask": 255.0,
+    "stencilWriteMask": 255.0
+   },
+   "programs": {
+    "vs": [
+     {
+      "blob": 417,
+      "params": 123,
+      "keywords": []
+     },
+     {
+      "blob": 418,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 419,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 420,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 421,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 422,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 423,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 424,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     }
+    ],
+    "ps": [
+     {
+      "blob": 425,
+      "params": 250,
+      "keywords": []
+     },
+     {
+      "blob": 426,
+      "params": 250,
+      "keywords": [
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 427,
+      "params": 250,
+      "keywords": [
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 428,
+      "params": 250,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 429,
+      "params": 250,
+      "keywords": [
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 430,
+      "params": 250,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 431,
+      "params": 250,
+      "keywords": [
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 432,
+      "params": 250,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     }
+    ]
+   },
+   "bindings": {
+    "vs": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 2112,
+       "members": [
+        {
+         "name": "unity_MatrixVP",
+         "offset": 1264,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDraw",
+       "slot": 1,
+       "size": 752,
+       "members": [
+        {
+         "name": "unity_ObjectToWorld",
+         "offset": 0,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    },
+    "ps": {
+     "constantBuffers": [],
+     "textures": [],
+     "samplers": []
+    }
+   }
+  },
+  {
+   "label": "1_3_DepthNormals",
+   "name": "DepthNormals",
+   "useName": "",
+   "tags": {
+    "DisableBatching": "False",
+    "LIGHTMODE": "DepthNormals",
+    "QUEUE": "Geometry",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Opaque",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalLitSubTarget",
+    "UniversalMaterialType": "Lit"
+   },
+   "subShaderTags": {
+    "DisableBatching": "False",
+    "QUEUE": "Geometry",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Opaque",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalLitSubTarget",
+    "UniversalMaterialType": "Lit"
+   },
+   "lod": 0,
+   "state": {
+    "blend": [
+     1.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    "blendOp": [
+     0.0,
+     0.0
+    ],
+    "colMask": 15.0,
+    "zTest": 4.0,
+    "zWrite": 1.0,
+    "culling": 2.0,
+    "offsetFactor": 0.0,
+    "offsetUnits": 0.0,
+    "stencilRef": 0.0,
+    "stencilComp": 8.0,
+    "stencilPass": 0.0,
+    "stencilFail": 0.0,
+    "stencilZFail": 0.0,
+    "stencilReadMask": 255.0,
+    "stencilWriteMask": 255.0
+   },
+   "programs": {
+    "vs": [
+     {
+      "blob": 433,
+      "params": 123,
+      "keywords": []
+     },
+     {
+      "blob": 434,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 435,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 436,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 437,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 438,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 439,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 440,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     }
+    ],
+    "ps": [
+     {
+      "blob": 441,
+      "params": 123,
+      "keywords": []
+     },
+     {
+      "blob": 442,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 443,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 444,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 445,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 446,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 447,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 448,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     }
+    ]
+   },
+   "bindings": {
+    "vs": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 2112,
+       "members": [
+        {
+         "name": "unity_MatrixVP",
+         "offset": 1264,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDraw",
+       "slot": 1,
+       "size": 752,
+       "members": [
+        {
+         "name": "unity_ObjectToWorld",
+         "offset": 0,
+         "matrix": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_WorldToObject",
+         "offset": 64,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    },
+    "ps": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 2112,
+       "members": [
+        {
+         "name": "_GlobalMipBias",
+         "offset": 64,
+         "dim": 2,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDraw",
+       "slot": 1,
+       "size": 752,
+       "members": [
+        {
+         "name": "unity_WorldTransformParams",
+         "offset": 144,
+         "dim": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [
+      {
+       "name": "_Tx_Normal",
+       "register": 0,
+       "sampler": 0,
+       "dim": 2
+      }
+     ],
+     "samplers": []
+    }
+   }
+  },
+  {
+   "label": "1_4_Universal2D",
+   "name": "",
+   "useName": "",
+   "tags": {
+    "DisableBatching": "False",
+    "LIGHTMODE": "Universal2D",
+    "QUEUE": "Geometry",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Opaque",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalLitSubTarget",
+    "UniversalMaterialType": "Lit"
+   },
+   "subShaderTags": {
+    "DisableBatching": "False",
+    "QUEUE": "Geometry",
+    "RenderPipeline": "UniversalPipeline",
+    "RenderType": "Opaque",
+    "ShaderGraphShader": "true",
+    "ShaderGraphTargetId": "UniversalLitSubTarget",
+    "UniversalMaterialType": "Lit"
+   },
+   "lod": 0,
+   "state": {
+    "blend": [
+     1.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    "blendOp": [
+     0.0,
+     0.0
+    ],
+    "colMask": 15.0,
+    "zTest": 4.0,
+    "zWrite": 1.0,
+    "culling": 2.0,
+    "offsetFactor": 0.0,
+    "offsetUnits": 0.0,
+    "stencilRef": 0.0,
+    "stencilComp": 8.0,
+    "stencilPass": 0.0,
+    "stencilFail": 0.0,
+    "stencilZFail": 0.0,
+    "stencilReadMask": 255.0,
+    "stencilWriteMask": 255.0
+   },
+   "programs": {
+    "vs": [
+     {
+      "blob": 449,
+      "params": 123,
+      "keywords": []
+     },
+     {
+      "blob": 450,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 451,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 452,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 453,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 454,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 455,
+      "params": 123,
+      "keywords": [
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 456,
+      "params": 123,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     }
+    ],
+    "ps": [
+     {
+      "blob": 457,
+      "params": 300,
+      "keywords": []
+     },
+     {
+      "blob": 458,
+      "params": 300,
+      "keywords": [
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 459,
+      "params": 300,
+      "keywords": [
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 460,
+      "params": 300,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 461,
+      "params": 300,
+      "keywords": [
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 462,
+      "params": 300,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 463,
+      "params": 300,
+      "keywords": [
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 464,
+      "params": 300,
+      "keywords": [
+       "FOG_LINEAR",
+       "FOG_EXP",
+       "FOG_EXP2"
+      ]
+     }
+    ]
+   },
+   "bindings": {
+    "vs": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 2112,
+       "members": [
+        {
+         "name": "unity_MatrixVP",
+         "offset": 1264,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDraw",
+       "slot": 1,
+       "size": 752,
+       "members": [
+        {
+         "name": "unity_ObjectToWorld",
+         "offset": 0,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    },
+    "ps": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 2112,
+       "members": [
+        {
+         "name": "_GlobalMipBias",
+         "offset": 64,
+         "dim": 2,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [
+      {
+       "name": "_Tx_Albedo",
+       "register": 0,
+       "sampler": 0,
+       "dim": 2
+      }
+     ],
+     "samplers": []
+    }
+   }
+  }
+ ]
+}

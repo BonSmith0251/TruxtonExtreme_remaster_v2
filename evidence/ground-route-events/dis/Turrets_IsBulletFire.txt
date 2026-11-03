@@ -1,0 +1,104 @@
+01d6c170  push     rbx
+01d6c172  push     rsi
+01d6c173  push     rdi
+01d6c174  sub      rsp, 0x50
+01d6c178  cmp      byte ptr [rip + 0x28f75bb], 0   ; [466373a] bss
+01d6c17f  mov      rsi, rdx
+01d6c182  mov      rdi, rcx
+01d6c185  jne      0x1d6c19a
+01d6c187  lea      rcx, [rip + 0x2611d12]   ; [437dea0] TypeInfo UnityEngine.Object
+01d6c18e  call     0x4e0a50
+01d6c193  mov      byte ptr [rip + 0x28f75a0], 1   ; [466373a] bss
+01d6c19a  xor      r8d, r8d
+01d6c19d  mov      rdx, rsi
+01d6c1a0  mov      rcx, rdi
+01d6c1a3  call     0x1d6c0b0   ; EnemyMoverTurrets::GetTurret(UnityEngine.Transform)
+01d6c1a8  mov      rcx, qword ptr [rip + 0x2611cf1]   ; [437dea0] TypeInfo UnityEngine.Object
+01d6c1af  mov      rbx, rax
+01d6c1b2  cmp      dword ptr [rcx + 0xe4], 0
+01d6c1b9  jne      0x1d6c1c0
+01d6c1bb  call     0x4e0d90
+01d6c1c0  mov      qword ptr [rsp + 0x70], rbp   ; ._transformCache
+01d6c1c5  xor      r8d, r8d
+01d6c1c8  xor      edx, edx
+01d6c1ca  mov      qword ptr [rsp + 0x80], r14   ; ._transformCaches
+01d6c1d2  mov      rcx, rbx
+01d6c1d5  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01d6c1da  test     al, al
+01d6c1dc  je       0x1d6c1f1
+01d6c1de  test     rbx, rbx
+01d6c1e1  je       0x1d6c327
+01d6c1e7  cmp      byte ptr [rbx + 0x4b], 0
+01d6c1eb  jne      0x1d6c300
+01d6c1f1  cmp      byte ptr [rip + 0x28f7536], 0   ; [466372e] bss
+01d6c1f8  jne      0x1d6c20d
+01d6c1fa  lea      rcx, [rip + 0x264bdff]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d6c201  call     0x4e0a50
+01d6c206  mov      byte ptr [rip + 0x28f7521], 1   ; [466372e] bss
+01d6c20d  cmp      byte ptr [rdi + 0x290], 0   ; ._isRangeFireLimit
+01d6c214  je       0x1d6c304
+01d6c21a  mov      rax, qword ptr [rip + 0x264bddf]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d6c221  mov      rax, qword ptr [rax + 0x20]   ; ev.value0
+01d6c225  test     byte ptr [rax + 0x135], 1
+01d6c22c  jne      0x1d6c236
+01d6c22e  mov      rcx, rax
+01d6c231  call     0x4de1e0
+01d6c236  mov      rax, qword ptr [rax + 0xc0]   ; ._speedToken
+01d6c23d  mov      rax, qword ptr [rax + 0x10]   ; ev.eventType
+01d6c241  test     byte ptr [rax + 0x135], 1
+01d6c248  jne      0x1d6c252
+01d6c24a  mov      rcx, rax
+01d6c24d  call     0x4de1e0
+01d6c252  mov      rax, qword ptr [rax + 0xb8]   ; ._hormingToken
+01d6c259  mov      rbx, qword ptr [rax]
+01d6c25c  test     rbx, rbx
+01d6c25f  je       0x1d6c327
+01d6c265  mov      rbp, qword ptr [rbx + 0x130]
+01d6c26c  test     rsi, rsi
+01d6c26f  je       0x1d6c327
+01d6c275  xor      r8d, r8d
+01d6c278  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01d6c27d  mov      rdx, rsi
+01d6c280  call     0x3093ba0   ; Transform::get_position()
+01d6c285  xor      edx, edx
+01d6c287  mov      rcx, rdi
+01d6c28a  movsd    xmm0, qword ptr [rax]
+01d6c28e  mov      r14d, dword ptr [rax + 8]
+01d6c292  movsd    qword ptr [rsp + 0x78], xmm0   ; ._transformNameCache
+01d6c298  call     0x1cdd500   ; InGameEnemyMoveBase::get_IsGroundDivision()
+01d6c29d  test     rbp, rbp
+01d6c2a0  je       0x1d6c327
+01d6c2a6  movsd    xmm0, qword ptr [rsp + 0x78]   ; ._transformNameCache
+01d6c2ac  lea      r8, [rsp + 0x30]   ; ._entryFlag
+01d6c2b1  mov      qword ptr [rsp + 0x28], 0   ; ev.vectorValue
+01d6c2ba  lea      rcx, [rsp + 0x40]   ; ev.intValue1/._animators
+01d6c2bf  movzx    r9d, al
+01d6c2c3  movsd    qword ptr [rsp + 0x30], xmm0   ; ._entryFlag
+01d6c2c9  mov      rdx, rbp
+01d6c2cc  mov      dword ptr [rsp + 0x38], r14d   ; ev.stringValue/._psystems
+01d6c2d1  mov      byte ptr [rsp + 0x20], 0   ; ev.value0
+01d6c2d6  call     0x1ddaa00   ; HybridCollisionManager::GetScreenPosition(UnityEngine.Vector3,System.Boolean,System.Boolean)
+01d6c2db  xor      r8d, r8d
+01d6c2de  lea      rdx, [rsp + 0x30]   ; ._entryFlag
+01d6c2e3  mov      rcx, rbx
+01d6c2e6  movsd    xmm0, qword ptr [rax]
+01d6c2ea  mov      eax, dword ptr [rax + 8]
+01d6c2ed  movsd    qword ptr [rsp + 0x30], xmm0   ; ._entryFlag
+01d6c2f3  mov      dword ptr [rsp + 0x38], eax   ; ev.stringValue/._psystems
+01d6c2f7  call     0x1ce7300   ; InGameManager::IsFireDistance(UnityEngine.Vector3)
+01d6c2fc  test     al, al
+01d6c2fe  jne      0x1d6c304
+01d6c300  xor      al, al
+01d6c302  jmp      0x1d6c312
+01d6c304  xor      r8d, r8d
+01d6c307  mov      rdx, rsi
+01d6c30a  mov      rcx, rdi
+01d6c30d  call     0x1cda6a0   ; InGameEnemyMoveBase::IsBulletFire(UnityEngine.Transform)
+01d6c312  mov      r14, qword ptr [rsp + 0x80]   ; ._transformCaches
+01d6c31a  mov      rbp, qword ptr [rsp + 0x70]   ; ._transformCache
+01d6c31f  add      rsp, 0x50
+01d6c323  pop      rdi
+01d6c324  pop      rsi
+01d6c325  pop      rbx
+01d6c326  ret      
+01d6c327  call     0x4e0d00

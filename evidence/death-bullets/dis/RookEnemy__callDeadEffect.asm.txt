@@ -1,0 +1,46 @@
+#### InGame.Kernel.Enemy.RookEnemy::_callDeadEffect() RVA 1d1a560 len b3
+01d1a560  push     rbx
+01d1a562  sub      rsp, 0x50
+01d1a566  xor      edx, edx
+01d1a568  mov      rbx, rcx
+01d1a56b  call     0x1d10e20   ; PawnEnemy::_callDeadEffect()
+01d1a570  xor      edx, edx
+01d1a572  mov      rcx, rbx
+01d1a575  call     0x1d1a2f0   ; RookEnemy::_SeparationChildren()
+01d1a57a  mov      rcx, qword ptr [rbx + 0x1e0]   ; ._deadEnemyStr
+01d1a581  xor      edx, edx
+01d1a583  call     0x1e83800   ; String::IsNullOrEmpty(System.String)
+01d1a588  test     al, al
+01d1a58a  jne      0x1d1a608
+01d1a58c  mov      rdx, qword ptr [rbx]
+01d1a58f  mov      rcx, rbx
+01d1a592  mov      qword ptr [rsp + 0x60], rdi   ; ._currentPosition
+01d1a597  mov      rax, qword ptr [rdx + 0x238]   ; vcall InGame.Kernel.Enemy.PawnEnemy::IsGround
+01d1a59e  mov      rdx, qword ptr [rdx + 0x240]   ; vcall InGame.Kernel.Enemy.PawnEnemy::IsGround
+01d1a5a5  call     rax
+01d1a5a7  movzx    edi, al
+01d1a5aa  mov      rdx, qword ptr [rbx + 0x50]   ; .<>u__2
+01d1a5ae  test     rdx, rdx
+01d1a5b1  je       0x1d1a60e
+01d1a5b3  xor      r8d, r8d
+01d1a5b6  lea      rcx, [rsp + 0x40]   ; .<tpassed>5__2
+01d1a5bb  call     0x3093ba0   ; Transform::get_position()
+01d1a5c0  mov      r8, qword ptr [rbx + 0x1e0]   ; ._deadEnemyStr
+01d1a5c7  lea      rdx, [rsp + 0x30]   ; .tsecond
+01d1a5cc  neg      dil
+01d1a5cf  mov      qword ptr [rsp + 0x28], 0   ; .isDark
+01d1a5d8  mov      rcx, rbx
+01d1a5db  movsd    xmm0, qword ptr [rax]
+01d1a5df  sbb      r9d, r9d
+01d1a5e2  mov      eax, dword ptr [rax + 8]
+01d1a5e5  add      r9d, 2
+01d1a5e9  mov      dword ptr [rsp + 0x38], eax   ; ._callback
+01d1a5ed  movzx    eax, byte ptr [rbx + 0x1f0]   ; ._deadEnemyIsGround
+01d1a5f4  mov      byte ptr [rsp + 0x20], al   ; .trot
+01d1a5f8  movsd    qword ptr [rsp + 0x30], xmm0   ; .tsecond
+01d1a5fe  call     0x1d0cdc0   ; PawnEnemy::CallSubEnemys(UnityEngine.Vector3,System.String,InGame.Kernel.Enemy.PawnEnemy/Division,System.Boolean)
+01d1a603  mov      rdi, qword ptr [rsp + 0x60]   ; ._currentPosition
+01d1a608  add      rsp, 0x50
+01d1a60c  pop      rbx
+01d1a60d  ret      
+01d1a60e  call     0x4e0d00

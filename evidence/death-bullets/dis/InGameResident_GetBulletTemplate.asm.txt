@@ -1,0 +1,90 @@
+#### InGame.Kernel.InGameResident::GetBulletTemplate(System.String,System.Single) RVA 1d21a60 len b3
+01d21a60  mov      qword ptr [rsp + 8], rbx
+01d21a65  push     rdi
+01d21a66  sub      rsp, 0x30
+01d21a6a  cmp      byte ptr [rip + 0x2941a87], 0   ; [46634f8] bss
+01d21a71  mov      rbx, rdx
+01d21a74  movaps   xmmword ptr [rsp + 0x20], xmm6   ; ._FlushColors
+01d21a79  mov      rdi, rcx
+01d21a7c  movaps   xmm6, xmm2
+01d21a7f  jne      0x1d21a94
+01d21a81  lea      rcx, [rip + 0x265c418]   ; [437dea0] TypeInfo UnityEngine.Object
+01d21a88  call     0x4e0a50
+01d21a8d  mov      byte ptr [rip + 0x2941a64], 1   ; [46634f8] bss
+01d21a94  xor      r8d, r8d
+01d21a97  mov      rdx, rbx
+01d21a9a  mov      rcx, rdi
+01d21a9d  call     0x1d219c0   ; InGameResident::GetBltSelecter(System.String)
+01d21aa2  mov      rcx, qword ptr [rip + 0x265c3f7]   ; [437dea0] TypeInfo UnityEngine.Object
+01d21aa9  mov      rbx, rax
+01d21aac  cmp      dword ptr [rcx + 0xe4], 0
+01d21ab3  jne      0x1d21aba
+01d21ab5  call     0x4e0d90
+01d21aba  xor      r8d, r8d
+01d21abd  xor      edx, edx
+01d21abf  mov      rcx, rbx
+01d21ac2  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01d21ac7  test     al, al
+01d21ac9  jne      0x1d21aec
+01d21acb  mov      rax, qword ptr [rip + 0x295642e]   ; [4677f00] bss
+01d21ad2  mov      rax, qword ptr [rax + 0xb8]   ; ._bgmPath
+01d21ad9  mov      rax, qword ptr [rax]
+01d21adc  mov      rbx, qword ptr [rsp + 0x40]   ; ._animationPalette
+01d21ae1  movaps   xmm6, xmmword ptr [rsp + 0x20]   ; ._FlushColors
+01d21ae6  add      rsp, 0x30
+01d21aea  pop      rdi
+01d21aeb  ret      
+01d21aec  test     rbx, rbx
+01d21aef  je       0x1d21b0e
+01d21af1  xor      r8d, r8d
+01d21af4  movaps   xmm1, xmm6
+01d21af7  mov      rcx, rbx
+01d21afa  mov      rbx, qword ptr [rsp + 0x40]   ; ._animationPalette
+01d21aff  movaps   xmm6, xmmword ptr [rsp + 0x20]   ; ._FlushColors
+01d21b04  add      rsp, 0x30
+01d21b08  pop      rdi
+01d21b09  jmp      0x1d61030   ; BulletTemplateSelecter::GetBT(System.Single)
+01d21b0e  call     0x4e0d00
+#### InGame.Kernel.InGameResident::GetBulletTemplates(System.String) RVA 1d21b20 len a5
+01d21b20  mov      qword ptr [rsp + 8], rbx
+01d21b25  push     rdi
+01d21b26  sub      rsp, 0x20
+01d21b2a  cmp      byte ptr [rip + 0x29419c8], 0   ; [46634f9] bss
+01d21b31  mov      rbx, rdx
+01d21b34  mov      rdi, rcx
+01d21b37  jne      0x1d21b58
+01d21b39  lea      rcx, [rip + 0x265c360]   ; [437dea0] TypeInfo UnityEngine.Object
+01d21b40  call     0x4e0a50
+01d21b45  lea      rcx, [rip + 0x2651a34]   ; [4373580] TypeInfo prime[]
+01d21b4c  call     0x4e0a50
+01d21b51  mov      byte ptr [rip + 0x29419a1], 1   ; [46634f9] bss
+01d21b58  xor      r8d, r8d
+01d21b5b  mov      rdx, rbx
+01d21b5e  mov      rcx, rdi
+01d21b61  call     0x1d219c0   ; InGameResident::GetBltSelecter(System.String)
+01d21b66  mov      rcx, qword ptr [rip + 0x265c333]   ; [437dea0] TypeInfo UnityEngine.Object
+01d21b6d  mov      rbx, rax
+01d21b70  cmp      dword ptr [rcx + 0xe4], 0
+01d21b77  jne      0x1d21b7e
+01d21b79  call     0x4e0d90
+01d21b7e  xor      r8d, r8d
+01d21b81  xor      edx, edx
+01d21b83  mov      rcx, rbx
+01d21b86  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01d21b8b  test     al, al
+01d21b8d  jne      0x1d21ba7
+01d21b8f  mov      rcx, qword ptr [rip + 0x26519ea]   ; [4373580] TypeInfo prime[]
+01d21b96  xor      edx, edx
+01d21b98  mov      rbx, qword ptr [rsp + 0x30]   ; ._routeData
+01d21b9d  add      rsp, 0x20
+01d21ba1  pop      rdi
+01d21ba2  jmp      0x4dfe00
+01d21ba7  test     rbx, rbx
+01d21baa  je       0x1d21bc0
+01d21bac  xor      edx, edx
+01d21bae  mov      rcx, rbx
+01d21bb1  mov      rbx, qword ptr [rsp + 0x30]   ; ._routeData
+01d21bb6  add      rsp, 0x20
+01d21bba  pop      rdi
+01d21bbb  jmp      0x1d60e70   ; BulletTemplateSelecter::GetBTS()
+01d21bc0  call     0x4e0d00

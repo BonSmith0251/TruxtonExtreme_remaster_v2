@@ -1,0 +1,11 @@
+#### InGame.Kernel.Enemy.Ene_Lc01::LocalLateUpdate(System.Single) RVA 1dbdca0 len 20
+01dbdca0  push     rbx
+01dbdca2  sub      rsp, 0x20
+01dbdca6  xor      r8d, r8d
+01dbdca9  mov      rbx, rcx
+01dbdcac  call     0x1d17cd0   ; PawnEnemyGround::LocalLateUpdate(System.Single)
+01dbdcb1  xor      edx, edx
+01dbdcb3  mov      rcx, rbx
+01dbdcb6  add      rsp, 0x20
+01dbdcba  pop      rbx
+01dbdcbb  jmp      0x1dbe730   ; Ene_Lc01::_moveState()

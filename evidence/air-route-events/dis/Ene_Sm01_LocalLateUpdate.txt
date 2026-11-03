@@ -1,0 +1,23 @@
+#### InGame.Kernel.Enemy.Ene_Sm01::LocalLateUpdate(System.Single) RVA 1d021d0 len 58
+01d021d0  push     rbx
+01d021d2  sub      rsp, 0x30
+01d021d6  movaps   xmmword ptr [rsp + 0x20], xmm6   ; ev.value0
+01d021db  xor      r8d, r8d
+01d021de  movaps   xmm6, xmm1
+01d021e1  mov      rbx, rcx
+01d021e4  call     0x1d0e790   ; PawnEnemy::LocalLateUpdate(System.Single)
+01d021e9  cmp      byte ptr [rbx + 0x1f0], 0   ; ._routesIndex
+01d021f0  jne      0x1d0220b
+01d021f2  mov      rax, qword ptr [rbx + 0xb8]   ; ._hormingToken
+01d021f9  test     rax, rax
+01d021fc  je       0x1d02223
+01d021fe  movzx    eax, byte ptr [rax + 0x291]   ; ._isInGamePlayArea
+01d02205  mov      byte ptr [rbx + 0x1f0], al   ; ._routesIndex
+01d0220b  xor      r8d, r8d
+01d0220e  movaps   xmm1, xmm6
+01d02211  mov      rcx, rbx
+01d02214  movaps   xmm6, xmmword ptr [rsp + 0x20]   ; ev.value0
+01d02219  add      rsp, 0x30
+01d0221d  pop      rbx
+01d0221e  jmp      0x1d02b30   ; Ene_Sm01::_progressMove(System.Single)
+01d02223  call     0x4e0d00

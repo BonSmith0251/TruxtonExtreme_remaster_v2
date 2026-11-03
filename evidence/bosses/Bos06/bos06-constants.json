@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "subject": "InGame.Kernel.Enemy.Ene_Bos06 (TATSUJIN EXTREME, stage BG07)",
+  "source": "D:/games/Truxton Extreme/GameAssembly.dll (IL2CPP x64); static constructors disassembled in dis/*.cctor*.txt",
+  "units": "root-local = sky plane (x right, z up screen, y toward camera); model-local = pf_bs06 children (pf_bs06 is yawed 180 deg, so model x/z = -sky x/z) [I]; angles degrees; times seconds",
+  "Ene_Bos06.cctor@0x1D9EC90": {
+    "btNames": ["Boss06/bos06laser01", "Boss06/bos06_sideway", "Boss06/bos06_core0", "Boss06/bos06_core1", "Boss06/bos06_core2", "Boss06/bos06_core3", "Boss06/bos06_core4", "Boss06/bos06_bind0", "Boss06/bos06_core1short", "Boss06/bos06_side1", "Boss06/bos06_side2"],
+    "MuzzleCount": 11,
+    "BodyCoreHomePosition": [0, 0, -5],
+    "BodyCoreAttackPosition": [0, 0, -30],
+    "BodyCoreSafePosition": [0, -50, -20],
+    "LaserRotateBodyL_euler": [0, -45, 90],
+    "LaserRotateBodyR_euler": [0, 45, -90],
+    "CoreAnimeHash": "Animator.StringToHash(\"anc_bs06_core01_cover_op\")",
+    "_EntryNoHitTime": 3.2,
+    "_Pattern1FireTime": 5.0,
+    "_Pattern1FireDelay": 2.0,
+    "_Pattern1FireInterval": 7.0,
+    "_Pattern1FireInterval_note": "computed in cctor as FireDelay + FireTime",
+    "_Pattern1FireStart": 1.0,
+    "_Pattern1FireCount": 2,
+    "_Pattern1CircleMoveWidth": 20.0,
+    "_Pattern1CircleMoveHeight": 10.0,
+    "_LeftSlidePosition": [-60, 0, 0],
+    "_RightSlidePosition": [60, 0, 0],
+    "_SlideStep": 0.02,
+    "_Pattern2FireInterval": 4.0,
+    "_Pattern2FireCount": 3,
+    "_Pattern2FireAngles": [90, 45, 0],
+    "_Pattern2CircleMoveWidth": 30.0,
+    "_Pattern2CircleMoveHeight": 5.0,
+    "_BaseDistance": 110.0,
+    "_BodyLeftBasePosition": [110, 0, 0],
+    "_BodyRightBasePosition": [-110, 0, 0],
+    "_PinchMoveDistance": 40.0,
+    "_PartsBreakRotation_euler": [-60, 0, 0]
+  },
+  "CoreMovement.cctor@0x1D8ADA0": {
+    "_EvacuateDelay": 0.5, "_EvacuateTime": 1.0, "_RotatePerSecond": 180.0, "_FloatingCycleTime": 3.0,
+    "_FloatingCycleDistance": 20.0, "_CombatTime": 1.5, "_CircuitTime": 5.0, "_CircuitRadius": 10.0,
+    "_CircuitFireTiming": 0.8, "DefaultFirePatternCount": 2, "ExtendedFirePatternCount": 4
+  },
+  "BatteryMovement.cctor@0x1DA03C0": {
+    "_LaserInterval": 3.0, "_LaserFollowStartTime": 0.0, "_LaserFollowStopTime": 1.0, "_LaserCallTime": 0.2,
+    "_LaserFollowTime": 1.0, "_FloatingCycleTime": 5.0, "_FloatingCycleDistance": 10.0
+  },
+  "literalsInCode": {
+    "PT3Break.targetOffset_rootLocal": [0, -150, 50],
+    "PT3Break.waits": {"move1": 1.0, "hold": 0.5, "rotateBack": 1.0, "return": 1.5, "hold2": 0.5, "slideOut": 2.0},
+    "PT6Bind": {"pinchMove": 0.8, "close": 2.0, "hold": 1.0, "open": 2.0, "returnZ": 1.5, "loops": 2},
+    "PT7Change.tilt": 2.0,
+    "SideAttack": {"side1At": 0.5, "side2At": 1.0, "period": 1.0, "enableWhileDirectionRateBelow": 0.8, "angleLeft": -90, "angleRight": 90},
+    "PT8.rightBatteryDelay": 1.5,
+    "Destruction": {"sideBreakWait": 0.5, "coreDrop_modelLocal": [0, -150, 0], "coreEndEuler": [-80, 60, 0], "moveTime": 5.0, "easing": "EaseIn", "smallBombBase": 0.2, "phase1": 3.0, "phase2": 2.0, "shake1": [0.5, 1, 2], "shake2": [0.5, 1, 5]},
+    "BosBase": {"hpRateRanges": [0.9, 0.75, 0.51, 0.4, 0.3, 0.2, 0.1, 0], "actStepSeconds": 10, "playerBottomZ": -20, "playerCenterAbsX": 100, "smallBombJitter": 0.1, "smallBombDecay": 0.9}
+  },
+  "prefab": {
+    "path": "Reconstructed/Assets/OriginalRecovered/Samples/Prefabs/Reference/Enemy/Pf_Ene_Bos06.prefab",
+    "_muzzles": ["pf_bs06/pf_bs06_core01/muzzle_core_core", "pf_bs06/pf_bs06_core01/muzzle_core_battery", "pf_bs06/bs06_body01_top01/muzzle_top_core", "pf_bs06/bs06_body01_40/muzzle_body_core_40", "pf_bs06/bs06_body01_60/muzzle_body_core_60", "pf_bs06/bs06_body01_40/pf_bs06_body01_battery01_40/muzzle_battery", "pf_bs06/bs06_body01_60/pf_bs06_body01_battery01_60/muzzle_battery", "pf_bs06/bs06_body01_40/pf_bs06_body01_battery01_40/muzzle_battery/target40", "pf_bs06/bs06_body01_60/pf_bs06_body01_battery01_60/muzzle_battery/target60", "pf_bs06/bs06_body01_40/muzzle_body_attack_10", "pf_bs06/bs06_body01_40/muzzle_body_attack_20"],
+    "_laserL": "pf_bs06/bs06_body01_60/pf_bs06_body01_battery01_60",
+    "_laserR": "pf_bs06/bs06_body01_40/pf_bs06_body01_battery01_40",
+    "_bodyL": "pf_bs06/bs06_body01_60",
+    "_bodyR": "pf_bs06/bs06_body01_40",
+    "_bodyCore": "pf_bs06/pf_bs06_core01",
+    "_bindEffect": "pf_bs06/bs06_body01_60/pf_eff_e_attack01 (ParticleSystem)",
+    "_modelTop": "pf_bs06",
+    "_easingCurve": [[0, 0, 0, 0], [0.2, 0.15, 1.1118432, 1.1118432], [0.5, 0.5, 1.1666667, 1.1666667], [0.8, 0.85, 1.1105995, 1.1105995], [1, 1, 0, 0]],
+    "_easingCurve_note": "time, value, inSlope, outSlope; key1 outWeight 0.10773412, key3 outWeight 0.33283892 (weightedMode 0, so weights unused)",
+    "_deadExplosion": "pf_eff_explposion_boss", "_overplayDeadSound": 41, "_explosionOffset": [0, 0, 0], "_HitPoint": 100
+  }
+}

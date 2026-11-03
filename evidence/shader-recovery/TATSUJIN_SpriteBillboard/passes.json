@@ -1,0 +1,151 @@
+{
+ "name": "TATSUJIN/SpriteBillboard",
+ "bundle": "ingame_assets_all_8034fdacf783ddd76b81996e259b6efa.bundle",
+ "path_id": "-3007874196514025571",
+ "keywordNames": [
+  "STEREO_INSTANCING_ON",
+  "UNITY_SINGLE_PASS_STEREO",
+  "STEREO_MULTIVIEW_ON",
+  "STEREO_CUBEMAP_RENDER_ON",
+  "INSTANCING_ON"
+ ],
+ "passes": [
+  {
+   "label": "0_0_pass",
+   "name": "",
+   "useName": "",
+   "tags": {
+    "DisableBatching": "true",
+    "QUEUE": "Transparent",
+    "RenderType": "Transparent"
+   },
+   "subShaderTags": {
+    "DisableBatching": "true",
+    "QUEUE": "Transparent",
+    "RenderType": "Transparent"
+   },
+   "lod": 0,
+   "state": {
+    "blend": [
+     5.0,
+     10.0,
+     5.0,
+     10.0
+    ],
+    "blendOp": [
+     0.0,
+     0.0
+    ],
+    "colMask": 14.0,
+    "zTest": 8.0,
+    "zWrite": 0.0,
+    "culling": 2.0,
+    "offsetFactor": 0.0,
+    "offsetUnits": 0.0,
+    "stencilRef": 0.0,
+    "stencilComp": 8.0,
+    "stencilPass": 0.0,
+    "stencilFail": 0.0,
+    "stencilZFail": 0.0,
+    "stencilReadMask": 255.0,
+    "stencilWriteMask": 255.0
+   },
+   "programs": {
+    "vs": [
+     {
+      "blob": 2,
+      "params": 0,
+      "keywords": []
+     },
+     {
+      "blob": 3,
+      "params": 1,
+      "keywords": [
+       "INSTANCING_ON"
+      ]
+     }
+    ],
+    "ps": [
+     {
+      "blob": 5,
+      "params": 4,
+      "keywords": []
+     },
+     {
+      "blob": 6,
+      "params": 4,
+      "keywords": [
+       "INSTANCING_ON"
+      ]
+     }
+    ]
+   },
+   "bindings": {
+    "vs": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 64,
+       "members": [
+        {
+         "name": "_MainTex_ST",
+         "offset": 48,
+         "dim": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerFrame",
+       "slot": null,
+       "size": 368,
+       "members": [
+        {
+         "name": "glstate_matrix_projection",
+         "offset": 80,
+         "matrix": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_MatrixV",
+         "offset": 144,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    },
+    "ps": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 64,
+       "members": [
+        {
+         "name": "_TexAlpha",
+         "offset": 32,
+         "dim": 1,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [
+      {
+       "name": "_MainTex",
+       "register": 0,
+       "sampler": 0,
+       "dim": 2
+      }
+     ],
+     "samplers": []
+    }
+   }
+  }
+ ]
+}

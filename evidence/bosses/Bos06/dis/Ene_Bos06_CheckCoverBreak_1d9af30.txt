@@ -1,0 +1,77 @@
+01d9af30 push rbx 
+01d9af32 sub rsp, 0x40 
+01d9af36 cmp byte ptr [rcx + 0x2c8], 0 
+01d9af3d mov rbx, rcx 
+01d9af40 jne 0x1d9b034 
+01d9af46 xor r9d, r9d 
+01d9af49 mov edx, 3 
+01d9af4e mov r8d, 9 
+01d9af54 call 0x1db9fb0 ; Ene_BosBase::IsOverAorB(InGame.Kernel.Enemy.Ene_BosBase/HitPState,InGame.Kernel.Enemy.Ene_BosBase/TimeSteps)
+01d9af59 test al, al 
+01d9af5b je 0x1d9b034 
+01d9af61 cmp byte ptr [rip + 0x28c888c], 0 ; rva=46637f4
+01d9af68 jne 0x1d9af7d 
+01d9af6a lea rcx, [rip + 0x26073f7] ; rva=43a2368
+01d9af71 call 0x4e0a50 
+01d9af76 mov byte ptr [rip + 0x28c8877], 1 ; rva=46637f4
+01d9af7d xor r8d, r8d 
+01d9af80 mov edx, 1 
+01d9af85 mov rcx, rbx 
+01d9af88 call 0x1d0da10 ; PawnEnemy::GetParts(System.Int32)
+01d9af8d test rax, rax 
+01d9af90 je 0x1d9b034 
+01d9af96 cmp byte ptr [rax + 0x9a], 0 
+01d9af9d jne 0x1d9b034 
+01d9afa3 xor edx, edx 
+01d9afa5 cmp dword ptr [rbx + 0x2b0], 2 
+01d9afac je 0x1d9afbe 
+01d9afae mov dword ptr [rbx + 0x2b0], 2 
+01d9afb8 mov dword ptr [rbx + 0x1ec], edx 
+01d9afbe mov rcx, qword ptr [rbx + 0xb8] 
+01d9afc5 test rcx, rcx 
+01d9afc8 je 0x1d9b03c 
+01d9afca mov byte ptr [rcx + 0x1d4], dl 
+01d9afd0 xor r9d, r9d 
+01d9afd3 xor ecx, ecx 
+01d9afd5 mov qword ptr [rsp + 0x28], rdx 
+01d9afda mov qword ptr [rsp + 0x30], rcx 
+01d9afdf mov r8b, 1 
+01d9afe2 movsd xmm0, qword ptr [rsp + 0x30] 
+01d9afe8 mov dword ptr [rsp + 0x38], ecx 
+01d9afec lea rcx, [rsp + 0x30] 
+01d9aff1 mov qword ptr [rsp + 0x20], rcx 
+01d9aff6 mov rcx, rax 
+01d9aff9 mov byte ptr [rbx + 0x2c8], 1 
+01d9b000 movsd qword ptr [rsp + 0x30], xmm0 
+01d9b006 call 0x1d61850 ; EnePartsGroup::BreakParts(System.Boolean,System.Boolean,System.Boolean,UnityEngine.Vector3)
+01d9b00b mov rcx, qword ptr [rip + 0x2607356] ; rva=43a2368
+01d9b012 cmp dword ptr [rcx + 0xe4], 0 
+01d9b019 jne 0x1d9b020 
+01d9b01b call 0x4e0d90 
+01d9b020 xor edx, edx 
+01d9b022 mov ecx, 0x81 
+01d9b027 call 0x2723de0 ; SoundUtility::PlayQue(TXEKernel.Sound.SoundUtility/ID)
+01d9b02c mov al, 1 
+01d9b02e add rsp, 0x40 
+01d9b032 pop rbx 
+01d9b033 ret 
+01d9b034 xor al, al 
+01d9b036 add rsp, 0x40 
+01d9b03a pop rbx 
+01d9b03b ret 
+01d9b03c call 0x4e0d00 
+01d9b041 int3 
+01d9b042 int3 
+01d9b043 int3 
+01d9b044 int3 
+01d9b045 int3 
+01d9b046 int3 
+01d9b047 int3 
+01d9b048 int3 
+01d9b049 int3 
+01d9b04a int3 
+01d9b04b int3 
+01d9b04c int3 
+01d9b04d int3 
+01d9b04e int3 
+01d9b04f int3 

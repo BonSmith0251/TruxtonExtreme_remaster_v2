@@ -1,0 +1,29 @@
+01d9b530 push rbx 
+01d9b532 sub rsp, 0x20 
+01d9b536 xor edx, edx 
+01d9b538 mov rbx, rcx 
+01d9b53b call 0x1d0db40 ; PawnEnemy::GetStart()
+01d9b540 xor r8d, r8d 
+01d9b543 xor edx, edx 
+01d9b545 mov rcx, rbx 
+01d9b548 call 0x1d0da10 ; PawnEnemy::GetParts(System.Int32)
+01d9b54d test rax, rax 
+01d9b550 je 0x1d9b55c 
+01d9b552 xor edx, edx 
+01d9b554 mov rcx, rax 
+01d9b557 call 0x1d63240 ; EnePartsGroup::Wakeup()
+01d9b55c xor r8d, r8d 
+01d9b55f mov edx, 1 
+01d9b564 mov rcx, rbx 
+01d9b567 call 0x1d0da10 ; PawnEnemy::GetParts(System.Int32)
+01d9b56c test rax, rax 
+01d9b56f je 0x1d9b57b 
+01d9b571 xor edx, edx 
+01d9b573 mov rcx, rax 
+01d9b576 call 0x1d63240 ; EnePartsGroup::Wakeup()
+01d9b57b xor r8d, r8d 
+01d9b57e mov edx, 1 
+01d9b583 mov rcx, rbx 
+01d9b586 add rsp, 0x20 
+01d9b58a pop rbx 
+01d9b58b jmp 0x1ccf580 ; InGameCollisionBase::SetObjectFlag(InGame.Kernel.InGameObject/InGameObjectFlag)

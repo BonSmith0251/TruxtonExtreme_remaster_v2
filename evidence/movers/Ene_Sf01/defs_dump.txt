@@ -1,0 +1,496 @@
+====================================================================================================
+BG05 ene_sf01a Pf_Ene_Sf01 id 143b824b69abf3e499ad73cc9f8d93c4 attr 17 dur 60.0 pos (0.0, 0.0, 0.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 100.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 180.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       2 Rotate        repeatDelay=0.01 vec=(0,180,0) nameValue='pf_ene_sf01'
+      12 ForwardMove   dotime=2.3 repeatDelay=0.01
+      14 Speed         dotime=2.3 repeatDelay=0.01
+       2 Rotate        value0=1.5 dotime=0.5 repeatDelay=0.01 vec=(0,180,0) nameValue='pf_ene_sf01'
+      80 TaskWait      dotime=10 intValue1=256 repeatDelay=0.01 vec=(0,180,0)
+       8 Bullet        value1=0.2 repeatDelay=0.01 vec=(0,180,0) stringValue='sf01_fire1' nameValue='pf_ene_sf01/ene_sf_body/muzzle01'
+       1 Delay         dotime=2 repeatDelay=0.01 vec=(0,180,0)
+       2 Rotate        dotime=0.5 repeatDelay=0.01 vec=(0,-180,0)
+      14 Speed         value0=100 dotime=2 repeatDelay=0.01 vec=(0,180,0)
+      12 ForwardMove   dotime=0.1 repeatCount=100 repeatDelay=0.01 vec=(0,180,0)
+  SPAWN EnemyEntryClip(Clone)(Clone) t=5.000-7.000 off=(-100,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:21:5.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=5.750-7.750 off=(-130,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:21:5.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=5.750-7.750 off=(-70,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:21:5.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=7.000-9.000 off=(-47,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:30:7.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=7.200-9.200 off=(-77,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:30:7.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=7.400-9.400 off=(-107,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:30:7.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=7.600-9.600 off=(-137,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:30:7.000000
+  SPAWN EnemyEntryClip(Clone)(Clone) t=10.000-12.000 off=(-60,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:22:10.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=10.750-12.750 off=(-90,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:22:10.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=10.750-12.750 off=(-30,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:22:10.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=12.000-14.000 off=(-7,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:31:12.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=12.200-14.200 off=(-37,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:31:12.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=12.400-14.400 off=(-67,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:31:12.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=12.600-14.600 off=(-97,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:31:12.000000
+  SPAWN EnemyEntryClip(Clone)(Clone) t=18.000-20.000 off=(-80,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:23:18.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=18.750-20.750 off=(-110,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:23:18.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=18.750-20.750 off=(-50,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:23:18.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=20.000-22.000 off=(-27,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:32:20.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=20.200-22.200 off=(-57,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:32:20.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=20.400-22.400 off=(-87,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:32:20.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=20.600-22.600 off=(-117,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:32:20.000000
+  SPAWN EnemyEntryClip(Clone)(Clone) t=23.000-25.000 off=(-40,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:24:23.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=23.750-25.750 off=(-70,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:24:23.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=23.750-25.750 off=(-10,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:24:23.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=25.000-27.000 off=(13,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:33:25.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=25.200-27.200 off=(-17,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:33:25.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=25.400-27.400 off=(-47,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:33:25.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=25.600-27.600 off=(-77,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:33:25.000000
+  SPAWN EnemyEntryClip(Clone)(Clone) t=159.000-161.000 off=(-85,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:27:159.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=159.750-161.750 off=(-115,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:27:159.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=159.750-161.750 off=(-55,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:27:159.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=160.000-162.000 off=(-32,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:36:160.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=160.200-162.200 off=(-62,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:36:160.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=160.400-162.400 off=(-92,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:36:160.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=160.600-162.600 off=(-122,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:36:160.000000
+  SPAWN EnemyEntryClip(Clone)(Clone) t=184.000-186.000 off=(-70,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:26:184.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=184.750-186.750 off=(-100,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:26:184.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=184.750-186.750 off=(-40,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:26:184.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=186.000-188.000 off=(-17,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:35:186.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=186.200-188.200 off=(-47,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:35:186.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=186.400-188.400 off=(-77,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:35:186.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=186.600-188.600 off=(-107,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:35:186.000000
+  SPAWN EnemyEntryClip(Clone)(Clone) t=191.000-193.000 off=(-100,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:29:191.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=191.750-193.750 off=(-130,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:29:191.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=191.750-193.750 off=(-70,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:29:191.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=193.000-195.000 off=(-47,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:38:193.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=193.200-195.200 off=(-77,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:38:193.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=193.400-195.400 off=(-107,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:38:193.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=193.600-195.600 off=(-137,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:38:193.000000
+====================================================================================================
+BG05 ene_sf01_5b3 Pf_Ene_Sf01 id 1648ee78285d6c149bab0e032187d317 attr 17 dur 60.0 pos (100.0, 0.0, 120.0)
+   routes = ["move_sf01_hc_r3"]
+  placement {"objectName": "", "moveSpeed": 40.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 7, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+      20 Idle          dotime=2 intValue1=1 vec=(0,180,0) nameValue='pf_ene_sf01'
+       2 Rotate        dotime=0.5 intValue1=256 vec=(0,-180,0) nameValue='pf_ene_sf01'
+      80 TaskWait      intValue1=1 vec=(0,180,0) nameValue='pf_ene_sf01'
+       8 Bullet        value1=0.2 intValue1=1 repeatCount=999 repeatDelay=1 vec=(0,180,0) stringValue='sf01_fire1' nameValue='pf_ene_sf01/ene_sf_body/muzzle01'
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=344.000-344.750 off=(-80,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:39:343.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=344.750-345.500 off=(-80,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:39:343.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=345.500-346.250 off=(-80,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:39:343.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=346.250-347.000 off=(-80,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:39:343.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=347.000-347.750 off=(-80,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:39:343.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=347.750-348.500 off=(-80,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:39:343.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=348.500-349.250 off=(-80,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:39:343.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=349.250-350.000 off=(-80,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:39:343.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=354.000-354.750 off=(-60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:40:353.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=354.750-355.500 off=(-60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:40:353.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=355.500-356.250 off=(-60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:40:353.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=356.250-357.000 off=(-60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:40:353.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=357.000-357.750 off=(-60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:40:353.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=357.750-358.500 off=(-60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:40:353.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=358.500-359.250 off=(-60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:40:353.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=359.250-360.000 off=(-60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:40:353.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=404.000-404.750 off=(-190,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:43:403.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=404.750-405.500 off=(-190,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:43:403.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=405.500-406.250 off=(-190,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:43:403.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=406.250-407.000 off=(-190,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:43:403.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=407.000-407.750 off=(-190,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:43:403.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=407.750-408.500 off=(-190,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:43:403.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=408.500-409.250 off=(-190,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:43:403.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=409.250-410.000 off=(-190,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:43:403.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=424.000-424.750 off=(-190,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:45:423.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=424.750-425.500 off=(-190,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:45:423.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=425.500-426.250 off=(-190,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:45:423.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=426.250-427.000 off=(-190,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:45:423.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=427.000-427.750 off=(-190,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:45:423.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=427.750-428.500 off=(-190,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:45:423.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=428.500-429.250 off=(-190,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:45:423.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=429.250-430.000 off=(-190,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:45:423.000000
+====================================================================================================
+BG05 ene_sf01_5b2 Pf_Ene_Sf01 id 1a734ea844c78e849aef9bcfffbacd27 attr 17 dur 60.0 pos (100.0, 0.0, 110.0)
+   routes = ["move_sf01_hc_r2"]
+  placement {"objectName": "", "moveSpeed": 40.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 7, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+      20 Idle          dotime=2 intValue1=1 vec=(0,180,0) nameValue='pf_ene_sf01'
+       2 Rotate        dotime=0.5 intValue1=256 vec=(0,-180,0) nameValue='pf_ene_sf01'
+      80 TaskWait      intValue1=1 vec=(0,180,0) nameValue='pf_ene_sf01'
+       8 Bullet        value1=0.2 intValue1=1 repeatCount=999 repeatDelay=1 vec=(0,180,0) stringValue='sf01_fire1' nameValue='pf_ene_sf01/ene_sf_body/muzzle01'
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone) t=343.500-344.250 off=(-60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:39:343.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=344.250-345.000 off=(-60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:39:343.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=345.000-345.750 off=(-60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:39:343.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=345.750-346.500 off=(-60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:39:343.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=346.500-347.250 off=(-60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:39:343.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=347.250-348.000 off=(-60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:39:343.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=348.000-348.750 off=(-60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:39:343.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=348.750-349.500 off=(-60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:39:343.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone) t=353.500-354.250 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:40:353.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=354.250-355.000 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:40:353.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=355.000-355.750 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:40:353.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=355.750-356.500 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:40:353.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=356.500-357.250 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:40:353.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=357.250-358.000 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:40:353.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=358.000-358.750 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:40:353.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=358.750-359.500 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:40:353.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone) t=403.500-404.250 off=(-170,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:43:403.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=404.250-405.000 off=(-170,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:43:403.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=405.000-405.750 off=(-170,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:43:403.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=405.750-406.500 off=(-170,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:43:403.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=406.500-407.250 off=(-170,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:43:403.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=407.250-408.000 off=(-170,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:43:403.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=408.000-408.750 off=(-170,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:43:403.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=408.750-409.500 off=(-170,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:43:403.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone) t=423.500-424.250 off=(-170,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:45:423.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=424.250-425.000 off=(-170,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:45:423.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=425.000-425.750 off=(-170,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:45:423.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=425.750-426.500 off=(-170,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:45:423.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=426.500-427.250 off=(-170,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:45:423.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=427.250-428.000 off=(-170,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:45:423.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=428.000-428.750 off=(-170,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:45:423.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=428.750-429.500 off=(-170,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:45:423.000000
+====================================================================================================
+BG05 ene_sf01_5a2 Pf_Ene_Sf01 id 216427f200f552440b78d23fe0d927ed attr 17 dur 60.0 pos (-100.0, 0.0, 110.0)
+   routes = ["move_sf01_hc_l2"]
+  placement {"objectName": "", "moveSpeed": 40.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 7, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+      20 Idle          dotime=2 intValue1=1 vec=(0,180,0) nameValue='pf_ene_sf01'
+       2 Rotate        dotime=0.5 intValue1=256 vec=(0,180,0) nameValue='pf_ene_sf01'
+      80 TaskWait      intValue1=1 vec=(0,180,0) nameValue='pf_ene_sf01'
+       8 Bullet        value1=0.2 intValue1=1 repeatCount=999 repeatDelay=1 vec=(0,180,0) stringValue='sf01_fire1' nameValue='pf_ene_sf01/ene_sf_body/muzzle01'
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=373.500-374.250 off=(60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:41:373.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=374.250-375.000 off=(60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:41:373.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone) t=375.000-375.750 off=(60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:41:373.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=375.750-376.500 off=(60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:41:373.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=376.500-377.250 off=(60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:41:373.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=377.250-378.000 off=(60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:41:373.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=378.000-378.750 off=(60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:41:373.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=378.750-379.500 off=(60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:41:373.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=383.500-384.250 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:42:383.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=384.250-385.000 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:42:383.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone) t=385.000-385.750 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:42:383.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=385.750-386.500 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:42:383.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=386.500-387.250 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:42:383.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=387.250-388.000 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:42:383.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=388.000-388.750 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:42:383.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=388.750-389.500 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:42:383.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=413.500-414.250 off=(170,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:44:413.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=414.250-415.000 off=(170,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:44:413.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone) t=415.000-415.750 off=(170,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:44:413.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=415.750-416.500 off=(170,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:44:413.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=416.500-417.250 off=(170,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:44:413.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=417.250-418.000 off=(170,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:44:413.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=418.000-418.750 off=(170,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:44:413.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=418.750-419.500 off=(170,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:44:413.000000
+====================================================================================================
+BG05 ene_sf01_5b Pf_Ene_Sf01 id 21e1ecdae514ffe4d8b77f1e7595e485 attr 17 dur 60.0 pos (100.0, 0.0, 100.0)
+   routes = ["move_sf01_hc_r"]
+  placement {"objectName": "", "moveSpeed": 40.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 7, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+      20 Idle          dotime=2 intValue1=1 vec=(0,180,0) nameValue='pf_ene_sf01'
+       2 Rotate        dotime=0.5 intValue1=256 vec=(0,-180,0) nameValue='pf_ene_sf01'
+      80 TaskWait      intValue1=1 vec=(0,180,0) nameValue='pf_ene_sf01'
+       8 Bullet        value1=0.2 intValue1=1 repeatCount=999 repeatDelay=1 vec=(0,180,0) stringValue='sf01_fire1' nameValue='pf_ene_sf01/ene_sf_body/muzzle01'
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=343.000-343.750 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:39:343.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone) t=343.750-344.500 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:39:343.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=344.500-345.250 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:39:343.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=345.250-346.000 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:39:343.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=346.000-346.750 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:39:343.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=346.750-347.500 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:39:343.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=347.500-348.250 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:39:343.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=348.250-349.000 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:39:343.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=353.000-353.750 off=(-20,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:40:353.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone) t=353.750-354.500 off=(-20,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:40:353.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=354.500-355.250 off=(-20,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:40:353.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=355.250-356.000 off=(-20,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:40:353.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=356.000-356.750 off=(-20,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:40:353.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=356.750-357.500 off=(-20,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:40:353.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=357.500-358.250 off=(-20,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:40:353.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=358.250-359.000 off=(-20,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:40:353.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=403.000-403.750 off=(-150,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:43:403.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone) t=403.750-404.500 off=(-150,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:43:403.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=404.500-405.250 off=(-150,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:43:403.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=405.250-406.000 off=(-150,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:43:403.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=406.000-406.750 off=(-150,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:43:403.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=406.750-407.500 off=(-150,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:43:403.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=407.500-408.250 off=(-150,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:43:403.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=408.250-409.000 off=(-150,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:43:403.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=423.000-423.750 off=(-150,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:45:423.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone) t=423.750-424.500 off=(-150,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:45:423.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=424.500-425.250 off=(-150,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:45:423.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=425.250-426.000 off=(-150,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:45:423.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=426.000-426.750 off=(-150,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:45:423.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=426.750-427.500 off=(-150,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:45:423.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=427.500-428.250 off=(-150,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:45:423.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=428.250-429.000 off=(-150,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:45:423.000000
+====================================================================================================
+BG05 ene_sf01_4a Pf_Ene_Sf01 id 643d00283a0139649bc0786253e1f5b9 attr 17 dur 60.0 pos (-120.0, 0.0, 120.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 40.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 180.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 7, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       5 Label         repeatDelay=0.01 vec=(0,180,0) stringValue='LP1' nameValue='pf_ene_sf01'
+      15 SplineMove    dotime=2.3 repeatDelay=0.01 stringValue='move_sf01_rd'
+      80 TaskWait      dotime=2.3 intValue1=256 repeatDelay=0.01
+       2 Rotate        dotime=0.5 intValue1=10 repeatDelay=0.01 vec=(0,-180,0) stringValue='LP1' nameValue='pf_ene_sf01'
+      15 SplineMove    value0=1.5 dotime=0.5 repeatDelay=0.01 vec=(0,180,0) stringValue='move_sf01_ld' nameValue='pf_ene_sf01'
+      80 TaskWait      dotime=10 intValue1=256 repeatDelay=0.01 vec=(0,180,0)
+       2 Rotate        dotime=0.5 intValue1=10 repeatDelay=0.01 vec=(0,180,0) stringValue='LP1' nameValue='pf_ene_sf01'
+      80 TaskWait      value1=0.2 intValue1=1 repeatDelay=0.01 vec=(0,180,0) stringValue='LP1' nameValue='pf_ene_sf01/muzzle01' flag0
+       8 Bullet        value1=0.2 intValue1=10 repeatDelay=0.01 vec=(0,180,0) stringValue='sf01_fire1' nameValue='pf_ene_sf01/ene_sf_body/muzzle01'
+     101 Loop          value1=0.2 intValue1=3 repeatDelay=0.01 vec=(0,180,0) stringValue='LP1' nameValue='pf_ene_sf01/muzzle01' flag0
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone) t=259.500-261.000 off=(-30,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone) t=259.750-261.250 off=(5,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=260.000-261.500 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone) t=261.000-262.500 off=(-30,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=261.250-262.750 off=(5,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=261.500-263.000 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=262.500-264.000 off=(-30,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=262.750-264.250 off=(5,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=263.000-264.500 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=264.000-265.500 off=(-30,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=264.250-265.750 off=(5,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=264.500-266.000 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=265.500-267.000 off=(-30,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=265.750-267.250 off=(5,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=266.000-267.500 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=267.000-268.500 off=(-30,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=267.250-268.750 off=(5,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=267.500-269.000 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=268.500-270.000 off=(-30,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=268.750-270.250 off=(5,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=269.000-270.500 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=270.000-271.500 off=(-30,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=270.250-271.750 off=(5,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=270.500-272.000 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:79:252.000000
+====================================================================================================
+BG05 ene_sf01_4b Pf_Ene_Sf01 id 6f0d22978dbf0ff4b8650ed1bde2abb3 attr 17 dur 60.0 pos (120.0, 0.0, 120.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 40.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 180.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 7, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       5 Label         repeatDelay=0.01 vec=(0,180,0) stringValue='LP1' nameValue='pf_ene_sf01'
+      15 SplineMove    dotime=2.3 repeatDelay=0.01 stringValue='move_sf01_ld'
+      80 TaskWait      dotime=2.3 intValue1=256 repeatDelay=0.01
+       2 Rotate        dotime=0.5 intValue1=10 repeatDelay=0.01 vec=(0,180,0) stringValue='LP1' nameValue='pf_ene_sf01'
+      15 SplineMove    value0=1.5 dotime=0.5 repeatDelay=0.01 vec=(0,180,0) stringValue='move_sf01_rd' nameValue='pf_ene_sf01'
+      80 TaskWait      dotime=10 intValue1=256 repeatDelay=0.01 vec=(0,180,0)
+       2 Rotate        dotime=0.5 intValue1=10 repeatDelay=0.01 vec=(0,-180,0) stringValue='LP1' nameValue='pf_ene_sf01'
+      80 TaskWait      value1=0.2 intValue1=1 repeatDelay=0.01 vec=(0,180,0) stringValue='LP1' nameValue='pf_ene_sf01/muzzle01' flag0
+       8 Bullet        value1=0.2 intValue1=10 repeatDelay=0.01 vec=(0,180,0) stringValue='sf01_fire1' nameValue='pf_ene_sf01/ene_sf_body/muzzle01'
+     101 Loop          value1=0.2 intValue1=3 repeatDelay=0.01 vec=(0,180,0) stringValue='LP1' nameValue='pf_ene_sf01/muzzle01' flag0
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=279.500-281.000 off=(30,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=279.750-281.250 off=(-5,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=280.000-281.500 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=281.000-282.500 off=(30,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=281.250-282.750 off=(-5,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=281.500-283.000 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=282.500-284.000 off=(30,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=282.750-284.250 off=(-5,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=283.000-284.500 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=284.000-285.500 off=(30,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=284.250-285.750 off=(-5,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=284.500-286.000 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=285.500-287.000 off=(30,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=285.750-287.250 off=(-5,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=286.000-287.500 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=287.000-288.500 off=(30,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=287.250-288.750 off=(-5,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=287.500-289.000 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=288.500-290.000 off=(30,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=288.750-290.250 off=(-5,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=289.000-290.500 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=290.000-291.500 off=(30,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=290.250-291.750 off=(-5,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+  SPAWN EnemyWaveClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=290.500-292.000 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/MK01:80:272.000000
+====================================================================================================
+BG05 ene_sf01b Pf_Ene_Sf01 id ad85fbfcf85db044ab86df86a079d7a9 attr 17 dur 60.0 pos (0.0, 0.0, 0.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 100.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 180.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       2 Rotate        repeatDelay=0.01 vec=(0,180,0) nameValue='pf_ene_sf01'
+      12 ForwardMove   dotime=2.3 repeatDelay=0.01
+      14 Speed         dotime=2.3 repeatDelay=0.01
+       2 Rotate        value0=1.5 dotime=0.5 repeatDelay=0.01 vec=(0,-180,0) nameValue='pf_ene_sf01'
+      80 TaskWait      dotime=10 intValue1=256 repeatDelay=0.01 vec=(0,180,0)
+       8 Bullet        value1=0.2 repeatDelay=0.01 vec=(0,180,0) stringValue='sf01_fire1' nameValue='pf_ene_sf01/ene_sf_body/muzzle01'
+       1 Delay         dotime=2 repeatDelay=0.01 vec=(0,180,0)
+       2 Rotate        dotime=0.5 repeatDelay=0.01 vec=(0,180,0)
+      14 Speed         value0=100 dotime=2 repeatDelay=0.01 vec=(0,180,0)
+      12 ForwardMove   dotime=0.1 repeatCount=100 repeatDelay=0.01 vec=(0,180,0)
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=170.000-172.000 off=(85,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:28:170.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone) t=170.750-172.750 off=(115,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:28:170.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=170.750-172.750 off=(55,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:28:170.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=171.000-173.000 off=(32,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:37:171.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=171.200-173.200 off=(62,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:37:171.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=171.400-173.400 off=(92,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:37:171.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=171.600-173.600 off=(122,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:37:171.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=198.000-200.000 off=(70,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:25:198.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone) t=198.750-200.750 off=(100,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:25:198.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=198.750-200.750 off=(40,0,140) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:25:198.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=200.000-202.000 off=(17,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:34:200.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=200.200-202.200 off=(47,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:34:200.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=200.400-202.400 off=(77,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:34:200.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=200.600-202.600 off=(107,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:34:200.000000
+====================================================================================================
+BG05 ene_sf01_5a Pf_Ene_Sf01 id c2a7955b4703e714ab5ac8776046cca4 attr 17 dur 60.0 pos (-100.0, 0.0, 100.0)
+   routes = ["move_sf01_hc_l"]
+  placement {"objectName": "", "moveSpeed": 40.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 7, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+      20 Idle          dotime=2 intValue1=1 vec=(0,180,0) nameValue='pf_ene_sf01'
+       2 Rotate        dotime=0.5 intValue1=256 vec=(0,180,0) nameValue='pf_ene_sf01'
+      80 TaskWait      intValue1=1 vec=(0,180,0) nameValue='pf_ene_sf01'
+       8 Bullet        value1=0.2 intValue1=1 repeatCount=999 repeatDelay=1 vec=(0,180,0) stringValue='sf01_fire1' nameValue='pf_ene_sf01/ene_sf_body/muzzle01'
+  SPAWN EnemyEntryClip(Clone)(Clone) t=373.000-373.750 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:41:373.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=373.750-374.500 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:41:373.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=374.500-375.250 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:41:373.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone) t=375.250-376.000 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:41:373.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=376.000-376.750 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:41:373.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=376.750-377.500 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:41:373.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=377.500-378.250 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:41:373.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=378.250-379.000 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:41:373.000000
+  SPAWN EnemyEntryClip(Clone)(Clone) t=383.000-383.750 off=(20,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:42:383.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=383.750-384.500 off=(20,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:42:383.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=384.500-385.250 off=(20,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:42:383.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone) t=385.250-386.000 off=(20,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:42:383.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=386.000-386.750 off=(20,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:42:383.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=386.750-387.500 off=(20,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:42:383.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=387.500-388.250 off=(20,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:42:383.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=388.250-389.000 off=(20,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:42:383.000000
+  SPAWN EnemyEntryClip(Clone)(Clone) t=413.000-413.750 off=(150,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:44:413.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone) t=413.750-414.500 off=(150,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:44:413.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=414.500-415.250 off=(150,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:44:413.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone) t=415.250-416.000 off=(150,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:44:413.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=416.000-416.750 off=(150,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:44:413.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=416.750-417.500 off=(150,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:44:413.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=417.500-418.250 off=(150,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:44:413.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=418.250-419.000 off=(150,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:44:413.000000
+====================================================================================================
+BG05 ene_sf01_5a3 Pf_Ene_Sf01 id eeb05ed711994804284f5c545c2bb837 attr 17 dur 60.0 pos (-100.0, 0.0, 120.0)
+   routes = ["move_sf01_hc_l3"]
+  placement {"objectName": "", "moveSpeed": 40.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 0.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 7, "lookAt": 0, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+      20 Idle          dotime=2 intValue1=1 vec=(0,180,0) nameValue='pf_ene_sf01'
+       2 Rotate        dotime=0.5 intValue1=256 vec=(0,180,0) nameValue='pf_ene_sf01'
+      80 TaskWait      intValue1=1 vec=(0,180,0) nameValue='pf_ene_sf01'
+       8 Bullet        value1=0.2 intValue1=1 repeatCount=999 repeatDelay=1 vec=(0,180,0) stringValue='sf01_fire1' nameValue='pf_ene_sf01/ene_sf_body/muzzle01'
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=374.000-374.750 off=(80,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:41:373.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone) t=374.750-375.500 off=(80,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:41:373.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=375.500-376.250 off=(80,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:41:373.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=376.250-377.000 off=(80,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:41:373.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=377.000-377.750 off=(80,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:41:373.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=377.750-378.500 off=(80,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:41:373.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=378.500-379.250 off=(80,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:41:373.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=379.250-380.000 off=(80,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:41:373.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=384.000-384.750 off=(60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:42:383.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone) t=384.750-385.500 off=(60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:42:383.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=385.500-386.250 off=(60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:42:383.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=386.250-387.000 off=(60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:42:383.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=387.000-387.750 off=(60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:42:383.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=387.750-388.500 off=(60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:42:383.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=388.500-389.250 off=(60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:42:383.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=389.250-390.000 off=(60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:42:383.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone) t=414.000-414.750 off=(190,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:44:413.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone) t=414.750-415.500 off=(190,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:44:413.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=415.500-416.250 off=(190,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:44:413.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=416.250-417.000 off=(190,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:44:413.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=417.000-417.750 off=(190,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:44:413.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=417.750-418.500 off=(190,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:44:413.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=418.500-419.250 off=(190,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:44:413.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=419.250-420.000 off=(190,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SF01:44:413.000000
+====================================================================================================
+BG06 ene_sr01_1b Pf_Ene_Sr01 id 100cdea4b3be315498e580cae34cf328 attr 16 dur 60.0 pos (-50.0, 0.0, 98.0)
+   routes = ["move_sr01_1b"]
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 180.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 30, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.25, "_moveSpeedRange": 0.0, "offset": {"x": -50.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 180.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 30, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.25, "_moveSpeedRange": 0.0, "offset": {"x": 50.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 180.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 30, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+      20 Idle          dotime=0.2 intValue1=256 vec=(0,0,360) stringValue='sr01_fire1'
+      14 Speed         value0=20 dotime=0.5
+      80 TaskWait      dotime=0.5 intValue1=32
+      14 Speed         value0=100 dotime=0.5 stringValue='sr01_fire1'
+      20 Idle          dotime=0.2 stringValue='sr01_fire1'
+       8 Bullet         stringValue='sr01_fire1' nameValue='pf_ene_sr01/ene_sr/muzzle' flag0
+      80 TaskWait      dotime=2 intValue1=256 vec=(0,0,360) stringValue='sr01_fire1'
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=341.000-344.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:122:339.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=341.500-344.500 off=(10,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:122:339.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=342.000-345.000 off=(20,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:122:339.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=342.500-345.500 off=(30,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:122:339.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=343.000-346.000 off=(40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:122:339.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=343.500-346.500 off=(50,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:122:339.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=344.000-347.000 off=(60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:122:339.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=344.500-347.500 off=(70,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:122:339.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=372.000-375.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:123:370.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=405.000-408.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:125:403.000000
+====================================================================================================
+BG06 ene_sr01_1a Pf_Ene_Sr01 id 36da3d716713fa54396b49367a3192ad attr 16 dur 60.0 pos (50.0, 0.0, 98.0)
+   routes = ["move_sr01_1a"]
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 180.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 30, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.25, "_moveSpeedRange": 0.0, "offset": {"x": 50.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 180.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 30, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+  placement {"objectName": "", "moveSpeed": 60.0, "delayTime": 0.25, "_moveSpeedRange": 0.0, "offset": {"x": -50.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 180.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 30, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+      20 Idle          dotime=0.2 intValue1=256 vec=(0,0,360) stringValue='sr01_fire1'
+      14 Speed         value0=20 dotime=0.5
+      80 TaskWait      dotime=0.5 intValue1=32
+      14 Speed         value0=100 dotime=0.5 stringValue='sr01_fire1'
+      20 Idle          dotime=0.2 stringValue='sr01_fire1'
+       8 Bullet         stringValue='sr01_fire1' nameValue='pf_ene_sr01/ene_sr/muzzle' flag0
+      80 TaskWait      dotime=2 intValue1=256 vec=(0,0,360) stringValue='sr01_fire1'
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=330.000-333.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:121:328.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=330.500-333.500 off=(-10,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:121:328.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=331.000-334.000 off=(-20,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:121:328.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=331.500-334.500 off=(-30,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:121:328.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=332.000-335.000 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:121:328.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=332.500-335.500 off=(-50,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:121:328.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=333.000-336.000 off=(-60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:121:328.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=333.500-336.500 off=(-70,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:121:328.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=352.000-355.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:126:350.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=352.500-355.500 off=(-10,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:126:350.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=353.000-356.000 off=(-20,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:126:350.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=353.500-356.500 off=(-30,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:126:350.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=354.000-357.000 off=(-40,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:126:350.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=354.500-357.500 off=(-50,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:126:350.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=355.000-358.000 off=(-60,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:126:350.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=355.500-358.500 off=(-70,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:126:350.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=390.000-393.000 off=(0,0,0) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/SR:124:388.000000
+====================================================================================================
+BG08 ene_sf01a Pf_Ene_Sf01 id 143b824b69abf3e499ad73cc9f8d93c4 attr 17 dur 60.0 pos (0.0, 0.0, 0.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 100.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 180.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       2 Rotate        repeatDelay=0.01 vec=(0,180,0) nameValue='pf_ene_sf01'
+      12 ForwardMove   dotime=2.3 repeatDelay=0.01
+      14 Speed         dotime=2.3 repeatDelay=0.01
+       2 Rotate        value0=1.5 dotime=0.5 repeatDelay=0.01 vec=(0,180,0) nameValue='pf_ene_sf01'
+      80 TaskWait      dotime=10 intValue1=256 repeatDelay=0.01 vec=(0,180,0)
+       8 Bullet        value1=0.2 repeatDelay=0.01 vec=(0,180,0) stringValue='sf01_fire1' nameValue='pf_ene_sf01/ene_sf_body/muzzle01'
+       1 Delay         dotime=2 repeatDelay=0.01 vec=(0,180,0)
+       2 Rotate        dotime=0.5 repeatDelay=0.01 vec=(0,-180,0)
+      14 Speed         value0=100 dotime=2 repeatDelay=0.01 vec=(0,180,0)
+      12 ForwardMove   dotime=0.1 repeatCount=100 repeatDelay=0.01 vec=(0,180,0)
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=156.000-158.000 off=(-2,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=156.200-158.200 off=(-32,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=156.400-158.400 off=(-62,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=156.600-158.600 off=(-92,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=160.000-162.000 off=(28,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=160.200-162.200 off=(-2,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=160.400-162.400 off=(-32,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=160.600-162.600 off=(-62,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=164.000-166.000 off=(58,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=164.200-166.200 off=(28,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=164.400-166.400 off=(-2,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=164.600-166.600 off=(-32,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=168.000-170.000 off=(88,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=168.200-170.200 off=(58,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=168.400-170.400 off=(28,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=168.600-170.600 off=(-2,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+====================================================================================================
+BG08 ene_sf01b Pf_Ene_Sf01 id ad85fbfcf85db044ab86df86a079d7a9 attr 17 dur 60.0 pos (0.0, 0.0, 0.0)
+   routes = []
+  placement {"objectName": "", "moveSpeed": 100.0, "delayTime": 0.0, "_moveSpeedRange": 0.0, "offset": {"x": 0.0, "y": 0.0, "z": 0.0}, "rotate": {"x": 0.0, "y": 180.0, "z": 0.0}, "_offsetRange": {"x": 0.0, "y": 0.0, "z": 0.0}, "easeType": 0, "lookAt": 1, "attributeFlag": 0, "PlaneOffsetY": 0.0}
+       2 Rotate        repeatDelay=0.01 vec=(0,180,0) nameValue='pf_ene_sf01'
+      12 ForwardMove   dotime=2.3 repeatDelay=0.01
+      14 Speed         dotime=2.3 repeatDelay=0.01
+       2 Rotate        value0=1.5 dotime=0.5 repeatDelay=0.01 vec=(0,-180,0) nameValue='pf_ene_sf01'
+      80 TaskWait      dotime=10 intValue1=256 repeatDelay=0.01 vec=(0,180,0)
+       8 Bullet        value1=0.2 repeatDelay=0.01 vec=(0,180,0) stringValue='sf01_fire1' nameValue='pf_ene_sf01/ene_sf_body/muzzle01'
+       1 Delay         dotime=2 repeatDelay=0.01 vec=(0,180,0)
+       2 Rotate        dotime=0.5 repeatDelay=0.01 vec=(0,180,0)
+      14 Speed         value0=100 dotime=2 repeatDelay=0.01 vec=(0,180,0)
+      12 ForwardMove   dotime=0.1 repeatCount=100 repeatDelay=0.01 vec=(0,180,0)
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=195.000-197.000 off=(2,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=195.200-197.200 off=(32,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=195.400-197.400 off=(62,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=195.600-197.600 off=(92,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=199.000-201.000 off=(-28,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=199.200-201.200 off=(2,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=199.400-201.400 off=(32,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=199.600-201.600 off=(62,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=203.000-205.000 off=(-58,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=203.200-205.200 off=(-28,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=203.400-205.400 off=(2,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=203.600-205.600 off=(32,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=207.000-209.000 off=(-88,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=207.200-209.200 off=(-58,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=207.400-209.400 off=(-28,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000
+  SPAWN EnemyEntryClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) t=207.600-209.600 off=(2,0,160) rot=(0,0,0) idx=0 loop=False/0 outDestroy=False ground=False offsets=[] grp=main/ZONE B:43:145.000000

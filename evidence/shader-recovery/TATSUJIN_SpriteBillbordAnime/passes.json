@@ -1,0 +1,322 @@
+{
+ "name": "TATSUJIN/SpriteBillbordAnime",
+ "bundle": "ingame_assets_all_8034fdacf783ddd76b81996e259b6efa.bundle",
+ "path_id": "-1938784900188265623",
+ "keywordNames": [
+  "STEREO_INSTANCING_ON",
+  "UNITY_SINGLE_PASS_STEREO",
+  "STEREO_MULTIVIEW_ON",
+  "STEREO_CUBEMAP_RENDER_ON",
+  "_USEFOG_OFF",
+  "_USEFOG_ON",
+  "SOFTPARTICLES_ON",
+  "FOG_LINEAR",
+  "FOG_EXP",
+  "FOG_EXP2"
+ ],
+ "passes": [
+  {
+   "label": "0_0_pass",
+   "name": "",
+   "useName": "",
+   "tags": {
+    "IGNOREPROJECTOR": "true",
+    "PreviewType": "Plane",
+    "QUEUE": "Transparent",
+    "RenderType": "Transparent"
+   },
+   "subShaderTags": {
+    "IGNOREPROJECTOR": "true",
+    "PreviewType": "Plane",
+    "QUEUE": "Transparent",
+    "RenderType": "Transparent"
+   },
+   "lod": 0,
+   "state": {
+    "blend": [
+     5.0,
+     10.0,
+     5.0,
+     10.0
+    ],
+    "blendOp": [
+     0.0,
+     0.0
+    ],
+    "colMask": 14.0,
+    "zTest": 8.0,
+    "zWrite": 0.0,
+    "culling": 2.0,
+    "offsetFactor": 0.0,
+    "offsetUnits": 0.0,
+    "stencilRef": 0.0,
+    "stencilComp": 8.0,
+    "stencilPass": 0.0,
+    "stencilFail": 0.0,
+    "stencilZFail": 0.0,
+    "stencilReadMask": 255.0,
+    "stencilWriteMask": 255.0
+   },
+   "programs": {
+    "vs": [
+     {
+      "blob": 2,
+      "params": 0,
+      "keywords": [
+       "_USEFOG_OFF"
+      ]
+     },
+     {
+      "blob": 3,
+      "params": 1,
+      "keywords": [
+       "_USEFOG_OFF",
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 4,
+      "params": 1,
+      "keywords": [
+       "_USEFOG_OFF",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 5,
+      "params": 1,
+      "keywords": [
+       "_USEFOG_OFF",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 6,
+      "params": 0,
+      "keywords": [
+       "_USEFOG_OFF",
+       "SOFTPARTICLES_ON"
+      ]
+     },
+     {
+      "blob": 7,
+      "params": 1,
+      "keywords": [
+       "_USEFOG_OFF",
+       "SOFTPARTICLES_ON",
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 8,
+      "params": 1,
+      "keywords": [
+       "_USEFOG_OFF",
+       "SOFTPARTICLES_ON",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 9,
+      "params": 1,
+      "keywords": [
+       "_USEFOG_OFF",
+       "SOFTPARTICLES_ON",
+       "FOG_EXP2"
+      ]
+     }
+    ],
+    "ps": [
+     {
+      "blob": 12,
+      "params": 10,
+      "keywords": [
+       "_USEFOG_OFF"
+      ]
+     },
+     {
+      "blob": 13,
+      "params": 10,
+      "keywords": [
+       "_USEFOG_OFF",
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 14,
+      "params": 10,
+      "keywords": [
+       "_USEFOG_OFF",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 15,
+      "params": 10,
+      "keywords": [
+       "_USEFOG_OFF",
+       "FOG_EXP2"
+      ]
+     },
+     {
+      "blob": 16,
+      "params": 11,
+      "keywords": [
+       "_USEFOG_OFF",
+       "SOFTPARTICLES_ON"
+      ]
+     },
+     {
+      "blob": 17,
+      "params": 11,
+      "keywords": [
+       "_USEFOG_OFF",
+       "SOFTPARTICLES_ON",
+       "FOG_LINEAR"
+      ]
+     },
+     {
+      "blob": 18,
+      "params": 11,
+      "keywords": [
+       "_USEFOG_OFF",
+       "SOFTPARTICLES_ON",
+       "FOG_EXP"
+      ]
+     },
+     {
+      "blob": 19,
+      "params": 11,
+      "keywords": [
+       "_USEFOG_OFF",
+       "SOFTPARTICLES_ON",
+       "FOG_EXP2"
+      ]
+     }
+    ]
+   },
+   "bindings": {
+    "vs": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 48,
+       "members": [
+        {
+         "name": "_Tx_SpeedRate",
+         "offset": 32,
+         "dim": 1,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerCamera",
+       "slot": 1,
+       "size": 144,
+       "members": [
+        {
+         "name": "_Time",
+         "offset": 0,
+         "dim": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDraw",
+       "slot": 2,
+       "size": 176,
+       "members": [
+        {
+         "name": "unity_ObjectToWorld",
+         "offset": 0,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerFrame",
+       "slot": 3,
+       "size": 368,
+       "members": [
+        {
+         "name": "glstate_matrix_projection",
+         "offset": 80,
+         "matrix": 4,
+         "array": 0
+        },
+        {
+         "name": "unity_MatrixV",
+         "offset": 144,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerMaterial",
+       "slot": null,
+       "size": 48,
+       "members": [
+        {
+         "name": "_MainTex_ST",
+         "offset": 16,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "_DividedH",
+         "offset": 32,
+         "dim": 1,
+         "array": 0
+        },
+        {
+         "name": "_DividedV",
+         "offset": 36,
+         "dim": 1,
+         "array": 0
+        },
+        {
+         "name": "_AIndex",
+         "offset": 40,
+         "dim": 1,
+         "array": 0
+        },
+        {
+         "name": "_RotateSpeed",
+         "offset": 44,
+         "dim": 1,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    },
+    "ps": {
+     "constantBuffers": [
+      {
+       "name": "UnityPerMaterial",
+       "slot": null,
+       "size": 48,
+       "members": [
+        {
+         "name": "_TintColor",
+         "offset": 0,
+         "dim": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    }
+   }
+  }
+ ]
+}

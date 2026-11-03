@@ -1,0 +1,54 @@
+#### KANAI.Kernel.VectorUtility::Sinf(System.Single) RVA 1df8a70 len c8
+01df8a70  push     rbx
+01df8a72  sub      rsp, 0x30
+01df8a76  cmp      byte ptr [rip + 0x286afd8], 0   ; [4663a55] bss
+01df8a7d  movaps   xmmword ptr [rsp + 0x20], xmm6   ; ev.value0
+01df8a82  movaps   xmm6, xmm0
+01df8a85  jne      0x1df8a9a
+01df8a87  lea      rcx, [rip + 0x25c993a]   ; [43c23c8] TypeInfo KANAI.Kernel.VectorUtility
+01df8a8e  call     0x4e0a50
+01df8a93  mov      byte ptr [rip + 0x286afbb], 1   ; [4663a55] bss
+01df8a9a  mulss    xmm6, dword ptr [rip + 0x16e8136]   ; rdata 34e0bd8 f=10,20,57.29578,100 d=134217760.6
+01df8aa2  cvttss2si ebx, xmm6
+01df8aa6  test     ebx, ebx
+01df8aa8  jns      0x1df8acc
+01df8aaa  mov      eax, 0x91a2b3c5
+01df8aaf  mov      ecx, 0xe10
+01df8ab4  imul     ebx
+01df8ab6  add      edx, ebx
+01df8ab8  sar      edx, 0xb
+01df8abb  mov      eax, edx
+01df8abd  shr      eax, 0x1f
+01df8ac0  add      edx, eax
+01df8ac2  imul     eax, edx, 0xe10
+01df8ac8  sub      ecx, eax
+01df8aca  add      ebx, ecx
+01df8acc  mov      rcx, qword ptr [rip + 0x25c98f5]   ; [43c23c8] TypeInfo KANAI.Kernel.VectorUtility
+01df8ad3  cmp      dword ptr [rcx + 0xe4], 0
+01df8ada  jne      0x1df8ae8
+01df8adc  call     0x4e0d90
+01df8ae1  mov      rcx, qword ptr [rip + 0x25c98e0]   ; [43c23c8] TypeInfo KANAI.Kernel.VectorUtility
+01df8ae8  mov      rcx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01df8aef  mov      r8, qword ptr [rcx]
+01df8af2  test     r8, r8
+01df8af5  je       0x1df8b2d
+01df8af7  mov      eax, 0x91a2b3c5
+01df8afc  imul     ebx
+01df8afe  add      edx, ebx
+01df8b00  sar      edx, 0xb
+01df8b03  mov      eax, edx
+01df8b05  shr      eax, 0x1f
+01df8b08  add      edx, eax
+01df8b0a  imul     eax, edx, 0xe10
+01df8b10  sub      ebx, eax
+01df8b12  cmp      ebx, dword ptr [r8 + 0x18]   ; ev.repeatDelay
+01df8b16  jae      0x1df8b33
+01df8b18  movaps   xmm6, xmmword ptr [rsp + 0x20]   ; ev.value0
+01df8b1d  movsxd   rax, ebx
+01df8b20  movss    xmm0, dword ptr [r8 + rax*4 + 0x20]
+01df8b27  add      rsp, 0x30
+01df8b2b  pop      rbx
+01df8b2c  ret      
+01df8b2d  call     0x4e0d00
+01df8b32  int3     
+01df8b33  call     0x4e0cf0

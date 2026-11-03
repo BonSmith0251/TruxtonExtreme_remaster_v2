@@ -1,0 +1,152 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04::DestroyGuardians() RVA 1d8be20 len 2ac
+01d8be20 sub        rsp, 0x48
+01d8be24 cmp        byte ptr [rip + 0x28d798b], 0 ; [.data 46637b6]
+01d8be2b jne        0x1d8be88
+01d8be2d lea        rcx, [rip + 0x2607c4c] ; [.data 4393a80] MethodRef#205631
+01d8be34 call       0x4e0a50
+01d8be39 lea        rcx, [rip + 0x2610878] ; [.data 439c6b8] MethodRef#205790
+01d8be40 call       0x4e0a50
+01d8be45 lea        rcx, [rip + 0x261353c] ; [.data 439f388] MethodRef#205838
+01d8be4c call       0x4e0a50
+01d8be51 lea        rcx, [rip + 0x25f97d0] ; [.data 4385628] TypeInfo#13811
+01d8be58 call       0x4e0a50
+01d8be5d lea        rcx, [rip + 0x262c19c] ; [.data 43b8000] MethodRef#202981
+01d8be64 call       0x4e0a50
+01d8be69 lea        rcx, [rip + 0x25fb848] ; [.data 43876b8] MethodDef#71698
+01d8be70 call       0x4e0a50
+01d8be75 lea        rcx, [rip + 0x25fe61c] ; [.data 438a498] TypeInfo#53890
+01d8be7c call       0x4e0a50
+01d8be81 mov        byte ptr [rip + 0x28d792e], 1 ; [.data 46637b6]
+01d8be88 mov        rax, qword ptr [rip + 0x262c171] ; [.data 43b8000] MethodRef#202981
+01d8be8f mov        rax, qword ptr [rax + 0x20]
+01d8be93 test       byte ptr [rax + 0x135], 1
+01d8be9a jne        0x1d8bea4
+01d8be9c mov        rcx, rax
+01d8be9f call       0x4de1e0
+01d8bea4 mov        rax, qword ptr [rax + 0xc0] ; ~_burnShake
+01d8beab mov        rax, qword ptr [rax + 0x10]
+01d8beaf test       byte ptr [rax + 0x135], 1
+01d8beb6 jne        0x1d8bec0
+01d8beb8 mov        rcx, rax
+01d8bebb call       0x4de1e0
+01d8bec0 mov        rax, qword ptr [rax + 0xb8] ; ~_mover
+01d8bec7 mov        qword ptr [rsp + 0x50], rbx
+01d8becc mov        qword ptr [rsp + 0x58], rbp
+01d8bed1 mov        qword ptr [rsp + 0x60], rsi
+01d8bed6 mov        rax, qword ptr [rax]
+01d8bed9 mov        qword ptr [rsp + 0x40], rdi
+01d8bede mov        qword ptr [rsp + 0x38], r14
+01d8bee3 mov        qword ptr [rsp + 0x30], r15
+01d8bee8 test       rax, rax
+01d8beeb je         0x1d8c0c1
+01d8bef1 mov        rax, qword ptr [rax + 0xe8] ; ~_deadExplosionHash
+01d8bef8 test       rax, rax
+01d8befb je         0x1d8c0c1
+01d8bf01 mov        rcx, qword ptr [rip + 0x25fe590] ; [.data 438a498] TypeInfo#53890
+01d8bf08 mov        rsi, qword ptr [rax + 0x28]
+01d8bf0c cmp        dword ptr [rcx + 0xe4], 0
+01d8bf13 jne        0x1d8bf21
+01d8bf15 call       0x4e0d90
+01d8bf1a mov        rcx, qword ptr [rip + 0x25fe577] ; [.data 438a498] TypeInfo#53890
+01d8bf21 mov        rax, qword ptr [rcx + 0xb8] ; ~_mover
+01d8bf28 mov        rdi, qword ptr [rax + 8]
+01d8bf2c test       rdi, rdi
+01d8bf2f jne        0x1d8bf9f
+01d8bf31 cmp        dword ptr [rcx + 0xe4], edi
+01d8bf37 jne        0x1d8bf45
+01d8bf39 call       0x4e0d90
+01d8bf3e mov        rcx, qword ptr [rip + 0x25fe553] ; [.data 438a498] TypeInfo#53890
+01d8bf45 mov        rax, qword ptr [rcx + 0xb8] ; ~_mover
+01d8bf4c mov        rcx, qword ptr [rip + 0x25f96d5] ; [.data 4385628] TypeInfo#13811
+01d8bf53 mov        rbx, qword ptr [rax]
+01d8bf56 call       0x4e0cb0
+01d8bf5b mov        r8, qword ptr [rip + 0x25fb756] ; [.data 43876b8] MethodDef#71698
+01d8bf62 xor        r9d, r9d
+01d8bf65 mov        rdx, rbx
+01d8bf68 mov        rcx, rax
+01d8bf6b mov        rdi, rax
+01d8bf6e call       0x1c12e40
+01d8bf73 mov        rax, qword ptr [rip + 0x25fe51e] ; [.data 438a498] TypeInfo#53890
+01d8bf7a mov        rdx, rdi
+01d8bf7d mov        r8, qword ptr [rax + 0xb8] ; ~_mover
+01d8bf84 mov        qword ptr [r8 + 8], rdi
+01d8bf88 mov        rax, qword ptr [rip + 0x25fe509] ; [.data 438a498] TypeInfo#53890
+01d8bf8f mov        rcx, qword ptr [rax + 0xb8] ; ~_mover
+01d8bf96 add        rcx, 8
+01d8bf9a call       0x4dfd80
+01d8bf9f mov        r8, qword ptr [rip + 0x26133e2] ; [.data 439f388] MethodRef#205838
+01d8bfa6 mov        rdx, rdi
+01d8bfa9 mov        rcx, rsi
+01d8bfac call       0x7e7b50
+01d8bfb1 mov        rdx, qword ptr [rip + 0x2610700] ; [.data 439c6b8] MethodRef#205790
+01d8bfb8 mov        rcx, rax
+01d8bfbb call       0x7e54e0
+01d8bfc0 mov        rdx, qword ptr [rip + 0x2607ab9] ; [.data 4393a80] MethodRef#205631
+01d8bfc7 mov        rcx, rax
+01d8bfca mov        rsi, rax
+01d8bfcd call       0x7d99c0 ; System.Linq.Enumerable::Count(System.Collections.Generic.IEnumerable`1<TSource>)
+01d8bfd2 test       eax, eax
+01d8bfd4 jle        0x1d8c09e
+01d8bfda movsxd     r14, eax
+01d8bfdd nop        dword ptr [rax]
+01d8bfe0 xor        r15d, r15d
+01d8bfe3 lea        rbx, [rsi + 0x20]
+01d8bfe7 mov        edi, r15d
+01d8bfea mov        ebp, r15d
+01d8bfed test       rsi, rsi
+01d8bff0 je         0x1d8c0c1
+01d8bff6 cmp        edi, dword ptr [rsi + 0x18]
+01d8bff9 jae        0x1d8c0c7
+01d8bfff mov        rcx, qword ptr [rbx]
+01d8c002 test       rcx, rcx
+01d8c005 je         0x1d8c0c1
+01d8c00b mov        rdx, qword ptr [rcx]
+01d8c00e mov        rax, qword ptr [rdx + 0x1b8] ; ~_isPlayerSideBottom
+01d8c015 mov        rdx, qword ptr [rdx + 0x1c0] ; ~_bossActionUpTime
+01d8c01c call       rax
+01d8c01e test       al, al
+01d8c020 je         0x1d8c08c
+01d8c022 cmp        edi, dword ptr [rsi + 0x18]
+01d8c025 jae        0x1d8c0c7
+01d8c02b mov        rcx, qword ptr [rbx]
+01d8c02e test       rcx, rcx
+01d8c031 je         0x1d8c0c1
+01d8c037 mov        edx, 0xffffffff
+01d8c03c mov        qword ptr [rsp + 0x20], r15
+01d8c041 mov        r8d, edx
+01d8c044 xor        r9d, r9d
+01d8c047 call       0x1d0f680 ; InGame.Kernel.Enemy.PawnEnemy::SetCauseOfDeath(System.Int32,TXEKernel.TXEKernelHybridCollisions/attackType,System.Boolean)
+01d8c04c cmp        edi, dword ptr [rsi + 0x18]
+01d8c04f jae        0x1d8c0c7
+01d8c051 mov        rcx, qword ptr [rbx]
+01d8c054 test       rcx, rcx
+01d8c057 je         0x1d8c0c1
+01d8c059 mov        rdx, qword ptr [rcx]
+01d8c05c mov        rax, qword ptr [rdx + 0x2f8] ; ~_targetPlayer
+01d8c063 mov        rdx, qword ptr [rdx + 0x300] ; ~_lastFireAngle
+01d8c06a call       rax
+01d8c06c cmp        edi, dword ptr [rsi + 0x18]
+01d8c06f jae        0x1d8c0c7
+01d8c071 mov        rcx, qword ptr [rbx]
+01d8c074 test       rcx, rcx
+01d8c077 je         0x1d8c0c1
+01d8c079 mov        rdx, qword ptr [rcx]
+01d8c07c mov        rax, qword ptr [rdx + 0x318] ; ~_patternOpenWingCollitionFlag
+01d8c083 mov        rdx, qword ptr [rdx + 0x320]
+01d8c08a call       rax
+01d8c08c inc        edi
+01d8c08e inc        rbp
+01d8c091 add        rbx, 8
+01d8c095 cmp        rbp, r14
+01d8c098 jl         0x1d8bff6
+01d8c09e mov        r15, qword ptr [rsp + 0x30]
+01d8c0a3 mov        r14, qword ptr [rsp + 0x38]
+01d8c0a8 mov        rdi, qword ptr [rsp + 0x40]
+01d8c0ad mov        rsi, qword ptr [rsp + 0x60]
+01d8c0b2 mov        rbp, qword ptr [rsp + 0x58]
+01d8c0b7 mov        rbx, qword ptr [rsp + 0x50]
+01d8c0bc add        rsp, 0x48
+01d8c0c0 ret        
+01d8c0c1 call       0x4e0d00
+01d8c0c6 int3       
+01d8c0c7 call       0x4e0cf0

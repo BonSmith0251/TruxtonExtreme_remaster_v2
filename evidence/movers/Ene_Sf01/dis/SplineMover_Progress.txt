@@ -1,0 +1,191 @@
+#### InGame.Kernel.SplineMover::Progress(System.Single) RVA 1d43df0 len 3ef
+01d43df0  mov      qword ptr [rsp + 0x18], rbx   ; ev.repeatDelay
+01d43df5  push     rbp
+01d43df6  lea      rbp, [rsp - 0x20]
+01d43dfb  sub      rsp, 0x120
+01d43e02  xor      r8d, r8d
+01d43e05  mov      rbx, rcx
+01d43e08  call     0x1d44ae0   ; SplineMover::_ProgressSpline(System.Single)
+01d43e0d  mov      eax, dword ptr [rbx + 0xc8]   ; ._taskFlag
+01d43e13  and      eax, 0x700
+01d43e18  cmp      eax, 0x700
+01d43e1d  je       0x1d44160
+01d43e23  xor      edx, edx
+01d43e25  mov      rcx, rbx
+01d43e28  call     0x1cdabd0   ; InGameEnemyMoveBase::IsSplineMove()
+01d43e2d  test     al, al
+01d43e2f  je       0x1d44160
+01d43e35  movups   xmm2, xmmword ptr [rbx + 0x250]
+01d43e3c  movsd    xmm4, qword ptr [rbx + 0x11c]   ; ._splineCurrentPosition
+01d43e44  movups   xmm5, xmmword ptr [rbx + 0x240]   ; ._routeRotate
+01d43e4b  movsd    xmm3, qword ptr [rbx + 0x224]   ; ._startPosition
+01d43e53  movups   xmm0, xmm2
+01d43e56  movaps   xmmword ptr [rsp + 0x110], xmm6   ; ._splineStartPosition
+01d43e5e  movaps   xmm0, xmm4
+01d43e61  shufps   xmm0, xmm0, 0x55
+01d43e65  movaps   xmm1, xmm0
+01d43e68  movsd    qword ptr [rbp + 0x30], xmm0   ; ._entryFlag
+01d43e6d  movaps   xmmword ptr [rsp + 0x100], xmm7   ; ._routeLutIndex
+01d43e75  movss    xmm7, dword ptr [rbx + 0x278]
+01d43e7d  movaps   xmmword ptr [rsp + 0xf0], xmm8   ; ._routeLutAsset
+01d43e86  movups   xmm8, xmmword ptr [rbx + 0x170]   ; ._firstRotate
+01d43e8e  movaps   xmmword ptr [rsp + 0xe0], xmm9
+01d43e97  movaps   xmmword ptr [rsp + 0xd0], xmm10   ; .isEntryedArea
+01d43ea0  movaps   xmm9, xmm8
+01d43ea4  movss    xmm10, dword ptr [rbx + 0x274]
+01d43ead  movaps   xmm6, xmm8
+01d43eb1  mulss    xmm1, xmm2
+01d43eb5  xorps    xmm2, xmm2
+01d43eb8  movsd    qword ptr [rsp + 0x20], xmm4   ; ev.value0
+01d43ebe  movss    xmm4, dword ptr [rsp + 0x20]   ; ev.value0
+01d43ec4  movaps   xmm0, xmm4
+01d43ec7  movaps   xmmword ptr [rsp + 0xc0], xmm11   ; ._speedToken
+01d43ed0  mulss    xmm0, xmm5
+01d43ed4  movss    xmm5, dword ptr [rbx + 0x124]
+01d43edc  movaps   xmmword ptr [rsp + 0xb0], xmm12   ; ._translateToken
+01d43ee5  movups   xmm12, xmmword ptr [rbx + 0x270]
+01d43eed  addss    xmm1, xmm0
+01d43ef1  movaps   xmmword ptr [rsp + 0xa0], xmm13   ; ._rotateToken
+01d43efa  movups   xmm13, xmmword ptr [rbx + 0x260]
+01d43f02  mulss    xmm12, xmm2
+01d43f07  movss    dword ptr [rbp + 0x38], xmm1   ; ._psystems
+01d43f0c  movaps   xmm1, xmm5
+01d43f0f  mulss    xmm1, xmm13
+01d43f14  movss    xmm13, dword ptr [rbp + 0x38]   ; ._psystems
+01d43f1a  mulss    xmm10, xmm2
+01d43f1f  addss    xmm13, xmm1
+01d43f24  mulss    xmm7, xmm2
+01d43f28  movaps   xmm1, xmm5
+01d43f2b  movaps   xmmword ptr [rsp + 0x90], xmm14   ; ._destroyedToken
+01d43f34  mulss    xmm5, dword ptr [rbx + 0x268]
+01d43f3c  mulss    xmm1, dword ptr [rbx + 0x264]
+01d43f44  addss    xmm13, xmm12
+01d43f49  movsd    xmm12, qword ptr [rbp + 0x30]   ; ._entryFlag
+01d43f4f  movaps   xmm0, xmm12
+01d43f53  movaps   xmmword ptr [rsp + 0x80], xmm15   ; ._transformCaches
+01d43f5c  mulss    xmm0, dword ptr [rbx + 0x254]
+01d43f64  mulss    xmm12, dword ptr [rbx + 0x258]
+01d43f6d  addss    xmm13, xmm3
+01d43f72  movss    dword ptr [rbp + 0x38], xmm0   ; ._psystems
+01d43f77  movaps   xmm0, xmm4
+01d43f7a  mulss    xmm0, dword ptr [rbx + 0x244]
+01d43f82  mulss    xmm4, dword ptr [rbx + 0x248]
+01d43f8a  movss    xmm15, dword ptr [rbp + 0x38]   ; ._psystems
+01d43f90  addss    xmm15, xmm0
+01d43f95  shufps   xmm9, xmm8, 0xff
+01d43f9a  addss    xmm12, xmm4
+01d43f9f  shufps   xmm6, xmm8, 0x55
+01d43fa4  movaps   xmm0, xmm3
+01d43fa7  movsd    qword ptr [rsp + 0x20], xmm3   ; ev.value0
+01d43fad  shufps   xmm0, xmm0, 0x55
+01d43fb1  addss    xmm15, xmm1
+01d43fb6  addss    xmm12, xmm5
+01d43fbb  addss    xmm15, xmm10
+01d43fc0  movaps   xmm10, xmm9
+01d43fc4  addss    xmm12, xmm7
+01d43fc9  movups   xmm7, xmmword ptr [rbx + 0x230]   ; ._splineRotate
+01d43fd0  addss    xmm15, xmm0
+01d43fd5  mulss    xmm10, xmm7
+01d43fda  addss    xmm12, dword ptr [rbx + 0x22c]
+01d43fe3  movaps   xmm0, xmm8
+01d43fe7  movaps   xmm4, xmm7
+01d43fea  shufps   xmm4, xmm7, 0xff
+01d43fee  movaps   xmm5, xmm7
+01d43ff1  mulss    xmm0, xmm4
+01d43ff5  shufps   xmm5, xmm7, 0xaa
+01d43ff9  addss    xmm10, xmm0
+01d43ffe  movaps   xmm0, xmm6
+01d44001  mulss    xmm0, xmm5
+01d44005  cmp      byte ptr [rbx + 0x52], 0   ; ._isEntryGround
+01d44009  addss    xmm10, xmm0
+01d4400e  mov      rcx, qword ptr [rbx + 0x70]   ; ._transformCache
+01d44012  movaps   xmm11, xmm9
+01d44016  movaps   xmm14, xmm9
+01d4401a  movaps   xmm3, xmm8
+01d4401e  shufps   xmm3, xmm8, 0xaa
+01d44023  movaps   xmm2, xmm7
+01d44026  shufps   xmm2, xmm7, 0x55
+01d4402a  movaps   xmm0, xmm3
+01d4402d  mulss    xmm0, xmm2
+01d44031  movaps   xmm1, xmm3
+01d44034  mulss    xmm1, xmm7
+01d44038  subss    xmm10, xmm0
+01d4403d  mulss    xmm11, xmm2
+01d44042  movaps   xmm0, xmm6
+01d44045  mulss    xmm14, xmm5
+01d4404a  mulss    xmm0, xmm4
+01d4404e  mulss    xmm9, xmm4
+01d44053  addss    xmm11, xmm0
+01d44058  movaps   xmm0, xmm8
+01d4405c  mulss    xmm0, xmm5
+01d44060  addss    xmm11, xmm1
+01d44065  movaps   xmm1, xmm8
+01d44069  mulss    xmm8, xmm7
+01d4406e  mulss    xmm1, xmm2
+01d44072  subss    xmm11, xmm0
+01d44077  movaps   xmm0, xmm3
+01d4407a  mulss    xmm0, xmm4
+01d4407e  subss    xmm9, xmm8
+01d44083  movaps   xmm8, xmmword ptr [rsp + 0xf0]   ; ._routeLutAsset
+01d4408c  mulss    xmm3, xmm5
+01d44090  addss    xmm14, xmm0
+01d44095  movaps   xmm0, xmm6
+01d44098  mulss    xmm6, xmm2
+01d4409c  mulss    xmm0, xmm7
+01d440a0  movaps   xmm7, xmmword ptr [rsp + 0x100]   ; ._routeLutIndex
+01d440a8  subss    xmm9, xmm6
+01d440ad  movaps   xmm6, xmmword ptr [rsp + 0x110]   ; ._splineStartPosition
+01d440b5  addss    xmm14, xmm1
+01d440ba  subss    xmm9, xmm3
+01d440bf  subss    xmm14, xmm0
+01d440c4  jne      0x1d44171
+01d440ca  movss    dword ptr [rsp + 0x20], xmm10   ; ev.value0
+01d440d1  movss    dword ptr [rsp + 0x24], xmm11   ; ev.value1
+01d440d8  movss    dword ptr [rsp + 0x28], xmm14   ; ev.vectorValue
+01d440df  movss    dword ptr [rsp + 0x2c], xmm9
+01d440e6  test     rcx, rcx
+01d440e9  je       0x1d441da
+01d440ef  movups   xmm0, xmmword ptr [rsp + 0x20]   ; ev.value0
+01d440f4  xor      r9d, r9d
+01d440f7  lea      r8, [rsp + 0x30]   ; ._entryFlag
+01d440fc  movaps   xmm1, xmm13
+01d44100  movss    dword ptr [rsp + 0x28], xmm12   ; ev.vectorValue
+01d44107  unpcklps xmm1, xmm15
+01d4410b  lea      rdx, [rsp + 0x20]   ; ev.value0
+01d44110  movdqa   xmmword ptr [rsp + 0x30], xmm0   ; ._entryFlag
+01d44116  movsd    qword ptr [rsp + 0x20], xmm1   ; ev.value0
+01d4411c  call     0x30913c0   ; Transform::SetLocalPositionAndRotation(UnityEngine.Vector3,UnityEngine.Quaternion)
+01d44121  movaps   xmm14, xmmword ptr [rsp + 0x90]   ; ._destroyedToken
+01d4412a  movaps   xmm13, xmmword ptr [rsp + 0xa0]   ; ._rotateToken
+01d44133  movaps   xmm12, xmmword ptr [rsp + 0xb0]   ; ._translateToken
+01d4413c  movaps   xmm11, xmmword ptr [rsp + 0xc0]   ; ._speedToken
+01d44145  movaps   xmm10, xmmword ptr [rsp + 0xd0]   ; .isEntryedArea
+01d4414e  movaps   xmm9, xmmword ptr [rsp + 0xe0]
+01d44157  movaps   xmm15, xmmword ptr [rsp + 0x80]   ; ._transformCaches
+01d44160  mov      rbx, qword ptr [rsp + 0x140]   ; ._targetPlayerIndex
+01d44168  add      rsp, 0x120
+01d4416f  pop      rbp
+01d44170  ret      
+01d44171  test     rcx, rcx
+01d44174  je       0x1d441da
+01d44176  movaps   xmm0, xmm13
+01d4417a  movss    dword ptr [rsp + 0x28], xmm12   ; ev.vectorValue
+01d44181  unpcklps xmm0, xmm15
+01d44185  lea      rdx, [rsp + 0x20]   ; ev.value0
+01d4418a  xor      r8d, r8d
+01d4418d  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01d44193  call     0x3094950   ; Transform::set_position(UnityEngine.Vector3)
+01d44198  mov      rcx, qword ptr [rbx + 0x70]   ; ._transformCache
+01d4419c  movss    dword ptr [rsp + 0x20], xmm10   ; ev.value0
+01d441a3  movss    dword ptr [rsp + 0x24], xmm11   ; ev.value1
+01d441aa  movss    dword ptr [rsp + 0x28], xmm14   ; ev.vectorValue
+01d441b1  movss    dword ptr [rsp + 0x2c], xmm9
+01d441b8  test     rcx, rcx
+01d441bb  je       0x1d441da
+01d441bd  movups   xmm0, xmmword ptr [rsp + 0x20]   ; ev.value0
+01d441c2  xor      r8d, r8d
+01d441c5  lea      rdx, [rsp + 0x30]   ; ._entryFlag
+01d441ca  movdqa   xmmword ptr [rsp + 0x30], xmm0   ; ._entryFlag
+01d441d0  call     0x3094650   ; Transform::set_localRotation(UnityEngine.Quaternion)
+01d441d5  jmp      0x1d44121
+01d441da  call     0x4e0d00

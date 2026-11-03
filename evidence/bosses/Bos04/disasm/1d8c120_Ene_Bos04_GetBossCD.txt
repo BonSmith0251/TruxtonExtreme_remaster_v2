@@ -1,0 +1,17 @@
+== System.String[] InGame.Kernel.Enemy.Ene_Bos04::GetBossCD() RVA 1d8c120 len 4f
+01d8c120 sub        rsp, 0x28
+01d8c124 cmp        byte ptr [rip + 0x28d7685], 0 ; [.data 46637b0]
+01d8c12b jne        0x1d8c140
+01d8c12d lea        rcx, [rip + 0x26256c4] ; [.data 43b17f8] TypeInfo#37303
+01d8c134 call       0x4e0a50
+01d8c139 mov        byte ptr [rip + 0x28d7670], 1 ; [.data 46637b0]
+01d8c140 mov        rax, qword ptr [rip + 0x26256b1] ; [.data 43b17f8] TypeInfo#37303
+01d8c147 cmp        dword ptr [rax + 0xe4], 0
+01d8c14e jne        0x1d8c15f
+01d8c150 mov        rcx, rax
+01d8c153 call       0x4e0d90
+01d8c158 mov        rax, qword ptr [rip + 0x2625699] ; [.data 43b17f8] TypeInfo#37303
+01d8c15f mov        rax, qword ptr [rax + 0xb8] ; ~_mover
+01d8c166 mov        rax, qword ptr [rax + 0x10]
+01d8c16a add        rsp, 0x28
+01d8c16e ret        

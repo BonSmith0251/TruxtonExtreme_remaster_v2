@@ -1,0 +1,64 @@
+01dbad20 mov qword ptr [rsp + 8], rbx 
+01dbad25 mov qword ptr [rsp + 0x10], rbp 
+01dbad2a mov qword ptr [rsp + 0x18], rsi 
+01dbad2f push rdi 
+01dbad30 sub rsp, 0x30 
+01dbad34 cmp byte ptr [rip + 0x28a8b42], 0 ; rva=466387d
+01dbad3b mov rsi, rcx 
+01dbad3e movaps xmmword ptr [rsp + 0x20], xmm6 
+01dbad43 jne 0x1dbad58 
+01dbad45 lea rcx, [rip + 0x25f70fc] ; rva=43b1e48
+01dbad4c call 0x4e0a50 
+01dbad51 mov byte ptr [rip + 0x28a8b25], 1 ; rva=466387d
+01dbad58 xor edx, edx 
+01dbad5a mov rcx, rsi 
+01dbad5d call 0x1de14e0 ; HybridCollisions::get_HitPointRate()
+01dbad62 mov rcx, qword ptr [rip + 0x25f70df] ; rva=43b1e48
+01dbad69 xor bpl, bpl 
+01dbad6c xor ebx, ebx 
+01dbad6e movaps xmm6, xmm0 
+01dbad71 mov edi, 0x20 
+01dbad76 cmp dword ptr [rcx + 0xe4], 0 
+01dbad7d jne 0x1dbad8b 
+01dbad7f call 0x4e0d90 
+01dbad84 mov rcx, qword ptr [rip + 0x25f70bd] ; rva=43b1e48
+01dbad8b mov rax, qword ptr [rcx + 0xb8] 
+01dbad92 cmp ebx, dword ptr [rax + 8] 
+01dbad95 jge 0x1dbade0 
+01dbad97 cmp dword ptr [rcx + 0xe4], 0 
+01dbad9e jne 0x1dbadac 
+01dbada0 call 0x4e0d90 
+01dbada5 mov rcx, qword ptr [rip + 0x25f709c] ; rva=43b1e48
+01dbadac mov rax, qword ptr [rcx + 0xb8] 
+01dbadb3 mov rdx, qword ptr [rax] 
+01dbadb6 test rdx, rdx 
+01dbadb9 je 0x1dbadfe 
+01dbadbb cmp ebx, dword ptr [rdx + 0x18] 
+01dbadbe jae 0x1dbae04 
+01dbadc0 comiss xmm6, dword ptr [rdi + rdx] 
+01dbadc4 ja 0x1dbadce 
+01dbadc6 inc ebx 
+01dbadc8 add rdi, 4 
+01dbadcc jmp 0x1dbad76 
+01dbadce mov eax, dword ptr [rsi + 0x21c] 
+01dbadd4 cmp eax, ebx 
+01dbadd6 mov dword ptr [rsi + 0x21c], ebx 
+01dbaddc setl bpl 
+01dbade0 mov rbx, qword ptr [rsp + 0x40] 
+01dbade5 movzx eax, bpl 
+01dbade9 mov rbp, qword ptr [rsp + 0x48] 
+01dbadee mov rsi, qword ptr [rsp + 0x50] 
+01dbadf3 movaps xmm6, xmmword ptr [rsp + 0x20] 
+01dbadf8 add rsp, 0x30 
+01dbadfc pop rdi 
+01dbadfd ret 
+01dbadfe call 0x4e0d00 
+01dbae03 int3 
+01dbae04 call 0x4e0cf0 
+01dbae09 int3 
+01dbae0a int3 
+01dbae0b int3 
+01dbae0c int3 
+01dbae0d int3 
+01dbae0e int3 
+01dbae0f int3 

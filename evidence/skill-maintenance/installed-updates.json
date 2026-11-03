@@ -1,0 +1,317 @@
+{
+ "updates": [
+  {
+   "installed": true,
+   "skill": "unity-project-reconstruction",
+   "file": "C:\\Users\\Administrator\\.codex\\skills\\unity-project-reconstruction\\references\\discovery-and-extraction.md",
+   "before_sha256": "b34aea30d1ade1312464192e9dd178da7d8eed0dbd33d0558ab9ea81afd3537c",
+   "after_sha256": "91c34b28b4b8d2289f7d9d30f1b94c572d1fd180e9ca026409b6dbbcc98257df",
+   "backup": "D:\\Games\\TruxtonExRecon\\evidence\\skill-maintenance\\discovery-and-extraction.before.md",
+   "evidence": [
+    "evidence/migration/source-compatibility-probe.json",
+    "evidence/comic/inventory.json",
+    "evidence/comic/textures/textures.jsonl",
+    "tools/comic/recover_comic.py",
+    "tools/comic/export_textures.py"
+   ],
+   "scope": "Diagnostic methods only; Comic full import intentionally excluded by user; one8192x8192BC7 atlas fully decoded and visually inspected.",
+   "timestamp_utc": "2026-10-31T12:33:22.445763+00:00"
+  },
+  {
+   "installed": true,
+   "file": "C:\\Users\\Administrator\\.codex\\skills\\unity-project-reconstruction\\references\\discovery-and-extraction.md",
+   "before_sha256": "91c34b28b4b8d2289f7d9d30f1b94c572d1fd180e9ca026409b6dbbcc98257df",
+   "after_sha256": "88f225e686ca28023ff41a549cf36d4ed421b11e737648e628f136552f14ad96",
+   "backup": "D:\\Games\\TruxtonExRecon\\evidence\\skill-maintenance\\discovery-and-extraction.1.before.md",
+   "evidence": [
+    "extraction/assetripper.log",
+    "extraction/skill-improvement-proposals.json",
+    "extraction/destination-map.json"
+   ],
+   "validation": "skill-creator structural validation plus cited local reproducer; no universal compatibility claim"
+  },
+  {
+   "installed": true,
+   "file": "C:\\Users\\Administrator\\.codex\\skills\\unity-project-reconstruction\\references\\scripts-and-components.md",
+   "before_sha256": "20dee713d1b2adae552e502ee61da6c7fdceb6a545a3cf2081a21a4ae501712f",
+   "after_sha256": "561fc4de1268f6f8cf27769d4e998a5409aad26a5e59372c3071b18ed965eedb",
+   "backup": "D:\\Games\\TruxtonExRecon\\evidence\\skill-maintenance\\scripts-and-components.2.before.md",
+   "evidence": [
+    "evidence/managed-layouts/outcomes.json",
+    "tools/recover_managed_layouts.py",
+    "code/skill-proposal.json",
+    "code/tools/AsmResolverDllOutputFormatIlRecovery.cs"
+   ],
+   "validation": "skill-creator structural validation plus cited local reproducer; no universal compatibility claim"
+  },
+  {
+   "installed": true,
+   "file": "C:\\Users\\Administrator\\.codex\\skills\\unity-project-reconstruction\\references\\version-migration.md",
+   "before_sha256": "cfbfb5b599ad4642310d17202f681787aa4390f6dd2ebd2ff2cd786648b125aa",
+   "after_sha256": "4b3a549b8f401efb8018db632ae591b25a4b9863d6429b127825f9a788606a1c",
+   "backup": "D:\\Games\\TruxtonExRecon\\evidence\\skill-maintenance\\version-migration.3.before.md",
+   "evidence": [
+    "scene-work/script-import-adjustments.json",
+    "scene-work/integrated-import-4.log",
+    "scene-work/integrated-import-5.log",
+    "scene-work/integrated-import-8.log"
+   ],
+   "validation": "Target2023 compilation and domain-reload evidence; full game behavior not implied"
+  },
+  {
+   "installed": true,
+   "file": "C:\\Users\\Administrator\\.codex\\skills\\unity-project-reconstruction\\references\\scripts-and-components.md",
+   "before_sha256": "561fc4de1268f6f8cf27769d4e998a5409aad26a5e59372c3071b18ed965eedb",
+   "after_sha256": "e550c10694fecae50cb8830912e2cca57bc1b32b9b56219dd60774f1950310e5",
+   "backup": "D:\\Games\\TruxtonExRecon\\evidence\\skill-maintenance\\scripts-and-components.4.before.md",
+   "evidence": [
+    "code/unity2023-compat",
+    "scene-work/integrated-import-7.log",
+    "scene-work/integrated-import-8.log"
+   ],
+   "validation": "Target2023 compilation and domain-reload evidence; full game behavior not implied"
+  },
+  {
+   "installed": true,
+   "file": "C:\\Users\\Administrator\\.codex\\skills\\unity-project-reconstruction\\references\\validation-and-ledgers.md",
+   "before_sha256": "4cc294c041aa29cf003707b8c2dcb29bbfbb317bd981082bc3c19de5b77ea316",
+   "after_sha256": "77d00622be28c524cbfbaf2a15f9ca49a8b8be07501043934575963ebbb23fd6",
+   "backup": "D:\\Games\\TruxtonExRecon\\evidence\\skill-maintenance\\validation-and-ledgers.before-guid-semantics.md",
+   "evidence": [
+    "verification/skill-improvement-findings.json",
+    "verification/independent-extraction-review.json"
+   ],
+   "validation": "Independent original-export audit distinguished mixer/name IDs from actual missing PPtr attachments."
+  },
+  {
+   "installed": true,
+   "file": "C:\\Users\\Administrator\\.codex\\skills\\unity-project-reconstruction\\references\\validation-and-ledgers.md",
+   "before_sha256": "77d00622be28c524cbfbaf2a15f9ca49a8b8be07501043934575963ebbb23fd6",
+   "after_sha256": "b457548cc49c40da9416933ecb64f23e06dc5d6f896811d581af98768c24d6fb",
+   "backup": "D:\\Games\\TruxtonExRecon\\evidence\\skill-maintenance\\validation-and-ledgers.before-float-tags.md",
+   "evidence": [
+    "evidence/canonical-json-report.json",
+    "extraction/typetrees.standard.jsonl.gz",
+    "extraction/inventory_objects.py"
+   ],
+   "validation": "All 269642 rows pass strict JSON parsing; 139 original Infinity values preserved with explicit tags. No Unity asset changed."
+  },
+  {
+   "installed": true,
+   "file": "C:\\Users\\Administrator\\.codex\\skills\\unity-project-reconstruction\\references\\version-migration.md",
+   "before_sha256": "4b3a549b8f401efb8018db632ae591b25a4b9863d6429b127825f9a788606a1c",
+   "after_sha256": "b8e98048c848bff72e11598bfd8c67af1bb817fee02e55e9979ef90c41e3a364",
+   "backup": "D:\\Games\\TruxtonExRecon\\evidence\\skill-maintenance\\version-migration.before-input-restart.md",
+   "evidence": [
+    "scene-work/input-backend-migration.json",
+    "verification/editor-play-twice-attempt1.log",
+    "evidence/scene-integration/normal-round1-button-v1-sampling-error.png"
+   ],
+   "validation": "Verified failure and diagnostic procedure; final repaired runtime results reported separately, not inferred from compilation."
+  },
+  {
+   "installed": true,
+   "file": "C:\\Users\\Administrator\\.codex\\skills\\unity-project-reconstruction\\references\\validation-and-ledgers.md",
+   "before_sha256": "b457548cc49c40da9416933ecb64f23e06dc5d6f896811d581af98768c24d6fb",
+   "after_sha256": "d5cae5f54a681fc43ff93b9284680f8e13ce83b3b4420a7c26b3fdebaac828d1",
+   "backup": "D:\\Games\\TruxtonExRecon\\evidence\\skill-maintenance\\validation-and-ledgers.before-player-animation.md",
+   "evidence": [
+    "evidence/scene-integration/normal-player-v1-sampling-error.log",
+    "evidence/scene-integration/normal-round1-button-v1-sampling-error.png",
+    "Reconstructed/Assets/Truxton/Round1AnimationSampling.cs"
+   ],
+   "validation": "Verified failure and diagnostic procedure; final repaired runtime results reported separately, not inferred from compilation."
+  },
+  {
+   "installed": true,
+   "file": "C:\\Users\\Administrator\\.codex\\skills\\unity-project-reconstruction\\references\\validation-and-ledgers.md",
+   "before_sha256": "d5cae5f54a681fc43ff93b9284680f8e13ce83b3b4420a7c26b3fdebaac828d1",
+   "after_sha256": "f254aafa4dafd4721abbcfed35e5b9e1d48975021b161711c620800e85b72fa0",
+   "backup": "D:\\Games\\TruxtonExRecon\\evidence\\skill-maintenance\\validation-and-ledgers.before-settings-side-effects.md",
+   "evidence": [
+    "verification/native-pipeline-settings-side-effect/restoration.json",
+    "verification/native-pipeline-settings-side-effect/GraphicsSettings.asset.diff.txt",
+    "verification/native-pipeline-settings-side-effect/QualitySettings.asset.diff.txt",
+    "verification/post-test-freeze-check.json"
+   ],
+   "validation": "Exact original hashes restored after editor exit; final whole-project manifest check passed. External wrapper is syntax checked, not a new repeated Unity test."
+  },
+  {
+   "installed": true,
+   "skill": "unity-project-reconstruction",
+   "file": "C:\\Users\\Administrator/.codex/skills/unity-project-reconstruction/references\\version-migration.md",
+   "before_sha256": "120983bf5248af8e47251d0e6f7ef0ed244ed162cc9eaa0f00d9c680b0e79ca3",
+   "after_sha256": "5fdd7f38f82476d156ed889f56679b8dda06819a44760000ceefc8b51fa5c4bc",
+   "backup": "D:\\games\\TruxtonExRecon\\evidence\\skill-maintenance\\version-migration.before-propertyname.md",
+   "evidence": [
+    "tools/repair_exposed_names.py",
+    "evidence/stage-presentation/exposed-name-repair.json",
+    "verification/stage-presentation/report.json"
+   ],
+   "scope": "Conditional diagnostic + repair recipe for player-format PropertyName ids in exposed references; verified on 20 Truxton timelines (60 blocks).",
+   "maintainer": "Claude (Opus 5.5) session 2026-11-01",
+   "timestamp_utc": "2026-11-01T16:48:58.583092+00:00"
+  },
+  {
+   "installed": true,
+   "skill": "unity-project-reconstruction",
+   "file": "C:\\Users\\Administrator/.codex/skills/unity-project-reconstruction/references\\scenes-and-engine-features.md",
+   "before_sha256": "eb4af35bacd18b411d322214e86d43ef03a1eaeee1819e68b3ebaffca3e6fe0b",
+   "after_sha256": "3640b1900fa406780276063ef461e1817790f08b9bd5fda17f901fac18e81a27",
+   "backup": "D:\\games\\TruxtonExRecon\\evidence\\skill-maintenance\\scenes-and-engine-features.before-manual-directors.md",
+   "evidence": [
+    "Reconstructed/Assets/Reconstruction/StagePresentation.cs",
+    "verification/stage-presentation/report.json",
+    "verification/stage-presentation/play-mode.jsonl"
+   ],
+   "scope": "Method for presenting Manual-update timelines whose ticking code is stubbed; verified on BG01-BG08 in edit-mode evaluation and editor Play.",
+   "maintainer": "Claude (Opus 5.5) session 2026-11-01",
+   "timestamp_utc": "2026-11-01T16:48:58.583092+00:00"
+  },
+  {
+   "installed": true,
+   "skill": "unity-project-reconstruction",
+   "file": "C:\\Users\\Administrator/.codex/skills/unity-project-reconstruction/references\\scenes-and-engine-features.md",
+   "before_sha256": "3640b1900fa406780276063ef461e1817790f08b9bd5fda17f901fac18e81a27",
+   "after_sha256": "68985d1e40f25eb365b0cd82a42397472642b44429c38b5c1fd98107d9f76912",
+   "backup": "D:\\games\\TruxtonExRecon\\evidence\\skill-maintenance\\scenes-and-engine-features.before-shader-recovery.md",
+   "evidence": [
+    "tools/shader_recovery/dump_shaders.py",
+    "tools/shader_recovery/build_shaders.py",
+    "verification/shader-recovery/compile-check.json",
+    "verification/stage-presentation/report.json"
+   ],
+   "scope": "Unity 6 D3D11 shader blob/parameter format, Shader Graph surface recovery into stubs, material-keyword compile check with negative control, stand-in material restore, boot-scene RenderSettings; verified on 43 Truxton shaders / 322 materials.",
+   "maintainer": "Claude (Opus 5.5) session 2026-11-01",
+   "timestamp_utc": "2026-11-01T17:41:29.084082+00:00"
+  },
+  {
+   "installed": true,
+   "skill": "unity-project-reconstruction",
+   "file": "C:\\Users\\Administrator/.codex/skills/unity-project-reconstruction/references\\scenes-and-engine-features.md",
+   "before_sha256": "68985d1e40f25eb365b0cd82a42397472642b44429c38b5c1fd98107d9f76912",
+   "after_sha256": "747d6a52275c521e7798927b111ce5ff62fe91fecd332f5cf109beb0d2f12f7a",
+   "backup": "D:\\games\\TruxtonExRecon\\evidence\\skill-maintenance\\scenes-and-engine-features.before-stage-enemies.md",
+   "evidence": [
+    "tools/stage_enemies/build_stage_enemies.py",
+    "Reconstructed/Assets/Editor/ReconstructionStageEnemyExport.cs",
+    "Reconstructed/Assets/Reconstruction/StageEnemies.cs",
+    "verification/stage-enemies/"
+   ],
+   "scope": "Stub-behaviour stripping on spawn, serialized-data rebuild of stubbed spawn systems with prior-extraction diff (301/301), name-referenced data, sentinel durations, pow NaN under HDR post, per-scene capture processes.",
+   "maintainer": "Claude (Opus 5.5) session 2026-11-01",
+   "timestamp_utc": "2026-11-01T18:43:56.659862+00:00"
+  },
+  {
+   "installed": true,
+   "skill": "unity-project-reconstruction",
+   "file": "C:\\Users\\Administrator/.codex/skills/unity-project-reconstruction/references\\scenes-and-engine-features.md",
+   "before_sha256": "747d6a52275c521e7798927b111ce5ff62fe91fecd332f5cf109beb0d2f12f7a",
+   "after_sha256": "aac74394503c5ff15f96ade348d1807c81f1d4deac6be0c6c407a36613f30a7a",
+   "backup": "D:\\games\\TruxtonExRecon\\evidence\\skill-maintenance\\scenes-and-engine-features.before-stage-combat.md",
+   "evidence": [
+    "tools/stage_combat/",
+    "evidence/stage-combat/",
+    "Reconstructed/Assets/Editor/ReconstructionStagePlay.cs",
+    "verification/stage-play/"
+   ],
+   "scope": "Generalising a validated per-level implementation from recovered data (exact match first, fallback order), clipCaps-stubbed Timeline getters, template scene derivation (reference remap, throwaway measurement, one scene per process), autopilot hazard sizing.",
+   "maintainer": "Claude (Opus 5.5) session 2026-11-01",
+   "timestamp_utc": "2026-11-01T19:58:09.298696+00:00"
+  },
+  {
+   "installed": true,
+   "skill": "unity-project-reconstruction",
+   "file": "C:\\Users\\Administrator\\.codex\\skills\\unity-project-reconstruction\\references\\scenes-and-engine-features.md",
+   "before_sha256": "aac74394503c5ff15f96ade348d1807c81f1d4deac6be0c6c407a36613f30a7a",
+   "after_sha256": "f69a3a3408df3ed86c6cc881bbb908eb626cf030dce9af51d2ae2e2f86be8cb1",
+   "backup": "D:\\games\\TruxtonExRecon\\evidence\\skill-maintenance\\scenes-and-engine-features.before-stage-bosses.md",
+   "evidence": [
+    "tools/bosses/BOSS_SPEC_GUIDE.md",
+    "tools/bosses/BOSS_IMPL_GUIDE.md",
+    "evidence/bosses/",
+    "Reconstructed/Assets/Reconstruction/StageBoss.cs",
+    "Reconstructed/Assets/Reconstruction/Bosses/",
+    "verification/stage-play/play-bosses-native.jsonl",
+    "tools/common/unity_gui_run.sh"
+   ],
+   "scope": "Two-pass native behaviour reconstruction (spec workers, shared base + guide, implementation by the same workers, coordinator compiles/plays), live per-part hit circles, RequireComponent-ordered stub stripping, stale first batch compile, elevated-session admin dialog.",
+   "maintainer": "Claude (Opus 5.5) session 2b8ca490",
+   "timestamp_utc": "2026-11-01T21:36:35.653236+00:00"
+  },
+  {
+   "installed": true,
+   "skill": "unity-project-reconstruction",
+   "file": "C:\\Users\\Administrator\\.codex\\skills\\unity-project-reconstruction\\references\\scenes-and-engine-features.md",
+   "before_sha256": "0b08ba5d9bfd3467364ed3d67874b8a5f0cc11830cc79626fd0dc46b9d6a908a",
+   "after_sha256": "4ea193bbce25745a4d62db61f92c16e43b5eb91e830dff61b3bac59cdce3cfc1",
+   "backup": "D:\\games\\TruxtonExRecon\\evidence\\skill-maintenance\\scenes-and-engine-features.before-ground-combat.md",
+   "evidence": [
+    "tools/stage_enemies/build_ground_enemies.py",
+    "evidence/stage-enemies/ground-validation.json",
+    "evidence/ground-route-events/SPEC.md",
+    "Reconstructed/Assets/Editor/ReconstructionExit.cs",
+    "Reconstructed/Assets/Editor/ReconstructionStagePlay.cs",
+    "verification/stage-play/play-ground-all.jsonl",
+    "tools/common/crash_report.sh"
+   ],
+   "scope": "Editor exit/unload crashes from SerializedObject remaps of ownership fields and Exit inside play-mode callbacks; crash checks on every run; validated-level reproduction plus native opcode spec before generalising. Also corrects the admin-dialog note (Win32 BM_CLICK, UIA cannot see the buttons).",
+   "maintainer": "Claude (Opus 5.5) session 2b8ca490",
+   "timestamp_utc": "2026-11-02T00:19:40.663449+00:00"
+  },
+  {
+   "installed": true,
+   "skill": "unity-project-reconstruction",
+   "file": "C:\\Users\\Administrator\\.codex\\skills\\unity-project-reconstruction\\references\\scenes-and-engine-features.md",
+   "before_sha256": "4ea193bbce25745a4d62db61f92c16e43b5eb91e830dff61b3bac59cdce3cfc1",
+   "after_sha256": "4c1d1d6e756a349fa0e9c2385edc803d1e76652164b869fcb90fbb4181ec7a61",
+   "backup": "D:\\games\\TruxtonExRecon\\evidence\\skill-maintenance\\scenes-and-engine-features.before-pickups.md",
+   "evidence": [
+    "tools/stage_enemies/build_pickups.py",
+    "evidence/stage-enemies/pickups-validation.json",
+    "verification/stage-play/play-pickups-all.jsonl"
+   ],
+   "scope": "Events in nested timelines (Main exported as a wave, shared start waves) and muted clips; validated 23/23 against the BG03 carrier table.",
+   "maintainer": "Claude (Opus 5.5) session 2b8ca490",
+   "timestamp_utc": "2026-11-02T03:47:35.681454+00:00"
+  },
+  {
+   "installed": true,
+   "skill": "unity-project-reconstruction",
+   "file": "C:\\Users\\Administrator\\.codex\\skills\\unity-project-reconstruction\\references\\scenes-and-engine-features.md",
+   "before_sha256": "4c1d1d6e756a349fa0e9c2385edc803d1e76652164b869fcb90fbb4181ec7a61",
+   "after_sha256": "bcfb842b1672f7e66c1a6562d44e8062225a91baadb1b98922625358cba10fbf",
+   "backup": "D:\\games\\TruxtonExRecon\\evidence\\skill-maintenance\\scenes-and-engine-features.before-death-bullets.md",
+   "evidence": [
+    "evidence/death-bullets/SPEC.md",
+    "tools/stage_combat/enemy_death_bullets.py",
+    "verification/stage-play/play-death-bullets-all.jsonl",
+    "verification/stage-play/play-resident-bullet-test.jsonl"
+   ],
+   "scope": "Cause-of-death and game-mode gating of on-death behaviours; record the lethal-hit cause before porting them.",
+   "maintainer": "Claude (Opus 5.5) session 2b8ca490",
+   "timestamp_utc": "2026-11-02T04:58:35.751893+00:00"
+  },
+  {
+   "installed": true,
+   "skill": "unity-project-reconstruction",
+   "file": "C:\\Users\\Administrator\\.codex\\skills\\unity-project-reconstruction\\references\\scenes-and-engine-features.md",
+   "before_sha256": "bcfb842b1672f7e66c1a6562d44e8062225a91baadb1b98922625358cba10fbf",
+   "after_sha256": "43d9f6583447cd67e8a84d24bcc7d35320222f08777a14156c4c3cee033ecf54",
+   "backup": "D:\\games\\TruxtonExRecon\\evidence\\skill-maintenance\\scenes-and-engine-features.before-movers.md",
+   "evidence": [
+    "evidence/air-route-events/SPEC.md",
+    "evidence/movers/",
+    "verification/air-route-events/check.json",
+    "verification/movers/class-check.json",
+    "tools/stage_enemies/build_stage_enemies.py"
+   ],
+   "scope": "Port native movers as frame-stepped classes checked by replaying the spec model track in the editor; read stack vs route mode, class frame order and class route overrides first; JsonUtility reads JSON booleans as 0 in int fields.",
+   "maintainer": "Claude (Opus 5.5) session 2b8ca490",
+   "timestamp_utc": "2026-11-02T07:36:56.834864+00:00"
+  }
+ ],
+ "validation_dependencies": "tools/skill-validation-deps/PyYAML6.0.2",
+ "updated_utc": "2026-11-02T07:36:56.834864+00:00",
+ "validation_result": "skill-creator quick_validate passed for coordinator and code specialist"
+}

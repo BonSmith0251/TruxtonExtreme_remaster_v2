@@ -1,0 +1,11 @@
+01cda240  sub      rsp, 0x38
+01cda244  xor      r9d, r9d
+01cda247  mov      byte ptr [rsp + 0x48], 0   ; ev.intValue3/.GameObjectCache
+01cda24c  mov      qword ptr [rsp + 0x20], 0   ; ev.value0
+01cda255  call     0x1cdbc10   ; InGameEnemyMoveBase::_bulletFireAsync(System.Threading.CancellationToken,InGame.Kernel.Timeline.RouteEvent,System.Action`1<InGame.Kernel.InGameBulletInterface>)
+01cda25a  xor      edx, edx
+01cda25c  mov      byte ptr [rsp + 0x48], al   ; ev.intValue3/.GameObjectCache
+01cda260  lea      rcx, [rsp + 0x48]   ; ev.intValue3/.GameObjectCache
+01cda265  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01cda26a  add      rsp, 0x38
+01cda26e  ret      

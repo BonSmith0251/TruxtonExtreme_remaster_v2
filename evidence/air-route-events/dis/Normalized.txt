@@ -1,0 +1,30 @@
+#### InGame.Utility.KernelUtility::Normalized(System.Single,System.Single,System.Single) RVA 1dd7700 len 6e
+01dd7700  sub      rsp, 0x58
+01dd7704  movaps   xmmword ptr [rsp + 0x40], xmm6   ; ev.intValue1/._animators
+01dd7709  movaps   xmm6, xmm0
+01dd770c  movaps   xmmword ptr [rsp + 0x30], xmm7   ; ._entryFlag
+01dd7711  movaps   xmm7, xmm2
+01dd7714  movaps   xmmword ptr [rsp + 0x20], xmm8   ; ev.value0
+01dd771a  movaps   xmm8, xmm1
+01dd771e  subss    xmm6, xmm8
+01dd7723  subss    xmm7, xmm8
+01dd7728  movaps   xmm0, xmm6
+01dd772b  divss    xmm0, xmm7
+01dd772f  call     0x578740
+01dd7734  mulss    xmm0, xmm7
+01dd7738  subss    xmm6, xmm0
+01dd773c  xorps    xmm0, xmm0
+01dd773f  comiss   xmm0, xmm6
+01dd7742  ja       0x1dd774e
+01dd7744  comiss   xmm6, xmm7
+01dd7747  jbe      0x1dd7751
+01dd7749  movaps   xmm6, xmm7
+01dd774c  jmp      0x1dd7751
+01dd774e  xorps    xmm6, xmm6
+01dd7751  movaps   xmm7, xmmword ptr [rsp + 0x30]   ; ._entryFlag
+01dd7756  addss    xmm6, xmm8
+01dd775b  movaps   xmm8, xmmword ptr [rsp + 0x20]   ; ev.value0
+01dd7761  movaps   xmm0, xmm6
+01dd7764  movaps   xmm6, xmmword ptr [rsp + 0x40]   ; ev.intValue1/._animators
+01dd7769  add      rsp, 0x58
+01dd776d  ret      

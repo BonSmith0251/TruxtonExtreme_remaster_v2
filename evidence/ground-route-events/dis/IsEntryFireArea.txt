@@ -1,0 +1,126 @@
+01cda7e0  mov      qword ptr [rsp + 0x10], rbx   ; ev.eventType
+01cda7e5  push     rdi
+01cda7e6  sub      rsp, 0x40
+01cda7ea  cmp      byte ptr [rip + 0x2988ad9], 0   ; [46632ca] bss
+01cda7f1  mov      rdi, rdx
+01cda7f4  mov      rbx, rcx
+01cda7f7  jne      0x1cda818
+01cda7f9  lea      rcx, [rip + 0x26dd800]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01cda800  call     0x4e0a50
+01cda805  lea      rcx, [rip + 0x26a3694]   ; [437dea0] TypeInfo UnityEngine.Object
+01cda80c  call     0x4e0a50
+01cda811  mov      byte ptr [rip + 0x2988ab2], 1   ; [46632ca] bss
+01cda818  mov      qword ptr [rsp + 0x50], rsi   ; ev.randomFire/._animatorsPlay
+01cda81d  test     rdi, rdi
+01cda820  je       0x1cda9d1
+01cda826  cmp      byte ptr [rip + 0x2988aad], 0   ; [46632da] bss
+01cda82d  mov      rdi, qword ptr [rdi + 0x58]   ; ev.nameValue/._particleSpeed
+01cda831  jne      0x1cda852
+01cda833  lea      rcx, [rip + 0x26a5d06]   ; [4380540] MethodRef System.Collections.Generic.List`1<UnityEngine.Transform>::get_Item
+01cda83a  call     0x4e0a50
+01cda83f  lea      rcx, [rip + 0x26a365a]   ; [437dea0] TypeInfo UnityEngine.Object
+01cda846  call     0x4e0a50
+01cda84b  mov      byte ptr [rip + 0x2988a88], 1   ; [46632da] bss
+01cda852  xor      edx, edx
+01cda854  mov      rcx, rdi
+01cda857  call     0x1e83800   ; String::IsNullOrEmpty(System.String)
+01cda85c  test     al, al
+01cda85e  jne      0x1cda8e6
+01cda864  xor      r8d, r8d
+01cda867  mov      rdx, rdi
+01cda86a  mov      rcx, rbx
+01cda86d  call     0x1cda270   ; InGameEnemyMoveBase::GetMuzzlePack(System.String)
+01cda872  test     rax, rax
+01cda875  jne      0x1cda8c6
+01cda877  mov      rcx, qword ptr [rip + 0x26a3622]   ; [437dea0] TypeInfo UnityEngine.Object
+01cda87e  mov      rsi, qword ptr [rbx + 0x70]   ; ._transformCache
+01cda882  cmp      dword ptr [rcx + 0xe4], eax
+01cda888  jne      0x1cda88f
+01cda88a  call     0x4e0d90
+01cda88f  xor      r8d, r8d
+01cda892  xor      edx, edx
+01cda894  mov      rcx, rsi
+01cda897  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01cda89c  test     al, al
+01cda89e  je       0x1cda8e6
+01cda8a0  mov      rcx, qword ptr [rbx + 0x78]   ; ._transformNameCache
+01cda8a4  xor      r8d, r8d
+01cda8a7  mov      rdx, rdi
+01cda8aa  call     0x1e88f10   ; String::op_Inequality(System.String,System.String)
+01cda8af  test     al, al
+01cda8b1  je       0x1cda8e6
+01cda8b3  xor      r8d, r8d
+01cda8b6  mov      rdx, rdi
+01cda8b9  mov      rcx, rbx
+01cda8bc  call     0x1d1e960   ; InGameObjectWithEvent::_getTransform(System.String)
+01cda8c1  mov      rdi, rax
+01cda8c4  jmp      0x1cda8ea
+01cda8c6  mov      rcx, qword ptr [rax + 0x18]   ; ev.repeatDelay
+01cda8ca  test     rcx, rcx
+01cda8cd  je       0x1cda9d1
+01cda8d3  mov      r8, qword ptr [rip + 0x26a5c66]   ; [4380540] MethodRef System.Collections.Generic.List`1<UnityEngine.Transform>::get_Item
+01cda8da  xor      edx, edx
+01cda8dc  call     0xb16860
+01cda8e1  mov      rdi, rax
+01cda8e4  jmp      0x1cda8ea
+01cda8e6  mov      rdi, qword ptr [rbx + 0x70]   ; ._transformCache
+01cda8ea  mov      rcx, qword ptr [rip + 0x26a35af]   ; [437dea0] TypeInfo UnityEngine.Object
+01cda8f1  cmp      dword ptr [rcx + 0xe4], 0
+01cda8f8  jne      0x1cda8ff
+01cda8fa  call     0x4e0d90
+01cda8ff  xor      r8d, r8d
+01cda902  xor      edx, edx
+01cda904  mov      rcx, rdi
+01cda907  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01cda90c  test     al, al
+01cda90e  je       0x1cda9bf
+01cda914  mov      rax, qword ptr [rip + 0x26dd6e5]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01cda91b  mov      rax, qword ptr [rax + 0x20]   ; ev.value0
+01cda91f  test     byte ptr [rax + 0x135], 1
+01cda926  jne      0x1cda930
+01cda928  mov      rcx, rax
+01cda92b  call     0x4de1e0
+01cda930  mov      rax, qword ptr [rax + 0xc0]   ; ._speedToken
+01cda937  mov      rax, qword ptr [rax + 0x10]   ; ev.eventType
+01cda93b  test     byte ptr [rax + 0x135], 1
+01cda942  jne      0x1cda94c
+01cda944  mov      rcx, rax
+01cda947  call     0x4de1e0
+01cda94c  mov      rax, qword ptr [rax + 0xb8]   ; ._hormingToken
+01cda953  mov      rsi, qword ptr [rax]
+01cda956  test     rdi, rdi
+01cda959  je       0x1cda9d1
+01cda95b  xor      r8d, r8d
+01cda95e  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01cda963  mov      rdx, rdi
+01cda966  call     0x3093ba0   ; Transform::get_position()
+01cda96b  cmp      dword ptr [rbx + 0x1d0], 1   ; ._division
+01cda972  jne      0x1cda979
+01cda974  mov      r8b, 1
+01cda977  jmp      0x1cda984
+01cda979  cmp      dword ptr [rbx + 0x1d0], 3   ; ._division
+01cda980  sete     r8b
+01cda984  test     rsi, rsi
+01cda987  je       0x1cda9d1
+01cda989  movsd    xmm0, qword ptr [rax]
+01cda98d  lea      rdx, [rsp + 0x20]   ; ev.value0
+01cda992  mov      eax, dword ptr [rax + 8]
+01cda995  xor      r9d, r9d
+01cda998  mov      rcx, rsi
+01cda99b  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01cda9a1  mov      dword ptr [rsp + 0x28], eax   ; ev.vectorValue
+01cda9a5  call     0x1ce78e0   ; InGameManager::IsGameBulletAreaWorld(UnityEngine.Vector3,System.Boolean)
+01cda9aa  test     al, al
+01cda9ac  setne    al
+01cda9af  mov      rsi, qword ptr [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01cda9b4  mov      rbx, qword ptr [rsp + 0x58]   ; ev.nameValue/._particleSpeed
+01cda9b9  add      rsp, 0x40
+01cda9bd  pop      rdi
+01cda9be  ret      
+01cda9bf  mov      rsi, qword ptr [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01cda9c4  xor      al, al
+01cda9c6  mov      rbx, qword ptr [rsp + 0x58]   ; ev.nameValue/._particleSpeed
+01cda9cb  add      rsp, 0x40
+01cda9cf  pop      rdi
+01cda9d0  ret      
+01cda9d1  call     0x4e0d00

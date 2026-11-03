@@ -1,0 +1,8 @@
+== System.Boolean InGame.Kernel.Enemy.Ene_BosBase::IsOverAorB(InGame.Kernel.Enemy.Ene_BosBase/HitPState,InGame.Kernel.Enemy.Ene_BosBase/TimeSteps) RVA 1db9fb0 len 16
+01db9fb0 cmp        dword ptr [rcx + 0x21c], edx ; ~_hpState
+01db9fb6 jl         0x1db9fbb
+01db9fb8 mov        al, 1
+01db9fba ret        
+01db9fbb cmp        dword ptr [rcx + 0x224], r8d ; ~_currentActStep
+01db9fc2 setge      al
+01db9fc5 ret        

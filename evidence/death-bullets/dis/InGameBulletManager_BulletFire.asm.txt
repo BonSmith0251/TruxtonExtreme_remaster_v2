@@ -1,0 +1,565 @@
+01ccaa40  mov      rax, rsp
+01ccaa43  mov      qword ptr [rax + 0x18], r8
+01ccaa47  push     rbp
+01ccaa48  push     rbx
+01ccaa49  push     rsi
+01ccaa4a  push     rdi
+01ccaa4b  push     r12
+01ccaa4d  lea      rbp, [rax - 0x128]
+01ccaa54  sub      rsp, 0x200
+01ccaa5b  cmp      byte ptr [rip + 0x29987e2], 0   ; [4663244] bss
+01ccaa62  mov      rdi, r9
+01ccaa65  movaps   xmmword ptr [rax - 0x48], xmm6
+01ccaa69  mov      rsi, rdx
+01ccaa6c  movaps   xmmword ptr [rax - 0x58], xmm7
+01ccaa70  mov      rbx, rcx
+01ccaa73  movaps   xmmword ptr [rax - 0x98], xmm11
+01ccaa7b  movaps   xmmword ptr [rax - 0xb8], xmm13
+01ccaa83  jne      0x1ccaad4
+01ccaa85  lea      rcx, [rip + 0x270e33c]   ; [43d8dc8] TypeInfo InGame.Kernel.InGameBulletInterface
+01ccaa8c  call     0x4e0a50
+01ccaa91  lea      rcx, [rip + 0x2700098]   ; [43cab30] MethodRef System.Collections.Generic.List`1<InGame.Kernel.InGameBulletInterface>::Add
+01ccaa98  call     0x4e0a50
+01ccaa9d  lea      rcx, [rip + 0x26b454c]   ; [437eff0] MethodRef KANAI.Kernel.PrefabBank`1<InGame.Kernel.InGameBulletInterface>::Get
+01ccaaa4  call     0x4e0a50
+01ccaaa9  lea      rcx, [rip + 0x26d4cb0]   ; [439f760] TypeInfo InGame.Kernel.ShortCutEffect
+01ccaab0  call     0x4e0a50
+01ccaab5  lea      rcx, [rip + 0x26d78ac]   ; [43a2368] TypeInfo TXEKernel.Sound.SoundUtility
+01ccaabc  call     0x4e0a50
+01ccaac1  lea      rcx, [rip + 0x26f7900]   ; [43c23c8] TypeInfo KANAI.Kernel.VectorUtility
+01ccaac8  call     0x4e0a50
+01ccaacd  mov      byte ptr [rip + 0x2998770], 1   ; [4663244] bss
+01ccaad4  movzx    ecx, byte ptr [rip + 0x2991982]   ; [465c45d] bss
+01ccaadb  xorps    xmm13, xmm13
+01ccaadf  movss    xmm7, dword ptr [rbp + 0x178]   ; ._token
+01ccaae7  movss    dword ptr [rsp + 0x58], xmm13   ; ._bulletSounds
+01ccaaee  test     cl, cl
+01ccaaf0  jne      0x1ccab06
+01ccaaf2  lea      rcx, [rip + 0x26f6bdf]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01ccaaf9  call     0x4e0a50
+01ccaafe  mov      cl, 1
+01ccab00  mov      byte ptr [rip + 0x2991957], cl   ; [465c45d] bss
+01ccab06  mov      rdx, qword ptr [rip + 0x26f6bcb]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01ccab0d  mov      rax, qword ptr [rdx + 0xb8]
+01ccab14  movsd    xmm11, qword ptr [rax]   ; static Vector3+0
+01ccab19  movss    xmm0, dword ptr [rax + 8]   ; static Vector3+8
+01ccab1e  movss    dword ptr [rsp + 0x64], xmm0   ; .<>u__1
+01ccab24  movsd    qword ptr [rbp - 0x38], xmm11
+01ccab2a  movsd    qword ptr [rbp + 0x30], xmm11   ; ._poolsKeys
+01ccab30  test     cl, cl
+01ccab32  jne      0x1ccab4e
+01ccab34  lea      rcx, [rip + 0x26f6b9d]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01ccab3b  call     0x4e0a50
+01ccab40  mov      rdx, qword ptr [rip + 0x26f6b91]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01ccab47  mov      byte ptr [rip + 0x299190f], 1   ; [465c45d] bss
+01ccab4e  mov      rax, qword ptr [rdx + 0xb8]
+01ccab55  mov      qword ptr [rsp + 0x230], r13
+01ccab5d  mov      qword ptr [rsp + 0x1f8], r14
+01ccab65  mov      qword ptr [rsp + 0x1f0], r15   ; ._baseTargetPlayer
+01ccab6d  movsd    xmm6, qword ptr [rax]   ; static Vector3+0
+01ccab71  mov      r12d, dword ptr [rax + 8]   ; static Vector3+8
+01ccab75  movaps   xmmword ptr [rsp + 0x1c0], xmm8   ; ._bossActionUpTime
+01ccab7e  movaps   xmmword ptr [rsp + 0x1b0], xmm9   ; ._isBossDead
+01ccab87  movaps   xmmword ptr [rsp + 0x1a0], xmm10   ; .RenderDatas
+01ccab90  movaps   xmmword ptr [rsp + 0x180], xmm12   ; .PartsList
+01ccab99  movaps   xmmword ptr [rsp + 0x160], xmm14
+01ccaba2  movaps   xmmword ptr [rsp + 0x150], xmm15   ; ._shakeResultVector
+01ccabab  movsd    qword ptr [rsp + 0x70], xmm6   ; ._loadError
+01ccabb1  movsd    qword ptr [rsp + 0x48], xmm6   ; ._bulletSpeeds
+01ccabb7  mov      dword ptr [rsp + 0x50], r12d   ; ._bulletSpeedsDictionary
+01ccabbc  test     rdi, rdi
+01ccabbf  je       0x1ccb4c6
+01ccabc5  mov      r14d, dword ptr [rbp + 0x158]
+01ccabcc  xor      r8d, r8d
+01ccabcf  mov      r15d, dword ptr [rdi + 0x94]   ; ._indexValue
+01ccabd6  mov      edx, r14d
+01ccabd9  mov      rcx, rdi
+01ccabdc  call     0x1d61650   ; BulletTemplate::GetWay(System.Int32)
+01ccabe1  movss    xmm12, dword ptr [rbp + 0x34]   ; ._isInitialized
+01ccabe7  mov      r13d, eax
+01ccabea  movss    xmm9, dword ptr [rip + 0x1815fd5]   ; rdata 34e0bc8 f=0.5,1,3.141593,4 d=0.007812501834
+01ccabf3  cmp      eax, 1
+01ccabf6  jle      0x1ccad59
+01ccabfc  xor      r8d, r8d
+01ccabff  mov      edx, r14d
+01ccac02  mov      rcx, rdi
+01ccac05  call     0x1d61630   ; BulletTemplate::GetWayArc(System.Int32)
+01ccac0a  xor      edx, edx
+01ccac0c  mov      rcx, rdi
+01ccac0f  movaps   xmm8, xmm0
+01ccac13  call     0x1d61840   ; BulletTemplate::get_isWideShot()
+01ccac18  test     al, al
+01ccac1a  je       0x1ccad18
+01ccac20  mov      rcx, qword ptr [rip + 0x26f77a1]   ; [43c23c8] TypeInfo KANAI.Kernel.VectorUtility
+01ccac27  cmp      dword ptr [rcx + 0xe4], 0
+01ccac2e  jne      0x1ccac35
+01ccac30  call     0x4e0d90
+01ccac35  movaps   xmm0, xmm7
+01ccac38  xor      edx, edx
+01ccac3a  addss    xmm0, dword ptr [rip + 0x1821d66]   ; rdata 34ec9a8 f=90,270,-1e-06,0 d=2.071656187e+17
+01ccac42  call     0x1df6fa0   ; VectorUtility::Cosf(System.Single)
+01ccac47  mulss    xmm0, xmm8
+01ccac4c  xor      edx, edx
+01ccac4e  movaps   xmm11, xmm0
+01ccac52  movaps   xmm0, xmm7
+01ccac55  addss    xmm0, dword ptr [rip + 0x1821d4b]   ; rdata 34ec9a8 f=90,270,-1e-06,0 d=2.071656187e+17
+01ccac5d  movsd    qword ptr [rbp - 0x38], xmm11
+01ccac63  call     0x1df8a70   ; VectorUtility::Sinf(System.Single)
+01ccac68  movaps   xmm10, xmm0
+01ccac6c  mulss    xmm10, xmm8
+01ccac71  movss    dword ptr [rsp + 0x64], xmm10   ; .<>u__1
+01ccac78  test     r13b, 1
+01ccac7c  jne      0x1ccacba
+01ccac7e  movaps   xmm3, xmm11
+01ccac82  movaps   xmm2, xmm12
+01ccac86  mulss    xmm3, xmm9
+01ccac8b  movaps   xmm1, xmm10
+01ccac8f  mulss    xmm2, xmm9
+01ccac94  addss    xmm3, dword ptr [rsp + 0x48]   ; ._bulletSpeeds
+01ccac9a  mulss    xmm1, xmm9
+01ccac9f  addss    xmm2, dword ptr [rsp + 0x4c]   ; ._collisionsCount
+01ccaca5  addss    xmm1, dword ptr [rsp + 0x50]   ; ._bulletSpeedsDictionary
+01ccacab  unpcklps xmm3, xmm2
+01ccacae  movsd    qword ptr [rsp + 0x48], xmm3   ; ._bulletSpeeds
+01ccacb4  movss    dword ptr [rsp + 0x50], xmm1   ; ._bulletSpeedsDictionary
+01ccacba  movss    xmm3, dword ptr [rsp + 0x48]   ; ._bulletSpeeds
+01ccacc0  mov      eax, r13d
+01ccacc3  movss    xmm1, dword ptr [rsp + 0x4c]   ; ._collisionsCount
+01ccacc9  cdq      
+01ccacca  movss    xmm2, dword ptr [rsp + 0x50]   ; ._bulletSpeedsDictionary
+01ccacd0  sub      eax, edx
+01ccacd2  sar      eax, 1
+01ccacd4  movd     xmm4, eax
+01ccacd8  cvtdq2ps xmm4, xmm4
+01ccacdb  movaps   xmm0, xmm4
+01ccacde  mulss    xmm0, xmm11
+01ccace3  subss    xmm3, xmm0
+01ccace7  movaps   xmm0, xmm12
+01ccaceb  mulss    xmm0, xmm4
+01ccacef  mulss    xmm4, xmm10
+01ccacf4  subss    xmm1, xmm0
+01ccacf8  movaps   xmm0, xmm3
+01ccacfb  subss    xmm2, xmm4
+01ccacff  unpcklps xmm0, xmm1
+01ccad02  movaps   xmm6, xmm0
+01ccad05  movsd    qword ptr [rsp + 0x70], xmm0   ; ._loadError
+01ccad0b  movsd    qword ptr [rsp + 0x48], xmm0   ; ._bulletSpeeds
+01ccad11  movd     r12d, xmm2
+01ccad16  jmp      0x1ccad59
+01ccad18  movaps   xmm0, xmm8
+01ccad1c  movaps   xmm6, xmm8
+01ccad20  mulss    xmm0, xmm9
+01ccad25  subss    xmm7, xmm0
+01ccad29  movss    xmm0, dword ptr [rdi + 0x2c]   ; .color
+01ccad2e  comiss   xmm0, dword ptr [rip + 0x1821be3]   ; rdata 34ec918 f=360,inf,nan,nan d=1.404448116e+306
+01ccad35  jae      0x1ccad41
+01ccad37  lea      eax, [r13 - 1]
+01ccad3b  movd     xmm0, eax
+01ccad3f  jmp      0x1ccad46
+01ccad41  movd     xmm0, r13d
+01ccad46  cvtdq2ps xmm0, xmm0
+01ccad49  divss    xmm6, xmm0
+01ccad4d  movss    dword ptr [rsp + 0x58], xmm6   ; ._bulletSounds
+01ccad53  movsd    xmm6, qword ptr [rsp + 0x70]   ; ._loadError
+01ccad59  movss    xmm0, dword ptr [rdi + 0x78]   ; ._basePosition
+01ccad5e  comiss   xmm0, xmm13
+01ccad62  seta     byte ptr [rbp + 0x178]   ; ._token
+01ccad69  cmp      byte ptr [rip + 0x29984cf], 0   ; [466323f] bss
+01ccad70  jne      0x1ccad85
+01ccad72  lea      rcx, [rip + 0x270e1bf]   ; [43d8f38] MethodRef System.Collections.Generic.Dictionary`2<InGame.Kernel.BulletKind,primc>::get_Item
+01ccad79  call     0x4e0a50
+01ccad7e  mov      byte ptr [rip + 0x29984ba], 1   ; [466323f] bss
+01ccad85  mov      rcx, qword ptr [rbx + 0x50]   ; ._bulletSpeedsDictionary
+01ccad89  test     rcx, rcx
+01ccad8c  je       0x1ccb4c6
+01ccad92  mov      r8, qword ptr [rip + 0x270e19f]   ; [43d8f38] MethodRef System.Collections.Generic.Dictionary`2<InGame.Kernel.BulletKind,primc>::get_Item
+01ccad99  mov      edx, r15d
+01ccad9c  call     0x1881a00
+01ccada1  mulss    xmm0, dword ptr [rbx + 0x6c]   ; ._bulletSpeedScale
+01ccada6  xor      r8d, r8d
+01ccada9  mov      edx, r15d
+01ccadac  mov      rcx, rbx
+01ccadaf  movss    dword ptr [rsp + 0x78], xmm0   ; ._basePosition
+01ccadb5  call     0x1ccb4d0   ; InGameBulletManager::GetBank(InGame.Kernel.BulletKind)
+01ccadba  mov      qword ptr [rbp - 0x20], rax
+01ccadbe  test     rax, rax
+01ccadc1  je       0x1ccb44f
+01ccadc7  mov      rcx, qword ptr [rip + 0x26d759a]   ; [43a2368] TypeInfo TXEKernel.Sound.SoundUtility
+01ccadce  mov      ebx, dword ptr [rdi + 0x98]   ; ._invincibleTime
+01ccadd4  cmp      dword ptr [rcx + 0xe4], 0
+01ccaddb  jne      0x1ccade2
+01ccaddd  call     0x4e0d90
+01ccade2  movss    xmm1, dword ptr [rbp + 0x188]   ; ._partsCount
+01ccadea  xor      r8d, r8d
+01ccaded  mov      ecx, ebx
+01ccadef  call     0x2723950   ; SoundUtility::PlayQue(TXEKernel.Sound.SoundUtility/ID,System.Single)
+01ccadf4  movzx    eax, byte ptr [rdi + 0x80]
+01ccadfb  mov      byte ptr [rbp + 0x148], al
+01ccae01  test     rsi, rsi
+01ccae04  je       0x1ccb4c6
+01ccae0a  mov      rax, qword ptr [rsi + 0x108]   ; ._overplayDeadSound
+01ccae11  xor      ecx, ecx
+01ccae13  mov      ebx, dword ptr [rdi + 0x34]   ; ._isInitialized
+01ccae16  mov      qword ptr [rbp - 0x18], rax
+01ccae1a  mov      rax, qword ptr [rsi + 0x98]   ; ._invincibleTime
+01ccae21  mov      qword ptr [rbp - 0x40], rax
+01ccae25  call     0x1df1220   ; RandomUtility::Make01()
+01ccae2a  movd     xmm1, ebx
+01ccae2e  movaps   xmm15, xmm0
+01ccae32  subss    xmm15, xmm9
+01ccae37  xor      r14d, r14d
+01ccae3a  cvtdq2ps xmm1, xmm1
+01ccae3d  mulss    xmm15, xmm1
+01ccae42  addss    xmm15, xmm7
+01ccae47  movss    dword ptr [rsp + 0x5c], xmm15
+01ccae4e  test     r13d, r13d
+01ccae51  jle      0x1ccb44f
+01ccae57  mov      rax, qword ptr [rbp + 0x150]   ; ._shakeResultVector
+01ccae5e  movss    xmm11, dword ptr [rsp + 0x4c]   ; ._collisionsCount
+01ccae65  movss    xmm10, dword ptr [rsp + 0x48]   ; ._bulletSpeeds
+01ccae6c  mov      r15, qword ptr [rbp + 0x190]   ; ._dieCallback
+01ccae73  movsd    xmm0, qword ptr [rax]
+01ccae77  mov      eax, dword ptr [rax + 8]
+01ccae7a  movzx    esi, byte ptr [rbp + 0x148]
+01ccae81  movd     xmm12, r12d
+01ccae86  movsd    qword ptr [rbp - 0x60], xmm0
+01ccae8b  mov      dword ptr [rbp - 0x58], eax
+01ccae8e  movss    dword ptr [rsp + 0x60], xmm12   ; ._bulletSoundsDictionary
+01ccae95  movss    dword ptr [rsp + 0x40], xmm11   ; ._bulletAnimes
+01ccae9c  movss    dword ptr [rsp + 0x68], xmm10   ; ._poolTaskCount
+01ccaea3  movzx    ecx, byte ptr [rip + 0x29915b3]   ; [465c45d] bss
+01ccaeaa  test     cl, cl
+01ccaeac  jne      0x1ccaec2
+01ccaeae  lea      rcx, [rip + 0x26f6823]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01ccaeb5  call     0x4e0a50
+01ccaeba  mov      cl, 1
+01ccaebc  mov      byte ptr [rip + 0x299159b], cl   ; [465c45d] bss
+01ccaec2  mov      rdx, qword ptr [rip + 0x26f680f]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01ccaec9  mov      rax, qword ptr [rdx + 0xb8]
+01ccaed0  movsd    xmm0, qword ptr [rax]   ; static Vector3+0
+01ccaed4  movsd    qword ptr [rbp - 0x50], xmm0
+01ccaed9  test     cl, cl
+01ccaedb  jne      0x1ccaef7
+01ccaedd  lea      rcx, [rip + 0x26f67f4]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01ccaee4  call     0x4e0a50
+01ccaee9  mov      rdx, qword ptr [rip + 0x26f67e8]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01ccaef0  mov      byte ptr [rip + 0x2991566], 1   ; [465c45d] bss
+01ccaef7  mov      rax, qword ptr [rdx + 0xb8]
+01ccaefe  mov      rcx, qword ptr [rip + 0x26f74c3]   ; [43c23c8] TypeInfo KANAI.Kernel.VectorUtility
+01ccaf05  movsd    qword ptr [rbp - 0x78], xmm6
+01ccaf0a  mov      dword ptr [rbp - 0x70], r12d
+01ccaf0e  movsd    xmm0, qword ptr [rax]   ; static Vector3+0
+01ccaf12  cmp      dword ptr [rcx + 0xe4], 0
+01ccaf19  mov      ebx, dword ptr [rax + 8]   ; static Vector3+8
+01ccaf1c  movsd    qword ptr [rbp - 0x30], xmm0
+01ccaf21  jne      0x1ccaf28
+01ccaf23  call     0x4e0d90
+01ccaf28  xor      edx, edx
+01ccaf2a  movaps   xmm0, xmm15
+01ccaf2e  call     0x1df6fa0   ; VectorUtility::Cosf(System.Single)
+01ccaf33  movaps   xmm7, xmm0
+01ccaf36  xor      edx, edx
+01ccaf38  movaps   xmm0, xmm15
+01ccaf3c  movss    dword ptr [rsp + 0x7c], xmm7
+01ccaf42  call     0x1df8a70   ; VectorUtility::Sinf(System.Single)
+01ccaf47  cmp      byte ptr [rbp + 0x178], 0   ; ._token
+01ccaf4e  movaps   xmm9, xmm0
+01ccaf52  movss    xmm8, dword ptr [rbp - 0x4c]
+01ccaf58  movss    dword ptr [rbp - 0x80], xmm9
+01ccaf5e  je       0x1ccaf85
+01ccaf60  movss    xmm3, dword ptr [rdi + 0x78]   ; ._basePosition
+01ccaf65  movaps   xmm1, xmm8
+01ccaf69  movaps   xmm2, xmm3
+01ccaf6c  mulss    xmm1, xmm3
+01ccaf70  mulss    xmm2, xmm7
+01ccaf74  mulss    xmm3, xmm9
+01ccaf79  unpcklps xmm2, xmm1
+01ccaf7c  movsd    qword ptr [rbp - 0x30], xmm2
+01ccaf81  movd     ebx, xmm3
+01ccaf85  xor      edx, edx
+01ccaf87  mov      rcx, rdi
+01ccaf8a  call     0x1d61840   ; BulletTemplate::get_isWideShot()
+01ccaf8f  test     al, al
+01ccaf91  je       0x1ccb060
+01ccaf97  cmp      r13d, 1
+01ccaf9b  jle      0x1ccb060
+01ccafa1  mov      rcx, qword ptr [rip + 0x26f7420]   ; [43c23c8] TypeInfo KANAI.Kernel.VectorUtility
+01ccafa8  lea      eax, [r13 - 1]
+01ccafac  movd     xmm0, eax
+01ccafb0  movd     xmm6, r14d
+01ccafb5  cvtdq2ps xmm0, xmm0
+01ccafb8  cmp      dword ptr [rcx + 0xe4], 0
+01ccafbf  cvtdq2ps xmm6, xmm6
+01ccafc2  divss    xmm6, xmm0
+01ccafc6  jne      0x1ccafcd
+01ccafc8  call     0x4e0d90
+01ccafcd  mulss    xmm6, dword ptr [rip + 0x1815c13]   ; rdata 34e0be8 f=180,2000,-0.0001,-1 d=1.96450476e+24
+01ccafd5  xor      edx, edx
+01ccafd7  cvttss2si ecx, xmm6
+01ccafdb  call     0x1df89b0   ; VectorUtility::Sin(System.Int32)
+01ccafe0  movss    xmm6, dword ptr [rdi + 0x48]   ; ._bulletSpeeds
+01ccafe5  movaps   xmm1, xmm0
+01ccafe8  comiss   xmm13, xmm6
+01ccafec  movaps   xmm3, xmm8
+01ccaff0  movaps   xmm2, xmm0
+01ccaff3  mulss    xmm3, xmm1
+01ccaff7  mulss    xmm1, xmm9
+01ccaffc  mulss    xmm2, xmm7
+01ccb000  ja       0x1ccb027
+01ccb002  movaps   xmm7, xmm6
+01ccb005  movaps   xmm8, xmm6
+01ccb009  mulss    xmm7, xmm2
+01ccb00d  mulss    xmm8, xmm3
+01ccb012  mulss    xmm6, xmm1
+01ccb016  addss    xmm7, xmm10
+01ccb01b  addss    xmm8, xmm11
+01ccb020  addss    xmm6, xmm12
+01ccb025  jmp      0x1ccb070
+01ccb027  xorps    xmm6, xmmword ptr [rip + 0x1815be2]   ; rdata 34e0c10 f=-0,-0,-0,-0 d=-1.060997895e-314
+01ccb02e  subss    xmm7, xmm2
+01ccb032  movaps   xmm0, xmm6
+01ccb035  subss    xmm8, xmm3
+01ccb03a  movaps   xmm6, xmm9
+01ccb03e  subss    xmm6, xmm1
+01ccb042  mulss    xmm7, xmm0
+01ccb046  mulss    xmm8, xmm0
+01ccb04b  mulss    xmm6, xmm0
+01ccb04f  addss    xmm7, xmm10
+01ccb054  addss    xmm8, xmm11
+01ccb059  addss    xmm6, xmm12
+01ccb05e  jmp      0x1ccb070
+01ccb060  movss    xmm6, dword ptr [rbp - 0x70]
+01ccb065  movss    xmm8, dword ptr [rbp - 0x74]
+01ccb06b  movss    xmm7, dword ptr [rbp - 0x78]
+01ccb070  movss    xmm9, dword ptr [rbp - 0x30]
+01ccb076  movaps   xmm12, xmm7
+01ccb07a  addss    xmm12, dword ptr [rbp - 0x60]
+01ccb080  movss    xmm10, dword ptr [rbp - 0x2c]
+01ccb086  movaps   xmm13, xmm8
+01ccb08a  addss    xmm13, dword ptr [rbp - 0x5c]
+01ccb090  mov      r9, qword ptr [rip + 0x26b3f59]   ; [437eff0] MethodRef KANAI.Kernel.PrefabBank`1<InGame.Kernel.InGameBulletInterface>::Get
+01ccb097  movaps   xmm14, xmm6
+01ccb09b  addss    xmm14, dword ptr [rbp - 0x58]
+01ccb0a1  mov      rdx, qword ptr [rbp - 0x40]
+01ccb0a5  addss    xmm12, xmm9
+01ccb0aa  mov      rcx, qword ptr [rbp - 0x20]
+01ccb0ae  mov      r8d, 0xffffffff
+01ccb0b4  movd     xmm11, ebx
+01ccb0b9  addss    xmm13, xmm10
+01ccb0be  addss    xmm14, xmm11
+01ccb0c3  call     0xe2f790   ; PrefabBank`1::Get(UnityEngine.Transform,System.Int32)
+01ccb0c8  mov      rbx, rax
+01ccb0cb  test     rax, rax
+01ccb0ce  je       0x1ccb3a1
+01ccb0d4  movss    xmm15, dword ptr [rbp + 0x180]   ; .PartsList
+01ccb0dd  mulss    xmm15, dword ptr [rdi + 0x40]   ; ._bulletAnimes
+01ccb0e3  mulss    xmm15, dword ptr [rsp + 0x78]   ; ._basePosition
+01ccb0ea  movzx    eax, byte ptr [rdi + 0x7f]
+01ccb0ee  xor      edx, edx
+01ccb0f0  cmp      byte ptr [rbp + 0x178], dl   ; ._token
+01ccb0f6  mov      ecx, 0xc
+01ccb0fb  mov      r9, qword ptr [rbp + 0x170]   ; ._targetY
+01ccb102  mov      r8, rbx
+01ccb105  mov      byte ptr [rsp + 0x38], al   ; ._bulletTemplate
+01ccb109  cmove    edx, r14d
+01ccb10d  mov      rax, qword ptr [rbp + 0x168]   ; ._modelTop
+01ccb114  mov      dword ptr [rsp + 0x30], edx   ; ._poolsKeys
+01ccb118  mov      rdx, qword ptr [rip + 0x270dca9]   ; [43d8dc8] TypeInfo InGame.Kernel.InGameBulletInterface
+01ccb11f  mov      qword ptr [rsp + 0x28], rax   ; ._pools
+01ccb124  mov      rax, qword ptr [rbp + 0x160]
+01ccb12b  mov      qword ptr [rsp + 0x20], rax   ; ._bulletToken
+01ccb130  call     0x3b67f0
+01ccb135  mov      rdx, qword ptr [rip + 0x270dc8c]   ; [43d8dc8] TypeInfo InGame.Kernel.InGameBulletInterface
+01ccb13c  mov      ecx, 0xb
+01ccb141  mov      r8, rbx
+01ccb144  call     0x22b0
+01ccb149  test     al, al
+01ccb14b  jne      0x1ccb21c
+01ccb151  test     sil, sil
+01ccb154  je       0x1ccb26c
+01ccb15a  mov      rdx, qword ptr [rip + 0x270dc67]   ; [43d8dc8] TypeInfo InGame.Kernel.InGameBulletInterface
+01ccb161  mov      ecx, 0xf
+01ccb166  mov      r8, rbx
+01ccb169  call     0x22b0
+01ccb16e  mov      rcx, qword ptr [rip + 0x26d45eb]   ; [439f760] TypeInfo InGame.Kernel.ShortCutEffect
+01ccb175  mov      esi, eax
+01ccb177  cmp      dword ptr [rcx + 0xe4], 0
+01ccb17e  jne      0x1ccb185
+01ccb180  call     0x4e0d90
+01ccb185  xor      edx, edx
+01ccb187  mov      ecx, esi
+01ccb189  call     0x1d407b0   ; ShortCutEffect::GetMuzzleEffectCode(InGame.Kernel.BulletColorType)
+01ccb18e  cmp      byte ptr [rip + 0x29912cc], 0   ; [465c461] bss
+01ccb195  mov      esi, eax
+01ccb197  jne      0x1ccb1ac
+01ccb199  lea      rcx, [rip + 0x26c07b8]   ; [438b958] TypeInfo UnityEngine.Quaternion
+01ccb1a0  call     0x4e0a50
+01ccb1a5  mov      byte ptr [rip + 0x29912b5], 1   ; [465c461] bss
+01ccb1ac  mov      rcx, qword ptr [rip + 0x26c07a5]   ; [438b958] TypeInfo UnityEngine.Quaternion
+01ccb1b3  mov      rax, qword ptr [rbp - 0x18]
+01ccb1b7  mov      rdx, qword ptr [rcx + 0xb8]
+01ccb1be  test     rax, rax
+01ccb1c1  je       0x1ccb4c6
+01ccb1c7  movups   xmm0, xmmword ptr [rdx]   ; static Quaternion+0
+01ccb1ca  mov      rdx, qword ptr [rbp - 0x40]
+01ccb1ce  lea      rcx, [rbp + 0x40]   ; ._bulletAnimes
+01ccb1d2  mov      qword ptr [rsp + 0x38], 0   ; ._bulletTemplate
+01ccb1db  movaps   xmm1, xmm12
+01ccb1df  mov      byte ptr [rsp + 0x30], 0   ; ._poolsKeys
+01ccb1e4  xor      r9d, r9d
+01ccb1e7  mov      qword ptr [rsp + 0x28], rcx   ; ._pools
+01ccb1ec  mov      r8d, esi
+01ccb1ef  lea      rcx, [rbp - 0x10]
+01ccb1f3  unpcklps xmm1, xmm13
+01ccb1f7  mov      qword ptr [rsp + 0x20], rcx   ; ._bulletToken
+01ccb1fc  mov      rcx, rax
+01ccb1ff  movss    dword ptr [rbp - 8], xmm14
+01ccb205  movaps   xmmword ptr [rbp + 0x40], xmm0   ; ._bulletAnimes
+01ccb209  movsd    qword ptr [rbp - 0x10], xmm1
+01ccb20e  call     0x1cd11e0   ; InGameEffectManager::RequestQue(UnityEngine.Transform,System.Int32,System.Int32,UnityEngine.Vector3,UnityEngine.Quaternion,System.Boolean)
+01ccb213  movzx    esi, byte ptr [rbp + 0x178]   ; ._token
+01ccb21a  jmp      0x1ccb26c
+01ccb21c  movss    xmm3, dword ptr [rdi + 0x44]   ; .<baserot>5__3
+01ccb221  mov      ecx, 0xd
+01ccb226  mov      rdx, qword ptr [rip + 0x270db9b]   ; [43d8dc8] TypeInfo InGame.Kernel.InGameBulletInterface
+01ccb22d  mov      r8, rbx
+01ccb230  call     0x2180
+01ccb235  mov      rdx, qword ptr [rip + 0x270db8c]   ; [43d8dc8] TypeInfo InGame.Kernel.InGameBulletInterface
+01ccb23c  addss    xmm9, xmm7
+01ccb241  addss    xmm10, xmm8
+01ccb246  mov      ecx, 0xe
+01ccb24b  addss    xmm11, xmm6
+01ccb250  mov      r8, rbx
+01ccb253  lea      r9, [rbp]
+01ccb257  unpcklps xmm9, xmm10
+01ccb25b  movsd    qword ptr [rbp], xmm9
+01ccb261  movss    dword ptr [rbp + 8], xmm11
+01ccb267  call     0x3e690
+01ccb26c  movss    xmm1, dword ptr [rbp - 0x4c]
+01ccb271  lea      r9, [rbp + 0x20]   ; ._bulletToken
+01ccb275  mov      eax, dword ptr [rdi + 0x68]   ; ._poolTaskCount
+01ccb278  mov      ecx, 3
+01ccb27d  movss    xmm0, dword ptr [rsp + 0x7c]
+01ccb283  mov      r8, rbx
+01ccb286  mov      rdx, qword ptr [rip + 0x270db3b]   ; [43d8dc8] TypeInfo InGame.Kernel.InGameBulletInterface
+01ccb28d  unpcklps xmm0, xmm1
+01ccb290  movss    xmm1, dword ptr [rbp - 0x80]
+01ccb295  mov      dword ptr [rsp + 0x30], eax   ; ._poolsKeys
+01ccb299  lea      rax, [rbp + 0x10]
+01ccb29d  movsd    qword ptr [rbp + 0x10], xmm0
+01ccb2a2  movaps   xmm0, xmm12
+01ccb2a6  unpcklps xmm0, xmm13
+01ccb2aa  movss    dword ptr [rsp + 0x28], xmm15   ; ._pools
+01ccb2b1  movsd    qword ptr [rbp + 0x20], xmm0   ; ._bulletToken
+01ccb2b6  movss    dword ptr [rbp + 0x18], xmm1
+01ccb2bb  movss    dword ptr [rbp + 0x28], xmm14   ; ._pools
+01ccb2c1  mov      qword ptr [rsp + 0x20], rax   ; ._bulletToken
+01ccb2c6  call     0x3b6700
+01ccb2cb  cmp      dword ptr [rdi + 0x6c], 0   ; ._bulletSpeedScale
+01ccb2cf  je       0x1ccb366
+01ccb2d5  cmp      dword ptr [rdi + 0x6c], 2   ; ._bulletSpeedScale
+01ccb2d9  je       0x1ccb31b
+01ccb2db  cmp      byte ptr [rdi + 0x7e], 0
+01ccb2df  je       0x1ccb2ee
+01ccb2e1  test     r14b, 1
+01ccb2e5  je       0x1ccb2ee
+01ccb2e7  movss    xmm3, dword ptr [rdi + 0x70]   ; ._loadError
+01ccb2ec  jmp      0x1ccb2fa
+01ccb2ee  movss    xmm3, dword ptr [rdi + 0x70]   ; ._loadError
+01ccb2f3  xorps    xmm3, xmmword ptr [rip + 0x1815916]   ; rdata 34e0c10 f=-0,-0,-0,-0 d=-1.060997895e-314
+01ccb2fa  movss    xmm0, dword ptr [rdi + 0x74]
+01ccb2ff  mov      ecx, 8
+01ccb304  mov      rdx, qword ptr [rip + 0x270dabd]   ; [43d8dc8] TypeInfo InGame.Kernel.InGameBulletInterface
+01ccb30b  mov      r8, rbx
+01ccb30e  movss    dword ptr [rsp + 0x20], xmm0   ; ._bulletToken
+01ccb314  call     0x3b65b0
+01ccb319  jmp      0x1ccb366
+01ccb31b  cmp      byte ptr [rdi + 0x7e], 0
+01ccb31f  je       0x1ccb32e
+01ccb321  test     r14b, 1
+01ccb325  je       0x1ccb32e
+01ccb327  movss    xmm1, dword ptr [rdi + 0x70]   ; ._loadError
+01ccb32c  jmp      0x1ccb33a
+01ccb32e  movss    xmm1, dword ptr [rdi + 0x70]   ; ._loadError
+01ccb333  xorps    xmm1, xmmword ptr [rip + 0x18158d6]   ; rdata 34e0c10 f=-0,-0,-0,-0 d=-1.060997895e-314
+01ccb33a  movss    xmm0, dword ptr [rdi + 0x74]
+01ccb33f  mov      ecx, 9
+01ccb344  mov      r9, qword ptr [rdi + 0x88]   ; ._objectInfo
+01ccb34b  mov      r8, rbx
+01ccb34e  mov      rdx, qword ptr [rip + 0x270da73]   ; [43d8dc8] TypeInfo InGame.Kernel.InGameBulletInterface
+01ccb355  movss    dword ptr [rsp + 0x28], xmm0   ; ._pools
+01ccb35b  movss    dword ptr [rsp + 0x20], xmm1   ; ._bulletToken
+01ccb361  call     0x3b6650
+01ccb366  test     r15, r15
+01ccb369  je       0x1ccb37c
+01ccb36b  mov      rax, qword ptr [r15 + 0x18]
+01ccb36f  mov      rdx, rbx
+01ccb372  mov      r8, qword ptr [r15 + 0x28]   ; ._pools
+01ccb376  mov      rcx, qword ptr [r15 + 0x40]   ; ._bulletAnimes
+01ccb37a  call     rax
+01ccb37c  mov      rax, qword ptr [rbp + 0x140]   ; ._isResultDone
+01ccb383  test     rax, rax
+01ccb386  je       0x1ccb39a
+01ccb388  mov      r8, qword ptr [rip + 0x26ff7a1]   ; [43cab30] MethodRef System.Collections.Generic.List`1<InGame.Kernel.InGameBulletInterface>::Add
+01ccb38f  mov      rdx, rbx
+01ccb392  mov      rcx, rax
+01ccb395  call     0x2500
+01ccb39a  movss    xmm15, dword ptr [rsp + 0x5c]
+01ccb3a1  xor      edx, edx
+01ccb3a3  mov      rcx, rdi
+01ccb3a6  call     0x1d61840   ; BulletTemplate::get_isWideShot()
+01ccb3ab  test     al, al
+01ccb3ad  jne      0x1ccb3da
+01ccb3af  addss    xmm15, dword ptr [rsp + 0x58]   ; ._bulletSounds
+01ccb3b6  movsd    xmm6, qword ptr [rsp + 0x70]   ; ._loadError
+01ccb3bc  movss    xmm10, dword ptr [rsp + 0x68]   ; ._poolTaskCount
+01ccb3c3  movss    xmm11, dword ptr [rsp + 0x40]   ; ._bulletAnimes
+01ccb3ca  movss    xmm12, dword ptr [rsp + 0x60]   ; ._bulletSoundsDictionary
+01ccb3d1  movss    dword ptr [rsp + 0x5c], xmm15
+01ccb3d8  jmp      0x1ccb43e
+01ccb3da  movss    xmm0, dword ptr [rsp + 0x48]   ; ._bulletSpeeds
+01ccb3e0  movss    xmm1, dword ptr [rsp + 0x40]   ; ._bulletAnimes
+01ccb3e6  movss    xmm2, dword ptr [rsp + 0x60]   ; ._bulletSoundsDictionary
+01ccb3ec  addss    xmm0, dword ptr [rbp - 0x38]
+01ccb3f1  addss    xmm1, dword ptr [rbp + 0x34]   ; ._isInitialized
+01ccb3f6  addss    xmm2, dword ptr [rsp + 0x64]   ; .<>u__1
+01ccb3fc  unpcklps xmm0, xmm1
+01ccb3ff  movaps   xmm6, xmm0
+01ccb402  movd     r12d, xmm2
+01ccb407  movaps   xmm1, xmm0
+01ccb40a  movsd    qword ptr [rsp + 0x70], xmm0   ; ._loadError
+01ccb410  shufps   xmm0, xmm0, 0x55
+01ccb414  movsd    qword ptr [rsp + 0x48], xmm6   ; ._bulletSpeeds
+01ccb41a  movaps   xmm11, xmm0
+01ccb41e  movss    xmm10, dword ptr [rsp + 0x48]   ; ._bulletSpeeds
+01ccb425  movss    dword ptr [rsp + 0x40], xmm0   ; ._bulletAnimes
+01ccb42b  movd     xmm12, r12d
+01ccb430  movss    dword ptr [rsp + 0x60], xmm12   ; ._bulletSoundsDictionary
+01ccb437  movss    dword ptr [rsp + 0x68], xmm10   ; ._poolTaskCount
+01ccb43e  inc      r14d
+01ccb441  cmp      r14d, r13d
+01ccb444  jge      0x1ccb44f
+01ccb446  xorps    xmm13, xmm13
+01ccb44a  jmp      0x1ccaea3
+01ccb44f  movaps   xmm15, xmmword ptr [rsp + 0x150]   ; ._shakeResultVector
+01ccb458  lea      r11, [rsp + 0x200]   ; ._enemyDatas
+01ccb460  movaps   xmm6, xmmword ptr [r11 - 0x20]
+01ccb465  movaps   xmm7, xmmword ptr [r11 - 0x30]
+01ccb46a  movaps   xmm11, xmmword ptr [r11 - 0x70]
+01ccb46f  movaps   xmm13, xmmword ptr [r11 - 0x90]
+01ccb477  movaps   xmm14, xmmword ptr [rsp + 0x160]
+01ccb480  movaps   xmm12, xmmword ptr [rsp + 0x180]   ; .PartsList
+01ccb489  movaps   xmm10, xmmword ptr [rsp + 0x1a0]   ; .RenderDatas
+01ccb492  movaps   xmm9, xmmword ptr [rsp + 0x1b0]   ; ._isBossDead
+01ccb49b  movaps   xmm8, xmmword ptr [rsp + 0x1c0]   ; ._bossActionUpTime
+01ccb4a4  mov      r15, qword ptr [rsp + 0x1f0]   ; ._baseTargetPlayer
+01ccb4ac  mov      r14, qword ptr [rsp + 0x1f8]
+01ccb4b4  mov      r13, qword ptr [rsp + 0x230]
+01ccb4bc  mov      rsp, r11
+01ccb4bf  pop      r12
+01ccb4c1  pop      rdi
+01ccb4c2  pop      rsi
+01ccb4c3  pop      rbx
+01ccb4c4  pop      rbp
+01ccb4c5  ret      
+01ccb4c6  call     0x4e0d00

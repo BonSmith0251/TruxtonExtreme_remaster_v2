@@ -1,0 +1,63 @@
+01d6c750  mov      qword ptr [rsp + 8], rbx
+01d6c755  mov      qword ptr [rsp + 0x10], rbp   ; ev.eventType
+01d6c75a  mov      qword ptr [rsp + 0x18], rsi   ; ev.repeatDelay
+01d6c75f  push     rdi
+01d6c760  sub      rsp, 0x30
+01d6c764  cmp      byte ptr [rip + 0x28f6fc4], 0   ; [466372f] bss
+01d6c76b  mov      rbp, r8
+01d6c76e  mov      rdi, rdx
+01d6c771  mov      rbx, rcx
+01d6c774  jne      0x1d6c789
+01d6c776  lea      rcx, [rip + 0x2611723]   ; [437dea0] TypeInfo UnityEngine.Object
+01d6c77d  call     0x4e0a50
+01d6c782  mov      byte ptr [rip + 0x28f6fa6], 1   ; [466372f] bss
+01d6c789  lea      rcx, [rbx + 0x2b0]   ; ._baseEnemyData
+01d6c790  mov      qword ptr [rbx + 0x2b0], rdi   ; ._baseEnemyData
+01d6c797  mov      rdx, rdi
+01d6c79a  call     0x4dfd80
+01d6c79f  mov      rcx, qword ptr [rip + 0x26116fa]   ; [437dea0] TypeInfo UnityEngine.Object
+01d6c7a6  mov      rsi, qword ptr [rbx + 0x2b0]   ; ._baseEnemyData
+01d6c7ad  cmp      dword ptr [rcx + 0xe4], 0
+01d6c7b4  jne      0x1d6c7bb
+01d6c7b6  call     0x4e0d90
+01d6c7bb  xor      r8d, r8d
+01d6c7be  xor      edx, edx
+01d6c7c0  mov      rcx, rsi
+01d6c7c3  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01d6c7c8  test     al, al
+01d6c7ca  je       0x1d6c815
+01d6c7cc  mov      rax, qword ptr [rbx + 0x2b0]   ; ._baseEnemyData
+01d6c7d3  test     rax, rax
+01d6c7d6  je       0x1d6c84f
+01d6c7d8  mov      eax, dword ptr [rax + 0x30]   ; .<>u__1
+01d6c7db  mov      dword ptr [rbx + 0x1d8], eax   ; ._smoothRotateValue
+01d6c7e1  mov      rax, qword ptr [rbx + 0x2b0]   ; ._baseEnemyData
+01d6c7e8  test     rax, rax
+01d6c7eb  je       0x1d6c84f
+01d6c7ed  mov      eax, dword ptr [rax + 0x1c]   ; ev.awakeRate
+01d6c7f0  shr      eax, 9
+01d6c7f3  and      al, 1
+01d6c7f5  mov      byte ptr [rbx + 0x293], al   ; ._inAreaStart
+01d6c7fb  mov      rax, qword ptr [rbx + 0x2b0]   ; ._baseEnemyData
+01d6c802  test     rax, rax
+01d6c805  je       0x1d6c84f
+01d6c807  mov      eax, dword ptr [rax + 0x1c]   ; ev.awakeRate
+01d6c80a  shr      eax, 4
+01d6c80d  and      al, 1
+01d6c80f  mov      byte ptr [rbx + 0x294], al   ; .<_isEventStackPlay>k__BackingField
+01d6c815  movsd    xmm0, qword ptr [rbp]
+01d6c81a  lea      r8, [rsp + 0x20]   ; ev.value0
+01d6c81f  mov      eax, dword ptr [rbp + 8]
+01d6c822  xor      r9d, r9d
+01d6c825  mov      rdx, rdi
+01d6c828  movsd    qword ptr [rsp + 0x20], xmm0   ; ev.value0
+01d6c82e  mov      rcx, rbx
+01d6c831  mov      dword ptr [rsp + 0x28], eax   ; ev.vectorValue
+01d6c835  call     0x1d43970   ; SplineMover::CreateRouteData(InGame.Kernel.Timeline.EnemyData,UnityEngine.Vector3)
+01d6c83a  mov      rbx, qword ptr [rsp + 0x40]   ; ev.intValue1/.muzzleTransform
+01d6c83f  mov      rbp, qword ptr [rsp + 0x48]   ; ev.intValue3/.baseTransform
+01d6c844  mov      rsi, qword ptr [rsp + 0x50]   ; ev.randomFire/.offsetAngle
+01d6c849  add      rsp, 0x30
+01d6c84d  pop      rdi
+01d6c84e  ret      
+01d6c84f  call     0x4e0d00

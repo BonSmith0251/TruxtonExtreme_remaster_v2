@@ -1,0 +1,57 @@
+01d9d9f0 push rbx 
+01d9d9f2 sub rsp, 0x40 
+01d9d9f6 mov rbx, rcx 
+01d9d9f9 movaps xmmword ptr [rsp + 0x30], xmm6 
+01d9d9fe mov rcx, qword ptr [rcx + 0x2f0] 
+01d9da05 movaps xmm6, xmm1 
+01d9da08 test rcx, rcx 
+01d9da0b je 0x1d9dad6 
+01d9da11 xor r8d, r8d 
+01d9da14 call 0x1d8a2e0 ; Ene_Bos06/CoreMovement::Progress(System.Single)
+01d9da19 mov rcx, qword ptr [rbx + 0x2f8] 
+01d9da20 test rcx, rcx 
+01d9da23 je 0x1d9dad6 
+01d9da29 movsd xmm0, qword ptr [rbx + 0x1f0] 
+01d9da31 lea r8, [rsp + 0x20] 
+01d9da36 mov eax, dword ptr [rbx + 0x1f8] 
+01d9da3c xor r9d, r9d 
+01d9da3f movaps xmm1, xmm6 
+01d9da42 movsd qword ptr [rsp + 0x20], xmm0 
+01d9da48 mov dword ptr [rsp + 0x28], eax 
+01d9da4c call 0x1d9fce0 ; Ene_Bos06/BatteryMovement::Progress(System.Single,UnityEngine.Vector3)
+01d9da51 mov rcx, qword ptr [rbx + 0x300] 
+01d9da58 test rcx, rcx 
+01d9da5b je 0x1d9dad6 
+01d9da5d movsd xmm0, qword ptr [rbx + 0x1f0] 
+01d9da65 lea r8, [rsp + 0x20] 
+01d9da6a mov eax, dword ptr [rbx + 0x1f8] 
+01d9da70 xor r9d, r9d 
+01d9da73 movaps xmm1, xmm6 
+01d9da76 movsd qword ptr [rsp + 0x20], xmm0 
+01d9da7c mov dword ptr [rsp + 0x28], eax 
+01d9da80 call 0x1d9fce0 ; Ene_Bos06/BatteryMovement::Progress(System.Single,UnityEngine.Vector3)
+01d9da85 cmp dword ptr [rbx + 0x1ec], 0 
+01d9da8c jne 0x1d9dacb 
+01d9da8e mov rcx, qword ptr [rbx + 0x2f8] 
+01d9da95 test rcx, rcx 
+01d9da98 je 0x1d9dad6 
+01d9da9a xor r8d, r8d 
+01d9da9d xorps xmm1, xmm1 
+01d9daa0 call 0x1d9f990 ; Ene_Bos06/BatteryMovement::Attack(System.Single)
+01d9daa5 mov rcx, qword ptr [rbx + 0x300] 
+01d9daac test rcx, rcx 
+01d9daaf je 0x1d9dad6 
+01d9dab1 movss xmm1, dword ptr [rip + 0x174eedf] ; rva=34ec998 f=1.5
+01d9dab9 xor r8d, r8d 
+01d9dabc call 0x1d9f990 ; Ene_Bos06/BatteryMovement::Attack(System.Single)
+01d9dac1 mov dword ptr [rbx + 0x1ec], 1 
+01d9dacb movaps xmm6, xmmword ptr [rsp + 0x30] 
+01d9dad0 add rsp, 0x40 
+01d9dad4 pop rbx 
+01d9dad5 ret 
+01d9dad6 call 0x4e0d00 
+01d9dadb int3 
+01d9dadc int3 
+01d9dadd int3 
+01d9dade int3 
+01d9dadf int3 

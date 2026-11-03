@@ -1,0 +1,772 @@
+=== Ene_Bos08A
+public class Ene_Bos08A : Ene_BosBase
+private sealed class <>c__DisplayClass49_0
+public Ene_Bos08A <>4__this; //Field offset: 0x10
+public Transform armTop; //Field offset: 0x18
+public Action <>9__0; //Field offset: 0x20
+public <>c__DisplayClass49_0() { }
+internal void <OnPartsBreak>b__0() { }
+private sealed class BossArm
+private struct <ExecuteRoutineAsync>d__12 : IAsyncStateMachine
+public int <>1__state; //Field offset: 0x0
+public AsyncUniTaskMethodBuilder <>t__builder; //Field offset: 0x8
+public BossArm <>4__this; //Field offset: 0x18
+public float startDelay; //Field offset: 0x20
+public float attackDuration; //Field offset: 0x24
+public float firstShotDelay; //Field offset: 0x28
+public float rotationAmplitude; //Field offset: 0x2C
+public float rotationFrequency; //Field offset: 0x30
+public float rotationDirectionSign; //Field offset: 0x34
+private EnePartsGroup <parts>5__2; //Field offset: 0x38
+private Transform <muzzle>5__3; //Field offset: 0x40
+private BulletTemplate <bulletTemplate>5__4; //Field offset: 0x48
+private float <totalDuration>5__5; //Field offset: 0x50
+private float <elapsed>5__6; //Field offset: 0x54
+private Awaiter <>u__1; //Field offset: 0x58
+private float <wait>5__7; //Field offset: 0x68
+private override void MoveNext() { }
+private override void SetStateMachine(IAsyncStateMachine stateMachine) { }
+private readonly Ene_Bos08A _owner; //Field offset: 0x10
+private readonly BossPartId _partId; //Field offset: 0x18
+private readonly BossMuzzleId _muzzleId; //Field offset: 0x1C
+private readonly Animator _animator; //Field offset: 0x20
+private bool _isActive; //Field offset: 0x28
+public BossArm(Ene_Bos08A owner, BossPartId partId, BossMuzzleId muzzleId, Animator animator) { }
+public UniTask ExecuteAsync(float startDelay, float attackDuration, float firstShotDelay, float rotationAmplitude, float rotationFrequency, float rotationDirectionSign) { }
+private UniTask ExecuteRoutineAsync(float startDelay, float attackDuration, float firstShotDelay, float rotationAmplitude, float rotationFrequency, float rotationDirectionSign) { }
+public bool get_IsActive() { }
+public bool get_IsBroken() { }
+public void Reset() { }
+private enum BossBulletTemplate : int
+private enum BossMuzzleId : int
+private enum BossPartId : int
+private enum BossState : int
+private struct CoverSideConfig
+public readonly BossPartId[] PartIds; //Field offset: 0x0
+public readonly BossMuzzleId[][] MuzzleGroups; //Field offset: 0x8
+public CoverSideConfig(BossPartId[] partIds, BossMuzzleId[][] muzzleGroups) { }
+private enum LeavingEffectFlag : int
+private const int ActiveArmCount = 4; //Field offset: 0x0
+private const int ReverseArmBaseIndex = 2; //Field offset: 0x0
+private static readonly int TotalMuzzleCount; //Field offset: 0x0
+public const int ArmIndexFrontLeft = 0; //Field offset: 0x0
+public const int ArmIndexFrontRight = 1; //Field offset: 0x0
+public const int ArmIndexMidLeft = 2; //Field offset: 0x0
+public const int ArmIndexMidRight = 3; //Field offset: 0x0
+public const int ArmIndexBackLeft = 4; //Field offset: 0x0
+public const int ArmIndexBackRight = 5; //Field offset: 0x0
+private static readonly int ArmIdleStateHash; //Field offset: 0x4
+private static readonly int ArmAttackStateHash; //Field offset: 0x8
+private static readonly String[] BulletTemplateNames; //Field offset: 0x10
+private static readonly BossPartId[] ArmPartOrder; //Field offset: 0x18
+private static readonly BossPartId[] CoverPartIds; //Field offset: 0x20
+private static readonly BossMuzzleId[] ArmMuzzleOrder; //Field offset: 0x28
+private static readonly EnemyChildData[] ChildEnemyDefinitions; //Field offset: 0x30
+private static readonly String[] BossClipNames; //Field offset: 0x38
+private static readonly String[] BossRouteNames; //Field offset: 0x40
+private static readonly float _armAttackDurationSeconds; //Field offset: 0x48
+private static readonly float _armAttackCooldownSeconds; //Field offset: 0x4C
+private static readonly float _frontCoverShotIntervalSeconds; //Field offset: 0x50
+private static readonly float _backCoverShotIntervalSeconds; //Field offset: 0x54
+private static readonly float _armFirstShotDelaySeconds; //Field offset: 0x58
+private static readonly float _armShotIntervalSeconds; //Field offset: 0x5C
+private static readonly float _armRotationAmplitudeDeg; //Field offset: 0x60
+private static readonly float _armRotationFrequencyHz; //Field offset: 0x64
+private static readonly float _armAttackAnimationWait; //Field offset: 0x68
+private static readonly int FA1; //Field offset: 0x6C
+private static readonly int FA2; //Field offset: 0x70
+private static readonly int FA3; //Field offset: 0x74
+private static readonly int FA4; //Field offset: 0x78
+private static readonly Int32[][] FrontArmAttackSequence; //Field offset: 0x80
+private static readonly int BA1; //Field offset: 0x88
+private static readonly int BA2; //Field offset: 0x8C
+private static readonly int BA3; //Field offset: 0x90
+private static readonly int BA4; //Field offset: 0x94
+private static readonly Int32[][] BackArmAttackSequence; //Field offset: 0x98
+private static readonly BossPartId[] FrontCoverPartOrder; //Field offset: 0xA0
+private static readonly BossPartId[] BackCoverPartOrder; //Field offset: 0xA8
+private static readonly BossMuzzleId[][] FrontCoverMuzzleOrder; //Field offset: 0xB0
+private static readonly BossMuzzleId[][] BackCoverMuzzleOrder; //Field offset: 0xB8
+private static readonly CoverSideConfig FrontCoverConfig; //Field offset: 0xC0
+private static readonly CoverSideConfig BackCoverConfig; //Field offset: 0xD0
+private static readonly int CorePurgeAnimeHash; //Field offset: 0xE0
+private BossState _currentState; //Field offset: 0x270
+private float _stateTimer; //Field offset: 0x274
+private bool _isReversed; //Field offset: 0x278
+private LeavingEffectFlag _leavingEffectFlag; //Field offset: 0x27C
+private Transform[] _muzzlePoints; //Field offset: 0x280
+private BossArm[] _arms; //Field offset: 0x288
+private int _armPatternIndex; //Field offset: 0x290
+private bool _isArmPatternLooped; //Field offset: 0x294
+private int _backCoverShotIndex; //Field offset: 0x298
+private float _coverShotTimer; //Field offset: 0x29C
+private Animator[] _armAnimes; //Field offset: 0x2A0
+private Animator _coreAnime; //Field offset: 0x2A8
+private GameObject _bodyTop; //Field offset: 0x2B0
+private bool _destroyedResult() { }
+private static Ene_Bos08A() { }
+public Ene_Bos08A() { }
+private void AdvanceArmPatternIndex() { }
+private void BreakRemainingCovers() { }
+private void CheckNextState() { }
+private void FireBackCoverShotSequential(BulletTemplate bulletTemplate) { }
+private void FireCoverMuzzleGroup(BossMuzzleId[] muzzleGroup, BulletTemplate bulletTemplate) { }
+private void FireCoverShotBurst() { }
+private void FireCoverShotForSide(CoverSideConfig coverConfig, BulletTemplate bulletTemplate) { }
+private Int32[][] get_CurrentArmAttackSequence() { }
+protected virtual String[] GetBossBT() { }
+protected virtual String[] GetBossCD() { }
+private float GetCoverShotIntervalSeconds() { }
+private CoverSideConfig GetCurrentCoverSideConfig() { }
+private Transform GetMuzzle(BossMuzzleId muzzleId) { }
+private float GetRotationSignForArm(int armIndex) { }
+public virtual List<String> GetRouteNames() { }
+protected virtual Vector3 GetSmallBombPosition() { }
+private bool HasAnyActiveCoverOnCurrentSide() { }
+private bool HasAnyAttackableArm() { }
+private bool HasAvailableMuzzle(BossMuzzleId[] muzzleGroup) { }
+public virtual void Initialize() { }
+private bool IsAnyCoverAvailable(CoverSideConfig coverConfig) { }
+private bool IsArmAttackRunning() { }
+private bool IsCoverAvailable(BossPartId coverPart) { }
+private bool IsPartBroken(BossPartId partId) { }
+public virtual bool IsPoseRecord() { }
+private bool IsReverseMove() { }
+private bool IsStoppedArea() { }
+public virtual void OnPartsBreak(int parts) { }
+private void PatternMove2(float dt) { }
+private void PatternMoveDestruction(float dt) { }
+private void PatternMoveEntryWait(float dt) { }
+private void PatternMoveTurn(float dt) { }
+private void ResetArmStatus() { }
+public virtual void ReStart(bool withPlay) { }
+private void SetState(BossState nextState) { }
+protected virtual void StateExec(float dt) { }
+public virtual EnemyChildData[] SubEnemys() { }
+public virtual void ToDestroid() { }
+private bool TryBeginArmAttack() { }
+private bool TryGetAvailableMuzzle(BossMuzzleId muzzleId, out Transform muzzle) { }
+private bool TryGetCoverPartFromMuzzle(BossMuzzleId muzzleId, out BossPartId coverPart) { }
+private bool TryStartArmPattern() { }
+=== Ene_Bos08B
+public class Ene_Bos08B : Ene_BosBase
+private sealed class <>c
+public static readonly <>c <>9; //Field offset: 0x0
+public static Predicate<InGameBulletInterface> <>9__129_0; //Field offset: 0x8
+public static Predicate<InGameBulletInterface> <>9__129_1; //Field offset: 0x10
+private static <>c() { }
+public <>c() { }
+internal bool <TriggerBowBullet>b__129_0(InGameBulletInterface bullet) { }
+internal bool <TriggerBowBullet>b__129_1(InGameBulletInterface bullet) { }
+private struct <>c__DisplayClass126_0
+public Ene_Bos08B <>4__this; //Field offset: 0x0
+public float deltaTime; //Field offset: 0x8
+private enum Boss08BMZ : int
+private enum Boss08BT : int
+private enum Boss08State : int
+private enum PartsKind : int
+private enum Winds : int
+private static readonly float _EntryNoHitTime; //Field offset: 0x0
+private const float BowWaveSpawnCount = 20; //Field offset: 0x0
+private const float BowWaveSpawnSeconds = 1; //Field offset: 0x0
+private const float BowWaveSpawnInterval = 0.05; //Field offset: 0x0
+private const float BowWaveInnerAngle = -20; //Field offset: 0x0
+private const float BowWaveOuterAngle = 30; //Field offset: 0x0
+private const float BowWaveFireDelay = 2; //Field offset: 0x0
+private const float BowCircleSpawnSeconds = 0; //Field offset: 0x0
+private const float PhaseTwoReturnDuration = 2; //Field offset: 0x0
+private const float BowCircleCount = 60; //Field offset: 0x0
+private const float BowCircleArc = 6; //Field offset: 0x0
+private const float BowCircleArcRadius = 30; //Field offset: 0x0
+private const int BowCircleFireCount = 10; //Field offset: 0x0
+private const float BowCircleFireInterval = 0.5; //Field offset: 0x0
+private const float BowCircleFireDelay = 0; //Field offset: 0x0
+private const float HoverFrequency = 0.5; //Field offset: 0x0
+private const float HoverApplyTime = 1; //Field offset: 0x0
+private const float BowCircleSpawnInterval = 0; //Field offset: 0x0
+private const float PhaseTwoArrivalThreshold = 0.1; //Field offset: 0x0
+private const float HoverAmplitude = 5; //Field offset: 0x0
+private const float PhaseTwoMaxSpeed = 150; //Field offset: 0x0
+private const float PhaseTwoDecelerationDuration = 0.2; //Field offset: 0x0
+private const int InvalidSeChannelId = -1; //Field offset: 0x0
+private const string DefaultDeadExplosionEffect = "pf_eff_explposion06"; //Field offset: 0x0
+private const float PhaseTwoBrakeDistance = 15; //Field offset: 0x0
+private const float PhaseTwoAccelerationDuration = 0.5; //Field offset: 0x0
+private const float PhaseTwoPostWaitSeconds = 1; //Field offset: 0x0
+private const float PhaseTwoPreWaitSeconds = 1; //Field offset: 0x0
+private const int Pattern1LoopCount = 1; //Field offset: 0x0
+private const float OneRoundSecond = 12; //Field offset: 0x0
+private const float InfinityPathHeight = 10; //Field offset: 0x0
+private const float InfinityPathWidth = 60; //Field offset: 0x0
+private const string BossDeadExplosionEffect = "pf_eff_explposion_boss"; //Field offset: 0x0
+private static readonly int EntryAnimationHash; //Field offset: 0x4
+private static readonly String[] BossBulletTemplateNames; //Field offset: 0x8
+private static readonly String[] Boss08CEnemyNames; //Field offset: 0x10
+private static readonly Vector3 HomePosition; //Field offset: 0x18
+private static readonly Vector3 Boss3CPosition; //Field offset: 0x24
+private static readonly Vector3 Boss3COffset; //Field offset: 0x30
+private static readonly Vector3[] BowWaveBezierControlPoints; //Field offset: 0x40
+private static readonly Vector3 LeftBowOffset; //Field offset: 0x48
+private static readonly Vector3 RightBowOffset; //Field offset: 0x54
+private static readonly Vector3 BowCircleCenterOffset; //Field offset: 0x60
+private static readonly Quaternion[] WingBaseRotations; //Field offset: 0x70
+private static readonly int WingCount; //Field offset: 0x78
+private static readonly int MuzzleCount; //Field offset: 0x7C
+private Transform[] _wingTransforms; //Field offset: 0x270
+private ParticleSystem _hologramEffect; //Field offset: 0x278
+private Boss08State _currentState; //Field offset: 0x280
+private int _entrySeChannelId; //Field offset: 0x284
+private int _flyingSeChannelId; //Field offset: 0x288
+private int _patternLoopCount; //Field offset: 0x28C
+private float _stateTimer; //Field offset: 0x290
+private float _modeTimer; //Field offset: 0x294
+private float _bowArcAngle; //Field offset: 0x298
+private bool _nextBowIsWave; //Field offset: 0x29C
+private bool _legsOpened; //Field offset: 0x29D
+private bool _isMagicCirclePlaying; //Field offset: 0x29E
+private bool _hasLegCloseSequenceStarted; //Field offset: 0x29F
+private bool _hasLegOpenSequenceStarted; //Field offset: 0x2A0
+private Quaternion _wingRotation; //Field offset: 0x2A4
+private float _wingOpenRatio; //Field offset: 0x2B4
+private float _currentLoopTime; //Field offset: 0x2B8
+private Transform[] _muzzleTransforms; //Field offset: 0x2C0
+private Vector3 _phaseTwoTargetPosition; //Field offset: 0x2C8
+private int _phaseTwoMoveStage; //Field offset: 0x2D4
+private float _phaseTwoStageElapsed; //Field offset: 0x2D8
+private float _phaseTwoCurrentSpeed; //Field offset: 0x2DC
+private float _phaseTwoDecelerationStartSpeed; //Field offset: 0x2E0
+private Vector3 _phaseTwoReturnStartPosition; //Field offset: 0x2E4
+private float _phaseTwoReturnElapsed; //Field offset: 0x2F0
+private bool _hoverEnable; //Field offset: 0x2F4
+private float _hoverTimer; //Field offset: 0x2F8
+private Vector3 _hoverBasePosition; //Field offset: 0x2FC
+private float _hoverApplyRate; //Field offset: 0x308
+private bool _hoverAlignPending; //Field offset: 0x30C
+private readonly List<InGameBulletInterface> _rightBowBullets; //Field offset: 0x310
+private readonly List<InGameBulletInterface> _leftBowBullets; //Field offset: 0x318
+private readonly Dictionary<InGameBulletBow, Vector3> _bowFollowerOffsets; //Field offset: 0x320
+private readonly List<InGameBulletBow> _bowFollowersToRemove; //Field offset: 0x328
+private bool _EntryCollisionFlag; //Field offset: 0x330
+private bool _EntrySEFlag; //Field offset: 0x331
+private static Ene_Bos08B() { }
+public Ene_Bos08B() { }
+private bool <PatternBowCircle>g__SpawnCircularBowSequence|128_0(float deltaTime) { }
+private bool <PatternBowWave>g__SpawnWingBowSequence|126_0(float delatTime, ref <>c__DisplayClass126_0 unnamed_param_1) { }
+private void <PatternPhaseOne>g__FireWingSpreadShot|117_0() { }
+private void ApplyDeadExplosionEffect() { }
+private void ApplyHover(float deltaTime) { }
+private void ApplyWingOpening(float openingRatio) { }
+private void BeginPhaseTwoDeceleration() { }
+public virtual void CallDisabled() { }
+private void ChangeState(Boss08State nextState) { }
+private void CheckNextState() { }
+private void ClearBowBullets(bool resetBulletManager) { }
+private bool CloseWings(float deltaTime) { }
+private bool ExecutePhaseTwoMovement(float deltaTime) { }
+private void FinalizePhaseTwoMovement() { }
+protected virtual int GetBonusTimeKind() { }
+protected virtual String[] GetBossBT() { }
+protected virtual String[] GetBossCD() { }
+protected virtual Vector3 GetDifferenceVector() { }
+private Transform GetMuzzle(Boss08BMZ muzzleKind) { }
+protected virtual Vector3 GetSmallBombPosition() { }
+public virtual void GetStart() { }
+private void HandleDestroyedResult() { }
+public virtual void Initialize() { }
+private bool IsHoverStopped() { }
+public virtual bool IsPoseRecord() { }
+private void MovePhaseTwoTowardsTarget(float deltaTime) { }
+private bool OpenWings(float deltaTime) { }
+private void PatternBowCircle(float deltaTime) { }
+private void PatternBowWave(float deltaTime) { }
+private void PatternDestruction(float deltaTime) { }
+private void PatternEntryWait(float deltaTime) { }
+private void PatternPhaseOne(float deltaTime) { }
+private void PatternPhaseTwo(float deltaTime) { }
+private void PreparePhaseTwoTarget() { }
+private void RegisterBowFollower(InGameBulletBow bullet) { }
+private void RegisterBowFollowers(IEnumerable<InGameBulletInterface> bullets) { }
+private void ResetHover() { }
+private void ResetPhaseTwoMovementState() { }
+public virtual void ReStart(bool withPlay) { }
+private bool ReturnToHomePosition(float deltaTime) { }
+private void SetMagicCircleActive(bool isActive) { }
+private bool ShouldCreateBossC() { }
+private List<InGameBulletInterface> SpawnBowBullets(Vector3 worldPos, Vector3 offset, float startArc) { }
+protected virtual void StateExec(float deltaTime) { }
+private void StopLoopingSeChannels() { }
+public virtual void ToDestroid() { }
+private bool TriggerBowBullet(int count) { }
+private void UnregisterBowFollower(InGameBulletBow bullet) { }
+private void UpdateBowFollowerPositions() { }
+private void UpdateWingRotation(float deltaTime) { }
+=== Ene_Bos08C
+public class Ene_Bos08C : Ene_BosBase
+private sealed class <>c__DisplayClass76_0
+public Vector3 capturedPosition; //Field offset: 0x10
+public Vector3 capturedDirection; //Field offset: 0x1C
+public BowFollowerInfo follower; //Field offset: 0x28
+public Ene_Bos08C <>4__this; //Field offset: 0x30
+public <>c__DisplayClass76_0() { }
+internal void <FireBowBullet>b__0(InGameBulletInterface bullet) { }
+private enum Boss08BulletType : int
+private enum Boss08Muzzle : int
+private enum Boss08State : int
+private class BowFollowerInfo
+public InGameBulletBow Bullet; //Field offset: 0x10
+public float RemainingFollowTime; //Field offset: 0x18
+public float AngleOffset; //Field offset: 0x1C
+public int TargetPlayerIndex; //Field offset: 0x20
+public bool HasFired; //Field offset: 0x24
+public BowFollowerInfo() { }
+private enum PartsKind : int
+private static readonly Vector3 _homePosition; //Field offset: 0x0
+private const float PhaseOneBowSpreadAngle = 360; //Field offset: 0x0
+private const int PhaseOneBowDirectionCount = 8; //Field offset: 0x0
+private const float PhaseOneBowFireDelay = 0; //Field offset: 0x0
+private const float PhaseOneBowSpawnOffsetDistance = 20; //Field offset: 0x0
+private const float PhaseOneEightWayBurstDurationSeconds = 3; //Field offset: 0x0
+private const float PhaseOneEightWayMinIntervalSeconds = 0.1; //Field offset: 0x0
+private const float PhaseOneEightWayBaseIntervalSeconds = 0.5; //Field offset: 0x0
+private const float PhaseOneHomingHardIntervalBaseSeconds = 1.5; //Field offset: 0x0
+private const float PhaseOneHomingDelaySeconds = 1; //Field offset: 0x0
+private const float PhaseOneLaserFadeSeconds = 0.5; //Field offset: 0x0
+private const float PhaseOneLaserChargeSeconds = 1; //Field offset: 0x0
+private const float PhaseOneBowFollowDuration = 2; //Field offset: 0x0
+private const float PhaseOneLaserIdleSecondsNormal = 3; //Field offset: 0x0
+private const float PhaseOneMaxYawSpeed = 90; //Field offset: 0x0
+private const float PhaseOneMovementEaseDuration = 1.2; //Field offset: 0x0
+private const float PhaseOneMoveCycleSeconds = 12; //Field offset: 0x0
+private const float PhaseOneMoveAmplitude = 60; //Field offset: 0x0
+private const float PhaseOneLaserIdleSecondsHard = 0.5; //Field offset: 0x0
+private static readonly Quaternion _homeStartRotate; //Field offset: 0xC
+private static readonly String[] _bulletTemplateNames; //Field offset: 0x20
+private static readonly String[] _muzzleNodeNames; //Field offset: 0x28
+private static readonly Single[] _arcAngles; //Field offset: 0x30
+private static readonly int MuzzleCount; //Field offset: 0x38
+private Boss08State _currentState; //Field offset: 0x270
+private Transform[] _muzzles; //Field offset: 0x278
+private float _localTime; //Field offset: 0x280
+private int _laserSeId; //Field offset: 0x284
+private float _phaseOneMovePhase; //Field offset: 0x288
+private float _phaseOneEaseTimer; //Field offset: 0x28C
+private float _phaseOneYaw; //Field offset: 0x290
+private float _phaseOneHomingTimer; //Field offset: 0x294
+private float _phaseOneLaserTimer; //Field offset: 0x298
+private bool _phaseOnePendingHoming; //Field offset: 0x29C
+private bool _phaseOneNextHoming; //Field offset: 0x29D
+private float _phaseOneEightWayTimer; //Field offset: 0x2A0
+private float _phaseOneEightWayInterval; //Field offset: 0x2A4
+private bool _phaseOneEightWayBurstActive; //Field offset: 0x2A8
+private float _phaseOneEightWayBurstRemain; //Field offset: 0x2AC
+private bool _isLaserFiring; //Field offset: 0x2B0
+private bool _isHighDifficulty; //Field offset: 0x2B1
+private readonly List<BowFollowerInfo> _bowFollowers; //Field offset: 0x2B8
+private void _clearBowFollowers(bool disableBullet) { }
+private static Ene_Bos08C() { }
+public Ene_Bos08C() { }
+public virtual void CallDisabled() { }
+private void CheckNextState() { }
+private void FireBowBullet() { }
+private void FireEightWayBullets() { }
+private void FireFrontAndBackLasers() { }
+private void FireHomingBullets() { }
+public virtual float GetBattileTime() { }
+protected virtual int GetBonusTimeKind() { }
+protected virtual String[] GetBossBT() { }
+protected virtual Vector3 GetDifferenceVector() { }
+private Transform GetMuzzle(Boss08Muzzle muzzle) { }
+public virtual void GetStart() { }
+private void HandleDestroyedResult() { }
+public virtual void Initialize() { }
+private void InitializePhaseOnePattern() { }
+public virtual bool IsPoseRecord() { }
+private void PatternMoveDestruction(float dt) { }
+private void PatternMoveEntryWait(float dt) { }
+private void PatternMovePhaseOne(float deltaTime) { }
+private void RefreshEightWayInterval() { }
+public virtual void ReStart(bool withPlay) { }
+private void SetState(Boss08State nextState) { }
+private void StartPhaseOneEightWayBurst() { }
+protected virtual void StateExec(float dt) { }
+private void StopLaserSe(bool isFast = false) { }
+protected virtual void TimeupAction() { }
+public virtual void ToDestroid() { }
+private void UpdateBowFollowers(float dt) { }
+private void UpdatePhaseOneEightWay(float dt) { }
+private void UpdatePhaseOneHomingIndependent(float dt) { }
+private void UpdatePhaseOneLaserCycle(float dt, float fireDuration, float idleDuration, bool allowLaserLinkedHoming) { }
+private void UpdatePhaseOneMovement(float dt, float amplitude, float cycleSeconds, float easeDuration, float maxYawSpeed) { }
+=== Ene_BosBase
+public abstract class Ene_BosBase : PawnEnemy
+private struct <ChangeBaseColor>d__47 : IAsyncStateMachine
+public int <>1__state; //Field offset: 0x0
+public AsyncUniTaskMethodBuilder <>t__builder; //Field offset: 0x8
+public Ene_BosBase <>4__this; //Field offset: 0x18
+public float twait; //Field offset: 0x20
+public float tsecond; //Field offset: 0x24
+public bool isDark; //Field offset: 0x28
+public Color color; //Field offset: 0x2C
+private float <tpassed>5__2; //Field offset: 0x3C
+private Awaiter <>u__1; //Field offset: 0x40
+private Awaiter <>u__2; //Field offset: 0x50
+private override void MoveNext() { }
+private override void SetStateMachine(IAsyncStateMachine stateMachine) { }
+private struct <DamageTurn>d__50 : IAsyncStateMachine
+public int <>1__state; //Field offset: 0x0
+public AsyncUniTaskMethodBuilder <>t__builder; //Field offset: 0x8
+public Ene_BosBase <>4__this; //Field offset: 0x18
+public Quaternion trot; //Field offset: 0x20
+public float tsecond; //Field offset: 0x30
+public Action _callback; //Field offset: 0x38
+private float <tpassed>5__2; //Field offset: 0x40
+private Quaternion <baserot>5__3; //Field offset: 0x44
+private Quaternion <nrot>5__4; //Field offset: 0x54
+private Awaiter <>u__1; //Field offset: 0x64
+private override void MoveNext() { }
+private override void SetStateMachine(IAsyncStateMachine stateMachine) { }
+internal enum HitPState : int
+internal enum TimeSteps : int
+private static readonly Single[] hpRateRanges; //Field offset: 0x0
+private static readonly int hpRateRangeCount; //Field offset: 0x8
+private bool _isBossDead; //Field offset: 0x1B0
+private bool _isDamageTurned; //Field offset: 0x1B1
+private bool _isBossTimeStart; //Field offset: 0x1B2
+private bool _isDeadEffectCalled; //Field offset: 0x1B3
+private bool _isDirectionPause; //Field offset: 0x1B4
+private bool _isPlayerSideLeft; //Field offset: 0x1B5
+private bool _isPlayerSideDown; //Field offset: 0x1B6
+private bool _isPlayerSideCenter; //Field offset: 0x1B7
+private bool _isPlayerSideBottom; //Field offset: 0x1B8
+private float _bossAliveTime; //Field offset: 0x1BC
+private float _bossActionUpTime; //Field offset: 0x1C0
+private float _directionTimeTotal; //Field offset: 0x1C4
+private float _directionTimePassed; //Field offset: 0x1C8
+private float _directionTimeScale; //Field offset: 0x1CC
+private float _repeatTimer; //Field offset: 0x1D0
+private float _repeatPassed; //Field offset: 0x1D4
+private int _repeatTimes; //Field offset: 0x1D8
+private bool _repeatLaped; //Field offset: 0x1DC
+private float _smallBombBaseSecond; //Field offset: 0x1E0
+private float _smallBombCurrent; //Field offset: 0x1E4
+private int _attackLoopCount; //Field offset: 0x1E8
+protected int _patternMode; //Field offset: 0x1EC
+private Vector3 _baseTargetPlayer; //Field offset: 0x1F0
+private int <_enemyDataCount>k__BackingField; //Field offset: 0x1FC
+protected EnemyData[] _enemyDatas; //Field offset: 0x200
+protected BulletTemplate[] btemplates; //Field offset: 0x208
+private PlayMode _currentPlayMode; //Field offset: 0x210
+private PlayActor _currentActor; //Field offset: 0x214
+private bool _isTraining; //Field offset: 0x218
+private HitPState _hpState; //Field offset: 0x21C
+private HitPState _hpOldState; //Field offset: 0x220
+private TimeSteps _currentActStep; //Field offset: 0x224
+protected Vector3 _startInGamePosition; //Field offset: 0x228
+protected Vector3 _startVector; //Field offset: 0x234
+protected Vector3 _targetVector; //Field offset: 0x240
+protected Quaternion _startAngle; //Field offset: 0x24C
+protected Quaternion _targetAngle; //Field offset: 0x25C
+protected virtual void _callDeadEffect() { }
+private static Ene_BosBase() { }
+protected Ene_BosBase() { }
+protected void AddRepeatTime(float ttime) { }
+protected int AttackLoopCount() { }
+protected List<PawnEnemy> CallEnemyClip(int tindex, Vector3 offset, poolEventFunction poolFunction = null) { }
+private UniTask ChangeBaseColor(bool isDark, Color color, float tsecond, float twait = 0) { }
+protected void ChangeColorMode(bool isDark, Color color, float fadeTime, float delayTime) { }
+protected void ChangeDarkMode(bool isDark, float tsec, float twait = 0) { }
+protected void ConsumeAttackLoop(int count = 1) { }
+private void CountupBossTimer(float dt) { }
+protected Quaternion CurrentTargetAngle(float trate) { }
+protected Quaternion CurrentTargetAngleSlerp(float trate) { }
+protected Vector3 CurrentTargetVector(float trate, EasingType easeType = 0) { }
+protected UniTask DamageTurn(Quaternion trot, float tsecond, Action _callback = null) { }
+protected int get__enemyDataCount() { }
+protected Vector3 get_BaseTargetSkyPosition() { }
+public float get_BossAliveTime() { }
+protected PlayActor get_GetPlayActor() { }
+protected HitPState get_HpState() { }
+protected bool get_IsArcade() { }
+protected bool get_IsDamageTurned() { }
+protected bool get_IsDeadEffectCalled() { }
+protected bool get_IsEasyMode() { }
+protected bool get_IsPlayerSideBottom() { }
+protected bool get_IsPlayerSideCenter() { }
+protected bool get_IsPlayerSideDown() { }
+protected bool get_IsPlayerSideLeft() { }
+protected bool get_IsPlayerSideRight() { }
+public bool get_IsRepeatLaped() { }
+protected bool get_IsStoryA() { }
+protected bool get_IsStoryB() { }
+protected bool get_IsStoryC() { }
+protected bool get_IsStoryMode() { }
+protected bool get_IsTeam() { }
+protected bool get_IsTrophy() { }
+protected bool get_IsTutorial() { }
+public int get_RepeatTimes() { }
+public Vector3 get_StartInGamePosition() { }
+public override float GetBattileTime() { }
+protected override int GetBonusTimeKind() { }
+protected override String[] GetBossBT() { }
+protected override String[] GetBossCD() { }
+protected BulletTemplate GetBT(int tindex) { }
+public virtual List<String> GetBulletTemplates() { }
+protected float GetDirectionRate() { }
+protected float GetRepeatRate() { }
+protected override Vector3 GetSmallBombPosition() { }
+public virtual void InitializeToPlay() { }
+protected bool IsAttackLoop() { }
+public virtual bool IsBossType() { }
+protected bool IsCallSmallBomb(float dt) { }
+protected bool IsChangeHpState() { }
+public virtual bool IsGamePlayArea() { }
+protected bool IsOverAorB(HitPState hpstep, TimeSteps astep) { }
+protected bool IsOverHP(HitPState hpstep) { }
+protected bool IsOverStep(TimeSteps astep) { }
+protected virtual void LocalLateUpdate(float dt) { }
+private void ProgressBossTimer(float dt) { }
+protected void ResetBossTimer(bool withPlay) { }
+public virtual void ReStart(bool withPlay) { }
+private void set__enemyDataCount(int value) { }
+protected void SetDirectionPause(bool v) { }
+protected void SetDirectionScale(float tscale) { }
+protected void SetDirectionTime(float ttime, float tscale = 1) { }
+protected void SetLoopCount(int nmax) { }
+protected void SetLoopCount(int nmin, int nmax) { }
+protected void SetLoopCountDirect(int ncount) { }
+protected void SetOldState() { }
+protected void SetRepeatTime(float ttime) { }
+protected void SetSmallBombSecond(float ttime) { }
+protected void SkyExplosionEffect(int tcode, Vector3 worldPos, int mylayer, ID seID = -1) { }
+protected abstract void StateExec(float dt) { }
+protected void StopBossTimer() { }
+public virtual EnemyChildData[] SubEnemys() { }
+protected override void TimeupAction() { }
+public virtual void ToDestroid() { }
+protected void ToDestroidVib() { }
+protected override bool UpdateHPState() { }
+private void UpdatePlayerPositionFlag(Vector3 ppos) { }
+protected bool UptoHpStep(HitPState hpstep) { }
+=== PawnEnemy
+public class PawnEnemy : InGameCollisionBase, IDamagedObject, IPrefabBankObject
+private sealed class <>c
+public static readonly <>c <>9; //Field offset: 0x0
+public static Comparison<IEnemyUpdater> <>9__0_0; //Field offset: 0x8
+public static Func<Record, Boolean> <>9__2_0; //Field offset: 0x10
+public static DieCallback <>9__197_0; //Field offset: 0x18
+private static <>c() { }
+public <>c() { }
+internal void <.ctor>b__197_0(PawnEnemy a) { }
+internal int <Initialize>b__0_0(IEnemyUpdater a, IEnemyUpdater b) { }
+internal bool <SetRecords>b__2_0(Record pdata) { }
+private sealed class <>c__DisplayClass2_0
+public EnePartsGroup aParts; //Field offset: 0x10
+public <>c__DisplayClass2_0() { }
+internal bool <SetRecords>b__1(Record pdata) { }
+internal sealed class DieCallback : MulticastDelegate
+public DieCallback(object object, IntPtr method) { }
+public override IAsyncResult BeginInvoke(PawnEnemy p, AsyncCallback callback, object object) { }
+public override void EndInvoke(IAsyncResult result) { }
+public override void Invoke(PawnEnemy p) { }
+internal enum Division : int
+internal struct EnemyChildData
+public string _childName; //Field offset: 0x0
+public Transform _childNode; //Field offset: 0x8
+public int _childCount; //Field offset: 0x10
+public EnemyChildData(string tname, Transform tnode, int tcount) { }
+internal sealed class poolEventFunction : MulticastDelegate
+public poolEventFunction(object object, IntPtr method) { }
+public override IAsyncResult BeginInvoke(AsyncCallback callback, object object) { }
+public override void EndInvoke(IAsyncResult result) { }
+public override void Invoke() { }
+internal class RenderData
+public Renderer Renderer; //Field offset: 0x10
+public Material[] mats; //Field offset: 0x18
+private Material[] originalMats; //Field offset: 0x20
+private int matsCount; //Field offset: 0x28
+public RenderData(Renderer ren) { }
+public void Delete() { }
+private bool IsCreateClone(Material tmat) { }
+public void LerpColor(int id, float trate, Color tcolor) { }
+public void ResetColor(int id0, int id1, int id2) { }
+public void SetColor(int id, in Color col) { }
+public void SetFloat(int id, float prm) { }
+public static readonly int _BaseColor; //Field offset: 0x0
+public static readonly int _FadeColor; //Field offset: 0x4
+public static readonly int _MaterialColor; //Field offset: 0x8
+public static readonly int _MaterialFactor; //Field offset: 0xC
+public static readonly Color DamagedColor; //Field offset: 0x10
+protected static readonly Color DarkColor; //Field offset: 0x20
+protected static readonly Color DeepDarkColor; //Field offset: 0x30
+private poolEventFunction PoolEvent; //Field offset: 0xA0
+private IEnemyUpdater[] _updateEvents; //Field offset: 0xA8
+private int _updateEventCount; //Field offset: 0xB0
+private int _updateLateEventCount; //Field offset: 0xB4
+protected EnemyMover _mover; //Field offset: 0xB8
+private float _burnShake; //Field offset: 0xC0
+private float _burnShakePow; //Field offset: 0xC4
+private float _burnShakeSpeed; //Field offset: 0xC8
+private float _aliveTime; //Field offset: 0xCC
+private float _startDelayTime; //Field offset: 0xD0
+private float _delayTime; //Field offset: 0xD4
+private float _DamageScored; //Field offset: 0xD8
+private string _deadExplosion; //Field offset: 0xE0
+private int _deadExplosionHash; //Field offset: 0xE8
+private string _deadBullet; //Field offset: 0xF0
+private string _deadBulletSelecter; //Field offset: 0xF8
+private BulletTemplate _deadBulletCache; //Field offset: 0x100
+private ExpSound _overplayDeadSound; //Field offset: 0x108
+private int _scorePoint; //Field offset: 0x10C
+private int _pipilCount; //Field offset: 0x110
+private int _jewelCount; //Field offset: 0x114
+private int _bornArea; //Field offset: 0x118
+private int _poolIndex; //Field offset: 0x11C
+protected EnemySize _sizeType; //Field offset: 0x120
+protected Record _recordData; //Field offset: 0x128
+private attackType _causeOfDeath; //Field offset: 0x130
+protected int _deathByPno; //Field offset: 0x134
+private attackType _lastHit; //Field offset: 0x138
+private bool _isFirstFrame; //Field offset: 0x13C
+protected bool _isChildEnemy; //Field offset: 0x13D
+private bool _isSkipDestroyCount; //Field offset: 0x13E
+private bool _isExboostDead; //Field offset: 0x13F
+private bool _isResultDone; //Field offset: 0x140
+private bool _isEventDone; //Field offset: 0x141
+private bool _isEventEnd; //Field offset: 0x142
+protected Vector3 _shakeBaseVector; //Field offset: 0x144
+private Vector3 _shakeResultVector; //Field offset: 0x150
+protected Vector3 _explosionOffset; //Field offset: 0x15C
+protected Transform _modelTop; //Field offset: 0x168
+private float _targetY; //Field offset: 0x170
+private Division _division; //Field offset: 0x174
+private CancellationTokenSource _token; //Field offset: 0x178
+protected EnePartsGroup[] PartsList; //Field offset: 0x180
+private int _partsCount; //Field offset: 0x188
+private bool _isSimpleCalc; //Field offset: 0x18C
+protected DieCallback _dieCallback; //Field offset: 0x190
+private int RenderDataCount; //Field offset: 0x198
+public RenderData[] RenderDatas; //Field offset: 0x1A0
+private Dictionary<Renderer, RenderData> _rendererDictionary; //Field offset: 0x1A8
+private bool _addPartsDamage(EnePartsGroup aparts, float damage) { }
+protected override void _callDeadEffect() { }
+protected virtual Vector3 _getCurrentPosition() { }
+protected override void _shakeProgress(float dt) { }
+private static PawnEnemy() { }
+public PawnEnemy() { }
+private void <StartKickWithDelayTime>b__69_0() { }
+private void <StartKickWithDelayTime>b__69_1() { }
+public void add_PoolEvent(poolEventFunction value) { }
+public virtual float AddDamageParts(float damage, int partNo, int playerNo, bool isExboost) { }
+public void AddDieCallback(DieCallback dm) { }
+public void AddShake(float nsec, float npow, float nspeed) { }
+protected void BaseBlend(float trate, Color tcolor) { }
+public virtual void CallDisabled() { }
+protected void CallSubEnemys(Vector3 wpos, string edname, Division tdivision, bool isGround) { }
+public bool ClearDirtyTransform() { }
+public override void ClearRoute() { }
+public override void CommonEvent(int num) { }
+public override void CreateRouteData(EnemyData ed, Vector3 spos) { }
+protected void CreateToken() { }
+protected void DeadResultUpdate() { }
+public void DelDieCallback(DieCallback dm) { }
+private void DeleteMaterial() { }
+protected void DisabledAllParts() { }
+public override void EndRoute() { }
+public attackType get_CauseOfDeath() { }
+protected CancellationToken get_CToken() { }
+public CancellationTokenSource get_CTokenSource() { }
+public string get_DbKeyString() { }
+public int get_DeathByPno() { }
+public Division get_GetDivision() { }
+protected bool get_IsCancelToken() { }
+protected bool get_IsEventDone() { }
+protected override bool get_IsExpEffectMove() { }
+protected bool get_IsFirstFrame() { }
+public Transform get_ModelTop() { }
+public EnemyMover get_MoverComponent() { }
+public int get_PoolIndex() { }
+public Record get_RecordData() { }
+public Vector3 get_ShakeResultVector() { }
+public EnemySize get_SizeType() { }
+public float get_TargetY() { }
+public Vector3 get_WorldPosition() { }
+public override List<String> GetBulletTemplates() { }
+public override int GetDamageScore() { }
+public override int GetDeathScore() { }
+protected virtual string GetDebugString() { }
+protected override Vector3 GetDifferenceVector() { }
+public override GameObject GetObject() { }
+public EnePartsGroup GetParts(int tindex) { }
+public EnePartsGroup GetPartsByName(string partsName) { }
+public int GetPartsIndex(string partsName) { }
+public EnePartsGroup GetPartsInfo(int pno) { }
+public RenderData GetRenderData(Renderer r) { }
+public override List<String> GetRouteNames() { }
+public virtual void GetStart() { }
+public override toleType GetTolerance(attackType at) { }
+public override void HitBlink(attackType atype) { }
+public virtual void Initialize() { }
+private void InitializePartsList() { }
+public override void InitializeToPlay() { }
+public virtual bool IsAlive() { }
+protected bool IsAllSleeping() { }
+public override bool IsBossType() { }
+public static bool IsCauseOfDeathByPlayer(attackType atkType) { }
+public static bool IsCauseOfDeathNormal(attackType atkType) { }
+public bool IsDelayed() { }
+public override bool IsDestroyRateTarget() { }
+public virtual bool IsGround() { }
+public bool IsGroundDivision() { }
+public bool IsHormingTarget() { }
+public override bool IsObstacle() { }
+protected bool IsPartsModels() { }
+public override bool IsPhysicsMove() { }
+public override bool IsPoseRecord() { }
+public bool IsShakeProgress() { }
+protected virtual bool IsSimpleCalc() { }
+private override void KANAI.Kernel.IPrefabBankObject.SetupCache() { }
+protected virtual void LocalLateUpdate(float dt) { }
+private int NumberingParts() { }
+protected virtual void OnHitProgress(CollisionOrder nOther) { }
+protected virtual void OnStayProgress(CollisionOrder nOther) { }
+protected override void PartsFlushUpdate(float delta) { }
+protected void ProgressDisable() { }
+protected override void ProgressEvent(float dt, int eventCount) { }
+protected void ReleaseToken() { }
+public void remove_PoolEvent(poolEventFunction value) { }
+public void ResetMaterial() { }
+public override void ResetParameters() { }
+public virtual void ReStart(bool withPlay) { }
+public override void SetActiveBank(bool tactive) { }
+public void SetBornArea(int aindex, int poolIndex) { }
+public override void SetCauseOfDeath(int playerNo, attackType atkType, bool isExboostDead) { }
+public void SetChildFlag(bool v) { }
+protected void SetDeadExplotion(string effectName) { }
+public void SetDelayTime(float ndelay, float nstart) { }
+public bool SetDestroyResult() { }
+public override void SetDropItem(Kind ditem) { }
+public void SetEaseType(EasingType etype) { }
+public void SetEnemyLayer(Division tdivision, bool _isChild) { }
+public void SetLookAtType(LookAtType ttype) { }
+protected void SetOverplayDeadSound(ExpSound seID) { }
+public override void SetRecords(Record[] records) { }
+public void SetRouteData(String[] routeNames, Vector3 spos) { }
+public void SetRouteMatrix(Matrix4x4 m) { }
+public void SetSmooth(bool value) { }
+public void SetSpeed(float v) { }
+public void SetSuside() { }
+public void SetTargetY(float ty) { }
+private void SetupMaterial() { }
+public override void SetWakeAfterSecond(float t) { }
+public void SkipDestroyRate(bool v) { }
+public void StartKickWithDelayTime() { }
+public void StartOverrideRoute() { }
+public override void StartRoute(Action callback) { }
+public override void StartRouteWithDelay(Action callback, float activeDelay, float startDelay) { }
+public void StopShake() { }
+public override EnemyChildData[] SubEnemys() { }
+public virtual void Terminate() { }
+public virtual void ToDestroid() { }
+protected void ToProgressEnd() { }
+private void UpdateDeadBulletCache() { }
+public void UpdateObjectData(EnemyPlacementData pdata, float speedStep) { }

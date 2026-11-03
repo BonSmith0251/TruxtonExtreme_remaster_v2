@@ -1,0 +1,89 @@
+01d9f9b0 mov qword ptr [rsp + 8], rbx 
+01d9f9b5 mov qword ptr [rsp + 0x10], rsi 
+01d9f9ba push rdi 
+01d9f9bb sub rsp, 0x60 
+01d9f9bf cmp byte ptr [rip + 0x28c3e41], 0 ; rva=4663807
+01d9f9c6 mov rdi, r8 
+01d9f9c9 mov rsi, rdx 
+01d9f9cc jne 0x1d9f9f9 
+01d9f9ce lea rcx, [rip + 0x263955b] ; rva=43d8f30
+01d9f9d5 call 0x4e0a50 
+01d9f9da lea rcx, [rip + 0x261861f] ; rva=43b8000
+01d9f9e1 call 0x4e0a50 
+01d9f9e6 lea rcx, [rip + 0x25de4b3] ; rva=437dea0
+01d9f9ed call 0x4e0a50 
+01d9f9f2 mov byte ptr [rip + 0x28c3e0e], 1 ; rva=4663807
+01d9f9f9 mov rax, qword ptr [rip + 0x2618600] ; rva=43b8000
+01d9fa00 mov rax, qword ptr [rax + 0x20] 
+01d9fa04 test byte ptr [rax + 0x135], 1 
+01d9fa0b jne 0x1d9fa15 
+01d9fa0d mov rcx, rax 
+01d9fa10 call 0x4de1e0 
+01d9fa15 mov rax, qword ptr [rax + 0xc0] 
+01d9fa1c mov rax, qword ptr [rax + 0x10] 
+01d9fa20 test byte ptr [rax + 0x135], 1 
+01d9fa27 jne 0x1d9fa31 
+01d9fa29 mov rcx, rax 
+01d9fa2c call 0x4de1e0 
+01d9fa31 mov rcx, qword ptr [rip + 0x25de468] ; rva=437dea0
+01d9fa38 mov rax, qword ptr [rax + 0xb8] 
+01d9fa3f cmp dword ptr [rcx + 0xe4], 0 
+01d9fa46 mov rbx, qword ptr [rax] 
+01d9fa49 jne 0x1d9fa50 
+01d9fa4b call 0x4e0d90 
+01d9fa50 xor r8d, r8d 
+01d9fa53 xor edx, edx 
+01d9fa55 mov rcx, rbx 
+01d9fa58 call 0x306d270 ; Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+01d9fa5d test al, al 
+01d9fa5f jne 0x1d9fb00 
+01d9fa65 test rbx, rbx 
+01d9fa68 je 0x1d9fb13 
+01d9fa6e movsd xmm0, qword ptr [rsi] 
+01d9fa72 lea r8, [rsp + 0x30] 
+01d9fa77 mov eax, dword ptr [rsi + 8] 
+01d9fa7a lea rcx, [rsp + 0x40] 
+01d9fa7f xor r9d, r9d 
+01d9fa82 movsd qword ptr [rsp + 0x30], xmm0 
+01d9fa88 mov rdx, rbx 
+01d9fa8b movaps xmmword ptr [rsp + 0x50], xmm6 
+01d9fa90 mov dword ptr [rsp + 0x38], eax 
+01d9fa94 mov qword ptr [rsp + 0x20], 0 
+01d9fa9d call 0x1ce6750 ; InGameManager::GetSkyRootPosition(UnityEngine.Vector3,System.Boolean)
+01d9faa2 mov rcx, qword ptr [rip + 0x2639487] ; rva=43d8f30
+01d9faa9 movsd xmm6, qword ptr [rax] 
+01d9faad cmp dword ptr [rcx + 0xe4], 0 
+01d9fab4 mov ebx, dword ptr [rax + 8] 
+01d9fab7 jne 0x1d9fabe 
+01d9fab9 call 0x4e0d90 
+01d9fabe movsd xmm0, qword ptr [rdi] 
+01d9fac2 lea rdx, [rsp + 0x30] 
+01d9fac7 mov eax, dword ptr [rdi + 8] 
+01d9faca lea rcx, [rsp + 0x40] 
+01d9facf xor r8d, r8d 
+01d9fad2 movsd qword ptr [rsp + 0x40], xmm0 
+01d9fad8 movsd qword ptr [rsp + 0x30], xmm6 
+01d9fade mov dword ptr [rsp + 0x38], ebx 
+01d9fae2 mov dword ptr [rsp + 0x48], eax 
+01d9fae6 call 0x1ccb620 ; InGameBulletManager::GetTargetBulletArc(UnityEngine.Vector3,UnityEngine.Vector3)
+01d9faeb movaps xmm6, xmmword ptr [rsp + 0x50] 
+01d9faf0 mov rbx, qword ptr [rsp + 0x70] 
+01d9faf5 mov rsi, qword ptr [rsp + 0x78] 
+01d9fafa add rsp, 0x60 
+01d9fafe pop rdi 
+01d9faff ret 
+01d9fb00 mov rbx, qword ptr [rsp + 0x70] 
+01d9fb05 xorps xmm0, xmm0 
+01d9fb08 mov rsi, qword ptr [rsp + 0x78] 
+01d9fb0d add rsp, 0x60 
+01d9fb11 pop rdi 
+01d9fb12 ret 
+01d9fb13 call 0x4e0d00 
+01d9fb18 int3 
+01d9fb19 int3 
+01d9fb1a int3 
+01d9fb1b int3 
+01d9fb1c int3 
+01d9fb1d int3 
+01d9fb1e int3 
+01d9fb1f int3 

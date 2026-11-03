@@ -1,0 +1,55 @@
+#### KANAI.Kernel.VectorUtility::Cosf(System.Single) RVA 1df6fa0 len cd
+01df6fa0  push     rbx
+01df6fa2  sub      rsp, 0x30
+01df6fa6  cmp      byte ptr [rip + 0x286caa9], 0   ; [4663a56] bss
+01df6fad  movaps   xmmword ptr [rsp + 0x20], xmm6   ; ev.value0
+01df6fb2  movaps   xmm6, xmm0
+01df6fb5  jne      0x1df6fca
+01df6fb7  lea      rcx, [rip + 0x25cb40a]   ; [43c23c8] TypeInfo KANAI.Kernel.VectorUtility
+01df6fbe  call     0x4e0a50
+01df6fc3  mov      byte ptr [rip + 0x286ca8c], 1   ; [4663a56] bss
+01df6fca  mulss    xmm6, dword ptr [rip + 0x16f5a56]   ; rdata 34eca28 f=-10,0,3.370281e+12,2.142699 d=1.60082202e-314
+01df6fd2  mov      ebx, 0x384
+01df6fd7  cvttss2si eax, xmm6
+01df6fdb  sub      ebx, eax
+01df6fdd  jns      0x1df7001
+01df6fdf  mov      eax, 0x91a2b3c5
+01df6fe4  mov      ecx, 0xe10
+01df6fe9  imul     ebx
+01df6feb  add      edx, ebx
+01df6fed  sar      edx, 0xb
+01df6ff0  mov      eax, edx
+01df6ff2  shr      eax, 0x1f
+01df6ff5  add      edx, eax
+01df6ff7  imul     eax, edx, 0xe10
+01df6ffd  sub      ecx, eax
+01df6fff  add      ebx, ecx
+01df7001  mov      rcx, qword ptr [rip + 0x25cb3c0]   ; [43c23c8] TypeInfo KANAI.Kernel.VectorUtility
+01df7008  cmp      dword ptr [rcx + 0xe4], 0
+01df700f  jne      0x1df701d
+01df7011  call     0x4e0d90
+01df7016  mov      rcx, qword ptr [rip + 0x25cb3ab]   ; [43c23c8] TypeInfo KANAI.Kernel.VectorUtility
+01df701d  mov      rcx, qword ptr [rcx + 0xb8]   ; ._hormingToken
+01df7024  mov      r8, qword ptr [rcx]
+01df7027  test     r8, r8
+01df702a  je       0x1df7062
+01df702c  mov      eax, 0x91a2b3c5
+01df7031  imul     ebx
+01df7033  add      edx, ebx
+01df7035  sar      edx, 0xb
+01df7038  mov      eax, edx
+01df703a  shr      eax, 0x1f
+01df703d  add      edx, eax
+01df703f  imul     eax, edx, 0xe10
+01df7045  sub      ebx, eax
+01df7047  cmp      ebx, dword ptr [r8 + 0x18]   ; ev.repeatDelay
+01df704b  jae      0x1df7068
+01df704d  movaps   xmm6, xmmword ptr [rsp + 0x20]   ; ev.value0
+01df7052  movsxd   rax, ebx
+01df7055  movss    xmm0, dword ptr [r8 + rax*4 + 0x20]
+01df705c  add      rsp, 0x30
+01df7060  pop      rbx
+01df7061  ret      
+01df7062  call     0x4e0d00
+01df7067  int3     
+01df7068  call     0x4e0cf0

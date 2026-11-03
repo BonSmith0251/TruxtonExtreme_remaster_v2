@@ -1,0 +1,104 @@
+01d9b340 mov qword ptr [rsp + 8], rbx 
+01d9b345 mov qword ptr [rsp + 0x10], rbp 
+01d9b34a mov qword ptr [rsp + 0x18], rsi 
+01d9b34f push rdi 
+01d9b350 sub rsp, 0x30 
+01d9b354 cmp byte ptr [rip + 0x28c8498], 0 ; rva=46637f3
+01d9b35b mov ebp, r8d 
+01d9b35e mov rdi, rdx 
+01d9b361 mov rsi, rcx 
+01d9b364 jne 0x1d9b391 
+01d9b366 lea rcx, [rip + 0x25e40fb] ; rva=437f468
+01d9b36d call 0x4e0a50 
+01d9b372 lea rcx, [rip + 0x25ec57f] ; rva=43878f8
+01d9b379 call 0x4e0a50 
+01d9b37e lea rcx, [rip + 0x25ef353] ; rva=438a6d8
+01d9b385 call 0x4e0a50 
+01d9b38a mov byte ptr [rip + 0x28c8462], 1 ; rva=46637f3
+01d9b391 mov rcx, qword ptr [rip + 0x25ef340] ; rva=438a6d8
+01d9b398 call 0x4e0cb0 
+01d9b39d xor edx, edx 
+01d9b39f mov rcx, rax 
+01d9b3a2 mov rbx, rax 
+01d9b3a5 call 0x5b09e0 ; UnitySourceGeneratedAssemblyMonoScriptTypes_v1::.ctor()
+01d9b3aa test rbx, rbx 
+01d9b3ad je 0x1d9b495 
+01d9b3b3 lea rcx, [rbx + 0x10] 
+01d9b3b7 mov qword ptr [rbx + 0x10], rdi 
+01d9b3bb mov rdx, rdi 
+01d9b3be call 0x4dfd80 
+01d9b3c3 mov dword ptr [rbx + 0x18], ebp 
+01d9b3c6 cmp byte ptr [rdi + 0x2c8], 0 
+01d9b3cd je 0x1d9b484 
+01d9b3d3 mov rcx, qword ptr [rip + 0x25e408e] ; rva=437f468
+01d9b3da call 0x4e0cb0 
+01d9b3df mov r8, qword ptr [rip + 0x25ec512] ; rva=43878f8
+01d9b3e6 xor r9d, r9d 
+01d9b3e9 mov rdx, rbx 
+01d9b3ec mov rcx, rax 
+01d9b3ef mov rbp, rax 
+01d9b3f2 call 0x17c9cc0 ; MonoBtlsServerNameCallback::.ctor(System.Object,System.IntPtr)
+01d9b3f7 test rbp, rbp 
+01d9b3fa je 0x1d9b495 
+01d9b400 mov r8, qword ptr [rbp + 0x18] 
+01d9b404 mov rdx, qword ptr [rbp + 0x28] 
+01d9b408 mov rcx, qword ptr [rbp + 0x40] 
+01d9b40c call r8 
+01d9b40f xor r8d, r8d 
+01d9b412 mov edx, eax 
+01d9b414 mov rcx, rdi 
+01d9b417 call 0x1d0da10 ; PawnEnemy::GetParts(System.Int32)
+01d9b41c test rax, rax 
+01d9b41f je 0x1d9b495 
+01d9b421 cmp byte ptr [rax + 0x9a], 0 
+01d9b428 jne 0x1d9b484 
+01d9b42a mov rax, qword ptr [rax + 0x70] 
+01d9b42e test rax, rax 
+01d9b431 je 0x1d9b495 
+01d9b433 cmp dword ptr [rax + 0x18], 0 
+01d9b437 jbe 0x1d9b49b 
+01d9b439 mov rcx, qword ptr [rax + 0x20] 
+01d9b43d test rcx, rcx 
+01d9b440 je 0x1d9b495 
+01d9b442 xor edx, edx 
+01d9b444 call 0x3059180 ; Component::get_transform()
+01d9b449 test rax, rax 
+01d9b44c je 0x1d9b495 
+01d9b44e xor r8d, r8d 
+01d9b451 lea rcx, [rsp + 0x20] 
+01d9b456 mov rdx, rax 
+01d9b459 call 0x3093ba0 ; Transform::get_position()
+01d9b45e movsd xmm0, qword ptr [rax] 
+01d9b462 mov eax, dword ptr [rax + 8] 
+01d9b465 movsd qword ptr [rsi], xmm0 
+01d9b469 mov rbx, qword ptr [rsp + 0x40] 
+01d9b46e mov rbp, qword ptr [rsp + 0x48] 
+01d9b473 mov dword ptr [rsi + 8], eax 
+01d9b476 mov rax, rsi 
+01d9b479 mov rsi, qword ptr [rsp + 0x50] 
+01d9b47e add rsp, 0x30 
+01d9b482 pop rdi 
+01d9b483 ret 
+01d9b484 movsd xmm0, qword ptr [rdi + 0x78] 
+01d9b489 mov eax, dword ptr [rdi + 0x80] 
+01d9b48f movsd qword ptr [rsi], xmm0 
+01d9b493 jmp 0x1d9b469 
+01d9b495 call 0x4e0d00 
+01d9b49a int3 
+01d9b49b call 0x4e0cf0 
+01d9b4a0 int3 
+01d9b4a1 int3 
+01d9b4a2 int3 
+01d9b4a3 int3 
+01d9b4a4 int3 
+01d9b4a5 int3 
+01d9b4a6 int3 
+01d9b4a7 int3 
+01d9b4a8 int3 
+01d9b4a9 int3 
+01d9b4aa int3 
+01d9b4ab int3 
+01d9b4ac int3 
+01d9b4ad int3 
+01d9b4ae int3 
+01d9b4af int3 

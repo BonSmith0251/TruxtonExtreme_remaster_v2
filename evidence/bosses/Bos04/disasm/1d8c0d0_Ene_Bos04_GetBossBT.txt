@@ -1,0 +1,17 @@
+== System.String[] InGame.Kernel.Enemy.Ene_Bos04::GetBossBT() RVA 1d8c0d0 len 4f
+01d8c0d0 sub        rsp, 0x28
+01d8c0d4 cmp        byte ptr [rip + 0x28d76d4], 0 ; [.data 46637af]
+01d8c0db jne        0x1d8c0f0
+01d8c0dd lea        rcx, [rip + 0x2625714] ; [.data 43b17f8] TypeInfo#37303
+01d8c0e4 call       0x4e0a50
+01d8c0e9 mov        byte ptr [rip + 0x28d76bf], 1 ; [.data 46637af]
+01d8c0f0 mov        rax, qword ptr [rip + 0x2625701] ; [.data 43b17f8] TypeInfo#37303
+01d8c0f7 cmp        dword ptr [rax + 0xe4], 0
+01d8c0fe jne        0x1d8c10f
+01d8c100 mov        rcx, rax
+01d8c103 call       0x4e0d90
+01d8c108 mov        rax, qword ptr [rip + 0x26256e9] ; [.data 43b17f8] TypeInfo#37303
+01d8c10f mov        rax, qword ptr [rax + 0xb8] ; ~_mover
+01d8c116 mov        rax, qword ptr [rax + 8]
+01d8c11a add        rsp, 0x28
+01d8c11e ret        

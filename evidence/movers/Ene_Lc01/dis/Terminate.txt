@@ -1,0 +1,65 @@
+#### InGame.Kernel.Enemy.Ene_Lc01::Terminate() RVA 1dbe3f0 len 117
+01dbe3f0  mov      qword ptr [rsp + 0x18], rbx   ; ev.repeatDelay
+01dbe3f5  push     rsi
+01dbe3f6  sub      rsp, 0x20
+01dbe3fa  cmp      byte ptr [rip + 0x28a54a0], 0   ; [46638a1] bss
+01dbe401  mov      rsi, rcx
+01dbe404  jne      0x1dbe419
+01dbe406  lea      rcx, [rip + 0x25bfa93]   ; [437dea0] TypeInfo UnityEngine.Object
+01dbe412  mov      byte ptr [rip + 0x28a5488], 1   ; [46638a1] bss
+01dbe419  mov      rcx, qword ptr [rip + 0x25bfa80]   ; [437dea0] TypeInfo UnityEngine.Object
+01dbe420  mov      rbx, qword ptr [rsi + 0x210]   ; ._lookAtUpdateSec
+01dbe427  cmp      dword ptr [rcx + 0xe4], 0
+01dbe42e  jne      0x1dbe435
+01dbe430  call     0x4e0d90
+01dbe435  mov      qword ptr [rsp + 0x30], rdi   ; ._entryFlag
+01dbe43a  xor      r8d, r8d
+01dbe43d  xor      edx, edx
+01dbe43f  mov      qword ptr [rsp + 0x38], r14   ; ev.stringValue/._psystems
+01dbe444  mov      rcx, rbx
+01dbe447  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01dbe44c  test     al, al
+01dbe44e  je       0x1dbe4de
+01dbe454  mov      rdi, qword ptr [rsi + 0x218]   ; ._upVector
+01dbe45b  xor      ebx, ebx
+01dbe45d  xor      eax, eax
+01dbe45f  test     rdi, rdi
+01dbe462  je       0x1dbe4fc
+01dbe468  lea      r14, [rdi + 0x20]   ; ev.value0
+01dbe46c  nop      dword ptr [rax]
+01dbe470  cmp      eax, dword ptr [rdi + 0x18]   ; ev.repeatDelay
+01dbe473  jge      0x1dbe49f
+01dbe475  cmp      ebx, dword ptr [rdi + 0x18]   ; ev.repeatDelay
+01dbe478  jae      0x1dbe502
+01dbe47e  mov      rcx, qword ptr [r14]
+01dbe481  test     rcx, rcx
+01dbe484  je       0x1dbe4fc
+01dbe486  mov      rdx, qword ptr [rsi + 0x208]   ; ._currentOffset
+01dbe48d  xor      r8d, r8d
+01dbe490  call     0x30128c0   ; Renderer::SetMaterial(UnityEngine.Material) | Renderer::set_material(UnityEngine.Material)
+01dbe495  inc      ebx
+01dbe497  add      r14, 8
+01dbe49b  mov      eax, ebx
+01dbe49d  jmp      0x1dbe470
+01dbe49f  mov      rcx, qword ptr [rip + 0x25bf9fa]   ; [437dea0] TypeInfo UnityEngine.Object
+01dbe4a6  mov      rbx, qword ptr [rsi + 0x210]   ; ._lookAtUpdateSec
+01dbe4ad  cmp      dword ptr [rcx + 0xe4], 0
+01dbe4b4  jne      0x1dbe4bb
+01dbe4b6  call     0x4e0d90
+01dbe4bb  xor      edx, edx
+01dbe4bd  mov      rcx, rbx
+01dbe4c0  call     0x306a090   ; Object::Destroy(UnityEngine.Object)
+01dbe4c5  lea      rcx, [rsi + 0x210]   ; ._lookAtUpdateSec
+01dbe4cc  mov      qword ptr [rsi + 0x210], 0   ; ._lookAtUpdateSec
+01dbe4d7  xor      edx, edx
+01dbe4d9  call     0x4dfd80
+01dbe4de  xor      edx, edx
+01dbe4e0  mov      rcx, rsi
+01dbe4e3  mov      r14, qword ptr [rsp + 0x38]   ; ev.stringValue/._psystems
+01dbe4e8  mov      rdi, qword ptr [rsp + 0x30]   ; ._entryFlag
+01dbe4ed  mov      rbx, qword ptr [rsp + 0x40]   ; ev.intValue1/._animators
+01dbe4f2  add      rsp, 0x20
+01dbe4f6  pop      rsi
+01dbe4f7  jmp      0x1d10660   ; PawnEnemy::Terminate()
+01dbe4fc  call     0x4e0d00
+01dbe502  call     0x4e0cf0

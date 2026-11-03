@@ -1,0 +1,16 @@
+== System.Single InGame.Kernel.Enemy.Ene_BosBase::GetDirectionRate() RVA 1db9a20 len 36
+01db9a20 movss      xmm1, dword ptr [rcx + 0x1c4] ; ~_directionTimeTotal
+01db9a28 xorps      xmm2, xmm2
+01db9a2b comiss     xmm1, xmm2
+01db9a2e jbe        0x1db9a52
+01db9a30 movss      xmm0, dword ptr [rcx + 0x1c8] ; ~_directionTimePassed
+01db9a38 divss      xmm0, xmm1
+01db9a3c comiss     xmm2, xmm0
+01db9a3f ja         0x1db9a52
+01db9a41 movss      xmm1, dword ptr [rip + 0x1727183] ; [.rdata 34e0bcc] f=1.0 d=50.12387841939926 v4=['1', '3.14159', '4', '10']
+01db9a49 comiss     xmm0, xmm1
+01db9a4c jbe        0x1db9a55
+01db9a4e movaps     xmm0, xmm1
+01db9a51 ret        
+01db9a52 xorps      xmm0, xmm0
+01db9a55 ret        

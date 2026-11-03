@@ -1,0 +1,53 @@
+01cdbc10  mov      qword ptr [rsp + 8], rbx
+01cdbc15  mov      qword ptr [rsp + 0x10], rbp   ; ev.eventType
+01cdbc1a  mov      qword ptr [rsp + 0x18], rsi   ; ev.repeatDelay
+01cdbc1f  push     rdi
+01cdbc20  sub      rsp, 0x60
+01cdbc24  cmp      byte ptr [rip + 0x29876a0], 0   ; [46632cb] bss
+01cdbc2b  mov      rdi, r9
+01cdbc2e  mov      rsi, r8
+01cdbc31  mov      rbx, rdx
+01cdbc34  mov      rbp, rcx
+01cdbc37  jne      0x1cdbc4c
+01cdbc39  lea      rcx, [rip + 0x26cd008]   ; [43a8c48] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder::Start<.<_bulletFireAsync>d__47>
+01cdbc40  call     0x4e0a50
+01cdbc45  mov      byte ptr [rip + 0x298767f], 1   ; [46632cb] bss
+01cdbc4c  xor      eax, eax
+01cdbc4e  lea      rcx, [rsp + 0x28]   ; ev.vectorValue
+01cdbc53  xorps    xmm0, xmm0
+01cdbc56  mov      qword ptr [rsp + 0x20], rax   ; ev.value0
+01cdbc5b  xor      edx, edx
+01cdbc5d  movdqa   xmmword ptr [rsp + 0x30], xmm0   ; ._entryFlag
+01cdbc63  mov      qword ptr [rsp + 0x40], rax   ; ev.intValue1/._animators
+01cdbc68  mov      qword ptr [rsp + 0x48], rax   ; ev.intValue3/.GameObjectCache
+01cdbc6d  movdqa   xmmword ptr [rsp + 0x50], xmm0   ; ev.randomFire/._animatorsPlay
+01cdbc73  mov      qword ptr [rsp + 0x28], rax   ; ev.vectorValue
+01cdbc78  call     0x4dfd80
+01cdbc7d  mov      rdx, rbp
+01cdbc80  mov      qword ptr [rsp + 0x30], rbp   ; ._entryFlag
+01cdbc85  lea      rcx, [rsp + 0x30]   ; ._entryFlag
+01cdbc8a  call     0x4dfd80
+01cdbc8f  xor      edx, edx
+01cdbc91  mov      qword ptr [rsp + 0x40], rbx   ; ev.intValue1/._animators
+01cdbc96  lea      rcx, [rsp + 0x40]   ; ev.intValue1/._animators
+01cdbc9b  call     0x4dfd80
+01cdbca0  mov      rdx, rsi
+01cdbca3  mov      qword ptr [rsp + 0x38], rsi   ; ev.stringValue/._psystems
+01cdbca8  lea      rcx, [rsp + 0x38]   ; ev.stringValue/._psystems
+01cdbcad  call     0x4dfd80
+01cdbcb2  mov      rdx, rdi
+01cdbcb5  mov      qword ptr [rsp + 0x48], rdi   ; ev.intValue3/.GameObjectCache
+01cdbcba  lea      rcx, [rsp + 0x48]   ; ev.intValue3/.GameObjectCache
+01cdbcbf  call     0x4dfd80
+01cdbcc4  mov      r8, qword ptr [rip + 0x26ccf7d]   ; [43a8c48] MethodRef Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder::Start<.<_bulletFireAsync>d__47>
+01cdbccb  lea      rdx, [rsp + 0x20]   ; ev.value0
+01cdbcd0  lea      rcx, [rsp + 0x28]   ; ev.vectorValue
+01cdbcd5  mov      dword ptr [rsp + 0x20], 0xffffffff   ; ev.value0
+01cdbcdd  call     0x742e10
+01cdbce2  mov      rbx, qword ptr [rsp + 0x70]   ; ._transformCache
+01cdbce7  xor      al, al
+01cdbce9  mov      rbp, qword ptr [rsp + 0x78]   ; ._transformNameCache
+01cdbcee  mov      rsi, qword ptr [rsp + 0x80]   ; ._transformCaches
+01cdbcf6  add      rsp, 0x60
+01cdbcfa  pop      rdi
+01cdbcfb  ret      

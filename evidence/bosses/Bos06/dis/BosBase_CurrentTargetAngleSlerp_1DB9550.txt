@@ -1,0 +1,31 @@
+01db9550 push rbx 
+01db9552 sub rsp, 0x60 
+01db9556 xorps xmm0, xmm0 
+01db9559 mov rbx, rcx 
+01db955c comiss xmm0, xmm2 
+01db955f ja 0x1db9573 
+01db9561 movss xmm0, dword ptr [rip + 0x1727663] ; rva=34e0bcc f=1 d=50.12387842
+01db9569 comiss xmm2, xmm0 
+01db956c jbe 0x1db9576 
+01db956e movaps xmm2, xmm0 
+01db9571 jmp 0x1db9576 
+01db9573 xorps xmm2, xmm2 
+01db9576 movups xmm0, xmmword ptr [rdx + 0x25c] 
+01db957d lea r8, [rsp + 0x30] 
+01db9582 mov qword ptr [rsp + 0x20], 0 
+01db958b movups xmm1, xmmword ptr [rdx + 0x24c] 
+01db9592 lea rdx, [rsp + 0x40] 
+01db9597 movaps xmm3, xmm2 
+01db959a movaps xmmword ptr [rsp + 0x30], xmm0 
+01db959f lea rcx, [rsp + 0x50] 
+01db95a4 movaps xmmword ptr [rsp + 0x40], xmm1 
+01db95a9 call 0x304ddc0 ; Quaternion::Internal_Slerp(UnityEngine.Quaternion&,UnityEngine.Quaternion&,System.Single)
+01db95ae movups xmm0, xmmword ptr [rax] 
+01db95b1 mov rax, rbx 
+01db95b4 movups xmmword ptr [rbx], xmm0 
+01db95b7 add rsp, 0x60 
+01db95bb pop rbx 
+01db95bc ret 
+01db95bd int3 
+01db95be int3 
+01db95bf int3 

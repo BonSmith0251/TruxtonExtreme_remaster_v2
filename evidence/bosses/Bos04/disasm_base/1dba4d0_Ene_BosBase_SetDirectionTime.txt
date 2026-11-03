@@ -1,0 +1,5 @@
+== System.Void InGame.Kernel.Enemy.Ene_BosBase::SetDirectionTime(System.Single,System.Single) RVA 1dba4d0 len 1b
+01dba4d0 movss      dword ptr [rcx + 0x1c4], xmm1 ; ~_directionTimeTotal
+01dba4d8 movss      dword ptr [rcx + 0x1cc], xmm2 ; ~_directionTimeScale
+01dba4e0 mov        dword ptr [rcx + 0x1c8], 0 ; ~_directionTimePassed
+01dba4ea ret        

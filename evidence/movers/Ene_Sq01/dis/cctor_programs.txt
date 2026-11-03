@@ -1,0 +1,62 @@
+## static fields
+  +0x0 = BSelector  (83) stringValue='sq01_fire1_sel' repeatCount=0 repeatDelay=0 randomFire=0 randomWait=0 nameValue='pf_ene_sq01/ene_sq/muzzle' flag0=1   @1d044c5
+  +0x8 = BSelector  (83) stringValue='sq01_fire2_sel' repeatCount=0 repeatDelay=0 randomFire=0 randomWait=0 nameValue='pf_ene_sq01/ene_sq/muzzle' flag0=1   @1d0451c
+  +0x10 = Idle       (20) dotime=0.1   @1d04557
+  +0x18 = Idle       (20) dotime=2   @1d04592
+  +0x20 = obj#1
+## lists (obj id: items in Add order)
+-- obj#2 (16 items)
+   [ 0] SplineMove (15) stringValue='common_D50'   @1d04608
+   [ 1] TaskWait   (80) intValue1=256   @1d04680
+   [ 2] Label      (5) stringValue='LP1'   @1d046f1
+   [ 3] Idle       (20) dotime=0.1   @1d04557
+   [ 4] BSelector  (83) stringValue='sq01_fire1_sel' repeatCount=0 repeatDelay=0 randomFire=0 randomWait=0 nameValue='pf_ene_sq01/ene_sq/muzzle' flag0=1   @1d044c5
+   [ 5] SplineMove (15) stringValue='move_sq01_r'   @1d0483d
+   [ 6] TaskWait   (80) intValue1=256   @1d048ac
+   [ 7] Idle       (20) dotime=0.1   @1d04557
+   [ 8] BSelector  (83) stringValue='sq01_fire1_sel' repeatCount=0 repeatDelay=0 randomFire=0 randomWait=0 nameValue='pf_ene_sq01/ene_sq/muzzle' flag0=1   @1d044c5
+   [ 9] SplineMove (15) stringValue='move_sq01_l'   @1d049f8
+   [10] TaskWait   (80) intValue1=256   @1d04a67
+   [11] Loop       (101) stringValue='LP1' intValue1=2   @1d04ade
+   [12] Speed      (14) value0=60 dotime=0   @1d04b59
+   [13] Idle       (20) dotime=0.1   @1d04557
+   [14] SplineMove (15) stringValue='common_D150'   @1d04c38
+   [15] TaskWait   (80) intValue1=256   @1d04ca7
+-- obj#1 (4 items)
+   [ 0] list obj#2
+   [ 1] list obj#3
+   [ 2] list obj#4
+   [ 3] list obj#5
+-- obj#3 (16 items)
+   [ 0] SplineMove (15) stringValue='common_D50'   @1d04d9f
+   [ 1] TaskWait   (80) intValue1=256   @1d04e17
+   [ 2] Label      (5) stringValue='LP1'   @1d04e88
+   [ 3] Idle       (20) dotime=0.1   @1d04557
+   [ 4] BSelector  (83) stringValue='sq01_fire1_sel' repeatCount=0 repeatDelay=0 randomFire=0 randomWait=0 nameValue='pf_ene_sq01/ene_sq/muzzle' flag0=1   @1d044c5
+   [ 5] SplineMove (15) stringValue='move_sq01_l'   @1d04fd4
+   [ 6] TaskWait   (80) intValue1=256   @1d05043
+   [ 7] Idle       (20) dotime=0.1   @1d04557
+   [ 8] BSelector  (83) stringValue='sq01_fire1_sel' repeatCount=0 repeatDelay=0 randomFire=0 randomWait=0 nameValue='pf_ene_sq01/ene_sq/muzzle' flag0=1   @1d044c5
+   [ 9] SplineMove (15) stringValue='move_sq01_r'   @1d0518f
+   [10] TaskWait   (80) intValue1=256   @1d051fe
+   [11] Loop       (101) stringValue='LP1' intValue1=2   @1d05275
+   [12] Speed      (14) value0=60 dotime=0   @1d052e7
+   [13] Idle       (20) dotime=0.1   @1d04557
+   [14] SplineMove (15) stringValue='common_D150'   @1d053c6
+   [15] TaskWait   (80) intValue1=256   @1d05435
+-- obj#4 (7 items)
+   [ 0] SplineMove (15) stringValue='move_sq01_dl'   @1d05524
+   [ 1] Speed      (14) value0=20 dotime=3   @1d055ab
+   [ 2] TaskWait   (80) intValue1=32   @1d055c9
+   [ 3] BSelector  (83) stringValue='sq01_fire2_sel' repeatCount=0 repeatDelay=0 randomFire=0 randomWait=0 nameValue='pf_ene_sq01/ene_sq/muzzle' flag0=1   @1d0451c
+   [ 4] Idle       (20) dotime=2   @1d04592
+   [ 5] Speed      (14) value0=60 dotime=0.5   @1d05631
+   [ 6] TaskWait   (80) intValue1=256   @1d0564f
+-- obj#5 (7 items)
+   [ 0] SplineMove (15) stringValue='move_sq01_dr'   @1d0569f
+   [ 1] Speed      (14) value0=20 dotime=3   @1d056cd
+   [ 2] TaskWait   (80) intValue1=32   @1d056eb
+   [ 3] BSelector  (83) stringValue='sq01_fire2_sel' repeatCount=0 repeatDelay=0 randomFire=0 randomWait=0 nameValue='pf_ene_sq01/ene_sq/muzzle' flag0=1   @1d0451c
+   [ 4] Idle       (20) dotime=2   @1d04592
+   [ 5] Speed      (14) value0=60 dotime=0.5   @1d05753
+   [ 6] TaskWait   (80) intValue1=256   @1d05771

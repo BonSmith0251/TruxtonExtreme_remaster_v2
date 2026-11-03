@@ -1,0 +1,6 @@
+== System.Void InGame.Kernel.Enemy.Ene_BosBase::SetRepeatTime(System.Single) RVA 1dba580 len 18
+01dba580 xor        eax, eax
+01dba582 movss      dword ptr [rcx + 0x1d0], xmm1 ; ~_repeatTimer
+01dba58a mov        qword ptr [rcx + 0x1d4], rax ; ~_repeatPassed
+01dba591 mov        byte ptr [rcx + 0x1dc], al ; ~_repeatLaped
+01dba597 ret        

@@ -1,0 +1,68 @@
+#### InGame.Kernel.Enemy.Ene_Ml01::_callDeadEffect() RVA 1dca530 len 110
+01dca530  mov      qword ptr [rsp + 0x18], rbx
+01dca535  push     rsi
+01dca536  sub      rsp, 0x20
+01dca53a  cmp      byte ptr [rip + 0x28993aa], 0   ; [46638eb] bss
+01dca541  mov      rsi, rcx
+01dca544  jne      0x1dca559
+01dca546  lea      rcx, [rip + 0x25b3953]   ; [437dea0] TypeInfo UnityEngine.Object
+01dca54d  call     0x4e0a50
+01dca552  mov      byte ptr [rip + 0x2899392], 1   ; [46638eb] bss
+01dca559  mov      rax, qword ptr [rsi + 0x1b8]   ; ._childList
+01dca560  xor      ebx, ebx
+01dca562  mov      qword ptr [rsp + 0x30], rbp   ; .tsecond
+01dca567  mov      ecx, ebx
+01dca569  mov      qword ptr [rsp + 0x38], rdi   ; ._callback
+01dca56e  test     rax, rax
+01dca571  je       0x1dca635
+01dca577  mov      edi, 0x20
+01dca57c  nop      dword ptr [rax]
+01dca580  cmp      ecx, dword ptr [rax + 0x18]
+01dca583  jge      0x1dca617
+01dca589  mov      rax, qword ptr [rsi + 0x1b8]   ; ._childList
+01dca590  test     rax, rax
+01dca593  je       0x1dca635
+01dca599  cmp      ebx, dword ptr [rax + 0x18]
+01dca59c  jae      0x1dca63b
+01dca5a2  mov      rcx, qword ptr [rip + 0x25b38f7]   ; [437dea0] TypeInfo UnityEngine.Object
+01dca5a9  mov      rbp, qword ptr [rdi + rax]
+01dca5ad  cmp      dword ptr [rcx + 0xe4], 0
+01dca5b4  jne      0x1dca5bb
+01dca5b6  call     0x4e0d90
+01dca5bb  xor      r8d, r8d
+01dca5be  xor      edx, edx
+01dca5c0  mov      rcx, rbp
+01dca5c3  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01dca5c8  test     al, al
+01dca5ca  je       0x1dca5fe
+01dca5cc  mov      rax, qword ptr [rsi + 0x1b8]   ; ._childList
+01dca5d3  test     rax, rax
+01dca5d6  je       0x1dca635
+01dca5d8  cmp      ebx, dword ptr [rax + 0x18]
+01dca5db  jae      0x1dca63b
+01dca5dd  mov      rcx, qword ptr [rdi + rax]
+01dca5e1  test     rcx, rcx
+01dca5e4  je       0x1dca635
+01dca5e6  mov      r8, qword ptr [rcx]
+01dca5e9  mov      edx, 2
+01dca5ee  mov      rax, qword ptr [r8 + 0x638]   ; vcall InGame.Kernel.Enemy.PawnEnemy::CommonEvent
+01dca5f5  mov      r8, qword ptr [r8 + 0x640]   ; vcall InGame.Kernel.Enemy.PawnEnemy::CommonEvent
+01dca5fc  call     rax
+01dca5fe  mov      rax, qword ptr [rsi + 0x1b8]   ; ._childList
+01dca605  inc      ebx
+01dca607  add      rdi, 8
+01dca60b  mov      ecx, ebx
+01dca60d  test     rax, rax
+01dca610  je       0x1dca635
+01dca612  jmp      0x1dca580
+01dca617  xor      edx, edx
+01dca619  mov      rcx, rsi
+01dca61c  mov      rdi, qword ptr [rsp + 0x38]   ; ._callback
+01dca621  mov      rbp, qword ptr [rsp + 0x30]   ; .tsecond
+01dca626  mov      rbx, qword ptr [rsp + 0x40]   ; .<tpassed>5__2
+01dca62b  add      rsp, 0x20
+01dca62f  pop      rsi
+01dca630  jmp      0x1d10e20   ; PawnEnemy::_callDeadEffect()
+01dca635  call     0x4e0d00
+01dca63a  int3     
+01dca63b  call     0x4e0cf0

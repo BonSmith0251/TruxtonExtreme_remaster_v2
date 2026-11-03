@@ -1,0 +1,220 @@
+{
+ "name": "TXE/AE/Mul",
+ "bundle": "defaultlocalgroup_assets_all_d58d8015662a6b04bca842fe72e2a7e1.bundle",
+ "path_id": "5473307545267460926",
+ "keywordNames": [
+  "STEREO_INSTANCING_ON",
+  "UNITY_SINGLE_PASS_STEREO",
+  "STEREO_MULTIVIEW_ON",
+  "STEREO_CUBEMAP_RENDER_ON",
+  "UNITY_UI_CLIP_RECT",
+  "UNITY_UI_ALPHACLIP"
+ ],
+ "passes": [
+  {
+   "label": "0_0_Default",
+   "name": "Default",
+   "useName": "",
+   "tags": {
+    "CanUseSpriteAtlas": "true",
+    "IGNOREPROJECTOR": "true",
+    "PreviewType": "Plane",
+    "QUEUE": "Transparent",
+    "RenderType": "Transparent"
+   },
+   "subShaderTags": {
+    "CanUseSpriteAtlas": "true",
+    "IGNOREPROJECTOR": "true",
+    "PreviewType": "Plane",
+    "QUEUE": "Transparent",
+    "RenderType": "Transparent"
+   },
+   "lod": 0,
+   "state": {
+    "blend": [
+     2.0,
+     0.0,
+     2.0,
+     0.0
+    ],
+    "blendOp": [
+     0.0,
+     0.0
+    ],
+    "colMask": [
+     0.0,
+     "_ColorMask"
+    ],
+    "zTest": [
+     0.0,
+     "unity_GUIZTestMode"
+    ],
+    "zWrite": 0.0,
+    "culling": 0.0,
+    "offsetFactor": 0.0,
+    "offsetUnits": 0.0,
+    "stencilRef": [
+     0.0,
+     "_Stencil"
+    ],
+    "stencilComp": [
+     0.0,
+     "_StencilComp"
+    ],
+    "stencilPass": [
+     0.0,
+     "_StencilOp"
+    ],
+    "stencilFail": 0.0,
+    "stencilZFail": 0.0,
+    "stencilReadMask": [
+     0.0,
+     "_StencilReadMask"
+    ],
+    "stencilWriteMask": [
+     0.0,
+     "_StencilWriteMask"
+    ]
+   },
+   "programs": {
+    "vs": [
+     {
+      "blob": 1,
+      "params": 0,
+      "keywords": []
+     },
+     {
+      "blob": 2,
+      "params": 0,
+      "keywords": [
+       "UNITY_UI_ALPHACLIP"
+      ]
+     },
+     {
+      "blob": 3,
+      "params": 0,
+      "keywords": [
+       "UNITY_UI_CLIP_RECT"
+      ]
+     },
+     {
+      "blob": 4,
+      "params": 0,
+      "keywords": [
+       "UNITY_UI_CLIP_RECT",
+       "UNITY_UI_ALPHACLIP"
+      ]
+     }
+    ],
+    "ps": [
+     {
+      "blob": 7,
+      "params": 5,
+      "keywords": []
+     },
+     {
+      "blob": 8,
+      "params": 5,
+      "keywords": [
+       "UNITY_UI_ALPHACLIP"
+      ]
+     },
+     {
+      "blob": 9,
+      "params": 6,
+      "keywords": [
+       "UNITY_UI_CLIP_RECT"
+      ]
+     },
+     {
+      "blob": 10,
+      "params": 6,
+      "keywords": [
+       "UNITY_UI_CLIP_RECT",
+       "UNITY_UI_ALPHACLIP"
+      ]
+     }
+    ]
+   },
+   "bindings": {
+    "vs": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 96,
+       "members": [
+        {
+         "name": "_Color",
+         "offset": 32,
+         "dim": 4,
+         "array": 0
+        },
+        {
+         "name": "_MainTex_ST",
+         "offset": 80,
+         "dim": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerDraw",
+       "slot": 1,
+       "size": 176,
+       "members": [
+        {
+         "name": "unity_ObjectToWorld",
+         "offset": 0,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      },
+      {
+       "name": "UnityPerFrame",
+       "slot": 2,
+       "size": 368,
+       "members": [
+        {
+         "name": "unity_MatrixVP",
+         "offset": 272,
+         "matrix": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [],
+     "samplers": []
+    },
+    "ps": {
+     "constantBuffers": [
+      {
+       "name": "$Globals",
+       "slot": 0,
+       "size": 96,
+       "members": [
+        {
+         "name": "_TextureSampleAdd",
+         "offset": 48,
+         "dim": 4,
+         "array": 0
+        }
+       ]
+      }
+     ],
+     "textures": [
+      {
+       "name": "_MainTex",
+       "register": 0,
+       "sampler": 0,
+       "dim": 2
+      }
+     ],
+     "samplers": []
+    }
+   }
+  }
+ ]
+}

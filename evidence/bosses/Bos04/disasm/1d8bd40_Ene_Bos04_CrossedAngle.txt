@@ -1,0 +1,54 @@
+== System.Boolean InGame.Kernel.Enemy.Ene_Bos04::CrossedAngle(System.Single,System.Single,System.Single) RVA 1d8bd40 len d4
+01d8bd40 sub        rsp, 0x78
+01d8bd44 movaps     xmmword ptr [rsp + 0x60], xmm6
+01d8bd49 movaps     xmm6, xmm2
+01d8bd4c movaps     xmmword ptr [rsp + 0x50], xmm7
+01d8bd51 movaps     xmm7, xmm3
+01d8bd54 movaps     xmmword ptr [rsp + 0x40], xmm8
+01d8bd5a movss      xmm8, dword ptr [rip + 0x1760bb5] ; [.rdata 34ec918] f=360.0 d=1.4044481158322838e+306 v4=['360', 'inf', 'nan', 'nan']
+01d8bd63 movaps     xmmword ptr [rsp + 0x30], xmm9
+01d8bd69 movaps     xmm9, xmm1
+01d8bd6d subss      xmm6, xmm9
+01d8bd72 movaps     xmmword ptr [rsp + 0x20], xmm10
+01d8bd78 movaps     xmm10, xmm2
+01d8bd7c movaps     xmm0, xmm6
+01d8bd7f divss      xmm0, xmm8
+01d8bd84 call       0x578740
+01d8bd89 mulss      xmm0, xmm8
+01d8bd8e xorps      xmm2, xmm2
+01d8bd91 subss      xmm6, xmm0
+01d8bd95 comiss     xmm2, xmm6
+01d8bd98 ja         0x1d8bda6
+01d8bd9a comiss     xmm6, xmm8
+01d8bd9e jbe        0x1d8bda9
+01d8bda0 movaps     xmm6, xmm8
+01d8bda4 jmp        0x1d8bda9
+01d8bda6 xorps      xmm6, xmm6
+01d8bda9 comiss     xmm6, dword ptr [rip + 0x1754e38] ; [.rdata 34e0be8] f=180.0 d=1.964504759529741e+24 v4=['180', '2000', '-0.0001', '-1']
+01d8bdb0 jbe        0x1d8bdb7
+01d8bdb2 subss      xmm6, xmm8
+01d8bdb7 movss      xmm0, dword ptr [rip + 0x1754dfd] ; [.rdata 34e0bbc] f=0.009999999776482582 d=5.3737179290461957e-17 v4=['0.01', '0.0174533', '0.05', '0.5']
+01d8bdbf movaps     xmm1, xmm6
+01d8bdc2 andps      xmm1, xmmword ptr [rip + 0x1760b57] ; [.rdata 34ec920] f=nan d=nan v4=['nan', 'nan', 'nan', 'nan']
+01d8bdc9 comiss     xmm0, xmm1
+01d8bdcc ja         0x1d8bdf1
+01d8bdce comiss     xmm6, xmm2
+01d8bdd1 ja         0x1d8bde2
+01d8bdd3 comiss     xmm9, xmm7
+01d8bdd7 jbe        0x1d8bdf1
+01d8bdd9 comiss     xmm7, xmm10
+01d8bddd setae      al
+01d8bde0 jmp        0x1d8bdf3
+01d8bde2 comiss     xmm7, xmm9
+01d8bde6 jbe        0x1d8bdf1
+01d8bde8 comiss     xmm10, xmm7
+01d8bdec setae      al
+01d8bdef jmp        0x1d8bdf3
+01d8bdf1 xor        al, al
+01d8bdf3 movaps     xmm6, xmmword ptr [rsp + 0x60]
+01d8bdf8 movaps     xmm7, xmmword ptr [rsp + 0x50]
+01d8bdfd movaps     xmm8, xmmword ptr [rsp + 0x40]
+01d8be03 movaps     xmm9, xmmword ptr [rsp + 0x30]
+01d8be09 movaps     xmm10, xmmword ptr [rsp + 0x20]
+01d8be0f add        rsp, 0x78
+01d8be13 ret        

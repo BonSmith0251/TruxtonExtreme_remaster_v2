@@ -1,0 +1,218 @@
+#### InGame.Kernel.Enemy.Ene_Lc01::MoveMuzzles(InGame.Kernel.InGameManager,System.Single) RVA 1dbdcc0 len 3cd
+01dbdcc0  mov      rax, rsp
+01dbdcc3  mov      qword ptr [rax + 0x10], rbx   ; ev.eventType
+01dbdcc7  mov      qword ptr [rax + 0x18], rbp   ; ev.repeatDelay
+01dbdccb  push     rsi
+01dbdccc  push     rdi
+01dbdccd  push     r12
+01dbdccf  push     r14
+01dbdcd1  push     r15
+01dbdcd3  sub      rsp, 0x100
+01dbdcda  movaps   xmmword ptr [rax - 0x38], xmm6
+01dbdcde  xor      r12d, r12d
+01dbdce1  movaps   xmmword ptr [rax - 0x48], xmm7
+01dbdce5  mov      rbx, rcx
+01dbdce8  movaps   xmmword ptr [rax - 0x58], xmm8
+01dbdced  mov      r15, rdx
+01dbdcf0  movaps   xmmword ptr [rax - 0x68], xmm9
+01dbdcf5  movaps   xmm8, xmm2
+01dbdcf9  mov      edi, r12d
+01dbdcfc  mov      ecx, r12d
+01dbdcff  mov      rax, qword ptr [rbx + 0x278]
+01dbdd06  test     rax, rax
+01dbdd09  je       0x1dbe082
+01dbdd0f  movss    xmm9, dword ptr [rip + 0x1722eb4]   ; rdata 34e0bcc f=1,3.141593,4,10 d=50.12387842
+01dbdd18  mov      esi, 0x20
+01dbdd1d  xorps    xmm7, xmm7
+01dbdd20  cmp      ecx, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01dbdd23  jge      0x1dbe052
+01dbdd29  mov      rax, qword ptr [rbx + 0x220]
+01dbdd30  test     rax, rax
+01dbdd33  je       0x1dbe082
+01dbdd39  cmp      edi, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01dbdd3c  jae      0x1dbe088
+01dbdd42  mov      rbp, qword ptr [rsi + rax]
+01dbdd46  test     rbp, rbp
+01dbdd49  je       0x1dbe082
+01dbdd4f  cmp      byte ptr [rip + 0x28a5b58], r12b   ; [46638ae] bss
+01dbdd56  jne      0x1dbdd6b
+01dbdd58  lea      rcx, [rip + 0x25c0141]   ; [437dea0] TypeInfo UnityEngine.Object
+01dbdd64  mov      byte ptr [rip + 0x28a5b43], 1   ; [46638ae] bss
+01dbdd6b  mov      rcx, qword ptr [rip + 0x25c012e]   ; [437dea0] TypeInfo UnityEngine.Object
+01dbdd72  mov      r14, qword ptr [rbp + 0x10]   ; ev.eventType
+01dbdd76  cmp      dword ptr [rcx + 0xe4], r12d
+01dbdd7d  jne      0x1dbdd84
+01dbdd7f  call     0x4e0d90
+01dbdd84  xor      r8d, r8d
+01dbdd87  xor      edx, edx
+01dbdd89  mov      rcx, r14
+01dbdd8c  call     0x306d270   ; Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+01dbdd91  movzx    ecx, byte ptr [rbx + 0x259]
+01dbdd98  test     al, al
+01dbdd9a  jne      0x1dbdecd
+01dbdda0  movzx    r8d, cl
+01dbdda4  xor      r9d, r9d
+01dbdda7  mov      rcx, rbp
+01dbddaa  movaps   xmm1, xmm8
+01dbddae  call     0x1dd16e0   ; Ene_Lc01/coverAction::CoverAction(System.Single,System.Boolean)
+01dbddb3  test     al, al
+01dbddb5  jne      0x1dbe039
+01dbddbb  mov      rax, qword ptr [rbx + 0x278]
+01dbddc2  test     rax, rax
+01dbddc5  je       0x1dbe082
+01dbddcb  cmp      edi, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01dbddce  jae      0x1dbe088
+01dbddd4  mov      rcx, qword ptr [rsi + rax]
+01dbddd8  test     rcx, rcx
+01dbdddb  je       0x1dbe082
+01dbdde1  mov      rdx, qword ptr [rcx + 0x18]   ; ev.repeatDelay
+01dbdde5  test     rdx, rdx
+01dbdde8  je       0x1dbe082
+01dbddee  xor      r8d, r8d
+01dbddf1  lea      rcx, [rsp + 0x80]   ; ._transformCaches
+01dbddf9  call     0x3093ba0   ; Transform::get_position()
+01dbddfe  mov      rdx, qword ptr [rbx]
+01dbde01  mov      rcx, rbx
+01dbde04  movsd    xmm6, qword ptr [rax]
+01dbde08  mov      r14d, dword ptr [rax + 8]
+01dbde0c  mov      rax, qword ptr [rdx + 0x238]
+01dbde13  mov      rdx, qword ptr [rdx + 0x240]   ; ._routeRotate
+01dbde1a  call     rax
+01dbde1c  test     r15, r15
+01dbde1f  je       0x1dbe082
+01dbde25  movzx    r9d, al
+01dbde29  movsd    qword ptr [rsp + 0x40], xmm6   ; ev.intValue1/._animators
+01dbde2f  lea      r8, [rsp + 0x40]   ; ev.intValue1/._animators
+01dbde34  mov      dword ptr [rsp + 0x48], r14d   ; ev.intValue3/.GameObjectCache
+01dbde39  mov      rdx, r15
+01dbde3c  mov      qword ptr [rsp + 0x20], r12   ; ev.value0
+01dbde41  lea      rcx, [rsp + 0x90]   ; ._destroyedToken
+01dbde49  call     0x1ce6750   ; InGameManager::GetSkyRootPosition(UnityEngine.Vector3,System.Boolean)
+01dbde4e  mov      rcx, qword ptr [rbx + 0x278]
+01dbde55  test     rcx, rcx
+01dbde58  je       0x1dbe082
+01dbde5e  cmp      edi, dword ptr [rcx + 0x18]   ; ev.repeatDelay
+01dbde61  jae      0x1dbe088
+01dbde67  mov      rdx, qword ptr [rsi + rcx]
+01dbde6b  test     rdx, rdx
+01dbde6e  je       0x1dbe082
+01dbde74  mov      rcx, qword ptr [rbx + 0x230]   ; ._splineRotate
+01dbde7b  test     rcx, rcx
+01dbde7e  je       0x1dbe082
+01dbde84  movsxd   r8, dword ptr [rdx + 0x20]   ; ev.value0
+01dbde88  cmp      r8d, dword ptr [rcx + 0x18]   ; ev.repeatDelay
+01dbde8c  jae      0x1dbe088
+01dbde92  movsd    xmm0, qword ptr [rax]
+01dbde96  mov      rdx, r15
+01dbde99  mov      eax, dword ptr [rax + 8]
+01dbde9c  mov      r9, qword ptr [rcx + r8*8 + 0x20]
+01dbdea1  lea      r8, [rsp + 0x50]   ; ev.randomFire/._animatorsPlay
+01dbdea6  mov      dword ptr [rsp + 0x58], eax   ; ev.nameValue/._particleSpeed
+01dbdeaa  mov      rcx, rbp
+01dbdead  movzx    eax, byte ptr [rbx + 0x259]
+01dbdeb4  mov      qword ptr [rsp + 0x28], r12   ; ev.vectorValue
+01dbdeb9  mov      byte ptr [rsp + 0x20], al   ; ev.value0
+01dbdebd  movsd    qword ptr [rsp + 0x50], xmm0   ; ev.randomFire/._animatorsPlay
+01dbdec3  call     0x1dd1b20   ; Ene_Lc01/coverAction::SwitchMoving(InGame.Kernel.InGameManager,UnityEngine.Vector3,InGame.Kernel.Enemy.BulletTemplate,System.Boolean)
+01dbdec8  jmp      0x1dbe039
+01dbdecd  test     cl, cl
+01dbdecf  jne      0x1dbe039
+01dbded5  cmp      dword ptr [rbx + 0x22c], r12d
+01dbdedc  jle      0x1dbe039
+01dbdee2  mov      rax, qword ptr [rbx + 0x278]
+01dbdee9  test     rax, rax
+01dbdeec  je       0x1dbe082
+01dbdef2  cmp      edi, dword ptr [rax + 0x18]   ; ev.repeatDelay
+01dbdef5  jae      0x1dbe088
+01dbdefb  mov      rcx, qword ptr [rsi + rax]
+01dbdeff  test     rcx, rcx
+01dbdf02  je       0x1dbe082
+01dbdf08  mov      rdx, qword ptr [rcx + 0x18]   ; ev.repeatDelay
+01dbdf0c  test     rdx, rdx
+01dbdf0f  je       0x1dbe082
+01dbdf15  xor      r8d, r8d
+01dbdf18  lea      rcx, [rsp + 0xa0]   ; ._rotateToken
+01dbdf20  call     0x3093ba0   ; Transform::get_position()
+01dbdf25  mov      rdx, qword ptr [rbx]
+01dbdf28  mov      rcx, rbx
+01dbdf2b  movsd    xmm6, qword ptr [rax]
+01dbdf2f  mov      r14d, dword ptr [rax + 8]
+01dbdf33  mov      rax, qword ptr [rdx + 0x238]
+01dbdf3a  mov      rdx, qword ptr [rdx + 0x240]   ; ._routeRotate
+01dbdf41  call     rax
+01dbdf43  test     r15, r15
+01dbdf46  je       0x1dbe082
+01dbdf4c  movzx    r9d, al
+01dbdf50  movsd    qword ptr [rsp + 0x60], xmm6   ; ev.subnameValue/._psystemCount
+01dbdf56  lea      r8, [rsp + 0x60]   ; ev.subnameValue/._psystemCount
+01dbdf5b  mov      dword ptr [rsp + 0x68], r14d   ; ev.flag0/._flagStateFuture
+01dbdf60  mov      rdx, r15
+01dbdf63  mov      qword ptr [rsp + 0x20], r12   ; ev.value0
+01dbdf68  lea      rcx, [rsp + 0xb0]   ; ._translateToken
+01dbdf70  call     0x1ce6750   ; InGameManager::GetSkyRootPosition(UnityEngine.Vector3,System.Boolean)
+01dbdf75  mov      rcx, qword ptr [rbx + 0x278]
+01dbdf7c  mov      r8, rax
+01dbdf7f  test     rcx, rcx
+01dbdf82  je       0x1dbe082
+01dbdf88  cmp      edi, dword ptr [rcx + 0x18]   ; ev.repeatDelay
+01dbdf8b  jae      0x1dbe088
+01dbdf91  mov      rdx, qword ptr [rsi + rcx]
+01dbdf95  test     rdx, rdx
+01dbdf98  je       0x1dbe082
+01dbdf9e  mov      rcx, qword ptr [rbx + 0x230]   ; ._splineRotate
+01dbdfa5  test     rcx, rcx
+01dbdfa8  je       0x1dbe082
+01dbdfae  movsxd   rax, dword ptr [rdx + 0x20]   ; ev.value0
+01dbdfb2  cmp      eax, dword ptr [rcx + 0x18]   ; ev.repeatDelay
+01dbdfb5  jae      0x1dbe088
+01dbdfbb  movss    xmm0, dword ptr [rbp + 0x3c]
+01dbdfc0  mov      rdx, qword ptr [rcx + rax*8 + 0x20]
+01dbdfc5  subss    xmm0, xmm8
+01dbdfca  movsd    xmm1, qword ptr [r8]
+01dbdfcf  mov      eax, dword ptr [r8 + 8]
+01dbdfd3  mov      byte ptr [rsp + 0x130], r12b
+01dbdfdb  comiss   xmm0, xmm7
+01dbdfde  ja       0x1dbdfe3
+01dbdfe0  movaps   xmm0, xmm7
+01dbdfe3  comiss   xmm7, xmm0
+01dbdfe6  movss    dword ptr [rbp + 0x3c], xmm0
+01dbdfeb  jb       0x1dbe039
+01dbdfed  mov      qword ptr [rsp + 0x38], r12   ; ev.stringValue/._psystems
+01dbdff2  lea      r8, [rsp + 0x70]   ; ._transformCache
+01dbdff7  movss    dword ptr [rsp + 0x30], xmm9   ; ._entryFlag
+01dbdffe  xor      r9d, r9d
+01dbe001  mov      qword ptr [rsp + 0x28], r12   ; ev.vectorValue
+01dbe006  mov      rcx, r15
+01dbe009  mov      qword ptr [rsp + 0x20], r12   ; ev.value0
+01dbe00e  movsd    qword ptr [rsp + 0x70], xmm1   ; ._transformCache
+01dbe014  mov      dword ptr [rsp + 0x78], eax   ; ._transformNameCache
+01dbe018  call     0x1ce2600   ; InGameManager::BulletFireAsync(InGame.Kernel.Enemy.BulletTemplate,UnityEngine.Vector3,UnityEngine.Transform,System.Threading.CancellationTokenSource,System.Action`1<InGame.Kernel.InGameBulletInterface>,System.Single)
+01dbe01d  xor      edx, edx
+01dbe01f  mov      byte ptr [rsp + 0x130], al
+01dbe026  lea      rcx, [rsp + 0x130]
+01dbe02e  call     0x5bcdb0   ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() | AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose()
+01dbe033  mov      eax, dword ptr [rbp + 0x2c]
+01dbe036  mov      dword ptr [rbp + 0x3c], eax
+01dbe039  mov      rax, qword ptr [rbx + 0x278]
+01dbe040  inc      edi
+01dbe042  add      rsi, 8
+01dbe046  mov      ecx, edi
+01dbe048  test     rax, rax
+01dbe04b  je       0x1dbe082
+01dbe04d  jmp      0x1dbdd20
+01dbe052  lea      r11, [rsp + 0x100]   ; ._routeLutIndex
+01dbe05a  mov      rbx, qword ptr [r11 + 0x38]   ; ev.stringValue/._psystems
+01dbe05e  mov      rbp, qword ptr [r11 + 0x40]   ; ev.intValue1/._animators
+01dbe062  movaps   xmm6, xmmword ptr [r11 - 0x10]
+01dbe067  movaps   xmm7, xmmword ptr [r11 - 0x20]
+01dbe06c  movaps   xmm8, xmmword ptr [r11 - 0x30]
+01dbe071  movaps   xmm9, xmmword ptr [r11 - 0x40]
+01dbe076  mov      rsp, r11
+01dbe079  pop      r15
+01dbe07b  pop      r14
+01dbe07d  pop      r12
+01dbe07f  pop      rdi
+01dbe080  pop      rsi
+01dbe081  ret      
+01dbe082  call     0x4e0d00
+01dbe088  call     0x4e0cf0

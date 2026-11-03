@@ -1,0 +1,68 @@
+01d9b220 mov qword ptr [rsp + 8], rbx 
+01d9b225 mov qword ptr [rsp + 0x10], rsi 
+01d9b22a push rdi 
+01d9b22b sub rsp, 0x20 
+01d9b22f movzx edi, dl 
+01d9b232 xor r8d, r8d 
+01d9b235 mov edx, 2 
+01d9b23a mov rbx, rcx 
+01d9b23d call 0x1d0da10 ; PawnEnemy::GetParts(System.Int32)
+01d9b242 xor r8d, r8d 
+01d9b245 mov edx, 3 
+01d9b24a mov rcx, rbx 
+01d9b24d mov rsi, rax 
+01d9b250 call 0x1d0da10 ; PawnEnemy::GetParts(System.Int32)
+01d9b255 mov rbx, rax 
+01d9b258 test rsi, rsi 
+01d9b25b je 0x1d9b2db 
+01d9b25d movzx r8d, dil 
+01d9b261 xor r9d, r9d 
+01d9b264 xor r8b, 1 
+01d9b268 xor edx, edx 
+01d9b26a mov rcx, rsi 
+01d9b26d call 0x1d62050 ; EnePartsGroup::CollisionsChageEnable(System.Int32,System.Boolean)
+01d9b272 test rbx, rbx 
+01d9b275 je 0x1d9b2db 
+01d9b277 movzx r8d, dil 
+01d9b27b xor r9d, r9d 
+01d9b27e xor r8b, 1 
+01d9b282 xor edx, edx 
+01d9b284 mov rcx, rbx 
+01d9b287 call 0x1d62050 ; EnePartsGroup::CollisionsChageEnable(System.Int32,System.Boolean)
+01d9b28c xor r9d, r9d 
+01d9b28f movzx r8d, dil 
+01d9b293 mov edx, 1 
+01d9b298 mov rcx, rsi 
+01d9b29b call 0x1d62050 ; EnePartsGroup::CollisionsChageEnable(System.Int32,System.Boolean)
+01d9b2a0 xor r9d, r9d 
+01d9b2a3 movzx r8d, dil 
+01d9b2a7 mov edx, 1 
+01d9b2ac mov rcx, rbx 
+01d9b2af call 0x1d62050 ; EnePartsGroup::CollisionsChageEnable(System.Int32,System.Boolean)
+01d9b2b4 movzx eax, dil 
+01d9b2b8 xor al, 1 
+01d9b2ba mov byte ptr [rsi + 0xad], al 
+01d9b2c0 xor dil, 1 
+01d9b2c4 mov rsi, qword ptr [rsp + 0x38] 
+01d9b2c9 mov byte ptr [rbx + 0xad], dil 
+01d9b2d0 mov rbx, qword ptr [rsp + 0x30] 
+01d9b2d5 add rsp, 0x20 
+01d9b2d9 pop rdi 
+01d9b2da ret 
+01d9b2db call 0x4e0d00 
+01d9b2e0 int3 
+01d9b2e1 int3 
+01d9b2e2 int3 
+01d9b2e3 int3 
+01d9b2e4 int3 
+01d9b2e5 int3 
+01d9b2e6 int3 
+01d9b2e7 int3 
+01d9b2e8 int3 
+01d9b2e9 int3 
+01d9b2ea int3 
+01d9b2eb int3 
+01d9b2ec int3 
+01d9b2ed int3 
+01d9b2ee int3 
+01d9b2ef int3 

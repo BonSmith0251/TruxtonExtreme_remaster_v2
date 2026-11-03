@@ -1,0 +1,11 @@
+== System.Boolean InGame.Kernel.Enemy.Ene_BosBase::IsAttackLoop() RVA 1db9e60 len 22
+01db9e60 mov        eax, dword ptr [rcx + 0x1e8] ; ~_attackLoopCount
+01db9e66 dec        eax
+01db9e68 mov        dword ptr [rcx + 0x1e8], eax ; ~_attackLoopCount
+01db9e6e test       eax, eax
+01db9e70 jle        0x1db9e75
+01db9e72 mov        al, 1
+01db9e74 ret        
+01db9e75 mov        dword ptr [rcx + 0x1e8], 0 ; ~_attackLoopCount
+01db9e7f xor        al, al
+01db9e81 ret        

@@ -1,0 +1,116 @@
+#### InGame.Kernel.Enemy.Ene_Mp02::_callDeadEffect() RVA 1cfdbd0 len 1e5
+01cfdbd0  mov      qword ptr [rsp + 0x18], rbx
+01cfdbd5  push     rsi
+01cfdbd6  sub      rsp, 0x50
+01cfdbda  cmp      byte ptr [rip + 0x29657cd], 0   ; [46633ae] bss
+01cfdbe1  mov      rbx, rcx
+01cfdbe4  jne      0x1cfdbf9
+01cfdbe6  lea      rcx, [rip + 0x26ba413]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01cfdbed  call     0x4e0a50
+01cfdbf2  mov      byte ptr [rip + 0x29657b5], 1   ; [46633ae] bss
+01cfdbf9  xor      esi, esi
+01cfdbfb  mov      qword ptr [rsp + 0x60], rbp   ; ._currentPosition
+01cfdc00  cmp      dword ptr [rbx + 0x188], 1   ; ._partsCount
+01cfdc07  mov      qword ptr [rsp + 0x68], rdi
+01cfdc0c  jg       0x1cfdc14
+01cfdc0e  mov      ecx, esi
+01cfdc10  mov      edi, esi
+01cfdc12  jmp      0x1cfdc57
+01cfdc14  mov      rax, qword ptr [rbx + 0x180]   ; .PartsList
+01cfdc1b  test     rax, rax
+01cfdc1e  je       0x1cfddaa
+01cfdc24  cmp      dword ptr [rax + 0x18], 1
+01cfdc28  jbe      0x1cfddb0
+01cfdc2e  cmp      dword ptr [rbx + 0x188], 2   ; ._partsCount
+01cfdc35  mov      rcx, qword ptr [rax + 0x28]   ; .isDark
+01cfdc39  jg       0x1cfdc40
+01cfdc3b  mov      rdi, rsi
+01cfdc3e  jmp      0x1cfdc57
+01cfdc40  test     rax, rax
+01cfdc43  je       0x1cfddaa
+01cfdc49  cmp      dword ptr [rax + 0x18], 2
+01cfdc4d  jbe      0x1cfddb0
+01cfdc53  mov      rdi, qword ptr [rax + 0x30]   ; .tsecond
+01cfdc57  xor      ebp, ebp
+01cfdc59  mov      qword ptr [rsp + 0x40], rbp   ; .<tpassed>5__2
+01cfdc5e  test     rcx, rcx
+01cfdc61  je       0x1cfddaa
+01cfdc67  movsd    xmm0, qword ptr [rsp + 0x40]   ; .<tpassed>5__2
+01cfdc6d  lea      rax, [rsp + 0x30]   ; .tsecond
+01cfdc72  mov      qword ptr [rsp + 0x28], rsi   ; .isDark
+01cfdc77  xor      r9d, r9d
+01cfdc7a  mov      r8b, 1
+01cfdc7d  movsd    qword ptr [rsp + 0x30], xmm0   ; .tsecond
+01cfdc83  xor      edx, edx
+01cfdc85  mov      qword ptr [rsp + 0x20], rax   ; .trot
+01cfdc8a  mov      dword ptr [rsp + 0x38], ebp   ; ._callback
+01cfdc8e  call     0x1d61850   ; EnePartsGroup::BreakParts(System.Boolean,System.Boolean,System.Boolean,UnityEngine.Vector3)
+01cfdc93  test     rdi, rdi
+01cfdc96  je       0x1cfddaa
+01cfdc9c  movsd    xmm0, qword ptr [rsp + 0x40]   ; .<tpassed>5__2
+01cfdca2  lea      rax, [rsp + 0x40]   ; .<tpassed>5__2
+01cfdca7  mov      qword ptr [rsp + 0x28], rsi   ; .isDark
+01cfdcac  xor      r9d, r9d
+01cfdcaf  mov      r8b, 1
+01cfdcb2  movsd    qword ptr [rsp + 0x40], xmm0   ; .<tpassed>5__2
+01cfdcb8  xor      edx, edx
+01cfdcba  mov      qword ptr [rsp + 0x20], rax   ; .trot
+01cfdcbf  mov      rcx, rdi
+01cfdcc2  mov      dword ptr [rsp + 0x48], ebp   ; ._hitIndex
+01cfdcc6  call     0x1d61850   ; EnePartsGroup::BreakParts(System.Boolean,System.Boolean,System.Boolean,UnityEngine.Vector3)
+01cfdccb  xor      edx, edx
+01cfdccd  mov      rcx, rbx
+01cfdcd0  call     0x1d10e20   ; PawnEnemy::_callDeadEffect()
+01cfdcd5  cmp      dword ptr [rbx + 0x1b0], esi   ; ._item
+01cfdcdb  je       0x1cfdd95
+01cfdce1  mov      rax, qword ptr [rip + 0x26ba318]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01cfdce8  mov      rax, qword ptr [rax + 0x20]   ; .trot
+01cfdcec  test     byte ptr [rax + 0x135], 1
+01cfdcf3  jne      0x1cfdcfd
+01cfdcf5  mov      rcx, rax
+01cfdcf8  call     0x4de1e0
+01cfdcfd  mov      rax, qword ptr [rax + 0xc0]   ; ._burnShake
+01cfdd04  mov      rax, qword ptr [rax + 0x10]
+01cfdd08  test     byte ptr [rax + 0x135], 1
+01cfdd0f  jne      0x1cfdd19
+01cfdd11  mov      rcx, rax
+01cfdd14  call     0x4de1e0
+01cfdd19  mov      rax, qword ptr [rax + 0xb8]   ; ._mover
+01cfdd20  mov      rdx, qword ptr [rbx + 0x50]   ; .<>u__2
+01cfdd24  mov      rdi, qword ptr [rax]
+01cfdd27  test     rdx, rdx
+01cfdd2a  je       0x1cfddaa
+01cfdd2c  xor      r8d, r8d
+01cfdd2f  lea      rcx, [rsp + 0x30]   ; .tsecond
+01cfdd34  call     0x3093ba0   ; Transform::get_position()
+01cfdd39  test     rdi, rdi
+01cfdd3c  je       0x1cfddaa
+01cfdd3e  movsd    xmm0, qword ptr [rax]
+01cfdd42  lea      r8, [rsp + 0x40]   ; .<tpassed>5__2
+01cfdd47  mov      eax, dword ptr [rax + 8]
+01cfdd4a  lea      rcx, [rsp + 0x30]   ; .tsecond
+01cfdd4f  xor      r9d, r9d
+01cfdd52  movsd    qword ptr [rsp + 0x40], xmm0   ; .<tpassed>5__2
+01cfdd58  mov      rdx, rdi
+01cfdd5b  mov      dword ptr [rsp + 0x48], eax   ; ._hitIndex
+01cfdd5f  mov      qword ptr [rsp + 0x20], rsi   ; .trot
+01cfdd64  call     0x1ce6750   ; InGameManager::GetSkyRootPosition(UnityEngine.Vector3,System.Boolean)
+01cfdd69  mov      edx, dword ptr [rbx + 0x1b0]   ; ._item
+01cfdd6f  lea      r8, [rsp + 0x40]   ; .<tpassed>5__2
+01cfdd74  mov      r9b, 1
+01cfdd77  mov      qword ptr [rsp + 0x20], rsi   ; .trot
+01cfdd7c  mov      rcx, rdi
+01cfdd7f  movsd    xmm0, qword ptr [rax]
+01cfdd83  mov      eax, dword ptr [rax + 8]
+01cfdd86  movsd    qword ptr [rsp + 0x40], xmm0   ; .<tpassed>5__2
+01cfdd8c  mov      dword ptr [rsp + 0x48], eax   ; ._hitIndex
+01cfdd90  call     0x1ce82e0   ; InGameManager::ItemDrop(InGame.Kernel.Item.ItemEffects/Kind,UnityEngine.Vector3,System.Boolean)
+01cfdd95  mov      rdi, qword ptr [rsp + 0x68]
+01cfdd9a  mov      rbp, qword ptr [rsp + 0x60]   ; ._currentPosition
+01cfdd9f  mov      rbx, qword ptr [rsp + 0x70]
+01cfdda4  add      rsp, 0x50
+01cfdda8  pop      rsi
+01cfdda9  ret      
+01cfddaa  call     0x4e0d00
+01cfddaf  int3     
+01cfddb0  call     0x4e0cf0

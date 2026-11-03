@@ -1,0 +1,65 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04::<PatternMove5>g__FireMuzzle|110_0(InGame.Kernel.Enemy.Ene_Bos04/<>c__DisplayClass110_0&) RVA 1d90720 len 100
+01d90720 mov        qword ptr [rsp + 0x10], rbx
+01d90725 mov        qword ptr [rsp + 0x18], rbp
+01d9072a push       rdi
+01d9072b sub        rsp, 0x70
+01d9072f cmp        dword ptr [rcx + 0x2d8], 1 ; ~_destroyWingCount
+01d90736 mov        rbx, rcx
+01d90739 jge        0x1d90742
+01d9073b mov        edi, 3
+01d90740 jmp        0x1d9074e
+01d90742 cmp        dword ptr [rcx + 0x2d8], 2 ; ~_destroyWingCount
+01d90749 sbb        edi, edi
+01d9074b add        edi, 5
+01d9074e xor        r8d, r8d
+01d90751 mov        qword ptr [rsp + 0x80], rsi
+01d90759 mov        edx, 6
+01d9075e call       0x1db9840 ; InGame.Kernel.Enemy.Ene_BosBase::GetBT(System.Int32)
+01d90763 mov        rcx, qword ptr [rbx + 0xb8] ; ~_mover
+01d9076a mov        rbp, rax
+01d9076d test       rcx, rcx
+01d90770 je         0x1d90815
+01d90776 xor        edx, edx
+01d90778 call       0x1cdae70 ; InGame.Kernel.InGameEnemyMoveBase::ResetTargetPlayer()
+01d9077d mov        rsi, qword ptr [rbx + 0xb8] ; ~_mover
+01d90784 xor        edx, edx
+01d90786 mov        rcx, rbx
+01d90789 call       0x1d11bc0 ; InGame.Kernel.Enemy.PawnEnemy::get_CToken()
+01d9078e mov        rcx, qword ptr [rbx + 0x278] ; ~_muzzles
+01d90795 test       rcx, rcx
+01d90798 je         0x1d90815
+01d9079a cmp        dword ptr [rcx + 0x18], 7
+01d9079e jbe        0x1d9081b
+01d907a0 mov        rdx, qword ptr [rcx + 0x58]
+01d907a4 test       rsi, rsi
+01d907a7 je         0x1d90815
+01d907a9 xor        ecx, ecx
+01d907ab xorps      xmm0, xmm0
+01d907ae mov        qword ptr [rsp + 0x58], rcx
+01d907b3 mov        r9, rbp
+01d907b6 mov        qword ptr [rsp + 0x50], rcx
+01d907bb mov        r8, rax
+01d907be mov        dword ptr [rsp + 0x48], edi
+01d907c2 movss      dword ptr [rsp + 0x40], xmm0
+01d907c8 mov        qword ptr [rsp + 0x38], rcx
+01d907cd mov        qword ptr [rsp + 0x30], rdx
+01d907d2 mov        rdx, rsi
+01d907d5 mov        byte ptr [rsp + 0x28], cl
+01d907d9 mov        byte ptr [rsp + 0x20], cl
+01d907dd lea        rcx, [rsp + 0x60]
+01d907e2 call       0x1cd8fe0 ; InGame.Kernel.InGameEnemyMoveBase::BulletFireAsync(System.Threading.CancellationToken,InGame.Kernel.Enemy.BulletTemplate,System.Boolean,System.Boolean,UnityEngine.Transform,UnityEngine.Transform,System.Single,System.Int32,System.Action`1<InGame.Kernel.InGameBulletInterface>)
+01d907e7 xor        edx, edx
+01d907e9 lea        rcx, [rsp + 0x60]
+01d907ee movups     xmm0, xmmword ptr [rax]
+01d907f1 movaps     xmmword ptr [rsp + 0x60], xmm0
+01d907f6 call       0x2742890 ; Cysharp.Threading.Tasks.UniTaskExtensions::Forget(Cysharp.Threading.Tasks.UniTask)
+01d907fb mov        rsi, qword ptr [rsp + 0x80]
+01d90803 lea        r11, [rsp + 0x70]
+01d90808 mov        rbx, qword ptr [r11 + 0x18]
+01d9080c mov        rbp, qword ptr [r11 + 0x20]
+01d90810 mov        rsp, r11
+01d90813 pop        rdi
+01d90814 ret        
+01d90815 call       0x4e0d00
+01d9081a int3       
+01d9081b call       0x4e0cf0

@@ -1,0 +1,35 @@
+01d6cb50  push     rbx
+01d6cb52  sub      rsp, 0x30
+01d6cb56  movaps   xmmword ptr [rsp + 0x20], xmm6   ; ev.value0
+01d6cb5b  xorps    xmm0, xmm0
+01d6cb5e  movaps   xmm6, xmm1
+01d6cb61  mov      rbx, rcx
+01d6cb64  comiss   xmm0, xmm6
+01d6cb67  jae      0x1d6cbbb
+01d6cb69  mov      rdx, qword ptr [rcx]
+01d6cb6c  mov      rax, qword ptr [rdx + 0x258]
+01d6cb73  mov      rdx, qword ptr [rdx + 0x260]
+01d6cb7a  call     rax
+01d6cb7c  test     al, al
+01d6cb7e  je       0x1d6cbbb
+01d6cb80  cmp      byte ptr [rbx + 0x294], 0   ; .<_isEventStackPlay>k__BackingField
+01d6cb87  je       0x1d6cb97
+01d6cb89  xor      r8d, r8d
+01d6cb8c  movaps   xmm1, xmm6
+01d6cb8f  mov      rcx, rbx
+01d6cb92  call     0x1d6ced0   ; EnemyMover::_execStackEvent(System.Single)
+01d6cb97  xor      edx, edx
+01d6cb99  mov      rcx, rbx
+01d6cb9c  call     0x1d43d60   ; SplineMover::IsSplineRoute()
+01d6cba1  test     al, al
+01d6cba3  jne      0x1d6cbad
+01d6cba5  cmp      byte ptr [rbx + 0x294], al   ; .<_isEventStackPlay>k__BackingField
+01d6cbab  jne      0x1d6cbbb
+01d6cbad  xor      r8d, r8d
+01d6cbb0  movaps   xmm1, xmm6
+01d6cbb3  mov      rcx, rbx
+01d6cbb6  call     0x1d43df0   ; SplineMover::Progress(System.Single)
+01d6cbbb  movaps   xmm6, xmmword ptr [rsp + 0x20]   ; ev.value0
+01d6cbc0  add      rsp, 0x30
+01d6cbc4  pop      rbx
+01d6cbc5  ret      

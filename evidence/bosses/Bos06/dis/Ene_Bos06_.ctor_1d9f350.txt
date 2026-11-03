@@ -1,0 +1,78 @@
+01d9f350 mov qword ptr [rsp + 8], rbx 
+01d9f355 push rdi 
+01d9f356 sub rsp, 0x20 
+01d9f35a cmp byte ptr [rip + 0x28c449e], 0 ; rva=46637ff
+01d9f361 mov rdi, rcx 
+01d9f364 jne 0x1d9f3a9 
+01d9f366 lea rcx, [rip + 0x25eb42b] ; rva=438a798
+01d9f36d call 0x4e0a50 
+01d9f372 lea rcx, [rip + 0x25eb4df] ; rva=438a858
+01d9f379 call 0x4e0a50 
+01d9f37e lea rcx, [rip + 0x2612743] ; rva=43b1ac8
+01d9f385 call 0x4e0a50 
+01d9f38a lea rcx, [rip + 0x2612ab7] ; rva=43b1e48
+01d9f391 call 0x4e0a50 
+01d9f396 lea rcx, [rip + 0x25d5b0b] ; rva=4374ea8
+01d9f39d call 0x4e0a50 
+01d9f3a2 mov byte ptr [rip + 0x28c4456], 1 ; rva=46637ff
+01d9f3a9 mov rdx, qword ptr [rip + 0x2612718] ; rva=43b1ac8
+01d9f3b0 cmp dword ptr [rdx + 0xe4], 0 
+01d9f3b7 jne 0x1d9f3c8 
+01d9f3b9 mov rcx, rdx 
+01d9f3bc call 0x4e0d90 
+01d9f3c1 mov rdx, qword ptr [rip + 0x2612700] ; rva=43b1ac8
+01d9f3c8 mov rdx, qword ptr [rdx + 0xb8] 
+01d9f3cf mov rcx, qword ptr [rip + 0x25d5ad2] ; rva=4374ea8
+01d9f3d6 mov edx, dword ptr [rdx + 8] 
+01d9f3d9 call 0x4dfe00 
+01d9f3de lea rcx, [rdi + 0x270] 
+01d9f3e5 mov qword ptr [rdi + 0x270], rax 
+01d9f3ec mov rdx, rax 
+01d9f3ef call 0x4dfd80 
+01d9f3f4 mov dword ptr [rdi + 0x2b0], 0xffffffff 
+01d9f3fe mov rcx, qword ptr [rip + 0x25eb453] ; rva=438a858
+01d9f405 call 0x4e0cb0 
+01d9f40a xor edx, edx 
+01d9f40c mov rcx, rax 
+01d9f40f mov rbx, rax 
+01d9f412 mov dword ptr [rax + 0x28], 2 
+01d9f419 call 0x5bcdb0 ; AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose()
+01d9f41e lea rcx, [rdi + 0x2f0] 
+01d9f425 mov qword ptr [rdi + 0x2f0], rbx 
+01d9f42c mov rdx, rbx 
+01d9f42f call 0x4dfd80 
+01d9f434 mov rcx, qword ptr [rip + 0x25eb35d] ; rva=438a798
+01d9f43b call 0x4e0cb0 
+01d9f440 xor edx, edx 
+01d9f442 mov rcx, rax 
+01d9f445 mov rbx, rax 
+01d9f448 call 0x5b09e0 ; UnitySourceGeneratedAssemblyMonoScriptTypes_v1::.ctor()
+01d9f44d lea rcx, [rdi + 0x2f8] 
+01d9f454 mov qword ptr [rdi + 0x2f8], rbx 
+01d9f45b mov rdx, rbx 
+01d9f45e call 0x4dfd80 
+01d9f463 mov rcx, qword ptr [rip + 0x25eb32e] ; rva=438a798
+01d9f46a call 0x4e0cb0 
+01d9f46f xor edx, edx 
+01d9f471 mov rcx, rax 
+01d9f474 mov rbx, rax 
+01d9f477 call 0x5b09e0 ; UnitySourceGeneratedAssemblyMonoScriptTypes_v1::.ctor()
+01d9f47c lea rcx, [rdi + 0x300] 
+01d9f483 mov qword ptr [rdi + 0x300], rbx 
+01d9f48a mov rdx, rbx 
+01d9f48d call 0x4dfd80 
+01d9f492 mov rcx, qword ptr [rip + 0x26129af] ; rva=43b1e48
+01d9f499 cmp dword ptr [rcx + 0xe4], 0 
+01d9f4a0 jne 0x1d9f4a7 
+01d9f4a2 call 0x4e0d90 
+01d9f4a7 xor edx, edx 
+01d9f4a9 mov rcx, rdi 
+01d9f4ac mov rbx, qword ptr [rsp + 0x30] 
+01d9f4b1 add rsp, 0x20 
+01d9f4b5 pop rdi 
+01d9f4b6 jmp 0x1dbb0b0 ; Ene_BosBase::.ctor()
+01d9f4bb int3 
+01d9f4bc int3 
+01d9f4bd int3 
+01d9f4be int3 
+01d9f4bf int3 

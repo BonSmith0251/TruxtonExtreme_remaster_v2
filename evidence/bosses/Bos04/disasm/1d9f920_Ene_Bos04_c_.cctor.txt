@@ -1,0 +1,23 @@
+== System.Void InGame.Kernel.Enemy.Ene_Bos04/<>c::.cctor() RVA 1d9f920 len 67
+01d9f920 push       rbx
+01d9f922 sub        rsp, 0x20
+01d9f926 cmp        byte ptr [rip + 0x28c3e9d], 0 ; [.data 46637ca]
+01d9f92d jne        0x1d9f942
+01d9f92f lea        rcx, [rip + 0x25eab62] ; [.data 438a498] TypeInfo#53890
+01d9f936 call       0x4e0a50
+01d9f93b mov        byte ptr [rip + 0x28c3e88], 1 ; [.data 46637ca]
+01d9f942 mov        rcx, qword ptr [rip + 0x25eab4f] ; [.data 438a498] TypeInfo#53890
+01d9f949 call       0x4e0cb0
+01d9f94e xor        edx, edx
+01d9f950 mov        rcx, rax
+01d9f953 mov        rbx, rax
+01d9f956 call       0x5bcdb0 ; AEAsAnimation.AEAsAnimationRoot/<ShowAsync>d__21::System.IDisposable.Dispose() || AEAsAnimation.AEComposition/<AttachAsync>d__9::System.IDisposable.Dispose() || AEAsAnimation.AELayerReflection/<AttachAsync>d__14::System.IDisposable.Dispose()
+01d9f95b mov        rcx, qword ptr [rip + 0x25eab36] ; [.data 438a498] TypeInfo#53890
+01d9f962 mov        rdx, qword ptr [rcx + 0xb8] ; ~_mover
+01d9f969 mov        qword ptr [rdx], rbx
+01d9f96c mov        rdx, rbx
+01d9f96f mov        rcx, qword ptr [rip + 0x25eab22] ; [.data 438a498] TypeInfo#53890
+01d9f976 mov        rcx, qword ptr [rcx + 0xb8] ; ~_mover
+01d9f97d add        rsp, 0x20
+01d9f981 pop        rbx
+01d9f982 jmp        0x4dfd80

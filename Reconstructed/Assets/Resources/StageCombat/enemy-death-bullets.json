@@ -1,0 +1,133 @@
+{
+ "version": 1,
+ "note": "tools/stage_combat/enemy_death_bullets.py; rules in evidence/death-bullets/SPEC.md",
+ "enemies": [
+  {
+   "model": "Pf_EneObj_Bg04_Grass",
+   "deadBullet": "bg04_grass_fired",
+   "deadSelector": "",
+   "explosionOffset": {
+    "x": 20.0,
+    "y": 0.0,
+    "z": 0.0
+   }
+  },
+  {
+   "model": "Pf_Ene_BMa01",
+   "deadBullet": "",
+   "deadSelector": "bma01_fired_sel",
+   "explosionOffset": {
+    "x": 0.0,
+    "y": 20.0,
+    "z": 0.0
+   }
+  },
+  {
+   "model": "Pf_Ene_BSc01",
+   "deadBullet": "",
+   "deadSelector": "bsc01_fired_sel",
+   "explosionOffset": {
+    "x": 0.0,
+    "y": 10.0,
+    "z": 0.0
+   }
+  },
+  {
+   "model": "Pf_Ene_Mg01",
+   "deadBullet": "mg01_fired",
+   "deadSelector": "",
+   "explosionOffset": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+   }
+  },
+  {
+   "model": "Pf_Ene_Mi01",
+   "deadBullet": "mi01_fired",
+   "deadSelector": "",
+   "explosionOffset": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+   }
+  },
+  {
+   "model": "Pf_Ene_Mo01",
+   "deadBullet": "mo01_fired",
+   "deadSelector": "",
+   "explosionOffset": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+   }
+  },
+  {
+   "model": "Pf_Ene_Sg01",
+   "deadBullet": "sg01_fired",
+   "deadSelector": "",
+   "explosionOffset": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+   }
+  },
+  {
+   "model": "Pf_Ene_Sh01",
+   "deadBullet": "",
+   "deadSelector": "sh01_fired_sel",
+   "explosionOffset": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+   }
+  },
+  {
+   "model": "Pf_Ene_Sj01",
+   "deadBullet": "",
+   "deadSelector": "sj01_fired_sel",
+   "explosionOffset": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+   }
+  },
+  {
+   "model": "Pf_Ene_Su01",
+   "deadBullet": "",
+   "deadSelector": "sj01_fired_sel",
+   "explosionOffset": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+   }
+  }
+ ],
+ "damage": [
+  {
+   "model": "Pf_BGObj_tree01b_upper",
+   "damageBullet": "bg05Tree",
+   "expOffsetY": 15.0,
+   "ways": 8,
+   "count": 5,
+   "muzzle": "pf_bg05_tree01b_upper/muzzle01"
+  }
+ ],
+ "bullets": [
+  {
+   "model": "enemybullet011",
+   "hitPoint": 1.0,
+   "lockOn": false,
+   "deadBullet": "Sepper0_3way",
+   "deadBulletPath": "Regident/Sepper0_3way"
+  },
+  {
+   "model": "enemybullet011s",
+   "hitPoint": 1.0,
+   "lockOn": false,
+   "deadBullet": "Seppers_3way",
+   "deadBulletPath": "Regident/Seppers_3way"
+  }
+ ],
+ "problems": []
+}

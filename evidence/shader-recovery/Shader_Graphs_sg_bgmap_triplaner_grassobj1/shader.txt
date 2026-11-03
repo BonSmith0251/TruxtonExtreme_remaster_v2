@@ -1,0 +1,96 @@
+//////////////////////////////////////////
+//
+// NOTE: This is *not* a valid shader file
+//
+///////////////////////////////////////////
+Shader "Shader Graphs/sg_bgmap_triplaner_grassobj1" {
+Properties {
+
+_ObjAlbed ("ObjAlbed", 2D) = "grey" { }
+
+_ObjAlbed_Color ("ObjAlbed_Color", Color) = (0.501961,0.501961,0.501961,1)
+
+_ObjMetallic ("ObjMetallic", 2D) = "white" { }
+
+_ObjSmooth_Int ("ObjSmooth_Int", Range(0, 1)) = 0.75
+
+_ObjNormal ("ObjNormal", 2D) = "white" { }
+
+_ObjNormal_Int ("ObjNormal_Int", Range(0, 1)) = 1.0
+
+_GrassGradient ("GrassGradient", Range(0, 0.5)) = 0.5
+
+_GrassAngle ("GrassAngle", Range(0, 1)) = 0.5
+
+_GrassAlbed ("GrassAlbed", 2D) = "grey" { }
+
+_GrassAlbed_Color ("GrassAlbed_Color", Color) = (0.501961,0.501961,0.501961,1)
+
+_GrassTiling ("GrassTiling", Float) = 1.0
+
+_GrassGlayScale ("GrassGlayScale", 2D) = "white" { }
+
+_GrassmormalIntensity ("GrassmormalIntensity", Float) = 1.0
+
+_GrassNormal ("GrassNormal", 2D) = "white" { }
+
+_GrassMask_Tiling ("GrassMask_Tiling", Float) = 1.0
+
+_GrassMask_Edge1 ("GrassMask_Edge1", Range(0, 1)) = 0.20000000298023224
+
+_GrassMask_Edge2 ("GrassMask_Edge2", Range(0, 1)) = 0.5
+
+_GrassMask_Int ("GrassMask_Int", Range(0, 1)) = 1.0
+
+_QueueOffset ("_QueueOffset", Float) = 0.0
+
+_QueueControl ("_QueueControl", Float) = -1.0
+
+unity_Lightmaps ("unity_Lightmaps", 2DArray) = "" { }
+
+unity_LightmapsInd ("unity_LightmapsInd", 2DArray) = "" { }
+
+unity_ShadowMasks ("unity_ShadowMasks", 2DArray) = "" { }
+
+}
+SubShader {
+ Tags { "DisableBatching" = "False" "QUEUE" = "Geometry" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Opaque" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalLitSubTarget" "UniversalMaterialType" = "Lit" }
+ Pass {
+ Name "Universal Forward"
+  Tags { "DisableBatching" = "False" "LIGHTMODE" = "UniversalForward" "QUEUE" = "Geometry" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Opaque" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalLitSubTarget" "UniversalMaterialType" = "Lit" }
+  GpuProgramID 16438
+}
+ Pass {
+ Name "GBuffer"
+  Tags { "DisableBatching" = "False" "LIGHTMODE" = "UniversalGBuffer" "QUEUE" = "Geometry" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Opaque" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalLitSubTarget" "UniversalMaterialType" = "Lit" }
+  GpuProgramID 81380
+}
+ Pass {
+ Name "ShadowCaster"
+  Tags { "DisableBatching" = "False" "LIGHTMODE" = "SHADOWCASTER" "QUEUE" = "Geometry" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Opaque" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalLitSubTarget" "UniversalMaterialType" = "Lit" }
+  GpuProgramID 149511
+}
+ Pass {
+ Name "MotionVectors"
+  Tags { "DisableBatching" = "False" "LIGHTMODE" = "MOTIONVECTORS" "QUEUE" = "Geometry" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Opaque" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalLitSubTarget" "UniversalMaterialType" = "Lit" }
+  GpuProgramID 233179
+}
+ Pass {
+ Name "DepthOnly"
+  Tags { "DisableBatching" = "False" "LIGHTMODE" = "DepthOnly" "QUEUE" = "Geometry" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Opaque" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalLitSubTarget" "UniversalMaterialType" = "Lit" }
+  GpuProgramID 288239
+}
+ Pass {
+ Name "DepthNormals"
+  Tags { "DisableBatching" = "False" "LIGHTMODE" = "DepthNormals" "QUEUE" = "Geometry" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Opaque" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalLitSubTarget" "UniversalMaterialType" = "Lit" }
+  GpuProgramID 384323
+}
+ Pass {
+ Name "Universal 2D"
+  Tags { "DisableBatching" = "False" "LIGHTMODE" = "Universal2D" "QUEUE" = "Geometry" "RenderPipeline" = "UniversalPipeline" "RenderType" = "Opaque" "ShaderGraphShader" = "true" "ShaderGraphTargetId" = "UniversalLitSubTarget" "UniversalMaterialType" = "Lit" }
+  GpuProgramID 653618
+}
+}
+Fall back "Hidden/Shader Graph/FallbackError"
+CustomEditor "UnityEditor.ShaderGraph.GenericShaderGraphMaterialGUI"
+}
