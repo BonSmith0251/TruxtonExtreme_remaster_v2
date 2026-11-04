@@ -1,0 +1,8 @@
+- [Truxton remaster manager](truxton-remaster-manager.md) — pioneer/extractor/checker loop, manager skill + ledger in extractor/manager (2026-10-26)
+- [Unity game-to-project skill](unity-game-to-project-skill.md) — skill + lab locations; Codex later built the Truxton remaster/autoplayer (reviewed 2026-10-26)
+- [Truxton scene dedup](truxton-scene-dedup.md) — copies→prefabs skill; BG03 deduped in staging + user project 2026-10-27
+- [Truxton sound skill](truxton-sound-skill.md) — all original sounds + trigger rules, Round1Sound player (2026-10-29)
+- [Truxton recon project](truxton-recon-project.md) — TruxtonExRecon is the only project; arcade cabinet + service mode; standard Unity layout since 2026-11-02 (OriginalGame, Scenes, Scripts/...), prefabs sorted by kind
+- [Unity crash checks](unity-crash-checks.md) — check every Unity run for Crash!!!/exit 139 and report it; use the run wrappers
+- [Unity project layout skill](unity-project-layout-skill.md) — reorganise any Unity project safely: survey, plan moves, rewrite paths, verify, undo (2026-11-02)
+- [Unity prefab organizer skill](unity-prefab-organizer-skill.md) — sort prefabs into Prefabs/<Category> safely (survey, rules, plan, move, health diff); applied to TruxtonExRecon 2026-11-02
