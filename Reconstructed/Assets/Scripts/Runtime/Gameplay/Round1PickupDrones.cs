@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Round1PickupDrones : MonoBehaviour
 {
-    [Serializable] public class Entry { public float time;public int kind;public string source;public Vector3 offset;public bool table; }
+    [Serializable] public class Entry { public float time;public int kind;public string source;public Vector3 offset;public bool table;public int zone; }
     [Serializable] public class Data { public Entry[] events;public Vector3 start;public float initialSpeed,cruiseSpeed,slowSeconds,duration,health; }
     class Drone { public Round1Combat.Target target;public int id;public Entry entry; }
     // Other stages: the stage's own carriers (tools/stage_enemies/build_pickups.py, Resources/StageEnemies/Pickups/BGxx.json),
@@ -30,7 +30,8 @@ public class Round1PickupDrones : MonoBehaviour
         foreach(var d in drones)if(d.target.active && d.target.id==d.id)combat.DespawnSourceTarget(d.target);
         drones.Clear();next=0;Spawned=CapacityMisses=0;
         // Skipped carriers still advance the shared ItemReferenceTable index (the ground boxes draw from it too).
-        if(data!=null)while(next<data.events.Length && data.events[next].time<time){if(data.events[next].table)combat.weapon.NextTableItem();next++;}
+        // A carrier in a zone TL that did not start (BG08 branches) never fires, so it draws nothing.
+        if(data!=null)while(next<data.events.Length && data.events[next].time<time){if(data.events[next].table && ZonePlaying(data.events[next]))combat.weapon.NextTableItem();next++;}
     }
     public void Step(float time)
     {
@@ -38,6 +39,7 @@ public class Round1PickupDrones : MonoBehaviour
         while(next<data.events.Length && data.events[next].time<=time)
         {
             var entry=data.events[next++];
+            if(!ZonePlaying(entry))continue;
             // EventEntryBehaviour._eventFire draws a table reward when the carrier enters, whether or not it is shot.
             var kind=entry.table?combat.weapon.NextTableItem():(Round1PickupKind)entry.kind;
             if(time-entry.time>=data.duration)continue;
@@ -55,11 +57,12 @@ public class Round1PickupDrones : MonoBehaviour
         {
             var d=drones[i];var target=d.target;
             if(!target.active || target.id!=d.id){drones.RemoveAt(i);continue;}
-            float age=Mathf.Max(0,time-d.entry.time);target.position=Position(d.entry,age)+target.nudge;
+            float age=Mathf.Max(0,time-d.entry.time);target.position=Position(d.entry,age);
             if(age>=data.duration || target.position.y<-.12f){combat.DespawnSourceTarget(target);drones.RemoveAt(i);continue;}
             combat.PlaceSourceTarget(target);
         }
     }
+    bool ZonePlaying(Entry entry)=>entry.zone==0 || !combat.sourceWaves || combat.sourceWaves.ZonePlaying(entry.zone);
     Vector2 Position(Entry entry,float age)
     {
         // Camera-plane adaptation: integrate the source 40 -> 11.5 speed transition,

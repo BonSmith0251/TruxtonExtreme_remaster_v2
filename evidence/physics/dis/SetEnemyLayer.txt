@@ -1,0 +1,273 @@
+#### InGame.Utility.LayerUtility::SetEnemyLayer(UnityEngine.GameObject,System.Int32) RVA 1dd7af0 len 332
+01dd7af0  mov      qword ptr [rsp + 0x10], rbx
+01dd7af5  mov      qword ptr [rsp + 0x18], rsi
+01dd7afa  push     rdi
+01dd7afb  push     r14
+01dd7afd  push     r15
+01dd7aff  sub      rsp, 0x40
+01dd7b03  mov      esi, edx
+01dd7b05  mov      rbx, rcx
+01dd7b08  cmp      byte ptr [rip + 0x288be23], 0   ; [4663932] bss
+01dd7b0f  jne      0x1dd7b48
+01dd7b11  lea      rcx, [rip + 0x25f4e78]   ; [43cc990] TypeInfo System.IDisposable
+01dd7b18  call     0x4e0a50
+01dd7b1d  lea      rcx, [rip + 0x25f5e3c]   ; [43cd960] TypeInfo System.Collections.IEnumerator
+01dd7b24  call     0x4e0a50
+01dd7b29  lea      rcx, [rip + 0x2593450]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd7b30  call     0x4e0a50
+01dd7b35  lea      rcx, [rip + 0x25de6b4]   ; [43b61f0] TypeInfo UnityEngine.Transform
+01dd7b3c  call     0x4e0a50
+01dd7b41  mov      byte ptr [rip + 0x288bdea], 1   ; [4663932] bss
+01dd7b48  xor      r14d, r14d
+01dd7b4b  mov      qword ptr [rsp + 0x60], r14   ; ._currentPosition
+01dd7b50  mov      qword ptr [rsp + 0x78], r14   ; ._basePosition
+01dd7b55  test     rbx, rbx
+01dd7b58  je       0x1dd7e1d
+01dd7b5e  xor      edx, edx
+01dd7b60  mov      rcx, rbx
+01dd7b63  call     0x3064d30   ; GameObject::get_layer()
+01dd7b68  mov      edi, eax
+01dd7b6a  mov      rcx, qword ptr [rip + 0x259340f]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd7b71  cmp      dword ptr [rcx + 0xe4], r14d
+01dd7b78  jne      0x1dd7b86
+01dd7b7a  call     0x4e0d90
+01dd7b7f  mov      rcx, qword ptr [rip + 0x25933fa]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd7b86  cmp      byte ptr [rip + 0x288bd9f], r14b   ; [466392c] bss
+01dd7b8d  jne      0x1dd7ba9
+01dd7b8f  lea      rcx, [rip + 0x25933ea]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd7b96  call     0x4e0a50
+01dd7b9b  mov      byte ptr [rip + 0x288bd8a], 1   ; [466392c] bss
+01dd7ba2  mov      rcx, qword ptr [rip + 0x25933d7]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd7ba9  cmp      dword ptr [rcx + 0xe4], r14d
+01dd7bb0  jne      0x1dd7bbe
+01dd7bb2  call     0x4e0d90
+01dd7bb7  mov      rcx, qword ptr [rip + 0x25933c2]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd7bbe  mov      rax, qword ptr [rcx + 0xb8]
+01dd7bc5  cmp      edi, dword ptr [rax + 0x20]   ; static LayerUtility.EnemySkyLayer
+01dd7bc8  je       0x1dd7c2c
+01dd7bca  cmp      dword ptr [rcx + 0xe4], r14d
+01dd7bd1  jne      0x1dd7bdf
+01dd7bd3  call     0x4e0d90
+01dd7bd8  mov      rcx, qword ptr [rip + 0x25933a1]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd7bdf  mov      rax, qword ptr [rcx + 0xb8]
+01dd7be6  cmp      edi, dword ptr [rax + 0x24]   ; static LayerUtility.EnemyGroundLayer
+01dd7be9  je       0x1dd7c2c
+01dd7beb  cmp      dword ptr [rcx + 0xe4], r14d
+01dd7bf2  jne      0x1dd7c00
+01dd7bf4  call     0x4e0d90
+01dd7bf9  mov      rcx, qword ptr [rip + 0x2593380]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd7c00  mov      rax, qword ptr [rcx + 0xb8]
+01dd7c07  cmp      edi, dword ptr [rax + 0x1c]   ; static LayerUtility.EnemyLayer
+01dd7c0a  je       0x1dd7c2c
+01dd7c0c  cmp      dword ptr [rcx + 0xe4], r14d
+01dd7c13  jne      0x1dd7c21
+01dd7c15  call     0x4e0d90
+01dd7c1a  mov      rcx, qword ptr [rip + 0x259335f]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd7c21  mov      rax, qword ptr [rcx + 0xb8]
+01dd7c28  cmp      edi, dword ptr [rax]   ; static LayerUtility.s_LayerBatches
+01dd7c2a  jne      0x1dd7c39
+01dd7c2c  xor      r8d, r8d
+01dd7c2f  mov      edx, esi
+01dd7c31  mov      rcx, rbx
+01dd7c34  call     0x3065470   ; GameObject::set_layer(System.Int32)
+01dd7c39  xor      edx, edx
+01dd7c3b  mov      rcx, rbx
+01dd7c3e  call     0x30651d0   ; GameObject::get_transform()
+01dd7c43  test     rax, rax
+01dd7c46  je       0x1dd7e1d
+01dd7c4c  xor      edx, edx
+01dd7c4e  mov      rcx, rax
+01dd7c51  call     0x308db60   ; Transform::GetEnumerator()
+01dd7c56  mov      qword ptr [rsp + 0x60], rax   ; ._currentPosition
+01dd7c5b  mov      qword ptr [rsp + 0x28], r14   ; ._HitPoint
+01dd7c60  lea      r15, [rsp + 0x60]   ; ._currentPosition
+01dd7c65  mov      qword ptr [rsp + 0x30], r15   ; ._Damage
+01dd7c6a  lea      rdi, [rsp + 0x78]   ; ._basePosition
+01dd7c6f  mov      qword ptr [rsp + 0x38], rdi   ; .onDisableEvent
+01dd7c74  nop      dword ptr [rax]
+01dd7c78  nop      dword ptr [rax + rax]
+01dd7c80  mov      r8, qword ptr [rsp + 0x60]   ; ._currentPosition
+01dd7c85  test     r8, r8
+01dd7c88  je       0x1dd7e11
+01dd7c8e  xor      ecx, ecx
+01dd7c90  mov      rdx, qword ptr [rip + 0x25f5cc9]   ; [43cd960] TypeInfo System.Collections.IEnumerator
+01dd7c97  call     0x22b0
+01dd7c9c  test     al, al
+01dd7c9e  je       0x1dd7da9
+01dd7ca4  mov      rbx, qword ptr [rsp + 0x60]   ; ._currentPosition
+01dd7ca9  test     rbx, rbx
+01dd7cac  je       0x1dd7e0c
+01dd7cb2  mov      r9, qword ptr [rip + 0x25f5ca7]   ; [43cd960] TypeInfo System.Collections.IEnumerator
+01dd7cb9  mov      r10, qword ptr [rbx]
+01dd7cbc  movzx    ecx, r14w
+01dd7cc0  movzx    edx, word ptr [r10 + 0x12e]
+01dd7cc8  cmp      r14w, dx
+01dd7ccc  jae      0x1dd7cf4
+01dd7cce  mov      r8, qword ptr [r10 + 0xb0]   ; ._updateEventCount
+01dd7cd5  nop      word ptr [rax + rax]
+01dd7ce0  movzx    eax, cx
+01dd7ce3  add      rax, rax
+01dd7ce6  cmp      qword ptr [r8 + rax*8], r9
+01dd7cea  je       0x1dd7d29
+01dd7cec  inc      cx
+01dd7cef  cmp      cx, dx
+01dd7cf2  jb       0x1dd7ce0
+01dd7cf4  mov      r8d, 1
+01dd7cfa  mov      rdx, r9
+01dd7cfd  mov      rcx, rbx
+01dd7d00  call     0x4ddae0
+01dd7d05  mov      rdx, rax
+01dd7d08  mov      rax, qword ptr [rdx]
+01dd7d0b  mov      rdx, qword ptr [rdx + 8]
+01dd7d0f  mov      rcx, rbx
+01dd7d12  call     rax
+01dd7d14  mov      r8, rax
+01dd7d17  mov      rcx, qword ptr [rip + 0x25de4d2]   ; [43b61f0] TypeInfo UnityEngine.Transform
+01dd7d1e  test     rax, rax
+01dd7d21  je       0x1dd7dfb
+01dd7d27  jmp      0x1dd7d49
+01dd7d29  movzx    ecx, cx
+01dd7d2c  add      rcx, rcx
+01dd7d2f  mov      ecx, dword ptr [r8 + rcx*8 + 8]
+01dd7d34  inc      ecx
+01dd7d36  movsxd   rdx, ecx
+01dd7d39  shl      rdx, 4
+01dd7d3d  add      rdx, 0x138
+01dd7d44  add      rdx, r10
+01dd7d47  jmp      0x1dd7d08
+01dd7d49  mov      r9, qword ptr [rax]
+01dd7d4c  movzx    eax, byte ptr [rcx + 0x130]   ; ._causeOfDeath
+01dd7d53  cmp      byte ptr [r9 + 0x130], al   ; ._causeOfDeath
+01dd7d5a  jb       0x1dd7e01
+01dd7d60  movzx    edx, al
+01dd7d63  mov      rax, qword ptr [r9 + 0xc8]   ; ._burnShakeSpeed
+01dd7d6a  cmp      qword ptr [rax + rdx*8 - 8], rcx
+01dd7d6f  jne      0x1dd7e01
+01dd7d75  xor      edx, edx
+01dd7d77  mov      rcx, r8
+01dd7d7a  call     0x30590a0   ; Component::get_gameObject()
+01dd7d7f  mov      rbx, rax
+01dd7d82  mov      rcx, qword ptr [rip + 0x25931f7]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd7d89  cmp      dword ptr [rcx + 0xe4], 0
+01dd7d90  jne      0x1dd7d97
+01dd7d92  call     0x4e0d90
+01dd7d97  xor      r8d, r8d
+01dd7d9a  mov      edx, esi
+01dd7d9c  mov      rcx, rbx
+01dd7d9f  call     0x1dd7af0   ; LayerUtility::SetEnemyLayer(UnityEngine.GameObject,System.Int32)
+01dd7da4  jmp      0x1dd7c80
+01dd7da9  mov      rdx, qword ptr [rip + 0x25f4be0]   ; [43cc990] TypeInfo System.IDisposable
+01dd7db0  mov      rcx, qword ptr [r15]
+01dd7db3  call     0x4dfda0
+01dd7db8  mov      qword ptr [rdi], rax
+01dd7dbb  test     rax, rax
+01dd7dbe  je       0x1dd7dd1
+01dd7dc0  xor      ecx, ecx
+01dd7dc2  mov      r8, rax
+01dd7dc5  mov      rdx, qword ptr [rip + 0x25f4bc4]   ; [43cc990] TypeInfo System.IDisposable
+01dd7dcc  call     0x22b0
+01dd7dd1  jmp      0x1dd7de7
+01dd7dd3  lea      rcx, [rsp + 0x30]   ; ._Damage
+01dd7dd8  call     0x71b4f0
+01dd7ddd  mov      rcx, qword ptr [rsp + 0x28]   ; ._HitPoint
+01dd7de2  test     rcx, rcx
+01dd7de5  jne      0x1dd7e17
+01dd7de7  mov      rbx, qword ptr [rsp + 0x68]
+01dd7dec  mov      rsi, qword ptr [rsp + 0x70]
+01dd7df1  add      rsp, 0x40
+01dd7df5  pop      r15
+01dd7df7  pop      r14
+01dd7df9  pop      rdi
+01dd7dfa  ret      
+01dd7dfb  call     0x4e0d00
+01dd7e00  nop      
+01dd7e01  mov      rdx, rcx
+01dd7e04  mov      rcx, r8
+01dd7e07  call     0x4dfdc0
+01dd7e0c  call     0x4e0d00
+01dd7e11  call     0x4e0d00
+01dd7e16  nop      
+01dd7e17  call     0x4dc9e0
+01dd7e1c  int3     
+01dd7e1d  call     0x4e0d00
+#### InGame.Kernel.Enemy.PawnEnemy::SetEnemyLayer(InGame.Kernel.Enemy.PawnEnemy/Division,System.Boolean) RVA 1d0f830 len 154
+01d0f830  mov      qword ptr [rsp + 8], rbx
+01d0f835  mov      qword ptr [rsp + 0x10], rsi
+01d0f83a  push     rdi
+01d0f83b  sub      rsp, 0x20
+01d0f83f  cmp      byte ptr [rip + 0x2953bd8], 0   ; [466341e] bss
+01d0f846  movzx    esi, r8b
+01d0f84a  mov      edi, edx
+01d0f84c  mov      rbx, rcx
+01d0f84f  jne      0x1d0f864
+01d0f851  lea      rcx, [rip + 0x265b728]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01d0f858  call     0x4e0a50
+01d0f85d  mov      byte ptr [rip + 0x2953bba], 1   ; [466341e] bss
+01d0f864  mov      rcx, qword ptr [rbx + 0xb8]   ; ._mover
+01d0f86b  xor      sil, 1
+01d0f86f  mov      dword ptr [rbx + 0x174], edi   ; ._division
+01d0f875  test     rcx, rcx
+01d0f878  je       0x1d0f888
+01d0f87a  xor      r9d, r9d
+01d0f87d  mov      r8d, edi
+01d0f880  mov      rdx, rbx
+01d0f883  call     0x1cdaeb0   ; InGameEnemyMoveBase::SetDivision(InGame.Kernel.Enemy.PawnEnemy,InGame.Kernel.Enemy.PawnEnemy/Division)
+01d0f888  lea      ecx, [rdi - 1]
+01d0f88b  test     ecx, ecx
+01d0f88d  je       0x1d0f915
+01d0f893  sub      ecx, 1
+01d0f896  je       0x1d0f8db
+01d0f898  cmp      ecx, 1
+01d0f89b  jne      0x1d0f94d
+01d0f8a1  mov      rdx, qword ptr [rip + 0x265b6d8]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01d0f8a8  mov      rdi, qword ptr [rbx + 0x58]   ; ._gameObjectCache
+01d0f8ac  cmp      dword ptr [rdx + 0xe4], 0
+01d0f8b3  jne      0x1d0f8c4
+01d0f8b5  mov      rcx, rdx
+01d0f8b8  call     0x4e0d90
+01d0f8bd  mov      rdx, qword ptr [rip + 0x265b6bc]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01d0f8c4  mov      rdx, qword ptr [rdx + 0xb8]
+01d0f8cb  xor      r8d, r8d
+01d0f8ce  mov      rcx, rdi
+01d0f8d1  mov      edx, dword ptr [rdx + 0x1c]   ; static LayerUtility.EnemyLayer
+01d0f8d4  call     0x1dd7af0   ; LayerUtility::SetEnemyLayer(UnityEngine.GameObject,System.Int32)
+01d0f8d9  jmp      0x1d0f94d
+01d0f8db  mov      rdx, qword ptr [rip + 0x265b69e]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01d0f8e2  mov      rdi, qword ptr [rbx + 0x58]   ; ._gameObjectCache
+01d0f8e6  cmp      dword ptr [rdx + 0xe4], 0
+01d0f8ed  jne      0x1d0f8fe
+01d0f8ef  mov      rcx, rdx
+01d0f8f2  call     0x4e0d90
+01d0f8f7  mov      rdx, qword ptr [rip + 0x265b682]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01d0f8fe  mov      rdx, qword ptr [rdx + 0xb8]
+01d0f905  xor      r8d, r8d
+01d0f908  mov      rcx, rdi
+01d0f90b  mov      edx, dword ptr [rdx + 0x20]   ; static LayerUtility.EnemySkyLayer
+01d0f90e  call     0x1dd7af0   ; LayerUtility::SetEnemyLayer(UnityEngine.GameObject,System.Int32)
+01d0f913  jmp      0x1d0f94d
+01d0f915  mov      rdx, qword ptr [rip + 0x265b664]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01d0f91c  mov      rdi, qword ptr [rbx + 0x58]   ; ._gameObjectCache
+01d0f920  cmp      dword ptr [rdx + 0xe4], 0
+01d0f927  jne      0x1d0f938
+01d0f929  mov      rcx, rdx
+01d0f92c  call     0x4e0d90
+01d0f931  mov      rdx, qword ptr [rip + 0x265b648]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01d0f938  mov      rdx, qword ptr [rdx + 0xb8]
+01d0f93f  xor      r8d, r8d
+01d0f942  mov      rcx, rdi
+01d0f945  mov      edx, dword ptr [rdx + 0x24]   ; static LayerUtility.EnemyGroundLayer
+01d0f948  call     0x1dd7e30   ; LayerUtility::SetLayerForce(UnityEngine.GameObject,System.Int32)
+01d0f94d  mov      rdx, qword ptr [rbx]
+01d0f950  mov      rcx, rbx
+01d0f953  mov      rax, qword ptr [rdx + 0x238]   ; vcall InGame.Kernel.Enemy.PawnEnemy::IsGround
+01d0f95a  mov      rdx, qword ptr [rdx + 0x240]   ; vcall InGame.Kernel.Enemy.PawnEnemy::IsGround
+01d0f961  call     rax
+01d0f963  xor      r9d, r9d
+01d0f966  movzx    r8d, sil
+01d0f96a  movzx    edx, al
+01d0f96d  mov      rcx, rbx
+01d0f970  mov      rbx, qword ptr [rsp + 0x30]   ; ._Damage
+01d0f975  mov      rsi, qword ptr [rsp + 0x38]   ; .onDisableEvent
+01d0f97a  add      rsp, 0x20
+01d0f97e  pop      rdi
+01d0f97f  jmp      0x1ddfe00   ; HybridCollisions::SetGroundStay(System.Boolean,System.Boolean)

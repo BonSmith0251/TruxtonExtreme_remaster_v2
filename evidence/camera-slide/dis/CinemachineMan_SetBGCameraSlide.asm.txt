@@ -1,0 +1,154 @@
+#### InGame.Kernel.CinemachineMan::SetBGCameraSlideRange(System.Single) RVA 1cc5d40 len 6
+01cc5d40  movss    dword ptr [rcx + 0x60], xmm1   ; ._BGCameraSlideRange
+01cc5d45  ret      
+#### InGame.Kernel.CinemachineMan::SetBGCameraSlide(System.Single) RVA 1cc5d50 len 2ed
+01cc5d50  mov      rax, rsp
+01cc5d53  push     rbx
+01cc5d54  sub      rsp, 0xd0
+01cc5d5b  cmp      byte ptr [rip + 0x299d49b], 0   ; [46631fd] bss
+01cc5d62  mov      rbx, rcx
+01cc5d65  movaps   xmmword ptr [rax - 0x18], xmm6
+01cc5d69  movaps   xmm6, xmm1
+01cc5d6c  mov      qword ptr [rax + 8], rdi
+01cc5d70  jne      0x1cc5d91
+01cc5d72  lea      rcx, [rip + 0x271399f]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cc5d79  call     0x4e0a50
+01cc5d7e  lea      rcx, [rip + 0x26b811b]   ; [437dea0] TypeInfo UnityEngine.Object
+01cc5d85  call     0x4e0a50
+01cc5d8a  mov      byte ptr [rip + 0x299d46c], 1   ; [46631fd] bss
+01cc5d91  mov      rdi, qword ptr [rbx + 0x58]   ; ._BGRootTransform
+01cc5d95  movss    dword ptr [rbx + 0x54], xmm6   ; ._bgCameraRate
+01cc5d9a  mov      rcx, qword ptr [rip + 0x26b80ff]   ; [437dea0] TypeInfo UnityEngine.Object
+01cc5da1  cmp      dword ptr [rcx + 0xe4], 0
+01cc5da8  jne      0x1cc5daf
+01cc5daa  call     0x4e0d90
+01cc5daf  xor      r8d, r8d
+01cc5db2  xor      edx, edx
+01cc5db4  mov      rcx, rdi
+01cc5db7  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01cc5dbc  mov      rdi, qword ptr [rsp + 0xe0]   ; ._deadExplosion
+01cc5dc4  test     al, al
+01cc5dc6  je       0x1cc6027
+01cc5dcc  movsd    xmm0, qword ptr [rbx + 0x60]   ; ._BGCameraSlideRange
+01cc5dd1  movss    xmm2, dword ptr [rbx + 0x54]   ; ._bgCameraRate
+01cc5dd6  movsd    xmm1, qword ptr [rbx + 0x6c]   ; ._shakeOffset
+01cc5ddb  mov      rcx, qword ptr [rip + 0x2713936]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cc5de2  movaps   xmmword ptr [rsp + 0xb0], xmm7   ; ._updateEventCount
+01cc5dea  movaps   xmmword ptr [rsp + 0xa0], xmm8   ; .PoolEvent
+01cc5df3  movaps   xmmword ptr [rsp + 0x90], xmm9   ; ._priority
+01cc5dfc  cmp      dword ptr [rcx + 0xe4], 0
+01cc5e03  movaps   xmmword ptr [rsp + 0x80], xmm10
+01cc5e0c  movaps   xmmword ptr [rsp + 0x70], xmm11
+01cc5e12  movaps   xmmword ptr [rsp + 0x60], xmm12   ; ._BGCameraSlideRange
+01cc5e18  movaps   xmm12, xmm0
+01cc5e1c  movaps   xmmword ptr [rsp + 0x50], xmm13   ; ._perspectiveAngle
+01cc5e22  movaps   xmm13, xmm0
+01cc5e26  movaps   xmmword ptr [rsp + 0x40], xmm14   ; ._npow
+01cc5e2c  movss    xmm14, dword ptr [rbx + 0x68]
+01cc5e32  movsd    qword ptr [rsp + 0x20], xmm0   ; ._cameras
+01cc5e38  movaps   xmm0, xmm1
+01cc5e3b  shufps   xmm12, xmm12, 0x55
+01cc5e40  mulss    xmm12, xmm2
+01cc5e45  mulss    xmm14, xmm2
+01cc5e4a  mulss    xmm13, xmm2
+01cc5e4f  addss    xmm14, dword ptr [rbx + 0x74]
+01cc5e55  shufps   xmm0, xmm0, 0x55
+01cc5e59  addss    xmm12, xmm0
+01cc5e5e  movsd    qword ptr [rsp + 0x20], xmm1   ; ._cameras
+01cc5e64  addss    xmm13, xmm1
+01cc5e69  jne      0x1cc5e70
+01cc5e6b  call     0x4e0d90
+01cc5e70  cmp      byte ptr [rip + 0x299d466], 0   ; [46632dd] bss
+01cc5e77  jne      0x1cc5e8c
+01cc5e79  lea      rcx, [rip + 0x2713898]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cc5e80  call     0x4e0a50
+01cc5e85  mov      byte ptr [rip + 0x299d451], 1   ; [46632dd] bss
+01cc5e8c  mov      rcx, qword ptr [rip + 0x2713885]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cc5e93  cmp      dword ptr [rcx + 0xe4], 0
+01cc5e9a  jne      0x1cc5ea1
+01cc5e9c  call     0x4e0d90
+01cc5ea1  movups   xmm9, xmmword ptr [rbx + 0x88]   ; ._shakeRotate
+01cc5ea9  mov      rax, qword ptr [rip + 0x2713868]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cc5eb0  movaps   xmm6, xmm9
+01cc5eb4  movaps   xmm7, xmm9
+01cc5eb8  shufps   xmm7, xmm9, 0xaa
+01cc5ebd  movaps   xmm4, xmm9
+01cc5ec1  mov      rcx, qword ptr [rax + 0xb8]
+01cc5ec8  shufps   xmm6, xmm9, 0xff
+01cc5ecd  shufps   xmm4, xmm9, 0x55
+01cc5ed2  movups   xmm11, xmmword ptr [rcx + 0x90]   ; static InGameManager+90
+01cc5eda  mov      rcx, qword ptr [rbx + 0x58]   ; ._BGRootTransform
+01cc5ede  movaps   xmm0, xmm11
+01cc5ee2  movaps   xmm10, xmm11
+01cc5ee6  mulss    xmm0, xmm6
+01cc5eea  movaps   xmm8, xmm11
+01cc5eee  shufps   xmm10, xmm11, 0xff
+01cc5ef3  movaps   xmm5, xmm11
+01cc5ef7  shufps   xmm8, xmm11, 0x55
+01cc5efc  movaps   xmm1, xmm10
+01cc5f00  mulss    xmm1, xmm9
+01cc5f05  movaps   xmm2, xmm10
+01cc5f09  shufps   xmm5, xmm11, 0xaa
+01cc5f0e  movaps   xmm3, xmm10
+01cc5f12  mulss    xmm3, xmm7
+01cc5f16  mulss    xmm10, xmm6
+01cc5f1b  addss    xmm1, xmm0
+01cc5f1f  mulss    xmm2, xmm4
+01cc5f23  movaps   xmm0, xmm8
+01cc5f27  mulss    xmm0, xmm7
+01cc5f2b  addss    xmm1, xmm0
+01cc5f2f  movaps   xmm0, xmm5
+01cc5f32  mulss    xmm0, xmm4
+01cc5f36  subss    xmm1, xmm0
+01cc5f3a  movaps   xmm0, xmm8
+01cc5f3e  mulss    xmm0, xmm6
+01cc5f42  movss    dword ptr [rsp + 0x20], xmm1   ; ._cameras
+01cc5f48  addss    xmm2, xmm0
+01cc5f4c  movaps   xmm0, xmm11
+01cc5f50  movaps   xmm1, xmm5
+01cc5f53  mulss    xmm0, xmm7
+01cc5f57  mulss    xmm1, xmm9
+01cc5f5c  addss    xmm2, xmm1
+01cc5f60  movaps   xmm1, xmm11
+01cc5f64  mulss    xmm11, xmm9
+01cc5f69  mulss    xmm1, xmm4
+01cc5f6d  subss    xmm2, xmm0
+01cc5f71  movaps   xmm0, xmm5
+01cc5f74  mulss    xmm0, xmm6
+01cc5f78  subss    xmm10, xmm11
+01cc5f7d  movaps   xmm11, xmmword ptr [rsp + 0x70]
+01cc5f83  mulss    xmm5, xmm7
+01cc5f87  movaps   xmm7, xmmword ptr [rsp + 0xb0]   ; ._updateEventCount
+01cc5f8f  addss    xmm3, xmm0
+01cc5f93  movss    dword ptr [rsp + 0x24], xmm2   ; .tsecond
+01cc5f99  movaps   xmm0, xmm8
+01cc5f9d  mulss    xmm8, xmm4
+01cc5fa2  mulss    xmm0, xmm9
+01cc5fa7  movaps   xmm9, xmmword ptr [rsp + 0x90]   ; ._priority
+01cc5fb0  subss    xmm10, xmm8
+01cc5fb5  movaps   xmm8, xmmword ptr [rsp + 0xa0]   ; .PoolEvent
+01cc5fbe  addss    xmm3, xmm1
+01cc5fc2  subss    xmm10, xmm5
+01cc5fc7  subss    xmm3, xmm0
+01cc5fcb  movss    dword ptr [rsp + 0x2c], xmm10   ; .color
+01cc5fd2  movaps   xmm10, xmmword ptr [rsp + 0x80]
+01cc5fdb  movss    dword ptr [rsp + 0x28], xmm3   ; ._camerasNoise
+01cc5fe1  test     rcx, rcx
+01cc5fe4  je       0x1cc6038
+01cc5fe6  movups   xmm0, xmmword ptr [rsp + 0x20]   ; ._cameras
+01cc5feb  lea      r8, [rsp + 0x30]   ; ._cameraNoisePow
+01cc5ff0  xor      r9d, r9d
+01cc5ff3  unpcklps xmm13, xmm12
+01cc5ff7  lea      rdx, [rsp + 0x20]   ; ._cameras
+01cc5ffc  movdqa   xmmword ptr [rsp + 0x30], xmm0   ; ._cameraNoisePow
+01cc6002  movss    dword ptr [rsp + 0x28], xmm14   ; ._camerasNoise
+01cc6009  movsd    qword ptr [rsp + 0x20], xmm13   ; ._cameras
+01cc6010  call     0x30913c0   ; Transform::SetLocalPositionAndRotation(UnityEngine.Vector3,UnityEngine.Quaternion)
+01cc6015  movaps   xmm13, xmmword ptr [rsp + 0x50]   ; ._perspectiveAngle
+01cc601b  movaps   xmm12, xmmword ptr [rsp + 0x60]   ; ._BGCameraSlideRange
+01cc6021  movaps   xmm14, xmmword ptr [rsp + 0x40]   ; ._npow
+01cc6027  movaps   xmm6, xmmword ptr [rsp + 0xc0]   ; ._burnShake
+01cc602f  add      rsp, 0xd0
+01cc6036  pop      rbx
+01cc6037  ret      
+01cc6038  call     0x4e0d00

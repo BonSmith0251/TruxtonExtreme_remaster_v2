@@ -17,6 +17,9 @@ CASES = {  # case: (stage, definition, first clip offset, clip time)
     'sf01_5b3': ('BG05', 'ene_sf01_5b3', (-80, 0, 0), 344.0),
     'sf01_5a3': ('BG05', 'ene_sf01_5a3', None, None),
     'sf01_5b':  ('BG05', 'ene_sf01_5b', None, None),
+    'sf01_5a':  ('BG05', 'ene_sf01_5a', None, None),
+    'sf01_5a2': ('BG05', 'ene_sf01_5a2', None, None),
+    'sf01_5b2': ('BG05', 'ene_sf01_5b2', None, None),
     'sr01_1b':  ('BG06', 'ene_sr01_1b', (0, 0, 0), 341.0),
     'sr01_1a':  ('BG06', 'ene_sr01_1a', (0, 0, 0), 330.0),
 }

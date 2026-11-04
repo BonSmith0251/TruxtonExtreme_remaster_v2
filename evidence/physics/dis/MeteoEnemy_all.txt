@@ -1,0 +1,103 @@
+#### InGame.Kernel.Enemy.MeteoEnemy::InitializeToPlay() RVA 1d0c500 len 2e
+01d0c500  push     rbx
+01d0c502  sub      rsp, 0x30
+01d0c506  mov      rbx, rcx
+01d0c509  xor      edx, edx
+01d0c50b  lea      rcx, [rsp + 0x20]   ; ._collisions
+01d0c510  call     0x1df1060   ; RandomUtility::GetRandom()
+01d0c515  xor      edx, edx
+01d0c517  mov      rcx, rbx
+01d0c51a  movups   xmm0, xmmword ptr [rax]
+01d0c51d  movups   xmmword ptr [rbx + 0x1b0], xmm0   ; ._startRotate
+01d0c524  add      rsp, 0x30
+01d0c528  pop      rbx
+01d0c529  jmp      0x1d0de30   ; PawnEnemy::InitializeToPlay()
+#### InGame.Kernel.Enemy.MeteoEnemy::GetStart() RVA 1d0c4a0 len 50
+01d0c4a0  push     rbx
+01d0c4a2  sub      rsp, 0x30
+01d0c4a6  xor      edx, edx
+01d0c4a8  mov      rbx, rcx
+01d0c4ab  call     0x1d0db40   ; PawnEnemy::GetStart()
+01d0c4b0  mov      rcx, qword ptr [rbx + 0x168]   ; ._modelTop
+01d0c4b7  xor      eax, eax
+01d0c4b9  mov      byte ptr [rbx + 0x1c8], 0   ; ._inScreen
+01d0c4c0  mov      qword ptr [rbx + 0x1c0], rax   ; ._outScreenTime
+01d0c4c7  test     rcx, rcx
+01d0c4ca  je       0x1d0c4eb
+01d0c4cc  movups   xmm0, xmmword ptr [rbx + 0x1b0]   ; ._startRotate
+01d0c4d3  xor      r8d, r8d
+01d0c4d6  lea      rdx, [rsp + 0x20]   ; ._collisions
+01d0c4db  movaps   xmmword ptr [rsp + 0x20], xmm0   ; ._collisions
+01d0c4e0  call     0x3094650   ; Transform::set_localRotation(UnityEngine.Quaternion)
+01d0c4e5  add      rsp, 0x30
+01d0c4e9  pop      rbx
+01d0c4ea  ret      
+01d0c4eb  call     0x4e0d00
+#### InGame.Kernel.Enemy.MeteoEnemy::ProgressEvent(System.Single,System.Int32) RVA 1d0c530 len bc
+01d0c530  push     rbx
+01d0c532  sub      rsp, 0x30
+01d0c536  movaps   xmmword ptr [rsp + 0x20], xmm6   ; ._collisions
+01d0c53b  xor      r9d, r9d
+01d0c53e  movaps   xmm6, xmm1
+01d0c541  mov      rbx, rcx
+01d0c544  call     0x1d0eed0   ; PawnEnemy::ProgressEvent(System.Single,System.Int32)
+01d0c549  mov      rax, qword ptr [rbx + 0xb8]   ; ._mover
+01d0c550  test     rax, rax
+01d0c553  je       0x1d0c5e7
+01d0c559  cmp      byte ptr [rax + 0x291], 0
+01d0c560  je       0x1d0c5c3
+01d0c562  addss    xmm6, dword ptr [rbx + 0x1c4]   ; ._limitTtimer
+01d0c56a  mov      byte ptr [rbx + 0x1c8], 1   ; ._inScreen
+01d0c571  comiss   xmm6, dword ptr [rip + 0x18e6638]   ; rdata 35f2bb0 f=15,30,40,50 d=4294968343
+01d0c578  movss    dword ptr [rbx + 0x1c4], xmm6   ; ._limitTtimer
+01d0c580  jbe      0x1d0c5b8
+01d0c582  mov      rdx, qword ptr [rbx]
+01d0c585  mov      rcx, rbx
+01d0c588  mov      dword ptr [rbx + 0x134], 0   ; ._deathByPno
+01d0c592  mov      rax, qword ptr [rdx + 0x588]   ; vcall InGame.Kernel.Enemy.PawnEnemy::_callDeadEffect
+01d0c599  mov      rdx, qword ptr [rdx + 0x590]   ; vcall InGame.Kernel.Enemy.PawnEnemy::_callDeadEffect
+01d0c5a0  call     rax
+01d0c5a2  mov      rdx, qword ptr [rbx]
+01d0c5a5  mov      rcx, rbx
+01d0c5a8  mov      rax, qword ptr [rdx + 0x308]   ; vcall InGame.Kernel.Enemy.PawnEnemy::CallDisabled
+01d0c5af  mov      rdx, qword ptr [rdx + 0x310]   ; vcall InGame.Kernel.Enemy.PawnEnemy::CallDisabled
+01d0c5b6  call     rax
+01d0c5b8  movaps   xmm6, xmmword ptr [rsp + 0x20]   ; ._collisions
+01d0c5bd  add      rsp, 0x30
+01d0c5c1  pop      rbx
+01d0c5c2  ret      
+01d0c5c3  cmp      byte ptr [rbx + 0x1c8], 0   ; ._inScreen
+01d0c5ca  addss    xmm6, dword ptr [rbx + 0x1c0]   ; ._outScreenTime
+01d0c5d2  movss    dword ptr [rbx + 0x1c0], xmm6   ; ._outScreenTime
+01d0c5da  jne      0x1d0c5a2
+01d0c5dc  comiss   xmm6, dword ptr [rip + 0x17d4885]   ; rdata 34e0e68 f=5,1000,10,10 d=7.673846672e+21
+01d0c5e3  jbe      0x1d0c5b8
+01d0c5e5  jmp      0x1d0c5a2
+01d0c5e7  call     0x4e0d00
+#### InGame.Kernel.Enemy.MeteoEnemy::.ctor() RVA 1d0c5f0 len 7d
+01d0c5f0  push     rbx
+01d0c5f2  sub      rsp, 0x20
+01d0c5f6  cmp      byte ptr [rip + 0x2956e0a], 0   ; [4663407] bss
+01d0c5fd  mov      rbx, rcx
+01d0c600  jne      0x1d0c615
+01d0c602  lea      rcx, [rip + 0x2676357]   ; [4382960] TypeInfo InGame.Kernel.Enemy.PawnEnemy
+01d0c609  call     0x4e0a50
+01d0c60e  mov      byte ptr [rip + 0x2956df2], 1   ; [4663407] bss
+01d0c615  cmp      byte ptr [rip + 0x294fe45], 0   ; [465c461] bss
+01d0c61c  jne      0x1d0c631
+01d0c61e  lea      rcx, [rip + 0x267f333]   ; [438b958] TypeInfo UnityEngine.Quaternion
+01d0c625  call     0x4e0a50
+01d0c62a  mov      byte ptr [rip + 0x294fe30], 1   ; [465c461] bss
+01d0c631  mov      rax, qword ptr [rip + 0x267f320]   ; [438b958] TypeInfo UnityEngine.Quaternion
+01d0c638  mov      rcx, qword ptr [rax + 0xb8]
+01d0c63f  movups   xmm0, xmmword ptr [rcx]   ; static Quaternion.identityQuaternion
+01d0c642  movups   xmmword ptr [rbx + 0x1b0], xmm0   ; ._startRotate
+01d0c649  mov      rcx, qword ptr [rip + 0x2676310]   ; [4382960] TypeInfo InGame.Kernel.Enemy.PawnEnemy
+01d0c650  cmp      dword ptr [rcx + 0xe4], 0
+01d0c657  jne      0x1d0c65e
+01d0c659  call     0x4e0d90
+01d0c65e  xor      edx, edx
+01d0c660  mov      rcx, rbx
+01d0c663  add      rsp, 0x20
+01d0c667  pop      rbx
+01d0c668  jmp      0x1d11520   ; PawnEnemy::.ctor()

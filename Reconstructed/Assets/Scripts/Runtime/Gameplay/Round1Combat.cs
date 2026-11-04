@@ -24,11 +24,8 @@ public class Round1Combat : MonoBehaviour
         // Original hit shape as circles (x, y offset from position in viewport-height units, already turned; z radius).
         // When null the target is the single circle `radius`.
         public Vector3[] hitCircles;
-        // Meteors move by Round1MeteorField; other air enemies carry a screen nudge that keeps them off each other.
-        public bool physicsBody;public Vector2 nudge;public float solidRadius;
-        // Parts of one multi-part enemy (Mj01's head and body segments) share a chain id: they overlap by design and are
-        // not pushed apart from each other.
-        public int chain; }
+        // Meteors are physics bodies (Round1MeteorField); no other enemy is ever moved by a contact (evidence/physics/SPEC.md).
+        public bool physicsBody; }
     class Hostile { public GameObject visual,template; public Vector2 position,velocity; public bool active,source; public float age;public int shooter;public Renderer renderer;public string resident; }
     // Cause of the lethal hit (PawnEnemy cause of death): only player-weapon kills fire death bullets; bombs, the ship's
     // body and boss bookkeeping do not (evidence/death-bullets/SPEC.md).
@@ -107,7 +104,7 @@ public class Round1Combat : MonoBehaviour
         e.id=++serial;e.position=position;e.health=e.maxHealth=Mathf.Max(1,health);e.age=0;e.fire=1.2f;e.fires=fires;e.stationary=stationary;e.active=true;
         e.animation=e.visual.GetComponent<Round1EnemyAnimation>();if(e.animation)e.animation.ResetPose();e.sourceRotation=Quaternion.identity;
         e.lockOn=e.blocksLaser=true;e.homingPriority=1000;e.isPickupDrone=false;e.score=0;
-        e.radius=.024f;e.hitCircles=null;e.physicsBody=false;e.nudge=Vector2.zero;e.solidRadius=0;e.invulnerable=false;e.sourceSpawn=false;e.fireInterval=1.8f;e.chain=0;
+        e.radius=.024f;e.hitCircles=null;e.physicsBody=false;e.invulnerable=false;e.sourceSpawn=false;e.fireInterval=1.8f;
         e.visual.SetActive(true);Place(e);return e;
     }
     public Target RegisterBoss(GameObject visual,Vector2 position,float health,float radius,string model="Pf_Ene_Bos03")
@@ -154,12 +151,6 @@ public class Round1Combat : MonoBehaviour
         if(automaticWaves && sourceWaves)sourceWaves.Step(weapon.player.playback.elapsed);
         if(automaticWaves && pickupDrones)pickupDrones.Step(weapon.player.playback.elapsed);
         if(automaticWaves && groundEnemies)groundEnemies.Step(weapon.player.playback.elapsed);
-        if(automaticWaves)
-        {
-            // Enemies give way to meteors and meteors to enemies; alternate so a pinched group settles within the frame.
-            SeparateAir(dt);
-            for(int i=0;i<SettleRounds && sourceWaves;i++){sourceWaves.SettleMeteors(weapon.player.playback.elapsed);SeparateAir(0);}
-        }
         foreach(var e in enemies)
         {
             if(!e.active)continue;
@@ -230,68 +221,8 @@ public class Round1Combat : MonoBehaviour
         }
         e.radius=reach;
     }
-    // Remaster rule (the original lets enemies overlap): air enemies never overlap each other or a meteor on screen. Each
-    // scripted enemy keeps a nudge that pushes it off anything it touches and eases back to its authored path
-    // (NudgeReturn seconds) once clear; owners add the nudge when they set a target's path position each frame. Meteors
-    // (solidRadius, moved by Round1MeteorField, which also keeps them off these enemies) don't move here; an enemy gives
-    // way to a meteor by their size (circle area), so a pinched meteor is freed while a big enemy like Lb01 hardly moves.
-    // Two enemies give way to each other by size as well. A nudge is held to MaxNudge (viewport height) off the path at
-    // the start of each frame; an enemy at that limit stops giving way and the other enemy takes the whole push, but when
-    // both are at it they still split the push, so the limit gives before the no-overlap rule does. Ground enemies and
-    // the boss are left alone.
-    const float NudgeReturn=.6f,MaxNudge=.15f;const int SeparationIterations=16,SettleRounds=3;
-    readonly List<Target> air=new List<Target>(),solid=new List<Target>();
-    void SeparateAir(float dt)
-    {
-        air.Clear();solid.Clear();
-        foreach(var e in enemies)if(e.active && e.sourceSpawn && !e.ground && !e.isBoss && e.visual)(e.physicsBody?solid:air).Add(e);
-        float keep=dt>0?Mathf.Exp(-dt/NudgeReturn):1;
-        foreach(var e in air){var back=e.nudge*(1-keep);e.position-=back;e.nudge-=back;Clamp(e);}
-        for(int k=0;k<SeparationIterations;k++)
-        {
-            bool moved=false;
-            for(int i=0;i<air.Count;i++)
-            {
-                for(int j=i+1;j<air.Count;j++)if(air[i].chain==0 || air[i].chain!=air[j].chain)moved|=Push(air[i],air[j],Share(air[i],air[j]));
-                foreach(var m in solid)moved|=Push(m,air[i],1-Area(m)/(Area(m)+Area(air[i])));
-            }
-            if(!moved)break;
-        }
-        foreach(var e in air)Place(e);
-        float Area(Target e){float a=0;foreach(var c in Circles(e))a+=c.z*c.z;return a;}
-        bool AtLimit(Target e)=>e.nudge.magnitude>=MaxNudge-1e-4f;
-        void Clamp(Target e){if(e.nudge.magnitude>MaxNudge){var clamped=e.nudge.normalized*MaxNudge;e.position+=clamped-e.nudge;e.nudge=clamped;}}
-        // a's part of a push between two enemies: the smaller one moves more; one at its nudge limit doesn't move.
-        float Share(Target a,Target b)
-        {
-            bool la=AtLimit(a),lb=AtLimit(b);
-            if(la!=lb)return la?0:1;
-            float aa=Area(a),ab=Area(b);return aa+ab>0?ab/(aa+ab):.5f;
-        }
-        // Moves the deepest-overlapping circle pair of a and b apart (a takes share of it) in aspect-corrected viewport units.
-        bool Push(Target a,Target b,float share)
-        {
-            float depth=0;Vector2 normal=Vector2.zero;
-            foreach(var ca in Circles(a))foreach(var cb in Circles(b))
-            {
-                var d=new Vector2((cb.x-ca.x)*Aspect,cb.y-ca.y);float reach=ca.z+cb.z,distance=d.magnitude;
-                if(reach-distance>depth){depth=reach-distance;normal=distance>1e-6f?d/distance:Vector2.right;}
-            }
-            if(depth<=1e-5f)return false;
-            var move=normal*depth;move.x/=Aspect;
-            a.position-=move*share;a.nudge-=move*share;b.position+=move*(1-share);b.nudge+=move*(1-share);return share<1;
-        }
-    }
-    // Hit circles as (viewport x, viewport y, radius).
-    IEnumerable<Vector3> Circles(Target e)
-    {
-        if(e.physicsBody && e.solidRadius>0){yield return new Vector3(e.position.x,e.position.y,e.solidRadius);yield break;}
-        if(e.hitCircles==null){yield return new Vector3(e.position.x,e.position.y,e.radius);yield break;}
-        foreach(var c in e.hitCircles){var p=CirclePosition(e,c);yield return new Vector3(p.x,p.y,c.z);}
-    }
-    // Enemy bullets end on any air enemy or meteor other than the one that fired them. In the original (Physics2D layer
-    // matrix) enemyBullet collides with neutralObject, the meteors, but passes through other enemies; the remaster
-    // blocks both. Ground enemies, the boss and invulnerable targets (e.g. Sd02 still below the plane) don't block.
+    // Enemy bullets end on a meteor: in the original (Physics2D layer matrix) enemyBullet collides with neutralObject, the
+    // meteors, and passes through every other enemy.
     public const float HostileRadius=.006f;
     public int BlockedHostiles { get; private set; }
     // The ship's body (player01 "body", superFighterCollisionModel): a circle of 0.8 source units at the stage plane,
@@ -304,7 +235,7 @@ public class Round1Combat : MonoBehaviour
     bool Blocked(Hostile b,Vector2 previous)
     {
         foreach(var e in enemies)
-            if(e.active && e.id!=b.shooter && !e.ground && !e.isBoss && !e.invulnerable && e.visual && HitGap(e,previous,b.position)<=HostileRadius)return true;
+            if(e.active && e.physicsBody && e.id!=b.shooter && e.visual && HitGap(e,previous,b.position)<=HostileRadius)return true;
         return false;
     }
     public Target Nearest(Vector2 position,int skip=0)
@@ -341,6 +272,17 @@ public class Round1Combat : MonoBehaviour
     void Deactivate(Target e,bool killed=false){if(e.active && e.sourceSpawn && sourceWaves)sourceWaves.OnRemoved(e,killed);e.active=false;if(e.visual)e.visual.SetActive(false);}
     public void DespawnSourceTarget(Target e){Deactivate(e);}
     public void PlaceSourceTarget(Target e){if(e.active)Place(e);}
+    // WeaponBombCollision hits through the HybridCollision manager, and HybridCollisions.UpdateCollisions (0x1DE0846,
+    // IsInScreen / Bounds.Intersects) disables every collider that does not overlap the screen (OutsideAll 0x1DDFA80),
+    // so the bomb never touches an enemy whose hit shape is wholly off-screen.
+    public bool HitShapeOnScreen(Target e)
+    {
+        if(e.hitCircles==null)return CircleOnScreen(e.position,e.radius);
+        foreach(var c in e.hitCircles)if(CircleOnScreen(CirclePosition(e,c),c.z))return true;
+        return false;
+    }
+    // Viewport (0..1) overlap test; radius is in viewport-height units, so its x reach is radius/Aspect.
+    bool CircleOnScreen(Vector2 p,float r)=>p.x+r/Aspect>=0 && p.x-r/Aspect<=1 && p.y+r>=0 && p.y-r<=1;
     public void Bomb(float damage){DamageCause=CauseBomb;foreach(var e in enemies)if(e.active)Damage(e,damage);DamageCause=CauseWeapon;ClearHostiles();}
     // Destructible enemy bullets (InGameDestuctible, HP 1: enemybullet011/011s): a player shot along a..b downs the first
     // one it crosses, which fires its resident death bullet. Not lock-on targets; bombs just clear them.

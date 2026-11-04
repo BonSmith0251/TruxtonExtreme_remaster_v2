@@ -1,0 +1,280 @@
+#### InGame.Kernel.InGameStage/<SetupStage>d__2::MoveNext() RVA 1d471c0 len 4a3
+01d471c0  mov      qword ptr [rsp + 0x10], rbx
+01d471c5  push     rdi
+01d471c6  sub      rsp, 0x20
+01d471ca  cmp      byte ptr [rip + 0x291c354], 0   ; [4663525] bss
+01d471d1  mov      rbx, rcx
+01d471d4  jne      0x1d47255
+01d471d6  lea      rcx, [rip + 0x26468fb]   ; [438dad8] MethodRef UnityEngine.AsyncInstantiateOperation`1<UnityEngine.GameObject>::get_Result
+01d471dd  call     0x4e0a50
+01d471e2  lea      rcx, [rip + 0x26766f7]   ; [43bd8e0] MethodRef UnityEngine.GameObject::GetComponent<InGame.Kernel.CinemachineMan>
+01d471e9  call     0x4e0a50
+01d471ee  lea      rcx, [rip + 0x2670e0b]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d471f5  call     0x4e0a50
+01d471fa  lea      rcx, [rip + 0x266fa8f]   ; [43b6c90] MethodRef UnityEngine.Object::InstantiateAsync<UnityEngine.GameObject>
+01d47201  call     0x4e0a50
+01d47206  lea      rcx, [rip + 0x2636c93]   ; [437dea0] TypeInfo UnityEngine.Object
+01d4720d  call     0x4e0a50
+01d47212  lea      rcx, [rip + 0x2631def]   ; [4379008] str:"gameRoot"
+01d47219  call     0x4e0a50
+01d4721e  lea      rcx, [rip + 0x2692053]   ; [43d9278] str:"InGameStage _stageCamera is null"
+01d47225  call     0x4e0a50
+01d4722a  lea      rcx, [rip + 0x2691ed7]   ; [43d9108] str:"InGameStage _bg is null"
+01d47231  call     0x4e0a50
+01d47236  lea      rcx, [rip + 0x2691f83]   ; [43d91c0] str:"InGameStage _ingameCinemachine is null"
+01d4723d  call     0x4e0a50
+01d47242  lea      rcx, [rip + 0x26920e7]   ; [43d9330] str:"InGameStage gameRoot not found"
+01d47249  call     0x4e0a50
+01d4724e  mov      byte ptr [rip + 0x291c2d0], 1   ; [4663525] bss
+01d47255  mov      ecx, dword ptr [rbx + 0x10]
+01d47258  mov      rdi, qword ptr [rbx + 0x20]   ; ._stageType
+01d4725c  mov      qword ptr [rsp + 0x30], rsi   ; ._effects
+01d47261  test     ecx, ecx
+01d47263  je       0x1d473ef
+01d47269  sub      ecx, 1
+01d4726c  je       0x1d47290
+01d4726e  xor      al, al
+01d47270  cmp      ecx, 1
+01d47273  jne      0x1d47518
+01d47279  mov      dword ptr [rbx + 0x10], 0xffffffff
+01d47280  mov      rsi, qword ptr [rsp + 0x30]   ; ._effects
+01d47285  mov      rbx, qword ptr [rsp + 0x38]   ; ._bullets
+01d4728a  add      rsp, 0x20
+01d4728e  pop      rdi
+01d4728f  ret      
+01d47290  mov      rcx, qword ptr [rbx + 0x30]   ; ._effects
+01d47294  mov      dword ptr [rbx + 0x10], 0xffffffff
+01d4729b  test     rcx, rcx
+01d4729e  je       0x1d47658
+01d472a4  mov      rdx, qword ptr [rip + 0x264682d]   ; [438dad8] MethodRef UnityEngine.AsyncInstantiateOperation`1<UnityEngine.GameObject>::get_Result
+01d472ab  call     0x100b660   ; AsyncInstantiateOperation`1::get_Result()
+01d472b0  test     rax, rax
+01d472b3  je       0x1d47658
+01d472b9  cmp      dword ptr [rax + 0x18], 0
+01d472bd  jbe      0x1d4765e
+01d472c3  mov      rsi, qword ptr [rax + 0x20]   ; ._stageType
+01d472c7  test     rsi, rsi
+01d472ca  je       0x1d47658
+01d472d0  xor      edx, edx
+01d472d2  mov      rcx, rsi
+01d472d5  call     0x30651d0   ; GameObject::get_transform()
+01d472da  mov      rdx, qword ptr [rbx + 0x28]   ; ._stageCamera
+01d472de  test     rdx, rdx
+01d472e1  je       0x1d47658
+01d472e7  test     rax, rax
+01d472ea  je       0x1d47658
+01d472f0  mov      rdx, qword ptr [rdx + 0x88]   ; ._mainTL
+01d472f7  xor      r9d, r9d
+01d472fa  xor      r8d, r8d
+01d472fd  mov      rcx, rax
+01d47300  call     0x3091580   ; Transform::SetParent(UnityEngine.Transform,System.Boolean)
+01d47305  mov      rdx, qword ptr [rip + 0x26765d4]   ; [43bd8e0] MethodRef UnityEngine.GameObject::GetComponent<InGame.Kernel.CinemachineMan>
+01d4730c  mov      rcx, rsi
+01d4730f  call     0x813130   ; GameObject::GetComponent()
+01d47314  test     rdi, rdi
+01d47317  je       0x1d47658
+01d4731d  lea      rcx, [rdi + 0x78]   ; ._cinemaMan
+01d47321  mov      qword ptr [rdi + 0x78], rax   ; ._cinemaMan
+01d47325  mov      rdx, rax
+01d47328  call     0x4dfd80
+01d4732d  mov      rcx, qword ptr [rdi + 0x28]   ; ._stageCamera
+01d47331  mov      rsi, qword ptr [rdi + 0x78]   ; ._cinemaMan
+01d47335  test     rcx, rcx
+01d47338  je       0x1d47658
+01d4733e  xor      edx, edx
+01d47340  call     0x3059180   ; Component::get_transform()
+01d47345  test     rsi, rsi
+01d47348  je       0x1d47658
+01d4734e  movss    xmm2, dword ptr [rip + 0x18ab866]   ; rdata 35f2bbc f=50,99.9,160,-100 d=5.233676888e+13
+01d47356  xor      r9d, r9d
+01d47359  mov      rdx, rax
+01d4735c  mov      rcx, rsi
+01d4735f  call     0x1cc6040   ; CinemachineMan::SetBGCameraTransform(UnityEngine.Transform,System.Single)
+01d47364  xor      edx, edx
+01d47366  lea      rcx, [rbx + 0x30]   ; ._effects
+01d4736a  mov      qword ptr [rbx + 0x30], rdx   ; ._effects
+01d4736e  call     0x4dfd80
+01d47373  mov      rcx, qword ptr [rdi + 0x40]   ; ._bg
+01d47377  test     rcx, rcx
+01d4737a  je       0x1d47658
+01d47380  cmp      dword ptr [rdi + 0x20], 1   ; ._stageType
+01d47384  mov      rdx, qword ptr [rdi + 0x70]   ; .maxParticles
+01d47388  sete     r8b
+01d4738c  xor      r9d, r9d
+01d4738f  call     0x1d15020   ; InGameBGObject::InitializeBG(System.Collections.Generic.List`1<InGame.Kernel.InGameStage/MaxParticleData>,System.Boolean)
+01d47394  mov      rcx, qword ptr [rdi + 0x40]   ; ._bg
+01d47398  test     rcx, rcx
+01d4739b  je       0x1d47658
+01d473a1  xor      edx, edx
+01d473a3  call     0x1d15260   ; InGameBGObject::UpdateSkyBox()
+01d473a8  xor      edx, edx
+01d473aa  mov      rcx, rdi
+01d473ad  call     0x1d253f0   ; InGameStage::changeOverlayCamera()
+01d473b2  mov      rcx, qword ptr [rdi + 0x40]   ; ._bg
+01d473b6  test     rcx, rcx
+01d473b9  je       0x1d47658
+01d473bf  xor      edx, edx
+01d473c1  call     0x1d14fb0   ; InGameBGObject::FakeEntry()
+01d473c6  lea      rcx, [rbx + 0x18]
+01d473ca  mov      qword ptr [rbx + 0x18], rax
+01d473ce  mov      rdx, rax
+01d473d1  call     0x4dfd80
+01d473d6  mov      al, 1
+01d473d8  mov      dword ptr [rbx + 0x10], 2
+01d473df  mov      rsi, qword ptr [rsp + 0x30]   ; ._effects
+01d473e4  mov      rbx, qword ptr [rsp + 0x38]   ; ._bullets
+01d473e9  add      rsp, 0x20
+01d473ed  pop      rdi
+01d473ee  ret      
+01d473ef  mov      dword ptr [rbx + 0x10], 0xffffffff
+01d473f6  mov      rcx, qword ptr [rip + 0x2670c03]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01d473fd  call     0x27540
+01d47402  lea      rcx, [rbx + 0x28]   ; ._stageCamera
+01d47406  mov      qword ptr [rbx + 0x28], rax   ; ._stageCamera
+01d4740a  mov      rdx, rax
+01d4740d  call     0x4dfd80
+01d47412  test     rdi, rdi
+01d47415  je       0x1d47658
+01d4741b  mov      rcx, qword ptr [rip + 0x2636a7e]   ; [437dea0] TypeInfo UnityEngine.Object
+01d47422  mov      rsi, qword ptr [rdi + 0x40]   ; ._bg
+01d47426  cmp      dword ptr [rcx + 0xe4], 0
+01d4742d  jne      0x1d47434
+01d4742f  call     0x4e0d90
+01d47434  xor      r8d, r8d
+01d47437  xor      edx, edx
+01d47439  mov      rcx, rsi
+01d4743c  call     0x306d270   ; Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+01d47441  test     al, al
+01d47443  jne      0x1d4763a
+01d47449  mov      rcx, qword ptr [rip + 0x2636a50]   ; [437dea0] TypeInfo UnityEngine.Object
+01d47450  mov      rsi, qword ptr [rdi + 0x28]   ; ._stageCamera
+01d47454  cmp      dword ptr [rcx + 0xe4], 0
+01d4745b  jne      0x1d47462
+01d4745d  call     0x4e0d90
+01d47462  xor      r8d, r8d
+01d47465  xor      edx, edx
+01d47467  mov      rcx, rsi
+01d4746a  call     0x306d270   ; Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+01d4746f  test     al, al
+01d47471  jne      0x1d4761c
+01d47477  mov      rcx, qword ptr [rip + 0x2636a22]   ; [437dea0] TypeInfo UnityEngine.Object
+01d4747e  mov      rsi, qword ptr [rdi + 0x58]   ; ._stageRoot
+01d47482  cmp      dword ptr [rcx + 0xe4], 0
+01d47489  jne      0x1d47490
+01d4748b  call     0x4e0d90
+01d47490  xor      r8d, r8d
+01d47493  xor      edx, edx
+01d47495  mov      rcx, rsi
+01d47498  call     0x306d270   ; Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+01d4749d  test     al, al
+01d4749f  je       0x1d4754b
+01d474a5  mov      rcx, qword ptr [rdi + 0x40]   ; ._bg
+01d474a9  test     rcx, rcx
+01d474ac  je       0x1d47658
+01d474b2  xor      edx, edx
+01d474b4  call     0x30590a0   ; Component::get_gameObject()
+01d474b9  mov      rdx, qword ptr [rip + 0x2631b48]   ; [4379008] str:"gameRoot"
+01d474c0  xor      r8d, r8d
+01d474c3  mov      rcx, rax
+01d474c6  call     0x1de9120   ; Extensions::FindObjectInChild(UnityEngine.GameObject,System.String)
+01d474cb  mov      rcx, qword ptr [rip + 0x26369ce]   ; [437dea0] TypeInfo UnityEngine.Object
+01d474d2  mov      rsi, rax
+01d474d5  cmp      dword ptr [rcx + 0xe4], 0
+01d474dc  jne      0x1d474e3
+01d474de  call     0x4e0d90
+01d474e3  xor      r8d, r8d
+01d474e6  xor      edx, edx
+01d474e8  mov      rcx, rsi
+01d474eb  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01d474f0  test     al, al
+01d474f2  jne      0x1d47528
+01d474f4  mov      rcx, qword ptr [rbx + 0x28]   ; ._stageCamera
+01d474f8  test     rcx, rcx
+01d474fb  je       0x1d47658
+01d47501  mov      rdx, qword ptr [rip + 0x2691e28]   ; [43d9330] str:"InGameStage gameRoot not found"
+01d47508  xor      r9d, r9d
+01d4750b  mov      r8d, 0x10000
+01d47511  call     0x1ce2310   ; InGameManager::AddErrorMessage(System.String,TXEKernel.TXEErrors)
+01d47516  xor      al, al
+01d47518  mov      rsi, qword ptr [rsp + 0x30]   ; ._effects
+01d4751d  mov      rbx, qword ptr [rsp + 0x38]   ; ._bullets
+01d47522  add      rsp, 0x20
+01d47526  pop      rdi
+01d47527  ret      
+01d47528  test     rsi, rsi
+01d4752b  je       0x1d47658
+01d47531  xor      edx, edx
+01d47533  mov      rcx, rsi
+01d47536  call     0x30651d0   ; GameObject::get_transform()
+01d4753b  lea      rcx, [rdi + 0x58]   ; ._stageRoot
+01d4753f  mov      qword ptr [rdi + 0x58], rax   ; ._stageRoot
+01d47543  mov      rdx, rax
+01d47546  call     0x4dfd80
+01d4754b  cmp      byte ptr [rdi + 0x68], 0   ; ._isStageRootEnable
+01d4754f  mov      rcx, qword ptr [rbx + 0x28]   ; ._stageCamera
+01d47553  je       0x1d4755b
+01d47555  mov      rdx, qword ptr [rdi + 0x58]   ; ._stageRoot
+01d47559  jmp      0x1d4755d
+01d4755b  xor      edx, edx
+01d4755d  test     rcx, rcx
+01d47560  je       0x1d47658
+01d47566  xor      r8d, r8d
+01d47569  call     0x1cea8b0   ; InGameManager::SetGameRoot(UnityEngine.Transform)
+01d4756e  mov      rcx, qword ptr [rip + 0x263692b]   ; [437dea0] TypeInfo UnityEngine.Object
+01d47575  mov      rsi, qword ptr [rdi + 0x48]   ; ._ingameCinemachine
+01d47579  cmp      dword ptr [rcx + 0xe4], 0
+01d47580  jne      0x1d47587
+01d47582  call     0x4e0d90
+01d47587  xor      r8d, r8d
+01d4758a  xor      edx, edx
+01d4758c  mov      rcx, rsi
+01d4758f  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01d47594  test     al, al
+01d47596  jne      0x1d475ba
+01d47598  mov      rcx, qword ptr [rbx + 0x28]   ; ._stageCamera
+01d4759c  test     rcx, rcx
+01d4759f  je       0x1d47658
+01d475a5  mov      rdx, qword ptr [rip + 0x2691c14]   ; [43d91c0] str:"InGameStage _ingameCinemachine is null"
+01d475ac  xor      r9d, r9d
+01d475af  mov      r8d, 0x10000
+01d475b5  jmp      0x1d47511
+01d475ba  mov      rcx, qword ptr [rip + 0x26368df]   ; [437dea0] TypeInfo UnityEngine.Object
+01d475c1  mov      rdi, qword ptr [rdi + 0x48]   ; ._ingameCinemachine
+01d475c5  cmp      dword ptr [rcx + 0xe4], 0
+01d475cc  jne      0x1d475d3
+01d475ce  call     0x4e0d90
+01d475d3  mov      rdx, qword ptr [rip + 0x266f6b6]   ; [43b6c90] MethodRef UnityEngine.Object::InstantiateAsync<UnityEngine.GameObject>
+01d475da  mov      rcx, rdi
+01d475dd  call     0x89c520   ; Object::InstantiateAsync(T)
+01d475e2  lea      rcx, [rbx + 0x30]   ; ._effects
+01d475e6  mov      qword ptr [rbx + 0x30], rax   ; ._effects
+01d475ea  mov      rdx, rax
+01d475ed  call     0x4dfd80
+01d475f2  mov      rdx, qword ptr [rbx + 0x30]   ; ._effects
+01d475f6  lea      rcx, [rbx + 0x18]
+01d475fa  mov      qword ptr [rbx + 0x18], rdx
+01d475fe  call     0x4dfd80
+01d47603  mov      rsi, qword ptr [rsp + 0x30]   ; ._effects
+01d47608  mov      al, 1
+01d4760a  mov      dword ptr [rbx + 0x10], 1
+01d47611  mov      rbx, qword ptr [rsp + 0x38]   ; ._bullets
+01d47616  add      rsp, 0x20
+01d4761a  pop      rdi
+01d4761b  ret      
+01d4761c  mov      rcx, qword ptr [rbx + 0x28]   ; ._stageCamera
+01d47620  test     rcx, rcx
+01d47623  je       0x1d47658
+01d47625  mov      rdx, qword ptr [rip + 0x2691c4c]   ; [43d9278] str:"InGameStage _stageCamera is null"
+01d4762c  xor      r9d, r9d
+01d4762f  mov      r8d, 0x10000
+01d47635  jmp      0x1d47511
+01d4763a  mov      rcx, qword ptr [rbx + 0x28]   ; ._stageCamera
+01d4763e  test     rcx, rcx
+01d47641  je       0x1d47658
+01d47643  mov      rdx, qword ptr [rip + 0x2691abe]   ; [43d9108] str:"InGameStage _bg is null"
+01d4764a  xor      r9d, r9d
+01d4764d  mov      r8d, 0x10000
+01d47653  jmp      0x1d47511
+01d47658  call     0x4e0d00
+01d4765d  int3     
+01d4765e  call     0x4e0cf0

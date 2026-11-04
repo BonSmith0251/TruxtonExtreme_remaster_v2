@@ -36,7 +36,8 @@ public sealed class Round1GroundEnemies : MonoBehaviour
         public Clip clip;public Definition definition;public Round1Combat.Target target;public GameObject visual;
         public Vector3 position;public float born,timer,wait=-1;public int next,label=-1,loops;
         public Vector3 moveFrom,moveTo;public float moveTime,moveDuration,lastHealth,flash;public bool moving;public Renderer[] secret;public Vector3[] hitShape;
-        public Transform rotPart;public Vector3 rotFrom,rotTo;public float rotTime,rotDuration;public bool rotating,rotEase,entered,offCollision;public int damageVolleys;
+        public Transform rotPart;public Vector3 rotFrom,rotTo;public float rotTime,rotDuration;public bool rotating,rotEase,entered,offCollision;public Vector3 nearest=new Vector3(9,9,0);public float nearestAt;public int damageVolleys;
+        public Renderer[] body;public bool blocked;public float footprint;   // StageBuildings: the hull that stops at a building; held up there; its length at spawn
         public readonly Dictionary<string,int> labels=new Dictionary<string,int>();
         public readonly Dictionary<int,int> loopCounts=new Dictionary<int,int>();
         public ModelAnimations animations;public State state;public float stateStart;public TurretState[] turrets;
@@ -52,6 +53,7 @@ public sealed class Round1GroundEnemies : MonoBehaviour
     public Data Source { get; private set; }
     public int Spawned { get; private set; }
     public int Entered { get; private set; } // ground enemies that came on screen
+    public readonly List<string> UnseenLog=new List<string>(); // ground enemies removed without coming on screen (check harness)
     public int Active=>actors.Count;
     readonly List<Actor> actors=new List<Actor>();
     readonly Dictionary<string,Definition> definitions=new Dictionary<string,Definition>();
@@ -139,7 +141,7 @@ public sealed class Round1GroundEnemies : MonoBehaviour
     }
     public void ResetSchedule(float time)
     {
-        foreach(var a in actors)Remove(a,false);actors.Clear();
+        foreach(var a in actors)Remove(a,false);actors.Clear();UnseenLog.Clear();
         foreach(var r in ruins)if(r.go){if(Application.isPlaying)Destroy(r.go);else DestroyImmediate(r.go);}ruins.Clear();
         if(started==null)return;
         // A clip whose start is behind the seek point is only replayed when the camera hasn't passed it yet.
@@ -160,7 +162,12 @@ public sealed class Round1GroundEnemies : MonoBehaviour
             if(!definitions.TryGetValue(c.enemy,out var d) || now>c.start+c.duration)continue;
             Spawn(c,d,now);
         }
-        for(int i=actors.Count-1;i>=0;i--)if(UpdateActor(actors[i],now)){Remove(actors[i],false);actors.RemoveAt(i);}
+        for(int i=actors.Count-1;i>=0;i--)if(UpdateActor(actors[i],now))
+        {
+            var a=actors[i];
+            if(!a.entered && a.visual){var v=combat.weapon.player.stageCamera.WorldToViewportPoint(a.position);UnseenLog.Add($"{a.definition.name}@{a.clip.start:0.0} pos ({a.position.x:0}, {a.position.z:0}) vp ({v.x:0.00}, {v.y:0.00}) nearest ({a.nearest.x:0.00}, {a.nearest.y:0.00}) at {a.nearestAt:0.0} removed {now:0.0}");}
+            Remove(a,false);actors.RemoveAt(i);
+        }
         StepRuins(now);
     }
     void Spawn(Clip c,Definition d,float now)
@@ -300,7 +307,9 @@ public sealed class Round1GroundEnemies : MonoBehaviour
         }
         if(a.moving)
         {
-            a.moveTime+=dt;float u=Mathf.Clamp01(a.moveTime/a.moveDuration);
+            float u0=Mathf.Clamp01(a.moveTime/a.moveDuration),u=Mathf.Clamp01((a.moveTime+dt)/a.moveDuration);
+            float reach=Reach(a,Vector3.Lerp(a.moveFrom,a.moveTo,u)-a.position);
+            a.blocked=reach<1;u=Mathf.Lerp(u0,u,reach);a.moveTime=u*a.moveDuration;
             a.position=Vector3.Lerp(a.moveFrom,a.moveTo,u);if(u>=1)a.moving=false;
         }
         if(a.rotating && a.rotPart)
@@ -321,6 +330,7 @@ public sealed class Round1GroundEnemies : MonoBehaviour
         // Not hittable or lockable until it is on screen in front of the camera.
         bool onScreen=view.z>0 && view.x>=0 && view.x<=1 && view.y>=0 && view.y<=1;a.target.invulnerable=!onScreen || a.offCollision;a.target.lockOn=onScreen && !a.offCollision && a.definition.lockOn;
         if(onScreen && !a.entered)Entered++;a.entered|=onScreen;
+        if(view.z>0 && Mathf.Max(Mathf.Abs(view.x-.5f),Mathf.Abs(view.y-.5f))<Mathf.Max(Mathf.Abs(a.nearest.x-.5f),Mathf.Abs(a.nearest.y-.5f))){a.nearest=view;a.nearestAt=now;}
         Round1TrackCapture.Active?.Record(a.target.id,now,a.position,a.visual.transform.rotation);
         if(a.secret!=null)
         {
@@ -414,6 +424,67 @@ public sealed class Round1GroundEnemies : MonoBehaviour
         s.from=s.to;s.to=Quaternion.Euler(0,s.data.rotY?yaw:0,0);
         s.duration=Quaternion.Angle(s.from,s.to)/Mathf.Max(.001f,s.data.rollSpeed);
         return true;
+    }
+    // BG07 area 4 (165 s): rows of TSa01 tanks each drive across into their own street between the yellow towers, turn
+    // and run 750 units down it (-Z). The rows further up keep their lanes, and three lanes (about x 10, 20 and 40) run
+    // into the front right tower (x 10..170, z 5190..5310) at about 190-200 s. The native mover has no building check
+    // (EnemyMover and PawnEnemyGround only test the camera range; evidence/ground-route-events/SPEC.md) and there is no
+    // recording of the original there, so this is a remaster rule, not a native one: a ground enemy stops at a
+    // building's edge, and the ones behind it queue at the one ahead. Boxes are shrunk across the motion by
+    // BuildingMargin so lanes that only brush a box (lane 40 by the x 50 tower, lane 0 by the lane-10 queue) go by.
+    static readonly Dictionary<string,string> StageBuildings=new Dictionary<string,string>{{"BG07","bg07_tower"}};
+    const float BuildingMargin=3;
+    Renderer[] buildings;
+    // The part (0..1) of this frame's step the enemy can take before its hull reaches a building or a held enemy.
+    float Reach(Actor a,Vector3 delta)
+    {
+        if(delta.sqrMagnitude<1e-8f || Source==null || !StageBuildings.TryGetValue(Source.stage??"",out var prefix))return 1;
+        if(buildings==null)buildings=FindObjectsByType<Renderer>(FindObjectsInactive.Include,FindObjectsSortMode.None)
+            .Where(r=>(r is MeshRenderer || r is SkinnedMeshRenderer) && r.name.StartsWith(prefix,StringComparison.OrdinalIgnoreCase)).ToArray();
+        if(!Hull(a,out var hull))return 1;
+        var across=Mathf.Abs(delta.x)>=Mathf.Abs(delta.z)?new Vector3(0,0,-2*BuildingMargin):new Vector3(-2*BuildingMargin,0,0);
+        float reach=1;
+        foreach(var r in buildings)if(r && r.enabled && r.gameObject.activeInHierarchy){var b=r.bounds;b.Expand(across);reach=Mathf.Min(reach,Sweep(hull,delta,b));}
+        // Queue only behind a held enemy going the same way; crossing traffic passes through, as natively (no ground
+        // enemy collision), or crossing columns lock each other up in the open.
+        // Enemies against enemies use a square of the spawn length, not the box around the rotated mesh: halfway
+        // through a turn that box is about 27 units wide and catches the queue in the next lane.
+        var dir=delta.normalized;var own=Footprint(a,hull);
+        foreach(var o in actors)if(o!=a && o.blocked && Vector3.Dot((o.moveTo-o.moveFrom).normalized,dir)>.7f && Hull(o,out var held)){held=Footprint(o,held);held.Expand(across);reach=Mathf.Min(reach,Sweep(own,delta,held));}
+        return reach;
+    }
+    // The ground hull: the enemy's meshes without its turning batteries.
+    static bool Hull(Actor a,out Bounds hull)
+    {
+        if(a.body==null)
+        {
+            var all=a.visual.GetComponentsInChildren<Renderer>(true).Where(r=>r is MeshRenderer || r is SkinnedMeshRenderer).ToArray();
+            var turrets=a.turrets??Array.Empty<TurretState>();
+            a.body=all.Where(r=>!Array.Exists(turrets,t=>t.battery && r.transform.IsChildOf(t.battery))).ToArray();
+            if(a.body.Length==0)a.body=all;
+        }
+        hull=default;bool any=false;
+        foreach(var r in a.body)if(r && r.enabled && r.gameObject.activeInHierarchy){if(any)hull.Encapsulate(r.bounds);else{hull=r.bounds;any=true;}}
+        if(any && a.footprint<=0)a.footprint=Mathf.Max(hull.size.x,hull.size.z);   // first look is at spawn, square to the axes
+        return any;
+    }
+    static Bounds Footprint(Actor a,Bounds hull)=>new Bounds(hull.center,new Vector3(a.footprint,hull.size.y,a.footprint));
+    // Swept box test on the ground plane: the first fraction of 'delta' at which 'hull' touches 'box'. A box the hull
+    // already sits inside (an enemy that starts in a building) or doesn't share heights with never stops it.
+    static float Sweep(Bounds hull,Vector3 delta,Bounds box)
+    {
+        const float inside=.5f;
+        if(box.size.x<=0 || box.size.z<=0 || hull.max.y<=box.min.y || hull.min.y>=box.max.y)return 1;
+        if(hull.min.x<box.max.x-inside && hull.max.x>box.min.x+inside && hull.min.z<box.max.z-inside && hull.max.z>box.min.z+inside)return 1;
+        float enter=float.NegativeInfinity,exit=float.PositiveInfinity;
+        for(int i=0;i<3;i+=2)
+        {
+            float d=delta[i];
+            if(Mathf.Abs(d)<1e-6f){if(hull.max[i]<=box.min[i] || hull.min[i]>=box.max[i])return 1;continue;}
+            float t1=(box.min[i]-hull.max[i])/d,t2=(box.max[i]-hull.min[i])/d;
+            enter=Mathf.Max(enter,Mathf.Min(t1,t2));exit=Mathf.Min(exit,Mathf.Max(t1,t2));
+        }
+        return enter>float.NegativeInfinity && enter<exit && exit>0 && enter<1?Mathf.Clamp01(enter):1;
     }
     // The remaster camera rail is _inGameRoot + (0,180,20) in the same world frame.
     float RootZ(){var rail=combat.weapon.player.playback.cameraRail;return (rail?rail.transform.position.z:combat.weapon.player.stageCamera.transform.position.z)-RailAboveRoot;}

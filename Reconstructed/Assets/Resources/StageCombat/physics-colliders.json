@@ -1,0 +1,726 @@
+{
+ "version": 1,
+ "source": "evidence/physics/SPEC.md",
+ "models": [
+  {
+   "model": "Pf_Ene_Lb01",
+   "attack": true,
+   "nodes": [
+    {
+     "origin": "",
+     "target": "physicsLb",
+     "shapes": [
+      {
+       "kind": "sphere",
+       "trigger": true,
+       "centre": [
+        -21.85,
+        0.0,
+        11.5
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "radius": 28.749999999999996
+      },
+      {
+       "kind": "sphere",
+       "trigger": true,
+       "centre": [
+        21.85,
+        0.0,
+        11.5
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "radius": 28.749999999999996
+      }
+     ]
+    },
+    {
+     "origin": "pf_ene_lb01/ene_lb01_body01/ene_lb01_body021",
+     "target": "cbody1",
+     "shapes": [
+      {
+       "kind": "box",
+       "trigger": false,
+       "centre": [
+        0.0,
+        0.0,
+        -14.5
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "size": [
+        30.0,
+        70.0,
+        23.0
+       ]
+      }
+     ]
+    },
+    {
+     "origin": "pf_ene_lb01/ene_lb01_body01/ene_lb01_body021/ene_lb01_body022",
+     "target": "cbody2",
+     "shapes": [
+      {
+       "kind": "box",
+       "trigger": false,
+       "centre": [
+        0.0,
+        0.0,
+        -14.5
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "size": [
+        30.0,
+        70.0,
+        23.0
+       ]
+      }
+     ]
+    },
+    {
+     "origin": "pf_ene_lb01/ene_lb01_body01/ene_lb01_body021/ene_lb01_body022/ene_lb01_body023",
+     "target": "cbody3",
+     "shapes": [
+      {
+       "kind": "box",
+       "trigger": false,
+       "centre": [
+        0.0,
+        0.0,
+        -14.5
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "size": [
+        30.0,
+        70.0,
+        23.0
+       ]
+      }
+     ]
+    },
+    {
+     "origin": "pf_ene_lb01/ene_lb01_body01/ene_lb01_body021/ene_lb01_body022/ene_lb01_body023/ene_lb01_body024",
+     "target": "cbody4",
+     "shapes": [
+      {
+       "kind": "box",
+       "trigger": false,
+       "centre": [
+        0.0,
+        0.0,
+        -14.5
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "size": [
+        30.0,
+        70.0,
+        23.0
+       ]
+      }
+     ]
+    },
+    {
+     "origin": "pf_ene_lb01/ene_lb01_body01/ene_lb01_body021/ene_lb01_body022/ene_lb01_body023/ene_lb01_body024/ene_lb01_body025",
+     "target": "cbody5",
+     "shapes": [
+      {
+       "kind": "box",
+       "trigger": false,
+       "centre": [
+        0.0,
+        0.0,
+        -14.5
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "size": [
+        30.0,
+        70.0,
+        23.0
+       ]
+      }
+     ]
+    },
+    {
+     "origin": "pf_ene_lb01/ene_lb01_body01/ene_lb01_body021/ene_lb01_body022/ene_lb01_body023/ene_lb01_body024/ene_lb01_body025/ene_lb01_body026",
+     "target": "cbody6",
+     "shapes": [
+      {
+       "kind": "box",
+       "trigger": false,
+       "centre": [
+        0.0,
+        0.0,
+        -14.5
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "size": [
+        30.0,
+        70.0,
+        23.0
+       ]
+      }
+     ]
+    },
+    {
+     "origin": "pf_ene_lb01/ene_lb01_body01/ene_lb01_body021/ene_lb01_body022/ene_lb01_body023/ene_lb01_body024/ene_lb01_body025/ene_lb01_body026/ene_lb01_body027",
+     "target": "cbody7",
+     "shapes": [
+      {
+       "kind": "box",
+       "trigger": false,
+       "centre": [
+        0.0,
+        0.0,
+        -14.5
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "size": [
+        30.0,
+        70.0,
+        23.0
+       ]
+      }
+     ]
+    },
+    {
+     "origin": "pf_ene_lb01/ene_lb01_body01/ene_lb01_body021/ene_lb01_body022/ene_lb01_body023/ene_lb01_body024/ene_lb01_body025/ene_lb01_body026/ene_lb01_body027/ene_lb01_body03",
+     "target": "ctail",
+     "shapes": [
+      {
+       "kind": "box",
+       "trigger": false,
+       "centre": [
+        0.0,
+        0.0,
+        -18.0
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "size": [
+        30.0,
+        70.0,
+        40.0
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "model": "Pf_Ene_Sl01",
+   "attack": false,
+   "nodes": [
+    {
+     "origin": "pf_ene_sl01",
+     "target": "physics_sl",
+     "shapes": [
+      {
+       "kind": "capsule",
+       "trigger": false,
+       "centre": [
+        0.0,
+        0.0,
+        -0.5
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "radius": 10.0,
+       "height": 25.0,
+       "direction": 2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "model": "Pf_Ene_Bos03",
+   "attack": true,
+   "nodes": [
+    {
+     "origin": "pf_bs03",
+     "target": "physics_bos03",
+     "shapes": [
+      {
+       "kind": "capsule",
+       "trigger": true,
+       "centre": [
+        0.0,
+        0.0,
+        0.0
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "radius": 40.0,
+       "height": 110.0,
+       "direction": 2
+      },
+      {
+       "kind": "capsule",
+       "trigger": true,
+       "centre": [
+        42.0,
+        10.0,
+        -5.0
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "radius": 25.0,
+       "height": 40.0,
+       "direction": 2
+      },
+      {
+       "kind": "capsule",
+       "trigger": true,
+       "centre": [
+        -42.0,
+        10.0,
+        -5.0
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "radius": 25.0,
+       "height": 40.0,
+       "direction": 2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "model": "Pf_Ene_Ma01",
+   "attack": false,
+   "nodes": [
+    {
+     "origin": "",
+     "target": "physics_ma",
+     "shapes": [
+      {
+       "kind": "capsule",
+       "trigger": false,
+       "centre": [
+        0.0,
+        0.0,
+        -0.5
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "radius": 22.5,
+       "height": 70.0,
+       "direction": 2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "model": "Pf_Ene_Mb01",
+   "attack": false,
+   "nodes": [
+    {
+     "origin": "pf_ene_mb01",
+     "target": "physics_mb",
+     "shapes": [
+      {
+       "kind": "capsule",
+       "trigger": false,
+       "centre": [
+        0.0,
+        0.0,
+        -2.0
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "radius": 25.0,
+       "height": 70.0,
+       "direction": 2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "model": "Pf_Ene_Mc01",
+   "attack": false,
+   "nodes": [
+    {
+     "origin": "pf_ene_mc01",
+     "target": "physics_mc",
+     "shapes": [
+      {
+       "kind": "box",
+       "trigger": false,
+       "centre": [
+        0.0,
+        5.0,
+        0.0
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "size": [
+        25.0,
+        30.0,
+        30.0
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "model": "Pf_Ene_Md01",
+   "attack": false,
+   "nodes": [
+    {
+     "origin": "pf_ene_md01",
+     "target": "physics_md",
+     "shapes": [
+      {
+       "kind": "capsule",
+       "trigger": false,
+       "centre": [
+        0.0,
+        10.0,
+        2.0
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "radius": 20.0,
+       "height": 50.0,
+       "direction": 1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "model": "Pf_Ene_Mi01",
+   "attack": false,
+   "nodes": [
+    {
+     "origin": "pf_ene_mi01",
+     "target": "physics_mi",
+     "shapes": [
+      {
+       "kind": "capsule",
+       "trigger": false,
+       "centre": [
+        0.0,
+        0.0,
+        0.0
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "radius": 30.0,
+       "height": 75.0,
+       "direction": 2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "model": "Pf_Ene_Mj01b",
+   "attack": false,
+   "nodes": [
+    {
+     "origin": "pf_ene_mj01_body",
+     "target": "physics_mjb",
+     "shapes": [
+      {
+       "kind": "box",
+       "trigger": false,
+       "centre": [
+        0.0,
+        0.0,
+        0.0
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "size": [
+        20.0,
+        50.0,
+        20.0
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "model": "Pf_Ene_Mj01h",
+   "attack": false,
+   "nodes": [
+    {
+     "origin": "pf_ene_mj01_head",
+     "target": "physics_mjh",
+     "shapes": [
+      {
+       "kind": "capsule",
+       "trigger": false,
+       "centre": [
+        0.0,
+        0.0,
+        0.0
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "radius": 15.0,
+       "height": 45.0,
+       "direction": 1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "model": "Pf_Ene_Mo01",
+   "attack": false,
+   "nodes": [
+    {
+     "origin": "pf_ene_mo01",
+     "target": "physics_mo01",
+     "shapes": [
+      {
+       "kind": "box",
+       "trigger": false,
+       "centre": [
+        0.0,
+        0.0,
+        0.0
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "size": [
+        50.0,
+        1.0,
+        12.0
+       ]
+      },
+      {
+       "kind": "box",
+       "trigger": false,
+       "centre": [
+        0.0,
+        0.0,
+        0.0
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "size": [
+        12.0,
+        1.0,
+        50.0
+       ]
+      },
+      {
+       "kind": "sphere",
+       "trigger": false,
+       "centre": [
+        0.0,
+        0.0,
+        0.0
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "radius": 15.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "model": "Pf_Ene_Mp01",
+   "attack": false,
+   "nodes": [
+    {
+     "origin": "pf_ene_mp01",
+     "target": "physics_mp",
+     "shapes": [
+      {
+       "kind": "capsule",
+       "trigger": false,
+       "centre": [
+        0.0,
+        0.0,
+        0.0
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "radius": 10.0,
+       "height": 60.0,
+       "direction": 0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "model": "Pf_Ene_Mp02",
+   "attack": false,
+   "nodes": [
+    {
+     "origin": "pf_ene_mp01",
+     "target": "physics_mp2",
+     "shapes": [
+      {
+       "kind": "capsule",
+       "trigger": false,
+       "centre": [
+        0.0,
+        0.0,
+        0.0
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "radius": 10.0,
+       "height": 90.0,
+       "direction": 0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "model": "Pf_Ene_Mq01",
+   "attack": false,
+   "nodes": [
+    {
+     "origin": "pf_ene_mq01",
+     "target": "physics_mq",
+     "shapes": [
+      {
+       "kind": "capsule",
+       "trigger": false,
+       "centre": [
+        0.0,
+        0.0,
+        -4.5
+       ],
+       "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "radius": 16.0,
+       "height": 150.0,
+       "direction": 0
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

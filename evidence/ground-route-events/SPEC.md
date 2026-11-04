@@ -16,7 +16,7 @@ Read-only study of `GameAssembly.dll` (IL2CPP x64). The RVAs are from `code/meth
 | `EnemyMover.CreateRouteData` | 0x1D6C750 | `attribute & 16` (EventStack) turns on `_isEventStackPlay` (0x294). `attribute & 512` (InAreaStart) sets `_inAreaStart` (0x293). All the example programs (attribute 16 or 528) run in **stack mode**. |
 | `SplineMover.SetEventData` | 0x1D44240 | In stack mode it copies the events into `_eventDatas` in their original order, so the indices match `EnemyData.eventDatas`. |
 | `SplineMover.UpdateObjectData` | 0x1D44890 | `_currentSpeed = clamp(placement.moveSpeed + Random.Range(_moveSpeedRange) + speedStep, 0.0001, 999)`. `_lookAtType = placement.lookAt`. The root `localRotation` is set to `Euler(placement.rotate)`. Stage JSON `speed` = moveSpeed and clip `rotate` = placement rotate [I]. |
-| `EnemyMover.InStartArea` | 0x1D6C860 | Only caller is `PawnEnemyGround.LocalLateUpdate` (0x1D17CD0, call at 0x1D17EBC), after `IsGroundDisplay(pos, rect, 500)` and `IsInGameRange(pos, _cameraRangeDistance)`. With InAreaStart (528), **the program starts only when the enemy comes into the ground display or range** [I: exact condition not traced]. |
+| `EnemyMover.InStartArea` | 0x1D6C860 | Only caller is `PawnEnemyGround.LocalLateUpdate` (0x1D17CD0, call at 0x1D17EBC), after `IsGroundDisplay(pos, rect, 500)` and `IsInGameRange(pos, _cameraRangeDistance)`. With InAreaStart (528), **the program starts only when the enemy comes into the ground display or range**. Traced 2026-11-04: while `_isInGamePlayArea` (0x1ED) is clear, LocalLateUpdate tests `InGameManager.IsInGameRange(pos, _cameraRangeDistance)` (0x1CE7EF0: `dx²+dz² < range²` from `_inGameRoot`, InGameManager+0x88) when the range is > 0, else `HybridCollisionManager.IsGroundDisplay(pos, rect, 500)`; on success it sets the flag and calls `InStartArea`, which acts only while `_inAreaStart` is set (clears it, then StartRouteWithDelay with `_inAreaDelay` 0x298 and `_startDelay` 0x29C). Once the flag is set, `IsGroundOut(pos, -2)` (viewport z ≤ 0 or y ≤ −2) removes the enemy (virtual 0x308), otherwise base `PawnEnemy.LocalLateUpdate` runs. `_isInGamePlayArea` is read only by IsPlayingState, LocalLateUpdate and ReStart: it hides nothing. Attribute 16 programs (the BG07 `TSa01_run*` tanks) start at spawn. |
 | `EnemyMover.Progress(dt)` | 0x1D6CB50 | `if (dt>0 && IsPlaying()) { if stack: _execStackEvent(dt); if IsSplineRoute() or !stack: SplineMover.Progress(dt) }`. A stack enemy with no spline **never runs SplineMover.Progress**. All motion comes from async tasks. |
 | `EnemyMover._isExecStackEvent` | 0x1D6D3D0 | `_eventStackDelay -= dt`. Returns true (and clamps the delay to 0) only when `dt>0`, the delay is ≤ 0 and `_isFinishDelay` is false. While waiting with a Drift look type it applies `_AddDriftAngle(0, 0.2, dt)`. Each wait is therefore a whole number of frames, and leftover time is not carried over. |
 | `EnemyMover._execStackEvent` | 0x1D6CED0 | Runs events in the same frame until one blocks, with a guard of 1000 per frame. Pseudo-code is in §1. |
@@ -316,3 +316,17 @@ Open questions `[?]`:
 - The exact InAreaStart condition.
 - Whether the JSON `speed` includes `_moveSpeedRange` or `speedStep`.
 - The update order between DOTween Manual and LastUpdate inside one frame (±1 frame on the ends of turns and moves).
+
+## 7. Buildings (BG07 area 4)
+
+Nothing in EnemyMover, PawnEnemyGround or the BG07 data keeps a ground enemy out of a building: there is no ground
+collision with the background, `durationTime` does not limit a stack program, and `_isInGamePlayArea` hides nothing.
+The BG07 TSa01 rows (165 s, attribute 16) each turn into their own street and drive 750 units down −Z. The lanes near
+x 10 (row z 5525) and x 20/40 (rows z 5725/5750) run into the front right tower (`pf_bg07_tower02`, x 10..170,
+z 5190..5310) at about 190–200 s, with the remaster camera sampled from the original rail. So the original data also
+puts these tanks inside that tower; no recording of the original exists to show the screen there.
+`Round1GroundEnemies.Reach` (remaster rule, 2026-11-04) stops a ground enemy at the edge of a `bg07_tower*` mesh and
+queues the ones behind at the held one; boxes shrink 3 units across the motion so grazing lanes pass. An enemy
+queues only behind a held one heading the same way (crossing traffic passes through, as natively), and enemy-to-enemy
+tests use a square of the spawn length, since the box around a half-turned tank is ~27 units wide. Checked with
+`STAGE_PLAY_ONLY=BG07 STAGE_PLAY_SPEED=5 STAGE_PLAY_SECONDS=44 STAGE_PLAY_PEACE=1 STAGE_PLAY_SHOTS=190,...,211`.

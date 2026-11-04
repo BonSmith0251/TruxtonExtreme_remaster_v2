@@ -168,7 +168,7 @@ public sealed partial class ArcadeMachine : MonoBehaviour
         }
         else
         {
-            weapon.BeginArcadeStage(session.carry,settings.startLives,rankings.Top);
+            weapon.awakenUnlock=Mathf.Clamp(settings.evolution,0,2);weapon.BeginArcadeStage(session.carry,settings.startLives,rankings.Top,session.stageIndex,session.round);weapon.autoBomb=settings.autoBomb;
             if(weapon.autopilot)weapon.autopilot.SetAutomatic(false);
             // The takeoff movie belongs to a credit's first stage; later stages start with the ship's arrival.
             if(session.carry!=null && weapon.intro)weapon.intro.Skip();
@@ -206,7 +206,7 @@ public sealed partial class ArcadeMachine : MonoBehaviour
         ledger.playSeconds+=dt;
         settings.Extends(out long start,out long step,out long end);
         int due=ArcadeRules.ExtendsFor(weapon.Score,start,step,end);
-        while(session.extendsGiven<due){session.extendsGiven++;ledger.extendsGiven++;weapon.GrantExtend();Round1Sound.Event("extend1");Note("extend at "+weapon.Score);}
+        while(session.extendsGiven<due){session.extendsGiven++;ledger.extendsGiven++;weapon.GrantExtend();Note("extend at "+weapon.Score);}
         if(!weapon.GameOver){gameOverWait=0;return;}
         gameOverWait+=dt;if(gameOverWait<GameOverDelay)return;
         SaveLedger();

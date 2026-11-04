@@ -49,4 +49,17 @@ public static class ReconstructionEditor
         File.WriteAllText(Path.Combine(Evidence,"build-result.json"),"{\"result\":\""+result.summary.result+"\",\"errors\":"+result.summary.totalErrors+",\"warnings\":"+result.summary.totalWarnings+",\"bytes\":"+result.summary.totalSize+"}");
         if(result.summary.result!=UnityEditor.Build.Reporting.BuildResult.Succeeded)ReconstructionExit.Quit(1);
     }
+    // Release player build outside the project (D: is nearly full; a short disk made Bee copy StreamingAssets movies as 0 bytes).
+    // TRUXTON_BUILD_DIR overrides the folder; refuses to start with less than 6 GB free there.
+    public static void BuildRelease()
+    {
+        var dir=Environment.GetEnvironmentVariable("TRUXTON_BUILD_DIR");if(string.IsNullOrEmpty(dir))dir="C:/Builds/TruxtonExRecon";
+        Directory.CreateDirectory(dir);
+        long free=new DriveInfo(Path.GetPathRoot(Path.GetFullPath(dir))).AvailableFreeSpace;
+        if(free<6L<<30){Debug.LogError("BUILD_RELEASE_NO_SPACE free="+(free>>20)+"MB at "+dir);ReconstructionExit.Quit(1);return;}
+        var result=BuildPipeline.BuildPlayer(EditorBuildSettings.scenes.Where(s=>s.enabled).Select(s=>s.path).ToArray(),Path.Combine(dir,"Truxton Extreme Reconstruction.exe"),BuildTarget.StandaloneWindows64,BuildOptions.None);
+        File.WriteAllText(Path.Combine(Evidence,"build-release-result.json"),"{\"result\":\""+result.summary.result+"\",\"dir\":\""+dir+"\",\"errors\":"+result.summary.totalErrors+",\"warnings\":"+result.summary.totalWarnings+",\"bytes\":"+result.summary.totalSize+"}");
+        Debug.Log("BUILD_RELEASE_RESULT "+result.summary.result+" "+dir);
+        if(result.summary.result!=UnityEditor.Build.Reporting.BuildResult.Succeeded)ReconstructionExit.Quit(1);
+    }
 }

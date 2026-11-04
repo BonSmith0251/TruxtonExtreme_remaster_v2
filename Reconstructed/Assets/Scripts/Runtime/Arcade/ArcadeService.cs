@@ -29,6 +29,8 @@ public sealed partial class ArcadeMachine
         ["SERVICE"]=new[]{KeyCode.F9},["TEST"]=new[]{KeyCode.F2},
         ["START"]=new[]{KeyCode.Alpha1,KeyCode.Keypad1,KeyCode.Return,KeyCode.KeypadEnter,KeyCode.JoystickButton7},
         ["FIRE"]=new[]{KeyCode.Space,KeyCode.Z,KeyCode.JoystickButton0},["BOMB / BACK"]=new[]{KeyCode.X,KeyCode.Backspace,KeyCode.JoystickButton1},
+        // PlayerControll._playerControllSpeedChange 0x1D4C760: the speed-change button plus separate speed up / speed down.
+        ["SPEED"]=new[]{KeyCode.C,KeyCode.JoystickButton2},["SPEED UP"]=new[]{KeyCode.E,KeyCode.JoystickButton5},["SPEED DOWN"]=new[]{KeyCode.Q,KeyCode.JoystickButton4},
         ["UP"]=new[]{KeyCode.UpArrow,KeyCode.W},["DOWN"]=new[]{KeyCode.DownArrow,KeyCode.S},["LEFT"]=new[]{KeyCode.LeftArrow,KeyCode.A},["RIGHT"]=new[]{KeyCode.RightArrow,KeyCode.D}};
 
     ServicePage servicePage;int confirmRow=-1,pattern,soundTest;float startHeld,patternShown;
@@ -64,6 +66,8 @@ public sealed partial class ArcadeMachine
             case ServicePage.Game:
                 r.Add(Choice("DIFFICULTY",()=>s.difficulty,v=>s.difficulty=v,ArcadeSettings.DifficultyNames));
                 r.Add(Number("SHIPS",()=>s.startLives,v=>s.startLives=v,1,5));
+                r.Add(Toggle("AUTO BOMB",()=>s.autoBomb,v=>s.autoBomb=v));
+                r.Add(Choice("EVOLUTION",()=>s.evolution,v=>s.evolution=v,new[]{"LOCKED","UNLOCKED","UNLOCKED x2"}));
                 r.Add(Choice("EXTEND",()=>s.extendPreset,v=>s.extendPreset=v,ArcadeSettings.ExtendNames));
                 r.Add(Toggle("CONTINUE",()=>s.continues,v=>s.continues=v));
                 r.Add(Number("CONTINUE TIME",()=>s.continueSeconds,v=>s.continueSeconds=v,5,30,5,v=>v+" SEC"));
@@ -180,6 +184,8 @@ public sealed partial class ArcadeMachine
     }
 
     // ---------------- input ----------------
+    // A cabinet button pressed this frame (any of its keys), for the game itself.
+    public static bool ButtonDown(string button){foreach(var k in Buttons[button])if(Input.GetKeyDown(k))return true;return false;}
     bool Pressed(string button)
     {
         foreach(var k in Buttons[button])if(Input.GetKeyDown(k)){pressedAt[button]=Time.unscaledTime;return true;}
@@ -206,7 +212,7 @@ public sealed partial class ArcadeMachine
         float y=-170;
         if(servicePage==ServicePage.Input)
         {
-            foreach(var b in Buttons.Keys){Text("in "+b,"",new Vector2(.5f,1),new Vector2(0,y),.8f,Color.white);y-=56;}
+            foreach(var b in Buttons.Keys){Text("in "+b,"",new Vector2(.5f,1),new Vector2(0,y),.8f,Color.white);y-=Buttons.Count>10?46:56;}
             var pads=Input.GetJoystickNames();string names=string.Join(", ",Array.FindAll(pads,p=>!string.IsNullOrEmpty(p)));
             Text("pads","PADS: "+(names.Length>0?names.ToUpperInvariant():"NONE"),new Vector2(.5f,1),new Vector2(0,y-20),.6f,Cyan);
             Text("help","F2  OR  HOLD START 2 SEC  TO RETURN",new Vector2(.5f,0),new Vector2(0,50),.6f,Dim);

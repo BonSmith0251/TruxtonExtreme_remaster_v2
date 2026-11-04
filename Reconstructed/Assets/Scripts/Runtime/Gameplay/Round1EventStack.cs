@@ -27,10 +27,12 @@ public sealed partial class Round1EventStack
     static readonly HashSet<int> RouteProgramEvents=new HashSet<int>{1,2,8,10,11,14,15,80,83};
     static readonly HashSet<int> LookAtTypes=new HashSet<int>{0,1,2,3,4,5,6,7,20,30,31,32};
 
-    // EventStack programs that use something Round1RouteProgram does not cover. Definitions with their own spline
-    // routes (EnemyData.routes) also run SplineMover.Progress beside the stack; that is not modelled, so they are left out.
+    // EventStack programs that Round1RouteProgram does not cover: an event it lacks, or a single SplineMove (Mh01, Ma01_3:
+    // it plays chains of two or more). Definitions with their own spline routes (EnemyData.routes) also run
+    // SplineMover.Progress beside the stack; that is not modelled, so they are left out.
     public static bool Applies(Round1EnemyWaves.Definition d)=>d!=null && (d.attribute&16)!=0 && d.events!=null
-        && (d.routes==null || d.routes.Length==0) && Array.Exists(d.events,e=>!RouteProgramEvents.Contains(e.eventType));
+        && (d.routes==null || d.routes.Length==0)
+        && (Array.Exists(d.events,e=>!RouteProgramEvents.Contains(e.eventType)) || !Round1RouteProgram.Applies(d));
 
     // Shared deterministic RNG (air_sim.py XorShift32): [0,1) in 2^-24 steps.
     sealed class XorShift32
@@ -75,6 +77,8 @@ public sealed partial class Round1EventStack
     // _moveTypeUpdateAsync state (one shared set per mover, as natively)
     Vector2 moveValue;float localDuration,homingDuration,moveValue0,turnAcc,near2;string route;Vector3 splineRoot;
     Sm01State sm;
+    // Pf_Ene_Sm01 and Pf_Ene_Sm02 both carry InGame.Kernel.Enemy.Ene_Sm01 (script fileID 872860683); BG04 spawns 4 of each.
+    static bool SmClass(string m)=>m=="Pf_Ene_Sm01" || m=="Pf_Ene_Sm02";
 
     public Vector3 Position=>pos;
     public float Yaw=>Mod(yaw,360);
@@ -91,8 +95,10 @@ public sealed partial class Round1EventStack
         IReadOnlyDictionary<string,Round1EnemyWaves.Route> routes,string model,int seed,Func<Vector3> player,int indexValue=0)
     {
         stackMode=(d.attribute&16)!=0;
-        var names=ClassRoutes(model,indexValue)??(RouteMode(d,model)?d.routes:null);
-        routeNames=names!=null && Array.TrueForAll(names,n=>routes!=null && routes.ContainsKey(n))?names:null;
+        var spline=EventSpline(d);rDuration=d.duration;
+        var names=ClassRoutes(model,indexValue)??(d.routes!=null && d.routes.Length>0?d.routes:spline!=null?new[]{spline.stringValue??""}:null);
+        routeNames=names!=null && names.Length>0 && Array.TrueForAll(names,n=>routes!=null && routes.ContainsKey(n))?names:null;
+        rDurationFrame=routeNames!=null && spline!=null && ClassRoutes(model,indexValue)==null;
         ev=d.events??new Round1EnemyWaves.ActionData[0];this.routes=routes;this.model=model??"";this.player=player;this.indexValue=indexValue;
         rng=new XorShift32(seed);seedValue=seed;pos=spawn;this.yaw=firstYaw=yaw;this.speed=speed;
         if(this.model=="Pf_Ene_St01"){objFlags|=1;this.yaw=0;}      // Ene_St01.ReStart: OffCollision for _InvincibleTime, StartAngle
@@ -123,6 +129,8 @@ public sealed partial class Round1EventStack
     public readonly List<Round1EnemyWaves.ActionData> Bullets=new List<Round1EnemyWaves.ActionData>();
     // The stack interpreter runs (attribute 16; So01 has none, Mk01/Si01 run empty ones): it times its own Bullets.
     public bool RunsStack=>stackMode && model!="Pf_Ene_So01" && model!="Pf_Ene_Mk01" && model!="Pf_Ene_Si01";         // position before the last step (the host's heading)
+    // The mover reaches its own Bullet events: the stack's, or route mode's by awakeRate (SplineMover.UpdateEvent).
+    public bool TimesBullets=>RunsStack || routeNames!=null && !stackMode;
     void StepSelf()
     {
         if(Ended){if(Children.Count>0){StepChildren();frame++;}return;}
@@ -137,7 +145,7 @@ public sealed partial class Round1EventStack
         else if(model=="Pf_Ene_Ml01")Ml01();                        // _moveState, then the base update
         else if(SjClass(model))Sj01();                              // _moveState before the stack / route
         else if(bitState!=0)Mn01cBit();                             // a summoned shield bit
-        if(model=="Pf_Ene_Sm01" && !Entered)Entered=InArea(pos);
+        if(SmClass(model) && !Entered)Entered=InArea(pos);
         inPlay=InArea(pos);                                         // IsInGameAreaWorld(pos, gameScreenAreas[Small])
         // So01 has no stack; Mk01's (and its Si01's) is empty: end rule 2 would remove them on frame 1 above the screen.
         if(!Ended && !paused && !SjFrozen && stackMode && model!="Pf_Ene_So01" && model!="Pf_Ene_Mk01" && model!="Pf_Ene_Si01")ExecStack(); // EnemyMover.Progress requires IsPlaying
@@ -299,10 +307,12 @@ public sealed partial class Round1EventStack
             {
                 if(step>0)
                 {
-                    var r=routes[route];localDuration+=step;float u=Mathf.Min(1,localDuration/RouteLength(route));
+                    var r=routes[route];float len=RouteLength(route),u0=Mathf.Min(1,localDuration/len);localDuration+=step;float u=Mathf.Min(1,localDuration/len);
                     float k=easeType==7?InOutSine01(u):Ease(easeType,u);pos=splineRoot+Sample(r,k)-r.points[0];   // relative to the route's first point (Mg01 starts at x -+100); 7 through the Cosf table
                     if(u>=1)done=true;
                     else if(lookAt==1){var t=Tangent(r,k);yaw=PlaneYaw(t.x,t.y);}
+                    else if(lookAt>=30 && lookAt<=32)Drift(Sample(r,k+(u-u0)).x-Sample(r,k).x);   // _getRotate(spline, _spRate, r1-r0): yaw stays _firstRotate
+                    else if(lookAt==20){var t=Tangent(r,k);yaw=PlaneYaw(t.x,t.y);RollForward(r,k,len);}
                 }
             }
             bool inside=InArea(gp);                                                // IsGameArea (Small/Medium)
@@ -352,7 +362,7 @@ public sealed partial class Round1EventStack
         if(routes==null || !routes.ContainsKey(name))yield break;
         yield return WaitFlag(MovingTask);
         if(nextLook==0)firstYaw=yaw;                                               // SetRotate(localRotation, 0)
-        else{lookAt=nextLook;yaw=firstYaw=nextLookYaw;nextLook=0;}
+        else{if(nextLook==20 || nextLook>=30 && nextLook<=32){rollAcc=0;Roll=0;}lookAt=nextLook;yaw=firstYaw=nextLookYaw;nextLook=0;}
         if(nextEase!=-1){easeType=nextEase;nextEase=-1;}
         route=name;moveType=6;localDuration=0;splineRoot=pos;
         yield return Move(MovingTask);
@@ -409,7 +419,8 @@ public sealed partial class Round1EventStack
     void ExecStack()
     {
         delay-=DT;                                                                 // _isExecStackEvent 0x1D6D3D0
-        if(delay>0 || finishWait)return;
+        if(delay>0){if(lookAt>=30 && lookAt<=32)Drift(0);return;}                // waiting with a drift type: _AddDriftAngle(0, 0.2, dt)
+        if(finishWait)return;
         delay=0;
         for(int guard=0;guard<1001;guard++)
         {
@@ -489,27 +500,45 @@ public sealed partial class Round1EventStack
     // routes one after another, each a relative leg eased by its own rate (speed*t/length); events fire when
     // routeIndex + eased offset passes their awakeRate. Removed when the last route ends: no area exit, no duration.
     public static bool RouteMode(Round1EnemyWaves.Definition d,string model)=>d!=null && (ClassRoutes(model,0)!=null
-        || d.routes!=null && d.routes.Length>0);
+        || d.routes!=null && d.routes.Length>0 || EventSpline(d)!=null);
+    // No routes and no stack (Sk01, La01): the awake-0 SplineMove's SetSpline (vslot 0x2F8 -> SplineMover.SetSpline 0x1D44540)
+    // gives the SplineMover its _splineLength, so _ProgressSpline advances by distance from the next frame, writes the
+    // position (SplineMover.Progress 0x1D43DF0 overwrites the move task's), dispatches the other events by that rate and
+    // ends the enemy (EndRoute) when the spline ends. Before that frame its rate is _durationPassTime / duration.
+    static Round1EnemyWaves.ActionData EventSpline(Round1EnemyWaves.Definition d)=>d==null || (d.attribute&16)!=0
+        || d.routes!=null && d.routes.Length>0 || d.events==null?null:Array.Find(d.events,e=>e.eventType==15 && e.awakeRate==0);
+    public static bool HasClassRoutes(string model)=>ClassRoutes(model,0)!=null;
     // Stack + route (Ene_Sf01/SPEC.md: Sf01 BG05, Sr01 BG06): the stack runs its events first, then the route step moves
     // the enemy at the stack's current speed. The route holds no task bit; the enemy ends by the stack's rule 2 or at the
     // route's end, whichever comes first.
     public bool StackRoute=>stackMode && routeNames!=null && ClassRoutes(model,0)==null;
     // Ene_Mp02.CreateRouteData 0x1CFD8C0: the prefab's _routeNames[_indexValue] replace the definition's routes.
     static readonly string[][] Mp02Routes={new[]{"common_D150","common_L300"},new[]{"common_D150","common_R300"},new[]{"common_R150","common_U200"},new[]{"common_L150","common_U200"}};
-    static string[] ClassRoutes(string model,int index)=>model=="Pf_Ene_Mp02"?Mp02Routes[Mathf.Clamp(index,0,3)]:null;
+    // Ene_Lb01.CreateRouteData 0x1DBCC90: the one route _routeNames[_indexValue] (Pf_Ene_Lb01: move_lb01_00..14).
+    static string[] ClassRoutes(string model,int index)=>model=="Pf_Ene_Mp02"?Mp02Routes[Mathf.Clamp(index,0,3)]
+        :model=="Pf_Ene_Lb01"?new[]{"move_lb01_"+Mathf.Clamp(index,0,14).ToString("00")}:null;
     readonly bool stackMode;
     readonly string[] routeNames;
     readonly List<Round1EnemyWaves.ActionData> rEvents=new List<Round1EnemyWaves.ActionData>(),pendingNow=new List<Round1EnemyWaves.ActionData>();
-    int routeIdx,rEv;float rRate,rOffset,rLastRate,rPause;Vector3 rStart;
+    int routeIdx,rEv;float rRate,rOffset,rLastRate,rPause,rDuration;Vector3 rStart;bool rDurationFrame;
     public bool RouteDrivenMover=>routeNames!=null;
+    // The route the SplineMover is on and its eased offset (_currentOffset 0x208), for EnemyMoverSnake's bones.
+    public Round1EnemyWaves.Route CurrentRoute=>routeNames!=null?routes[routeNames[routeIdx]]:null;
+    public float RouteOffset=>rOffset;
+    public float CurrentRouteLength=>routeNames!=null?RouteLength(routeNames[routeIdx]):0;
     void RouteStep()
     {
         if(pendingNow.Count>0){foreach(var e in pendingNow)RouteEvent(e);pendingNow.Clear();}
         if(rPause>0){rPause-=DT;return;}                                           // [I] Delay: _delayPlayPause, moverState 4
         string name=routeNames[routeIdx];var r=routes[name];float len=RouteLength(name);
-        float prev=rOffset;if(len>0)rRate+=DT*speed/len;
+        float prev=rOffset;
+        if(rDurationFrame){rDurationFrame=false;rRate=rDuration>0?DT/rDuration:1;}  // no spline until its SplineMove fires this frame
+        else if(len>0)rRate+=DT*speed/len;
         bool done=rRate>=1;float k=done?1:easeType==7?InOutSine01(rRate):Ease(easeType,rRate);
         rOffset=k;RouteEvents(prev,k-prev);if(Ended)return;
+        // _getRotate 0x1CDC830 when off < 1 (lookAt 1 below): drift types bank on the step's x, RollForward on the turn ahead.
+        if(!done && lookAt>=30 && lookAt<=32)Drift(Sample(r,k+(k-prev)).x-Sample(r,k).x);
+        else if(!done && lookAt==20 && len>0)RollForward(r,k,len);
         if(done)
         {
             if(routeIdx+1>=routeNames.Length)                                      // EndRoute (_isEndRouteKeep false)
@@ -522,7 +551,36 @@ public sealed partial class Round1EventStack
             return;
         }
         pos=rStart+Sample(r,k)-r.points[0];                                        // _routeRotate identity [I]
-        if(lookAt==1){var t=Tangent(r,k);if(t.x*t.x+t.y*t.y>1e-8f)yaw=PlaneYaw(t.x,t.y);}   // [I] nose along the eased path
+        if(lookAt==1 || lookAt==20){var t=Tangent(r,k);if(t.x*t.x+t.y*t.y>1e-8f)yaw=PlaneYaw(t.x,t.y);}   // [I] nose along the eased path
+    }
+    // ---- banking (InGameEnemyMoveBase._rollAngle 0x16C) --------------------------------------------------------------
+    // Bank about the model's local Z, degrees (applied after the yaw). Drift types 30-32 and RollForward 20 only.
+    public float Roll { get; private set; }
+    float rollAcc;
+    // _AddDriftAngle(x, 0.2, dt) 0x1CDB930, tables from the .cctor 0x1CDBD00 (k = lookAt - 30; ../movers/Ene_Sq01/SPEC.md sec. 5).
+    static readonly float[] DriftArcs={45,30,20},DriftSpeed={3,2,1},DriftBackSpeed={180,90,45};
+    void Drift(float dx)
+    {
+        int k=lookAt-30;float g=dx*DriftSpeed[k];
+        if(Mathf.Abs(g)<.2f){float back=DT*DriftBackSpeed[k];rollAcc=back>=Mathf.Abs(rollAcc)?0:rollAcc-Mathf.Sign(rollAcc)*back;}
+        else rollAcc+=g*rollAcc<0?2*g:.25f*g;
+        rollAcc=Mathf.Clamp(rollAcc,-100,100);Roll=rollAcc/100*DriftArcs[k];
+    }
+    // _rollForwardMove 0x1CDCE50: the heading 0.02-0.08 s ahead (four tangents averaged) against the current one
+    // (VectorUtility.GetQuaternionDiff 0x1DF7240: yaw difference). The roll gains a quarter of the turn (twice it when
+    // reversing), else returns by 6 a frame; clamped to +-100. The up vector leans to the turn side by |roll|/160, so the
+    // model banks atan(t / (1 - t)): up to 59 degrees. Not scaled by dt (60 Hz).
+    void RollForward(Round1EnemyWaves.Route r,float off,float len)
+    {
+        float step=speed*.02f/len;Vector2 ahead=Vector2.zero;
+        for(int i=1;i<=4;i++){var t=Tangent(r,Mathf.Min(1,off+i*step));ahead+=t.normalized*.25f;}
+        var now=Tangent(r,off);
+        float diff=Norm180(PlaneYaw(ahead.x,ahead.y)-PlaneYaw(now.x,now.y));
+        if(Mathf.Abs(diff)>=1)rollAcc+=diff*(rollAcc*diff<0?2:.25f);
+        else rollAcc=Mathf.Abs(rollAcc)<=6?0:rollAcc-Mathf.Sign(rollAcc)*6;
+        rollAcc=Mathf.Clamp(rollAcc,-100,100);
+        float lean=Mathf.Min(1,Mathf.Abs(rollAcc)/160);
+        Roll=-Mathf.Sign(rollAcc)*Mathf.Atan2(lean,1-lean)*Mathf.Rad2Deg;          // up toward Matrix4x4.Rotate(look)·right: a negative Z turn
     }
     // SplineMover.UpdateEvent 0x1D44720: an event whose rate was jumped over is lost; one at n.0 fires on route n's first frame.
     void RouteEvents(float prev,float delta)
@@ -545,6 +603,7 @@ public sealed partial class Round1EventStack
         else if(t==1 && e.dotime>0)rPause=Mathf.Max(rPause,e.dotime);
         else if(t==10 || t==11)Start(ObjFlag(e,t==10),jobs);
         else if(t==16){if(e.intValue1>=0 && e.intValue1<=12)nextEase=e.intValue1;}
+        else if(t==8 || t==83)Bullets.Add(e);                                     // Round1EnemyAttacks cues it at this rate (Sk01 at 46%)
         // 2/3 Rotate: SplineMover.Progress rewrites the root's localRotation (_firstRotate * _splineRotate) every frame, so a
         // root tween does not hold [I]; X01-X03's Rotates turn a child model. Not modelled.
     }
@@ -562,7 +621,7 @@ public sealed partial class Round1EventStack
             }
             else if(moveType==2 && sgDone && speed<20)speed=20;                   // outSpeed 20
         }
-        if(model=="Pf_Ene_Sm01" && !Ended)                                         // Ene_Sm01._progressMove 0x1D02B30
+        if(SmClass(model) && !Ended)                                               // Ene_Sm01._progressMove 0x1D02B30
         {
             if(sm==null)
             {

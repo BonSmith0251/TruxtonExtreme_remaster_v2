@@ -1,0 +1,89 @@
+#### InGame.Kernel.InGameManager::_getSlideRate() RVA 1cf1680 len 188
+01cf1680  mov      qword ptr [rsp + 0x10], rbx
+01cf1685  mov      qword ptr [rsp + 0x18], rbp
+01cf168a  push     rdi
+01cf168b  sub      rsp, 0x50
+01cf168f  cmp      byte ptr [rip + 0x2971ce4], 0   ; [466337a] bss
+01cf1696  mov      rbp, rcx
+01cf1699  movaps   xmmword ptr [rsp + 0x40], xmm6   ; ._bgSlideRate
+01cf169e  movaps   xmmword ptr [rsp + 0x30], xmm7   ; ._effectTimeFactor
+01cf16a3  jne      0x1cf16c4
+01cf16a5  lea      rcx, [rip + 0x26e806c]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf16ac  call     0x4e0a50
+01cf16b1  lea      rcx, [rip + 0x268c7e8]   ; [437dea0] TypeInfo UnityEngine.Object
+01cf16b8  call     0x4e0a50
+01cf16bd  mov      byte ptr [rip + 0x2971cb6], 1   ; [466337a] bss
+01cf16c4  movss    xmm7, dword ptr [rip + 0x17ef4fc]   ; rdata 34e0bc8 f=0.5,1,3.141593,4 d=0.007812501834
+01cf16cc  xor      ebx, ebx
+01cf16ce  mov      edi, ebx
+01cf16d0  mov      qword ptr [rsp + 0x60], rsi   ; ._damageMag
+01cf16d5  xorps    xmm6, xmm6
+01cf16d8  nop      dword ptr [rax + rax]
+01cf16e0  mov      rcx, qword ptr [rip + 0x26e8031]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf16e7  cmp      dword ptr [rcx + 0xe4], 0
+01cf16ee  jne      0x1cf16fc
+01cf16f0  call     0x4e0d90
+01cf16f5  mov      rcx, qword ptr [rip + 0x26e801c]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf16fc  mov      rax, qword ptr [rcx + 0xb8]
+01cf1703  cmp      ebx, dword ptr [rax + 0xd0]   ; static InGameManager.PlayerMax
+01cf1709  jge      0x1cf179a
+01cf170f  xor      r8d, r8d
+01cf1712  mov      edx, ebx
+01cf1714  mov      rcx, rbp
+01cf1717  call     0x1ce5a30   ; InGameManager::GetPlayerControll(System.Int32)
+01cf171c  mov      rcx, qword ptr [rip + 0x268c77d]   ; [437dea0] TypeInfo UnityEngine.Object
+01cf1723  mov      rsi, rax
+01cf1726  cmp      dword ptr [rcx + 0xe4], 0
+01cf172d  jne      0x1cf1734
+01cf172f  call     0x4e0d90
+01cf1734  xor      r8d, r8d
+01cf1737  xor      edx, edx
+01cf1739  mov      rcx, rsi
+01cf173c  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01cf1741  test     al, al
+01cf1743  je       0x1cf178f
+01cf1745  mov      rax, qword ptr [rbp + 0x170]   ; ._playerGamePosition
+01cf174c  test     rax, rax
+01cf174f  je       0x1cf1803
+01cf1755  cmp      ebx, dword ptr [rax + 0x18]
+01cf1758  jae      0x1cf17fd
+01cf175e  movsd    xmm0, qword ptr [rdi + rax + 0x20]   ; ._baseTimeFactor
+01cf1764  movsd    qword ptr [rsp + 0x20], xmm0   ; ._baseTimeFactor
+01cf176a  test     rsi, rsi
+01cf176d  je       0x1cf1803
+01cf1773  xor      edx, edx
+01cf1775  mov      rcx, rsi
+01cf1778  call     0x1d4e580   ; PlayerControll::get_IsTeamMode()
+01cf177d  movss    xmm0, dword ptr [rsp + 0x20]   ; ._baseTimeFactor
+01cf1783  test     al, al
+01cf1785  je       0x1cf178b
+01cf1787  mulss    xmm0, xmm7
+01cf178b  addss    xmm6, xmm0
+01cf178f  inc      ebx
+01cf1791  add      rdi, 0xc
+01cf1795  jmp      0x1cf16e0
+01cf179a  cmp      dword ptr [rcx + 0xe4], 0
+01cf17a1  jne      0x1cf17af
+01cf17a3  call     0x4e0d90
+01cf17a8  mov      rcx, qword ptr [rip + 0x26e7f69]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cf17af  mov      rax, qword ptr [rcx + 0xb8]
+01cf17b6  movss    xmm0, dword ptr [rip + 0x17ef436]   ; rdata 34e0bf4 f=-1,0,0,1 d=1.58735232e-314
+01cf17be  divss    xmm6, dword ptr [rax + 0x134]   ; static InGameManager.PlayerControllWidth
+01cf17c6  comiss   xmm0, xmm6
+01cf17c9  ja       0x1cf17d8
+01cf17cb  movss    xmm0, dword ptr [rip + 0x17ef3f9]   ; rdata 34e0bcc f=1,3.141593,4,10 d=50.12387842
+01cf17d3  comiss   xmm6, xmm0
+01cf17d6  jbe      0x1cf17db
+01cf17d8  movaps   xmm6, xmm0
+01cf17db  mov      rsi, qword ptr [rsp + 0x60]   ; ._damageMag
+01cf17e0  movaps   xmm0, xmm6
+01cf17e3  movaps   xmm6, xmmword ptr [rsp + 0x40]   ; ._bgSlideRate
+01cf17e8  mov      rbx, qword ptr [rsp + 0x68]   ; ._bulletDistanceMax
+01cf17ed  mov      rbp, qword ptr [rsp + 0x70]   ; ._stageTimeline
+01cf17f2  movaps   xmm7, xmmword ptr [rsp + 0x30]   ; ._effectTimeFactor
+01cf17f7  add      rsp, 0x50
+01cf17fb  pop      rdi
+01cf17fc  ret      
+01cf17fd  call     0x4e0cf0
+01cf1802  int3     
+01cf1803  call     0x4e0d00

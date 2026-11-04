@@ -106,12 +106,11 @@ public class Round1Autopilot : MonoBehaviour
     {
         switch(kind)
         {
-            case Round1PickupKind.Power:return weapon.Level<4?9:1;
-            case Round1PickupKind.BombStock:return weapon.Bombs<5?8:2;
+            // Anything that has no effect still pays the 5000 bonus (worth 3).
+            case Round1PickupKind.Power:return weapon.Level<weapon.LevelMax || weapon.PowerItems<3?9:3;
+            case Round1PickupKind.BombStock:return weapon.Bombs<5?8:3;
             case Round1PickupKind.OneUp:case Round1PickupKind.TwoUp:case Round1PickupKind.ThreeUp:return 10;
-            case Round1PickupKind.SpeedDown:return weapon.SpeedLevel>3?5:0;
-            case Round1PickupKind.SpeedUp:return weapon.SpeedLevel<3?6:0;
-            case Round1PickupKind.Bomber:return weapon.BombLevel<3?7:1;
+            case Round1PickupKind.SpeedUp:return weapon.SpeedCapacity<3?6:3;
             default:return 3;
         }
     }

@@ -1,0 +1,293 @@
+01ce8580  push     rbx
+01ce8582  sub      rsp, 0x60
+01ce8586  cmp      byte ptr [rip + 0x297adf4], 0   ; [4663381] bss
+01ce858d  mov      rbx, rcx
+01ce8590  jne      0x1ce85bd
+01ce8592  lea      rcx, [rip + 0x26b9747]   ; [43a1ce0] TypeInfo DG.Tweening.DOTween
+01ce8599  call     0x4e0a50
+01ce859e  lea      rcx, [rip + 0x26f1173]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01ce85a5  call     0x4e0a50
+01ce85aa  lea      rcx, [rip + 0x26958ef]   ; [437dea0] TypeInfo UnityEngine.Object
+01ce85b1  call     0x4e0a50
+01ce85b6  mov      byte ptr [rip + 0x297adc4], 1   ; [4663381] bss
+01ce85bd  mov      rax, qword ptr [rbx + 0x28]   ; ._playTimeFactor
+01ce85c1  mov      qword ptr [rsp + 0x70], rsi   ; ._stageTimeline
+01ce85c6  mov      qword ptr [rsp + 0x78], rdi   ; ._stageOrder
+01ce85cb  movaps   xmmword ptr [rsp + 0x50], xmm6   ; ._isStopStage
+01ce85d0  test     rax, rax
+01ce85d3  je       0x1ce8aa6
+01ce85d9  mov      rcx, qword ptr [rip + 0x26b9700]   ; [43a1ce0] TypeInfo DG.Tweening.DOTween
+01ce85e0  movss    xmm6, dword ptr [rax + 0x18]
+01ce85e5  movaps   xmmword ptr [rsp + 0x40], xmm7   ; ._bgSlideRate
+01ce85ea  movaps   xmm7, xmm6
+01ce85ed  cmp      dword ptr [rcx + 0xe4], 0
+01ce85f4  jne      0x1ce85fb
+01ce85f6  call     0x4e0d90
+01ce85fb  xor      r8d, r8d
+01ce85fe  movaps   xmm1, xmm7
+01ce8601  movaps   xmm0, xmm6
+01ce8604  call     0x64b190   ; DOTween::ManualUpdate(System.Single,System.Single)
+01ce8609  cmp      dword ptr [rbx + 0x25c], 3   ; ._playPhase
+01ce8610  movaps   xmm7, xmmword ptr [rsp + 0x40]   ; ._bgSlideRate
+01ce8615  je       0x1ce8636
+01ce8617  cmp      dword ptr [rbx + 0x25c], 8   ; ._playPhase
+01ce861e  je       0x1ce8636
+01ce8620  cmp      dword ptr [rbx + 0x25c], 1   ; ._playPhase
+01ce8627  je       0x1ce8636
+01ce8629  cmp      dword ptr [rbx + 0x25c], 2   ; ._playPhase
+01ce8630  jne      0x1ce876b
+01ce8636  mov      rcx, qword ptr [rip + 0x2695863]   ; [437dea0] TypeInfo UnityEngine.Object
+01ce863d  mov      rdi, qword ptr [rbx + 0x98]   ; ._inGameEnemyRoot
+01ce8644  cmp      dword ptr [rcx + 0xe4], 0
+01ce864b  jne      0x1ce8652
+01ce864d  call     0x4e0d90
+01ce8652  xor      r8d, r8d
+01ce8655  xor      edx, edx
+01ce8657  mov      rcx, rdi
+01ce865a  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01ce865f  test     al, al
+01ce8661  je       0x1ce876b
+01ce8667  cmp      byte ptr [rip + 0x297ad14], 0   ; [4663382] bss
+01ce866e  movss    xmm6, dword ptr [rbx + 0x40]   ; ._bgSlideRate
+01ce8673  jne      0x1ce8694
+01ce8675  lea      rcx, [rip + 0x26cee44]   ; [43b74c0] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.CinemachineMan>::IsInstanceNull
+01ce867c  call     0x4e0a50
+01ce8681  lea      rcx, [rip + 0x26ceee8]   ; [43b7570] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.CinemachineMan>::get_GetInstance
+01ce8688  call     0x4e0a50
+01ce868d  mov      byte ptr [rip + 0x297acee], 1   ; [4663382] bss
+01ce8694  mov      rcx, qword ptr [rip + 0x26cee25]   ; [43b74c0] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.CinemachineMan>::IsInstanceNull
+01ce869b  call     0xd102f0   ; MonoBehaviourSingleton`1::IsInstanceNull() | SimpleSingleton`1::IsInstanceNull()
+01ce86a0  test     al, al
+01ce86a2  jne      0x1ce876b
+01ce86a8  mov      rax, qword ptr [rip + 0x26ceec1]   ; [43b7570] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.CinemachineMan>::get_GetInstance
+01ce86af  mov      rax, qword ptr [rax + 0x20]   ; ._baseTimeFactor
+01ce86b3  test     byte ptr [rax + 0x135], 1
+01ce86ba  jne      0x1ce86c4
+01ce86bc  mov      rcx, rax
+01ce86bf  call     0x4de1e0
+01ce86c4  mov      rax, qword ptr [rax + 0xc0]   ; ._collisionArea
+01ce86cb  mov      rax, qword ptr [rax + 0x10]
+01ce86cf  test     byte ptr [rax + 0x135], 1
+01ce86d6  jne      0x1ce86e0
+01ce86d8  mov      rcx, rax
+01ce86db  call     0x4de1e0
+01ce86e0  mov      rax, qword ptr [rax + 0xb8]   ; ._poolRoot
+01ce86e7  mov      rdi, qword ptr [rax]
+01ce86ea  test     rdi, rdi
+01ce86ed  je       0x1ce8aa6
+01ce86f3  xor      r8d, r8d
+01ce86f6  movaps   xmm1, xmm6
+01ce86f9  mov      rcx, rdi
+01ce86fc  call     0x1cc5d50   ; CinemachineMan::SetBGCameraSlide(System.Single)
+01ce8701  movsd    xmm0, qword ptr [rdi + 0x60]   ; ._damageMag
+01ce8706  mov      eax, dword ptr [rdi + 0x68]   ; ._bulletDistanceMax
+01ce8709  mulss    xmm6, dword ptr [rip + 0x1804313]   ; rdata 34eca24 f=-0.5,-10,0,3.370281e+12 d=-524288.373
+01ce8711  mov      rcx, qword ptr [rbx + 0x98]   ; ._inGameEnemyRoot
+01ce8718  movsd    qword ptr [rsp + 0x20], xmm0   ; ._baseTimeFactor
+01ce871e  movsd    qword ptr [rbx + 0x2f0], xmm0   ; ._cinemachineBGCameraSlide
+01ce8726  movd     xmm0, eax
+01ce872a  movaps   xmm1, xmm6
+01ce872d  mulss    xmm1, dword ptr [rsp + 0x20]   ; ._baseTimeFactor
+01ce8733  movaps   xmm2, xmm6
+01ce8736  mov      dword ptr [rbx + 0x2f8], eax
+01ce873c  mulss    xmm2, dword ptr [rsp + 0x24]   ; .tsec
+01ce8742  mulss    xmm6, xmm0
+01ce8746  test     rcx, rcx
+01ce8749  je       0x1ce8aa6
+01ce874f  unpcklps xmm1, xmm2
+01ce8752  lea      rdx, [rsp + 0x20]   ; ._baseTimeFactor
+01ce8757  xor      r8d, r8d
+01ce875a  movsd    qword ptr [rsp + 0x20], xmm1   ; ._baseTimeFactor
+01ce8760  movss    dword ptr [rsp + 0x28], xmm6   ; ._playTimeFactor
+01ce8766  call     0x3094570   ; Transform::set_localPosition(UnityEngine.Vector3)
+01ce876b  cmp      byte ptr [rbx + 0x54], 0   ; ._isQuitDone
+01ce876f  jne      0x1ce8a91
+01ce8775  mov      rax, qword ptr [rbx + 0x28]   ; ._playTimeFactor
+01ce8779  test     rax, rax
+01ce877c  je       0x1ce8aa6
+01ce8782  movss    xmm1, dword ptr [rax + 0x18]
+01ce8787  xor      r8d, r8d
+01ce878a  mov      rcx, rbx
+01ce878d  call     0x1ce2d80   ; InGameManager::CollisionUpdateSolution(System.Single)
+01ce8792  xor      edx, edx
+01ce8794  mov      rcx, rbx
+01ce8797  call     0x1cf01c0   ; InGameManager::_UpdateParameters()
+01ce879c  mov      rcx, qword ptr [rbx + 0x148]   ; ._physicsUpdater
+01ce87a3  test     rcx, rcx
+01ce87a6  je       0x1ce87c2
+01ce87a8  mov      rax, qword ptr [rbx + 0x28]   ; ._playTimeFactor
+01ce87ac  test     rax, rax
+01ce87af  je       0x1ce8aa6
+01ce87b5  movss    xmm1, dword ptr [rax + 0x18]
+01ce87ba  xor      r8d, r8d
+01ce87bd  call     0x1d3b310   ; PhysicsUpdater::ProgressLate(System.Single)
+01ce87c2  xor      edx, edx
+01ce87c4  mov      rcx, rbx
+01ce87c7  call     0x1cf0d80   ; InGameManager::_checkPauseState()
+01ce87cc  cmp      qword ptr [rbx + 0xe8], 0   ; ._enemyManager
+01ce87d4  je       0x1ce87f7
+01ce87d6  mov      rax, qword ptr [rbx + 0x28]   ; ._playTimeFactor
+01ce87da  test     rax, rax
+01ce87dd  je       0x1ce8aa6
+01ce87e3  movss    xmm1, dword ptr [rax + 0x18]
+01ce87e8  xor      r8d, r8d
+01ce87eb  mov      rcx, qword ptr [rbx + 0xe8]   ; ._enemyManager
+01ce87f2  call     0x1cd6170   ; InGameEnemyManager::LocalLateUpdater(System.Single)
+01ce87f7  xor      esi, esi
+01ce87f9  nop      dword ptr [rax]
+01ce8800  mov      rax, qword ptr [rip + 0x26f0f11]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01ce8807  cmp      dword ptr [rax + 0xe4], 0
+01ce880e  jne      0x1ce881f
+01ce8810  mov      rcx, rax
+01ce8813  call     0x4e0d90
+01ce8818  mov      rax, qword ptr [rip + 0x26f0ef9]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01ce881f  mov      rax, qword ptr [rax + 0xb8]
+01ce8826  cmp      esi, dword ptr [rax + 0xd0]   ; static InGameManager.PlayerMax
+01ce882c  jge      0x1ce88e3
+01ce8832  xor      r8d, r8d
+01ce8835  mov      edx, esi
+01ce8837  mov      rcx, rbx
+01ce883a  call     0x1ce5a30   ; InGameManager::GetPlayerControll(System.Int32)
+01ce883f  mov      rcx, qword ptr [rip + 0x269565a]   ; [437dea0] TypeInfo UnityEngine.Object
+01ce8846  mov      rdi, rax
+01ce8849  cmp      dword ptr [rcx + 0xe4], 0
+01ce8850  jne      0x1ce8857
+01ce8852  call     0x4e0d90
+01ce8857  xor      r8d, r8d
+01ce885a  xor      edx, edx
+01ce885c  mov      rcx, rdi
+01ce885f  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01ce8864  test     al, al
+01ce8866  je       0x1ce88dc
+01ce8868  mov      rax, qword ptr [rbx + 0x28]   ; ._playTimeFactor
+01ce886c  test     rax, rax
+01ce886f  je       0x1ce8aa6
+01ce8875  test     rdi, rdi
+01ce8878  je       0x1ce8aa6
+01ce887e  movss    xmm1, dword ptr [rax + 0x18]
+01ce8883  xor      r8d, r8d
+01ce8886  mov      rcx, rdi
+01ce8889  call     0x1d4a1d0   ; PlayerControll::LocalLateUpdater(System.Single)
+01ce888e  xor      edx, edx
+01ce8890  mov      rcx, rdi
+01ce8893  call     0x1d4e610   ; PlayerControll::get_IsUpdatePosition()
+01ce8898  test     al, al
+01ce889a  je       0x1ce88dc
+01ce889c  mov      rdx, qword ptr [rdi + 0xe8]   ; ._enemyManager
+01ce88a3  test     rdx, rdx
+01ce88a6  je       0x1ce8aa6
+01ce88ac  xor      r8d, r8d
+01ce88af  lea      rcx, [rsp + 0x30]   ; ._effectTimeFactor
+01ce88b4  call     0x3093ba0   ; Transform::get_position()
+01ce88b9  xor      r9d, r9d
+01ce88bc  lea      r8, [rsp + 0x20]   ; ._baseTimeFactor
+01ce88c1  mov      edx, esi
+01ce88c3  mov      rcx, rbx
+01ce88c6  movsd    xmm0, qword ptr [rax]
+01ce88ca  mov      eax, dword ptr [rax + 8]
+01ce88cd  movsd    qword ptr [rsp + 0x20], xmm0   ; ._baseTimeFactor
+01ce88d3  mov      dword ptr [rsp + 0x28], eax   ; ._playTimeFactor
+01ce88d7  call     0x1ceda50   ; InGameManager::UpdatePlayerPosition(System.Int32,UnityEngine.Vector3)
+01ce88dc  inc      esi
+01ce88de  jmp      0x1ce8800
+01ce88e3  cmp      qword ptr [rbx + 0xf0], 0   ; ._bulletManager
+01ce88eb  je       0x1ce8a26
+01ce88f1  cmp      byte ptr [rip + 0x297aa73], 0   ; [466336b] bss
+01ce88f8  mov      rsi, qword ptr [rbx + 0xf0]   ; ._bulletManager
+01ce88ff  jne      0x1ce892c
+01ce8901  lea      rcx, [rip + 0x26cf9c8]   ; [43b82d0] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameResident>::IsInstanceNull
+01ce8908  call     0x4e0a50
+01ce890d  lea      rcx, [rip + 0x26cfa6c]   ; [43b8380] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameResident>::get_GetInstance
+01ce8914  call     0x4e0a50
+01ce8919  lea      rcx, [rip + 0x2695580]   ; [437dea0] TypeInfo UnityEngine.Object
+01ce8920  call     0x4e0a50
+01ce8925  mov      byte ptr [rip + 0x297aa3f], 1   ; [466336b] bss
+01ce892c  mov      rcx, qword ptr [rip + 0x26cf99d]   ; [43b82d0] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameResident>::IsInstanceNull
+01ce8933  call     0xd102f0   ; MonoBehaviourSingleton`1::IsInstanceNull() | SimpleSingleton`1::IsInstanceNull()
+01ce8938  test     al, al
+01ce893a  jne      0x1ce89ef
+01ce8940  mov      rax, qword ptr [rip + 0x26cfa39]   ; [43b8380] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameResident>::get_GetInstance
+01ce8947  mov      rax, qword ptr [rax + 0x20]   ; ._baseTimeFactor
+01ce894b  test     byte ptr [rax + 0x135], 1
+01ce8952  jne      0x1ce895c
+01ce8954  mov      rcx, rax
+01ce8957  call     0x4de1e0
+01ce895c  mov      rax, qword ptr [rax + 0xc0]   ; ._collisionArea
+01ce8963  mov      rax, qword ptr [rax + 0x10]
+01ce8967  test     byte ptr [rax + 0x135], 1
+01ce896e  jne      0x1ce8978
+01ce8970  mov      rcx, rax
+01ce8973  call     0x4de1e0
+01ce8978  mov      rax, qword ptr [rax + 0xb8]   ; ._poolRoot
+01ce897f  mov      rcx, qword ptr [rax]
+01ce8982  test     rcx, rcx
+01ce8985  je       0x1ce8aa6
+01ce898b  mov      rdi, qword ptr [rcx + 0x98]   ; ._inGameEnemyRoot
+01ce8992  mov      rcx, qword ptr [rip + 0x2695507]   ; [437dea0] TypeInfo UnityEngine.Object
+01ce8999  cmp      dword ptr [rcx + 0xe4], 0
+01ce89a0  jne      0x1ce89a7
+01ce89a2  call     0x4e0d90
+01ce89a7  xor      r8d, r8d
+01ce89aa  xor      edx, edx
+01ce89ac  mov      rcx, rdi
+01ce89af  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01ce89b4  test     al, al
+01ce89b6  je       0x1ce89ef
+01ce89b8  mov      rcx, qword ptr [rip + 0x26cf9c1]   ; [43b8380] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameResident>::get_GetInstance
+01ce89bf  call     0x27540
+01ce89c4  test     rax, rax
+01ce89c7  je       0x1ce8aa6
+01ce89cd  mov      rcx, qword ptr [rax + 0x98]   ; ._inGameEnemyRoot
+01ce89d4  test     rcx, rcx
+01ce89d7  je       0x1ce8aa6
+01ce89dd  movss    xmm1, dword ptr [rbx + 0x298]   ; ._DiPoint
+01ce89e5  xor      r8d, r8d
+01ce89e8  call     0x2720b90   ; GameScalability::GetBulletSpeedScale(System.Single)
+01ce89ed  jmp      0x1ce89f7
+01ce89ef  movss    xmm0, dword ptr [rip + 0x17f81d5]   ; rdata 34e0bcc f=1,3.141593,4,10 d=50.12387842
+01ce89f7  movss    dword ptr [rsi + 0x6c], xmm0   ; ._playerCountMax
+01ce89fc  mov      rax, qword ptr [rbx + 0x28]   ; ._playTimeFactor
+01ce8a00  test     rax, rax
+01ce8a03  je       0x1ce8aa6
+01ce8a09  mov      rcx, qword ptr [rbx + 0xf0]   ; ._bulletManager
+01ce8a10  test     rcx, rcx
+01ce8a13  je       0x1ce8aa6
+01ce8a19  movss    xmm1, dword ptr [rax + 0x18]
+01ce8a1e  xor      r8d, r8d
+01ce8a21  call     0x1ccbc30   ; InGameBulletManager::LocalLateUpdater(System.Single)
+01ce8a26  mov      rax, qword ptr [rbx + 0x28]   ; ._playTimeFactor
+01ce8a2a  test     rax, rax
+01ce8a2d  je       0x1ce8aa6
+01ce8a2f  movss    xmm1, dword ptr [rax + 0x18]
+01ce8a34  xor      r8d, r8d
+01ce8a37  mov      rcx, rbx
+01ce8a3a  call     0x1cef810   ; InGameManager::_UpdateJems(System.Single)
+01ce8a3f  xor      edx, edx
+01ce8a41  mov      rcx, rbx
+01ce8a44  call     0x1cef280   ; InGameManager::_JemsComplete()
+01ce8a49  mov      rcx, qword ptr [rbx + 0x108]   ; ._effectManager
+01ce8a50  test     rcx, rcx
+01ce8a53  je       0x1ce8a5c
+01ce8a55  xor      edx, edx
+01ce8a57  call     0x1cd07a0   ; InGameEffectManager::PlayJobQue()
+01ce8a5c  mov      rcx, qword ptr [rbx + 0x128]   ; ._ruinManager
+01ce8a63  test     rcx, rcx
+01ce8a66  je       0x1ce8a7e
+01ce8a68  mov      rax, qword ptr [rbx + 0x28]   ; ._playTimeFactor
+01ce8a6c  test     rax, rax
+01ce8a6f  je       0x1ce8aa6
+01ce8a71  movss    xmm1, dword ptr [rax + 0x18]
+01ce8a76  xor      r8d, r8d
+01ce8a79  call     0x1d24830   ; InGameRuinManager::UpdateRuins(System.Single)
+01ce8a7e  mov      rcx, qword ptr [rbx + 0x108]   ; ._effectManager
+01ce8a85  test     rcx, rcx
+01ce8a88  je       0x1ce8a91
+01ce8a8a  xor      edx, edx
+01ce8a8c  call     0x1ccfcc0   ; InGameEffectManager::CompleteJobs()
+01ce8a91  movaps   xmm6, xmmword ptr [rsp + 0x50]   ; ._isStopStage
+01ce8a96  mov      rdi, qword ptr [rsp + 0x78]   ; ._stageOrder
+01ce8a9b  mov      rsi, qword ptr [rsp + 0x70]   ; ._stageTimeline
+01ce8aa0  add      rsp, 0x60
+01ce8aa4  pop      rbx
+01ce8aa5  ret      
+01ce8aa6  call     0x4e0d00

@@ -1,0 +1,12 @@
+#### InGame.Kernel.InGameManager::get_IsBGSlideMode() RVA 1cf2a70 len 29
+01cf2a70  cmp      dword ptr [rcx + 0x25c], 3   ; ._playPhase
+01cf2a77  je       0x1cf2a96
+01cf2a79  cmp      dword ptr [rcx + 0x25c], 8   ; ._playPhase
+01cf2a80  je       0x1cf2a96
+01cf2a82  cmp      dword ptr [rcx + 0x25c], 1   ; ._playPhase
+01cf2a89  je       0x1cf2a96
+01cf2a8b  cmp      dword ptr [rcx + 0x25c], 2   ; ._playPhase
+01cf2a92  sete     al
+01cf2a95  ret      
+01cf2a96  mov      al, 1
+01cf2a98  ret      

@@ -81,7 +81,7 @@ public partial class Round1Weapon
         if(active+ShotsAtLevel>ShotsAtLevel*profile.ammoVolleys || free<ShotsAtLevel)return;
         foreach(var spec in rules.tables[(int)Arms].shots)
         {
-            if((spec.mask&(1<<(Level-1)))==0)continue;
+            if((spec.mask&(1<<(ShotLevel-1)))==0)continue;
             var b=bullets.Find(x=>!x.active);
             b.position=Muzzle(spec);b.velocity=ShotDirection(spec.angle)*(profile.speed/SourceHeight);
             b.age=0;b.travel=0;b.napalmAge=0;b.napalm=false;b.size=1;b.kind=Arms;
@@ -170,7 +170,7 @@ public partial class Round1Weapon
         HideBeams(false);int number=0;
         foreach(var spec in rules.tables[(int)Arms].shots)
         {
-            if((spec.mask&(1<<(Level-1)))==0 || number>=16)continue;
+            if((spec.mask&(1<<(ShotLevel-1)))==0 || number>=16)continue;
             int index=number++;var start=Muzzle(spec);
             Vector2 end=AdvanceLaser(index,start,ShotDirection(spec.angle),Round1Balance.Current.weapons[(int)Arms],dt,null);
             if(Arms==Round1Arms.Gold && Valid(lasers[index].target,lasers[index].targetId) && lasers[index].target.lockOn)

@@ -1,0 +1,411 @@
+#### InGame.Utility.LayerUtility::SetLayerForce(UnityEngine.GameObject,System.Int32) RVA 1dd7e30 len 255
+01dd7e30  mov      qword ptr [rsp + 0x10], rbx
+01dd7e35  mov      qword ptr [rsp + 0x18], rsi
+01dd7e3a  push     rdi
+01dd7e3b  push     r14
+01dd7e3d  push     r15
+01dd7e3f  sub      rsp, 0x40
+01dd7e43  mov      edi, edx
+01dd7e45  mov      rbx, rcx
+01dd7e48  cmp      byte ptr [rip + 0x288bae4], 0   ; [4663933] bss
+01dd7e4f  jne      0x1dd7e88
+01dd7e51  lea      rcx, [rip + 0x25f4b38]   ; [43cc990] TypeInfo System.IDisposable
+01dd7e58  call     0x4e0a50
+01dd7e5d  lea      rcx, [rip + 0x25f5afc]   ; [43cd960] TypeInfo System.Collections.IEnumerator
+01dd7e64  call     0x4e0a50
+01dd7e69  lea      rcx, [rip + 0x2593110]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd7e70  call     0x4e0a50
+01dd7e75  lea      rcx, [rip + 0x25de374]   ; [43b61f0] TypeInfo UnityEngine.Transform
+01dd7e7c  call     0x4e0a50
+01dd7e81  mov      byte ptr [rip + 0x288baab], 1   ; [4663933] bss
+01dd7e88  xor      esi, esi
+01dd7e8a  mov      qword ptr [rsp + 0x60], rsi   ; ._currentPosition
+01dd7e8f  mov      qword ptr [rsp + 0x78], rsi   ; ._basePosition
+01dd7e94  test     rbx, rbx
+01dd7e97  je       0x1dd8080
+01dd7e9d  xor      r8d, r8d
+01dd7ea0  mov      edx, edi
+01dd7ea2  mov      rcx, rbx
+01dd7ea5  call     0x3065470   ; GameObject::set_layer(System.Int32)
+01dd7eaa  xor      edx, edx
+01dd7eac  mov      rcx, rbx
+01dd7eaf  call     0x30651d0   ; GameObject::get_transform()
+01dd7eb4  test     rax, rax
+01dd7eb7  je       0x1dd8080
+01dd7ebd  xor      edx, edx
+01dd7ebf  mov      rcx, rax
+01dd7ec2  call     0x308db60   ; Transform::GetEnumerator()
+01dd7ec7  mov      qword ptr [rsp + 0x60], rax   ; ._currentPosition
+01dd7ecc  mov      qword ptr [rsp + 0x28], rsi   ; ._HitPoint
+01dd7ed1  lea      r15, [rsp + 0x60]   ; ._currentPosition
+01dd7ed6  mov      qword ptr [rsp + 0x30], r15   ; ._Damage
+01dd7edb  lea      r14, [rsp + 0x78]   ; ._basePosition
+01dd7ee0  mov      qword ptr [rsp + 0x38], r14   ; .onDisableEvent
+01dd7ee5  nop      word ptr [rax + rax]
+01dd7ef0  mov      r8, qword ptr [rsp + 0x60]   ; ._currentPosition
+01dd7ef5  test     r8, r8
+01dd7ef8  je       0x1dd8074
+01dd7efe  xor      ecx, ecx
+01dd7f00  mov      rdx, qword ptr [rip + 0x25f5a59]   ; [43cd960] TypeInfo System.Collections.IEnumerator
+01dd7f07  call     0x22b0
+01dd7f0c  test     al, al
+01dd7f0e  je       0x1dd800c
+01dd7f14  mov      rbx, qword ptr [rsp + 0x60]   ; ._currentPosition
+01dd7f19  test     rbx, rbx
+01dd7f1c  je       0x1dd806f
+01dd7f22  mov      r9, qword ptr [rip + 0x25f5a37]   ; [43cd960] TypeInfo System.Collections.IEnumerator
+01dd7f29  mov      r10, qword ptr [rbx]
+01dd7f2c  movzx    ecx, si
+01dd7f2f  movzx    edx, word ptr [r10 + 0x12e]
+01dd7f37  cmp      si, dx
+01dd7f3a  jae      0x1dd7f57
+01dd7f3c  mov      r8, qword ptr [r10 + 0xb0]   ; ._updateEventCount
+01dd7f43  movzx    eax, cx
+01dd7f46  add      rax, rax
+01dd7f49  cmp      qword ptr [r8 + rax*8], r9
+01dd7f4d  je       0x1dd7f8c
+01dd7f4f  inc      cx
+01dd7f52  cmp      cx, dx
+01dd7f55  jb       0x1dd7f43
+01dd7f57  mov      r8d, 1
+01dd7f5d  mov      rdx, r9
+01dd7f60  mov      rcx, rbx
+01dd7f63  call     0x4ddae0
+01dd7f68  mov      rdx, rax
+01dd7f6b  mov      rax, qword ptr [rdx]
+01dd7f6e  mov      rdx, qword ptr [rdx + 8]
+01dd7f72  mov      rcx, rbx
+01dd7f75  call     rax
+01dd7f77  mov      r8, rax
+01dd7f7a  mov      rcx, qword ptr [rip + 0x25de26f]   ; [43b61f0] TypeInfo UnityEngine.Transform
+01dd7f81  test     rax, rax
+01dd7f84  je       0x1dd805e
+01dd7f8a  jmp      0x1dd7fac
+01dd7f8c  movzx    ecx, cx
+01dd7f8f  add      rcx, rcx
+01dd7f92  mov      ecx, dword ptr [r8 + rcx*8 + 8]
+01dd7f97  inc      ecx
+01dd7f99  movsxd   rdx, ecx
+01dd7f9c  shl      rdx, 4
+01dd7fa0  add      rdx, 0x138
+01dd7fa7  add      rdx, r10
+01dd7faa  jmp      0x1dd7f6b
+01dd7fac  mov      r9, qword ptr [rax]
+01dd7faf  movzx    eax, byte ptr [rcx + 0x130]   ; ._causeOfDeath
+01dd7fb6  cmp      byte ptr [r9 + 0x130], al   ; ._causeOfDeath
+01dd7fbd  jb       0x1dd8064
+01dd7fc3  movzx    edx, al
+01dd7fc6  mov      rax, qword ptr [r9 + 0xc8]   ; ._burnShakeSpeed
+01dd7fcd  cmp      qword ptr [rax + rdx*8 - 8], rcx
+01dd7fd2  jne      0x1dd8064
+01dd7fd8  xor      edx, edx
+01dd7fda  mov      rcx, r8
+01dd7fdd  call     0x30590a0   ; Component::get_gameObject()
+01dd7fe2  mov      rbx, rax
+01dd7fe5  mov      rcx, qword ptr [rip + 0x2592f94]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd7fec  cmp      dword ptr [rcx + 0xe4], 0
+01dd7ff3  jne      0x1dd7ffa
+01dd7ff5  call     0x4e0d90
+01dd7ffa  xor      r8d, r8d
+01dd7ffd  mov      edx, edi
+01dd7fff  mov      rcx, rbx
+01dd8002  call     0x1dd7e30   ; LayerUtility::SetLayerForce(UnityEngine.GameObject,System.Int32)
+01dd8007  jmp      0x1dd7ef0
+01dd800c  mov      rdx, qword ptr [rip + 0x25f497d]   ; [43cc990] TypeInfo System.IDisposable
+01dd8013  mov      rcx, qword ptr [r15]
+01dd8016  call     0x4dfda0
+01dd801b  mov      qword ptr [r14], rax
+01dd801e  test     rax, rax
+01dd8021  je       0x1dd8034
+01dd8023  xor      ecx, ecx
+01dd8025  mov      r8, rax
+01dd8028  mov      rdx, qword ptr [rip + 0x25f4961]   ; [43cc990] TypeInfo System.IDisposable
+01dd802f  call     0x22b0
+01dd8034  jmp      0x1dd804a
+01dd8036  lea      rcx, [rsp + 0x30]   ; ._Damage
+01dd803b  call     0x71b4f0
+01dd8040  mov      rcx, qword ptr [rsp + 0x28]   ; ._HitPoint
+01dd8045  test     rcx, rcx
+01dd8048  jne      0x1dd807a
+01dd804a  mov      rbx, qword ptr [rsp + 0x68]
+01dd804f  mov      rsi, qword ptr [rsp + 0x70]
+01dd8054  add      rsp, 0x40
+01dd8058  pop      r15
+01dd805a  pop      r14
+01dd805c  pop      rdi
+01dd805d  ret      
+01dd805e  call     0x4e0d00
+01dd8063  nop      
+01dd8064  mov      rdx, rcx
+01dd8067  mov      rcx, r8
+01dd806a  call     0x4dfdc0
+01dd806f  call     0x4e0d00
+01dd8074  call     0x4e0d00
+01dd8079  nop      
+01dd807a  call     0x4dc9e0
+01dd807f  int3     
+01dd8080  call     0x4e0d00
+#### InGame.Utility.LayerUtility::.cctor() RVA 1dd85e0 len 503
+01dd85e0  sub      rsp, 0x28
+01dd85e4  cmp      byte ptr [rip + 0x288b34c], 0   ; [4663937] bss
+01dd85eb  jne      0x1dd8718
+01dd85f1  lea      rcx, [rip + 0x2592988]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd85f8  call     0x4e0a50
+01dd85fd  lea      rcx, [rip + 0x25df1ec]   ; [43b77f0] str:"bgCastShadow"
+01dd8604  call     0x4e0a50
+01dd8609  lea      rcx, [rip + 0x25ec978]   ; [43c4f88] str:"BG"
+01dd8610  call     0x4e0a50
+01dd8615  lea      rcx, [rip + 0x25a601c]   ; [437e638] str:"Jewel"
+01dd861c  call     0x4e0a50
+01dd8621  lea      rcx, [rip + 0x25d3b50]   ; [43ac178] str:"neutralObject"
+01dd8628  call     0x4e0a50
+01dd862d  lea      rcx, [rip + 0x259ad54]   ; [4373388] str:"SkyboxObject"
+01dd8634  call     0x4e0a50
+01dd8639  lea      rcx, [rip + 0x258fde0]   ; [4368420] str:"enemyGround"
+01dd8640  call     0x4e0a50
+01dd8645  lea      rcx, [rip + 0x25d0fe4]   ; [43a9630] str:"None"
+01dd864c  call     0x4e0a50
+01dd8651  lea      rcx, [rip + 0x258faf0]   ; [4368148] str:"enemy"
+01dd8658  call     0x4e0a50
+01dd865d  lea      rcx, [rip + 0x25ed4a4]   ; [43c5b08] str:"BGEffect"
+01dd8664  call     0x4e0a50
+01dd8669  lea      rcx, [rip + 0x25ea718]   ; [43c2d88] str:"PlayerBullet"
+01dd8670  call     0x4e0a50
+01dd8675  lea      rcx, [rip + 0x25e4df4]   ; [43bd470] str:"playerBullet"
+01dd867c  call     0x4e0a50
+01dd8681  lea      rcx, [rip + 0x25fb630]   ; [43d3cb8] str:"Bullet"
+01dd8688  call     0x4e0a50
+01dd868d  lea      rcx, [rip + 0x258fe44]   ; [43684d8] str:"enemySky"
+01dd8694  call     0x4e0a50
+01dd8699  lea      rcx, [rip + 0x25e39c0]   ; [43bc060] str:"physics3d"
+01dd86a0  call     0x4e0a50
+01dd86a5  lea      rcx, [rip + 0x25bdf7c]   ; [4396628] str:"Default"
+01dd86ac  call     0x4e0a50
+01dd86b1  lea      rcx, [rip + 0x25cba48]   ; [43a4100] str:"EffectBurn"
+01dd86b8  call     0x4e0a50
+01dd86bd  lea      rcx, [rip + 0x25e97ec]   ; [43c1eb0] str:"UI"
+01dd86c4  call     0x4e0a50
+01dd86c9  lea      rcx, [rip + 0x25f5d80]   ; [43ce450] str:"Bomb"
+01dd86d0  call     0x4e0a50
+01dd86d5  lea      rcx, [rip + 0x25ea5f4]   ; [43c2cd0] str:"PlayerAndEnemy"
+01dd86dc  call     0x4e0a50
+01dd86e1  lea      rcx, [rip + 0x25e4cd0]   ; [43bd3b8] str:"playerBomb"
+01dd86e8  call     0x4e0a50
+01dd86ed  lea      rcx, [rip + 0x25e45a4]   ; [43bcc98] str:"player"
+01dd86f4  call     0x4e0a50
+01dd86f9  lea      rcx, [rip + 0x258fbb0]   ; [43682b0] str:"enemyBullet"
+01dd8700  call     0x4e0a50
+01dd8705  lea      rcx, [rip + 0x259abc4]   ; [43732d0] str:"SkyboxBG"
+01dd870c  call     0x4e0a50
+01dd8711  mov      byte ptr [rip + 0x288b21f], 1   ; [4663937] bss
+01dd8718  mov      rcx, qword ptr [rip + 0x25d0f11]   ; [43a9630] str:"None"
+01dd871f  xor      edx, edx
+01dd8721  call     0x3065810   ; LayerMask::NameToLayer(System.String)
+01dd8726  mov      rcx, qword ptr [rip + 0x2592853]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd872d  mov      rdx, qword ptr [rcx + 0xb8]
+01dd8734  mov      dword ptr [rdx], eax   ; static LayerUtility.s_LayerBatches
+01dd8736  xor      edx, edx
+01dd8738  mov      rcx, qword ptr [rip + 0x25bdee9]   ; [4396628] str:"Default"
+01dd873f  call     0x3065810   ; LayerMask::NameToLayer(System.String)
+01dd8744  mov      rcx, qword ptr [rip + 0x2592835]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd874b  mov      rdx, qword ptr [rcx + 0xb8]
+01dd8752  mov      dword ptr [rdx + 4], eax   ; static LayerUtility.DefaultLayer
+01dd8755  xor      edx, edx
+01dd8757  mov      rcx, qword ptr [rip + 0x258fb52]   ; [43682b0] str:"enemyBullet"
+01dd875e  call     0x3065810   ; LayerMask::NameToLayer(System.String)
+01dd8763  mov      rcx, qword ptr [rip + 0x2592816]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd876a  mov      rdx, qword ptr [rcx + 0xb8]
+01dd8771  mov      dword ptr [rdx + 8], eax   ; static LayerUtility.EnemyBulletLayer
+01dd8774  xor      edx, edx
+01dd8776  mov      rcx, qword ptr [rip + 0x25e4cf3]   ; [43bd470] str:"playerBullet"
+01dd877d  call     0x3065810   ; LayerMask::NameToLayer(System.String)
+01dd8782  mov      rcx, qword ptr [rip + 0x25927f7]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd8789  mov      rdx, qword ptr [rcx + 0xb8]
+01dd8790  mov      dword ptr [rdx + 0xc], eax   ; static LayerUtility.PlayerBulletLayer
+01dd8793  xor      edx, edx
+01dd8795  mov      rcx, qword ptr [rip + 0x25e4c1c]   ; [43bd3b8] str:"playerBomb"
+01dd879c  call     0x3065810   ; LayerMask::NameToLayer(System.String)
+01dd87a1  mov      rcx, qword ptr [rip + 0x25927d8]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd87a8  mov      rdx, qword ptr [rcx + 0xb8]
+01dd87af  mov      dword ptr [rdx + 0x10], eax   ; static LayerUtility.PlayerBombLayer
+01dd87b2  xor      edx, edx
+01dd87b4  mov      rcx, qword ptr [rip + 0x25e44dd]   ; [43bcc98] str:"player"
+01dd87bb  call     0x3065810   ; LayerMask::NameToLayer(System.String)
+01dd87c0  mov      rcx, qword ptr [rip + 0x25927b9]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd87c7  mov      rdx, qword ptr [rcx + 0xb8]
+01dd87ce  mov      dword ptr [rdx + 0x14], eax   ; static LayerUtility.PlayerLayer
+01dd87d1  xor      edx, edx
+01dd87d3  mov      rcx, qword ptr [rip + 0x258fad6]   ; [43682b0] str:"enemyBullet"
+01dd87da  call     0x3065810   ; LayerMask::NameToLayer(System.String)
+01dd87df  mov      rcx, qword ptr [rip + 0x259279a]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd87e6  mov      rdx, qword ptr [rcx + 0xb8]
+01dd87ed  mov      dword ptr [rdx + 0x18], eax   ; static LayerUtility.EnemyBullet
+01dd87f0  xor      edx, edx
+01dd87f2  mov      rcx, qword ptr [rip + 0x258f94f]   ; [4368148] str:"enemy"
+01dd87f9  call     0x3065810   ; LayerMask::NameToLayer(System.String)
+01dd87fe  mov      rcx, qword ptr [rip + 0x259277b]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd8805  mov      rdx, qword ptr [rcx + 0xb8]
+01dd880c  mov      dword ptr [rdx + 0x1c], eax   ; static LayerUtility.EnemyLayer
+01dd880f  xor      edx, edx
+01dd8811  mov      rcx, qword ptr [rip + 0x258fcc0]   ; [43684d8] str:"enemySky"
+01dd8818  call     0x3065810   ; LayerMask::NameToLayer(System.String)
+01dd881d  mov      rcx, qword ptr [rip + 0x259275c]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd8824  mov      rdx, qword ptr [rcx + 0xb8]
+01dd882b  mov      dword ptr [rdx + 0x20], eax   ; static LayerUtility.EnemySkyLayer
+01dd882e  xor      edx, edx
+01dd8830  mov      rcx, qword ptr [rip + 0x258fbe9]   ; [4368420] str:"enemyGround"
+01dd8837  call     0x3065810   ; LayerMask::NameToLayer(System.String)
+01dd883c  mov      rcx, qword ptr [rip + 0x259273d]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd8843  mov      rdx, qword ptr [rcx + 0xb8]
+01dd884a  mov      dword ptr [rdx + 0x24], eax   ; static LayerUtility.EnemyGroundLayer
+01dd884d  xor      edx, edx
+01dd884f  mov      rcx, qword ptr [rip + 0x25d3922]   ; [43ac178] str:"neutralObject"
+01dd8856  call     0x3065810   ; LayerMask::NameToLayer(System.String)
+01dd885b  mov      rcx, qword ptr [rip + 0x259271e]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd8862  mov      rdx, qword ptr [rcx + 0xb8]
+01dd8869  mov      dword ptr [rdx + 0x28], eax   ; static LayerUtility.NeutralObjectLayer
+01dd886c  xor      edx, edx
+01dd886e  mov      rax, qword ptr [rip + 0x259270b]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd8875  mov      rcx, qword ptr [rax + 0xb8]
+01dd887c  mov      eax, dword ptr [rcx + 8]   ; static LayerUtility.EnemyBulletLayer
+01dd887f  mov      dword ptr [rcx + 0x2c], eax   ; static LayerUtility.ItemLayer
+01dd8882  mov      rcx, qword ptr [rip + 0x259aa47]   ; [43732d0] str:"SkyboxBG"
+01dd8889  call     0x3065810   ; LayerMask::NameToLayer(System.String)
+01dd888e  mov      rcx, qword ptr [rip + 0x25926eb]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd8895  mov      rdx, qword ptr [rcx + 0xb8]
+01dd889c  mov      dword ptr [rdx + 0x30], eax   ; static LayerUtility.BGSkyLayer
+01dd889f  xor      edx, edx
+01dd88a1  mov      rcx, qword ptr [rip + 0x259aae0]   ; [4373388] str:"SkyboxObject"
+01dd88a8  call     0x3065810   ; LayerMask::NameToLayer(System.String)
+01dd88ad  mov      rcx, qword ptr [rip + 0x25926cc]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd88b4  mov      rdx, qword ptr [rcx + 0xb8]
+01dd88bb  mov      dword ptr [rdx + 0x34], eax   ; static LayerUtility.BGObjectLayer
+01dd88be  xor      edx, edx
+01dd88c0  mov      rcx, qword ptr [rip + 0x25def29]   ; [43b77f0] str:"bgCastShadow"
+01dd88c7  call     0x3065810   ; LayerMask::NameToLayer(System.String)
+01dd88cc  mov      rcx, qword ptr [rip + 0x25926ad]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd88d3  mov      rdx, qword ptr [rcx + 0xb8]
+01dd88da  mov      dword ptr [rdx + 0x38], eax   ; static LayerUtility.CastShadowLayer
+01dd88dd  xor      edx, edx
+01dd88df  mov      rcx, qword ptr [rip + 0x25e377a]   ; [43bc060] str:"physics3d"
+01dd88e6  call     0x3065810   ; LayerMask::NameToLayer(System.String)
+01dd88eb  mov      rcx, qword ptr [rip + 0x259268e]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd88f2  mov      rdx, qword ptr [rcx + 0xb8]
+01dd88f9  mov      dword ptr [rdx + 0x3c], eax   ; static LayerUtility.PhysicsLayer
+01dd88fc  xor      edx, edx
+01dd88fe  mov      rcx, qword ptr [rip + 0x25e95ab]   ; [43c1eb0] str:"UI"
+01dd8905  call     0x3065810   ; LayerMask::NameToLayer(System.String)
+01dd890a  mov      rcx, qword ptr [rip + 0x259266f]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd8911  mov      r9d, 1
+01dd8917  mov      rdx, qword ptr [rcx + 0xb8]
+01dd891e  mov      dword ptr [rdx + 0x40], eax   ; static LayerUtility.UILayer
+01dd8921  mov      edx, r9d
+01dd8924  mov      r8, qword ptr [rip + 0x2592655]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd892b  mov      rax, qword ptr [r8 + 0xb8]
+01dd8932  mov      ecx, dword ptr [rax + 0x30]   ; static LayerUtility.BGSkyLayer
+01dd8935  shl      edx, cl
+01dd8937  mov      ecx, dword ptr [rax + 0x24]   ; static LayerUtility.EnemyGroundLayer
+01dd893a  and      ecx, 0x1f
+01dd893d  bts      edx, ecx
+01dd8940  mov      ecx, dword ptr [rax + 0x34]   ; static LayerUtility.BGObjectLayer
+01dd8943  and      ecx, 0x1f
+01dd8946  bts      edx, ecx
+01dd8949  mov      ecx, dword ptr [rax + 0x38]   ; static LayerUtility.CastShadowLayer
+01dd894c  and      ecx, 0x1f
+01dd894f  bts      edx, ecx
+01dd8952  mov      ecx, dword ptr [rax + 0x1c]   ; static LayerUtility.EnemyLayer
+01dd8955  and      ecx, 0x1f
+01dd8958  bts      edx, ecx
+01dd895b  mov      dword ptr [rax + 0x44], edx   ; static LayerUtility.BGMasked
+01dd895e  mov      rdx, qword ptr [rip + 0x259261b]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd8965  mov      rax, qword ptr [rdx + 0xb8]
+01dd896c  xor      edx, edx
+01dd896e  mov      ecx, dword ptr [rax + 0x28]   ; static LayerUtility.NeutralObjectLayer
+01dd8971  shl      r9d, cl
+01dd8974  mov      ecx, dword ptr [rax + 0x20]   ; static LayerUtility.EnemySkyLayer
+01dd8977  and      ecx, 0x1f
+01dd897a  bts      r9d, ecx
+01dd897e  mov      ecx, dword ptr [rax + 0x14]   ; static LayerUtility.PlayerLayer
+01dd8981  and      ecx, 0x1f
+01dd8984  bts      r9d, ecx
+01dd8988  mov      ecx, dword ptr [rax + 0x10]   ; static LayerUtility.PlayerBombLayer
+01dd898b  and      ecx, 0x1f
+01dd898e  bts      r9d, ecx
+01dd8992  mov      ecx, dword ptr [rax + 0xc]   ; static LayerUtility.PlayerBulletLayer
+01dd8995  and      ecx, 0x1f
+01dd8998  bts      r9d, ecx
+01dd899c  mov      ecx, dword ptr [rax + 8]   ; static LayerUtility.EnemyBulletLayer
+01dd899f  and      ecx, 0x1f
+01dd89a2  bts      r9d, ecx
+01dd89a6  mov      dword ptr [rax + 0x48], r9d   ; static LayerUtility.MainMasked
+01dd89aa  mov      rcx, qword ptr [rip + 0x25bdc77]   ; [4396628] str:"Default"
+01dd89b1  call     0x2fea340   ; SortingLayer::NameToID(System.String)
+01dd89b6  mov      rcx, qword ptr [rip + 0x25925c3]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd89bd  mov      rdx, qword ptr [rcx + 0xb8]
+01dd89c4  mov      dword ptr [rdx + 0x4c], eax   ; static LayerUtility.SortingLayerDefault
+01dd89c7  xor      edx, edx
+01dd89c9  mov      rcx, qword ptr [rip + 0x25ec5b8]   ; [43c4f88] str:"BG"
+01dd89d0  call     0x2fea340   ; SortingLayer::NameToID(System.String)
+01dd89d5  mov      rcx, qword ptr [rip + 0x25925a4]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd89dc  mov      rdx, qword ptr [rcx + 0xb8]
+01dd89e3  mov      dword ptr [rdx + 0x50], eax   ; static LayerUtility.SortingLayerBG
+01dd89e6  xor      edx, edx
+01dd89e8  mov      rcx, qword ptr [rip + 0x25ed119]   ; [43c5b08] str:"BGEffect"
+01dd89ef  call     0x2fea340   ; SortingLayer::NameToID(System.String)
+01dd89f4  mov      rcx, qword ptr [rip + 0x2592585]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd89fb  mov      rdx, qword ptr [rcx + 0xb8]
+01dd8a02  mov      dword ptr [rdx + 0x54], eax   ; static LayerUtility.SortingLayerBGEffect
+01dd8a05  xor      edx, edx
+01dd8a07  mov      rcx, qword ptr [rip + 0x25f5a42]   ; [43ce450] str:"Bomb"
+01dd8a0e  call     0x2fea340   ; SortingLayer::NameToID(System.String)
+01dd8a13  mov      rcx, qword ptr [rip + 0x2592566]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd8a1a  mov      rdx, qword ptr [rcx + 0xb8]
+01dd8a21  mov      dword ptr [rdx + 0x58], eax   ; static LayerUtility.SortingLayerBomb
+01dd8a24  xor      edx, edx
+01dd8a26  mov      rcx, qword ptr [rip + 0x25a5c0b]   ; [437e638] str:"Jewel"
+01dd8a2d  call     0x2fea340   ; SortingLayer::NameToID(System.String)
+01dd8a32  mov      rcx, qword ptr [rip + 0x2592547]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd8a39  mov      rdx, qword ptr [rcx + 0xb8]
+01dd8a40  mov      dword ptr [rdx + 0x5c], eax   ; static LayerUtility.SortingLayerJewel
+01dd8a43  xor      edx, edx
+01dd8a45  mov      rcx, qword ptr [rip + 0x25fb26c]   ; [43d3cb8] str:"Bullet"
+01dd8a4c  call     0x2fea340   ; SortingLayer::NameToID(System.String)
+01dd8a51  mov      rcx, qword ptr [rip + 0x2592528]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd8a58  mov      rdx, qword ptr [rcx + 0xb8]
+01dd8a5f  mov      dword ptr [rdx + 0x60], eax   ; static LayerUtility.SortingLayerBullet
+01dd8a62  xor      edx, edx
+01dd8a64  mov      rcx, qword ptr [rip + 0x25ea31d]   ; [43c2d88] str:"PlayerBullet"
+01dd8a6b  call     0x2fea340   ; SortingLayer::NameToID(System.String)
+01dd8a70  mov      rcx, qword ptr [rip + 0x2592509]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd8a77  mov      rdx, qword ptr [rcx + 0xb8]
+01dd8a7e  mov      dword ptr [rdx + 0x64], eax   ; static LayerUtility.SortingLayerPlayerBullet
+01dd8a81  xor      edx, edx
+01dd8a83  mov      rcx, qword ptr [rip + 0x25cb676]   ; [43a4100] str:"EffectBurn"
+01dd8a8a  call     0x2fea340   ; SortingLayer::NameToID(System.String)
+01dd8a8f  mov      rcx, qword ptr [rip + 0x25924ea]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd8a96  mov      rdx, qword ptr [rcx + 0xb8]
+01dd8a9d  mov      dword ptr [rdx + 0x68], eax   ; static LayerUtility.SortingLayerEffectBurn
+01dd8aa0  xor      edx, edx
+01dd8aa2  mov      rcx, qword ptr [rip + 0x25ea227]   ; [43c2cd0] str:"PlayerAndEnemy"
+01dd8aa9  call     0x2fea340   ; SortingLayer::NameToID(System.String)
+01dd8aae  mov      rcx, qword ptr [rip + 0x25924cb]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd8ab5  mov      rdx, qword ptr [rcx + 0xb8]
+01dd8abc  mov      dword ptr [rdx + 0x6c], eax   ; static LayerUtility.SortingLayerPlayerAndEnemy
+01dd8abf  xor      edx, edx
+01dd8ac1  mov      rcx, qword ptr [rip + 0x25e93e8]   ; [43c1eb0] str:"UI"
+01dd8ac8  call     0x2fea340   ; SortingLayer::NameToID(System.String)
+01dd8acd  mov      rcx, qword ptr [rip + 0x25924ac]   ; [436af80] TypeInfo InGame.Utility.LayerUtility
+01dd8ad4  mov      rdx, qword ptr [rcx + 0xb8]
+01dd8adb  mov      dword ptr [rdx + 0x70], eax   ; static LayerUtility.SortingLayerUI
+01dd8ade  add      rsp, 0x28
+01dd8ae2  ret      
+#### InGame.Kernel.Enemy.PawnEnemy::SetSuside() RVA 1d0fe00 len 38
+01d0fe00  cmp      dword ptr [rcx + 0x130], -1   ; ._causeOfDeath
+01d0fe07  jne      0x1d0fe24
+01d0fe09  mov      dword ptr [rcx + 0x130], 0x6f   ; ._causeOfDeath
+01d0fe13  mov      dword ptr [rcx + 0x134], 0xffffffff   ; ._deathByPno
+01d0fe1d  mov      byte ptr [rcx + 0x13f], 0   ; ._isExboostDead
+01d0fe24  mov      rdx, qword ptr [rcx]
+01d0fe27  mov      rax, qword ptr [rdx + 0x2f8]   ; vcall KANAI.HybridCollision.HybridCollisions::AddDead
+01d0fe2e  mov      rdx, qword ptr [rdx + 0x300]   ; vcall KANAI.HybridCollision.HybridCollisions::AddDead
+01d0fe35  jmp      rax

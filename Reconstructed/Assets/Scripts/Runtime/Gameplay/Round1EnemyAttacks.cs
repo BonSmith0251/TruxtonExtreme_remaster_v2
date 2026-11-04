@@ -219,7 +219,9 @@ public sealed class Round1EnemyAttacks : MonoBehaviour
             }
             Transform aimBase=string.IsNullOrEmpty(e.subnameValue)?null:target.visual.transform.Find(e.subnameValue);
             if(!string.IsNullOrEmpty(e.subnameValue) && !aimBase){MissingMuzzles++;Debug.LogWarning("Missing source aim reference: "+e.subnameValue,this);}
-            s.cues.Add(new Cue{data=e,next=start,firstDelay=FirstDelay(e,Chance(s.id,0,e.stringValue+"/wait")/100),interval=RepeatInterval(e),aimBase=aimBase,muzzles=list.ToArray()});
+            // _eventRepeatScale (the rank): RouteEvents with rpidf scale their first delay, random wait and repeat delay, read once here.
+            float rs=e.rpidf!=0 && combat.weapon?combat.weapon.RankRepeatScale:1;
+            s.cues.Add(new Cue{data=e,next=start,firstDelay=FirstDelay(e,Chance(s.id,0,e.stringValue+"/wait")/100)*rs,interval=Mathf.Max(1f/60,RepeatInterval(e)-Mathf.Max(0,e.repeatDelay)*(1-rs)),aimBase=aimBase,muzzles=list.ToArray()});
         }
     }
     // A Bullet event the stack interpreter executed now (EnemyMover._execStackEvent -> _execEventWithRepeat): a cue from

@@ -28,6 +28,8 @@ public static class ReconstructionClassMoverCheck
         ("Ene_St01/sims/st01_index0_blowback.txt","BG01","default_St01",new Vector3(0,0,100),0),
         ("Ene_Ss01/sims/ss01_BG06_t365.txt","BG06","ene_ss01",new Vector3(0,0,0),0),
         ("Ene_So01/sims/so01_1_BG01_t35_clip80.txt","BG01","ene_so01_1",new Vector3(54.41f,0,116.95f),0),
+        ("Ene_So01/sims/so01_1c_BG05_t140.txt","BG05","ene_so01_1c",new Vector3(-75,0,100),0),
+        ("Ene_So01/sims/so01_2_BG05_t254.txt","BG05","ene_so01_2",new Vector3(-115,0,-120),0),
         ("Ene_Mg01/sims/mg01_1a_BG04.txt","BG04","ene_mg01_1a",new Vector3(-226,0,-15),1),
         ("Ene_Mk01/sims/mk01a_BG05.txt","BG05","ene_mk01a",new Vector3(-30,0,150),0),
         ("Ene_Mk01/sims/mk01b_BG05.txt","BG05","ene_mk01b",new Vector3(30,0,150),1),
@@ -38,6 +40,11 @@ public static class ReconstructionClassMoverCheck
         ("Ene_Mp02/sims/mp02b_BG01_idx1.json","BG01","ene_mp02b",new Vector3(40,0,150),1),
         // stack + route (evidence/movers/Ene_Sf01/sf01_sim.py)
         ("Ene_Sf01/sims/sf01_5b3_BG05.json","BG05","ene_sf01_5b3",new Vector3(20,0,120),0),
+        ("Ene_Sf01/sims/sf01_5a_BG05.json","BG05","ene_sf01_5a",new Vector3(-60,0,100),0),
+        ("Ene_Sf01/sims/sf01_5a2_BG05.json","BG05","ene_sf01_5a2",new Vector3(-40,0,110),0),
+        ("Ene_Sf01/sims/sf01_5a3_BG05.json","BG05","ene_sf01_5a3",new Vector3(-20,0,120),0),
+        ("Ene_Sf01/sims/sf01_5b_BG05.json","BG05","ene_sf01_5b",new Vector3(60,0,100),0),
+        ("Ene_Sf01/sims/sf01_5b2_BG05.json","BG05","ene_sf01_5b2",new Vector3(40,0,110),0),
         ("Ene_Sf01/sims/sr01_1b_BG06.json","BG06","ene_sr01_1b",new Vector3(-50,0,98),0),
         // class programs: the definition's empty events replaced by the class's static list (m7_sim.py)
         ("Ene_Sq01/sims/sq01_BG06_idx2.json","BG06","ene_sq01",new Vector3(20,0,100),2),

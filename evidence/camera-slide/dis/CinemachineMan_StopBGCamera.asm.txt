@@ -1,0 +1,62 @@
+#### InGame.Kernel.CinemachineMan::StopBGCamera() RVA 1cc6630 len 11b
+01cc6630  mov      qword ptr [rsp + 0x18], rbx
+01cc6635  push     rdi
+01cc6636  sub      rsp, 0x40
+01cc663a  cmp      byte ptr [rip + 0x299cbb8], 0   ; [46631f9] bss
+01cc6641  mov      rbx, rcx
+01cc6644  jne      0x1cc6659
+01cc6646  lea      rcx, [rip + 0x26b7853]   ; [437dea0] TypeInfo UnityEngine.Object
+01cc664d  call     0x4e0a50
+01cc6652  mov      byte ptr [rip + 0x299cba0], 1   ; [46631f9] bss
+01cc6659  mov      rcx, qword ptr [rip + 0x26b7840]   ; [437dea0] TypeInfo UnityEngine.Object
+01cc6660  mov      rdi, qword ptr [rbx + 0x58]   ; ._BGRootTransform
+01cc6664  cmp      dword ptr [rcx + 0xe4], 0
+01cc666b  jne      0x1cc6672
+01cc666d  call     0x4e0d90
+01cc6672  xor      r8d, r8d
+01cc6675  xor      edx, edx
+01cc6677  mov      rcx, rdi
+01cc667a  call     0x306d400   ; Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+01cc667f  test     al, al
+01cc6681  je       0x1cc673b
+01cc6687  cmp      byte ptr [rip + 0x2995dcf], 0   ; [465c45d] bss
+01cc668e  mov      rdi, qword ptr [rbx + 0x58]   ; ._BGRootTransform
+01cc6692  mov      qword ptr [rsp + 0x58], rsi   ; ._BGRootTransform
+01cc6697  jne      0x1cc66ac
+01cc6699  lea      rcx, [rip + 0x26fb038]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01cc66a0  call     0x4e0a50
+01cc66a5  mov      byte ptr [rip + 0x2995db1], 1   ; [465c45d] bss
+01cc66ac  cmp      byte ptr [rip + 0x2995dae], 0   ; [465c461] bss
+01cc66b3  mov      rax, qword ptr [rip + 0x26fb01e]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01cc66ba  mov      rcx, qword ptr [rax + 0xb8]
+01cc66c1  movsd    xmm1, qword ptr [rcx]   ; static Vector3+0
+01cc66c5  mov      esi, dword ptr [rcx + 8]   ; static Vector3+8
+01cc66c8  movsd    qword ptr [rsp + 0x50], xmm1   ; ._perspectiveAngle
+01cc66ce  jne      0x1cc66e9
+01cc66d0  lea      rcx, [rip + 0x26c5281]   ; [438b958] TypeInfo UnityEngine.Quaternion
+01cc66d7  call     0x4e0a50
+01cc66dc  movsd    xmm1, qword ptr [rsp + 0x50]   ; ._perspectiveAngle
+01cc66e2  mov      byte ptr [rip + 0x2995d78], 1   ; [465c461] bss
+01cc66e9  mov      rax, qword ptr [rip + 0x26c5268]   ; [438b958] TypeInfo UnityEngine.Quaternion
+01cc66f0  mov      rcx, qword ptr [rax + 0xb8]
+01cc66f7  test     rdi, rdi
+01cc66fa  je       0x1cc6746
+01cc66fc  movups   xmm0, xmmword ptr [rcx]   ; static Quaternion+0
+01cc66ff  xor      r9d, r9d
+01cc6702  lea      r8, [rsp + 0x30]   ; ._cameraNoisePow
+01cc6707  lea      rdx, [rsp + 0x20]   ; ._cameras
+01cc670c  movsd    qword ptr [rsp + 0x20], xmm1   ; ._cameras
+01cc6712  mov      rcx, rdi
+01cc6715  movaps   xmmword ptr [rsp + 0x30], xmm0   ; ._cameraNoisePow
+01cc671a  mov      dword ptr [rsp + 0x28], esi   ; ._camerasNoise
+01cc671e  call     0x30913c0   ; Transform::SetLocalPositionAndRotation(UnityEngine.Vector3,UnityEngine.Quaternion)
+01cc6723  lea      rcx, [rbx + 0x58]   ; ._BGRootTransform
+01cc6727  mov      qword ptr [rbx + 0x58], 0   ; ._BGRootTransform
+01cc672f  xor      edx, edx
+01cc6731  call     0x4dfd80
+01cc6736  mov      rsi, qword ptr [rsp + 0x58]   ; ._BGRootTransform
+01cc673b  mov      rbx, qword ptr [rsp + 0x60]   ; ._BGCameraSlideRange
+01cc6740  add      rsp, 0x40
+01cc6744  pop      rdi
+01cc6745  ret      
+01cc6746  call     0x4e0d00

@@ -1,0 +1,52 @@
+#### InGame.Kernel.PhysicsUpdater::Initialize() RVA 1d3b2e0 len 25
+01d3b2e0  push     rbx
+01d3b2e2  sub      rsp, 0x20
+01d3b2e6  xor      edx, edx
+01d3b2e8  mov      rbx, rcx
+01d3b2eb  call     0x3059180   ; Component::get_transform()
+01d3b2f0  lea      rcx, [rbx + 0x20]   ; ._physicsRoot
+01d3b2f4  mov      qword ptr [rbx + 0x20], rax   ; ._physicsRoot
+01d3b2f8  mov      rdx, rax
+01d3b2fb  add      rsp, 0x20
+01d3b2ff  pop      rbx
+01d3b300  jmp      0x4dfd80
+#### InGame.Kernel.PhysicsUpdater::.cctor() RVA 1d3b7d0 len 39
+01d3b7d0  sub      rsp, 0x28
+01d3b7d4  cmp      byte ptr [rip + 0x2927d6b], 0   ; [4663546] bss
+01d3b7db  jne      0x1d3b7f0
+01d3b7dd  lea      rcx, [rip + 0x26489ec]   ; [43841d0] TypeInfo InGame.Kernel.PhysicsUpdater
+01d3b7e4  call     0x4e0a50
+01d3b7e9  mov      byte ptr [rip + 0x2927d56], 1   ; [4663546] bss
+01d3b7f0  mov      rax, qword ptr [rip + 0x26489d9]   ; [43841d0] TypeInfo InGame.Kernel.PhysicsUpdater
+01d3b7f7  mov      rcx, qword ptr [rax + 0xb8]
+01d3b7fe  mov      dword ptr [rcx], 0x3ca3d70a   ; static PhysicsUpdater.fixedStep
+01d3b804  add      rsp, 0x28
+01d3b808  ret      
+#### InGame.Kernel.PhysicsUpdater::.ctor() RVA 1d3b810 len 77
+01d3b810  mov      qword ptr [rsp + 8], rbx
+01d3b815  push     rdi
+01d3b816  sub      rsp, 0x20
+01d3b81a  cmp      byte ptr [rip + 0x2927d24], 0   ; [4663545] bss
+01d3b821  mov      rdi, rcx
+01d3b824  jne      0x1d3b845
+01d3b826  lea      rcx, [rip + 0x264579b]   ; [4380fc8] MethodRef System.Collections.Generic.HashSet`1<.IPhysicsUpdater>::.ctor
+01d3b82d  call     0x4e0a50
+01d3b832  lea      rcx, [rip + 0x2655917]   ; [4391150] TypeInfo G<System.Collections.Generic.HashSet`1>
+01d3b839  call     0x4e0a50
+01d3b83e  mov      byte ptr [rip + 0x2927d00], 1   ; [4663545] bss
+01d3b845  mov      rcx, qword ptr [rip + 0x2655904]   ; [4391150] TypeInfo G<System.Collections.Generic.HashSet`1>
+01d3b84c  call     0x4e0cb0
+01d3b851  mov      rdx, qword ptr [rip + 0x2645770]   ; [4380fc8] MethodRef System.Collections.Generic.HashSet`1<.IPhysicsUpdater>::.ctor
+01d3b858  mov      rcx, rax
+01d3b85b  mov      rbx, rax
+01d3b85e  call     0x1c6b450
+01d3b863  lea      rcx, [rdi + 0x30]   ; ._physicsObjectList
+01d3b867  mov      qword ptr [rdi + 0x30], rbx   ; ._physicsObjectList
+01d3b86b  mov      rdx, rbx
+01d3b86e  call     0x4dfd80
+01d3b873  xor      edx, edx
+01d3b875  mov      rcx, rdi
+01d3b878  mov      rbx, qword ptr [rsp + 0x30]   ; ._physicsObjectList
+01d3b87d  add      rsp, 0x20
+01d3b881  pop      rdi
+01d3b882  jmp      0x3057f90   ; Behaviour::.ctor() | Component::.ctor()

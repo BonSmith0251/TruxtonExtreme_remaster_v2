@@ -1,0 +1,168 @@
+#### InGame.Kernel.InGameManager::AddPhysicsObject(InGame.Kernel.PhysicsUpdater/IPhysicsUpdater,UnityEngine.Transform) RVA 1ce2460 len 68
+01ce2460  mov      qword ptr [rsp + 8], rbx
+01ce2465  push     rdi
+01ce2466  sub      rsp, 0x20
+01ce246a  mov      rdi, rcx
+01ce246d  mov      rbx, r8
+01ce2470  mov      rcx, qword ptr [rcx + 0x148]   ; ._physicsUpdater
+01ce2477  test     rcx, rcx
+01ce247a  je       0x1ce24c3
+01ce247c  xor      r8d, r8d
+01ce247f  call     0x1d3b280   ; PhysicsUpdater::Add(InGame.Kernel.PhysicsUpdater/IPhysicsUpdater)
+01ce2484  test     al, al
+01ce2486  jne      0x1ce2493
+01ce2488  mov      rbx, qword ptr [rsp + 0x30]   ; ._effectTimeFactor
+01ce248d  add      rsp, 0x20
+01ce2491  pop      rdi
+01ce2492  ret      
+01ce2493  mov      rdx, qword ptr [rdi + 0x148]   ; ._physicsUpdater
+01ce249a  test     rdx, rdx
+01ce249d  je       0x1ce24c3
+01ce249f  test     rbx, rbx
+01ce24a2  je       0x1ce24c3
+01ce24a4  mov      rdx, qword ptr [rdx + 0x20]   ; ._baseTimeFactor
+01ce24a8  xor      r9d, r9d
+01ce24ab  xor      r8d, r8d
+01ce24ae  mov      rcx, rbx
+01ce24b1  call     0x3091580   ; Transform::SetParent(UnityEngine.Transform,System.Boolean)
+01ce24b6  mov      rbx, qword ptr [rsp + 0x30]   ; ._effectTimeFactor
+01ce24bb  mov      al, 1
+01ce24bd  add      rsp, 0x20
+01ce24c1  pop      rdi
+01ce24c2  ret      
+01ce24c3  call     0x4e0d00
+#### InGame.Kernel.InGameManager::RemovePhysicsObject(InGame.Kernel.PhysicsUpdater/IPhysicsUpdater) RVA 1ce9f40 len 21
+01ce9f40  sub      rsp, 0x28
+01ce9f44  mov      rcx, qword ptr [rcx + 0x148]   ; ._physicsUpdater
+01ce9f4b  test     rcx, rcx
+01ce9f4e  je       0x1ce9f5c
+01ce9f50  xor      r8d, r8d
+01ce9f53  add      rsp, 0x28
+01ce9f57  jmp      0x1d3b770   ; PhysicsUpdater::Remove(InGame.Kernel.PhysicsUpdater/IPhysicsUpdater)
+01ce9f5c  call     0x4e0d00
+#### InGame.Kernel.PhysicsUpdater::Add(InGame.Kernel.PhysicsUpdater/IPhysicsUpdater) RVA 1d3b280 len 53
+01d3b280  mov      qword ptr [rsp + 8], rbx
+01d3b285  push     rdi
+01d3b286  sub      rsp, 0x20
+01d3b28a  cmp      byte ptr [rip + 0x29282b2], 0   ; [4663543] bss
+01d3b291  mov      rdi, rdx
+01d3b294  mov      rbx, rcx
+01d3b297  jne      0x1d3b2ac
+01d3b299  lea      rcx, [rip + 0x2645de0]   ; [4381080] MethodRef System.Collections.Generic.HashSet`1<.IPhysicsUpdater>::Add
+01d3b2a0  call     0x4e0a50
+01d3b2a5  mov      byte ptr [rip + 0x2928297], 1   ; [4663543] bss
+01d3b2ac  mov      rcx, qword ptr [rbx + 0x30]   ; ._physicsObjectList
+01d3b2b0  test     rcx, rcx
+01d3b2b3  je       0x1d3b2ce
+01d3b2b5  mov      r8, qword ptr [rip + 0x2645dc4]   ; [4381080] MethodRef System.Collections.Generic.HashSet`1<.IPhysicsUpdater>::Add
+01d3b2bc  mov      rdx, rdi
+01d3b2bf  mov      rbx, qword ptr [rsp + 0x30]   ; ._physicsObjectList
+01d3b2c4  add      rsp, 0x20
+01d3b2c8  pop      rdi
+01d3b2c9  jmp      0x1c512c0
+01d3b2ce  call     0x4e0d00
+#### InGame.Kernel.PhysicsUpdater::Remove(InGame.Kernel.PhysicsUpdater/IPhysicsUpdater) RVA 1d3b770 len 53
+01d3b770  mov      qword ptr [rsp + 8], rbx
+01d3b775  push     rdi
+01d3b776  sub      rsp, 0x20
+01d3b77a  cmp      byte ptr [rip + 0x2927dc3], 0   ; [4663544] bss
+01d3b781  mov      rdi, rdx
+01d3b784  mov      rbx, rcx
+01d3b787  jne      0x1d3b79c
+01d3b789  lea      rcx, [rip + 0x2645b18]   ; [43812a8] MethodRef System.Collections.Generic.HashSet`1<.IPhysicsUpdater>::Remove
+01d3b790  call     0x4e0a50
+01d3b795  mov      byte ptr [rip + 0x2927da8], 1   ; [4663544] bss
+01d3b79c  mov      rcx, qword ptr [rbx + 0x30]   ; ._physicsObjectList
+01d3b7a0  test     rcx, rcx
+01d3b7a3  je       0x1d3b7be
+01d3b7a5  mov      r8, qword ptr [rip + 0x2645afc]   ; [43812a8] MethodRef System.Collections.Generic.HashSet`1<.IPhysicsUpdater>::Remove
+01d3b7ac  mov      rdx, rdi
+01d3b7af  mov      rbx, qword ptr [rsp + 0x30]   ; ._physicsObjectList
+01d3b7b4  add      rsp, 0x20
+01d3b7b8  pop      rdi
+01d3b7b9  jmp      0x1c65160
+01d3b7be  call     0x4e0d00
+#### InGame.Kernel.PhysicsUpdater::Refresh() RVA 1d3b620 len 14d
+01d3b620  mov      qword ptr [rsp + 0x18], rbp
+01d3b625  push     rsi
+01d3b626  push     rdi
+01d3b627  push     r15
+01d3b629  sub      rsp, 0x20
+01d3b62d  cmp      byte ptr [rip + 0x2927f0e], 0   ; [4663542] bss
+01d3b634  mov      rbp, rcx
+01d3b637  jne      0x1d3b664
+01d3b639  lea      rcx, [rip + 0x26617d0]   ; [439ce10] MethodRef System.Linq.Enumerable::ToArray<.IPhysicsUpdater>
+01d3b640  call     0x4e0a50
+01d3b645  lea      rcx, [rip + 0x2645aec]   ; [4381138] MethodRef System.Collections.Generic.HashSet`1<.IPhysicsUpdater>::Clear
+01d3b64c  call     0x4e0a50
+01d3b651  lea      rcx, [rip + 0x267b500]   ; [43b6b58] TypeInfo .IPhysicsUpdater
+01d3b658  call     0x4e0a50
+01d3b65d  mov      byte ptr [rip + 0x2927ede], 1   ; [4663542] bss
+01d3b664  mov      rdx, qword ptr [rip + 0x26617a5]   ; [439ce10] MethodRef System.Linq.Enumerable::ToArray<.IPhysicsUpdater>
+01d3b66b  mov      rcx, qword ptr [rbp + 0x30]   ; ._physicsObjectList
+01d3b66f  mov      qword ptr [rsp + 0x40], rbx   ; ._hitOrders
+01d3b674  mov      qword ptr [rsp + 0x48], r14   ; ._hitIndex
+01d3b679  call     0x7e54e0
+01d3b67e  xor      r15d, r15d
+01d3b681  mov      rsi, rax
+01d3b684  mov      edi, r15d
+01d3b687  mov      ecx, r15d
+01d3b68a  test     rax, rax
+01d3b68d  je       0x1d3b762
+01d3b693  lea      r14, [rax + 0x20]   ; ._physicsRoot
+01d3b697  cmp      ecx, dword ptr [rsi + 0x18]
+01d3b69a  jge      0x1d3b736
+01d3b6a0  cmp      edi, dword ptr [rsi + 0x18]
+01d3b6a3  jae      0x1d3b768
+01d3b6a9  mov      rbx, qword ptr [r14]
+01d3b6ac  test     rbx, rbx
+01d3b6af  je       0x1d3b762
+01d3b6b5  mov      r10, qword ptr [rbx]
+01d3b6b8  movzx    eax, r15w
+01d3b6bc  mov      r9, qword ptr [rip + 0x267b495]   ; [43b6b58] TypeInfo .IPhysicsUpdater
+01d3b6c3  movzx    edx, word ptr [r10 + 0x12e]
+01d3b6cb  cmp      r15w, dx
+01d3b6cf  jae      0x1d3b6f4
+01d3b6d1  mov      r8, qword ptr [r10 + 0xb0]   ; ._updateEventCount
+01d3b6d8  nop      dword ptr [rax + rax]
+01d3b6e0  movzx    ecx, ax
+01d3b6e3  add      rcx, rcx
+01d3b6e6  cmp      qword ptr [r8 + rcx*8], r9
+01d3b6ea  je       0x1d3b71c
+01d3b6ec  inc      ax
+01d3b6ef  cmp      ax, dx
+01d3b6f2  jb       0x1d3b6e0
+01d3b6f4  xor      r8d, r8d
+01d3b6f7  mov      rdx, r9
+01d3b6fa  mov      rcx, rbx
+01d3b6fd  call     0x4ddae0
+01d3b702  mov      r8, qword ptr [rax]
+01d3b705  mov      rcx, rbx
+01d3b708  mov      rdx, qword ptr [rax + 8]
+01d3b70c  call     r8
+01d3b70f  inc      edi
+01d3b711  add      r14, 8
+01d3b715  mov      ecx, edi
+01d3b717  jmp      0x1d3b697
+01d3b71c  movzx    ecx, ax
+01d3b71f  add      rcx, rcx
+01d3b722  movsxd   rax, dword ptr [r8 + rcx*8 + 8]
+01d3b727  shl      rax, 4
+01d3b72b  add      rax, 0x138
+01d3b731  add      rax, r10
+01d3b734  jmp      0x1d3b702
+01d3b736  mov      rcx, qword ptr [rbp + 0x30]   ; ._physicsObjectList
+01d3b73a  test     rcx, rcx
+01d3b73d  je       0x1d3b762
+01d3b73f  mov      rdx, qword ptr [rip + 0x26459f2]   ; [4381138] MethodRef System.Collections.Generic.HashSet`1<.IPhysicsUpdater>::Clear
+01d3b746  mov      r14, qword ptr [rsp + 0x48]   ; ._hitIndex
+01d3b74b  mov      rbx, qword ptr [rsp + 0x40]   ; ._hitOrders
+01d3b750  mov      rbp, qword ptr [rsp + 0x50]   ; ._transformCache
+01d3b755  add      rsp, 0x20
+01d3b759  pop      r15
+01d3b75b  pop      rdi
+01d3b75c  pop      rsi
+01d3b75d  jmp      0x1c45e20   ; HashSet`1::Clear()
+01d3b762  call     0x4e0d00
+01d3b767  int3     
+01d3b768  call     0x4e0cf0

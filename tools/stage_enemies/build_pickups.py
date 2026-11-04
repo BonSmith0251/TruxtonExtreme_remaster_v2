@@ -6,6 +6,8 @@ through a TLEntryClip (tl_start_ppp / tl_start_p at 0 s in every stage). Its rew
 table) when there is one, else _itemValue: 1000 draws the shared ItemReferenceTable at run time, other values are
 ItemEffects item ids. Muted clips are skipped (tl_start_ppp mutes its three middle carriers), TLEntry game-mode masks
 are kept for StoryA (2), times add up through nested TLEntry starts and time scales, offsets through _objectOffset.
+A carrier inside a zone TL (TLEntryClip _clipFlag & AllZone, BG08's ZONE B-G) gets that 'zone': it only flies when the
+zone TL started (Round1EnemyWaves.ZoneStarted, see build_stage_enemies.py).
 
 Output: Assets/Resources/StageEnemies/Pickups/BGxx.json (the BG03 carrier motion constants of round1-pickup-drones.json)
 and evidence/stage-enemies/pickups-validation.json, which compares BG03 with the validated round1-pickup-drones.json.
@@ -18,6 +20,7 @@ RAW = os.path.join(BASE, 'extraction', 'stage-enemies', 'raw-stage-timelines.jso
 OUT = os.path.join(RES, 'StageEnemies', 'Pickups')
 VALIDATION = os.path.join(BASE, 'evidence', 'stage-enemies', 'pickups-validation.json')
 STORY_A = 2
+ALL_ZONE = 0x3FFC00  # TLEntryClip.TLClipFlag ZoneA..ZoneL
 # ItemEffects item id -> Round1PickupKind (Power 0, OneUp 3, TwoUp 4, ThreeUp 5, Bonus 6, BombStock 7, SpeedUp 9,
 # Black 10, Blue 11, Gold 12, Green 13, Purple 14, Red 15, Silver 16), as Round1Weapon.SourceItemKind.
 KIND = {1: 3, 2: 0, 4: 9, 7: 7, 8: 6, 9: 4, 10: 5, 100: 15, 101: 13, 102: 11, 103: 14, 104: 16, 105: 12, 106: 10}
@@ -28,7 +31,7 @@ def mono(c):
     return j.get('MonoBehaviour', j)
 
 
-def walk(clips, waves, t0, scale, offset, out, depth=0):
+def walk(clips, waves, t0, scale, offset, out, depth=0, zone=0):
     for c in clips:
         if c.get('muted'):
             continue
@@ -46,7 +49,7 @@ def walk(clips, waves, t0, scale, offset, out, depth=0):
                 continue
             out['events'].append({'time': round(start, 4), 'kind': kind, 'source': c.get('name', ''), 'table': table,
                                   'offset': {'x': v.get('x', 0) + offset[0], 'y': v.get('y', 0) + offset[1], 'z': v.get('z', 0) + offset[2]},
-                                  'drops': drops, 'item': item})
+                                  'drops': drops, 'item': item, 'zone': zone})
         elif c.get('clipType') == 'TLEntryClip' and c.get('waveGuid') in waves and depth < 8:
             m = mono(c)
             mode = m.get('_gameModeFlag', 0)
@@ -55,7 +58,8 @@ def walk(clips, waves, t0, scale, offset, out, depth=0):
             o = m.get('_objectOffset') or {}
             ts = c.get('timeScale') or 1.0
             walk(waves[c['waveGuid']]['clips'], waves, start - c.get('clipIn', 0) / ts, scale * ts,
-                 (offset[0] + o.get('x', 0), offset[1] + o.get('y', 0), offset[2] + o.get('z', 0)), out, depth + 1)
+                 (offset[0] + o.get('x', 0), offset[1] + o.get('y', 0), offset[2] + o.get('z', 0)), out, depth + 1,
+                 zone | (m.get('_clipFlag', 0) & ALL_ZONE))
 
 
 def main():
@@ -71,7 +75,7 @@ def main():
             if tl['name'].endswith('Main'):
                 walk(tl['clips'], waves, 0.0, 1.0, (0.0, 0.0, 0.0), out)
         events = sorted(out['events'], key=lambda e: (e['time'], e['offset']['x']))
-        data = dict(motion, events=[{k: e[k] for k in ('time', 'kind', 'source', 'offset', 'table')} for e in events])
+        data = dict(motion, events=[{k: e[k] for k in ('time', 'kind', 'source', 'offset', 'table', 'zone')} for e in events])
         json.dump(data, open(os.path.join(OUT, s['stage'] + '.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
         report['stages'][s['stage']] = {'carriers': len(events), 'table': sum(e['table'] for e in events),
                                         'fixed': dict(collections.Counter(e['kind'] for e in events if not e['table'])),

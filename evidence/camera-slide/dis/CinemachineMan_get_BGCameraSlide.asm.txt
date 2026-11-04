@@ -1,0 +1,7 @@
+#### InGame.Kernel.CinemachineMan::get_BGCameraSlide() RVA 1cc6a40 len 13
+01cc6a40  mov      eax, dword ptr [rdx + 0x68]
+01cc6a43  movsd    xmm0, qword ptr [rdx + 0x60]   ; ._BGCameraSlideRange
+01cc6a48  movsd    qword ptr [rcx], xmm0
+01cc6a4c  mov      dword ptr [rcx + 8], eax
+01cc6a4f  mov      rax, rcx
+01cc6a52  ret      

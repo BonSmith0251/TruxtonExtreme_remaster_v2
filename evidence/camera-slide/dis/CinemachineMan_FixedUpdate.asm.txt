@@ -1,0 +1,107 @@
+#### InGame.Kernel.CinemachineMan::FixedUpdate() RVA 1cc5600 len 1b0
+01cc5600  push     rbx
+01cc5602  sub      rsp, 0x50
+01cc5606  cmp      byte ptr [rip + 0x299dbee], 0   ; [46631fb] bss
+01cc560d  mov      rbx, rcx
+01cc5610  jne      0x1cc5631
+01cc5612  lea      rcx, [rip + 0x26f287f]   ; [43b7e98] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::IsInstanceNull
+01cc5619  call     0x4e0a50
+01cc561e  lea      rcx, [rip + 0x26f29db]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01cc5625  call     0x4e0a50
+01cc562a  mov      byte ptr [rip + 0x299dbca], 1   ; [46631fb] bss
+01cc5631  mov      rcx, qword ptr [rip + 0x26f2860]   ; [43b7e98] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::IsInstanceNull
+01cc5638  call     0xd102f0   ; MonoBehaviourSingleton`1::IsInstanceNull() | SimpleSingleton`1::IsInstanceNull()
+01cc563d  test     al, al
+01cc563f  jne      0x1cc5759
+01cc5645  mov      qword ptr [rsp + 0x60], rdi   ; ._BGCameraSlideRange
+01cc564a  mov      rax, qword ptr [rip + 0x26f29af]   ; [43b8000] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.InGameManager>::get_GetInstance
+01cc5651  mov      rax, qword ptr [rax + 0x20]   ; ._cameras
+01cc5655  test     byte ptr [rax + 0x135], 1
+01cc565c  jne      0x1cc5666
+01cc565e  mov      rcx, rax
+01cc5661  call     0x4de1e0
+01cc5666  mov      rax, qword ptr [rax + 0xc0]   ; ._burnShake
+01cc566d  mov      rax, qword ptr [rax + 0x10]
+01cc5671  test     byte ptr [rax + 0x135], 1
+01cc5678  jne      0x1cc5682
+01cc567a  mov      rcx, rax
+01cc567d  call     0x4de1e0
+01cc5682  mov      rax, qword ptr [rax + 0xb8]   ; ._mover
+01cc5689  mov      rdi, qword ptr [rax]
+01cc568c  test     rdi, rdi
+01cc568f  je       0x1cc57ab
+01cc5695  movaps   xmmword ptr [rsp + 0x40], xmm6   ; ._npow
+01cc569a  xor      edx, edx
+01cc569c  mov      rcx, rdi
+01cc569f  movaps   xmmword ptr [rsp + 0x20], xmm8   ; ._cameras
+01cc56a5  call     0x1cf27e0   ; InGameManager::get_BaseDeltaTime()
+01cc56aa  movss    xmm1, dword ptr [rbx + 0x34]   ; ._sec1st
+01cc56af  xorps    xmm6, xmm6
+01cc56b2  comiss   xmm1, xmm6
+01cc56b5  movaps   xmm8, xmm0
+01cc56b9  ja       0x1cc5779
+01cc56bf  movss    xmm1, dword ptr [rbx + 0x38]   ; ._sec2nd
+01cc56c4  comiss   xmm1, xmm6
+01cc56c7  jbe      0x1cc575f
+01cc56cd  movss    xmm1, dword ptr [rbx + 0x3c]   ; ._sec2ndMax
+01cc56d2  comiss   xmm1, xmm6
+01cc56d5  jbe      0x1cc575f
+01cc56db  movaps   xmmword ptr [rsp + 0x30], xmm7   ; ._cameraNoisePow
+01cc56e0  movss    xmm7, dword ptr [rbx + 0x38]   ; ._sec2nd
+01cc56e5  divss    xmm7, xmm1
+01cc56e9  comiss   xmm6, xmm7
+01cc56ec  ja       0x1cc5700
+01cc56ee  movss    xmm0, dword ptr [rip + 0x181b4d6]   ; rdata 34e0bcc f=1,3.141593,4,10 d=50.12387842
+01cc56f6  comiss   xmm7, xmm0
+01cc56f9  jbe      0x1cc5703
+01cc56fb  movaps   xmm7, xmm0
+01cc56fe  jmp      0x1cc5703
+01cc5700  xorps    xmm7, xmm7
+01cc5703  xor      edx, edx
+01cc5705  mov      rcx, rdi
+01cc5708  call     0x1cf2c00   ; InGameManager::get_IsGameStop()
+01cc570d  test     al, al
+01cc570f  jne      0x1cc571e
+01cc5711  xor      edx, edx
+01cc5713  mov      rcx, rdi
+01cc5716  call     0x1cf29c0   ; InGameManager::get_EffectTimeFactor() | AdaptivePerformanceScaler::get_Scale()
+01cc571b  movaps   xmm6, xmm0
+01cc571e  movss    xmm0, dword ptr [rbx + 0x38]   ; ._sec2nd
+01cc5723  xor      r8d, r8d
+01cc5726  mulss    xmm7, xmm6
+01cc572a  subss    xmm0, xmm8
+01cc572f  mov      rcx, rbx
+01cc5732  mulss    xmm7, dword ptr [rbx + 0x40]   ; ._npow
+01cc5737  movss    dword ptr [rbx + 0x38], xmm0   ; ._sec2nd
+01cc573c  movaps   xmm1, xmm7
+01cc573f  call     0x1cc6110   ; CinemachineMan::SetCameraNoise(System.Single)
+01cc5744  movaps   xmm7, xmmword ptr [rsp + 0x30]   ; ._cameraNoisePow
+01cc5749  movaps   xmm6, xmmword ptr [rsp + 0x40]   ; ._npow
+01cc574e  movaps   xmm8, xmmword ptr [rsp + 0x20]   ; ._cameras
+01cc5754  mov      rdi, qword ptr [rsp + 0x60]   ; ._BGCameraSlideRange
+01cc5759  add      rsp, 0x50
+01cc575d  pop      rbx
+01cc575e  ret      
+01cc575f  xor      eax, eax
+01cc5761  xor      r8d, r8d
+01cc5764  mov      qword ptr [rbx + 0x34], rax   ; ._sec1st
+01cc5768  xorps    xmm1, xmm1
+01cc576b  mov      rcx, rbx
+01cc576e  mov      qword ptr [rbx + 0x3c], rax   ; ._sec2ndMax
+01cc5772  call     0x1cc6110   ; CinemachineMan::SetCameraNoise(System.Single)
+01cc5777  jmp      0x1cc5749
+01cc5779  xor      edx, edx
+01cc577b  mov      rcx, rdi
+01cc577e  call     0x1cf2aa0   ; InGameManager::get_IsBaseGameStop()
+01cc5783  test     al, al
+01cc5785  jne      0x1cc578c
+01cc5787  movss    xmm6, dword ptr [rbx + 0x40]   ; ._npow
+01cc578c  xor      r8d, r8d
+01cc578f  movaps   xmm1, xmm6
+01cc5792  mov      rcx, rbx
+01cc5795  call     0x1cc6110   ; CinemachineMan::SetCameraNoise(System.Single)
+01cc579a  movss    xmm0, dword ptr [rbx + 0x34]   ; ._sec1st
+01cc579f  subss    xmm0, xmm8
+01cc57a4  movss    dword ptr [rbx + 0x34], xmm0   ; ._sec1st
+01cc57a9  jmp      0x1cc5749
+01cc57ab  call     0x4e0d00

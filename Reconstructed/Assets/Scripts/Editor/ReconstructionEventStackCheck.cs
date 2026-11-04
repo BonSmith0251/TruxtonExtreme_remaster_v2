@@ -10,7 +10,7 @@ using UnityEngine;
 // Run: Unity.exe -batchmode -projectPath ... -executeMethod ReconstructionEventStackCheck.Run
 public static class ReconstructionEventStackCheck
 {
-    static readonly string[] Sims={"sb01_BG02_left","sb01ent_ur_BG04","sc01_BG07","sg01_BG02","sp01_BG07","sv01_BG02","mn01c2_BG06","sm01_1a_BG04"};
+    static readonly string[] Sims={"sb01_BG02_left","sb01ent_ur_BG04","sc01_BG07","sg01_BG02","sp01_BG07","sv01_BG02","mn01c2_BG06","sm01_1a_BG04","sf01a_BG05","sf01b_BG05","sf01_4a_BG05","sf01_4b_BG05","TSa01_hid_h_1stp_BG05","TSa01_hid_m_1stp_BG05","TSa01_m_1stp_BG05","TSa01_run_que3_BG05"};
     const float MaxPositionError=.05f;
     // air_sim.py eases SplineMove type 7 with the exact InOutSine; the port uses the native 0.1 deg Cosf table
     // (EasingUtility.InOutSine01, Ene_Sq01/SPEC.md) indexed in float32. On sb01ent's 140.7-unit route the curves are up

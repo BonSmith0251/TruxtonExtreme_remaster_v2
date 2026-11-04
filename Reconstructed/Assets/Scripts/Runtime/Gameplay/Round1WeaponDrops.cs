@@ -22,17 +22,28 @@ public partial class Round1Weapon
 
     public void ResetEnemyDrops(float time)
     {
-        EnemyDropsSpawned=GroundDropsSpawned=0;itemTableIndex=0;groundExtendsGiven.Clear();
+        EnemyDropsSpawned=GroundDropsSpawned=0;itemTableIndex=0;Round1Powerup.History.Clear();groundExtendsGiven.Clear();
         foreach(var pickup in powerups??Array.Empty<Round1Powerup>())if(pickup)pickup.ResetPickup();
     }
-    // Player-dependent extend substitution (NumExtends -> OneUp) is not reconstructed.
-    public Round1PickupKind NextTableItem(){var kind=ItemTable[itemTableIndex];itemTableIndex=(itemTableIndex+1)%ItemTable.Length;return kind;}
+    // TableItemDrop: a pending score extend turns the draw into a 1UP item without advancing the table.
+    public Round1PickupKind NextTableItem()
+    {
+        if(PendingExtends>0){PendingExtends--;return Round1PickupKind.OneUp;}
+        var kind=ItemTable[itemTableIndex];itemTableIndex=(itemTableIndex+1)%ItemTable.Length;return kind;
+    }
 
     public void OnEnemyDestroyed(Round1Combat.Target target)
     {
         if(target==null || target.active || target.health>0 || !target.isPickupDrone || !SimulationRunning)return;
-        if(target.position.x<0 || target.position.x>1 || target.position.y<0 || target.position.y>1)return;
-        if(SpawnDroppedPickup(target.pickupKind,target.position,player.playback.elapsed))EnemyDropsSpawned++;
+        // ItemEnemyBox.DropItem 0x1D70940 runs whenever the box dies, even with its centre past the screen edge (only its
+        // collider has to overlap the screen to be hit). InGameManager.ItemDrop places the item at GetClampedPosition
+        // 0x1CE4330: x inside PlayerControllMin.x..PlayerControllMax.x (+-123, about the screen edge; the half camera-slide
+        // term is left out [I]) and z up to 100, the top of the carrier frame. Here: the player's control range.
+        float m=player.screenMargin;
+        var at=new Vector2(Mathf.Clamp(target.position.x,m,1-m),Mathf.Clamp(target.position.y,m,1));
+        // A ScoreUp box pays the 5000 bonus itself instead of dropping an item.
+        if(target.pickupKind==Round1PickupKind.Bonus){Get5000(at);return;}
+        if(SpawnDroppedPickup(target.pickupKind,at,player.playback.elapsed))EnemyDropsSpawned++;
     }
 
     // PawnEnemyGround.DropItem (0x1d17690) and the colour box overrides: one ground item at the box, per its source item id.
@@ -45,6 +56,7 @@ public partial class Round1Weapon
         if(item==1 || item==9)groundExtendsGiven.Add(key);
         var kind=item==TableItem?NextTableItem():SourceItemKind(item);
         if(kind==null)return;
+        if(kind==Round1PickupKind.Bonus){Get5000(player.stageCamera.WorldToViewportPoint(world));return;}   // PawnEnemyGround.DropItem: kind 8 pays Get5000 at the enemy
         var pickup=SpawnDroppedPickup(kind.Value,player.stageCamera.WorldToViewportPoint(world),time);
         var ground=combat.groundEnemies;
         if(pickup){pickup.SpawnOnGround(world,time,ground?ground.ItemPrefab(kind.Value):null,ground?ground.Root:null);GroundDropsSpawned++;GroundItemDropped?.Invoke(pickup,world);}
@@ -72,6 +84,7 @@ public partial class Round1Weapon
             pickup=Instantiate(template,template.transform.parent);
             Array.Resize(ref powerups,powerups.Length+1);powerups[powerups.Length-1]=pickup;
         }
-        pickup.player=player;pickup.gameObject.SetActive(true);pickup.SpawnAt(position,time);return pickup;
+        pickup.player=player;pickup.gameObject.SetActive(true);pickup.SpawnAt(position,time);
+        Round1Powerup.History.Add("drop "+kind+"@"+time.ToString("0.0")+" vp "+position.ToString("0.00"));return pickup;
     }
 }

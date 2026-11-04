@@ -1,0 +1,72 @@
+#### InGame.Kernel.CinemachineMan::_updateCameras(UnityEngine.Vector3,UnityEngine.Quaternion) RVA 1cc68b0 len 12a
+01cc68b0  mov      qword ptr [rsp + 8], rbx
+01cc68b5  mov      qword ptr [rsp + 0x10], rsi
+01cc68ba  push     rdi
+01cc68bb  sub      rsp, 0x40
+01cc68bf  cmp      byte ptr [rip + 0x299c939], 0   ; [46631ff] bss
+01cc68c6  mov      rdi, r8
+01cc68c9  mov      rsi, rdx
+01cc68cc  mov      rbx, rcx
+01cc68cf  jne      0x1cc68e4
+01cc68d1  lea      rcx, [rip + 0x26f3338]   ; [43b9c10] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<TXEKernel.TXE3DSystem>::get_GetInstance
+01cc68d8  call     0x4e0a50
+01cc68dd  mov      byte ptr [rip + 0x299c91b], 1   ; [46631ff] bss
+01cc68e4  movups   xmm0, xmmword ptr [rdi]
+01cc68e7  mov      rax, qword ptr [rbx + 0x20]   ; ._cameras
+01cc68eb  movups   xmmword ptr [rbx + 0x78], xmm0   ; ._cameraRotate
+01cc68ef  test     rax, rax
+01cc68f2  je       0x1cc69cf
+01cc68f8  cmp      dword ptr [rax + 0x18], 0
+01cc68fc  jbe      0x1cc69d5
+01cc6902  mov      rcx, qword ptr [rax + 0x20]   ; ._cameras
+01cc6906  test     rcx, rcx
+01cc6909  je       0x1cc69cf
+01cc690f  xor      edx, edx
+01cc6911  call     0x3059180   ; Component::get_transform()
+01cc6916  test     rax, rax
+01cc6919  je       0x1cc69cf
+01cc691f  movups   xmm0, xmmword ptr [rdi]
+01cc6922  mov      ecx, dword ptr [rsi + 8]
+01cc6925  lea      r8, [rsp + 0x30]   ; ._cameraNoisePow
+01cc692a  movsd    xmm1, qword ptr [rsi]
+01cc692e  lea      rdx, [rsp + 0x20]   ; ._cameras
+01cc6933  mov      dword ptr [rsp + 0x28], ecx   ; ._camerasNoise
+01cc6937  xor      r9d, r9d
+01cc693a  mov      rcx, rax
+01cc693d  movaps   xmmword ptr [rsp + 0x30], xmm0   ; ._cameraNoisePow
+01cc6942  movsd    qword ptr [rsp + 0x20], xmm1   ; ._cameras
+01cc6948  call     0x30913c0   ; Transform::SetLocalPositionAndRotation(UnityEngine.Vector3,UnityEngine.Quaternion)
+01cc694d  mov      rax, qword ptr [rip + 0x26f32bc]   ; [43b9c10] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<TXEKernel.TXE3DSystem>::get_GetInstance
+01cc6954  mov      rax, qword ptr [rax + 0x20]   ; ._cameras
+01cc6958  test     byte ptr [rax + 0x135], 1
+01cc695f  jne      0x1cc6969
+01cc6961  mov      rcx, rax
+01cc6964  call     0x4de1e0
+01cc6969  mov      rax, qword ptr [rax + 0xc0]   ; ._burnShake
+01cc6970  mov      rax, qword ptr [rax + 0x10]
+01cc6974  test     byte ptr [rax + 0x135], 1
+01cc697b  jne      0x1cc6985
+01cc697d  mov      rcx, rax
+01cc6980  call     0x4de1e0
+01cc6985  mov      rax, qword ptr [rax + 0xb8]   ; ._mover
+01cc698c  mov      rcx, qword ptr [rax]
+01cc698f  test     rcx, rcx
+01cc6992  je       0x1cc69cf
+01cc6994  movups   xmm0, xmmword ptr [rdi]
+01cc6997  lea      r8, [rsp + 0x30]   ; ._cameraNoisePow
+01cc699c  mov      eax, dword ptr [rsi + 8]
+01cc699f  movsd    xmm1, qword ptr [rsi]
+01cc69a3  lea      rdx, [rsp + 0x20]   ; ._cameras
+01cc69a8  xor      r9d, r9d
+01cc69ab  movaps   xmmword ptr [rsp + 0x30], xmm0   ; ._cameraNoisePow
+01cc69b0  movsd    qword ptr [rsp + 0x20], xmm1   ; ._cameras
+01cc69b6  mov      dword ptr [rsp + 0x28], eax   ; ._camerasNoise
+01cc69ba  call     0x26fea60   ; TXE3DSystem::SetupCollisionCamera(UnityEngine.Vector3,UnityEngine.Quaternion)
+01cc69bf  mov      rbx, qword ptr [rsp + 0x50]   ; ._perspectiveAngle
+01cc69c4  mov      rsi, qword ptr [rsp + 0x58]   ; ._BGRootTransform
+01cc69c9  add      rsp, 0x40
+01cc69cd  pop      rdi
+01cc69ce  ret      
+01cc69cf  call     0x4e0d00
+01cc69d4  int3     
+01cc69d5  call     0x4e0cf0

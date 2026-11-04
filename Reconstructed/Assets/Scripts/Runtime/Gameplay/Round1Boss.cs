@@ -420,7 +420,7 @@ public class Round1Boss : RoundBoss
                     break;
             }
             d.position+=d.heading*speed*dt;
-            var shown=d.position+LayerOffset;t.position=ToViewport(shown)+t.nudge;t.sourceRotation=Quaternion.LookRotation(d.heading,Vector3.up);
+            var shown=d.position+LayerOffset;t.position=ToViewport(shown);t.sourceRotation=Quaternion.LookRotation(d.heading,Vector3.up);
             Round1TrackCapture.Active?.Record(t.id,StageTime,new Vector3(shown.x,d.depth,shown.z),t.sourceRotation);
             if(d.state==3 && d.timer>DroneAttackLife){Round1TrackCapture.Active?.End(t.id,false);combat.DespawnSourceTarget(t);droneMotion.RemoveAt(i);}
         }

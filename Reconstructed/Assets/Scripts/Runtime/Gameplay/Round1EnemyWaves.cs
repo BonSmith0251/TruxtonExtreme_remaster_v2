@@ -14,8 +14,10 @@ public class Round1EnemyWaves : MonoBehaviour
         public Vector3 offset,rotate;
         public Vector3[] offsets;
         public bool loop,wipeoutOnly,outMeansDestroy;
-        public int loopMax,gameModeMask,indexValue;
+        public int loopMax,gameModeMask,indexValue,zone;
     }
+    // A zone TL (TLEntryClip with _clipFlag zone bits and/or a _conditionFlag; BG08 ZONE A-G, tools/stage_enemies/build_stage_enemies.py).
+    [Serializable] public class Zone { public string name;public float start,end;public int zone,condition,failed,succeeded; }
     [Serializable] public class Placement
     {
         public string objectName;
@@ -46,15 +48,22 @@ public class Round1EnemyWaves : MonoBehaviour
             int lo=0,hi=times.Length-1;while(hi-lo>1){int mid=(lo+hi)/2;if(times[mid]<=t)lo=mid;else hi=mid;}
             return Vector3.LerpUnclamped(points[lo],points[hi],(t-times[lo])/Mathf.Max(.000001f,times[hi]-times[lo]));
         }
+        // The RouteLUT's _tangents at t (EvalCachedTangent), or the chord when the route has none.
+        public Vector3 SampleTangent(float t)
+        {
+            if(tangents==null || points==null || tangents.Length!=points.Length || tangents.Length==0)return Sample(Mathf.Min(1,t+.001f))-Sample(Mathf.Max(0,t-.001f));
+            if(t<=times[0])return tangents[0];if(t>=1)return tangents[tangents.Length-1];
+            int lo=0,hi=times.Length-1;while(hi-lo>1){int mid=(lo+hi)/2;if(times[mid]<=t)lo=mid;else hi=mid;}
+            return Vector3.LerpUnclamped(tangents[lo],tangents[hi],(t-times[lo])/Mathf.Max(.000001f,times[hi]-times[lo]));
+        }
     }
     [Serializable] public class Model { public string name;public float health; }
     // BGSlideRangeClip windows (stage schedules from tools/stage_enemies carry them; BG03's are the constants below).
     [Serializable] public class Slide { public float start,end,range,easeIn,easeOut; }
-    [Serializable] public class Data { public int version,round,gameModeMask;public string stage;public float sourceHeight;public Event[] events;public Definition[] definitions;public Route[] routes;public Model[] models;public Slide[] slides; }
+    [Serializable] public class Data { public int version,round,gameModeMask;public string stage;public float sourceHeight;public Event[] events;public Definition[] definitions;public Route[] routes;public Model[] models;public Slide[] slides;public Zone[] zones; }
     [Serializable] public class Visual { public string name;public GameObject prefab; }
     class Group { public int scheduled,killed,escaped; }
     class State { public Event data;public int iteration,pending;public bool started,finished;public readonly List<Actor> actors=new List<Actor>(); }
-    readonly Dictionary<State,int> ss01Chains=new Dictionary<State,int>();
     class Pending { public State state;public Placement placement;public float time,speedDelta;public Vector3 extraOffset;public int seed,placementIndex;public Call call; }
     // One EntryEnemy call: its first placement is the head the attributeFlag-1 placements become children of.
     class Call { public Actor head; }
@@ -73,8 +82,12 @@ public class Round1EnemyWaves : MonoBehaviour
         // two-target enemy (Ene_Mm01) sharing the stack with its partner; extraPart actors are not schedule entries.
         public string model;public Actor ownerActor,partner;public readonly List<Actor> children=new List<Actor>();public int part=-1;public bool extraPart;
         public Transform[] nodes;public Quaternion[] nodeBase;public Dictionary<string,(Transform,Quaternion)> childNodes;public LineRenderer[] lines;public Transform[] burners;
-        public Round1MeteorField.Body meteor;public Transform meteorModel;
+        public Round1MeteorField.Body meteor;public Transform meteorModel;public float lastUpdate=-1,meteorInArea,meteorOutside;
+        // PhysicsEnemy._node origins (model transforms its physics3d colliders copy), from physics-colliders.json.
+        public Transform[] physicsOrigins;
         public Vector3[] hitShape;public bool wholeBody;
+        // EnemyMoverSnake (SnakeBones): head, bones, their last directions, and each hit circle's bone (-1 head) and offset.
+        public Transform snakeHead;public Transform[] snakeBones;public Vector3[] snakeDirs,snakeOffsets;public int[] snakeCircleBone;
         // Cosmetic class motion of a model node (ClassNodes): Sh01's mesh spin, Mn01c's tumble, Mp01's turret.
         public Transform classNode;public Quaternion classBase=Quaternion.identity,tumble=Quaternion.identity,tumbleSpin=Quaternion.identity;public Vector3 spinRate;public float tumbleRate,tumbleFrames;
         public bool OriginalProjection=>sa01!=null || md01!=null || stack!=null;
@@ -94,6 +107,14 @@ public class Round1EnemyWaves : MonoBehaviour
     public int CapacityMisses { get; private set; }
     public int TriggeredEvents { get; private set; }
     public int ConditionalSkipped { get; private set; }
+    // Events in a zone TL that did not start (BG08: the branch the player's performance did not pick).
+    public int ZoneSkipped { get; private set; }
+    // InGameManager TL flags (SetTLFlag / ResetTLFlag / IsTLFlag) and the zone TLs that read and write them.
+    public int TLFlags { get; private set; }
+    public readonly List<string> ZoneLog=new List<string>();
+    public const int NoBomber=1,NoDead=2,Extinction=4,Pipil50=8;
+    class ZoneState { public Zone data;public bool started,finished,playing;public int bombsAt,deathsAt; }
+    readonly List<ZoneState> zones=new List<ZoneState>();
     public int PendingCount => pending.Count;
     public float LastTime { get; private set; }
     // InGameManager.LateUpdate moves _inGameEnemyRoot to -.5 * _bgSlideRate * CinemachineMan._BGCameraSlideRange
@@ -101,6 +122,13 @@ public class Round1EnemyWaves : MonoBehaviour
     // runs. Ground objects live outside this root. Actors move in the root's local frame; this is its offset.
     public const float PlayerControllWidth=123;
     public Vector3 LayerOffset { get; private set; }
+    // The same call (UpdateSlideRate / LateUpdate) first runs CinemachineMan.SetBGCameraSlide (0x1CC5D50): the BG root,
+    // InGameStage._stageCamera (the rail Camera, set by SetBGCameraTransform(camera, 50) in SetupStage), gets
+    // SetLocalPositionAndRotation(rate * _BGCameraSlideRange + _shakeOffset, _groundCameraRotate * _shakeRotate).
+    // The range is X only (SetBGCameraSlideRange writes x); shake is not reconstructed. So the background slides by the
+    // full range with the ship while the enemy root takes -0.5 of it. Evidence: evidence/camera-slide.
+    public Vector3 CameraSlide { get; private set; }
+    Transform slidCamera;Vector3 cameraBase,cameraWritten;
     float slideRate;
     readonly Dictionary<string,Definition> definitions=new Dictionary<string,Definition>();
     readonly Dictionary<string,Route> routes=new Dictionary<string,Route>();
@@ -121,7 +149,7 @@ public class Round1EnemyWaves : MonoBehaviour
     const int ChainLength=9;const float UnitDistance=22.5f,BodyScore=5000,BodyHealth=2000;
     static readonly Vector3 BodyGravity=new Vector3(0,0,-16);
     sealed class Body { public Round1Combat.Target target;public int id;public bool started,detached,entered,gone;public Vector3 position;public float outsideSince=-1; }
-    sealed class Chain { public Actor head;public int headId,id;public Body[] bodies;public bool broken,headGone,headStopped;public float lastTime; }
+    sealed class Chain { public Actor head;public int headId,id;public Body[] bodies;public bool broken,headGone,headStopped;public float lastTime;public int kills;public Vector2 headAt; }
     readonly List<Chain> chains=new List<Chain>();int chainSerial;
     public int ChainBodiesSpawned { get; private set; }
     public int ChainBodiesKilled { get; private set; }
@@ -147,6 +175,7 @@ public class Round1EnemyWaves : MonoBehaviour
             if(!routes.ContainsKey(r.name)){for(int i=1;i<r.points.Length;i++)r.length+=Vector3.Distance(r.points[i-1],r.points[i]);routes.Add(r.name,r);}
         foreach(var v in visuals)models.Add(v.name,v);
         foreach(var m in Source.models)health.Add(m.name,Round1Balance.Current.EnemyHealth(m.name));
+        if(Source.zones!=null)foreach(var z in Source.zones)zones.Add(new ZoneState{data=z});
         foreach(var e in Source.events)
         {
             // Ground entries (BGxx_ge, group "ground/...") are played by Round1GroundEnemies, not as air enemies.
@@ -163,6 +192,7 @@ public class Round1EnemyWaves : MonoBehaviour
         foreach(var s in states){s.started=s.finished=s.data.start<time-.0001f;s.iteration=s.pending=0;s.actors.Clear();}
         foreach(var g in groups.Values)g.scheduled=g.killed=g.escaped=0;
         TotalSpawned=CapacityMisses=TriggeredEvents=ConditionalSkipped=0;LastTime=time;slideRate=0;LayerOffset=Vector3.zero;
+        ResetZones(time);
         // Seeking intentionally clears historical actors. Only upcoming authored cues run.
     }
     public bool IsWipeout(string group)
@@ -174,8 +204,11 @@ public class Round1EnemyWaves : MonoBehaviour
         Initialize();if(!initialized || !combat || !combat.weapon.SimulationRunning)return;
         if(now<LastTime-.001f)ResetSchedule(now);
         if(!combat.weapon.player.SpawnAnimating)slideRate=Mathf.Clamp(PlayerSourcePosition().x/PlayerControllWidth,-1,1);
-        LayerOffset=new Vector3(-.5f*slideRate*SlideAt(now),0,0);
+        float range=SlideAt(now);
+        SlideCamera(new Vector3(slideRate*range,0,0));
+        LayerOffset=new Vector3(-.5f*slideRate*range,0,0);
         UpdateActors(now);
+        StepZones(now,false);
         if(combat.boss && combat.boss.SuppressesWaves)
         {pending.Clear();LastTime=now;return;}
         foreach(var state in states)
@@ -185,6 +218,7 @@ public class Round1EnemyWaves : MonoBehaviour
             {
                 state.started=true;
                 if(now>=e.end || (e.gameModeMask!=0 && (e.gameModeMask & gameModeMask)==0)) {state.finished=true;continue;}
+                if(e.zone!=0 && !ZonePlaying(e.zone)){ZoneSkipped++;state.finished=true;continue;}
                 if(e.wipeoutOnly && !IsWipeout(e.group)){ConditionalSkipped++;state.finished=true;continue;}
                 TriggeredEvents++;Queue(state,e.start+e.startDelay/e.timeScale);
             }
@@ -203,9 +237,77 @@ public class Round1EnemyWaves : MonoBehaviour
             if(now-p.time>=Lifetime(definitions[p.state.data.enemy]) || p.time>=spawnCutoff) {MarkMissed(p.state);continue;}
             Spawn(p,now);
         }
-        // A meteor spawned this frame can push meteors that were already placed; redraw them where their bodies are.
-        SyncMeteors();
         LastTime=now;
+    }
+    // Zone TLs (native InGame.Kernel.Timeline.TLEntryBehaviour):
+    // - OnBehaviourPlay 0x1D522C0: a TL with a _conditionFlag clears its _failedFlag|_successedFlag; a TL with zone bits in
+    //   _clipFlag starts only if IsCheckStartTL 0x1D51BB0 finds InGameManager.IsTLFlag(_clipFlag & AllZone).
+    // - OnBehaviourPause 0x1D51F50: a conditional TL that played checks the areas it covers (NoBomber: no bomb, NoDead: no
+    //   death, Extinction: destruction rate 1, Pipil50: pipil rate .5) and sets _successedFlag or _failedFlag.
+    // BG08: ZONE A -> B (failed) / C (succeeded) -> D / E -> F / G. Bombs and deaths are counted over the TL's time window.
+    // Extinction and Pipil50 are used by no stage and count as met.
+    public bool ZonePlaying(int zone)
+    {
+        if(zone==0)return true;
+        foreach(var z in zones)if(z.data.zone==zone && z.started && z.playing)return true;
+        return false;
+    }
+    // Seeking (restart, F3 boss jump): the zones before time are replayed on the clean route (every condition met).
+    void ResetZones(float time)
+    {
+        TLFlags=0;ZoneSkipped=0;ZoneLog.Clear();
+        foreach(var z in zones)z.started=z.finished=z.playing=false;
+        StepZones(time-.0002f,true);
+    }
+    // Boundaries in time order; at one instant the ending TLs set their flags before the starting ones check them.
+    void StepZones(float now,bool replay)
+    {
+        for(int guard=0;guard<4*zones.Count+4;guard++)
+        {
+            float t=float.MaxValue;
+            foreach(var z in zones){if(!z.started)t=Mathf.Min(t,z.data.start);else if(!z.finished)t=Mathf.Min(t,z.data.end);}
+            if(t>now+.00001f)return;
+            foreach(var z in zones)if(z.started && !z.finished && z.data.end<=t+.00001f)EndZone(z,replay);
+            foreach(var z in zones)if(!z.started && z.data.start<=t+.00001f)StartZone(z);
+        }
+    }
+    void StartZone(ZoneState z)
+    {
+        var d=z.data;z.started=true;
+        if(d.condition!=0)TLFlags&=~(d.failed|d.succeeded);
+        z.playing=d.zone==0 || (TLFlags&d.zone)!=0;
+        var w=combat?combat.weapon:null;z.bombsAt=w?w.BombsUsed:0;z.deathsAt=w?w.Deaths:0;
+        ZoneLog.Add(d.name+(z.playing?" start ":" skip ")+d.start.ToString("0.##"));
+    }
+    void EndZone(ZoneState z,bool replay)
+    {
+        var d=z.data;z.finished=true;if(!z.playing || d.condition==0)return;
+        bool ok=replay || ZoneConditionMet(z);
+        TLFlags|=ok?d.succeeded:d.failed;
+        ZoneLog.Add(d.name+(ok?" succeeded ":" failed ")+d.end.ToString("0.##"));
+    }
+    bool ZoneConditionMet(ZoneState z)
+    {
+        var w=combat?combat.weapon:null;if(!w)return true;
+        if((z.data.condition&NoBomber)!=0 && w.BombsUsed>z.bombsAt)return false;
+        if((z.data.condition&NoDead)!=0 && w.Deaths>z.deathsAt)return false;
+        return true;
+    }
+    // Zone bits that play when every condition is met (the stage inspection overlay shows this route).
+    public static int CleanRouteZones(Zone[] list)
+    {
+        if(list==null || list.Length==0)return 0;
+        var marks=new List<(float t,int start,Zone z)>();
+        foreach(var z in list){marks.Add((z.start,1,z));marks.Add((z.end,0,z));}
+        marks.Sort((a,b)=>a.t!=b.t?a.t.CompareTo(b.t):a.start.CompareTo(b.start));
+        int flags=0,played=0;var playing=new HashSet<Zone>();
+        foreach(var m in marks)
+        {
+            var z=m.z;
+            if(m.start==1){if(z.condition!=0)flags&=~(z.failed|z.succeeded);if(z.zone==0 || (flags&z.zone)!=0){playing.Add(z);played|=z.zone;}}
+            else if(playing.Contains(z) && z.condition!=0)flags|=z.succeeded;
+        }
+        return played;
     }
     void Queue(State state,float time)
     {
@@ -259,8 +361,10 @@ public class Round1EnemyWaves : MonoBehaviour
     // Air programs the event stack runs, with the class movers it hosts (Round1EventStack.HasClassMover). Bosses, and
     // classes whose own native code moves them and is not ported yet (specs in evidence/movers), keep their own movers.
     static readonly HashSet<string> OwnMovers=new HashSet<string>{"Pf_Ene_Lc01","Pf_Ene_Sa01","Pf_Ene_Md01"};
-    // BG03 keeps the movers validated against recordings of the original (Round 1).
-    bool StackDriven(string model,Definition d)=>Source.stage!="BG03" && !model.StartsWith("Pf_Ene_Bos") && !OwnMovers.Contains(model)
+    // BG03 keeps the movers validated against recordings of the original (Round 1). Class routes (Lb01: it flew straight in
+    // there before) run natively everywhere.
+    bool NativeHere(string model)=>Source.stage!="BG03" || Round1EventStack.HasClassRoutes(model);
+    bool StackDriven(string model,Definition d)=>NativeHere(model) && !model.StartsWith("Pf_Ene_Bos") && !OwnMovers.Contains(model)
         && (Round1EventStack.HasClassMover(model) || Round1EventStack.Applies(d) || RouteDriven(model,d));
     // SplineMover route mode (Round1EventStack.RouteMode). Mj01h keeps its chain mover, stage zone objects their own.
     static bool RouteDriven(string model,Definition d)=>Round1EventStack.RouteMode(d,model) && model!="Pf_Ene_Mj01h" && !model.StartsWith("Pf_EneObj");
@@ -288,9 +392,9 @@ public class Round1EnemyWaves : MonoBehaviour
         if(model.Contains("Meteo") && actor.routes.Length==0)
         {
             actor.meteor=Round1MeteorField.Create(model,origin,Quaternion.Euler(placement.rotate+p.state.data.rotate),actor.speed*p.state.data.timeScale,rng);
-            ObstaclesFromEnemies(now);meteors.Add(actor.meteor);
+            meteors.Add(actor.meteor);
         }
-        bool classMover=Source.stage!="BG03" && (Round1EventStack.HasClassMover(model) || RouteDriven(model,d)); // needs the stack's frame
+        bool classMover=NativeHere(model) && (Round1EventStack.HasClassMover(model) || RouteDriven(model,d)); // needs the stack's frame
         if(actor.md01==null && actor.sa01==null && !classMover && Round1RouteProgram.Applies(d))actor.program=new Round1RouteProgram(origin,actor.speed,d.events,routes,d.duration);
         if(actor.md01==null && actor.sa01==null && actor.program==null && actor.meteor==null && StackDriven(model,d))
             actor.stack=new Round1EventStack(d,origin,(placement.rotate+p.state.data.rotate).y,actor.speed,routes,model,p.seed,PlayerLayerPosition,p.state.data.indexValue);
@@ -325,13 +429,10 @@ public class Round1EnemyWaves : MonoBehaviour
         actor.animation.Begin(d,placement.rotate+p.state.data.rotate,name=>routes.TryGetValue(name,out var route)?route.length:(actor.md01!=null?Round1Md01Motion.RouteLength(name):0),actor.speed);
         var fire=Array.Find(d.events,a=>a.eventType==83);t.fireInterval=fire!=null?Mathf.Max(.25f,fire.repeatDelay):1.8f;t.fire=t.fireInterval;
         actor.wholeBody=WholeBodyExit.Contains(model);
-        // Ene_Ss01's repeats are not RookEnemy children: all instances of one spawn take the same ring slot and overlap
-        // natively (evidence/movers/Ene_Ss01/SPEC.md sec. 3). One shared chain id keeps the separation nudge off them.
-        if(model=="Pf_Ene_Ss01" && Source.stage!="BG03"){if(!ss01Chains.TryGetValue(p.state,out int c))ss01Chains[p.state]=c=-(++chainSerial);t.chain=c;}
         actor.target=t;p.state.actors.Add(actor);actors.Add(actor);live.Add(t.id,actor);TotalSpawned++;
         Round1TrackCapture.Active?.Birth(t.id,p.state.data,d,model,now,t.health);
         UpdateActor(actor,now);combat.PlaceSourceTarget(t);
-        if(combat.sourceAttacks)combat.sourceAttacks.Register(t,d,p.time,p.state.data.timeScale,actor.stack!=null && actor.stack.RunsStack);
+        if(combat.sourceAttacks)combat.sourceAttacks.Register(t,d,p.time,p.state.data.timeScale,actor.stack!=null && actor.stack.TimesBullets);
         // Ene_Mf01._onBulletFire: mf01_fire2 when the player is within 60 of its circle's centre (_circlePos), else mf01_fire1.
         if(model=="Pf_Ene_Mf01" && Source.stage!="BG03" && combat.sourceAttacks)
         {
@@ -355,7 +456,7 @@ public class Round1EnemyWaves : MonoBehaviour
     {
         var t=combat.SpawnSourceTarget(visual.prefab,a.target.position,health[a.model]);if(t==null){CapacityMisses++;return;}
         t.sourceSpawn=true;t.sourceScale=a.target.sourceScale;t.radius=a.target.radius;t.fires=false;
-        a.target.chain=t.chain=-(++chainSerial);a.part=0;a.nodes=null;a.hitShape=MmHalfShape;   // its first update ran as a whole enemy: find the half nodes again
+        a.part=0;a.nodes=null;a.hitShape=MmHalfShape;   // its first update ran as a whole enemy: find the half nodes again
         var b=new Actor{state=a.state,definition=a.definition,placement=a.placement,born=a.born,origin=a.origin,speed=a.speed,routes=a.routes,model=a.model,
             stack=a.stack,part=1,partner=a,extraPart=true,hitShape=MmHalfShape,target=t};
         a.partner=b;b.animation=t.visual.GetComponent<Round1EnemyAnimation>();if(!b.animation)b.animation=t.visual.AddComponent<Round1EnemyAnimation>();
@@ -391,13 +492,13 @@ public class Round1EnemyWaves : MonoBehaviour
     void SpawnChain(Actor head,float now)
     {
         var prefab=combat.effects.Prefab(ChainBody);if(!prefab){Debug.LogWarning("Missing "+ChainBody+"; Mj01 has no body.",this);return;}
-        var chain=new Chain{head=head,headId=head.target.id,id=++chainSerial,bodies=new Body[ChainLength],lastTime=now};
-        head.target.chain=chain.id;var shape=Round1HitShapes.Get(ChainBody);
+        var chain=new Chain{head=head,headId=head.target.id,id=++chainSerial,bodies=new Body[ChainLength],lastTime=now,headAt=head.target.position};
+        var shape=Round1HitShapes.Get(ChainBody);
         for(int i=0;i<ChainLength;i++)
         {
             var t=combat.SpawnSourceTarget(prefab,ToViewport(head.origin+LayerOffset),BodyHealth);
             if(t==null){CapacityMisses++;continue;}
-            t.sourceSpawn=true;t.sourceScale=WorldScale;t.lockOn=false;t.blocksLaser=true;t.score=(int)BodyScore;t.chain=chain.id;t.invulnerable=true;
+            t.sourceSpawn=true;t.sourceScale=WorldScale;t.lockOn=false;t.blocksLaser=true;t.score=(int)BodyScore;t.invulnerable=true;
             Round1Combat.SetHitCircles(t,shape,Quaternion.identity,1/Source.sourceHeight,1/Source.sourceHeight);
             chain.bodies[i]=new Body{target=t,id=t.id,position=head.origin};ChainBodiesSpawned++;
         }
@@ -434,8 +535,15 @@ public class Round1EnemyWaves : MonoBehaviour
             {
                 chain.headGone=true;
                 // Ene_Mj01h death: every body gets SetParentKilled; bodies not yet released never come out.
-                if(h.killed)for(int i=0;i<ChainLength;i++)Detach(chain,i);
+                if(h.killed)
+                {
+                    for(int i=0;i<ChainLength;i++)Detach(chain,i);
+                    // Ene_Mj01h._callDeadEffect 0x1DC7D70: Get5000 if all 9 bodies died first, then always ItemDrop(BombStock).
+                    ChainKill(chain,chain.headAt);
+                    combat.weapon.SpawnDroppedPickup(Round1PickupKind.BombStock,chain.headAt,now);
+                }
             }
+            else if(!chain.headGone)chain.headAt=h.target.position;
             // moveEndCallback -> SendMessage: at the head's route end every released body stops and sinks (not BG03).
             if(!chain.headStopped && Source.stage!="BG03" && headAge>=ChainStopAge(h)){chain.headStopped=true;for(int i=0;i<ChainLength;i++)Detach(chain,i);}
             bool any=false;
@@ -449,6 +557,7 @@ public class Round1EnemyWaves : MonoBehaviour
                     {
                         // ReceiveKill: the bodies behind this one are cut loose and no more are released.
                         ChainBodiesKilled++;chain.broken=true;for(int j=i+1;j<ChainLength;j++)Detach(chain,j);
+                        ChainKill(chain,b.target.position);   // Ene_Mj01b.ToDestroid 0x1DC6F70
                     }
                     continue;
                 }
@@ -460,7 +569,7 @@ public class Round1EnemyWaves : MonoBehaviour
                 else if(b.started)b.position=PathAt(h,headAge-lag);
                 var move=b.position-previous;
                 if(move.sqrMagnitude>1e-6f && !b.detached)b.target.sourceRotation=Quaternion.Euler(0,Mathf.Atan2(move.x,move.z)*Mathf.Rad2Deg,0);
-                b.target.position=ToViewport(b.position+LayerOffset)+b.target.nudge;
+                b.target.position=ToViewport(b.position+LayerOffset);
                 Round1Combat.SetHitCircles(b.target,Round1HitShapes.Get(ChainBody),b.target.sourceRotation,1/Source.sourceHeight,1/Source.sourceHeight);
                 var v=b.target.position;
                 bool visible=v.x>=0 && v.x<=1 && v.y>=0 && v.y<=1;b.entered|=visible && (b.started || b.detached);
@@ -477,6 +586,8 @@ public class Round1EnemyWaves : MonoBehaviour
             if(!any && chain.headGone)chains.RemoveAt(c);
         }
     }
+    // Ene_Mj01h._killCount: the head and each body count one kill; the tenth (whichever dies last) pays the 5000 bonus.
+    void ChainKill(Chain chain,Vector2 at){if(++chain.kills==ChainLength+1)combat.weapon.Get5000(at);}
     void Detach(Chain chain,int i)
     {
         var b=chain.bodies[i];if(b==null || b.gone || b.detached)return;
@@ -500,7 +611,7 @@ public class Round1EnemyWaves : MonoBehaviour
             var o=a.partner;bool partnerAlive=o!=null && !o.finished && o.target.active;
             if(killed)a.stack.HalfBroken(a.part);
             if(partnerAlive){if(killed)o.target.health=Mathf.Min(o.target.health,1);}
-            else{if(killed && o!=null && o.killed && a.stack.Mm01Joined)combat.weapon.AddScore(5000);a.stack.Remove(killed);}
+            else{if(killed && o!=null && o.killed && a.stack.Mm01Joined)combat.weapon.Get5000(a.target.position);a.stack.Remove(killed);}
             return;
         }
         a.stack.Remove(killed);
@@ -508,12 +619,12 @@ public class Round1EnemyWaves : MonoBehaviour
     }
     void UpdateActors(float now)
     {
-        ObstaclesFromEnemies(now);meteors.Advance(now);
-        for(int i=actors.Count-1;i>=0;i--)
-        {
-            var actor=actors[i];if(actor.finished){actors.RemoveAt(i);continue;}
-            UpdateActor(actor,now);
-        }
+        // Native frame order: movers, then PhysicsEnemy.UpdatePositions (priority 301), then PhysicsUpdater.ProgressLate,
+        // whose ApplyTransformFromPhysics places the meteors.
+        actors.RemoveAll(x=>x.finished);
+        for(int i=actors.Count-1;i>=0;i--)if(actors[i].meteor==null)UpdateActor(actors[i],now);
+        ObstaclesFromEnemies();meteors.Advance(now);
+        for(int i=actors.Count-1;i>=0;i--)if(actors[i].meteor!=null && !actors[i].finished)UpdateActor(actors[i],now);
         UpdateChains(now);
     }
     // A native enemy runs its first movement update on the frame it activates, so on its spawn frame it is
@@ -522,6 +633,8 @@ public class Round1EnemyWaves : MonoBehaviour
     // Sa01's mover tests InGameManager.IsGameArea: viewport inside gameScreenArea (-.15,-.15,1.3,1.3).
     // The recorded enemy stops playing about two frames after its first frame outside.
     const float GameScreenMargin=.15f,NativeExitDelay=2f/60;
+    // MeteoEnemy: _limitTtimer 15 s in its play area, _outScreenTime 5 s for one that never came in (evidence/physics/SPEC.md sec. 4).
+    const float MeteorLife=15,MeteorOutside=5;
     void UpdateActor(Actor a,float now)
     {
         float age=(Mathf.Max(0,now-a.born)+NativeFirstTick)*a.state.data.timeScale;
@@ -569,21 +682,18 @@ public class Round1EnemyWaves : MonoBehaviour
         }
         else {position=Position(a,age);ahead=Position(a,age+.01f)-position;before=Position(a,Mathf.Max(0,age-.08f));after=Position(a,age+.08f);}
         var shown=position+LayerOffset;
-        a.target.position=(a.OriginalProjection?Round1Sa01Motion.ToViewport(shown,combat.weapon.player.stageCamera.aspect):ToViewport(shown))+a.target.nudge;
+        a.target.position=(a.OriginalProjection?Round1Sa01Motion.ToViewport(shown,combat.weapon.player.stageCamera.aspect):ToViewport(shown));
         a.animation.Sample(age,a.placement.lookAt,ahead,before,after);
         ClassNodes(a,age);
         if(a.stack!=null){GroupNodes(a);ChildRotations(a);}
         if(a.meteorModel)a.meteorModel.localRotation=a.meteor.rotation;
-        if(a.meteor!=null)a.target.solidRadius=a.meteor.radius/Source.sourceHeight;
-        a.target.sourceRotation=a.md01!=null?a.md01.Facing:a.stack!=null?Quaternion.Euler((a.placement.rotate+a.state.data.rotate).x,a.stack.Yaw,(a.placement.rotate+a.state.data.rotate).z)*Quaternion.Euler(a.stack.ModelPitch,0,0):a.animation.Facing;
+        a.target.sourceRotation=a.md01!=null?a.md01.Facing:a.stack!=null?Quaternion.Euler((a.placement.rotate+a.state.data.rotate).x,a.stack.Yaw,(a.placement.rotate+a.state.data.rotate).z)*Quaternion.Euler(a.stack.ModelPitch,0,a.stack.Roll):a.animation.Facing;
+        if(a.stack!=null && a.model==SnakeModel)SnakeBones(a);
         // The original scales hit shapes by a fixed pixels-per-unit (HybridCollisions, _scaleFactorZ at the stage plane), so
         // radii don't grow with height; offsets follow the enemy's own projection. Radii use the frame the model is drawn in.
         Round1Combat.SetHitCircles(a.target,a.hitShape,a.target.sourceRotation,1/(a.OriginalProjection?Round1Sa01Motion.ViewHeight(position.y):Source.sourceHeight),
             1/(a.OriginalProjection?Round1Sa01Motion.ViewHeight():Source.sourceHeight));
-        // Record where it is drawn: its path plus any separation nudge, back in its own source frame.
-        float frame=a.OriginalProjection?Round1Sa01Motion.ViewHeight(position.y):Source.sourceHeight;
-        var drawn=shown+new Vector3(a.target.nudge.x*frame*combat.weapon.player.stageCamera.aspect,0,a.target.nudge.y*frame);
-        Round1TrackCapture.Active?.Record(a.target.id,now,drawn,a.target.sourceRotation*a.animation.RootRotation);
+        Round1TrackCapture.Active?.Record(a.target.id,now,shown,a.target.sourceRotation*a.animation.RootRotation);
         bool visible=a.target.position.x>=0 && a.target.position.x<=1 && a.target.position.y>=0 && a.target.position.y<=1;
         a.entered|=visible;
         bool outside=a.target.position.x<-.25f || a.target.position.x>1.25f || a.target.position.y<-.25f || a.target.position.y>1.25f;
@@ -606,6 +716,16 @@ public class Round1EnemyWaves : MonoBehaviour
             var v=a.target.position;bool outOfArea=v.x<-GameScreenMargin || v.x>1+GameScreenMargin || v.y<-GameScreenMargin || v.y>1+GameScreenMargin;
             if(age<ChainStopAge(a) || !outOfArea)a.outsideSince=-1;else if(a.outsideSince<0)a.outsideSince=now;
             if(age>=ChainStopAge(a)){outside=a.outsideSince>=0 && now-a.outsideSince>=NativeExitDelay-.0001f;a.entered=true;}
+        }
+        if(a.meteor!=null)
+        {   // MeteoEnemy.ProgressEvent: 15 s in its play area and it blows up (no credit); once out of it, gone at once if it
+            // had been in, else after 5 s. A PhysicsAttackAttr trigger (Lb01's head) kills it through SetSuside.
+            var v=a.target.position;bool inArea=v.x>=-GameScreenMargin && v.x<1+GameScreenMargin && v.y>=-GameScreenMargin && v.y<1+GameScreenMargin;
+            float dt=a.lastUpdate<0?0:Mathf.Max(0,now-a.lastUpdate);a.lastUpdate=now;
+            if(inArea){a.meteorInArea+=dt;a.entered=true;}else a.meteorOutside+=dt;
+            if(a.meteor.suside || a.meteorInArea>=MeteorLife){combat.ScriptKill(a.target,false);return;}
+            if(!inArea && (a.entered || a.meteorOutside>=MeteorOutside)){combat.DespawnSourceTarget(a.target);return;}
+            return;
         }
         bool finished=a.stack!=null ? a.stack.Ended || age>180 : // native: no time limit; 180 s is only a safety net
             a.md01!=null ? age>=a.md01.Duration :
@@ -735,6 +855,65 @@ public class Round1EnemyWaves : MonoBehaviour
         }
     }
     void ResetChildren(GameObject visual){if(visual && turnedChildren.TryGetValue(visual,out var list))foreach(var x in list)if(x.node)x.node.localRotation=x.rest;}
+    // EnemyMoverSnake (Pf_Ene_Lb01), after the route step every frame (_updateBones 0x1D6B460; SetSpline 0x1D6B230 makes
+    // _headRate/_boneRate = distance / spline length): bone i sits on the route headDistance + i*boneDistance behind the
+    // head's offset (_currentOffset), clamped to the route's start. Its position is the head's plus the route offset between
+    // the two points, in sky units (so the bent snake is shorter than its 1.15/1.05-scaled rest pose), and it faces the
+    // route tangent there with its parent's up; a vanishing tangent keeps its last direction (else the head's forward).
+    // Nothing moves for lookAt 0. Each body hit circle rides on the bone ahead of it in the rest pose.
+    const string SnakeModel="Pf_Ene_Lb01",SnakeHead="pf_ene_lb01/ene_lb01_body01";
+    const float SnakeHeadDistance=14.5f,SnakeBoneDistance=26,SnakeBodyCircleZ=-25;   // prefab _headDistance, _boneDistance
+    void SnakeBones(Actor a)
+    {
+        var root=a.target.visual.transform;
+        if(a.snakeBones==null)
+        {   // the pooled visual is in its rest pose here (ResetChildren at spawn); the rest bones are unrotated
+            a.snakeHead=root.Find(SnakeHead);var bones=new List<Transform>();var t=a.snakeHead;
+            for(int i=0;i<8 && t;i++){t=t.Find(i<7?"ene_lb01_body02"+(i+1):"ene_lb01_body03");if(t)bones.Add(t);}
+            a.snakeBones=bones.Count==8?bones.ToArray():new Transform[0];a.snakeDirs=new Vector3[a.snakeBones.Length];
+            if(a.hitShape!=null && a.snakeBones.Length>0)
+            {
+                var rest=a.snakeBones.Select(b=>(Vector3)RootLocal(b,root).GetColumn(3)).ToArray();
+                a.snakeCircleBone=new int[a.hitShape.Length];a.snakeOffsets=new Vector3[a.hitShape.Length];
+                for(int i=0;i<a.hitShape.Length;i++)
+                {
+                    var c=new Vector3(a.hitShape[i].x,0,a.hitShape[i].y);int j=-1;
+                    if(c.z<SnakeBodyCircleZ)for(int k=0;k<rest.Length;k++)if(rest[k].z>=c.z)j=k;
+                    a.snakeCircleBone[i]=j;a.snakeOffsets[i]=j<0?c:c-new Vector3(rest[j].x,0,rest[j].z);
+                }
+                a.hitShape=(Vector3[])a.hitShape.Clone();   // Round1HitShapes' table is shared
+            }
+        }
+        var r=a.stack.CurrentRoute;float len=a.stack.CurrentRouteLength;
+        if(a.snakeBones.Length==0 || r==null || len<=0 || a.placement.lookAt==0)return;
+        var q=a.target.sourceRotation*a.animation.RootRotation;var toLocal=Quaternion.Inverse(q);   // sky -> visual root
+        float off=a.stack.RouteOffset;var headPoint=r.Sample(Mathf.Clamp01(off));
+        // Everything in the visual root's frame (its world placement comes later this frame).
+        var parent=RootLocal(a.snakeHead,root);var headLocal=(Vector3)parent.GetColumn(3);var parentRot=parent.rotation;
+        var headForward=q*(parentRot*Vector3.forward);
+        var pos=new Vector3[a.snakeBones.Length];var rot=new Quaternion[a.snakeBones.Length];
+        float u=off-SnakeHeadDistance/len;
+        for(int i=0;i<a.snakeBones.Length;i++,u-=SnakeBoneDistance/len)
+        {
+            float at=Mathf.Clamp01(u);var dir=r.SampleTangent(at);
+            if(dir.sqrMagnitude<Mathf.Epsilon)dir=a.snakeDirs[i].sqrMagnitude>Mathf.Epsilon?a.snakeDirs[i]:headForward;
+            dir=dir.magnitude>1e-5f?dir.normalized:Vector3.zero;a.snakeDirs[i]=dir;
+            rot[i]=dir==Vector3.zero?parentRot:toLocal*Quaternion.LookRotation(dir,q*(parentRot*Vector3.up));
+            pos[i]=headLocal+toLocal*(r.Sample(at)-headPoint);
+            var bone=a.snakeBones[i];
+            bone.localPosition=parent.inverse.MultiplyPoint3x4(pos[i]);bone.localRotation=Quaternion.Inverse(parentRot)*rot[i];
+            parent*=Matrix4x4.TRS(bone.localPosition,bone.localRotation,bone.localScale);parentRot=rot[i];
+        }
+        if(a.snakeCircleBone!=null)for(int i=0;i<a.hitShape.Length;i++)
+        {
+            int j=a.snakeCircleBone[i];var c=j<0?a.snakeOffsets[i]:pos[j]+rot[j]*a.snakeOffsets[i];
+            a.hitShape[i]=new Vector3(c.x,c.z,a.hitShape[i].z);
+        }
+    }
+    static Matrix4x4 RootLocal(Transform t,Transform root)
+    {
+        var m=Matrix4x4.identity;for(;t && t!=root;t=t.parent)m=Matrix4x4.TRS(t.localPosition,t.localRotation,t.localScale)*m;return m;
+    }
     void ClassNodes(Actor a,float age)
     {
         string model=a.definition.model;int index=a.state.data.indexValue;
@@ -776,32 +955,69 @@ public class Round1EnemyWaves : MonoBehaviour
         var tangent=last.tangents.Length>0?last.tangents[last.tangents.Length-1]:Vector3.back;
         return a.origin+displacement+tangent.normalized*distance;
     }
-    void SyncMeteors(){foreach(var a in actors)if(a.meteor!=null && !a.finished && a.target.active)a.target.position=ToViewport(a.meteor.position+LayerOffset);}
-    // After Round1Combat.SeparateAir has moved enemies: push meteors out of them again and redraw the meteors.
-    public void SettleMeteors(float now){if(!initialized)return;ObstaclesFromEnemies(now);meteors.Project();SyncMeteors();}
-    // Every other air enemy's hit circles, in the meteors' source frame, as obstacles for the meteor physics.
-    readonly List<(Vector3 position,Vector3 velocity,float radius,int group,Vector3 centre)> obstacleCircles=new List<(Vector3,Vector3,float,int,Vector3)>();
-    readonly Dictionary<long,Vector3> obstacleLast=new Dictionary<long,Vector3>(),obstacleNow=new Dictionary<long,Vector3>();
-    float obstacleTime=-1;
-    void ObstaclesFromEnemies(float now)
+    // The physics3d colliders of the PhysicsEnemy users (evidence/physics/SPEC.md sec. 3, 5; tools/stage_combat/
+    // physics_colliders.py -> StageCombat/physics-colliders.json), in the meteors' source frame, as meteor obstacles.
+    // PhysicsEnemy.UpdatePositions (0x1D18BA0): node 0 takes its origin's pose; node i its origin's pose relative to origin 0
+    // with y set to 0 (Lb01's cbody1..7 and ctail follow the snake's bones). Every other enemy is not in 3D physics.
+    // The pose comes from where the enemy is drawn (its own projection), scaled into the meteors' frame.
+    [Serializable] class PhysicsShape { public string kind;public bool trigger;public float[] centre,rotation,size;public float radius,height;public int direction; }
+    [Serializable] class PhysicsNode { public string origin,target;public PhysicsShape[] shapes; }
+    [Serializable] class PhysicsModel { public string model;public bool attack;public PhysicsNode[] nodes; }
+    [Serializable] class PhysicsData { public PhysicsModel[] models; }
+    static Dictionary<string,PhysicsModel> physicsModels;
+    readonly Dictionary<GameObject,Transform[]> physicsOrigins=new Dictionary<GameObject,Transform[]>();
+    readonly List<Round1MeteorField.Obstacle> obstacles=new List<Round1MeteorField.Obstacle>();
+    void ObstaclesFromEnemies()
     {
-        obstacleCircles.Clear();obstacleNow.Clear();
-        float aspect=combat.weapon.player.stageCamera.aspect,h=Source.sourceHeight,dt=now-obstacleTime;
+        if(physicsModels==null)
+        {
+            physicsModels=new Dictionary<string,PhysicsModel>();var asset=Resources.Load<TextAsset>("StageCombat/physics-colliders");
+            if(asset)foreach(var m in JsonUtility.FromJson<PhysicsData>(asset.text).models)physicsModels[m.model]=m;
+        }
+        obstacles.Clear();
+        float aspect=combat.weapon.player.stageCamera.aspect,h=Source.sourceHeight,world=WorldScale;
         foreach(var t in combat.Targets)
         {
-            if(!t.active || t.ground || t.isBoss || t.physicsBody || !t.visual)continue;
-            int n=t.hitCircles?.Length??1;
-            for(int i=0;i<n;i++)
+            if(!t.active || t.physicsBody || !t.visual || !t.sourceSpawn)continue;
+            string name=t.visual.name;if(name.EndsWith("(Clone)"))name=name.Substring(0,name.Length-7);
+            if(!physicsModels.TryGetValue(name,out var pm))continue;
+            var root=t.visual.transform;
+            if(!physicsOrigins.TryGetValue(t.visual,out var origins))
+                physicsOrigins[t.visual]=origins=Array.ConvertAll(pm.nodes,n=>string.IsNullOrEmpty(n.origin)?root:root.Find(n.origin)??root);
+            var q=t.sourceRotation*(t.animation?t.animation.RootRotation:Quaternion.identity);float k=world>0?t.sourceScale/world:1;
+            var at=new Vector3((t.position.x-.5f)*h*aspect,0,(t.position.y-.5f)*h)-LayerOffset;
+            var m0=RootLocal(origins[0],root);var r0=m0.rotation;
+            var p0=at+q*(Vector3)m0.GetColumn(3)*k;var q0=q*r0;
+            for(int i=0;i<pm.nodes.Length;i++)
             {
-                Vector2 vp=t.hitCircles!=null?combat.CirclePosition(t,t.hitCircles[i]):t.position;float r=t.hitCircles!=null?t.hitCircles[i].z:t.radius;
-                var source=new Vector3((vp.x-.5f)*h*aspect,0,(vp.y-.5f)*h)-LayerOffset;long key=(long)t.id*256+i;
-                var velocity=dt>1e-4f && obstacleLast.TryGetValue(key,out var last)?(source-last)/dt:Vector3.zero;
-                var centre=new Vector3((t.position.x-.5f)*h*aspect,0,(t.position.y-.5f)*h)-LayerOffset;
-                obstacleNow[key]=source;obstacleCircles.Add((source,velocity,r*h,t.id,centre));
+                Vector3 pos=p0;Quaternion rot=q0;
+                if(i>0)
+                {
+                    var mi=RootLocal(origins[i],root);var local=m0.inverse.MultiplyPoint3x4(mi.GetColumn(3));local.y=0;
+                    pos=p0+q0*local*k;rot=q0*(Quaternion.Inverse(r0)*mi.rotation);
+                }
+                foreach(var s in pm.nodes[i].shapes)
+                {
+                    var sr=new Quaternion(s.rotation[0],s.rotation[1],s.rotation[2],s.rotation[3]);
+                    var o=new Round1MeteorField.Obstacle{trigger=s.trigger,centre=pos+rot*new Vector3(s.centre[0],s.centre[1],s.centre[2])*k,rotation=rot*sr};
+                    o.centre.y=0;   // [I] enemy altitude ignored: everything is drawn on the stage plane
+                    if(s.kind=="sphere"){o.kind=0;o.radius=s.radius*k;}
+                    else if(s.kind=="box"){o.kind=1;o.half=new Vector3(s.size[0],s.size[1],s.size[2])*(k*.5f);}
+                    else{o.kind=2;o.axis=s.direction;o.radius=s.radius*k;o.segment=Mathf.Max(0,s.height*.5f-s.radius)*k;}
+                    obstacles.Add(o);
+                }
             }
         }
-        obstacleLast.Clear();foreach(var kv in obstacleNow)obstacleLast[kv.Key]=kv.Value;obstacleTime=now;
-        meteors.SetObstacles(obstacleCircles);
+        meteors.SetObstacles(obstacles);
+    }
+    // The original writes the rail camera's local position outright (0 in every BGxxStage); the remaster adds the slide
+    // to whatever local position the camera had, and takes a new base whenever something else moved it.
+    void SlideCamera(Vector3 slide)
+    {
+        var cam=combat.weapon.player.stageCamera;if(!cam)return;var t=cam.transform;
+        if(t!=slidCamera){slidCamera=t;cameraBase=t.localPosition;}
+        else if(t.localPosition!=cameraWritten)cameraBase=t.localPosition;
+        CameraSlide=slide;t.localPosition=cameraWritten=cameraBase+slide;
     }
     public Vector2 ToViewport(Vector3 p)=>new Vector2(.5f+p.x/(Source.sourceHeight*combat.weapon.player.stageCamera.aspect),.5f+p.z/Source.sourceHeight);
     Vector3 PlayerSourcePosition()

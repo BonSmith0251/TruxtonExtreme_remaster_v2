@@ -1,0 +1,65 @@
+#### InGame.Kernel.InGameManager::UpdateSlideRate(System.Single) RVA 1cedf50 len 126
+01cedf50  push     rdi
+01cedf52  sub      rsp, 0x40
+01cedf56  cmp      byte ptr [rip + 0x2975425], 0   ; [4663382] bss
+01cedf5d  mov      rdi, rcx
+01cedf60  movaps   xmmword ptr [rsp + 0x30], xmm6   ; ._effectTimeFactor
+01cedf65  movaps   xmm6, xmm1
+01cedf68  jne      0x1cedf89
+01cedf6a  lea      rcx, [rip + 0x26c954f]   ; [43b74c0] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.CinemachineMan>::IsInstanceNull
+01cedf71  call     0x4e0a50
+01cedf76  lea      rcx, [rip + 0x26c95f3]   ; [43b7570] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.CinemachineMan>::get_GetInstance
+01cedf7d  call     0x4e0a50
+01cedf82  mov      byte ptr [rip + 0x29753f9], 1   ; [4663382] bss
+01cedf89  mov      rcx, qword ptr [rip + 0x26c9530]   ; [43b74c0] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.CinemachineMan>::IsInstanceNull
+01cedf90  call     0xd102f0   ; MonoBehaviourSingleton`1::IsInstanceNull() | SimpleSingleton`1::IsInstanceNull()
+01cedf95  test     al, al
+01cedf97  jne      0x1cee066
+01cedf9d  mov      rax, qword ptr [rip + 0x26c95cc]   ; [43b7570] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<InGame.Kernel.CinemachineMan>::get_GetInstance
+01cedfa4  mov      qword ptr [rsp + 0x50], rbx   ; ._isStopStage
+01cedfa9  mov      rax, qword ptr [rax + 0x20]   ; ._baseTimeFactor
+01cedfad  test     byte ptr [rax + 0x135], 1
+01cedfb4  jne      0x1cedfbe
+01cedfb6  mov      rcx, rax
+01cedfb9  call     0x4de1e0
+01cedfbe  mov      rax, qword ptr [rax + 0xc0]   ; ._collisionArea
+01cedfc5  mov      rax, qword ptr [rax + 0x10]
+01cedfc9  test     byte ptr [rax + 0x135], 1
+01cedfd0  jne      0x1cedfda
+01cedfd2  mov      rcx, rax
+01cedfd5  call     0x4de1e0
+01cedfda  mov      rax, qword ptr [rax + 0xb8]   ; ._poolRoot
+01cedfe1  mov      rbx, qword ptr [rax]
+01cedfe4  test     rbx, rbx
+01cedfe7  je       0x1cee071
+01cedfed  xor      r8d, r8d
+01cedff0  movaps   xmm1, xmm6
+01cedff3  mov      rcx, rbx
+01cedff6  call     0x1cc5d50   ; CinemachineMan::SetBGCameraSlide(System.Single)
+01cedffb  movsd    xmm0, qword ptr [rbx + 0x60]   ; ._damageMag
+01cee000  mov      eax, dword ptr [rbx + 0x68]   ; ._bulletDistanceMax
+01cee003  mulss    xmm6, dword ptr [rip + 0x17fea19]   ; rdata 34eca24 f=-0.5,-10,0,3.370281e+12 d=-524288.373
+01cee00b  mov      rcx, qword ptr [rdi + 0x98]   ; ._inGameEnemyRoot
+01cee012  movsd    qword ptr [rsp + 0x20], xmm0   ; ._baseTimeFactor
+01cee018  movsd    qword ptr [rdi + 0x2f0], xmm0   ; ._cinemachineBGCameraSlide
+01cee020  movd     xmm0, eax
+01cee024  movaps   xmm1, xmm6
+01cee027  mulss    xmm1, dword ptr [rsp + 0x20]   ; ._baseTimeFactor
+01cee02d  movaps   xmm2, xmm6
+01cee030  mov      dword ptr [rdi + 0x2f8], eax
+01cee036  mulss    xmm2, dword ptr [rsp + 0x24]   ; .tsec
+01cee03c  mulss    xmm6, xmm0
+01cee040  test     rcx, rcx
+01cee043  je       0x1cee071
+01cee045  unpcklps xmm1, xmm2
+01cee048  lea      rdx, [rsp + 0x20]   ; ._baseTimeFactor
+01cee04d  xor      r8d, r8d
+01cee050  movsd    qword ptr [rsp + 0x20], xmm1   ; ._baseTimeFactor
+01cee056  movss    dword ptr [rsp + 0x28], xmm6   ; ._playTimeFactor
+01cee05c  call     0x3094570   ; Transform::set_localPosition(UnityEngine.Vector3)
+01cee061  mov      rbx, qword ptr [rsp + 0x50]   ; ._isStopStage
+01cee066  movaps   xmm6, xmmword ptr [rsp + 0x30]   ; ._effectTimeFactor
+01cee06b  add      rsp, 0x40
+01cee06f  pop      rdi
+01cee070  ret      
+01cee071  call     0x4e0d00

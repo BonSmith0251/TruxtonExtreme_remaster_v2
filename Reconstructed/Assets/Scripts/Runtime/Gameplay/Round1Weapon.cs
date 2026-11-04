@@ -21,8 +21,12 @@ public partial class Round1Weapon : MonoBehaviour
     public float Health { get; private set; }=100;
     public int Lives { get; private set; }=3;
     public int Bombs { get; private set; }=3;
-    public int BombLevel { get; private set; }=1;
-    public int ChangeCharges { get; private set; }=3;
+    // Running totals (never reset) for the stage zone conditions NoBomber / NoDead (Round1EnemyWaves zones).
+    public int BombsUsed { get; private set; }
+    public int Deaths { get; private set; }
+    // WeaponNormalBomb.Bomb(PlayerInformation._awakenBody) (PlayerControll.FireBomber 0x1D491C0): the bomb's level is the
+    // awaken body + 1, not an item (evidence/items/SPEC.md).
+    public int BombLevel => AwakenBody+1;
     public int Score { get; private set; }
     public int HighScore { get; private set; }
     public int SpeedLevel { get; private set; }=1;
@@ -100,7 +104,9 @@ public partial class Round1Weapon : MonoBehaviour
         if(CanAct)
         {
             if(Input.GetKeyDown(KeyCode.X)||Input.GetMouseButtonDown(1))UseBomb();
-            if(Input.GetKeyDown(KeyCode.C))UseChange();
+            if(ArcadeMachine.ButtonDown("SPEED"))ChangeSpeed();
+            if(ArcadeMachine.ButtonDown("SPEED UP"))SpeedUp();
+            if(ArcadeMachine.ButtonDown("SPEED DOWN"))SpeedDown();
         }
         if((GameOver || RoundCleared) && !Round1StageEnd.Handles && !ArcadeMachine.Running && (Input.GetKeyDown(KeyCode.Return)||Input.GetKeyDown(KeyCode.Home)))Restart();
         bool mouseFire=Input.GetMouseButton(0) && (!EventSystem.current || !EventSystem.current.IsPointerOverGameObject());
@@ -110,15 +116,17 @@ public partial class Round1Weapon : MonoBehaviour
     public void ResetRun()
     {
         if(autopilot)autopilot.ResetPlanning();
+        var popups=GetComponent<Round1ScorePopups>();if(popups)popups.Clear();
         if(intro)intro.Cancel();
         if(player){player.CancelSpawn();player.ResetRunMotion();}
-        Health=MaximumHealth;bombDamage.Clear();Level=1;Lives=3;Bombs=3;BombLevel=1;ChangeCharges=3;Score=0;SpeedLevel=1;Arms=Round1Arms.Red;
+        Health=MaximumHealth;bombDamage.Clear();Level=1;PowerItems=0;Lives=3;Bombs=StartBombs;Score=0;SpeedLevel=1;SpeedCapacity=0;BonusMultiplier=0;PendingExtends=0;speedReverse=false;Arms=Round1Arms.Red;
         HighScore=Mathf.Max(HighScore,PlayerPrefs.GetInt("TruxtonRemaster.HighScore",0));
         shotRemainder=0;homingCursor=0;cooldown=notification=bombTime=invincible=respawn=0;VolleysFired=0;GameOver=false;notice="";
         ClearBullets();if(bombVisual)bombVisual.SetActive(false);
         foreach(var pickup in powerups??System.Array.Empty<Round1Powerup>())if(pickup)pickup.ResetPickup();
-        if(player){player.SpeedMultiplier=1;player.InputEnabled=true;lastStageTime=player.playback.elapsed;lastPlayerPosition=player.viewportPosition;SetShipVisible(true);}
+        if(player){ApplySpeed();player.InputEnabled=true;lastStageTime=player.playback.elapsed;lastPlayerPosition=player.viewportPosition;SetShipVisible(true);}
         if(combat)combat.ResetCombat(player?player.playback.elapsed:0);else ResetEnemyDrops(player?player.playback.elapsed:0);
+        rankedBoss=null;SetupRank(RankStageIndex(SceneStage()),0,0);
         ApplyShipUpgrades();PreviewPickups();
     }
     public void Restart(){player.playback.Seek(0);ResetRun();player.ResetPosition();player.playback.playing=true;if(intro)intro.Begin();else player.BeginSpawn();}
@@ -149,7 +157,7 @@ public partial class Round1Weapon : MonoBehaviour
         Initialize();if(!initialized)return;
         float now=player.playback.elapsed;PreviewPickups();
         if(!SimulationRunning){Round1Sound.WeaponLoop(Arms,Level,false);PlaceBullets();lastStageTime=now;lastPlayerPosition=player.viewportPosition;return;}
-        float dt=Mathf.Max(0,deltaTime);player.StepSpawn(dt);notification=Mathf.Max(0,notification-dt);invincible=Mathf.Max(0,invincible-dt);
+        float dt=Mathf.Max(0,deltaTime);StepRank(dt);player.StepSpawn(dt);notification=Mathf.Max(0,notification-dt);invincible=Mathf.Max(0,invincible-dt);
         float bombDelta=Mathf.Min(dt,bombTime);
         if(bombTime>0)ApplyBombDamage(bombDelta);
         bombTime=Mathf.Max(0,bombTime-dt);UpdateBombVisual();
@@ -203,13 +211,15 @@ public partial class Round1Weapon : MonoBehaviour
         Initialize();if(!CanAct || Bombs<=0 || BombActive)return false;
         var bombProfile=Round1Balance.Current.bombs[BombLevel-1];float damageScale=Round1Balance.Current.bombDamageScales[BombLevel-1];
         activeBombProfile=new Round1DamageProfile{first=bombProfile.first*damageScale,continuous=bombProfile.continuous*damageScale};
-        Bombs--;Round1Sound.Bomb(BombLevel);bombTime=Round1Balance.Current.bombDuration;invincible=Mathf.Max(invincible,bombTime+.5f);
+        Bombs--;BombsUsed++;AddRank(RankBombUse);Round1Sound.Bomb(BombLevel);bombTime=Round1Balance.Current.bombDuration;invincible=Mathf.Max(invincible,bombTime+.5f);
         bombDamage.Clear();ApplyBombDamage(0);Tell("BOMB LEVEL "+BombLevel);UpdateBombVisual();return true;
     }
     void ApplyBombDamage(float dt)
     {
         if(!combat)return;combat.ClearHostiles();bombDamage.Begin();
-        foreach(var target in combat.Targets)bombDamage.Hit(combat,target,activeBombProfile,dt);
+        // Off-screen enemies are out of the bomb's reach (Round1Combat.HitShapeOnScreen); one entering mid-bomb is a fresh
+        // contact and takes the first-hit damage then, like WeaponBombCollision.OnHitProgress.
+        foreach(var target in combat.Targets)if(combat.HitShapeOnScreen(target))bombDamage.Hit(combat,target,activeBombProfile,dt);
         bombDamage.End();
     }
     void UpdateBombVisual()
@@ -219,58 +229,37 @@ public partial class Round1Weapon : MonoBehaviour
         float progress=1-bombTime/Round1Balance.Current.bombDuration;bombVisual.transform.localScale=Vector3.one*(18+progress*45+BombLevel*8);
         tint.Clear();tint.SetColor("_BaseColor",new Color(.7f,.85f,1,1-progress*.85f));foreach(var renderer in bombRenderers)renderer.SetPropertyBlock(tint);
     }
-    public bool UseChange()
-    {
-        if(!CanAct || ChangeCharges<=0)return false;
-        ChangeCharges--;SelectWeapon((Round1Arms)(((int)Arms+1)%7));return true;
-    }
     public bool TakeHit()=>TakeDamage(Round1Balance.Current.hostileDamage);
     public bool TakeDamage(float damage)
     {
         if(!CanAct || Invincible || float.IsNaN(damage) || float.IsInfinity(damage) || damage<=0)return false;
+        // PlayerControll._playerDead 0x1D4D3E0: with auto-bomb on, the lethal hit fires a bomb instead while one is left.
+        if(autoBomb && Health-damage<=0 && UseBomb())return false;
         Health=Mathf.Max(0,Health-damage);if(Health>0)return false;
-        Lives--;Round1Sound.Event("playerDead");ClearBullets();if(combat)combat.ClearHostiles();player.InputEnabled=false;SetShipVisible(false);if(combat)combat.effects.PlayerDestroyed(player.viewportPosition,player.playback.elapsed);
+        Lives--;Deaths++;AddRank(RankDeath);Round1Sound.Event("playerDead");ClearBullets();if(combat)combat.ClearHostiles();player.InputEnabled=false;SetShipVisible(false);if(combat)combat.effects.PlayerDestroyed(player.viewportPosition,player.playback.elapsed);
         if(Lives<=0){Lives=0;GameOver=true;player.playback.playing=false;Tell("GAME OVER");SaveHighScore();}
-        else {respawn=1.2f;Level=Mathf.Max(1,Level-1);Bombs=Mathf.Max(Bombs,3);Tell("SHIP LOST");ApplyShipUpgrades();}
+        else {respawn=1.2f;Tell("SHIP LOST");}
+        ClearByDead();
         return true;
     }
     void SetShipVisible(bool visible){if(player && player.bankingRoot)player.bankingRoot.gameObject.SetActive(visible);}
     public void AddScore(int value){if(value<=0)return;Score=(int)System.Math.Min(999999999L,(long)Score+value);HighScore=Mathf.Max(HighScore,Score);}
     void Tell(string message){notice=message;notification=2.2f;}
-    public void Upgrade(){if(Level<4){Level++;Round1Sound.Event("powerUp");Tell("POWER UP");}else{AddScore(1000);Round1Sound.Event("powerFull");Tell("POWER MAX +1000");}ApplyShipUpgrades();}
-    public void SelectWeapon(Round1Arms arms){if(Arms==arms)return;Arms=arms;Round1Sound.Event("weaponChange");cooldown=0;shotRemainder=0;HideBeams();Tell(PatternName);ApplyShipUpgrades();}
-    public void ApplyPickup(Round1PickupKind kind)
-    {
-        Round1Sound.Pickup(kind);
-        switch(kind)
-        {
-            case Round1PickupKind.Power:Upgrade();break;
-            case Round1PickupKind.Bomber:BombLevel=Mathf.Min(3,BombLevel+2);Tell("BOMB LEVEL "+BombLevel);break;
-            case Round1PickupKind.BombStock:Bombs=Mathf.Min(9,Bombs+2);Tell("BOMB STOCK +2");break;
-            case Round1PickupKind.Change:ChangeCharges=Mathf.Min(99,ChangeCharges+1);Tell("CHANGE STOCK +1");break;
-            case Round1PickupKind.OneUp:Lives=Mathf.Min(99,Lives+1);Tell("1UP");break;
-            case Round1PickupKind.TwoUp:Lives=Mathf.Min(99,Lives+2);Tell("2UP");break;
-            case Round1PickupKind.ThreeUp:Lives=Mathf.Min(99,Lives+3);Tell("3UP");break;
-            case Round1PickupKind.Bonus:AddScore(5000);Tell("BONUS +5000");break;
-            case Round1PickupKind.Points1:AddScore(1000);Tell("+1000");break;
-            case Round1PickupKind.Points2:AddScore(5000);Tell("+5000");break;
-            case Round1PickupKind.SpeedUp:SpeedLevel=Mathf.Min(6,SpeedLevel+1);Tell("SPEED "+SpeedLevel);break;
-            case Round1PickupKind.SpeedDown:SpeedLevel=Mathf.Max(1,SpeedLevel-1);Tell("SPEED "+SpeedLevel);break;
-            default:if(System.Enum.TryParse(kind.ToString(),out Round1Arms arms))SelectWeapon(arms);break;
-        }
-        if(player)player.SpeedMultiplier=rules!=null?rules.speeds[SpeedLevel-1]:1+(SpeedLevel-1)*.4f;
-    }
     // Original PlayerControll._playerOptionDisplay: power level 3 shows one option pod per side (option01L1/R1), level 4
     // both (L2/R2 too). The upgrade parts (_upgradeParts a, b) follow PlayerInformation.AwakenBody, not the power level.
     // The ship, its pods and upgrade parts take the weapon's colour (Variant_red/green/...).
-    [Range(0,2)] public int awakenBody;
+    // GetArmLevelMax 0x26DE660 = 3 + awakenLv: the save's "Evolution unlocked" records (PlayedRecords.General at lifetime
+    // PlayerLevel 500 / 900, evidence/items/AWAKEN.md). Arcade applies it too; here it is a setting (arcade operator menu).
+    [Range(0,2)] public int awakenUnlock;
+    // SetArmLevel 0x26DEA30: _awakenBody 0 below the original level 4, 1 at 4, 2 at 5 (remaster Level 5 / 6).
+    public int AwakenBody=>Mathf.Clamp(Level-ShotLevelMax,0,2);
     public int OptionsPerSide=>Mathf.Clamp(Level-2,0,2);
     Renderer[] shipRenderers,optionRenderers,upgradeRenderers;
     public void ApplyShipUpgrades()
     {
         if(!player)return;var root=player.transform.Find("proot/modelTop/pf_player01");var opt=player.transform.Find("proot/opt");if(!root || !opt)return;
         var a=root.Find("pf_player01_upgrade_a");var b=root.Find("pf_player01_upgrade_b");
-        if(a)a.gameObject.SetActive(awakenBody>=1);if(b)b.gameObject.SetActive(awakenBody>=2);
+        if(a)a.gameObject.SetActive(AwakenBody>=1);if(b)b.gameObject.SetActive(AwakenBody>=2);
         opt.gameObject.SetActive(true);
         for(int i=0;i<2;i++)foreach(var side in new[]{"L","R"})
         {

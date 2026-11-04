@@ -1,0 +1,23 @@
+#### InGame.Kernel.CinemachineMan::get_BGCameraPos() RVA 1cc69e0 len 55
+01cc69e0  sub      rsp, 0x18
+01cc69e4  movsd    xmm1, qword ptr [rdx + 0x60]   ; ._BGCameraSlideRange
+01cc69e9  mov      rax, rcx
+01cc69ec  movss    xmm5, dword ptr [rdx + 0x54]   ; ._bgCameraRate
+01cc69f1  movaps   xmm0, xmm1
+01cc69f4  movsd    xmm2, qword ptr [rdx + 0x6c]   ; ._shakeOffset
+01cc69f9  movaps   xmm4, xmm5
+01cc69fc  mulss    xmm4, xmm1
+01cc6a00  movaps   xmm3, xmm5
+01cc6a03  mulss    xmm5, dword ptr [rdx + 0x68]
+01cc6a08  movaps   xmm1, xmm2
+01cc6a0b  shufps   xmm0, xmm0, 0x55
+01cc6a0f  addss    xmm4, xmm2
+01cc6a13  mulss    xmm3, xmm0
+01cc6a17  addss    xmm5, dword ptr [rdx + 0x74]
+01cc6a1c  shufps   xmm1, xmm1, 0x55
+01cc6a20  addss    xmm3, xmm1
+01cc6a24  unpcklps xmm4, xmm3
+01cc6a27  movsd    qword ptr [rcx], xmm4
+01cc6a2b  movss    dword ptr [rcx + 8], xmm5
+01cc6a30  add      rsp, 0x18
+01cc6a34  ret      

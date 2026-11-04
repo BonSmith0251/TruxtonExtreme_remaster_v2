@@ -1,0 +1,44 @@
+#### InGame.Kernel.CinemachineMan::SetBGCameraTransform(UnityEngine.Transform,System.Single) RVA 1cc6040 len c6
+01cc6040  mov      qword ptr [rsp + 8], rbx
+01cc6045  push     rdi
+01cc6046  sub      rsp, 0x30
+01cc604a  cmp      byte ptr [rip + 0x299d1ab], 0   ; [46631fc] bss
+01cc6051  mov      rdi, rdx
+01cc6054  movaps   xmmword ptr [rsp + 0x20], xmm6   ; ._cameras
+01cc6059  mov      rbx, rcx
+01cc605c  movaps   xmm6, xmm2
+01cc605f  jne      0x1cc6074
+01cc6061  lea      rcx, [rip + 0x26d1d88]   ; [4397df0] TypeInfo InGame.Kernel.CinemachineMan
+01cc6068  call     0x4e0a50
+01cc606d  mov      byte ptr [rip + 0x299d188], 1   ; [46631fc] bss
+01cc6074  lea      rcx, [rbx + 0x58]   ; ._BGRootTransform
+01cc6078  mov      qword ptr [rbx + 0x58], rdi   ; ._BGRootTransform
+01cc607c  mov      rdx, rdi
+01cc607f  call     0x4dfd80
+01cc6084  cmp      byte ptr [rip + 0x29963d2], 0   ; [465c45d] bss
+01cc608b  jne      0x1cc60a0
+01cc608d  lea      rcx, [rip + 0x26fb644]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01cc6094  call     0x4e0a50
+01cc6099  mov      byte ptr [rip + 0x29963bd], 1   ; [465c45d] bss
+01cc60a0  mov      rax, qword ptr [rip + 0x26fb631]   ; [43c16d8] TypeInfo UnityEngine.Vector3
+01cc60a7  mov      rcx, qword ptr [rax + 0xb8]
+01cc60ae  mov      eax, dword ptr [rcx + 8]   ; static Vector3+8
+01cc60b1  movsd    xmm0, qword ptr [rcx]   ; static Vector3+0
+01cc60b5  movsd    qword ptr [rbx + 0x60], xmm0   ; ._BGCameraSlideRange
+01cc60ba  mov      dword ptr [rbx + 0x68], eax
+01cc60bd  movss    dword ptr [rbx + 0x60], xmm6   ; ._BGCameraSlideRange
+01cc60c2  mov      rax, qword ptr [rip + 0x26d1d27]   ; [4397df0] TypeInfo InGame.Kernel.CinemachineMan
+01cc60c9  cmp      dword ptr [rax + 0xe4], 0
+01cc60d0  jne      0x1cc60e1
+01cc60d2  mov      rcx, rax
+01cc60d5  call     0x4e0d90
+01cc60da  mov      rax, qword ptr [rip + 0x26d1d0f]   ; [4397df0] TypeInfo InGame.Kernel.CinemachineMan
+01cc60e1  mov      rax, qword ptr [rax + 0xb8]
+01cc60e8  xor      r8d, r8d
+01cc60eb  mov      rcx, rbx
+01cc60ee  movss    xmm1, dword ptr [rax]   ; static CinemachineMan.DefaultCameraAngle
+01cc60f2  mov      rbx, qword ptr [rsp + 0x40]   ; ._npow
+01cc60f7  movaps   xmm6, xmmword ptr [rsp + 0x20]   ; ._cameras
+01cc60fc  add      rsp, 0x30
+01cc6100  pop      rdi
+01cc6101  jmp      0x1cc5880   ; CinemachineMan::SetBGCameraRoll(System.Single)

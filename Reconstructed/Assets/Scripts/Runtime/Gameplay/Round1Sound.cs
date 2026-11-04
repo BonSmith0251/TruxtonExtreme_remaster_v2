@@ -165,20 +165,7 @@ public sealed class Round1Sound : MonoBehaviour
         s.SetLoop(beam,firing && !string.IsNullOrEmpty(l.loop)?l.loop:null);
         if(alive)s.beamState[beam]=state;else s.beamState.Remove(beam);
     }
-    public static void Pickup(Round1PickupKind kind)
-    {
-        switch(kind)
-        {
-            case Round1PickupKind.SpeedUp:Event("itemSpeedUp");break;
-            case Round1PickupKind.SpeedDown:Event("speedDown");break;
-            case Round1PickupKind.BombStock:case Round1PickupKind.Bomber:Event("itemBomb");break;
-            case Round1PickupKind.OneUp:Event("extend1");break;
-            case Round1PickupKind.TwoUp:Event("extend2");break;
-            case Round1PickupKind.ThreeUp:Event("extend3");break;
-            case Round1PickupKind.Bonus:case Round1PickupKind.Points2:Event("score5000");break;
-            case Round1PickupKind.Points1:Event("score1000");break;
-        }
-    }
+    // Item sounds are played by Round1Weapon's item rules (ItemEffectResult), each on the effect it had.
     public static void StopAll(){var s=Live;if(!s)return;s.queue.Clear();foreach(var c in s.channels){c.source.Stop();c.owner=null;}s.beamState.Clear();}
 
     Weapon WeaponFor(Round1Arms arms)=>Data.weapons==null?null:Array.Find(Data.weapons,w=>w.arms==(int)arms);

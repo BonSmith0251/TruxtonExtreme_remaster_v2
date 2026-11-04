@@ -47,6 +47,9 @@ public static class ArcadeRules
     public int maxCredits=9;
     public int difficulty=1;
     public int startLives=3;
+    // PlayedRecords "Evolution unlocked" (lifetime PlayerLevel 500) / "again" (900): top power level 3 + this (AWAKEN.md).
+    public int evolution;
+    public bool autoBomb;   // GameSetting._autoBomb, default 0: a lethal hit fires a bomb instead while one is left
     public int startStage=1;
     public bool continues=true;
     public int continueSeconds=10;

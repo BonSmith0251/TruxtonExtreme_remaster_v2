@@ -1,0 +1,251 @@
+#### InGame.Kernel.CinemachineMan::SetBGCameraRoll(System.Single) RVA 1cc5880 len 4ba
+01cc5880  mov      rax, rsp
+01cc5883  mov      qword ptr [rax + 8], rbx
+01cc5887  push     rbp
+01cc5888  lea      rbp, [rax - 0x28]
+01cc588c  sub      rsp, 0x120
+01cc5893  cmp      byte ptr [rip + 0x299d964], 0   ; [46631fe] bss
+01cc589a  mov      rbx, rcx
+01cc589d  movaps   xmmword ptr [rax - 0x18], xmm6
+01cc58a1  movaps   xmm6, xmm1
+01cc58a4  movaps   xmmword ptr [rax - 0x28], xmm7
+01cc58a8  movaps   xmmword ptr [rax - 0x38], xmm8
+01cc58ad  movaps   xmmword ptr [rax - 0x48], xmm9
+01cc58b2  movaps   xmmword ptr [rax - 0x58], xmm10
+01cc58b7  movaps   xmmword ptr [rax - 0x68], xmm11
+01cc58bc  movaps   xmmword ptr [rax - 0x78], xmm12
+01cc58c1  movaps   xmmword ptr [rax - 0x88], xmm13
+01cc58c9  movaps   xmmword ptr [rax - 0x98], xmm14
+01cc58d1  movaps   xmmword ptr [rax - 0xa8], xmm15
+01cc58d9  jne      0x1cc58ee
+01cc58db  lea      rcx, [rip + 0x2713e36]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cc58e2  call     0x4e0a50
+01cc58e7  mov      byte ptr [rip + 0x299d910], 1   ; [46631fe] bss
+01cc58ee  movss    dword ptr [rbx + 0x50], xmm6   ; ._perspectiveAngle
+01cc58f3  lea      rdx, [rsp + 0x20]   ; ._cameras
+01cc58f8  xorps    xmm6, xmmword ptr [rip + 0x181b311]   ; rdata 34e0c10 f=-0,-0,-0,-0 d=-1.060997895e-314
+01cc58ff  lea      rcx, [rsp + 0x30]   ; ._cameraNoisePow
+01cc5904  mulss    xmm6, dword ptr [rip + 0x181b2b4]   ; rdata 34e0bc0 f=0.01745329,0.05,0.5,1 d=2.046363552e-13
+01cc590c  xor      r8d, r8d
+01cc590f  mov      qword ptr [rsp + 0x24], 0   ; .tsecond
+01cc5918  xorps    xmm9, xmm9
+01cc591c  movss    dword ptr [rsp + 0x20], xmm6   ; ._cameras
+01cc5922  call     0x304d890   ; Quaternion::Internal_FromEulerRad(UnityEngine.Vector3&)
+01cc5927  xor      r8d, r8d
+01cc592a  lea      rdx, [rsp + 0x20]   ; ._cameras
+01cc592f  lea      rcx, [rsp + 0x40]   ; ._npow
+01cc5934  movups   xmm13, xmmword ptr [rax]
+01cc5938  movaps   xmmword ptr [rsp + 0x20], xmm13   ; ._cameras
+01cc593e  call     0x1cc4b20   ; Matrix4x4::Rotate(UnityEngine.Quaternion)
+01cc5943  mov      rcx, qword ptr [rip + 0x2713dce]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cc594a  movups   xmm6, xmmword ptr [rax]
+01cc594d  cmp      dword ptr [rcx + 0xe4], 0
+01cc5954  movups   xmm12, xmmword ptr [rax + 0x10]
+01cc5959  movups   xmm7, xmmword ptr [rax + 0x20]   ; ._cameras
+01cc595d  movups   xmm8, xmmword ptr [rax + 0x30]   ; ._cameraNoisePow
+01cc5962  jne      0x1cc5969
+01cc5964  call     0x4e0d90
+01cc5969  cmp      byte ptr [rip + 0x299d96e], 0   ; [46632de] bss
+01cc5970  jne      0x1cc5985
+01cc5972  lea      rcx, [rip + 0x2713d9f]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cc5979  call     0x4e0a50
+01cc597e  mov      byte ptr [rip + 0x299d959], 1   ; [46632de] bss
+01cc5985  mov      rcx, qword ptr [rip + 0x2713d8c]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cc598c  cmp      dword ptr [rcx + 0xe4], 0
+01cc5993  jne      0x1cc599a
+01cc5995  call     0x4e0d90
+01cc599a  cmp      byte ptr [rip + 0x299d93e], 0   ; [46632df] bss
+01cc59a1  movaps   xmm15, xmm12
+01cc59a5  mov      rax, qword ptr [rip + 0x2713d6c]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cc59ac  movaps   xmm14, xmm12
+01cc59b0  shufps   xmm14, xmm12, 0x55
+01cc59b5  movaps   xmm1, xmm7
+01cc59b8  shufps   xmm12, xmm12, 0xaa
+01cc59bd  shufps   xmm1, xmm7, 0x55
+01cc59c1  mov      rcx, qword ptr [rax + 0xb8]
+01cc59c8  movsd    xmm0, qword ptr [rcx + 0x74]   ; static InGameManager+74
+01cc59cd  movss    xmm3, dword ptr [rcx + 0x7c]   ; static InGameManager+7c
+01cc59d2  movaps   xmm4, xmm0
+01cc59d5  movsd    qword ptr [rsp + 0x20], xmm0   ; ._cameras
+01cc59db  movaps   xmm0, xmm6
+01cc59de  movss    xmm2, dword ptr [rsp + 0x20]   ; ._cameras
+01cc59e4  mulss    xmm0, xmm2
+01cc59e8  shufps   xmm4, xmm4, 0x55
+01cc59ec  mulss    xmm15, xmm4
+01cc59f1  mulss    xmm14, xmm4
+01cc59f6  addss    xmm15, xmm0
+01cc59fb  mulss    xmm12, xmm4
+01cc5a00  movaps   xmm0, xmm7
+01cc5a03  mulss    xmm1, xmm3
+01cc5a07  mulss    xmm0, xmm3
+01cc5a0b  shufps   xmm7, xmm7, 0xaa
+01cc5a0f  mulss    xmm7, xmm3
+01cc5a13  addss    xmm15, xmm0
+01cc5a18  movaps   xmm0, xmm8
+01cc5a1c  mulss    xmm0, xmm9
+01cc5a21  addss    xmm15, xmm0
+01cc5a26  movaps   xmm0, xmm6
+01cc5a29  shufps   xmm0, xmm6, 0x55
+01cc5a2d  mulss    xmm0, xmm2
+01cc5a31  shufps   xmm6, xmm6, 0xaa
+01cc5a35  mulss    xmm6, xmm2
+01cc5a39  addss    xmm14, xmm0
+01cc5a3e  movaps   xmm0, xmm8
+01cc5a42  shufps   xmm0, xmm8, 0x55
+01cc5a47  addss    xmm12, xmm6
+01cc5a4c  shufps   xmm8, xmm8, 0xaa
+01cc5a51  mulss    xmm0, xmm9
+01cc5a56  addss    xmm14, xmm1
+01cc5a5b  mulss    xmm8, xmm9
+01cc5a60  addss    xmm12, xmm7
+01cc5a65  addss    xmm14, xmm0
+01cc5a6a  addss    xmm12, xmm8
+01cc5a6f  jne      0x1cc5a84
+01cc5a71  lea      rcx, [rip + 0x2713ca0]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cc5a78  call     0x4e0a50
+01cc5a7d  mov      byte ptr [rip + 0x299d85b], 1   ; [46632df] bss
+01cc5a84  mov      rcx, qword ptr [rip + 0x2713c8d]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cc5a8b  cmp      dword ptr [rcx + 0xe4], 0
+01cc5a92  jne      0x1cc5a99
+01cc5a94  call     0x4e0d90
+01cc5a99  cmp      byte ptr [rip + 0x299d75f], 0   ; [46631ff] bss
+01cc5aa0  movaps   xmm4, xmm13
+01cc5aa4  mov      rax, qword ptr [rip + 0x2713c6d]   ; [43d9718] TypeInfo InGame.Kernel.InGameManager
+01cc5aab  movaps   xmm9, xmm13
+01cc5aaf  shufps   xmm4, xmm13, 0xff
+01cc5ab4  movaps   xmm5, xmm13
+01cc5ab8  shufps   xmm5, xmm13, 0x55
+01cc5abd  movaps   xmm3, xmm13
+01cc5ac1  shufps   xmm3, xmm13, 0xaa
+01cc5ac6  movaps   xmm10, xmm5
+01cc5aca  mov      rcx, qword ptr [rax + 0xb8]
+01cc5ad1  movups   xmm7, xmmword ptr [rcx + 0x80]   ; static InGameManager+80
+01cc5ad8  movaps   xmm0, xmm7
+01cc5adb  movaps   xmm8, xmm7
+01cc5adf  mulss    xmm0, xmm4
+01cc5ae3  movaps   xmm1, xmm7
+01cc5ae6  shufps   xmm8, xmm7, 0xff
+01cc5aeb  movaps   xmm6, xmm7
+01cc5aee  mulss    xmm9, xmm8
+01cc5af3  movaps   xmm2, xmm7
+01cc5af6  mulss    xmm10, xmm8
+01cc5afb  addss    xmm9, xmm0
+01cc5b00  shufps   xmm6, xmm7, 0xaa
+01cc5b04  shufps   xmm2, xmm7, 0x55
+01cc5b08  movaps   xmm0, xmm5
+01cc5b0b  mulss    xmm0, xmm6
+01cc5b0f  movaps   xmm11, xmm6
+01cc5b13  mulss    xmm1, xmm3
+01cc5b17  addss    xmm9, xmm0
+01cc5b1c  mulss    xmm11, xmm4
+01cc5b21  movaps   xmm0, xmm2
+01cc5b24  mulss    xmm0, xmm3
+01cc5b28  subss    xmm9, xmm0
+01cc5b2d  movaps   xmm0, xmm2
+01cc5b30  mulss    xmm0, xmm4
+01cc5b34  addss    xmm10, xmm0
+01cc5b39  movss    dword ptr [rsp + 0x20], xmm9   ; ._cameras
+01cc5b40  movaps   xmm0, xmm13
+01cc5b44  mulss    xmm0, xmm6
+01cc5b48  mulss    xmm6, xmm3
+01cc5b4c  addss    xmm10, xmm1
+01cc5b51  movaps   xmm1, xmm13
+01cc5b55  mulss    xmm13, xmm7
+01cc5b5a  mulss    xmm1, xmm2
+01cc5b5e  subss    xmm10, xmm0
+01cc5b63  movaps   xmm0, xmm8
+01cc5b67  mulss    xmm0, xmm3
+01cc5b6b  mulss    xmm8, xmm4
+01cc5b70  addss    xmm11, xmm0
+01cc5b75  movss    dword ptr [rsp + 0x24], xmm10   ; .tsecond
+01cc5b7c  movaps   xmm0, xmm5
+01cc5b7f  mulss    xmm5, xmm2
+01cc5b83  subss    xmm8, xmm13
+01cc5b88  mulss    xmm0, xmm7
+01cc5b8c  addss    xmm11, xmm1
+01cc5b91  subss    xmm8, xmm5
+01cc5b96  subss    xmm11, xmm0
+01cc5b9b  subss    xmm8, xmm6
+01cc5ba0  movss    dword ptr [rsp + 0x28], xmm11   ; ._camerasNoise
+01cc5ba7  movss    dword ptr [rsp + 0x2c], xmm8   ; .color
+01cc5bae  jne      0x1cc5bc3
+01cc5bb0  lea      rcx, [rip + 0x26f4059]   ; [43b9c10] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<TXEKernel.TXE3DSystem>::get_GetInstance
+01cc5bb7  call     0x4e0a50
+01cc5bbc  mov      byte ptr [rip + 0x299d63c], 1   ; [46631ff] bss
+01cc5bc3  mov      rax, qword ptr [rbx + 0x20]   ; ._cameras
+01cc5bc7  movaps   xmm0, xmmword ptr [rsp + 0x20]   ; ._cameras
+01cc5bcc  movups   xmmword ptr [rbx + 0x78], xmm0   ; ._cameraRotate
+01cc5bd0  test     rax, rax
+01cc5bd3  je       0x1cc5d2f
+01cc5bd9  cmp      dword ptr [rax + 0x18], 0
+01cc5bdd  jbe      0x1cc5d35
+01cc5be3  mov      rcx, qword ptr [rax + 0x20]   ; ._cameras
+01cc5be7  test     rcx, rcx
+01cc5bea  je       0x1cc5d2f
+01cc5bf0  xor      edx, edx
+01cc5bf2  call     0x3059180   ; Component::get_transform()
+01cc5bf7  movss    dword ptr [rsp + 0x20], xmm9   ; ._cameras
+01cc5bfe  movss    dword ptr [rsp + 0x24], xmm10   ; .tsecond
+01cc5c05  movss    dword ptr [rsp + 0x28], xmm11   ; ._camerasNoise
+01cc5c0c  movss    dword ptr [rsp + 0x2c], xmm8   ; .color
+01cc5c13  test     rax, rax
+01cc5c16  je       0x1cc5d2f
+01cc5c1c  movups   xmm0, xmmword ptr [rsp + 0x20]   ; ._cameras
+01cc5c21  xor      r9d, r9d
+01cc5c24  lea      r8, [rsp + 0x30]   ; ._cameraNoisePow
+01cc5c29  movaps   xmm1, xmm15
+01cc5c2d  movss    dword ptr [rsp + 0x28], xmm12   ; ._camerasNoise
+01cc5c34  unpcklps xmm1, xmm14
+01cc5c38  lea      rdx, [rsp + 0x20]   ; ._cameras
+01cc5c3d  mov      rcx, rax
+01cc5c40  movdqa   xmmword ptr [rsp + 0x30], xmm0   ; ._cameraNoisePow
+01cc5c46  movsd    qword ptr [rsp + 0x20], xmm1   ; ._cameras
+01cc5c4c  call     0x30913c0   ; Transform::SetLocalPositionAndRotation(UnityEngine.Vector3,UnityEngine.Quaternion)
+01cc5c51  mov      rax, qword ptr [rip + 0x26f3fb8]   ; [43b9c10] MethodRef KANAI.Kernel.MonoBehaviourSingleton`1<TXEKernel.TXE3DSystem>::get_GetInstance
+01cc5c58  mov      rax, qword ptr [rax + 0x20]   ; ._cameras
+01cc5c5c  test     byte ptr [rax + 0x135], 1
+01cc5c63  jne      0x1cc5c6d
+01cc5c65  mov      rcx, rax
+01cc5c68  call     0x4de1e0
+01cc5c6d  mov      rax, qword ptr [rax + 0xc0]   ; ._burnShake
+01cc5c74  mov      rax, qword ptr [rax + 0x10]
+01cc5c78  test     byte ptr [rax + 0x135], 1
+01cc5c7f  jne      0x1cc5c89
+01cc5c81  mov      rcx, rax
+01cc5c84  call     0x4de1e0
+01cc5c89  mov      rax, qword ptr [rax + 0xb8]   ; ._mover
+01cc5c90  movss    dword ptr [rsp + 0x20], xmm9   ; ._cameras
+01cc5c97  movss    dword ptr [rsp + 0x24], xmm10   ; .tsecond
+01cc5c9e  movss    dword ptr [rsp + 0x28], xmm11   ; ._camerasNoise
+01cc5ca5  mov      rcx, qword ptr [rax]
+01cc5ca8  movss    dword ptr [rsp + 0x2c], xmm8   ; .color
+01cc5caf  test     rcx, rcx
+01cc5cb2  je       0x1cc5d2f
+01cc5cb4  movups   xmm0, xmmword ptr [rsp + 0x20]   ; ._cameras
+01cc5cb9  xor      r9d, r9d
+01cc5cbc  lea      r8, [rsp + 0x30]   ; ._cameraNoisePow
+01cc5cc1  movaps   xmm1, xmm15
+01cc5cc5  movss    dword ptr [rsp + 0x28], xmm12   ; ._camerasNoise
+01cc5ccc  unpcklps xmm1, xmm14
+01cc5cd0  lea      rdx, [rsp + 0x20]   ; ._cameras
+01cc5cd5  movdqa   xmmword ptr [rsp + 0x30], xmm0   ; ._cameraNoisePow
+01cc5cdb  movsd    qword ptr [rsp + 0x20], xmm1   ; ._cameras
+01cc5ce1  call     0x26fea60   ; TXE3DSystem::SetupCollisionCamera(UnityEngine.Vector3,UnityEngine.Quaternion)
+01cc5ce6  lea      r11, [rsp + 0x120]   ; ._sizeType
+01cc5cee  mov      rbx, qword ptr [r11 + 0x10]
+01cc5cf2  movaps   xmm6, xmmword ptr [r11 - 0x10]
+01cc5cf7  movaps   xmm7, xmmword ptr [r11 - 0x20]
+01cc5cfc  movaps   xmm8, xmmword ptr [r11 - 0x30]
+01cc5d01  movaps   xmm9, xmmword ptr [r11 - 0x40]
+01cc5d06  movaps   xmm10, xmmword ptr [r11 - 0x50]
+01cc5d0b  movaps   xmm11, xmmword ptr [r11 - 0x60]
+01cc5d10  movaps   xmm12, xmmword ptr [r11 - 0x70]
+01cc5d15  movaps   xmm13, xmmword ptr [r11 - 0x80]
+01cc5d1a  movaps   xmm14, xmmword ptr [r11 - 0x90]
+01cc5d22  movaps   xmm15, xmmword ptr [r11 - 0xa0]
+01cc5d2a  mov      rsp, r11
+01cc5d2d  pop      rbp
+01cc5d2e  ret      
+01cc5d2f  call     0x4e0d00
+01cc5d34  int3     
+01cc5d35  call     0x4e0cf0

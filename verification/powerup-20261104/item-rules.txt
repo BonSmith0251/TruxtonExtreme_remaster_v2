@@ -1,0 +1,43 @@
+PASS start  (L1 items 0 speed 1/0 bombs 3 lives 3)
+PASS two power items stay on level 1  (L1 items 2)
+PASS third power item -> level 2  (L2 items 0)
+PASS 9 items -> top level 4  (L4 items 0 score 0)
+PASS 3 more -> full, no score  (items 3 score 0)
+PASS power when full -> 5000 x1  (score 5000 mul 1)
+PASS next -> 5000 x2  (score 15000)
+PASS current colour -> bonus x3, weapon kept  (score 30000 arms Red)
+PASS other colour -> weapon changes, level kept, no bonus
+PASS multiplier caps at 10  (mul 10)
+PASS 5 speed items -> capacity 5, top speed 3.0  (speed 6/5 x3)
+PASS sixth speed item -> bonus  (+50000)
+PASS speed selectable 0..capacity
+PASS bomb item +1, cap 10  (bombs 10)
+PASS bomb item at 10 -> bonus
+PASS 1UP/2UP add ships  (lives 6)
+PASS death at full top level keeps the level, loses full  (L4 items 0)
+PASS death: capacity -1, speed clamped, multiplier 0, bombs kept  (speed 5/4 mul 0 bombs 10)
+PASS death keeps the item progress, level -1  (L3 items 1)
+PASS death tops bombs up to 3  (bombs 3)
+PASS weapon survives death
+PASS table starts power, speed, power  (Power,SpeedUp,Power)
+PASS pending extend -> 1UP, table not advanced  (OneUp,Power)
+PASS ground score item -> 5000 + 5000 bonus  (+10000)
+PASS item drifts with ease-out  (y at 12.5 s 0.150)
+PASS item removed 2 s after leaving the play area  (y -0.186 at 11 s, True/True/False)
+PASS item ends with its 25 s route
+PASS locked: top level 4, awaken body 0  (L4 body 0)
+PASS unlocked x1 step: level 5 = awaken body 1  (L5 body 1)
+PASS unlocked x2: level 6, body 2, bomb 3, bonus cap 12, level-4 shots  (L6 body 2 shots 21/21)
+PASS level 6 full -> bonus  (items 3)
+PASS death at full level 6 keeps it
+PASS next death -> level 5
+PASS speed up/down step one level within 0..capacity  (up False top 3 downs True/True/False level 1)
+PASS speed up stops at the capacity
+PASS rank starts 0 in [-10, 30] (BG03)  (0 [-10,30])
+PASS power-level rise +0.1, sub-steps nothing  (0.1 0.1)
+PASS bomb-stock item +0.1  (0.2)
+PASS death does not reset the rank
+PASS rank 30: bullets x1.075, repeats x0.994  (1.075 0.994)
+PASS BG08 round 2 bounds [160, 200], clamped  ([160,200] 200)
+PASS negative rank slows bullets (x0.991)  (0.991)
+ItemRulesCheck: PASSED

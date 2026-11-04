@@ -24,6 +24,7 @@ public sealed class StageEnemies : MonoBehaviour
     {
         public int version,round,gameModeMask;public string stage;public float sourceHeight;public StageEvent[] events;
         public Round1EnemyWaves.Definition[] definitions;public Round1EnemyWaves.Route[] routes;public Round1EnemyWaves.Model[] models;
+        public Round1EnemyWaves.Zone[] zones;
     }
 
     public TextAsset schedule;
@@ -42,6 +43,8 @@ public sealed class StageEnemies : MonoBehaviour
     public int Spawned {get;private set;}
     public int Live=>actors.Count;
     public int SkippedBonus {get;private set;}
+    public int SkippedZone {get;private set;}
+    int cleanZones;
     public int SkippedMode {get;private set;}
     public int SkippedUnsupported {get;private set;}
     public int MaxLive {get;private set;}
@@ -85,6 +88,7 @@ public sealed class StageEnemies : MonoBehaviour
         }
         foreach(var v in visuals)if(v.prefab)models[v.name]=v.prefab;
         foreach(var e in Data.events)states.Add(new State{data=e});
+        cleanZones=Round1EnemyWaves.CleanRouteZones(Data.zones);
         layer=new GameObject("Game Layer (native game frame)").transform;layer.position=LayerOrigin;
         layer.gameObject.hideFlags=HideFlags.DontSave;
         ground=new GameObject("Ground enemies (stage world)").transform;ground.gameObject.hideFlags=HideFlags.DontSave;
@@ -113,6 +117,8 @@ public sealed class StageEnemies : MonoBehaviour
                 if(t>=e.end){s.finished=true;continue;}
                 if(e.gameModeMask!=0&&(e.gameModeMask&gameModeMask)==0){SkippedMode++;s.finished=true;continue;}
                 if(e.wipeoutOnly){SkippedBonus++;s.finished=true;continue;}
+                // Zone TLs (BG08 branches): the overlay shows the clean route (no bomb, no death).
+                if(e.zone!=0 && (cleanZones&e.zone)==0){SkippedZone++;s.finished=true;continue;}
                 if(e.ground){if(showGround)SpawnGround(s,t);s.finished=true;continue;}
                 Queue(s,e.start+e.startDelay/e.timeScale);
             }
@@ -137,7 +143,7 @@ public sealed class StageEnemies : MonoBehaviour
     void Restart(float t)
     {
         foreach(var a in actors)Remove(a);
-        actors.Clear();pending.Clear();Spawned=SkippedBonus=SkippedMode=SkippedUnsupported=MaxLive=Entered=Unseen=0;UnseenByModel.Clear();
+        actors.Clear();pending.Clear();Spawned=SkippedBonus=SkippedZone=SkippedMode=SkippedUnsupported=MaxLive=Entered=Unseen=0;UnseenByModel.Clear();
         foreach(var s in states){s.started=s.finished=s.data.start<t-.0001f&&!(s.data.ground&&s.data.end>t);s.iteration=s.pending=0;s.actors.Clear();}
     }
 
